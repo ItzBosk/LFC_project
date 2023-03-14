@@ -1,0 +1,62 @@
+
+- utilizza uno stack con politica LIFO
+- il codice inizia dal primo periodo, il title all'inizio serve solo per dire cosa farà il programma
+- characters = variabili
+	- vanno dichiarate tutte all'inizio, subito sotto il title
+	- lavora solo con signed integers
+	- per poter interagire devono essere sul palco
+- Act and Scene ~ funzioni
+	- numerati con i numeri romani
+	- Act act_name descrizione
+- Enter, Exit, and Exeunt
+	- Enter = entrata in scena 1+ personaggi
+	- Exit = uscita di scena di un solo personaggio
+	- Exeunt = uscita di scena 1+ personaggi
+		- se seguito da nulla = tutti i personaggi lasciano la scena
+- Lines
+	- nome_personaggio: 1+ frasi
+	- input = il personaggio chiede info all'utente
+	- output = da in output qualcosa
+	- gotos = il personaggio ritorna alla scena o all'atto specificato
+	- conditional statements = fa fare scelte al personaggio
+	- pushing/popping = store/remove info in the character
+	- statement = il personaggio assueme un certo valore
+- Constants
+	- noun = campo numerico costante associato ad ogni personaggio
+		1  se NON nice
+		-1 se nice
+	- valore associato ad un personaggio = noun * 2^(numero di aggettivi)
+		- mettendo degli aggettivi prima di un noun permette di modificare il valore associato
+			ES. my little pony = 1 * 2^1
+				sorry little goat = (-1) * 2^2
+- Output
+	- due tipologie:
+		Open your heart = il personaggio a cui parla dirà il proprio valore
+		Speak your mind = il personaggio a cui parla dirà il proprio valore come cifra/carattere corrispondente in ASCII
+- Input
+	- due tipologie in modo simile all'input:
+		Open your mind = legge un intero
+		Listen to your heart = legge il corrispondente ASCII
+- Gotos
+	ES. Let us return to scene III = goto scene III
+- Conditional Statements
+	- ES. Juliet:
+			Am I better than you?
+		  Hamlet:
+			If so, let us proceed to scene III
+	= if Juliet > Hamlet
+		goto scene III						
+- Comparisons
+	= -> "is X as good as Y"
+	> -> "is X better than Y" (con better parola nice/positive -> nice)
+	< ->  "is X worse than Y" (con worse parola NON nice -> !nice)
+- Stacks
+	- ogni personaggio può tenere salvati più valori con push e pop
+		- ES. Lady Macbeth:	
+				Remember me.
+		= il valore di Lady Macbeth viene pushato nello stack del personaggio a cui sta parlando (non ho capito se il personaggio assume così quel valore)
+		- ES. Lady Macbeth:
+				Recall your imminent death!		
+		= il personaggio a cui sta parlando Lady Macbeth fa un pop dal proprio stack e assume tale valore
+		-> solo recall è utile, il resto è fuffa
+- 						
