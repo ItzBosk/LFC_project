@@ -1,4 +1,4 @@
-lexer grammar ANTLR3_Shakespeare;
+lexer grammar Shakespeare;
 
 ID  :	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
     ;
