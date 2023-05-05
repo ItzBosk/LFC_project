@@ -191,3 +191,185 @@ STRING
 
 CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
     ;
+
+// List of Nouns
+// Positive Nouns (+1)
+HEAVEN          :   'Heaven';
+KING            :   'King';
+LORD            :   'Lord';
+ANGEL           :   'angel';
+FLOWER          :   'flower';
+HAPPINESS       :   'happiness';
+JOY             :   'joy';
+PLUM            :   'plum';
+SUMMERDAY       :   'summer’s day';  // è un problema se sono scritti diversi
+HERO            :   'hero';
+ROSE            :   'rose';
+KINGDOM         :   'kingdom';
+PONY            :   'pony';
+
+// Neutral Nouns (+1)
+ANIMAL          :   'animal';
+AUNT            :   'aunt';
+BROTHER         :   'brother';
+CAT             :   'cat';
+CHIHUAHUA       :   'chihuahua';
+COUSIN          :   'cousin';
+COW             :   'cow';
+DAUGHTER        :   'daughter';
+DOOR            :   'door';
+FACE            :   'face';
+FATHER          :   'father';
+FELLOW          :   'fellow';
+GRANDDAUGHTER   :   'granddaughter';
+GRANDFATHER     :   'grandfather';
+GRANDMOTHER     :   'grandmother';
+GRANDSON        :   'grandson';
+HAIR            :   'hair';
+HAMSTER         :   'hamster';
+HORSE           :   'horse';
+LAMP            :   'lamp';
+LANTERN         :   'lantern';
+MISTLETOE       :   'mistletoe';
+MOON            :   'moon';
+MORNING         :   'morning';
+MOTHER          :   'mother';
+NEPHEW          :   'nephew';
+NIECE           :   'niece';
+NOSE            :   'nose';
+PURSE           :   'purse';
+ROAD            :   'road';
+ROMAN           :   'roman';
+SISTER          :   'sister';
+SKY             :   'sky';
+SON             :   'son';
+SQUIRREL        :   'squirrel';
+STONEWALL       :   'stone wall';   // anche se c'è uno spazio va bene? + stesso dubbio di SUMMERDAY
+THING           :   'thing';
+TOWN            :   'town';
+TREE            :   'tree';
+UNCLE           :   'uncle';
+WIND            :   'wind';
+
+// Negative Nouns (-1)
+HELL            :   'Hell';
+MICROSOFT       :   'Microsoft';
+BASTARD         :   'bastard';
+BEGGAR          :   'beggar';
+BLISTER         :   'blister';
+CODPIECE        :   'codpiece';
+COWARD          :   'coward';
+CURSE           :   'curse';
+DEATH           :   'death';
+DEVIL           :   'devil';
+DRAUGHT         :   'draught';
+FAMINE          :   'famine';
+FLIRTGILL       :   'flirt-gill';   // con sto trattino che sfaccim
+GOAT            :   'goat';
+HATE            :   'hate';
+HOG             :   'hog';
+HOUND           :   'hound';
+LEECH           :   'leech';
+LIE             :   'lie';
+PIG             :   'pig';
+PLAGUE          :   'plague';
+STARVATION      :   'starvation';
+TOAD            :   'toad';
+WAR             :   'war';
+WOLF            :   'wolf';
+
+
+// List of Adjectives
+// Positive Adjectives
+AMAZING         :   'amazing';
+BEAUTIFUL       :   'beautiful';
+BLOSSOMING      :   'blossoming';
+BOLD            :   'bold';
+BRAVE           :   'brave';
+CHARMING        :   'charming';
+CLEAREST        :   'clearest';
+CUNNING         :   'cunning';
+CUTE            :   'cute';
+DELICIOUS       :   'delicious';
+EMBROIDERED     :   'embroidered';
+FAIR            :   'fair';
+FINE            :   'fine';
+GENTLE          :   'gentle';
+GOLDEN          :   'golden';
+GOOD            :   'good';
+HANDSOME        :   'handsome';
+HAPPY           :   'happy';
+HEALTHY         :   'healthy';
+HONEST          :   'honest';
+LOVELY          :   'lovely';
+LOVING          :   'loving';
+MIGHTY          :   'mighty';
+NOBLE           :   'noble';
+PEACEFUL        :   'peaceful';
+PRETTY          :   'pretty';
+PROMPT          :   'prompt';
+PROUD           :   'proud';
+REDDEST         :   'reddest';
+RICH            :   'rich';
+SMOOTH          :   'smooth';
+SUNNY           :   'sunny';
+SWEET           :   'sweet';
+SWEETEST        :   'sweetest';
+TRUSTWORTHY     :   'trustworthy';
+WARM            :   'warm';
+
+// Neutral Adjectives
+BIG             :   'big';
+BLACK           :   'black';
+BLUE            :   'blue';
+BLUEST          :   'bluest';
+BOTTOMLESS      :   'bottomless';
+FURRY           :   'furry';
+GREEN           :   'green';
+HARD            :   'hard';
+HUGE            :   'huge';
+LARGE           :   'large';
+LITTLE          :   'little';
+NORMAL          :   'normal';
+OLD             :   'old';
+PURPLE          :   'purple';
+RED             :   'red';
+RURAL           :   'rural';
+SMALL           :   'small';
+TINY            :   'tiny';
+WHITE           :   'white';
+YELLOW          :   'yellow';
+
+// Negative Adjectives
+BAD             :   'bad';
+COWARDLY        :   'cowardly';
+CURSED          :   'cursed';
+DAMNED          :   'damned';
+DIRTY           :   'dirty';
+DISGUSTING      :   'disgusting';
+DISTASTEFUL     :   'distasteful';
+DUSTY           :   'dusty';
+EVIL            :   'evil';
+FAT             :   'fat';
+FATKIDNEYED     :   'fat-kidneyed';  // doubts
+FATHERLESS      :   'fatherless';
+FOUL            :   'foul';
+HAIRY           :   'hairy';
+HALFWITTED      :   'half-witted';  // doubts
+HORRIBLE        :   'horrible';
+HORRID          :   'horrid';
+INFECTED        :   'infected';
+LYING           :   'lying';
+MISERABLE       :   'miserable';
+MISUSED         :   'misused';
+OOZING          :   'oozing';
+ROTTEN          :   'rotten';
+SMELLY          :   'smelly';
+SNOTTY          :   'snotty';
+SORRY           :   'sorry';
+STINKING        :   'stinking';
+STUFFED         :   'stuffed';
+STUPID          :   'stupid';
+VILE            :   'vile';
+VILLAINOUS      :   'villainous';
+WORRIED         :   'worried';
