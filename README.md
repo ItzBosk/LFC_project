@@ -1,2 +1,4 @@
 # LFC_project
-Progetto per il laboratorio di Linguaggi formali e compilatori
+Project for LFC Lab
+
+See [Language Notes](Language_notes.md) for more details about how the Shakespeare language works
