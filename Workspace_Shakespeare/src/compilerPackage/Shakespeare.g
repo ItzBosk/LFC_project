@@ -31,6 +31,7 @@ parseJava
 **	 aka Lexer, aka Scanner
 ***************************** */
 
+// sbaglio o non servono questi fragement?
 fragment
 EXPONENT : ('e'|'E') ('+'|'-')? ('0'..'9')+ ;
 
@@ -61,21 +62,25 @@ LETTER : 'a'..'z'|'A'..'Z';
 fragment 
 DIGIT : '0'..'9';
 
+// da rivedere
 // comparatori
-ASSING	: '=';
-EQ 			: '==';
-NEQ 		: '!=';
-GT 			: '>';
-GE			: '>=';
-LT 			: '<';
+EQ 			: 'Is' CHARACTER 'as' GOOD 'as' 'CHARACTER';
+GT 			: 'Is' CHARACTER NICEADJECTIVE 'than' 'CHARACTER';
+LT 			: 'Is' CHARACTER BADADJECTIVE 'than' 'CHARACTER';
+// due dubbi:
+// - NICEADJECTIVE e BADADJECTIVE si ricavano da Positive Adjectives e Negative Adjectives, solo ho casi diversi in base all'aggettivo (amazing -> more amazing than, brave -> braver than)
+// - come gestisco casi come "Am I as miserable as a blister?", nel senso si usa sempre questa forma e quindi bisogna cambiare sopra? e un personaggio può comparare solo se stesso con altri oppure  X può comparare Y e Z?
 
 // punteggiatura
-AT	: '@';
-CL 	:	':';
-CM 	:	',';
-DOT : '.';
-SC 	: ';';
+CL 	  :	':';
+CM 	  :	',';
+DOT   : '.';
+SC 	  : ';';
+AP    : ''';
+EP    : '!';
+QM    : '?';
 
+// dovrebbero esserci solo le []
 // parentesi
 LP 	: '(';		// Parenthesis
 RP 	: ')';
@@ -84,13 +89,17 @@ RB	:	']';
 LBR	:	'{';		// BRaces
 RBR	:	'}';
 
+// da capire meglio, esempio:
+// You are as tiny as the sum of yourself and a hamster. -> Adds one to Puck
 // operatori
-ADD		: '+';
+// si gioca ancora parole nice e non (da capire meglio)
+ADD		: 'sum';
 SUB		: '-';
 STAR	: '*';
 DIV		: '/';
 MOD		:	'%';
 
+// non dovrebbero esserci, toglierei
 // operatori logici
 NOT			:	'!';
 AND			: '&&';
@@ -99,12 +108,15 @@ XOR			: '^';
 AND_BIT :	'&';
 OR_BIT 	:	'|';
 
+// non dovrebbero esserci, toglierei
 // basic types
 VOID 				:	'void';
 // attenzione...
 BASIC_TYPE 	: 'int' 	| 'long'		| 'short' 	| 
 							'float' |	'double'	| 'boolean' | 
 							'char'	|	'String';
+
+// non dovrebbero esserci, toglierei
 /* attenzione
 VOID 			:	'void';
 BOOLEAN		:	'boolean';
@@ -118,66 +130,114 @@ STRING		:	'String'; // attenzione
 */							
 							
 // keywords
-ABSTRACT			:	'abstract';
-ASSERT				:	'assert';
-BREAK					:	'break';
-BYTE					:	'byte';
-CASE					:	'case';
-CATCH					:	'catch';
-CLASS					:	'class';
-CONTINUE			:	'continue';
-DEFAULT				:	'default';
-DO						:	'do';
-ELSE					:	'else';
-ENUM					:	'enum';
-EXTENDS				:	'extends';
-FINAL					:	'final';
-FINALLY				:	'finally';
-FOR						:	'for';
-IF						:	'if';
-IMPLEMENTS		:	'implements';
-IMPORT				:	'import';
-INSTANCEOF		:	'instanceof';
-INTERFACE			:	'interface';
-NATIVE				:	'native';
-NEW						:	'new';
-PACKAGE				:	'package';
-PRIVATE				:	'private';
-PROTECTED			:	'protected';
-PUBLIC				:	'public';
-RETURN				:	'return';
-STATIC				:	'static';
-SUPER					:	'super';
-SWITCH				:	'switch';
-SYNCHRONIZED	:	'synchronized';
-THIS					:	'this';
-THROW					:	'throw';
-THROWS				:	'throws';
-TRANSIENT			:	'transient';
-TRY						:	'try';
-VOLATILE			:	'volatile';
-WHILE					:	'while';
+ACT			    :	'Act';
+SCENE           :   'Scene';
+ENTER           :   'Enter';
+EXIT            :   'Exit';
+EXEUNT          :   'Exeunt';
+GOTO            :   'goto';       
+// le prossime hanno senso/si può fare?
+OUTPUTVALUE     :   'Open your heart';  
+OUTPUTASCII     :   'Speak your mind';
+INPUTVALUE      :   'Open your mind';  
+INPUTASCII      :   'Listen to your heart';
 
-		
+// ho visto questo esempio:
+// Are you fresher than nothing? -> Checks to see if Puck is holding a zero
+// quindi ho pensato di aggiungere lo zero, solo non so in che sezione metterlo, nel dubbio:
+ZERO            :   'nothing';
+
+// Characters
+ROMEO           :   'Romeo';
+JULIET          :   'Juliet';
+GHOST           :   'Ghost';
+LADYMACBETH     :   'LadyMacbeth';
+OFELIA          :   'Ofelia';
+TEBALDO         :   'Tebaldo';
+CLAUDIO         :   'Claudio';
+MERCUZIO        :   'Mercuzio';
+BANQUO          :   'Banquo';
+FULGENCIO       :   'Fulgencio';
+GERTRUDE        :   'Gertrude';
+DESDEMONA       :   'Desdemona';
+JAGO            :   'Jago';
+POLONIO         :   'Polonio';
+MACDUFF         :   'Macduff';
+SHYLOCK         :   'Shylock';
+LAERTE          :   'Laerte';
+ORAZIO          :   'Orazio';
+PROSPERO        :   'Prospero';
+
+CHARACTER
+    :   ROMEO
+    :   JULIET
+    :   GHOST
+    :   LADYMACBETH
+    :   OFELIA
+    :   TEBALDO
+    :   CLAUDIO
+    :   MERCUZIO
+    :   BANQUO
+    :   FULGENCIO
+    :   GERTRUDE
+    :   DESDEMONA
+    :   JAGO
+    :   POLONIO
+    :   MACDUFF
+    :   SHYLOCK
+    :   LAERTE
+    :   ORAZIO
+    :   PROSPERO
+    ;
+
+// credo togliere
 ID  :	( LETTER |'_') 
 			( LETTER |DIGIT |'_')*
     ;
 
-
+// non dovrebbero esserci, toglierei
 INTEGER :	DIGIT+
     ;
 
+// non dovrebbero esserci, toglierei
 FLOAT
     :   DIGIT+ '.' DIGIT* EXPONENT?
     |   '.' DIGIT+ EXPONENT?
     |   DIGIT+ EXPONENT
     ;
 
+
+// Romanian numbers https://gjdanis.github.io/2016/01/23/roman/
+// Basic numbers
+ONE         : 'I';
+FIVE        : 'V';
+TEN         : 'X';
+FIFTY       : 'L';
+ONEHUNDRED  : 'C';
+FIVEHUNDRED : 'D';
+ONETHOUSAND : 'M';
+
+ROOT  : (ONETHOUSAND)* HUNDREDS? TENS? UNITS?;
+
+// I, II, III, IV, IX or V VI, VII, VIII
+UNITS : ONE ((ONE)* | FIVE  | TEN) | FIVE (ONE)*;
+// così però si può avere IIII, abbiamo visto solo * o +, non come
+// limitarle, penso serva qualcosa come: ONE | ONE ONE| ONE ONE ONE
+
+// X, XX, XXX, XL, XC or L, LX, LXX, LXXX
+TENS  : TEN ((TEN)* | FIFTY | ONEHUNDRED) | FIFTY (TEN)*;
+
+// C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
+HUNDREDS : ONEHUNDRED ((ONEHUNDRED)* | FIVEHUNDRED | ONETHOUSAND) | FIVEHUNDRED (ONEHUNDRED)*; 
+
+
+// non dovrebbero esserci, toglierei
 COMMENT
     :   ('//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
     |   '/*' ( options {greedy=false;} : . )* '*/') {$channel=HIDDEN;}
     ;
 
+// penso serva
 WS  :   ( ' '
         | '\t'
         | '\r'
@@ -185,10 +245,12 @@ WS  :   ( ' '
         )+ {$channel=HIDDEN;}
     ;
 
+// non credo serva
 STRING
     :  '"' ( ESC_SEQ | ~('\\'|'"') )* '"'
     ;
 
+// non credo serva
 CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
     ;
 
@@ -207,6 +269,22 @@ HERO            :   'hero';
 ROSE            :   'rose';
 KINGDOM         :   'kingdom';
 PONY            :   'pony';
+
+POSITIVENOUN
+    :   HEAVEN
+    |   KING
+    |   LORD
+    |   ANGEL
+    |   FLOWER
+    |   HAPPINESS
+    |   JOY
+    |   PLUM
+    |   SUMMERDAY
+    |   HERO
+    |   ROSE
+    |   KINGDOM
+    |   PONY
+    ;
 
 // Neutral Nouns (+1)
 ANIMAL          :   'animal';
@@ -251,6 +329,50 @@ TREE            :   'tree';
 UNCLE           :   'uncle';
 WIND            :   'wind';
 
+NEUTRALNOUN
+    :   ANIMAL
+    |   AUNT
+    |   BROTHER
+    |   CAT
+    |   CHIHUAHUA
+    |   COUSIN
+    |   COW
+    |   DAUGHTER
+    |   DOOR
+    |   FACE
+    |   FATHER
+    |   FELLOW
+    |   GRANDDAUGHTER
+    |   GRANDFATHER
+    |   GRANDMOTHER
+    |   GRANDSON
+    |   HAIR
+    |   HAMSTER
+    |   HORSE
+    |   LAMP
+    |   LANTERN
+    |   MISTLETOE
+    |   MOON
+    |   MORNING
+    |   MOTHER
+    |   NEPHEW
+    |   NIECE
+    |   NOSE
+    |   PURSE
+    |   ROAD
+    |   ROMAN
+    |   SISTER
+    |   SKY
+    |   SON
+    |   SQUIRREL
+    |   STONEWALL
+    |   THING
+    |   TOWN
+    |   TREE
+    |   UNCLE
+    |   WIND
+    ;
+
 // Negative Nouns (-1)
 HELL            :   'Hell';
 MICROSOFT       :   'Microsoft';
@@ -278,6 +400,34 @@ TOAD            :   'toad';
 WAR             :   'war';
 WOLF            :   'wolf';
 
+NEGATIVENOUN
+    :   HEAVEN
+    |   HELL
+    |   MICROSOFT
+    |   BASTARD
+    |   BEGGAR
+    |   BLISTER
+    |   CODPIECE
+    |   COWARD
+    |   CURSE
+    |   DEATH
+    |   DEVIL
+    |   DRAUGHT
+    |   FAMINE
+    |   FLIRTGILL
+    |   GOAT
+    |   HATE
+    |   HOG
+    |   HOUND
+    |   LEECH
+    |   LIE
+    |   PIG
+    |   PLAGUE
+    |   STARVATION
+    |   TOAD
+    |   WAR
+    |   WOLF
+    ;
 
 // List of Adjectives
 // Positive Adjectives
@@ -318,6 +468,45 @@ SWEETEST        :   'sweetest';
 TRUSTWORTHY     :   'trustworthy';
 WARM            :   'warm';
 
+POSITIVEADJECTIVES
+    :   AMAZING
+    |   BEAUTIFUL
+    |   BLOSSOMING
+    |   BOLD
+    |   BRAVE
+    |   CHARMING
+    |   CLEAREST
+    |   CUNNING
+    |   CUTE
+    |   DELICIOUS
+    |   EMBROIDERED
+    |   FAIR
+    |   FINE
+    |   GENTLE
+    |   GOLDEN
+    |   GOOD
+    |   HANDSOME
+    |   HAPPY
+    |   HEALTHY
+    |   HONEST
+    |   LOVELY
+    |   LOVING
+    |   MIGHTY
+    |   NOBLE
+    |   PEACEFUL
+    |   PRETTY
+    |   PROMPT
+    |   PROUD
+    |   REDDEST
+    |   RICH
+    |   SMOOTH
+    |   SUNNY
+    |   SWEET
+    |   SWEETEST
+    |   TRUSTWORTHY
+    |   WARM
+    ;
+
 // Neutral Adjectives
 BIG             :   'big';
 BLACK           :   'black';
@@ -339,6 +528,29 @@ SMALL           :   'small';
 TINY            :   'tiny';
 WHITE           :   'white';
 YELLOW          :   'yellow';
+
+NEUTRALADJECTIVES
+    :   BIG
+    |   BLACK
+    |   BLUE
+    |   BLUEST
+    |   BOTTOMLESS
+    |   FURRY
+    |   GREEN
+    |   HARD
+    |   HUGE
+    |   LARGE
+    |   LITTLE
+    |   NORMAL
+    |   OLD
+    |   PURPLE
+    |   RED
+    |   RURAL
+    |   SMALL
+    |   TINY
+    |   WHITE
+    |   YELLOW
+    ;
 
 // Negative Adjectives
 BAD             :   'bad';
@@ -373,3 +585,38 @@ STUPID          :   'stupid';
 VILE            :   'vile';
 VILLAINOUS      :   'villainous';
 WORRIED         :   'worried';
+
+NEGATIVEADJECTIVES
+    :   BAD
+    |   COWARDLY
+    |   CURSED
+    |   DAMNED
+    |   DIRTY
+    |   DISGUSTING
+    |   DISTASTEFUL
+    |   DUSTY
+    |   EVIL
+    |   FAT
+    |   FATKIDNEYED
+    |   FATHERLESS
+    |   FOUL
+    |   HAIRY
+    |   HALFWITTED
+    |   HORRIBLE
+    |   HORRID
+    |   INFECTED
+    |   LYING
+    |   MISERABLE
+    |   MISUSED
+    |   OOZING
+    |   ROTTEN
+    |   SMELLY
+    |   SNOTTY
+    |   SORRY
+    |   STINKING
+    |   STUFFED
+    |   STUPID
+    |   VILE
+    |   VILLAINOUS
+    |   WORRIED
+    ;
