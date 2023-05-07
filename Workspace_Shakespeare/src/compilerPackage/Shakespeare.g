@@ -31,7 +31,7 @@ parseJava
 **	 aka Lexer, aka Scanner
 ***************************** */
 
-// sbaglio o non servono questi fragement?
+// quali teniamo?
 fragment
 EXPONENT : ('e'|'E') ('+'|'-')? ('0'..'9')+ ;
 
@@ -62,23 +62,26 @@ LETTER : 'a'..'z'|'A'..'Z';
 fragment 
 DIGIT : '0'..'9';
 
+
 // da rivedere
 // comparatori
-EQ 			: 'Is' CHARACTER 'as' GOOD 'as' 'CHARACTER';
-GT 			: 'Is' CHARACTER NICEADJECTIVE 'than' 'CHARACTER';
-LT 			: 'Is' CHARACTER BADADJECTIVE 'than' 'CHARACTER';
+EQ 	:	'Is' CHARACTER 'as' GOOD 'as' 'CHARACTER';
+GT 	: 	'Is' CHARACTER POSITIVEADJECTIVE 'than' 'CHARACTER';
+LT 	: 	'Is' CHARACTER NEGATIVEADJECTIVE 'than' 'CHARACTER';
 // due dubbi:
 // - NICEADJECTIVE e BADADJECTIVE si ricavano da Positive Adjectives e Negative Adjectives, solo ho casi diversi in base all'aggettivo (amazing -> more amazing than, brave -> braver than)
 // - come gestisco casi come "Am I as miserable as a blister?", nel senso si usa sempre questa forma e quindi bisogna cambiare sopra? e un personaggio può comparare solo se stesso con altri oppure  X può comparare Y e Z?
 
+
 // punteggiatura
-CL 	  :	':';
-CM 	  :	',';
-DOT   : '.';
-SC 	  : ';';
-AP    : ''';
-EP    : '!';
-QM    : '?';
+CL 	:	':';
+CM 	:	',';
+DOT   	: 	'.';
+SC 	:	';';
+AP    	:	''';
+EP    	: 	'!';
+QM    	:	'?';
+
 
 // dovrebbero esserci solo le []
 // parentesi
@@ -89,15 +92,17 @@ RB	:	']';
 LBR	:	'{';		// BRaces
 RBR	:	'}';
 
+
 // da capire meglio, esempio:
 // You are as tiny as the sum of yourself and a hamster. -> Adds one to Puck
 // operatori
 // si gioca ancora parole nice e non (da capire meglio)
-ADD		: 'sum';
-SUB		: '-';
-STAR	: '*';
-DIV		: '/';
-MOD		:	'%';
+ADD	:	'sum';
+SUB	:	'-';
+STAR	:	'*';
+DIV	:	'/';
+MOD	:	'%';
+
 
 // non dovrebbero esserci, toglierei
 // operatori logici
@@ -108,6 +113,7 @@ XOR			: '^';
 AND_BIT :	'&';
 OR_BIT 	:	'|';
 
+
 // non dovrebbero esserci, toglierei
 // basic types
 VOID 				:	'void';
@@ -115,6 +121,7 @@ VOID 				:	'void';
 BASIC_TYPE 	: 'int' 	| 'long'		| 'short' 	| 
 							'float' |	'double'	| 'boolean' | 
 							'char'	|	'String';
+
 
 // non dovrebbero esserci, toglierei
 /* attenzione
@@ -128,24 +135,51 @@ LONG			:	'long';
 SHORT			:	'short';
 STRING		:	'String'; // attenzione
 */							
-							
+		
+					
 // keywords
-ACT			    :	'Act';
-SCENE           :   'Scene';
-ENTER           :   'Enter';
-EXIT            :   'Exit';
-EXEUNT          :   'Exeunt';
-GOTO            :   'goto';       
+ACT		:	'Act';
+SCENE		:	'Scene';	
+ENTER           :   	'Enter';
+EXIT            :   	'Exit';
+EXEUNT          :   	'Exeunt';
+GOTO            :   	'goto';       
 // le prossime hanno senso/si può fare?
-OUTPUTVALUE     :   'Open your heart';  
-OUTPUTASCII     :   'Speak your mind';
-INPUTVALUE      :   'Open your mind';  
-INPUTASCII      :   'Listen to your heart';
+OUTPUTVALUE     :   	'Open your heart';  
+OUTPUTASCII     :   	'Speak your mind';
+INPUTVALUE      :   	'Open your mind';  
+INPUTASCII      :   	'Listen to your heart';
+
 
 // ho visto questo esempio:
 // Are you fresher than nothing? -> Checks to see if Puck is holding a zero
 // quindi ho pensato di aggiungere lo zero, solo non so in che sezione metterlo, nel dubbio:
-ZERO            :   'nothing';
+ZERO            :   	'nothing';
+
+
+// Romanian numbers (https://gjdanis.github.io/2016/01/23/roman/)
+// Basic numbers
+ONE         : 'I';
+FIVE        : 'V';
+TEN         : 'X';
+FIFTY       : 'L';
+ONEHUNDRED  : 'C';
+FIVEHUNDRED : 'D';
+ONETHOUSAND : 'M';
+
+ROOT		:	(ONETHOUSAND)* HUNDREDS? TENS? UNITS?;
+
+// I, II, III, IV, IX or V VI, VII, VIII
+UNITS		:	ONE ((ONE)* | FIVE  | TEN) | FIVE (ONE)*;
+// così però si può avere IIII, abbiamo visto solo * o +, non come
+// limitarle, penso serva qualcosa come: ONE | ONE ONE| ONE ONE ONE
+
+// X, XX, XXX, XL, XC or L, LX, LXX, LXXX
+TENS 		:	TEN ((TEN)* | FIFTY | ONEHUNDRED) | FIFTY (TEN)*;
+
+// C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
+HUNDREDS	:	ONEHUNDRED ((ONEHUNDRED)* | FIVEHUNDRED | ONETHOUSAND) | FIVEHUNDRED (ONEHUNDRED)*; 
+
 
 // Characters
 ROMEO           :   'Romeo';
@@ -188,70 +222,6 @@ CHARACTER
     :   LAERTE
     :   ORAZIO
     :   PROSPERO
-    ;
-
-// credo togliere
-ID  :	( LETTER |'_') 
-			( LETTER |DIGIT |'_')*
-    ;
-
-// non dovrebbero esserci, toglierei
-INTEGER :	DIGIT+
-    ;
-
-// non dovrebbero esserci, toglierei
-FLOAT
-    :   DIGIT+ '.' DIGIT* EXPONENT?
-    |   '.' DIGIT+ EXPONENT?
-    |   DIGIT+ EXPONENT
-    ;
-
-
-// Romanian numbers https://gjdanis.github.io/2016/01/23/roman/
-// Basic numbers
-ONE         : 'I';
-FIVE        : 'V';
-TEN         : 'X';
-FIFTY       : 'L';
-ONEHUNDRED  : 'C';
-FIVEHUNDRED : 'D';
-ONETHOUSAND : 'M';
-
-ROOT  : (ONETHOUSAND)* HUNDREDS? TENS? UNITS?;
-
-// I, II, III, IV, IX or V VI, VII, VIII
-UNITS : ONE ((ONE)* | FIVE  | TEN) | FIVE (ONE)*;
-// così però si può avere IIII, abbiamo visto solo * o +, non come
-// limitarle, penso serva qualcosa come: ONE | ONE ONE| ONE ONE ONE
-
-// X, XX, XXX, XL, XC or L, LX, LXX, LXXX
-TENS  : TEN ((TEN)* | FIFTY | ONEHUNDRED) | FIFTY (TEN)*;
-
-// C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
-HUNDREDS : ONEHUNDRED ((ONEHUNDRED)* | FIVEHUNDRED | ONETHOUSAND) | FIVEHUNDRED (ONEHUNDRED)*; 
-
-
-// non dovrebbero esserci, toglierei
-COMMENT
-    :   ('//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
-    |   '/*' ( options {greedy=false;} : . )* '*/') {$channel=HIDDEN;}
-    ;
-
-// penso serva
-WS  :   ( ' '
-        | '\t'
-        | '\r'
-        | '\n'
-        )+ {$channel=HIDDEN;}
-    ;
-
-// non credo serva
-STRING
-    :  '"' ( ESC_SEQ | ~('\\'|'"') )* '"'
-    ;
-
-// non credo serva
-CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
     ;
 
 // List of Nouns
@@ -468,7 +438,7 @@ SWEETEST        :   'sweetest';
 TRUSTWORTHY     :   'trustworthy';
 WARM            :   'warm';
 
-POSITIVEADJECTIVES
+POSITIVEADJECTIVE
     :   AMAZING
     |   BEAUTIFUL
     |   BLOSSOMING
@@ -529,7 +499,7 @@ TINY            :   'tiny';
 WHITE           :   'white';
 YELLOW          :   'yellow';
 
-NEUTRALADJECTIVES
+NEUTRALADJECTIVE
     :   BIG
     |   BLACK
     |   BLUE
@@ -586,7 +556,7 @@ VILE            :   'vile';
 VILLAINOUS      :   'villainous';
 WORRIED         :   'worried';
 
-NEGATIVEADJECTIVES
+NEGATIVEADJECTIVE
     :   BAD
     |   COWARDLY
     |   CURSED
@@ -620,3 +590,43 @@ NEGATIVEADJECTIVES
     |   VILLAINOUS
     |   WORRIED
     ;
+
+// credo servano
+ID  :	( LETTER |'_') 
+			( LETTER |DIGIT |'_')*
+    ;
+
+// non dovrebbero esserci, toglierei
+INTEGER :	DIGIT+
+    ;
+
+// non dovrebbero esserci, toglierei
+FLOAT
+    :   DIGIT+ '.' DIGIT* EXPONENT?
+    |   '.' DIGIT+ EXPONENT?
+    |   DIGIT+ EXPONENT
+    ;
+
+// non dovrebbero esserci, toglierei
+COMMENT
+    :   ('//' ~('\n'|'\r')* '\r'? '\n' {$channel=HIDDEN;}
+    |   '/*' ( options {greedy=false;} : . )* '*/') {$channel=HIDDEN;}
+    ;
+
+// penso serva
+WS  :   ( ' '
+        | '\t'
+        | '\r'
+        | '\n'
+        )+ {$channel=HIDDEN;}
+    ;
+
+// non credo serva
+STRING
+    :  '"' ( ESC_SEQ | ~('\\'|'"') )* '"'
+    ;
+
+// non credo serva
+CHAR:  '\'' ( ESC_SEQ | ~('\''|'\\') ) '\''
+    ;
+
