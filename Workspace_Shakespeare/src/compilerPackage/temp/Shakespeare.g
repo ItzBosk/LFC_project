@@ -221,24 +221,24 @@ PROSPERO        :   'Prospero';
 
 CHARACTER
     :   ROMEO
-    :   JULIET
-    :   GHOST
-    :   LADYMACBETH
-    :   OFELIA
-    :   TEBALDO
-    :   CLAUDIO
-    :   MERCUZIO
-    :   BANQUO
-    :   FULGENCIO
-    :   GERTRUDE
-    :   DESDEMONA
-    :   JAGO
-    :   POLONIO
-    :   MACDUFF
-    :   SHYLOCK
-    :   LAERTE
-    :   ORAZIO
-    :   PROSPERO
+    |   JULIET
+    |   GHOST
+    |   LADYMACBETH
+    |   OFELIA
+    |   TEBALDO
+    |   CLAUDIO
+    |   MERCUZIO
+    |   BANQUO
+    |   FULGENCIO
+    |   GERTRUDE
+    |   DESDEMONA
+    |   JAGO
+    |   POLONIO
+    |   MACDUFF
+    |   SHYLOCK
+    |   LAERTE
+    |   ORAZIO
+    |   PROSPERO
     ;
 
 // List of Nouns
