@@ -1,6 +1,6 @@
 // $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-05 14:16:43
 
-	package compilerPackage;
+	package compilerPackage.temp;
 
 
 import org.antlr.runtime.*;

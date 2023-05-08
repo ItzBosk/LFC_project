@@ -1,6 +1,7 @@
-// $ANTLR 3.5.1 D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-07 18:28:38
+// $ANTLR 3.5.1 D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-08 16:43:11
 
-package compilerPackage;
+	package compilerPackage;
+
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -9,16 +10,54 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class ShakespeareParser extends Parser {
-	public static final String[] tokenNames = new String[] { "<invalid>", "<EOR>", "<DOWN>", "<UP>", "CL", "DIGIT",
-			"DOT", "EP", "ID", "LETTER", "QM" };
-	public static final int EOF = -1;
-	public static final int CL = 4;
-	public static final int DIGIT = 5;
-	public static final int DOT = 6;
-	public static final int EP = 7;
-	public static final int ID = 8;
-	public static final int LETTER = 9;
-	public static final int QM = 10;
+	public static final String[] tokenNames = new String[] {
+		"<invalid>", "<EOR>", "<DOWN>", "<UP>", "ACT", "CHARACTER", "CL", "CM", 
+		"DIGIT", "DOT", "ENTER", "EP", "EXEUNT", "EXIT", "FIFTY", "FIVE", "FIVEHUNDRED", 
+		"GOTO", "HUNDREDS", "ID", "INPUTASCII", "INPUTVALUE", "LB", "LETTER", 
+		"NEGATIVEADJECTIVE", "NEGATIVENOUN", "NEUTRALADJECTIVE", "NEUTRALNOUN", 
+		"ONE", "ONEHUNDRED", "ONETHOUSAND", "OUTPUTASCII", "OUTPUTVALUE", "POSITIVEADJECTIVE", 
+		"POSITIVENOUN", "QM", "RB", "ROOT", "SCENE", "TEN", "TENS", "UNITS", "WS"
+	};
+	public static final int EOF=-1;
+	public static final int ACT=4;
+	public static final int CHARACTER=5;
+	public static final int CL=6;
+	public static final int CM=7;
+	public static final int DIGIT=8;
+	public static final int DOT=9;
+	public static final int ENTER=10;
+	public static final int EP=11;
+	public static final int EXEUNT=12;
+	public static final int EXIT=13;
+	public static final int FIFTY=14;
+	public static final int FIVE=15;
+	public static final int FIVEHUNDRED=16;
+	public static final int GOTO=17;
+	public static final int HUNDREDS=18;
+	public static final int ID=19;
+	public static final int INPUTASCII=20;
+	public static final int INPUTVALUE=21;
+	public static final int LB=22;
+	public static final int LETTER=23;
+	public static final int NEGATIVEADJECTIVE=24;
+	public static final int NEGATIVENOUN=25;
+	public static final int NEUTRALADJECTIVE=26;
+	public static final int NEUTRALNOUN=27;
+	public static final int ONE=28;
+	public static final int ONEHUNDRED=29;
+	public static final int ONETHOUSAND=30;
+	public static final int OUTPUTASCII=31;
+	public static final int OUTPUTVALUE=32;
+	public static final int POSITIVEADJECTIVE=33;
+	public static final int POSITIVENOUN=34;
+	public static final int QM=35;
+	public static final int RB=36;
+	public static final int ROOT=37;
+	public static final int SCENE=38;
+	public static final int TEN=39;
+	public static final int TENS=40;
+	public static final int UNITS=41;
+	public static final int WS=42;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -27,85 +66,350 @@ public class ShakespeareParser extends Parser {
 
 	// delegators
 
+
 	public ShakespeareParser(TokenStream input) {
 		this(input, new RecognizerSharedState());
 	}
-
 	public ShakespeareParser(TokenStream input, RecognizerSharedState state) {
 		super(input, state);
 	}
 
-	@Override
-	public String[] getTokenNames() {
-		return ShakespeareParser.tokenNames;
-	}
+	@Override public String[] getTokenNames() { return ShakespeareParser.tokenNames; }
+	@Override public String getGrammarFileName() { return "D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
 
-	@Override
-	public String getGrammarFileName() {
-		return ".\\src\\compilerPackage\\Shakespeare.g";
-	}
+
+
+
+
 
 	// $ANTLR start "parseSPL"
-	// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-	// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:24:1:
-	// parseSPL : title ;
+	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:24:1: parseSPL : title ;
 	public final void parseSPL() throws RecognitionException {
 		try {
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:25:2:
-			// ( title )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:26:2:
-			// title
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:25:2: ( title )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:26:2: title
 			{
-				System.out.println("* Sto per riconoscere un documento Shakespeare");
-				pushFollow(FOLLOW_title_in_parseSPL60);
-				title();
-				state._fsp--;
+			System.out.println("* Sto per riconoscere un documento Shakespeare");
+			pushFollow(FOLLOW_title_in_parseSPL56);
+			title();
+			state._fsp--;
 
-				System.out.println("    - Ho riconosciuto un documento Shakespeare");
+			System.out.println("    - Ho riconosciuto un documento Shakespeare");
 			}
 
-		} catch (RecognitionException re) {
+		}
+		catch (RecognitionException re) {
 			reportError(re);
-			recover(input, re);
-		} finally {
+			recover(input,re);
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
 	// $ANTLR end "parseSPL"
 
+
+
 	// $ANTLR start "title"
-	// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-	// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:34:1:
-	// title : ID DOT ;
+	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:33:1: title : ID DOT ( WS )? ( dramatisPersonae )+ acts scenes ;
 	public final void title() throws RecognitionException {
 		try {
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:35:2:
-			// ( ID DOT )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:36:2:
-			// ID DOT
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:34:2: ( ID DOT ( WS )? ( dramatisPersonae )+ acts scenes )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:35:2: ID DOT ( WS )? ( dramatisPersonae )+ acts scenes
 			{
-				System.out.println("* Sto per riconoscere il titolo");
-				match(input, ID, FOLLOW_ID_in_title78);
-				match(input, DOT, FOLLOW_DOT_in_title80);
-				System.out.println("    - Ho riconosciuto il titolo");
+			System.out.println("* Sto per riconoscere il titolo");
+			match(input,ID,FOLLOW_ID_in_title76); 
+			match(input,DOT,FOLLOW_DOT_in_title78); 
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:36:9: ( WS )?
+			int alt1=2;
+			int LA1_0 = input.LA(1);
+			if ( (LA1_0==WS) ) {
+				alt1=1;
+			}
+			switch (alt1) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:36:9: WS
+					{
+					match(input,WS,FOLLOW_WS_in_title80); 
+					}
+					break;
+
 			}
 
-		} catch (RecognitionException re) {
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:37:2: ( dramatisPersonae )+
+			int cnt2=0;
+			loop2:
+			while (true) {
+				int alt2=2;
+				int LA2_0 = input.LA(1);
+				if ( (LA2_0==CHARACTER) ) {
+					alt2=1;
+				}
+
+				switch (alt2) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:37:2: dramatisPersonae
+					{
+					pushFollow(FOLLOW_dramatisPersonae_in_title84);
+					dramatisPersonae();
+					state._fsp--;
+
+					}
+					break;
+
+				default :
+					if ( cnt2 >= 1 ) break loop2;
+					EarlyExitException eee = new EarlyExitException(2, input);
+					throw eee;
+				}
+				cnt2++;
+			}
+
+			pushFollow(FOLLOW_acts_in_title89);
+			acts();
+			state._fsp--;
+
+			pushFollow(FOLLOW_scenes_in_title92);
+			scenes();
+			state._fsp--;
+
+			System.out.println("    - Ho riconosciuto il titolo");
+			}
+
+		}
+		catch (RecognitionException re) {
 			reportError(re);
-			recover(input, re);
-		} finally {
+			recover(input,re);
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
 	// $ANTLR end "title"
 
+
+
+	// $ANTLR start "dramatisPersonae"
+	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:43:1: dramatisPersonae : CHARACTER ( WS )? CM ( WS )? ( ID )* DOT ( WS )? ;
+	public final void dramatisPersonae() throws RecognitionException {
+		try {
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:44:2: ( CHARACTER ( WS )? CM ( WS )? ( ID )* DOT ( WS )? )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:45:2: CHARACTER ( WS )? CM ( WS )? ( ID )* DOT ( WS )?
+			{
+			System.out.println("* Sto per riconoscere un attore");
+			match(input,CHARACTER,FOLLOW_CHARACTER_in_dramatisPersonae110); 
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:12: ( WS )?
+			int alt3=2;
+			int LA3_0 = input.LA(1);
+			if ( (LA3_0==WS) ) {
+				alt3=1;
+			}
+			switch (alt3) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:12: WS
+					{
+					match(input,WS,FOLLOW_WS_in_dramatisPersonae112); 
+					}
+					break;
+
+			}
+
+			match(input,CM,FOLLOW_CM_in_dramatisPersonae115); 
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:19: ( WS )?
+			int alt4=2;
+			int LA4_0 = input.LA(1);
+			if ( (LA4_0==WS) ) {
+				alt4=1;
+			}
+			switch (alt4) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:19: WS
+					{
+					match(input,WS,FOLLOW_WS_in_dramatisPersonae117); 
+					}
+					break;
+
+			}
+
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:23: ( ID )*
+			loop5:
+			while (true) {
+				int alt5=2;
+				int LA5_0 = input.LA(1);
+				if ( (LA5_0==ID) ) {
+					alt5=1;
+				}
+
+				switch (alt5) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:23: ID
+					{
+					match(input,ID,FOLLOW_ID_in_dramatisPersonae120); 
+					}
+					break;
+
+				default :
+					break loop5;
+				}
+			}
+
+			match(input,DOT,FOLLOW_DOT_in_dramatisPersonae123); 
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:31: ( WS )?
+			int alt6=2;
+			int LA6_0 = input.LA(1);
+			if ( (LA6_0==WS) ) {
+				alt6=1;
+			}
+			switch (alt6) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:31: WS
+					{
+					match(input,WS,FOLLOW_WS_in_dramatisPersonae125); 
+					}
+					break;
+
+			}
+
+			System.out.println("    - Ho riconosciuto un attore");
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "dramatisPersonae"
+
+
+
+	// $ANTLR start "acts"
+	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:52:1: acts : ACT UNITS CL ( ID )* DOT WS ;
+	public final void acts() throws RecognitionException {
+		try {
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:53:2: ( ACT UNITS CL ( ID )* DOT WS )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:54:2: ACT UNITS CL ( ID )* DOT WS
+			{
+			match(input,ACT,FOLLOW_ACT_in_acts146); 
+			match(input,UNITS,FOLLOW_UNITS_in_acts148); 
+			match(input,CL,FOLLOW_CL_in_acts150); 
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:54:15: ( ID )*
+			loop7:
+			while (true) {
+				int alt7=2;
+				int LA7_0 = input.LA(1);
+				if ( (LA7_0==ID) ) {
+					alt7=1;
+				}
+
+				switch (alt7) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:54:15: ID
+					{
+					match(input,ID,FOLLOW_ID_in_acts152); 
+					}
+					break;
+
+				default :
+					break loop7;
+				}
+			}
+
+			match(input,DOT,FOLLOW_DOT_in_acts155); 
+			match(input,WS,FOLLOW_WS_in_acts157); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "acts"
+
+
+
+	// $ANTLR start "scenes"
+	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:57:1: scenes : SCENE UNITS CL ( ID )* DOT WS ;
+	public final void scenes() throws RecognitionException {
+		try {
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:57:8: ( SCENE UNITS CL ( ID )* DOT WS )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:58:2: SCENE UNITS CL ( ID )* DOT WS
+			{
+			match(input,SCENE,FOLLOW_SCENE_in_scenes170); 
+			match(input,UNITS,FOLLOW_UNITS_in_scenes172); 
+			match(input,CL,FOLLOW_CL_in_scenes174); 
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:58:17: ( ID )*
+			loop8:
+			while (true) {
+				int alt8=2;
+				int LA8_0 = input.LA(1);
+				if ( (LA8_0==ID) ) {
+					alt8=1;
+				}
+
+				switch (alt8) {
+				case 1 :
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:58:17: ID
+					{
+					match(input,ID,FOLLOW_ID_in_scenes176); 
+					}
+					break;
+
+				default :
+					break loop8;
+				}
+			}
+
+			match(input,DOT,FOLLOW_DOT_in_scenes179); 
+			match(input,WS,FOLLOW_WS_in_scenes181); 
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "scenes"
+
 	// Delegated rules
 
-	public static final BitSet FOLLOW_title_in_parseSPL60 = new BitSet(new long[] { 0x0000000000000002L });
-	public static final BitSet FOLLOW_ID_in_title78 = new BitSet(new long[] { 0x0000000000000040L });
-	public static final BitSet FOLLOW_DOT_in_title80 = new BitSet(new long[] { 0x0000000000000002L });
+
+
+	public static final BitSet FOLLOW_title_in_parseSPL56 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_title76 = new BitSet(new long[]{0x0000000000000200L});
+	public static final BitSet FOLLOW_DOT_in_title78 = new BitSet(new long[]{0x0000040000000020L});
+	public static final BitSet FOLLOW_WS_in_title80 = new BitSet(new long[]{0x0000000000000020L});
+	public static final BitSet FOLLOW_dramatisPersonae_in_title84 = new BitSet(new long[]{0x0000000000000030L});
+	public static final BitSet FOLLOW_acts_in_title89 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_scenes_in_title92 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_dramatisPersonae110 = new BitSet(new long[]{0x0000040000000080L});
+	public static final BitSet FOLLOW_WS_in_dramatisPersonae112 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CM_in_dramatisPersonae115 = new BitSet(new long[]{0x0000040000080200L});
+	public static final BitSet FOLLOW_WS_in_dramatisPersonae117 = new BitSet(new long[]{0x0000000000080200L});
+	public static final BitSet FOLLOW_ID_in_dramatisPersonae120 = new BitSet(new long[]{0x0000000000080200L});
+	public static final BitSet FOLLOW_DOT_in_dramatisPersonae123 = new BitSet(new long[]{0x0000040000000002L});
+	public static final BitSet FOLLOW_WS_in_dramatisPersonae125 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ACT_in_acts146 = new BitSet(new long[]{0x0000020000000000L});
+	public static final BitSet FOLLOW_UNITS_in_acts148 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_CL_in_acts150 = new BitSet(new long[]{0x0000000000080200L});
+	public static final BitSet FOLLOW_ID_in_acts152 = new BitSet(new long[]{0x0000000000080200L});
+	public static final BitSet FOLLOW_DOT_in_acts155 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_WS_in_acts157 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SCENE_in_scenes170 = new BitSet(new long[]{0x0000020000000000L});
+	public static final BitSet FOLLOW_UNITS_in_scenes172 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_CL_in_scenes174 = new BitSet(new long[]{0x0000000000080200L});
+	public static final BitSet FOLLOW_ID_in_scenes176 = new BitSet(new long[]{0x0000000000080200L});
+	public static final BitSet FOLLOW_DOT_in_scenes179 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_WS_in_scenes181 = new BitSet(new long[]{0x0000000000000002L});
 }
