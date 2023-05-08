@@ -50,27 +50,8 @@ LETTER : 'a'..'z'|'A'..'Z';
 fragment 
 DIGIT : '0'..'9';
 
-CHARACTER
-    :   'Romeo'
-    |   'Juliet'
-    |   'Ghost'
-    |   'LadyMacbeth'
-    |   'Ofelia'
-    |   'Tebaldo'
-    |   'Claudio'
-    |   'Mercuzio'
-    |   'Banquo'
-    |   'Fulgencio'
-    |   'Gertrude'
-    |   'Desdemona'
-    |   'Jago'
-    |   'Polonio'
-    |   'Macduff'
-    |   'Shylock'
-    |   'Laerte'
-    |   'Orazio'
-    |   'Prospero'
-    ;
+
+
 
 // punteggiatura
 CL 	:	':';
@@ -80,6 +61,7 @@ DOT   	: 	'.';
 //AP    	:	'’'; //cambiato rispetto al classico " ' " perche crea errore, in ogni caso non serve usarlo
 EP    	: 	'!';
 QM    	:	'?';
+
 
 // sono le lettere che compongono ogni parola che usiamo
 ID  :	( LETTER |'_') 

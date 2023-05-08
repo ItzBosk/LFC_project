@@ -1,6 +1,7 @@
 // $ANTLR 3.5.1 D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-07 18:28:38
 
-package compilerPackage;
+	package compilerPackage;
+
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -9,14 +10,14 @@ import java.util.ArrayList;
 
 @SuppressWarnings("all")
 public class ShakespeareLexer extends Lexer {
-	public static final int EOF = -1;
-	public static final int CL = 4;
-	public static final int DIGIT = 5;
-	public static final int DOT = 6;
-	public static final int EP = 7;
-	public static final int ID = 8;
-	public static final int LETTER = 9;
-	public static final int QM = 10;
+	public static final int EOF=-1;
+	public static final int CL=4;
+	public static final int DIGIT=5;
+	public static final int DOT=6;
+	public static final int EP=7;
+	public static final int ID=8;
+	public static final int LETTER=9;
+	public static final int QM=10;
 
 	// delegates
 	// delegators
@@ -24,41 +25,33 @@ public class ShakespeareLexer extends Lexer {
 		return new Lexer[] {};
 	}
 
-	public ShakespeareLexer() {
-	}
-
+	public ShakespeareLexer() {} 
 	public ShakespeareLexer(CharStream input) {
 		this(input, new RecognizerSharedState());
 	}
-
 	public ShakespeareLexer(CharStream input, RecognizerSharedState state) {
-		super(input, state);
+		super(input,state);
 	}
-
-	@Override
-	public String getGrammarFileName() {
-		return ".\\src\\compilerPackage\\Shakespeare.g";
-	}
+	@Override public String getGrammarFileName() { return "D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
 
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:49:8:
-			// ( 'a' .. 'z' | 'A' .. 'Z' )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:49:8: ( 'a' .. 'z' | 'A' .. 'Z' )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 			{
-				if ((input.LA(1) >= 'A' && input.LA(1) <= 'Z') || (input.LA(1) >= 'a' && input.LA(1) <= 'z')) {
-					input.consume();
-				} else {
-					MismatchedSetException mse = new MismatchedSetException(null, input);
-					recover(mse);
-					throw mse;
-				}
+			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+				input.consume();
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				recover(mse);
+				throw mse;
+			}
 			}
 
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -67,22 +60,21 @@ public class ShakespeareLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:52:7:
-			// ( '0' .. '9' )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:52:7: ( '0' .. '9' )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 			{
-				if ((input.LA(1) >= '0' && input.LA(1) <= '9')) {
-					input.consume();
-				} else {
-					MismatchedSetException mse = new MismatchedSetException(null, input);
-					recover(mse);
-					throw mse;
-				}
+			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
+				input.consume();
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				recover(mse);
+				throw mse;
+			}
 			}
 
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -93,19 +85,16 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:57:5:
-			// ( ':' )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:57:7:
-			// ':'
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:57:5: ( ':' )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:57:7: ':'
 			{
-				match(':');
+			match(':'); 
 			}
 
 			state.type = _type;
 			state.channel = _channel;
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -116,19 +105,16 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = DOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:59:8:
-			// ( '.' )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:59:11:
-			// '.'
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:59:8: ( '.' )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:59:11: '.'
 			{
-				match('.');
+			match('.'); 
 			}
 
 			state.type = _type;
 			state.channel = _channel;
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -139,19 +125,16 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:62:8:
-			// ( '!' )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:62:11:
-			// '!'
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:62:8: ( '!' )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:62:11: '!'
 			{
-				match('!');
+			match('!'); 
 			}
 
 			state.type = _type;
 			state.channel = _channel;
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -162,19 +145,16 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = QM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:63:8:
-			// ( '?' )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:63:10:
-			// '?'
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:63:8: ( '?' )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:63:10: '?'
 			{
-				match('?');
+			match('?'); 
 			}
 
 			state.type = _type;
 			state.channel = _channel;
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -185,58 +165,52 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:5:
-			// ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
-			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-			// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:7:
-			// ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:7: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
 			{
-				if ((input.LA(1) >= 'A' && input.LA(1) <= 'Z') || input.LA(1) == '_'
-						|| (input.LA(1) >= 'a' && input.LA(1) <= 'z')) {
-					input.consume();
-				} else {
-					MismatchedSetException mse = new MismatchedSetException(null, input);
-					recover(mse);
-					throw mse;
+			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+				input.consume();
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				recover(mse);
+				throw mse;
+			}
+			// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:3: ( LETTER | DIGIT | '_' )*
+			loop1:
+			while (true) {
+				int alt1=2;
+				int LA1_0 = input.LA(1);
+				if ( ((LA1_0 >= '0' && LA1_0 <= '9')||(LA1_0 >= 'A' && LA1_0 <= 'Z')||LA1_0=='_'||(LA1_0 >= 'a' && LA1_0 <= 'z')) ) {
+					alt1=1;
 				}
-				// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-				// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:3:
-				// ( LETTER | DIGIT | '_' )*
-				loop1: while (true) {
-					int alt1 = 2;
-					int LA1_0 = input.LA(1);
-					if (((LA1_0 >= '0' && LA1_0 <= '9') || (LA1_0 >= 'A' && LA1_0 <= 'Z') || LA1_0 == '_'
-							|| (LA1_0 >= 'a' && LA1_0 <= 'z'))) {
-						alt1 = 1;
-					}
 
-					switch (alt1) {
-					case 1:
-					// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-					// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+				switch (alt1) {
+				case 1 :
+					// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 					{
-						if ((input.LA(1) >= '0' && input.LA(1) <= '9') || (input.LA(1) >= 'A' && input.LA(1) <= 'Z')
-								|| input.LA(1) == '_' || (input.LA(1) >= 'a' && input.LA(1) <= 'z')) {
-							input.consume();
-						} else {
-							MismatchedSetException mse = new MismatchedSetException(null, input);
-							recover(mse);
-							throw mse;
-						}
+					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+						input.consume();
 					}
-						break;
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
+					}
+					break;
 
-					default:
-						break loop1;
-					}
+				default :
+					break loop1;
 				}
+			}
 
 			}
 
 			state.type = _type;
 			state.channel = _channel;
-		} finally {
+		}
+		finally {
 			// do for sure before leaving
 		}
 	}
@@ -244,26 +218,28 @@ public class ShakespeareLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-		// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:8:
-		// ( CL | DOT | EP | QM | ID )
-		int alt2 = 5;
-		switch (input.LA(1)) {
-		case ':': {
-			alt2 = 1;
-		}
+		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:8: ( CL | DOT | EP | QM | ID )
+		int alt2=5;
+		switch ( input.LA(1) ) {
+		case ':':
+			{
+			alt2=1;
+			}
 			break;
-		case '.': {
-			alt2 = 2;
-		}
+		case '.':
+			{
+			alt2=2;
+			}
 			break;
-		case '!': {
-			alt2 = 3;
-		}
+		case '!':
+			{
+			alt2=3;
+			}
 			break;
-		case '?': {
-			alt2 = 4;
-		}
+		case '?':
+			{
+			alt2=4;
+			}
 			break;
 		case 'A':
 		case 'B':
@@ -317,62 +293,56 @@ public class ShakespeareLexer extends Lexer {
 		case 'w':
 		case 'x':
 		case 'y':
-		case 'z': {
-			alt2 = 5;
-		}
+		case 'z':
+			{
+			alt2=5;
+			}
 			break;
 		default:
-			NoViableAltException nvae = new NoViableAltException("", 2, 0, input);
+			NoViableAltException nvae =
+				new NoViableAltException("", 2, 0, input);
 			throw nvae;
 		}
 		switch (alt2) {
-		case 1:
-		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-		// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:10:
-		// CL
-		{
-			mCL();
+			case 1 :
+				// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:10: CL
+				{
+				mCL(); 
 
-		}
-			break;
-		case 2:
-		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-		// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:13:
-		// DOT
-		{
-			mDOT();
+				}
+				break;
+			case 2 :
+				// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:13: DOT
+				{
+				mDOT(); 
 
-		}
-			break;
-		case 3:
-		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-		// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:17:
-		// EP
-		{
-			mEP();
+				}
+				break;
+			case 3 :
+				// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:17: EP
+				{
+				mEP(); 
 
-		}
-			break;
-		case 4:
-		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-		// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:20:
-		// QM
-		{
-			mQM();
+				}
+				break;
+			case 4 :
+				// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:20: QM
+				{
+				mQM(); 
 
-		}
-			break;
-		case 5:
-		// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e
-		// mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:23:
-		// ID
-		{
-			mID();
+				}
+				break;
+			case 5 :
+				// D:\\università\\3° anno - 2° periodo\\tecnologie cloud e mobile\\exe\\laboratorio\\code\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:23: ID
+				{
+				mID(); 
 
-		}
-			break;
+				}
+				break;
 
 		}
 	}
+
+
 
 }
