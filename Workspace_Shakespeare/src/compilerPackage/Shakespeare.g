@@ -51,7 +51,27 @@ fragment
 DIGIT : '0'..'9';
 
 
-
+CHARACTER
+    :   'Romeo'
+    |   'Juliet'
+    |   'Ghost'
+    |   'LadyMacbeth'
+    |   'Ofelia'
+    |   'Tebaldo'
+    |   'Claudio'
+    |   'Mercuzio'
+    |   'Banquo'
+    |   'Fulgencio'
+    |   'Gertrude'
+    |   'Desdemona'
+    |   'Jago'
+    |   'Polonio'
+    |   'Macduff'
+    |   'Shylock'
+    |   'Laerte'
+    |   'Orazio'
+    |   'Prospero'
+    ;
 
 // punteggiatura
 CL 	:	':';
