@@ -334,10 +334,10 @@ CL 	:	':';
 CM 	:	',';
 DOT   	: 	'.';
 //SC 	:	';';
-//AP    	:	'’'; //cambiato rispetto al classico " ' " perche crea errore, in ogni caso non serve usarlo
+AP    	:	'\'';
 EP    	: 	'!';
 QM    	:	'?';
-
+FS	:	'/';
 
 // sono le lettere che compongono ogni parola che usiamo
 ID  :	( LETTER |'_') 

@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-08 16:43:11
+// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-11 14:34:22
 
 	package compilerPackage;
 
@@ -12,44 +12,46 @@ import java.util.ArrayList;
 public class ShakespeareLexer extends Lexer {
 	public static final int EOF=-1;
 	public static final int ACT=4;
-	public static final int CHARACTER=5;
-	public static final int CL=6;
-	public static final int CM=7;
-	public static final int DIGIT=8;
-	public static final int DOT=9;
-	public static final int ENTER=10;
-	public static final int EP=11;
-	public static final int EXEUNT=12;
-	public static final int EXIT=13;
-	public static final int FIFTY=14;
-	public static final int FIVE=15;
-	public static final int FIVEHUNDRED=16;
-	public static final int GOTO=17;
-	public static final int HUNDREDS=18;
-	public static final int ID=19;
-	public static final int INPUTASCII=20;
-	public static final int INPUTVALUE=21;
-	public static final int LB=22;
-	public static final int LETTER=23;
-	public static final int NEGATIVEADJECTIVE=24;
-	public static final int NEGATIVENOUN=25;
-	public static final int NEUTRALADJECTIVE=26;
-	public static final int NEUTRALNOUN=27;
-	public static final int ONE=28;
-	public static final int ONEHUNDRED=29;
-	public static final int ONETHOUSAND=30;
-	public static final int OUTPUTASCII=31;
-	public static final int OUTPUTVALUE=32;
-	public static final int POSITIVEADJECTIVE=33;
-	public static final int POSITIVENOUN=34;
-	public static final int QM=35;
-	public static final int RB=36;
-	public static final int ROOT=37;
-	public static final int SCENE=38;
-	public static final int TEN=39;
-	public static final int TENS=40;
-	public static final int UNITS=41;
-	public static final int WS=42;
+	public static final int AP=5;
+	public static final int CHARACTER=6;
+	public static final int CL=7;
+	public static final int CM=8;
+	public static final int DIGIT=9;
+	public static final int DOT=10;
+	public static final int ENTER=11;
+	public static final int EP=12;
+	public static final int EXEUNT=13;
+	public static final int EXIT=14;
+	public static final int FIFTY=15;
+	public static final int FIVE=16;
+	public static final int FIVEHUNDRED=17;
+	public static final int FS=18;
+	public static final int GOTO=19;
+	public static final int HUNDREDS=20;
+	public static final int ID=21;
+	public static final int INPUTASCII=22;
+	public static final int INPUTVALUE=23;
+	public static final int LB=24;
+	public static final int LETTER=25;
+	public static final int NEGATIVEADJECTIVE=26;
+	public static final int NEGATIVENOUN=27;
+	public static final int NEUTRALADJECTIVE=28;
+	public static final int NEUTRALNOUN=29;
+	public static final int ONE=30;
+	public static final int ONEHUNDRED=31;
+	public static final int ONETHOUSAND=32;
+	public static final int OUTPUTASCII=33;
+	public static final int OUTPUTVALUE=34;
+	public static final int POSITIVEADJECTIVE=35;
+	public static final int POSITIVENOUN=36;
+	public static final int QM=37;
+	public static final int RB=38;
+	public static final int ROOT=39;
+	public static final int SCENE=40;
+	public static final int TEN=41;
+	public static final int TENS=42;
+	public static final int UNITS=43;
+	public static final int WS=44;
 
 	// delegates
 	// delegators
@@ -64,15 +66,15 @@ public class ShakespeareLexer extends Lexer {
 	public ShakespeareLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
 
 	// $ANTLR start "ONE"
 	public final void mONE() throws RecognitionException {
 		try {
 			int _type = ONE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:13: ( 'I' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:15: 'I'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:13: ( 'I' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:15: 'I'
 			{
 			match('I'); 
 			}
@@ -91,8 +93,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = FIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:13: ( 'V' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:15: 'V'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:13: ( 'V' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:15: 'V'
 			{
 			match('V'); 
 			}
@@ -111,8 +113,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = TEN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:13: ( 'X' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:15: 'X'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:13: ( 'X' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:15: 'X'
 			{
 			match('X'); 
 			}
@@ -131,8 +133,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = FIFTY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:13: ( 'L' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:15: 'L'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:13: ( 'L' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:15: 'L'
 			{
 			match('L'); 
 			}
@@ -151,8 +153,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ONEHUNDRED;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:13: ( 'C' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:15: 'C'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:13: ( 'C' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:15: 'C'
 			{
 			match('C'); 
 			}
@@ -171,8 +173,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = FIVEHUNDRED;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:13: ( 'D' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:15: 'D'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:13: ( 'D' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:15: 'D'
 			{
 			match('D'); 
 			}
@@ -191,8 +193,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ONETHOUSAND;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:74:13: ( 'M' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:74:15: 'M'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:74:13: ( 'M' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:74:15: 'M'
 			{
 			match('M'); 
 			}
@@ -211,8 +213,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ROOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:76:7: ( ONETHOUSAND HUNDREDS TENS UNITS )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:76:9: ONETHOUSAND HUNDREDS TENS UNITS
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:76:7: ( ONETHOUSAND HUNDREDS TENS UNITS )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:76:9: ONETHOUSAND HUNDREDS TENS UNITS
 			{
 			mONETHOUSAND(); 
 
@@ -238,10 +240,10 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = UNITS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:8: ( ( ONE ( ( ONE )* | FIVE | TEN ) | FIVE ( ONE )* ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:10: ( ONE ( ( ONE )* | FIVE | TEN ) | FIVE ( ONE )* )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:8: ( ( ONE ( ( ONE )* | FIVE | TEN ) | FIVE ( ONE )* ) )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:10: ( ONE ( ( ONE )* | FIVE | TEN ) | FIVE ( ONE )* )
 			{
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:10: ( ONE ( ( ONE )* | FIVE | TEN ) | FIVE ( ONE )* )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:10: ( ONE ( ( ONE )* | FIVE | TEN ) | FIVE ( ONE )* )
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0=='I') ) {
@@ -259,11 +261,11 @@ public class ShakespeareLexer extends Lexer {
 
 			switch (alt4) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:11: ONE ( ( ONE )* | FIVE | TEN )
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:11: ONE ( ( ONE )* | FIVE | TEN )
 					{
 					mONE(); 
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:15: ( ( ONE )* | FIVE | TEN )
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:15: ( ( ONE )* | FIVE | TEN )
 					int alt2=3;
 					switch ( input.LA(1) ) {
 					case 'V':
@@ -281,9 +283,9 @@ public class ShakespeareLexer extends Lexer {
 					}
 					switch (alt2) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:16: ( ONE )*
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:16: ( ONE )*
 							{
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:16: ( ONE )*
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:16: ( ONE )*
 							loop1:
 							while (true) {
 								int alt1=2;
@@ -294,7 +296,7 @@ public class ShakespeareLexer extends Lexer {
 
 								switch (alt1) {
 								case 1 :
-									// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+									// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 									{
 									if ( input.LA(1)=='I' ) {
 										input.consume();
@@ -315,14 +317,14 @@ public class ShakespeareLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:25: FIVE
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:25: FIVE
 							{
 							mFIVE(); 
 
 							}
 							break;
 						case 3 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:33: TEN
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:33: TEN
 							{
 							mTEN(); 
 
@@ -334,11 +336,11 @@ public class ShakespeareLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:40: FIVE ( ONE )*
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:40: FIVE ( ONE )*
 					{
 					mFIVE(); 
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:45: ( ONE )*
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:45: ( ONE )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -349,7 +351,7 @@ public class ShakespeareLexer extends Lexer {
 
 						switch (alt3) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 							{
 							if ( input.LA(1)=='I' ) {
 								input.consume();
@@ -388,7 +390,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = TENS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:8: ( TEN ( ( TEN )* | FIFTY | ONEHUNDRED ) | FIFTY ( TEN )* )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:8: ( TEN ( ( TEN )* | FIFTY | ONEHUNDRED ) | FIFTY ( TEN )* )
 			int alt8=2;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0=='X') ) {
@@ -406,11 +408,11 @@ public class ShakespeareLexer extends Lexer {
 
 			switch (alt8) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:10: TEN ( ( TEN )* | FIFTY | ONEHUNDRED )
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:10: TEN ( ( TEN )* | FIFTY | ONEHUNDRED )
 					{
 					mTEN(); 
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:14: ( ( TEN )* | FIFTY | ONEHUNDRED )
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:14: ( ( TEN )* | FIFTY | ONEHUNDRED )
 					int alt6=3;
 					switch ( input.LA(1) ) {
 					case 'L':
@@ -428,9 +430,9 @@ public class ShakespeareLexer extends Lexer {
 					}
 					switch (alt6) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:15: ( TEN )*
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:15: ( TEN )*
 							{
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:15: ( TEN )*
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:15: ( TEN )*
 							loop5:
 							while (true) {
 								int alt5=2;
@@ -441,7 +443,7 @@ public class ShakespeareLexer extends Lexer {
 
 								switch (alt5) {
 								case 1 :
-									// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+									// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 									{
 									if ( input.LA(1)=='X' ) {
 										input.consume();
@@ -462,14 +464,14 @@ public class ShakespeareLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:24: FIFTY
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:24: FIFTY
 							{
 							mFIFTY(); 
 
 							}
 							break;
 						case 3 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:32: ONEHUNDRED
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:32: ONEHUNDRED
 							{
 							mONEHUNDRED(); 
 
@@ -481,11 +483,11 @@ public class ShakespeareLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:46: FIFTY ( TEN )*
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:46: FIFTY ( TEN )*
 					{
 					mFIFTY(); 
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:52: ( TEN )*
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:52: ( TEN )*
 					loop7:
 					while (true) {
 						int alt7=2;
@@ -496,7 +498,7 @@ public class ShakespeareLexer extends Lexer {
 
 						switch (alt7) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 							{
 							if ( input.LA(1)=='X' ) {
 								input.consume();
@@ -532,7 +534,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = HUNDREDS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:10: ( ONEHUNDRED ( ( ONEHUNDRED )* | FIVEHUNDRED | ONETHOUSAND ) | FIVEHUNDRED ( ONEHUNDRED )* )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:10: ( ONEHUNDRED ( ( ONEHUNDRED )* | FIVEHUNDRED | ONETHOUSAND ) | FIVEHUNDRED ( ONEHUNDRED )* )
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0=='C') ) {
@@ -550,11 +552,11 @@ public class ShakespeareLexer extends Lexer {
 
 			switch (alt12) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:12: ONEHUNDRED ( ( ONEHUNDRED )* | FIVEHUNDRED | ONETHOUSAND )
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:12: ONEHUNDRED ( ( ONEHUNDRED )* | FIVEHUNDRED | ONETHOUSAND )
 					{
 					mONEHUNDRED(); 
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:23: ( ( ONEHUNDRED )* | FIVEHUNDRED | ONETHOUSAND )
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:23: ( ( ONEHUNDRED )* | FIVEHUNDRED | ONETHOUSAND )
 					int alt10=3;
 					switch ( input.LA(1) ) {
 					case 'D':
@@ -572,9 +574,9 @@ public class ShakespeareLexer extends Lexer {
 					}
 					switch (alt10) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:24: ( ONEHUNDRED )*
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:24: ( ONEHUNDRED )*
 							{
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:24: ( ONEHUNDRED )*
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:24: ( ONEHUNDRED )*
 							loop9:
 							while (true) {
 								int alt9=2;
@@ -585,7 +587,7 @@ public class ShakespeareLexer extends Lexer {
 
 								switch (alt9) {
 								case 1 :
-									// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+									// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 									{
 									if ( input.LA(1)=='C' ) {
 										input.consume();
@@ -606,14 +608,14 @@ public class ShakespeareLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:40: FIVEHUNDRED
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:40: FIVEHUNDRED
 							{
 							mFIVEHUNDRED(); 
 
 							}
 							break;
 						case 3 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:54: ONETHOUSAND
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:54: ONETHOUSAND
 							{
 							mONETHOUSAND(); 
 
@@ -625,11 +627,11 @@ public class ShakespeareLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:69: FIVEHUNDRED ( ONEHUNDRED )*
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:69: FIVEHUNDRED ( ONEHUNDRED )*
 					{
 					mFIVEHUNDRED(); 
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:81: ( ONEHUNDRED )*
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:81: ( ONEHUNDRED )*
 					loop11:
 					while (true) {
 						int alt11=2;
@@ -640,7 +642,7 @@ public class ShakespeareLexer extends Lexer {
 
 						switch (alt11) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 							{
 							if ( input.LA(1)=='C' ) {
 								input.consume();
@@ -676,7 +678,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CHARACTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:5: ( 'Romeo' | 'Juliet' | 'Ghost' | 'LadyMacbeth' | 'Ofelia' | 'Tebaldo' | 'Claudio' | 'Mercuzio' | 'Banquo' | 'Fulgencio' | 'Gertrude' | 'Desdemona' | 'Jago' | 'Polonio' | 'Macduff' | 'Shylock' | 'Laerte' | 'Orazio' | 'Prospero' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:5: ( 'Romeo' | 'Juliet' | 'Ghost' | 'LadyMacbeth' | 'Ofelia' | 'Tebaldo' | 'Claudio' | 'Mercuzio' | 'Banquo' | 'Fulgencio' | 'Gertrude' | 'Desdemona' | 'Jago' | 'Polonio' | 'Macduff' | 'Shylock' | 'Laerte' | 'Orazio' | 'Prospero' )
 			int alt13=19;
 			switch ( input.LA(1) ) {
 			case 'R':
@@ -883,133 +885,133 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt13) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:9: 'Romeo'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:9: 'Romeo'
 					{
 					match("Romeo"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:94:9: 'Juliet'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:94:9: 'Juliet'
 					{
 					match("Juliet"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:95:9: 'Ghost'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:95:9: 'Ghost'
 					{
 					match("Ghost"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:96:9: 'LadyMacbeth'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:96:9: 'LadyMacbeth'
 					{
 					match("LadyMacbeth"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:9: 'Ofelia'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:9: 'Ofelia'
 					{
 					match("Ofelia"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:9: 'Tebaldo'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:9: 'Tebaldo'
 					{
 					match("Tebaldo"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:99:9: 'Claudio'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:99:9: 'Claudio'
 					{
 					match("Claudio"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:100:9: 'Mercuzio'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:100:9: 'Mercuzio'
 					{
 					match("Mercuzio"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:101:9: 'Banquo'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:101:9: 'Banquo'
 					{
 					match("Banquo"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:102:9: 'Fulgencio'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:102:9: 'Fulgencio'
 					{
 					match("Fulgencio"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:9: 'Gertrude'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:9: 'Gertrude'
 					{
 					match("Gertrude"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:9: 'Desdemona'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:9: 'Desdemona'
 					{
 					match("Desdemona"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:9: 'Jago'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:9: 'Jago'
 					{
 					match("Jago"); 
 
 					}
 					break;
 				case 14 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:106:9: 'Polonio'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:106:9: 'Polonio'
 					{
 					match("Polonio"); 
 
 					}
 					break;
 				case 15 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:9: 'Macduff'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:9: 'Macduff'
 					{
 					match("Macduff"); 
 
 					}
 					break;
 				case 16 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:108:9: 'Shylock'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:108:9: 'Shylock'
 					{
 					match("Shylock"); 
 
 					}
 					break;
 				case 17 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:9: 'Laerte'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:9: 'Laerte'
 					{
 					match("Laerte"); 
 
 					}
 					break;
 				case 18 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:9: 'Orazio'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:9: 'Orazio'
 					{
 					match("Orazio"); 
 
 					}
 					break;
 				case 19 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:9: 'Prospero'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:9: 'Prospero'
 					{
 					match("Prospero"); 
 
@@ -1031,7 +1033,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = POSITIVENOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:5: ( 'Heaven' | 'King' | 'Lord' | 'angel' | 'flower' | 'happiness' | 'joy' | 'plum' | 'summer’s day' | 'hero' | 'rose' | 'kingdom' | 'pony' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:5: ( 'Heaven' | 'King' | 'Lord' | 'angel' | 'flower' | 'happiness' | 'joy' | 'plum' | 'summer’s day' | 'hero' | 'rose' | 'kingdom' | 'pony' )
 			int alt14=13;
 			switch ( input.LA(1) ) {
 			case 'H':
@@ -1134,91 +1136,91 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt14) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:9: 'Heaven'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:9: 'Heaven'
 					{
 					match("Heaven"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:9: 'King'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:9: 'King'
 					{
 					match("King"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:119:9: 'Lord'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:119:9: 'Lord'
 					{
 					match("Lord"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:9: 'angel'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:9: 'angel'
 					{
 					match("angel"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:121:9: 'flower'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:121:9: 'flower'
 					{
 					match("flower"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:122:9: 'happiness'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:122:9: 'happiness'
 					{
 					match("happiness"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:9: 'joy'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:9: 'joy'
 					{
 					match("joy"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:9: 'plum'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:9: 'plum'
 					{
 					match("plum"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:9: 'summer’s day'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:9: 'summer’s day'
 					{
 					match("summer’s day"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:126:9: 'hero'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:126:9: 'hero'
 					{
 					match("hero"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:127:9: 'rose'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:127:9: 'rose'
 					{
 					match("rose"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:128:9: 'kingdom'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:128:9: 'kingdom'
 					{
 					match("kingdom"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:129:9: 'pony'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:129:9: 'pony'
 					{
 					match("pony"); 
 
@@ -1240,292 +1242,292 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEUTRALNOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:5: ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:5: ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' )
 			int alt15=41;
 			alt15 = dfa15.predict(input);
 			switch (alt15) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:9: 'animal'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:9: 'animal'
 					{
 					match("animal"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:136:9: 'aunt'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:136:9: 'aunt'
 					{
 					match("aunt"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:9: 'brother'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:9: 'brother'
 					{
 					match("brother"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:138:9: 'cat'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:138:9: 'cat'
 					{
 					match("cat"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:139:9: 'chihuahua'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:139:9: 'chihuahua'
 					{
 					match("chihuahua"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:9: 'cousin'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:9: 'cousin'
 					{
 					match("cousin"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:9: 'cow'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:9: 'cow'
 					{
 					match("cow"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:9: 'daughter'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:9: 'daughter'
 					{
 					match("daughter"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:9: 'door'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:9: 'door'
 					{
 					match("door"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:9: 'face'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:9: 'face'
 					{
 					match("face"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:9: 'father'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:9: 'father'
 					{
 					match("father"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:9: 'fellow'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:9: 'fellow'
 					{
 					match("fellow"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:9: 'granddaughter'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:9: 'granddaughter'
 					{
 					match("granddaughter"); 
 
 					}
 					break;
 				case 14 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:9: 'grandfather'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:9: 'grandfather'
 					{
 					match("grandfather"); 
 
 					}
 					break;
 				case 15 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:9: 'grandmother'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:9: 'grandmother'
 					{
 					match("grandmother"); 
 
 					}
 					break;
 				case 16 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:150:9: 'grandson'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:150:9: 'grandson'
 					{
 					match("grandson"); 
 
 					}
 					break;
 				case 17 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:151:9: 'hair'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:151:9: 'hair'
 					{
 					match("hair"); 
 
 					}
 					break;
 				case 18 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:152:9: 'hamster'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:152:9: 'hamster'
 					{
 					match("hamster"); 
 
 					}
 					break;
 				case 19 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:153:9: 'horse'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:153:9: 'horse'
 					{
 					match("horse"); 
 
 					}
 					break;
 				case 20 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:154:9: 'lamp'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:154:9: 'lamp'
 					{
 					match("lamp"); 
 
 					}
 					break;
 				case 21 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:155:9: 'lantern'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:155:9: 'lantern'
 					{
 					match("lantern"); 
 
 					}
 					break;
 				case 22 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:156:9: 'mistletoe'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:156:9: 'mistletoe'
 					{
 					match("mistletoe"); 
 
 					}
 					break;
 				case 23 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:157:9: 'moon'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:157:9: 'moon'
 					{
 					match("moon"); 
 
 					}
 					break;
 				case 24 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:158:9: 'morning'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:158:9: 'morning'
 					{
 					match("morning"); 
 
 					}
 					break;
 				case 25 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:159:9: 'mother'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:159:9: 'mother'
 					{
 					match("mother"); 
 
 					}
 					break;
 				case 26 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:160:9: 'nephew'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:160:9: 'nephew'
 					{
 					match("nephew"); 
 
 					}
 					break;
 				case 27 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:161:9: 'niece'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:161:9: 'niece'
 					{
 					match("niece"); 
 
 					}
 					break;
 				case 28 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:162:9: 'nose'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:162:9: 'nose'
 					{
 					match("nose"); 
 
 					}
 					break;
 				case 29 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:163:9: 'purse'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:163:9: 'purse'
 					{
 					match("purse"); 
 
 					}
 					break;
 				case 30 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:9: 'road'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:9: 'road'
 					{
 					match("road"); 
 
 					}
 					break;
 				case 31 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:165:9: 'roman'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:165:9: 'roman'
 					{
 					match("roman"); 
 
 					}
 					break;
 				case 32 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:166:9: 'sister'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:166:9: 'sister'
 					{
 					match("sister"); 
 
 					}
 					break;
 				case 33 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:9: 'sky'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:9: 'sky'
 					{
 					match("sky"); 
 
 					}
 					break;
 				case 34 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:168:9: 'son'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:168:9: 'son'
 					{
 					match("son"); 
 
 					}
 					break;
 				case 35 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:169:9: 'squirrel'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:169:9: 'squirrel'
 					{
 					match("squirrel"); 
 
 					}
 					break;
 				case 36 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:170:9: 'stonewall'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:170:9: 'stonewall'
 					{
 					match("stonewall"); 
 
 					}
 					break;
 				case 37 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:9: 'thing'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:9: 'thing'
 					{
 					match("thing"); 
 
 					}
 					break;
 				case 38 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:172:9: 'town'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:172:9: 'town'
 					{
 					match("town"); 
 
 					}
 					break;
 				case 39 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:173:9: 'tree'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:173:9: 'tree'
 					{
 					match("tree"); 
 
 					}
 					break;
 				case 40 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:174:9: 'uncle'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:174:9: 'uncle'
 					{
 					match("uncle"); 
 
 					}
 					break;
 				case 41 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:175:9: 'wind'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:175:9: 'wind'
 					{
 					match("wind"); 
 
@@ -1547,7 +1549,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEGATIVENOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:5: ( 'Hell' | 'Microsoft' | 'bastard' | 'beggar' | 'blister' | 'codpiece' | 'coward' | 'curse' | 'death' | 'devil' | 'draught' | 'famine' | 'flirt-gill' | 'goat' | 'hate' | 'hog' | 'hound' | 'leech' | 'lie' | 'pig' | 'plague' | 'starvation' | 'toad' | 'war' | 'wolf' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:5: ( 'Hell' | 'Microsoft' | 'bastard' | 'beggar' | 'blister' | 'codpiece' | 'coward' | 'curse' | 'death' | 'devil' | 'draught' | 'famine' | 'flirt-gill' | 'goat' | 'hate' | 'hog' | 'hound' | 'leech' | 'lie' | 'pig' | 'plague' | 'starvation' | 'toad' | 'war' | 'wolf' )
 			int alt16=25;
 			switch ( input.LA(1) ) {
 			case 'H':
@@ -1844,175 +1846,175 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt16) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:9: 'Hell'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:9: 'Hell'
 					{
 					match("Hell"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:9: 'Microsoft'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:9: 'Microsoft'
 					{
 					match("Microsoft"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:183:9: 'bastard'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:183:9: 'bastard'
 					{
 					match("bastard"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:184:9: 'beggar'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:184:9: 'beggar'
 					{
 					match("beggar"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:185:9: 'blister'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:185:9: 'blister'
 					{
 					match("blister"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:186:9: 'codpiece'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:186:9: 'codpiece'
 					{
 					match("codpiece"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:187:9: 'coward'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:187:9: 'coward'
 					{
 					match("coward"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:9: 'curse'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:9: 'curse'
 					{
 					match("curse"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:9: 'death'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:9: 'death'
 					{
 					match("death"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: 'devil'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: 'devil'
 					{
 					match("devil"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:191:9: 'draught'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:191:9: 'draught'
 					{
 					match("draught"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:192:9: 'famine'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:192:9: 'famine'
 					{
 					match("famine"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:193:9: 'flirt-gill'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:193:9: 'flirt-gill'
 					{
 					match("flirt-gill"); 
 
 					}
 					break;
 				case 14 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:194:9: 'goat'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:194:9: 'goat'
 					{
 					match("goat"); 
 
 					}
 					break;
 				case 15 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:195:9: 'hate'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:195:9: 'hate'
 					{
 					match("hate"); 
 
 					}
 					break;
 				case 16 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:196:9: 'hog'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:196:9: 'hog'
 					{
 					match("hog"); 
 
 					}
 					break;
 				case 17 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:197:9: 'hound'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:197:9: 'hound'
 					{
 					match("hound"); 
 
 					}
 					break;
 				case 18 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:198:9: 'leech'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:198:9: 'leech'
 					{
 					match("leech"); 
 
 					}
 					break;
 				case 19 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:9: 'lie'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:9: 'lie'
 					{
 					match("lie"); 
 
 					}
 					break;
 				case 20 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:200:9: 'pig'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:200:9: 'pig'
 					{
 					match("pig"); 
 
 					}
 					break;
 				case 21 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:201:9: 'plague'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:201:9: 'plague'
 					{
 					match("plague"); 
 
 					}
 					break;
 				case 22 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:202:9: 'starvation'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:202:9: 'starvation'
 					{
 					match("starvation"); 
 
 					}
 					break;
 				case 23 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:203:9: 'toad'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:203:9: 'toad'
 					{
 					match("toad"); 
 
 					}
 					break;
 				case 24 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:204:9: 'war'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:204:9: 'war'
 					{
 					match("war"); 
 
 					}
 					break;
 				case 25 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:205:9: 'wolf'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:205:9: 'wolf'
 					{
 					match("wolf"); 
 
@@ -2034,7 +2036,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = POSITIVEADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:5: ( 'amazing' | 'beautiful' | 'blossoming' | 'bold' | 'brave' | 'charming' | 'clearest' | 'cunning' | 'cute' | 'delicious' | 'embroidered' | 'fair' | 'fine' | 'gentle' | 'golden' | 'good' | 'handsome' | 'happy' | 'healthy' | 'honest' | 'lovely' | 'loving' | 'mighty' | 'noble' | 'peaceful' | 'pretty' | 'prompt' | 'proud' | 'reddest' | 'rich' | 'smooth' | 'sunny' | 'sweet' | 'sweetest' | 'trustworthy' | 'warm' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:5: ( 'amazing' | 'beautiful' | 'blossoming' | 'bold' | 'brave' | 'charming' | 'clearest' | 'cunning' | 'cute' | 'delicious' | 'embroidered' | 'fair' | 'fine' | 'gentle' | 'golden' | 'good' | 'handsome' | 'happy' | 'healthy' | 'honest' | 'lovely' | 'loving' | 'mighty' | 'noble' | 'peaceful' | 'pretty' | 'prompt' | 'proud' | 'reddest' | 'rich' | 'smooth' | 'sunny' | 'sweet' | 'sweetest' | 'trustworthy' | 'warm' )
 			int alt17=36;
 			switch ( input.LA(1) ) {
 			case 'a':
@@ -2531,252 +2533,252 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt17) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:9: 'amazing'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:9: 'amazing'
 					{
 					match("amazing"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:211:9: 'beautiful'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:211:9: 'beautiful'
 					{
 					match("beautiful"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:212:9: 'blossoming'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:212:9: 'blossoming'
 					{
 					match("blossoming"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:9: 'bold'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:9: 'bold'
 					{
 					match("bold"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:214:9: 'brave'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:214:9: 'brave'
 					{
 					match("brave"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:215:9: 'charming'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:215:9: 'charming'
 					{
 					match("charming"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:9: 'clearest'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:9: 'clearest'
 					{
 					match("clearest"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:9: 'cunning'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:9: 'cunning'
 					{
 					match("cunning"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:9: 'cute'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:9: 'cute'
 					{
 					match("cute"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:219:9: 'delicious'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:219:9: 'delicious'
 					{
 					match("delicious"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:220:9: 'embroidered'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:220:9: 'embroidered'
 					{
 					match("embroidered"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:221:9: 'fair'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:221:9: 'fair'
 					{
 					match("fair"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:222:9: 'fine'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:222:9: 'fine'
 					{
 					match("fine"); 
 
 					}
 					break;
 				case 14 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:223:9: 'gentle'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:223:9: 'gentle'
 					{
 					match("gentle"); 
 
 					}
 					break;
 				case 15 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:9: 'golden'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:9: 'golden'
 					{
 					match("golden"); 
 
 					}
 					break;
 				case 16 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:9: 'good'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:9: 'good'
 					{
 					match("good"); 
 
 					}
 					break;
 				case 17 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:226:9: 'handsome'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:226:9: 'handsome'
 					{
 					match("handsome"); 
 
 					}
 					break;
 				case 18 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:227:9: 'happy'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:227:9: 'happy'
 					{
 					match("happy"); 
 
 					}
 					break;
 				case 19 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:228:9: 'healthy'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:228:9: 'healthy'
 					{
 					match("healthy"); 
 
 					}
 					break;
 				case 20 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:229:9: 'honest'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:229:9: 'honest'
 					{
 					match("honest"); 
 
 					}
 					break;
 				case 21 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:230:9: 'lovely'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:230:9: 'lovely'
 					{
 					match("lovely"); 
 
 					}
 					break;
 				case 22 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:9: 'loving'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:9: 'loving'
 					{
 					match("loving"); 
 
 					}
 					break;
 				case 23 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:232:9: 'mighty'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:232:9: 'mighty'
 					{
 					match("mighty"); 
 
 					}
 					break;
 				case 24 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:233:9: 'noble'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:233:9: 'noble'
 					{
 					match("noble"); 
 
 					}
 					break;
 				case 25 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:234:9: 'peaceful'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:234:9: 'peaceful'
 					{
 					match("peaceful"); 
 
 					}
 					break;
 				case 26 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:235:9: 'pretty'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:235:9: 'pretty'
 					{
 					match("pretty"); 
 
 					}
 					break;
 				case 27 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:236:9: 'prompt'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:236:9: 'prompt'
 					{
 					match("prompt"); 
 
 					}
 					break;
 				case 28 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:237:9: 'proud'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:237:9: 'proud'
 					{
 					match("proud"); 
 
 					}
 					break;
 				case 29 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:238:9: 'reddest'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:238:9: 'reddest'
 					{
 					match("reddest"); 
 
 					}
 					break;
 				case 30 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:239:9: 'rich'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:239:9: 'rich'
 					{
 					match("rich"); 
 
 					}
 					break;
 				case 31 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:240:9: 'smooth'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:240:9: 'smooth'
 					{
 					match("smooth"); 
 
 					}
 					break;
 				case 32 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:241:9: 'sunny'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:241:9: 'sunny'
 					{
 					match("sunny"); 
 
 					}
 					break;
 				case 33 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:242:9: 'sweet'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:242:9: 'sweet'
 					{
 					match("sweet"); 
 
 					}
 					break;
 				case 34 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:9: 'sweetest'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:9: 'sweetest'
 					{
 					match("sweetest"); 
 
 					}
 					break;
 				case 35 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:244:9: 'trustworthy'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:244:9: 'trustworthy'
 					{
 					match("trustworthy"); 
 
 					}
 					break;
 				case 36 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:245:9: 'warm'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:245:9: 'warm'
 					{
 					match("warm"); 
 
@@ -2798,7 +2800,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEUTRALADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:5: ( 'big' | 'black' | 'blue' | 'bluest' | 'bottomless' | 'furry' | 'green' | 'hard' | 'huge' | 'large' | 'little' | 'normal' | 'old' | 'purple' | 'red' | 'rural' | 'small' | 'tiny' | 'white' | 'yellow' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:5: ( 'big' | 'black' | 'blue' | 'bluest' | 'bottomless' | 'furry' | 'green' | 'hard' | 'huge' | 'large' | 'little' | 'normal' | 'old' | 'purple' | 'red' | 'rural' | 'small' | 'tiny' | 'white' | 'yellow' )
 			int alt18=20;
 			switch ( input.LA(1) ) {
 			case 'b':
@@ -3003,140 +3005,140 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt18) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:9: 'big'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:9: 'big'
 					{
 					match("big"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:251:9: 'black'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:251:9: 'black'
 					{
 					match("black"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:252:9: 'blue'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:252:9: 'blue'
 					{
 					match("blue"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:253:9: 'bluest'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:253:9: 'bluest'
 					{
 					match("bluest"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:254:9: 'bottomless'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:254:9: 'bottomless'
 					{
 					match("bottomless"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:255:9: 'furry'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:255:9: 'furry'
 					{
 					match("furry"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:256:9: 'green'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:256:9: 'green'
 					{
 					match("green"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:257:9: 'hard'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:257:9: 'hard'
 					{
 					match("hard"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:258:9: 'huge'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:258:9: 'huge'
 					{
 					match("huge"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:259:9: 'large'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:259:9: 'large'
 					{
 					match("large"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:260:9: 'little'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:260:9: 'little'
 					{
 					match("little"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:261:9: 'normal'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:261:9: 'normal'
 					{
 					match("normal"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:262:9: 'old'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:262:9: 'old'
 					{
 					match("old"); 
 
 					}
 					break;
 				case 14 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:263:9: 'purple'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:263:9: 'purple'
 					{
 					match("purple"); 
 
 					}
 					break;
 				case 15 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:264:9: 'red'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:264:9: 'red'
 					{
 					match("red"); 
 
 					}
 					break;
 				case 16 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:265:9: 'rural'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:265:9: 'rural'
 					{
 					match("rural"); 
 
 					}
 					break;
 				case 17 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:266:9: 'small'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:266:9: 'small'
 					{
 					match("small"); 
 
 					}
 					break;
 				case 18 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:267:9: 'tiny'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:267:9: 'tiny'
 					{
 					match("tiny"); 
 
 					}
 					break;
 				case 19 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:268:9: 'white'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:268:9: 'white'
 					{
 					match("white"); 
 
 					}
 					break;
 				case 20 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:269:9: 'yellow'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:269:9: 'yellow'
 					{
 					match("yellow"); 
 
@@ -3158,7 +3160,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEGATIVEADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:5: ( 'bad' | 'cowardly' | 'cursed' | 'damned' | 'dirty' | 'disgusting' | 'distasteful' | 'dusty' | 'evil' | 'fat' | 'fat-kidneyed' | 'fatherless' | 'foul' | 'hairy' | 'half-witted' | 'horrible' | 'horrid' | 'infected' | 'lying' | 'miserable' | 'misused' | 'oozing' | 'rotten' | 'smelly' | 'snotty' | 'sorry' | 'stinking' | 'stuffed' | 'stupid' | 'vile' | 'villainous' | 'worried' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:5: ( 'bad' | 'cowardly' | 'cursed' | 'damned' | 'dirty' | 'disgusting' | 'distasteful' | 'dusty' | 'evil' | 'fat' | 'fat-kidneyed' | 'fatherless' | 'foul' | 'hairy' | 'half-witted' | 'horrible' | 'horrid' | 'infected' | 'lying' | 'miserable' | 'misused' | 'oozing' | 'rotten' | 'smelly' | 'snotty' | 'sorry' | 'stinking' | 'stuffed' | 'stupid' | 'vile' | 'villainous' | 'worried' )
 			int alt19=32;
 			switch ( input.LA(1) ) {
 			case 'b':
@@ -3673,224 +3675,224 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt19) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:9: 'bad'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:9: 'bad'
 					{
 					match("bad"); 
 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:275:9: 'cowardly'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:275:9: 'cowardly'
 					{
 					match("cowardly"); 
 
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:276:9: 'cursed'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:276:9: 'cursed'
 					{
 					match("cursed"); 
 
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:9: 'damned'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:9: 'damned'
 					{
 					match("damned"); 
 
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:278:9: 'dirty'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:278:9: 'dirty'
 					{
 					match("dirty"); 
 
 					}
 					break;
 				case 6 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:279:9: 'disgusting'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:279:9: 'disgusting'
 					{
 					match("disgusting"); 
 
 					}
 					break;
 				case 7 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:280:9: 'distasteful'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:280:9: 'distasteful'
 					{
 					match("distasteful"); 
 
 					}
 					break;
 				case 8 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:281:9: 'dusty'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:281:9: 'dusty'
 					{
 					match("dusty"); 
 
 					}
 					break;
 				case 9 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:282:9: 'evil'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:282:9: 'evil'
 					{
 					match("evil"); 
 
 					}
 					break;
 				case 10 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:283:9: 'fat'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:283:9: 'fat'
 					{
 					match("fat"); 
 
 					}
 					break;
 				case 11 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:284:9: 'fat-kidneyed'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:284:9: 'fat-kidneyed'
 					{
 					match("fat-kidneyed"); 
 
 					}
 					break;
 				case 12 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:285:9: 'fatherless'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:285:9: 'fatherless'
 					{
 					match("fatherless"); 
 
 					}
 					break;
 				case 13 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:286:9: 'foul'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:286:9: 'foul'
 					{
 					match("foul"); 
 
 					}
 					break;
 				case 14 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:287:9: 'hairy'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:287:9: 'hairy'
 					{
 					match("hairy"); 
 
 					}
 					break;
 				case 15 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:9: 'half-witted'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:9: 'half-witted'
 					{
 					match("half-witted"); 
 
 					}
 					break;
 				case 16 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:289:9: 'horrible'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:289:9: 'horrible'
 					{
 					match("horrible"); 
 
 					}
 					break;
 				case 17 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:290:9: 'horrid'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:290:9: 'horrid'
 					{
 					match("horrid"); 
 
 					}
 					break;
 				case 18 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:291:9: 'infected'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:291:9: 'infected'
 					{
 					match("infected"); 
 
 					}
 					break;
 				case 19 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:292:9: 'lying'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:292:9: 'lying'
 					{
 					match("lying"); 
 
 					}
 					break;
 				case 20 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:293:9: 'miserable'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:293:9: 'miserable'
 					{
 					match("miserable"); 
 
 					}
 					break;
 				case 21 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:294:9: 'misused'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:294:9: 'misused'
 					{
 					match("misused"); 
 
 					}
 					break;
 				case 22 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:295:9: 'oozing'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:295:9: 'oozing'
 					{
 					match("oozing"); 
 
 					}
 					break;
 				case 23 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:296:9: 'rotten'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:296:9: 'rotten'
 					{
 					match("rotten"); 
 
 					}
 					break;
 				case 24 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:297:9: 'smelly'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:297:9: 'smelly'
 					{
 					match("smelly"); 
 
 					}
 					break;
 				case 25 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:298:9: 'snotty'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:298:9: 'snotty'
 					{
 					match("snotty"); 
 
 					}
 					break;
 				case 26 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:9: 'sorry'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:9: 'sorry'
 					{
 					match("sorry"); 
 
 					}
 					break;
 				case 27 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:300:9: 'stinking'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:300:9: 'stinking'
 					{
 					match("stinking"); 
 
 					}
 					break;
 				case 28 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:301:9: 'stuffed'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:301:9: 'stuffed'
 					{
 					match("stuffed"); 
 
 					}
 					break;
 				case 29 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:302:9: 'stupid'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:302:9: 'stupid'
 					{
 					match("stupid"); 
 
 					}
 					break;
 				case 30 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:303:9: 'vile'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:303:9: 'vile'
 					{
 					match("vile"); 
 
 					}
 					break;
 				case 31 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:304:9: 'villainous'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:304:9: 'villainous'
 					{
 					match("villainous"); 
 
 					}
 					break;
 				case 32 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:305:9: 'worried'
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:305:9: 'worried'
 					{
 					match("worried"); 
 
@@ -3912,8 +3914,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ACT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:6: ( 'Act' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:8: 'Act'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:6: ( 'Act' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:8: 'Act'
 			{
 			match("Act"); 
 
@@ -3933,8 +3935,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = SCENE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:8: ( 'Scene' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:10: 'Scene'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:8: ( 'Scene' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:10: 'Scene'
 			{
 			match("Scene"); 
 
@@ -3954,8 +3956,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ENTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:17: ( 'Enter' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:22: 'Enter'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:17: ( 'Enter' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:22: 'Enter'
 			{
 			match("Enter"); 
 
@@ -3975,8 +3977,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EXIT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:17: ( 'Exit' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:22: 'Exit'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:17: ( 'Exit' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:22: 'Exit'
 			{
 			match("Exit"); 
 
@@ -3996,8 +3998,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EXEUNT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:17: ( 'Exeunt' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:22: 'Exeunt'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:17: ( 'Exeunt' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:22: 'Exeunt'
 			{
 			match("Exeunt"); 
 
@@ -4017,8 +4019,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = GOTO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:17: ( 'goto' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:22: 'goto'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:17: ( 'goto' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:22: 'goto'
 			{
 			match("goto"); 
 
@@ -4038,8 +4040,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = OUTPUTVALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:17: ( 'Open your heart' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:22: 'Open your heart'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:17: ( 'Open your heart' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:22: 'Open your heart'
 			{
 			match("Open your heart"); 
 
@@ -4059,8 +4061,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = OUTPUTASCII;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:17: ( 'Speak your mind' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:22: 'Speak your mind'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:17: ( 'Speak your mind' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:22: 'Speak your mind'
 			{
 			match("Speak your mind"); 
 
@@ -4080,8 +4082,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = INPUTVALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:17: ( 'Open your mind' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:22: 'Open your mind'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:17: ( 'Open your mind' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:22: 'Open your mind'
 			{
 			match("Open your mind"); 
 
@@ -4101,8 +4103,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = INPUTASCII;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:17: ( 'Listen to your heart' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:22: 'Listen to your heart'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:17: ( 'Listen to your heart' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:22: 'Listen to your heart'
 			{
 			match("Listen to your heart"); 
 
@@ -4120,8 +4122,8 @@ public class ShakespeareLexer extends Lexer {
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:327:8: ( 'a' .. 'z' | 'A' .. 'Z' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:327:8: ( 'a' .. 'z' | 'A' .. 'Z' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -4143,8 +4145,8 @@ public class ShakespeareLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:330:7: ( '0' .. '9' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:330:7: ( '0' .. '9' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 				input.consume();
@@ -4168,8 +4170,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:5: ( ':' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:7: ':'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:5: ( ':' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:7: ':'
 			{
 			match(':'); 
 			}
@@ -4188,8 +4190,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:5: ( ',' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:7: ','
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:5: ( ',' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:7: ','
 			{
 			match(','); 
 			}
@@ -4208,8 +4210,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = DOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:335:8: ( '.' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:335:11: '.'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:335:8: ( '.' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:335:11: '.'
 			{
 			match('.'); 
 			}
@@ -4223,13 +4225,33 @@ public class ShakespeareLexer extends Lexer {
 	}
 	// $ANTLR end "DOT"
 
+	// $ANTLR start "AP"
+	public final void mAP() throws RecognitionException {
+		try {
+			int _type = AP;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:337:8: ( '\\'' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:337:10: '\\''
+			{
+			match('\''); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "AP"
+
 	// $ANTLR start "EP"
 	public final void mEP() throws RecognitionException {
 		try {
 			int _type = EP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:8: ( '!' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:11: '!'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:8: ( '!' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:11: '!'
 			{
 			match('!'); 
 			}
@@ -4248,8 +4270,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = QM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:8: ( '?' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:10: '?'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:8: ( '?' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:10: '?'
 			{
 			match('?'); 
 			}
@@ -4263,13 +4285,33 @@ public class ShakespeareLexer extends Lexer {
 	}
 	// $ANTLR end "QM"
 
+	// $ANTLR start "FS"
+	public final void mFS() throws RecognitionException {
+		try {
+			int _type = FS;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:340:4: ( '/' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:340:6: '/'
+			{
+			match('/'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "FS"
+
 	// $ANTLR start "ID"
 	public final void mID() throws RecognitionException {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:7: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:7: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -4279,7 +4321,7 @@ public class ShakespeareLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:344:3: ( LETTER | DIGIT | '_' )*
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:344:3: ( LETTER | DIGIT | '_' )*
 			loop20:
 			while (true) {
 				int alt20=2;
@@ -4290,7 +4332,7 @@ public class ShakespeareLexer extends Lexer {
 
 				switch (alt20) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -4324,10 +4366,10 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			int cnt21=0;
 			loop21:
 			while (true) {
@@ -4339,7 +4381,7 @@ public class ShakespeareLexer extends Lexer {
 
 				switch (alt21) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 					{
 					if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 						input.consume();
@@ -4377,8 +4419,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = LB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:4: ( '[' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:6: '['
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:4: ( '[' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:6: '['
 			{
 			match('['); 
 			}
@@ -4397,8 +4439,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = RB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:4: ( ']' )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:6: ']'
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:4: ( ']' )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:6: ']'
 			{
 			match(']'); 
 			}
@@ -4414,264 +4456,278 @@ public class ShakespeareLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:8: ( ONE | FIVE | TEN | FIFTY | ONEHUNDRED | FIVEHUNDRED | ONETHOUSAND | ROOT | UNITS | TENS | HUNDREDS | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | GOTO | OUTPUTVALUE | OUTPUTASCII | INPUTVALUE | INPUTASCII | CL | CM | DOT | EP | QM | ID | WS | LB | RB )
-		int alt22=37;
+		// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:8: ( ONE | FIVE | TEN | FIFTY | ONEHUNDRED | FIVEHUNDRED | ONETHOUSAND | ROOT | UNITS | TENS | HUNDREDS | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | GOTO | OUTPUTVALUE | OUTPUTASCII | INPUTVALUE | INPUTASCII | CL | CM | DOT | AP | EP | QM | FS | ID | WS | LB | RB )
+		int alt22=39;
 		alt22 = dfa22.predict(input);
 		switch (alt22) {
 			case 1 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:10: ONE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:10: ONE
 				{
 				mONE(); 
 
 				}
 				break;
 			case 2 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:14: FIVE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:14: FIVE
 				{
 				mFIVE(); 
 
 				}
 				break;
 			case 3 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:19: TEN
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:19: TEN
 				{
 				mTEN(); 
 
 				}
 				break;
 			case 4 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:23: FIFTY
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:23: FIFTY
 				{
 				mFIFTY(); 
 
 				}
 				break;
 			case 5 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:29: ONEHUNDRED
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:29: ONEHUNDRED
 				{
 				mONEHUNDRED(); 
 
 				}
 				break;
 			case 6 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:40: FIVEHUNDRED
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:40: FIVEHUNDRED
 				{
 				mFIVEHUNDRED(); 
 
 				}
 				break;
 			case 7 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:52: ONETHOUSAND
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:52: ONETHOUSAND
 				{
 				mONETHOUSAND(); 
 
 				}
 				break;
 			case 8 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:64: ROOT
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:64: ROOT
 				{
 				mROOT(); 
 
 				}
 				break;
 			case 9 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:69: UNITS
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:69: UNITS
 				{
 				mUNITS(); 
 
 				}
 				break;
 			case 10 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:75: TENS
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:75: TENS
 				{
 				mTENS(); 
 
 				}
 				break;
 			case 11 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:80: HUNDREDS
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:80: HUNDREDS
 				{
 				mHUNDREDS(); 
 
 				}
 				break;
 			case 12 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:89: CHARACTER
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:89: CHARACTER
 				{
 				mCHARACTER(); 
 
 				}
 				break;
 			case 13 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:99: POSITIVENOUN
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:99: POSITIVENOUN
 				{
 				mPOSITIVENOUN(); 
 
 				}
 				break;
 			case 14 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:112: NEUTRALNOUN
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:112: NEUTRALNOUN
 				{
 				mNEUTRALNOUN(); 
 
 				}
 				break;
 			case 15 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:124: NEGATIVENOUN
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:124: NEGATIVENOUN
 				{
 				mNEGATIVENOUN(); 
 
 				}
 				break;
 			case 16 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:137: POSITIVEADJECTIVE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:137: POSITIVEADJECTIVE
 				{
 				mPOSITIVEADJECTIVE(); 
 
 				}
 				break;
 			case 17 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:155: NEUTRALADJECTIVE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:155: NEUTRALADJECTIVE
 				{
 				mNEUTRALADJECTIVE(); 
 
 				}
 				break;
 			case 18 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:172: NEGATIVEADJECTIVE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:172: NEGATIVEADJECTIVE
 				{
 				mNEGATIVEADJECTIVE(); 
 
 				}
 				break;
 			case 19 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:190: ACT
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:190: ACT
 				{
 				mACT(); 
 
 				}
 				break;
 			case 20 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:194: SCENE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:194: SCENE
 				{
 				mSCENE(); 
 
 				}
 				break;
 			case 21 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:200: ENTER
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:200: ENTER
 				{
 				mENTER(); 
 
 				}
 				break;
 			case 22 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:206: EXIT
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:206: EXIT
 				{
 				mEXIT(); 
 
 				}
 				break;
 			case 23 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:211: EXEUNT
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:211: EXEUNT
 				{
 				mEXEUNT(); 
 
 				}
 				break;
 			case 24 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:218: GOTO
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:218: GOTO
 				{
 				mGOTO(); 
 
 				}
 				break;
 			case 25 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:223: OUTPUTVALUE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:223: OUTPUTVALUE
 				{
 				mOUTPUTVALUE(); 
 
 				}
 				break;
 			case 26 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:235: OUTPUTASCII
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:235: OUTPUTASCII
 				{
 				mOUTPUTASCII(); 
 
 				}
 				break;
 			case 27 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:247: INPUTVALUE
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:247: INPUTVALUE
 				{
 				mINPUTVALUE(); 
 
 				}
 				break;
 			case 28 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:258: INPUTASCII
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:258: INPUTASCII
 				{
 				mINPUTASCII(); 
 
 				}
 				break;
 			case 29 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:269: CL
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:269: CL
 				{
 				mCL(); 
 
 				}
 				break;
 			case 30 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:272: CM
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:272: CM
 				{
 				mCM(); 
 
 				}
 				break;
 			case 31 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:275: DOT
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:275: DOT
 				{
 				mDOT(); 
 
 				}
 				break;
 			case 32 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:279: EP
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:279: AP
+				{
+				mAP(); 
+
+				}
+				break;
+			case 33 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:282: EP
 				{
 				mEP(); 
 
 				}
 				break;
-			case 33 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:282: QM
+			case 34 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:285: QM
 				{
 				mQM(); 
 
 				}
 				break;
-			case 34 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:285: ID
+			case 35 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:288: FS
+				{
+				mFS(); 
+
+				}
+				break;
+			case 36 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:291: ID
 				{
 				mID(); 
 
 				}
 				break;
-			case 35 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:288: WS
+			case 37 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:294: WS
 				{
 				mWS(); 
 
 				}
 				break;
-			case 36 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:291: LB
+			case 38 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:297: LB
 				{
 				mLB(); 
 
 				}
 				break;
-			case 37 :
-				// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:294: RB
+			case 39 :
+				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:300: RB
 				{
 				mRB(); 
 
@@ -4809,48 +4865,48 @@ public class ShakespeareLexer extends Lexer {
 	}
 
 	static final String DFA22_eotS =
-		"\1\uffff\1\65\1\71\1\73\1\102\1\105\1\112\1\117\44\61\12\uffff\3\u00b7"+
-		"\1\uffff\1\u00b7\1\uffff\3\u00b8\3\61\1\uffff\1\u00b8\1\61\1\uffff\3\u00be"+
-		"\1\61\1\uffff\1\u00be\3\61\1\uffff\147\61\2\uffff\5\61\1\uffff\44\61\1"+
-		"\u0194\20\61\1\u01a6\3\61\1\u01aa\4\61\1\u01a6\6\61\2\u01b7\17\61\1\u01c9"+
-		"\6\61\1\u0194\10\61\1\u01c9\1\u01b7\3\61\1\u01b7\32\61\1\u01a6\25\61\1"+
-		"\u01a6\5\61\1\u01c9\4\61\1\u021a\5\61\1\u01aa\7\61\2\u0226\5\61\1\u022d"+
-		"\16\61\1\u01a6\1\u01aa\2\61\1\u01b7\3\61\1\u01b7\1\61\1\uffff\1\61\1\u0243"+
-		"\1\61\1\u0243\1\61\1\u0194\1\61\1\u01b7\1\61\1\u01a6\1\61\1\u01c9\1\61"+
-		"\1\u01aa\3\61\1\uffff\2\61\1\u01c9\1\uffff\1\u01aa\1\61\1\u01aa\11\61"+
-		"\1\uffff\14\61\1\u01aa\1\u01b7\3\61\1\uffff\1\u0243\12\61\1\u01c9\1\u0243"+
-		"\10\61\1\u0243\3\61\1\u01b7\12\61\1\u01a6\1\61\1\u0243\1\u028a\1\61\1"+
-		"\u01b7\13\61\1\u01b7\4\61\1\u01b7\3\61\1\u01b7\1\u01a6\1\u01b7\1\61\1"+
-		"\u01c9\1\61\1\u01b7\1\u0243\1\u01a6\3\61\1\u0194\3\61\1\u0194\1\61\1\uffff"+
-		"\1\61\1\u02a8\11\61\1\uffff\4\u0226\1\u022d\1\61\1\uffff\1\u022d\3\61"+
-		"\1\uffff\6\61\1\u02bd\2\61\1\u01aa\6\61\1\uffff\1\61\1\u01c9\1\61\1\u0243"+
-		"\1\u0194\3\61\1\u01b7\1\61\1\u01a6\2\61\1\u01b7\4\61\1\u0243\1\61\1\u0243"+
-		"\1\61\1\u0194\7\61\1\u01c9\1\61\1\u0243\1\61\1\u01b7\2\61\1\u01c9\2\61"+
-		"\1\u0243\5\61\1\u01c9\7\61\1\u01a6\4\61\2\u01a6\2\61\1\u0194\2\61\1\u0194"+
-		"\1\61\1\u01c9\1\61\1\uffff\2\61\1\u01c9\1\u01a6\3\61\1\u0194\7\61\1\u01b7"+
-		"\1\u0243\1\61\1\u01b7\1\61\1\u01b7\1\61\1\u01c9\5\61\1\u0310\1\uffff\2"+
-		"\61\1\u022d\6\61\1\u022d\1\61\2\u022d\1\uffff\1\61\1\u022d\4\61\2\uffff"+
-		"\1\u01aa\1\u01b7\1\61\1\u01aa\1\u01b7\1\u01a6\1\u01b7\5\61\1\u0194\1\u0243"+
-		"\1\u01a6\1\u01c9\1\61\2\u0243\1\61\1\u01b7\5\61\1\u0194\1\u0243\1\u0194"+
-		"\1\61\2\u0194\4\61\1\u01a6\3\61\1\u01c9\3\61\1\u01b7\1\u01a6\1\61\1\u0194"+
-		"\3\61\1\u0194\10\61\2\u0243\1\61\1\u01c9\2\u0243\3\61\1\u0243\1\61\2\u01b7"+
-		"\1\u01c9\3\61\1\u0194\1\u01c9\2\61\1\uffff\1\u034f\1\61\1\uffff\1\u022d"+
-		"\2\61\1\u022d\2\61\1\uffff\1\u022d\1\61\1\u022d\1\61\1\u022d\1\u0243\2"+
-		"\61\1\u01b7\1\61\1\u0243\6\61\1\u0194\1\61\1\u0243\1\u01aa\1\u01b7\1\u01a6"+
-		"\1\61\1\u01a6\6\61\1\u0243\3\61\1\u01a6\6\61\1\u01b7\2\61\1\u0194\1\u01b7"+
-		"\1\61\1\u0194\3\61\1\uffff\2\61\1\u022d\1\61\1\u022d\1\uffff\1\61\1\u022d"+
-		"\2\61\1\u0243\1\u0194\1\u0243\1\u01b7\2\61\1\u0194\1\u0243\4\61\1\u0243"+
-		"\1\u0194\1\u01a6\1\u0243\1\u01b7\6\61\1\u01b7\4\61\1\u0194\2\61\1\u022d"+
-		"\1\u01a6\1\uffff\1\u022d\1\61\1\u01aa\1\u01b7\1\61\1\u0243\2\61\1\u01b7"+
-		"\1\u0243\5\61\1\u01b7\1\u0194\4\61\1\uffff\1\u0194\1\u01a6\1\u0243\1\u01c9"+
-		"\1\u0194\6\61\1\u0194\1\u022d\2\uffff\1\u0194\1\61\2\u01b7\2\u0243\1\61"+
-		"\1\u01b7";
+		"\1\uffff\1\67\1\73\1\75\1\104\1\107\1\114\1\121\44\63\14\uffff\3\u00b9"+
+		"\1\uffff\1\u00b9\1\uffff\3\u00ba\3\63\1\uffff\1\u00ba\1\63\1\uffff\3\u00c0"+
+		"\1\63\1\uffff\1\u00c0\3\63\1\uffff\147\63\2\uffff\5\63\1\uffff\44\63\1"+
+		"\u0196\20\63\1\u01a8\3\63\1\u01ac\4\63\1\u01a8\6\63\2\u01b9\17\63\1\u01cb"+
+		"\6\63\1\u0196\10\63\1\u01cb\1\u01b9\3\63\1\u01b9\32\63\1\u01a8\25\63\1"+
+		"\u01a8\5\63\1\u01cb\4\63\1\u021c\5\63\1\u01ac\7\63\2\u0228\5\63\1\u022f"+
+		"\16\63\1\u01a8\1\u01ac\2\63\1\u01b9\3\63\1\u01b9\1\63\1\uffff\1\63\1\u0245"+
+		"\1\63\1\u0245\1\63\1\u0196\1\63\1\u01b9\1\63\1\u01a8\1\63\1\u01cb\1\63"+
+		"\1\u01ac\3\63\1\uffff\2\63\1\u01cb\1\uffff\1\u01ac\1\63\1\u01ac\11\63"+
+		"\1\uffff\14\63\1\u01ac\1\u01b9\3\63\1\uffff\1\u0245\12\63\1\u01cb\1\u0245"+
+		"\10\63\1\u0245\3\63\1\u01b9\12\63\1\u01a8\1\63\1\u0245\1\u028c\1\63\1"+
+		"\u01b9\13\63\1\u01b9\4\63\1\u01b9\3\63\1\u01b9\1\u01a8\1\u01b9\1\63\1"+
+		"\u01cb\1\63\1\u01b9\1\u0245\1\u01a8\3\63\1\u0196\3\63\1\u0196\1\63\1\uffff"+
+		"\1\63\1\u02aa\11\63\1\uffff\4\u0228\1\u022f\1\63\1\uffff\1\u022f\3\63"+
+		"\1\uffff\6\63\1\u02bf\2\63\1\u01ac\6\63\1\uffff\1\63\1\u01cb\1\63\1\u0245"+
+		"\1\u0196\3\63\1\u01b9\1\63\1\u01a8\2\63\1\u01b9\4\63\1\u0245\1\63\1\u0245"+
+		"\1\63\1\u0196\7\63\1\u01cb\1\63\1\u0245\1\63\1\u01b9\2\63\1\u01cb\2\63"+
+		"\1\u0245\5\63\1\u01cb\7\63\1\u01a8\4\63\2\u01a8\2\63\1\u0196\2\63\1\u0196"+
+		"\1\63\1\u01cb\1\63\1\uffff\2\63\1\u01cb\1\u01a8\3\63\1\u0196\7\63\1\u01b9"+
+		"\1\u0245\1\63\1\u01b9\1\63\1\u01b9\1\63\1\u01cb\5\63\1\u0312\1\uffff\2"+
+		"\63\1\u022f\6\63\1\u022f\1\63\2\u022f\1\uffff\1\63\1\u022f\4\63\2\uffff"+
+		"\1\u01ac\1\u01b9\1\63\1\u01ac\1\u01b9\1\u01a8\1\u01b9\5\63\1\u0196\1\u0245"+
+		"\1\u01a8\1\u01cb\1\63\2\u0245\1\63\1\u01b9\5\63\1\u0196\1\u0245\1\u0196"+
+		"\1\63\2\u0196\4\63\1\u01a8\3\63\1\u01cb\3\63\1\u01b9\1\u01a8\1\63\1\u0196"+
+		"\3\63\1\u0196\10\63\2\u0245\1\63\1\u01cb\2\u0245\3\63\1\u0245\1\63\2\u01b9"+
+		"\1\u01cb\3\63\1\u0196\1\u01cb\2\63\1\uffff\1\u0351\1\63\1\uffff\1\u022f"+
+		"\2\63\1\u022f\2\63\1\uffff\1\u022f\1\63\1\u022f\1\63\1\u022f\1\u0245\2"+
+		"\63\1\u01b9\1\63\1\u0245\6\63\1\u0196\1\63\1\u0245\1\u01ac\1\u01b9\1\u01a8"+
+		"\1\63\1\u01a8\6\63\1\u0245\3\63\1\u01a8\6\63\1\u01b9\2\63\1\u0196\1\u01b9"+
+		"\1\63\1\u0196\3\63\1\uffff\2\63\1\u022f\1\63\1\u022f\1\uffff\1\63\1\u022f"+
+		"\2\63\1\u0245\1\u0196\1\u0245\1\u01b9\2\63\1\u0196\1\u0245\4\63\1\u0245"+
+		"\1\u0196\1\u01a8\1\u0245\1\u01b9\6\63\1\u01b9\4\63\1\u0196\2\63\1\u022f"+
+		"\1\u01a8\1\uffff\1\u022f\1\63\1\u01ac\1\u01b9\1\63\1\u0245\2\63\1\u01b9"+
+		"\1\u0245\5\63\1\u01b9\1\u0196\4\63\1\uffff\1\u0196\1\u01a8\1\u0245\1\u01cb"+
+		"\1\u0196\6\63\1\u0196\1\u022f\2\uffff\1\u0196\1\63\2\u01b9\2\u0245\1\63"+
+		"\1\u01b9";
 	static final String DFA22_eofS =
-		"\u03a9\uffff";
+		"\u03ab\uffff";
 	static final String DFA22_minS =
 		"\1\11\7\60\1\157\1\141\1\145\1\146\1\145\1\141\1\165\1\157\1\143\1\145"+
 		"\1\151\1\155\2\141\1\157\1\145\1\151\1\145\1\151\3\141\1\145\1\141\1\151"+
-		"\1\145\1\150\1\156\1\141\1\155\1\154\1\145\1\156\1\151\1\143\1\156\12"+
+		"\1\145\1\150\1\156\1\141\1\155\1\154\1\145\1\156\1\151\1\143\1\156\14"+
 		"\uffff\3\60\1\uffff\1\60\1\uffff\3\60\1\144\1\162\1\163\1\uffff\1\60\1"+
 		"\141\1\uffff\3\60\1\163\1\uffff\1\60\1\162\2\143\1\uffff\2\103\1\155\1"+
 		"\154\1\147\1\157\1\162\1\145\1\141\1\145\1\142\1\156\2\154\1\157\1\171"+
@@ -4900,7 +4956,7 @@ public class ShakespeareLexer extends Lexer {
 		"\1\167\2\60\1\154\1\60\1\167\1\60\1\145\1\60\1\151\1\147\1\167\1\164\1"+
 		"\151\1\60\1\uffff\1\164\1\143\1\60\1\40\2\157\1\151\1\146\1\157\1\60\1"+
 		"\144\2\60\2\157\1\60\1\143\1\157\1\162\1\153\2\uffff\2\60\1\147\4\60\1"+
-		"\145\1\162\1\155\1\171\1\154\4\60\1\165\2\60\1\u2019\1\60\1\145\1\141"+
+		"\145\1\162\1\155\1\171\1\154\4\60\1\165\2\60\1\u00e2\1\60\1\145\1\141"+
 		"\1\164\1\156\1\144\3\60\1\163\2\60\1\164\1\155\1\162\1\144\1\60\1\146"+
 		"\1\162\1\155\1\60\1\154\1\150\1\156\2\60\1\143\1\60\1\147\1\163\1\145"+
 		"\1\60\1\157\3\164\2\141\2\157\2\60\1\156\3\60\1\164\1\142\1\144\1\60\1"+
@@ -4918,7 +4974,7 @@ public class ShakespeareLexer extends Lexer {
 	static final String DFA22_maxS =
 		"\10\172\1\157\1\165\1\150\1\162\1\145\1\141\1\165\1\162\1\160\1\145\1"+
 		"\151\3\165\1\157\1\165\1\167\1\165\1\151\1\162\2\165\1\162\1\171\2\157"+
-		"\1\162\1\156\1\157\1\166\1\157\1\145\1\156\1\151\1\143\1\170\12\uffff"+
+		"\1\162\1\156\1\157\1\166\1\157\1\145\1\156\1\151\1\143\1\170\14\uffff"+
 		"\3\172\1\uffff\1\172\1\uffff\3\172\1\145\1\162\1\163\1\uffff\1\172\1\141"+
 		"\1\uffff\3\172\1\163\1\uffff\1\172\1\162\2\143\1\uffff\2\130\1\155\1\154"+
 		"\1\147\1\157\1\162\1\145\1\141\1\145\1\142\1\156\2\154\1\157\1\171\2\145"+
@@ -4969,7 +5025,7 @@ public class ShakespeareLexer extends Lexer {
 		"\1\145\1\172\1\151\1\147\1\167\1\164\1\151\1\172\1\uffff\1\164\1\143\1"+
 		"\172\1\40\2\157\1\151\1\146\1\157\1\172\1\144\2\172\2\157\1\172\1\143"+
 		"\1\157\1\162\1\153\2\uffff\2\172\1\147\4\172\1\145\1\162\1\155\1\171\1"+
-		"\154\4\172\1\165\2\172\1\u2019\1\172\1\145\1\141\1\164\1\156\1\144\3\172"+
+		"\154\4\172\1\165\2\172\1\u00e2\1\172\1\145\1\141\1\164\1\156\1\144\3\172"+
 		"\1\163\2\172\1\164\1\155\1\162\1\144\1\172\1\146\1\162\1\155\1\172\1\154"+
 		"\1\150\1\156\2\172\1\143\1\172\1\147\1\163\1\145\1\172\1\157\3\164\2\141"+
 		"\2\157\2\172\1\156\3\172\1\164\1\142\1\144\1\172\1\147\3\172\1\157\2\144"+
@@ -4985,75 +5041,75 @@ public class ShakespeareLexer extends Lexer {
 		"\1\150\1\155\5\172\1\154\1\164\2\162\1\171\1\144\2\172\2\uffff\1\172\1"+
 		"\145\4\172\1\162\1\172";
 	static final String DFA22_acceptS =
-		"\54\uffff\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\1\3\uffff\1\2"+
-		"\1\uffff\1\3\6\uffff\1\4\2\uffff\1\5\4\uffff\1\6\4\uffff\1\7\147\uffff"+
-		"\1\11\1\12\5\uffff\1\13\u00d5\uffff\1\22\21\uffff\1\17\3\uffff\1\15\14"+
-		"\uffff\1\16\21\uffff\1\21\120\uffff\1\23\13\uffff\1\10\6\uffff\1\14\25"+
-		"\uffff\1\20\106\uffff\1\30\35\uffff\1\26\24\uffff\1\24\1\32\121\uffff"+
-		"\1\25\2\uffff\1\34\73\uffff\1\27\117\uffff\1\31\1\33\10\uffff";
+		"\54\uffff\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\46\1\47\1\1\3"+
+		"\uffff\1\2\1\uffff\1\3\6\uffff\1\4\2\uffff\1\5\4\uffff\1\6\4\uffff\1\7"+
+		"\147\uffff\1\11\1\12\5\uffff\1\13\u00d5\uffff\1\22\21\uffff\1\17\3\uffff"+
+		"\1\15\14\uffff\1\16\21\uffff\1\21\120\uffff\1\23\13\uffff\1\10\6\uffff"+
+		"\1\14\25\uffff\1\20\106\uffff\1\30\35\uffff\1\26\24\uffff\1\24\1\32\121"+
+		"\uffff\1\25\2\uffff\1\34\73\uffff\1\27\117\uffff\1\31\1\33\10\uffff";
 	static final String DFA22_specialS =
-		"\u03a9\uffff}>";
+		"\u03ab\uffff}>";
 	static final String[] DFA22_transitionS = {
-			"\2\62\2\uffff\1\62\22\uffff\1\62\1\57\12\uffff\1\55\1\uffff\1\56\13\uffff"+
-			"\1\54\4\uffff\1\60\1\uffff\1\52\1\15\1\5\1\6\1\53\1\16\1\12\1\21\1\1"+
-			"\1\11\1\22\1\4\1\7\1\61\1\13\1\17\1\61\1\10\1\20\1\14\1\61\1\2\1\61\1"+
-			"\3\2\61\1\63\1\uffff\1\64\1\uffff\1\61\1\uffff\1\23\1\33\1\34\1\35\1"+
-			"\45\1\24\1\36\1\25\1\50\1\26\1\32\1\37\1\40\1\41\1\46\1\27\1\61\1\31"+
-			"\1\30\1\42\1\43\1\51\1\44\1\61\1\47\1\61",
-			"\12\61\7\uffff\10\61\1\66\14\61\1\67\1\61\1\70\2\61\4\uffff\1\61\1\uffff"+
-			"\32\61",
-			"\12\61\7\uffff\10\61\1\72\21\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\2\61\1\76\10\61\1\75\13\61\1\74\2\61\4\uffff\1\61\1\uffff"+
-			"\32\61",
-			"\12\61\7\uffff\27\61\1\103\2\61\4\uffff\1\61\1\uffff\1\77\7\61\1\101"+
-			"\5\61\1\100\13\61",
-			"\12\61\7\uffff\2\61\1\106\1\107\10\61\1\110\15\61\4\uffff\1\61\1\uffff"+
-			"\13\61\1\104\16\61",
-			"\12\61\7\uffff\2\61\1\113\27\61\4\uffff\1\61\1\uffff\4\61\1\111\25\61",
-			"\12\61\7\uffff\2\61\1\120\1\121\26\61\4\uffff\1\61\1\uffff\1\115\3\61"+
-			"\1\114\3\61\1\116\21\61",
-			"\1\122",
-			"\1\124\23\uffff\1\123",
-			"\1\126\2\uffff\1\125",
-			"\1\127\11\uffff\1\131\1\uffff\1\130",
-			"\1\132",
-			"\1\133",
+			"\2\64\2\uffff\1\64\22\uffff\1\64\1\60\5\uffff\1\57\4\uffff\1\55\1\uffff"+
+			"\1\56\1\62\12\uffff\1\54\4\uffff\1\61\1\uffff\1\52\1\15\1\5\1\6\1\53"+
+			"\1\16\1\12\1\21\1\1\1\11\1\22\1\4\1\7\1\63\1\13\1\17\1\63\1\10\1\20\1"+
+			"\14\1\63\1\2\1\63\1\3\2\63\1\65\1\uffff\1\66\1\uffff\1\63\1\uffff\1\23"+
+			"\1\33\1\34\1\35\1\45\1\24\1\36\1\25\1\50\1\26\1\32\1\37\1\40\1\41\1\46"+
+			"\1\27\1\63\1\31\1\30\1\42\1\43\1\51\1\44\1\63\1\47\1\63",
+			"\12\63\7\uffff\10\63\1\70\14\63\1\71\1\63\1\72\2\63\4\uffff\1\63\1\uffff"+
+			"\32\63",
+			"\12\63\7\uffff\10\63\1\74\21\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\2\63\1\100\10\63\1\77\13\63\1\76\2\63\4\uffff\1\63\1"+
+			"\uffff\32\63",
+			"\12\63\7\uffff\27\63\1\105\2\63\4\uffff\1\63\1\uffff\1\101\7\63\1\103"+
+			"\5\63\1\102\13\63",
+			"\12\63\7\uffff\2\63\1\110\1\111\10\63\1\112\15\63\4\uffff\1\63\1\uffff"+
+			"\13\63\1\106\16\63",
+			"\12\63\7\uffff\2\63\1\115\27\63\4\uffff\1\63\1\uffff\4\63\1\113\25\63",
+			"\12\63\7\uffff\2\63\1\122\1\123\26\63\4\uffff\1\63\1\uffff\1\117\3\63"+
+			"\1\116\3\63\1\120\21\63",
+			"\1\124",
+			"\1\126\23\uffff\1\125",
+			"\1\130\2\uffff\1\127",
+			"\1\131\11\uffff\1\133\1\uffff\1\132",
 			"\1\134",
-			"\1\135\2\uffff\1\136",
-			"\1\140\4\uffff\1\137\7\uffff\1\141",
-			"\1\142",
-			"\1\143",
-			"\1\146\1\144\6\uffff\1\145",
-			"\1\150\3\uffff\1\151\3\uffff\1\152\2\uffff\1\147\2\uffff\1\154\5\uffff"+
-			"\1\153",
-			"\1\155\3\uffff\1\156\11\uffff\1\157\5\uffff\1\160",
-			"\1\161",
-			"\1\166\3\uffff\1\165\2\uffff\1\162\2\uffff\1\163\2\uffff\1\167\2\uffff"+
-			"\1\164",
-			"\1\171\1\uffff\1\172\1\uffff\1\176\1\u0080\1\173\1\uffff\1\174\2\uffff"+
-			"\1\175\1\170\1\uffff\1\177",
-			"\1\u0082\3\uffff\1\u0083\5\uffff\1\u0081\5\uffff\1\u0084",
-			"\1\u0085",
-			"\1\u0087\3\uffff\1\u0088\3\uffff\1\u008b\2\uffff\1\u0089\2\uffff\1\u008a"+
-			"\2\uffff\1\u0086",
-			"\1\u008c\6\uffff\1\u008d\3\uffff\1\u0090\2\uffff\1\u008e\5\uffff\1\u008f",
-			"\1\u0091\3\uffff\1\u0093\3\uffff\1\u0095\5\uffff\1\u0092\2\uffff\1\u0094"+
-			"\2\uffff\1\u0096",
-			"\1\u0099\11\uffff\1\u0098\2\uffff\1\u0097",
-			"\1\u009a\3\uffff\1\u009b\3\uffff\1\u009c\5\uffff\1\u009d\11\uffff\1"+
-			"\u009e",
-			"\1\u009f\5\uffff\1\u00a0",
-			"\1\u00a1\3\uffff\1\u00a2\5\uffff\1\u00a3",
-			"\1\u00a4\1\u00a7\5\uffff\1\u00a5\2\uffff\1\u00a6",
-			"\1\u00a8",
-			"\1\u00aa\6\uffff\1\u00ac\1\u00a9\5\uffff\1\u00ab",
-			"\1\u00ad\10\uffff\1\u00ae",
-			"\1\u00af\2\uffff\1\u00b0",
-			"\1\u00b1",
-			"\1\u00b2",
+			"\1\135",
+			"\1\136",
+			"\1\137\2\uffff\1\140",
+			"\1\142\4\uffff\1\141\7\uffff\1\143",
+			"\1\144",
+			"\1\145",
+			"\1\150\1\146\6\uffff\1\147",
+			"\1\152\3\uffff\1\153\3\uffff\1\154\2\uffff\1\151\2\uffff\1\156\5\uffff"+
+			"\1\155",
+			"\1\157\3\uffff\1\160\11\uffff\1\161\5\uffff\1\162",
+			"\1\163",
+			"\1\170\3\uffff\1\167\2\uffff\1\164\2\uffff\1\165\2\uffff\1\171\2\uffff"+
+			"\1\166",
+			"\1\173\1\uffff\1\174\1\uffff\1\u0080\1\u0082\1\175\1\uffff\1\176\2\uffff"+
+			"\1\177\1\172\1\uffff\1\u0081",
+			"\1\u0084\3\uffff\1\u0085\5\uffff\1\u0083\5\uffff\1\u0086",
+			"\1\u0087",
+			"\1\u0089\3\uffff\1\u008a\3\uffff\1\u008d\2\uffff\1\u008b\2\uffff\1\u008c"+
+			"\2\uffff\1\u0088",
+			"\1\u008e\6\uffff\1\u008f\3\uffff\1\u0092\2\uffff\1\u0090\5\uffff\1\u0091",
+			"\1\u0093\3\uffff\1\u0095\3\uffff\1\u0097\5\uffff\1\u0094\2\uffff\1\u0096"+
+			"\2\uffff\1\u0098",
+			"\1\u009b\11\uffff\1\u009a\2\uffff\1\u0099",
+			"\1\u009c\3\uffff\1\u009d\3\uffff\1\u009e\5\uffff\1\u009f\11\uffff\1"+
+			"\u00a0",
+			"\1\u00a1\5\uffff\1\u00a2",
+			"\1\u00a3\3\uffff\1\u00a4\5\uffff\1\u00a5",
+			"\1\u00a6\1\u00a9\5\uffff\1\u00a7\2\uffff\1\u00a8",
+			"\1\u00aa",
+			"\1\u00ac\6\uffff\1\u00ae\1\u00ab\5\uffff\1\u00ad",
+			"\1\u00af\10\uffff\1\u00b0",
+			"\1\u00b1\2\uffff\1\u00b2",
 			"\1\u00b3",
 			"\1\u00b4",
-			"\1\u00b5\11\uffff\1\u00b6",
+			"\1\u00b5",
+			"\1\u00b6",
+			"\1\u00b7\11\uffff\1\u00b8",
 			"",
 			"",
 			"",
@@ -5064,36 +5120,36 @@ public class ShakespeareLexer extends Lexer {
 			"",
 			"",
 			"",
-			"\12\61\7\uffff\10\61\1\66\21\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
-			"\12\61\7\uffff\10\61\1\72\21\61\4\uffff\1\61\1\uffff\32\61",
 			"",
-			"\12\61\7\uffff\27\61\1\74\2\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u00b9\1\u00ba",
-			"\1\u00bb",
-			"\1\u00bc",
+			"\12\63\7\uffff\10\63\1\70\21\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"",
-			"\12\61\7\uffff\27\61\1\103\2\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\10\63\1\74\21\63\4\uffff\1\63\1\uffff\32\63",
+			"",
+			"\12\63\7\uffff\27\63\1\76\2\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00bb\1\u00bc",
 			"\1\u00bd",
+			"\1\u00be",
 			"",
-			"\12\61\7\uffff\2\61\1\106\27\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\27\63\1\105\2\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u00bf",
 			"",
-			"\12\61\7\uffff\2\61\1\113\27\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u00c0",
+			"\12\63\7\uffff\2\63\1\110\27\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u00c1",
-			"\1\u00c2",
 			"",
-			"\1\u00c3\1\u00c6\7\uffff\1\u00c5\1\u00c7\12\uffff\1\u00c4",
-			"\1\u00c8\10\uffff\1\u00c5\13\uffff\1\u00c4",
-			"\1\u00c9",
-			"\1\u00ca",
+			"\12\63\7\uffff\2\63\1\115\27\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u00c2",
+			"\1\u00c3",
+			"\1\u00c4",
+			"",
+			"\1\u00c5\1\u00c8\7\uffff\1\u00c7\1\u00c9\12\uffff\1\u00c6",
+			"\1\u00ca\10\uffff\1\u00c7\13\uffff\1\u00c6",
 			"\1\u00cb",
 			"\1\u00cc",
 			"\1\u00cd",
@@ -5108,83 +5164,83 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u00d6",
 			"\1\u00d7",
 			"\1\u00d8",
-			"\1\u00d9\12\uffff\1\u00da",
-			"\1\u00db",
-			"\1\u00dc\1\uffff\1\u00dd",
-			"\1\u00de",
-			"\1\u00df",
-			"\1\u00e1\5\uffff\1\u00e0",
-			"\1\u00e2\5\uffff\1\u00e5\3\uffff\1\u00e4\6\uffff\1\u00e3",
-			"\1\u00e6",
-			"\1\u00e7",
+			"\1\u00d9",
+			"\1\u00da",
+			"\1\u00db\12\uffff\1\u00dc",
+			"\1\u00dd",
+			"\1\u00de\1\uffff\1\u00df",
+			"\1\u00e0",
+			"\1\u00e1",
+			"\1\u00e3\5\uffff\1\u00e2",
+			"\1\u00e4\5\uffff\1\u00e7\3\uffff\1\u00e6\6\uffff\1\u00e5",
 			"\1\u00e8",
 			"\1\u00e9",
-			"\1\u00eb\2\uffff\1\u00f0\1\u00ec\1\u00ee\1\uffff\1\u00ea\1\uffff\1\u00ef"+
-			"\1\uffff\1\u00ed",
-			"\1\u00f2\20\uffff\1\u00f1",
-			"\1\u00f4\6\uffff\1\u00f6\3\uffff\1\u00f3\2\uffff\1\u00f5",
-			"\1\u00f7",
-			"\1\u00f8",
-			"\1\u00fa\23\uffff\1\u00f9",
-			"\1\u00fb",
-			"\1\u00fc",
+			"\1\u00ea",
+			"\1\u00eb",
+			"\1\u00ed\2\uffff\1\u00f2\1\u00ee\1\u00f0\1\uffff\1\u00ec\1\uffff\1\u00f1"+
+			"\1\uffff\1\u00ef",
+			"\1\u00f4\20\uffff\1\u00f3",
+			"\1\u00f6\6\uffff\1\u00f8\3\uffff\1\u00f5\2\uffff\1\u00f7",
+			"\1\u00f9",
+			"\1\u00fa",
+			"\1\u00fc\23\uffff\1\u00fb",
 			"\1\u00fd",
 			"\1\u00fe",
-			"\1\u00ff\11\uffff\1\u0100",
-			"\1\u0101\1\u0102",
-			"\1\u0103",
-			"\1\u0104",
-			"\1\u0105\3\uffff\1\u0106",
-			"\1\u0107",
-			"\1\u0109\7\uffff\1\u010a\5\uffff\1\u0108\5\uffff\1\u010b",
-			"\1\u010d\3\uffff\1\u010e\11\uffff\1\u010c",
-			"\1\u010f",
-			"\1\u0110",
-			"\1\u0112\13\uffff\1\u0113\5\uffff\1\u0111\1\u0114",
-			"\1\u0115",
-			"\1\u0116",
+			"\1\u00ff",
+			"\1\u0100",
+			"\1\u0101\11\uffff\1\u0102",
+			"\1\u0103\1\u0104",
+			"\1\u0105",
+			"\1\u0106",
+			"\1\u0107\3\uffff\1\u0108",
+			"\1\u0109",
+			"\1\u010b\7\uffff\1\u010c\5\uffff\1\u010a\5\uffff\1\u010d",
+			"\1\u010f\3\uffff\1\u0110\11\uffff\1\u010e",
+			"\1\u0111",
+			"\1\u0112",
+			"\1\u0114\13\uffff\1\u0115\5\uffff\1\u0113\1\u0116",
 			"\1\u0117",
 			"\1\u0118",
-			"\1\u011a\15\uffff\1\u0119",
-			"\1\u011c\16\uffff\1\u011b",
-			"\1\u011e\5\uffff\1\u011d",
-			"\1\u0121\7\uffff\1\u011f\5\uffff\1\u0120\5\uffff\1\u0122",
-			"\1\u0123\7\uffff\1\u0124",
-			"\1\u0125",
-			"\1\u0126",
-			"\1\u0128\7\uffff\1\u0127",
-			"\1\u012b\20\uffff\1\u0129\1\uffff\1\u012a",
-			"\1\u012d\3\uffff\1\u012c\1\uffff\1\u012e",
-			"\1\u012f",
-			"\1\u0131\7\uffff\1\u0130",
-			"\1\u0132",
-			"\1\u0133\12\uffff\1\u0135\11\uffff\1\u0134",
-			"\1\u0136",
-			"\1\u0137\1\u0138",
-			"\1\u0139",
-			"\1\u013a\3\uffff\1\u013b",
-			"\1\u013c\12\uffff\1\u013d\2\uffff\1\u013e\4\uffff\1\u013f",
-			"\1\u0140",
-			"\1\u0141\1\u0142\3\uffff\1\u0143",
-			"\1\u0144",
-			"\1\u0145\16\uffff\1\u0146",
-			"\1\u0147",
-			"\1\u0148",
-			"\1\u014a\13\uffff\1\u0149",
-			"\1\u014b\2\uffff\1\u014c\1\uffff\1\u014d",
-			"\1\u014e",
-			"\1\u014f",
-			"\1\u0151\17\uffff\1\u0152\1\u0150",
-			"\1\u0153",
-			"\1\u0155\25\uffff\1\u0154",
-			"\1\u0156\17\uffff\1\u0157",
-			"\1\u0158",
-			"\1\u0159",
+			"\1\u0119",
+			"\1\u011a",
+			"\1\u011c\15\uffff\1\u011b",
+			"\1\u011e\16\uffff\1\u011d",
+			"\1\u0120\5\uffff\1\u011f",
+			"\1\u0123\7\uffff\1\u0121\5\uffff\1\u0122\5\uffff\1\u0124",
+			"\1\u0125\7\uffff\1\u0126",
+			"\1\u0127",
+			"\1\u0128",
+			"\1\u012a\7\uffff\1\u0129",
+			"\1\u012d\20\uffff\1\u012b\1\uffff\1\u012c",
+			"\1\u012f\3\uffff\1\u012e\1\uffff\1\u0130",
+			"\1\u0131",
+			"\1\u0133\7\uffff\1\u0132",
+			"\1\u0134",
+			"\1\u0135\12\uffff\1\u0137\11\uffff\1\u0136",
+			"\1\u0138",
+			"\1\u0139\1\u013a",
+			"\1\u013b",
+			"\1\u013c\3\uffff\1\u013d",
+			"\1\u013e\12\uffff\1\u013f\2\uffff\1\u0140\4\uffff\1\u0141",
+			"\1\u0142",
+			"\1\u0143\1\u0144\3\uffff\1\u0145",
+			"\1\u0146",
+			"\1\u0147\16\uffff\1\u0148",
+			"\1\u0149",
+			"\1\u014a",
+			"\1\u014c\13\uffff\1\u014b",
+			"\1\u014d\2\uffff\1\u014e\1\uffff\1\u014f",
+			"\1\u0150",
+			"\1\u0151",
+			"\1\u0153\17\uffff\1\u0154\1\u0152",
+			"\1\u0155",
+			"\1\u0157\25\uffff\1\u0156",
+			"\1\u0158\17\uffff\1\u0159",
 			"\1\u015a",
 			"\1\u015b",
-			"\1\u015c\5\uffff\1\u015d",
-			"\1\u015e",
-			"\1\u015f",
+			"\1\u015c",
+			"\1\u015d",
+			"\1\u015e\5\uffff\1\u015f",
 			"\1\u0160",
 			"\1\u0161",
 			"\1\u0162",
@@ -5193,28 +5249,28 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0165",
 			"\1\u0166",
 			"\1\u0167",
-			"\1\u0169\3\uffff\1\u0168",
+			"\1\u0168",
+			"\1\u0169",
+			"\1\u016b\3\uffff\1\u016a",
 			"",
 			"",
-			"\1\u016a",
-			"\1\u016b",
 			"\1\u016c",
 			"\1\u016d",
 			"\1\u016e",
-			"",
 			"\1\u016f",
 			"\1\u0170",
+			"",
 			"\1\u0171",
 			"\1\u0172",
-			"\1\u00c3\10\uffff\1\u00c5\13\uffff\1\u00c4",
-			"\1\u0177\5\uffff\1\u0174\2\uffff\1\u0176\11\uffff\1\u0175\1\uffff\1"+
-			"\u0173",
-			"\1\u0174\14\uffff\1\u0175\1\uffff\1\u0178",
-			"\1\u00c5\13\uffff\1\u00c4",
-			"\1\u00c5\13\uffff\1\u00c4",
-			"\1\u00c8\10\uffff\1\u00c5\13\uffff\1\u00c4",
-			"\1\u0179",
-			"\1\u017a",
+			"\1\u0173",
+			"\1\u0174",
+			"\1\u00c5\10\uffff\1\u00c7\13\uffff\1\u00c6",
+			"\1\u0179\5\uffff\1\u0176\2\uffff\1\u0178\11\uffff\1\u0177\1\uffff\1"+
+			"\u0175",
+			"\1\u0176\14\uffff\1\u0177\1\uffff\1\u017a",
+			"\1\u00c7\13\uffff\1\u00c6",
+			"\1\u00c7\13\uffff\1\u00c6",
+			"\1\u00ca\10\uffff\1\u00c7\13\uffff\1\u00c6",
 			"\1\u017b",
 			"\1\u017c",
 			"\1\u017d",
@@ -5239,9 +5295,9 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0190",
 			"\1\u0191",
 			"\1\u0192",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\7\61\1\u0193\22\61",
-			"\1\u0195",
-			"\1\u0196",
+			"\1\u0193",
+			"\1\u0194",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\7\63\1\u0195\22\63",
 			"\1\u0197",
 			"\1\u0198",
 			"\1\u0199",
@@ -5255,33 +5311,33 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01a1",
 			"\1\u01a2",
 			"\1\u01a3",
-			"\1\u01a5\1\u01a4",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u01a7",
-			"\1\u01a8",
+			"\1\u01a4",
+			"\1\u01a5",
+			"\1\u01a7\1\u01a6",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u01a9",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u01aa",
 			"\1\u01ab",
-			"\1\u01ac",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u01ad",
-			"\1\u01af\2\uffff\1\u01ae",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u01b0",
-			"\1\u01b1",
-			"\1\u01b2\7\uffff\1\u01b3",
-			"\1\u01b4",
-			"\1\u01b5",
+			"\1\u01ae",
+			"\1\u01af",
+			"\1\u01b1\2\uffff\1\u01b0",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u01b2",
+			"\1\u01b3",
+			"\1\u01b4\7\uffff\1\u01b5",
 			"\1\u01b6",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u01b7",
 			"\1\u01b8",
-			"\1\u01b9",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u01ba",
 			"\1\u01bb",
 			"\1\u01bc",
-			"\1\u01bd\11\uffff\1\u01be",
-			"\1\u01bf",
-			"\1\u01c0",
+			"\1\u01bd",
+			"\1\u01be",
+			"\1\u01bf\11\uffff\1\u01c0",
 			"\1\u01c1",
 			"\1\u01c2",
 			"\1\u01c3",
@@ -5289,30 +5345,30 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01c5",
 			"\1\u01c6",
 			"\1\u01c7",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\3\61\1\u01c8\26\61",
-			"\1\u01ca",
-			"\1\u01cb",
+			"\1\u01c8",
+			"\1\u01c9",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\3\63\1\u01ca\26\63",
 			"\1\u01cc",
 			"\1\u01cd",
 			"\1\u01ce",
 			"\1\u01cf",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u01d0",
 			"\1\u01d1",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u01d2",
 			"\1\u01d3",
 			"\1\u01d4",
 			"\1\u01d5",
 			"\1\u01d6",
 			"\1\u01d7",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u01d8",
 			"\1\u01d9",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u01da",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\1\u01db\31\61",
+			"\1\u01db",
 			"\1\u01dc",
-			"\1\u01dd",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\1\u01dd\31\63",
 			"\1\u01de",
 			"\1\u01df",
 			"\1\u01e0",
@@ -5324,9 +5380,9 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01e6",
 			"\1\u01e7",
 			"\1\u01e8",
-			"\1\u01e9\14\uffff\1\u01ea",
-			"\1\u01eb",
-			"\1\u01ec",
+			"\1\u01e9",
+			"\1\u01ea",
+			"\1\u01eb\14\uffff\1\u01ec",
 			"\1\u01ed",
 			"\1\u01ee",
 			"\1\u01ef",
@@ -5337,13 +5393,13 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01f4",
 			"\1\u01f5",
 			"\1\u01f6",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u01f7",
-			"\1\u01f8\3\uffff\1\u01f9",
-			"\1\u01fa",
-			"\1\u01fc\16\uffff\1\u01fb\1\u01fd",
-			"\1\u01fe",
-			"\1\u01ff",
+			"\1\u01f8",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u01f9",
+			"\1\u01fa\3\uffff\1\u01fb",
+			"\1\u01fc",
+			"\1\u01fe\16\uffff\1\u01fd\1\u01ff",
 			"\1\u0200",
 			"\1\u0201",
 			"\1\u0202",
@@ -5359,42 +5415,42 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u020c",
 			"\1\u020d",
 			"\1\u020e",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\14\61\1\u020f\15\61",
+			"\1\u020f",
 			"\1\u0210",
-			"\1\u0211",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\14\63\1\u0211\15\63",
 			"\1\u0212",
 			"\1\u0213",
 			"\1\u0214",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0215",
 			"\1\u0216",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0217",
-			"\1\u0218\6\uffff\1\u0219",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u021b",
-			"\1\u021c",
+			"\1\u0218",
+			"\1\u0219",
+			"\1\u021a\6\uffff\1\u021b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u021d",
 			"\1\u021e",
 			"\1\u021f",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0220",
 			"\1\u0221",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0222",
 			"\1\u0223",
 			"\1\u0224",
 			"\1\u0225",
-			"\1\u0174\14\uffff\1\u0175\1\uffff\1\u0173",
-			"\12\61\7\uffff\10\61\1\u0227\14\61\1\u0228\1\61\1\u0229\2\61\4\uffff"+
-			"\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\10\61\1\u022a\21\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u0174\14\uffff\1\u0175",
-			"\1\u0174\14\uffff\1\u0175",
-			"\1\u0174\14\uffff\1\u0175\1\uffff\1\u0178",
-			"\1\u022b",
-			"\1\u022c",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u0226",
+			"\1\u0227",
+			"\1\u0176\14\uffff\1\u0177\1\uffff\1\u0175",
+			"\12\63\7\uffff\10\63\1\u0229\14\63\1\u022a\1\63\1\u022b\2\63\4\uffff"+
+			"\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\10\63\1\u022c\21\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0176\14\uffff\1\u0177",
+			"\1\u0176\14\uffff\1\u0177",
+			"\1\u0176\14\uffff\1\u0177\1\uffff\1\u017a",
+			"\1\u022d",
 			"\1\u022e",
-			"\1\u022f",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0230",
 			"\1\u0231",
 			"\1\u0232",
@@ -5407,44 +5463,44 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0239",
 			"\1\u023a",
 			"\1\u023b",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u023c",
 			"\1\u023d",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u023e",
 			"\1\u023f",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0240",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0241",
-			"",
 			"\1\u0242",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u0244",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u0245",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u0246\17\uffff\1\u0247",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\30\61\1\u0248\1\61",
-			"\1\u0249",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u024a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u0194",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u024b",
-			"\1\u024c",
-			"\1\u024d",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0243",
 			"",
+			"\1\u0244",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0246",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0247",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0248\17\uffff\1\u0249",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\30\63\1\u024a\1\63",
+			"\1\u024b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u024c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u0196",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u024d",
 			"\1\u024e",
 			"\1\u024f",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0250",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0251",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0252",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0253",
 			"\1\u0254",
 			"\1\u0255",
@@ -5452,9 +5508,9 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0257",
 			"\1\u0258",
 			"\1\u0259",
-			"",
 			"\1\u025a",
 			"\1\u025b",
+			"",
 			"\1\u025c",
 			"\1\u025d",
 			"\1\u025e",
@@ -5465,15 +5521,15 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0263",
 			"\1\u0264",
 			"\1\u0265",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0266",
 			"\1\u0267",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0268",
-			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0269",
 			"\1\u026a",
+			"",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u026b",
 			"\1\u026c",
 			"\1\u026d",
@@ -5482,23 +5538,23 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0270",
 			"\1\u0271",
 			"\1\u0272",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\22\61\1\u0273\7\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u0273",
 			"\1\u0274",
-			"\1\u0275",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\22\63\1\u0275\7\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0276",
 			"\1\u0277",
 			"\1\u0278",
 			"\1\u0279",
 			"\1\u027a",
 			"\1\u027b",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u027c",
 			"\1\u027d",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u027e",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u027f",
 			"\1\u0280",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0281",
 			"\1\u0282",
 			"\1\u0283",
@@ -5507,14 +5563,14 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0286",
 			"\1\u0287",
 			"\1\u0288",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0289",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u028a",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u028b",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u028c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u028d",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u028e",
 			"\1\u028f",
 			"\1\u0290",
@@ -5524,38 +5580,38 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0294",
 			"\1\u0295",
 			"\1\u0296",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0297",
 			"\1\u0298",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0299",
 			"\1\u029a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u029b",
 			"\1\u029c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u029d",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u029e",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u029f",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02a0",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02a1",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02a2",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02a3",
 			"\1\u02a4",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02a5",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02a6",
-			"",
 			"\1\u02a7",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u02a8",
+			"",
 			"\1\u02a9",
-			"\1\u02aa",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02ab",
 			"\1\u02ac",
 			"\1\u02ad",
@@ -5563,17 +5619,17 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u02af",
 			"\1\u02b0",
 			"\1\u02b1",
-			"",
-			"\12\61\7\uffff\10\61\1\u0227\21\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\10\61\1\u022a\21\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02b2",
-			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02b3",
+			"",
+			"\12\63\7\uffff\10\63\1\u0229\21\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\10\63\1\u022c\21\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02b4",
+			"",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02b5",
 			"\1\u02b6",
 			"\1\u02b7",
@@ -5582,374 +5638,376 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u02ba",
 			"\1\u02bb",
 			"\1\u02bc",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u02bd",
 			"\1\u02be",
-			"\1\u02bf",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02c0",
 			"\1\u02c1",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02c2",
-			"\1\u01a6",
 			"\1\u02c3",
 			"\1\u02c4",
-			"",
+			"\1\u01a8",
 			"\1\u02c5",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02c6",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
 			"\1\u02c7",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02c8",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02c9",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u02ca\1\uffff\1\u02cb",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u02cc",
-			"\1\u02cd",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u02ca",
+			"\1\u02cb",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u02cc\1\uffff\1\u02cd",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02ce",
 			"\1\u02cf",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02d0",
 			"\1\u02d1",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02d2",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02d3",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02d4",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02d5",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02d6",
 			"\1\u02d7",
 			"\1\u02d8",
 			"\1\u02d9",
 			"\1\u02da",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02db",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\4\61\1\u02dc\25\61",
+			"\1\u02dc",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02dd",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u02de",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\4\63\1\u02de\25\63",
 			"\1\u02df",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02e0",
 			"\1\u02e1",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02e2",
 			"\1\u02e3",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02e4",
 			"\1\u02e5",
 			"\1\u02e6",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02e7",
 			"\1\u02e8",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02e9",
 			"\1\u02ea",
 			"\1\u02eb",
 			"\1\u02ec",
 			"\1\u02ed",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\3\61\1\u02ee\26\61",
+			"\1\u02ee",
 			"\1\u02ef",
-			"\1\u02f0",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\3\63\1\u02f0\26\63",
 			"\1\u02f1",
 			"\1\u02f2",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u02f3",
 			"\1\u02f4",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02f5",
 			"\1\u02f6",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u02f7\1\uffff\1\u02f8\6\uffff\1\u02f9\5\uffff\1\u02fa",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u02fb",
-			"",
-			"\1\u02fc",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u02f7",
+			"\1\u02f8",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u02f9\1\uffff\1\u02fa\6\uffff\1\u02fb\5\uffff\1\u02fc",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u02fd",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
 			"\1\u02fe",
 			"\1\u02ff",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0300",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0301",
 			"\1\u0302",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0303",
 			"\1\u0304",
 			"\1\u0305",
 			"\1\u0306",
 			"\1\u0307",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0308",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0309",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u030a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u030b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u030c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u030d",
 			"\1\u030e",
 			"\1\u030f",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"",
+			"\1\u0310",
 			"\1\u0311",
-			"\1\u0312",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"",
 			"\1\u0313",
 			"\1\u0314",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0315",
 			"\1\u0316",
 			"\1\u0317",
 			"\1\u0318",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0319",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u031a",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u031b",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u031c",
 			"\1\u031d",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u031e",
 			"\1\u031f",
-			"",
-			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0320",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\13\61\1\u0321\16\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u0321",
+			"",
+			"",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0322",
-			"\1\u0323",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\13\63\1\u0323\16\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0324",
 			"\1\u0325",
 			"\1\u0326",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0327",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u01aa",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0328",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0329",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u01ac",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u032a",
 			"\1\u032b",
 			"\1\u032c",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u032d",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u032e",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u032f",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0330",
 			"\1\u0331",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0332",
 			"\1\u0333",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0334",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0335",
 			"\1\u0336",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0337",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\13\61\1\u0338\16\61",
+			"\1\u0338",
 			"\1\u0339",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u033a",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\13\63\1\u033a\16\63",
 			"\1\u033b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u033c",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u033d",
 			"\1\u033e",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u033f",
 			"\1\u0340",
 			"\1\u0341",
 			"\1\u0342",
 			"\1\u0343",
 			"\1\u0344",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0345",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0346",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0347",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0348",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0349",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u034a",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u034b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u034c",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u034d",
 			"\1\u034e",
-			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u034f",
 			"\1\u0350",
 			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u0351",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0352",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0353",
 			"\1\u0354",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0355",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0356",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0357",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0358",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0359",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u035a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u035b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u035c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u035d",
 			"\1\u035e",
 			"\1\u035f",
 			"\1\u0360",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0361",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0362",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0363",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0364",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0365",
 			"\1\u0366",
 			"\1\u0367",
 			"\1\u0368",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0369",
 			"\1\u036a",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u036b",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u036c",
 			"\1\u036d",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u036e",
 			"\1\u036f",
 			"\1\u0370",
 			"\1\u0371",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0372",
 			"\1\u0373",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0374",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0375",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0376",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0377",
-			"",
 			"\1\u0378",
 			"\1\u0379",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
 			"\1\u037a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u037b",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u037c",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u037d",
 			"\1\u037e",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u037f",
 			"\1\u0380",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0381",
 			"\1\u0382",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0383",
 			"\1\u0384",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0385",
 			"\1\u0386",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0387",
 			"\1\u0388",
 			"\1\u0389",
 			"\1\u038a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u038b",
 			"\1\u038c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u038d",
 			"\1\u038e",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u038f",
 			"\1\u0390",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0391",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u0392",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0393",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0394",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0395",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0396",
 			"\1\u0397",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u0398",
 			"\1\u0399",
 			"\1\u039a",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u039b",
 			"\1\u039c",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u039d",
 			"\1\u039e",
-			"\1\u039f\4\uffff\1\u03a0",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\1\u03a1",
-			"\1\u03a2",
+			"\1\u039f",
+			"\1\u03a0",
+			"\1\u03a1\4\uffff\1\u03a2",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
 			"\1\u03a3",
 			"\1\u03a4",
 			"\1\u03a5",
 			"\1\u03a6",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"",
-			"",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u03a7",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u03a8",
-			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61"
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"",
+			"",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u03a9",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63",
+			"\1\u03aa",
+			"\12\63\7\uffff\32\63\4\uffff\1\63\1\uffff\32\63"
 	};
 
 	static final short[] DFA22_eot = DFA.unpackEncodedString(DFA22_eotS);
@@ -5983,7 +6041,7 @@ public class ShakespeareLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( ONE | FIVE | TEN | FIFTY | ONEHUNDRED | FIVEHUNDRED | ONETHOUSAND | ROOT | UNITS | TENS | HUNDREDS | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | GOTO | OUTPUTVALUE | OUTPUTASCII | INPUTVALUE | INPUTASCII | CL | CM | DOT | EP | QM | ID | WS | LB | RB );";
+			return "1:1: Tokens : ( ONE | FIVE | TEN | FIFTY | ONEHUNDRED | FIVEHUNDRED | ONETHOUSAND | ROOT | UNITS | TENS | HUNDREDS | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | GOTO | OUTPUTVALUE | OUTPUTASCII | INPUTVALUE | INPUTASCII | CL | CM | DOT | AP | EP | QM | FS | ID | WS | LB | RB );";
 		}
 	}
 
