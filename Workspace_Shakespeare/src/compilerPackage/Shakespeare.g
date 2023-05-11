@@ -43,7 +43,7 @@ title
 dramatisPersonae
 	:
 	{System.out.println("* Sto per riconoscere un attore");}
-	CHARACTER CM WS? (ID | CHARACTER | UNITS | FS)* DOT WS?
+	CHARACTER CM WS? (ID | CHARACTER | FS)* DOT WS?
 	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
 	//altri caratteri ma che li skippi... come si fa?
 	//Nel senso, se non avessi specificato un altra volta char o one
@@ -57,44 +57,47 @@ dramatisPersonae
 acts
 	:
 	{System.out.println("* Sto per riconoscere un atto");}	
-	ACT NUMBER CL ID* DOT WS
+	ACT WS? root PP WS? (CHARACTER|ID|POSITIVENOUN|NEGATIVENOUN|NEUTRALNOUN|
+	POSITIVEADJECTIVE|NEUTRALADJECTIVE|NEGATIVEADJECTIVE|ENTER|SCENE|ACT|
+	EXIT|EXEUNT|GOTO|OUTPUTVALUE|OUTPUTASCII|INPUTASCII|INPUTVALUE|FS|AP)* DOT WS?
 	{System.out.println("    - Ho riconosciuto un atto");}
 	;
 	
 scenes	:	
-	SCENE NUMBER CL ID* DOT WS
+	SCENE WS? root PP WS? (CHARACTER|ID|POSITIVENOUN|NEGATIVENOUN|NEUTRALNOUN|
+	POSITIVEADJECTIVE|NEUTRALADJECTIVE|NEGATIVEADJECTIVE|ENTER|SCENE|ACT|
+	EXIT|EXEUNT|GOTO|OUTPUTVALUE|OUTPUTASCII|INPUTASCII|INPUTVALUE|FS|AP)* DOT WS?
 	;
+
 
 
 /* ****************************
 **	 Analizzatore sintattico 
 **	 aka Lexer, aka Scanner
 ***************************** */
-// Romanian numbers (https://gjdanis.github.io/2016/01/23/roman/)
-// Basic numbers
-ONE         : 'I';
-FIVE        : 'V';
-TEN         : 'X';
-FIFTY       : 'L';
-ONEHUNDRED  : 'C';
-FIVEHUNDRED : 'D';
-ONETHOUSAND : 'M';
 
-// I, II, III, IV, IX or V VI, VII, VIII
-UNITS		:	ONE+
-		|	ONE+ (FIVE | TEN)
-		|	FIVE ONE*;
 
-// X, XX, XXX, XL, XC or L, LX, LXX, LXXX
-TENS 		:	TEN+ FIFTY*
-		|	FIFTY+ TEN* ;
+// --- atomic definitions
+one         : 'I';
+five        : 'V';
+ten         : 'X';
+fifty       : 'L';
+oneHundred  : 'C';
+fiveHundred : 'D';
+oneThousand : 'M';
 
-// C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
-HUNDREDS	:	ONEHUNDRED+ (FIVEHUNDRED | ONETHOUSAND)*
-		|	FIVEHUNDRED ONEHUNDRED*; 
+root  : (oneThousand)* hundreds? tens? units?;
 
-NUMBER		:	HUNDREDS? TENS? UNITS
-		;
+// --- I, II, III, IV, IX or V VI, VII, VIII
+units : one ((one)* | five  | ten) | five (one)*; 
+
+// --- X, XX, XXX, XL, XC or L, LX, LXX, LXXX
+tens  : ten ((ten)* | fifty | oneHundred) | fifty (ten)*;
+
+// --- C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
+hundreds : oneHundred ((oneHundred)* | fiveHundred | oneThousand) | fiveHundred (oneHundred)*; 
+
+
 
 
 CHARACTER
@@ -332,14 +335,14 @@ INPUTASCII      :   	'Listen to your heart';
 
 
 fragment 
-LETTER : 'a'..'z'|'A'..'Z';
+LETTER : ( 'a'..'z' | 'A'..'Z');
 
 fragment 
 DIGIT : '0'..'9';
 
 
 // punteggiatura
-CL 	:	':';
+PP 	:	':';
 CM 	:	',';
 DOT   	: 	'.';
 //SC 	:	';';
@@ -348,9 +351,10 @@ EP    	: 	'!';
 QM    	:	'?';
 FS	:	'/';
 
+
 // sono le lettere che compongono ogni parola che usiamo
-ID  :	( LETTER |'_') 
-		( LETTER |DIGIT |'_' )*
+ID  :   ( LETTER |DIGIT |'_' )*
+		//( LETTER |'_' ) 
     ;
 
 //spazi e new line. non sono visibili come token perche hidden
