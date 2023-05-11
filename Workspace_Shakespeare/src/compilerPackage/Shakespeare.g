@@ -73,20 +73,23 @@ ONEHUNDRED  : 'C';
 FIVEHUNDRED : 'D';
 ONETHOUSAND : 'M';
 
-ROOT		:	ONETHOUSAND HUNDREDS TENS UNITS ; //DA SISTEMARE, MESSO COSI O NON ANDAVA!!!!!!!!!!!!!!!
-
 // I, II, III, IV, IX or V VI, VII, VIII
-UNITS		:	(ONE ((ONE)* | FIVE  | TEN) | FIVE (ONE)*);
-// così però si può avere IIII, abbiamo visto solo * o +, non come --> nelle lezioni successive lo spiega
-// limitarle, penso serva qualcosa come: ONE | ONE ONE| ONE ONE ONE
+UNITS		:	ONE+
+		|	ONE+ (FIVE | TEN)
+		|	FIVE ONE*;
 
 // X, XX, XXX, XL, XC or L, LX, LXX, LXXX
-TENS 		:	TEN ((TEN)* | FIFTY | ONEHUNDRED) | FIFTY (TEN)*;
+TENS 		:	TEN+ FIFTY*
+		|	FIFTY+ TEN* ;
 
 // C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
-HUNDREDS	:	ONEHUNDRED ((ONEHUNDRED)* | FIVEHUNDRED | ONETHOUSAND) | FIVEHUNDRED (ONEHUNDRED)*; 
+HUNDREDS	:	ONEHUNDRED+ (FIVEHUNDRED | ONETHOUSAND)*
+		|	FIVEHUNDRED ONEHUNDRED*; 
 
-
+number		:	UNITS
+		|	TENS UNITS
+		|	HUNDREDS TENS UNITS
+		;
 
 
 CHARACTER

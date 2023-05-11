@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-11 14:34:22
+// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-11 14:56:46
 
 	package compilerPackage;
 
@@ -16,8 +16,8 @@ public class ShakespeareParser extends Parser {
 		"FIVEHUNDRED", "FS", "GOTO", "HUNDREDS", "ID", "INPUTASCII", "INPUTVALUE", 
 		"LB", "LETTER", "NEGATIVEADJECTIVE", "NEGATIVENOUN", "NEUTRALADJECTIVE", 
 		"NEUTRALNOUN", "ONE", "ONEHUNDRED", "ONETHOUSAND", "OUTPUTASCII", "OUTPUTVALUE", 
-		"POSITIVEADJECTIVE", "POSITIVENOUN", "QM", "RB", "ROOT", "SCENE", "TEN", 
-		"TENS", "UNITS", "WS"
+		"POSITIVEADJECTIVE", "POSITIVENOUN", "QM", "RB", "SCENE", "TEN", "TENS", 
+		"UNITS", "WS"
 	};
 	public static final int EOF=-1;
 	public static final int ACT=4;
@@ -55,12 +55,11 @@ public class ShakespeareParser extends Parser {
 	public static final int POSITIVENOUN=36;
 	public static final int QM=37;
 	public static final int RB=38;
-	public static final int ROOT=39;
-	public static final int SCENE=40;
-	public static final int TEN=41;
-	public static final int TENS=42;
-	public static final int UNITS=43;
-	public static final int WS=44;
+	public static final int SCENE=39;
+	public static final int TEN=40;
+	public static final int TENS=41;
+	public static final int UNITS=42;
+	public static final int WS=43;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -385,34 +384,104 @@ public class ShakespeareParser extends Parser {
 	}
 	// $ANTLR end "scenes"
 
+
+
+	// $ANTLR start "number"
+	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:1: number : ( UNITS | TENS UNITS | HUNDREDS TENS UNITS );
+	public final void number() throws RecognitionException {
+		try {
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:9: ( UNITS | TENS UNITS | HUNDREDS TENS UNITS )
+			int alt9=3;
+			switch ( input.LA(1) ) {
+			case UNITS:
+				{
+				alt9=1;
+				}
+				break;
+			case TENS:
+				{
+				alt9=2;
+				}
+				break;
+			case HUNDREDS:
+				{
+				alt9=3;
+				}
+				break;
+			default:
+				NoViableAltException nvae =
+					new NoViableAltException("", 9, 0, input);
+				throw nvae;
+			}
+			switch (alt9) {
+				case 1 :
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:11: UNITS
+					{
+					match(input,UNITS,FOLLOW_UNITS_in_number367); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:90:5: TENS UNITS
+					{
+					match(input,TENS,FOLLOW_TENS_in_number373); 
+					match(input,UNITS,FOLLOW_UNITS_in_number375); 
+					}
+					break;
+				case 3 :
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:5: HUNDREDS TENS UNITS
+					{
+					match(input,HUNDREDS,FOLLOW_HUNDREDS_in_number381); 
+					match(input,TENS,FOLLOW_TENS_in_number383); 
+					match(input,UNITS,FOLLOW_UNITS_in_number385); 
+					}
+					break;
+
+			}
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "number"
+
 	// Delegated rules
 
 
 
 	public static final BitSet FOLLOW_title_in_parseSPL56 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ID_in_title76 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_DOT_in_title78 = new BitSet(new long[]{0x0000100000000040L});
+	public static final BitSet FOLLOW_DOT_in_title78 = new BitSet(new long[]{0x0000080000000040L});
 	public static final BitSet FOLLOW_WS_in_title80 = new BitSet(new long[]{0x0000000000000040L});
 	public static final BitSet FOLLOW_dramatisPersonae_in_title84 = new BitSet(new long[]{0x0000000000000050L});
-	public static final BitSet FOLLOW_acts_in_title89 = new BitSet(new long[]{0x0000010000000000L});
+	public static final BitSet FOLLOW_acts_in_title89 = new BitSet(new long[]{0x0000008000000000L});
 	public static final BitSet FOLLOW_scenes_in_title92 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CHARACTER_in_dramatisPersonae110 = new BitSet(new long[]{0x0000100000000100L});
+	public static final BitSet FOLLOW_CHARACTER_in_dramatisPersonae110 = new BitSet(new long[]{0x0000080000000100L});
 	public static final BitSet FOLLOW_WS_in_dramatisPersonae112 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_CM_in_dramatisPersonae115 = new BitSet(new long[]{0x0000100000200400L});
+	public static final BitSet FOLLOW_CM_in_dramatisPersonae115 = new BitSet(new long[]{0x0000080000200400L});
 	public static final BitSet FOLLOW_WS_in_dramatisPersonae117 = new BitSet(new long[]{0x0000000000200400L});
 	public static final BitSet FOLLOW_ID_in_dramatisPersonae120 = new BitSet(new long[]{0x0000000000200400L});
-	public static final BitSet FOLLOW_DOT_in_dramatisPersonae123 = new BitSet(new long[]{0x0000100000000002L});
+	public static final BitSet FOLLOW_DOT_in_dramatisPersonae123 = new BitSet(new long[]{0x0000080000000002L});
 	public static final BitSet FOLLOW_WS_in_dramatisPersonae125 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ACT_in_acts146 = new BitSet(new long[]{0x0000080000000000L});
+	public static final BitSet FOLLOW_ACT_in_acts146 = new BitSet(new long[]{0x0000040000000000L});
 	public static final BitSet FOLLOW_UNITS_in_acts148 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CL_in_acts150 = new BitSet(new long[]{0x0000000000200400L});
 	public static final BitSet FOLLOW_ID_in_acts152 = new BitSet(new long[]{0x0000000000200400L});
-	public static final BitSet FOLLOW_DOT_in_acts155 = new BitSet(new long[]{0x0000100000000000L});
+	public static final BitSet FOLLOW_DOT_in_acts155 = new BitSet(new long[]{0x0000080000000000L});
 	public static final BitSet FOLLOW_WS_in_acts157 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SCENE_in_scenes170 = new BitSet(new long[]{0x0000080000000000L});
+	public static final BitSet FOLLOW_SCENE_in_scenes170 = new BitSet(new long[]{0x0000040000000000L});
 	public static final BitSet FOLLOW_UNITS_in_scenes172 = new BitSet(new long[]{0x0000000000000080L});
 	public static final BitSet FOLLOW_CL_in_scenes174 = new BitSet(new long[]{0x0000000000200400L});
 	public static final BitSet FOLLOW_ID_in_scenes176 = new BitSet(new long[]{0x0000000000200400L});
-	public static final BitSet FOLLOW_DOT_in_scenes179 = new BitSet(new long[]{0x0000100000000000L});
+	public static final BitSet FOLLOW_DOT_in_scenes179 = new BitSet(new long[]{0x0000080000000000L});
 	public static final BitSet FOLLOW_WS_in_scenes181 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_UNITS_in_number367 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TENS_in_number373 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_UNITS_in_number375 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_HUNDREDS_in_number381 = new BitSet(new long[]{0x0000020000000000L});
+	public static final BitSet FOLLOW_TENS_in_number383 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_UNITS_in_number385 = new BitSet(new long[]{0x0000000000000002L});
 }
