@@ -33,7 +33,7 @@ parseSPL
 title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
-	ID DOT WS?
+	ID+ DOT WS?
 	dramatisPersonae+ //definisco alemno 1 personaggio
 	acts
 	scenes
@@ -43,19 +43,26 @@ title
 dramatisPersonae
 	:
 	{System.out.println("* Sto per riconoscere un attore");}
-	CHARACTER WS? CM WS? ID* DOT WS? 
+	CHARACTER CM WS? (ID | CHARACTER | UNITS | FS)* DOT WS?
+	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
+	//altri caratteri ma che li skippi... come si fa?
+	//Nel senso, se non avessi specificato un altra volta char o one
+	//avrebbe preso Hamlet come personaggio al posto di ID e anche la i maiscola
+	//come one al posto di id 
 	
 	{System.out.println("    - Ho riconosciuto un attore");}
 
 	;
 
 acts
-	:	
-	ACT UNITS CL ID* DOT WS
+	:
+	{System.out.println("* Sto per riconoscere un atto");}	
+	ACT NUMBER CL ID* DOT WS
+	{System.out.println("    - Ho riconosciuto un atto");}
 	;
 	
 scenes	:	
-	SCENE UNITS CL ID* DOT WS
+	SCENE NUMBER CL ID* DOT WS
 	;
 
 
@@ -86,18 +93,17 @@ TENS 		:	TEN+ FIFTY*
 HUNDREDS	:	ONEHUNDRED+ (FIVEHUNDRED | ONETHOUSAND)*
 		|	FIVEHUNDRED ONEHUNDRED*; 
 
-number		:	UNITS
-		|	TENS UNITS
-		|	HUNDREDS TENS UNITS
+NUMBER		:	HUNDREDS? TENS? UNITS
 		;
 
 
 CHARACTER
     :   'Romeo'
     |   'Juliet'
+    |	'Hamlet'
     |   'Ghost'
     |   'LadyMacbeth'
-    |   'Ofelia'
+    |   'Ophelia'
     |   'Tebaldo'
     |   'Claudio'
     |   'Mercuzio'
