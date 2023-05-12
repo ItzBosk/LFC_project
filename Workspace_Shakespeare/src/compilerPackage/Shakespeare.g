@@ -31,7 +31,7 @@ parseSPL
 title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
-	ID+ DOT WS?
+	ID* DOT WS?
 	{System.out.println("    - Ho riconosciuto il titolo");}
 	body
 	;
@@ -45,7 +45,7 @@ body	:
 dramatisPersonae
 	:
 	{System.out.println("* Sto per riconoscere un attore");}
-	CHARACTER CM WS? (ID | CHARACTER | FS)* DOT WS?
+	CHARACTER COMMENT
 	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
 	//altri caratteri ma che li skippi... come si fa?
 	//Nel senso, se non avessi specificato un altra volta char o one
@@ -59,16 +59,12 @@ dramatisPersonae
 acts
 	:
 	{System.out.println("* Sto per riconoscere un atto");}	
-	ACT WS? root PP WS? (CHARACTER|ID|POSITIVENOUN|NEGATIVENOUN|NEUTRALNOUN|
-	POSITIVEADJECTIVE|NEUTRALADJECTIVE|NEGATIVEADJECTIVE|ENTER|SCENE|ACT|
-	EXIT|EXEUNT|GOTO|OUTPUTVALUE|OUTPUTASCII|INPUTASCII|INPUTVALUE|FS|AP)* DOT WS?
+	ACT root COMMENT
 	{System.out.println("    - Ho riconosciuto un atto");}
 	;
 	
 scenes	:	
-	SCENE WS? root PP WS? (CHARACTER|ID|POSITIVENOUN|NEGATIVENOUN|NEUTRALNOUN|
-	POSITIVEADJECTIVE|NEUTRALADJECTIVE|NEGATIVEADJECTIVE|ENTER|SCENE|ACT|
-	EXIT|EXEUNT|GOTO|OUTPUTVALUE|OUTPUTASCII|INPUTASCII|INPUTVALUE|FS|AP)* DOT WS?
+	SCENE root COMMENT
 	;
 
 
@@ -99,8 +95,9 @@ tens  : ten ((ten)* | fifty | oneHundred) | fifty (ten)*;
 // --- C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
 hundreds : oneHundred ((oneHundred)* | fiveHundred | oneThousand) | fiveHundred (oneHundred)*; 
 
-
-
+COMMENT
+    :   (', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n';
+    
 
 CHARACTER
     :   'Romeo'
