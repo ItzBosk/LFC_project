@@ -24,9 +24,7 @@ options {
 parseSPL 
 	: 
 	{System.out.println("* Sto per riconoscere un documento Shakespeare");}
-	
 	title
-	
 	{System.out.println("    - Ho riconosciuto un documento Shakespeare");}
 	;
 
@@ -34,10 +32,14 @@ title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
 	ID+ DOT WS?
+	{System.out.println("    - Ho riconosciuto il titolo");}
+	body
+	;
+
+body	:	
 	dramatisPersonae+ //definisco alemno 1 personaggio
 	acts
 	scenes
-	{System.out.println("    - Ho riconosciuto il titolo");}
 	;
 
 dramatisPersonae
@@ -335,7 +337,7 @@ INPUTASCII      :   	'Listen to your heart';
 
 
 fragment 
-LETTER : ( 'a'..'z' | 'A'..'Z');
+LETTER : 'a'..'z' | 'A'..'Z';
 
 fragment 
 DIGIT : '0'..'9';
@@ -353,8 +355,8 @@ FS	:	'/';
 
 
 // sono le lettere che compongono ogni parola che usiamo
-ID  :   ( LETTER |DIGIT |'_' )*
-		//( LETTER |'_' ) 
+ID  :   ( LETTER |'_') 
+		( LETTER |DIGIT |'_')* 
     ;
 
 //spazi e new line. non sono visibili come token perche hidden
@@ -375,7 +377,6 @@ RB	:	']';
 // Are you fresher than nothing? -> Checks to see if Puck is holding a zero
 // quindi ho pensato di aggiungere lo zero, solo non so in che sezione metterlo, nel dubbio:
 //ZERO            :   	'nothing';
-
 
 
 
