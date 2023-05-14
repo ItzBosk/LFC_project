@@ -20,8 +20,8 @@ public class Handler {
 	
 	Hashtable<String, VarDescriptor> symbolTable; //con chiave e oggetto
 	// ******
-	List<String> errorList;
-	TokenStream input;
+	List<String> errorList; //lista in cui registro errori
+	TokenStream input; //mi rappresenta lo scanner
 	
 	// ******
 	public Handler (TokenStream input) {
@@ -35,7 +35,7 @@ public class Handler {
 		return  errorList;
 	}
 
-	// ***** gestione errori lessicali e sintattici
+	// ***** gestione errori lessicali e sintattici, errori lessicali traformati in sintattici
 	
 	public void handleError(Token tk, String hdr, String msg) {
 		String errMsg;
@@ -50,7 +50,7 @@ public class Handler {
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine()+1) + "]: " +
 					" on token '" + tk.getText() + "'";
 //		errMsg += "\n" + hdr + "\n**********\n" + msg;
-		errorList.add(errMsg);
+		errorList.add(errMsg); //msg di errore che ho in output
 	}
 	
 

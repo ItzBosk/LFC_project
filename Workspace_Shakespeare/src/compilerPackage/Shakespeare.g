@@ -43,6 +43,7 @@ options {
 **	 aka Lexer, aka Scanner
 ***************************** */
 parseSPL 
+@init {initParser();} //pezzo di codice eseguito quando regola chiamata, questo metodo inizializza h.
 	: 
 	{System.out.println("* Sto per riconoscere un documento Shakespeare");}
 	title

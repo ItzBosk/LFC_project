@@ -35,6 +35,7 @@ public class Parser {
 			// 4.Lancio l'analisi sintattica del documento di ingresso
 			parser.parseSPL();
 		
+			//non dovrebbe mai essere attivato, se si attiva non ho gestito errori
 		} catch (Exception e) {
 			System.out.println ("Parsing con ANTLR abortito\n\n");
 			e.printStackTrace();
