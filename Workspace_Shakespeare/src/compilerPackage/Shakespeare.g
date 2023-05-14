@@ -13,7 +13,28 @@ options {
 }
 
 @members {
+  	Handler h; //dichiaro l'handler con dentro le funzioni di controllo in jav
+ 	public Handler getHandler () {
+  		return h;
+  	}
+  	
+  	// Override e delega nella gestione degli errori sintattici
+  	public void displayRecognitionError(String[] tokenNames,RecognitionException e) {
+   	 // recupero alcune meta informazioni relative all'errore
+		String hdr = " * " + getErrorHeader(e);
+		String msg = " - " + getErrorMessage(e, tokenNames);
+		
+		// recuperoil token corrente  
+		Token tk = input.LT(1);
+		
+		// lascio gestire il messaggio all'handler
+		h.handleError(tk, hdr, msg);
+  	}
 
+ 	void initParser () {
+ 		// passo lo stream di token all'handler 
+		h = new Handler(input);
+	}
 }
 
 
@@ -31,7 +52,9 @@ parseSPL
 title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
-	ID* DOT WS?
+	
+        ID* DOT WS?
+
 	{System.out.println("    - Ho riconosciuto il titolo");}
 	body
 	;
@@ -376,5 +399,5 @@ RB	:	']';
 //ZERO            :   	'nothing';
 
 
-
+ERROR_TK		: . ;  //token di errore per handler
 
