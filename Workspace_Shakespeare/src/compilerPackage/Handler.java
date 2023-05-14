@@ -17,6 +17,11 @@ public class Handler {
 	public static int INC_ERROR = 4;
 	public static int MISS_INC_ERROR = 5;
 	public static int DIV_BY_ZERO_ERROR	= 6;
+	//creati da noi
+	public static int MISSING_TITLE	= 7;
+	public static int MISSING_DOT	= 8;
+	public static int MISSING_CHARACTER	= 9;
+
 	
 	Hashtable<String, VarDescriptor> symbolTable; //con chiave e oggetto
 	// ******
@@ -79,9 +84,48 @@ public class Handler {
 			errMsg += "Missing '++' or '--' before or after the variable '" + tk.getText() + "'";
 		else if (code == DIV_BY_ZERO_ERROR)
 			errMsg += "Division by 0";
+		else if (code == MISSING_TITLE)
+			errMsg += "Missing title";
+		else if (code == MISSING_DOT)
+			errMsg += "Missing Dot";
+		else if (code == MISSING_CHARACTER)
+			errMsg += "Missing Character";
 
 		errorList.add(errMsg);
 	}
+	
+	//controlla titolo 
+	public void checkNullTitle (Token t, Token d) { //t=testo, d=dot
+		try {
+			if (t==null) {
+				//System.out.println("### Please declare a Title"); 
+				myErrorHandler(MISSING_TITLE,null);
+			}
+			else if( !d.getText().equals(".")) {
+				//System.out.println("###NOW Dot missing in Title."); 
+				myErrorHandler(MISSING_DOT, d);
+				//System.out.println(d.getText());			
+			}	
+		}
+		catch(NullPointerException ex){
+			System.out.println(ex.toString());
+			//myErrorHandler(MISSING_TITLE,null);
+		}
+	}
+	
+	//dramatisPersonae
+	public void checkPersonae (Token ch, Token co) { //ch=characters, co=comment
+		if(ch==null){
+			myErrorHandler(MISSING_CHARACTER, ch);
+		}
+		//System.out.println(ch.getText().toString());
+
+	}
+	
+	
+	
+	
+	
 	
 
 	public void declareVar (Token t, Token v) {

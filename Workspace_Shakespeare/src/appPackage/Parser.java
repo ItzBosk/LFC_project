@@ -5,6 +5,7 @@ import java.io.FileReader;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
+import compilerPackage.Handler;
 import compilerPackage.ShakespeareLexer;
 import compilerPackage.ShakespeareParser;
 
@@ -34,7 +35,16 @@ public class Parser {
 
 			// 4.Lancio l'analisi sintattica del documento di ingresso
 			parser.parseSPL();
-		
+			
+			// 5.controllo i risultati
+			Handler h = parser.getHandler();
+			if (h.getErrorList().size() == 0)
+				System.out.println ("Parsing terminato con successo");
+			else
+				for (int i=0; i<h.getErrorList().size(); i++)
+					System.err.println ("Errore " + (i+1) + 
+							":\t" + h.getErrorList().get(i)+"");
+								
 			//non dovrebbe mai essere attivato, se si attiva non ho gestito errori
 		} catch (Exception e) {
 			System.out.println ("Parsing con ANTLR abortito\n\n");

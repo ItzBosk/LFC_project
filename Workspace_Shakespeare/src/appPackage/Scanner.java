@@ -4,9 +4,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import compilerPackage.ShakespeareLexer;
-
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.Token;
+
 
 public class Scanner {
 
@@ -28,25 +28,32 @@ public class Scanner {
 			// nextToken)
 			// fino ad incontrare l' End Of File EOF
 			while ((tk = lexer.nextToken()).getType() != ShakespeareLexer.EOF) {
-				// recupera le informazioni relative ai token rilevati
-				int line = tk.getLine();   // riga
-				int col = tk.getCharPositionInLine() + 1;  // colonna
+				// recuper le informazioni relative ai token rilevati
+				int line = tk.getLine();
+				int col = tk.getCharPositionInLine()+1;
 				int type = tk.getType();
 				String text = tk.getText();
 
 				// attivo questo controllo se voglio scartare i token nascosti
-				if (tk.getChannel() != ShakespeareLexer.HIDDEN)
-					// stampo le informazioni del token corrente
-					System.out.println("Token " + i++ + ": " + 
-							"(" + line + "," + col + ")\t\t" 
-							+ "TokenType: " + type + "\t" + text);
-			}
+			if (tk.getChannel() !=  ShakespeareLexer.HIDDEN)
+					if (tk.getType() !=  ShakespeareLexer.ERROR_TK)
+						// stampo le informazioni del token corrente
+						System.out.println("Token " + i++ + ": "
+								+ "(" + line + "," + col + ")\t\t" 
+								+ "TokenType: " + type + "\t" + text);
+					else
+						// stampo le informazioni del token di errore sullo standard error
+						System.err.println("Token " + i++ + ": "
+								+ "(" + line + "," + col + ")\t\t" 
+								+ "TokenType: " + type + "\t" + text + " ERRORE!");
+						
+			} 
 
 		} catch (Exception e) {
-			System.out.println("Test ANTLR abortito");
+			System.out.println ("Test ANTLR abortito");
 			e.printStackTrace();
 		}
 
 	}
-
+  	
 }
