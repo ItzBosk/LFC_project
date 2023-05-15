@@ -24,7 +24,7 @@ options {
 		String hdr = " * " + getErrorHeader(e);
 		String msg = " - " + getErrorMessage(e, tokenNames);
 		
-		// recuperoil token corrente  
+		// recupero il token corrente  
 		Token tk = input.LT(1);
 		
 		// lascio gestire il messaggio all'handler
@@ -54,14 +54,14 @@ title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
 	
-        t= ID* d=DOT WS? {h.checkNullTitle ($t, $d);} //controlla il valore
+        t=ID* d=DOT WS? {h.checkNullTitle($t, $d);} //controlla il valore
 
 	{System.out.println("    - Ho riconosciuto il titolo");}
 	body
 	;
 
 body	:	
-	dramatisPersonae+ //definisco alemno 1 personaggio
+	dramatisPersonae+ //definisco almeno 1 personaggio
 	acts
 	scenes
 	;
@@ -69,7 +69,7 @@ body	:
 dramatisPersonae
 	:
 	{System.out.println("* Sto per riconoscere un attore");}
-	ch=CHARACTER co=COMMENT {h.checkPersonae ($ch, $co);} 
+	ch=CHARACTER co=COMMENT {h.checkPersonae($ch, $co);}
 	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
 	//altri caratteri ma che li skippi... come si fa?
 	//Nel senso, se non avessi specificato un altra volta char o one

@@ -42,7 +42,7 @@ public class Parser {
 				System.out.println ("Parsing terminato con successo");
 			else
 				for (int i=0; i<h.getErrorList().size(); i++)
-					System.err.println ("Errore " + (i+1) + 
+					System.err.println ("Error " + (i+1) + 
 							":\t" + h.getErrorList().get(i)+"");
 								
 			//non dovrebbe mai essere attivato, se si attiva non ho gestito errori
