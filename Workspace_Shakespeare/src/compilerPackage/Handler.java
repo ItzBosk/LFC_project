@@ -1,15 +1,19 @@
 package compilerPackage;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.List;
 
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 
+import antlr.Parser;
+import compilerPackage.temp.Shakespeare;
 import compilerPackage.util.VarDescriptor;
 
 public class Handler {
+
 	public static int LEXICAL_ERROR = 0;
 	public static int SYNTAX_ERROR = 1;
 	public static int UNDECLARED_VAR_ERROR = 2;
@@ -58,7 +62,7 @@ public class Handler {
 
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: " + " on token '"
 				+ tk.getText() + "'";
-//		errMsg += "\n" + hdr + "\n**********\n" + msg;   // scarto msg automatico
+		//errMsg += "\n" + hdr + "\n**********\n" + msg;   // scarto msg automatico
 		errorList.add(errMsg); // msg di errore che ho in output
 	}
 
@@ -108,26 +112,36 @@ public class Handler {
 
 	// controlla titolo
 	public void checkNullTitle(Token t, Token d) { // t=testo, d=dot
-//		try {
+		try {
 			if (t == null) {
-				System.err.println("ERROR: missing title, please declare it");
+				//System.err.println("ERROR: missing title, please declare it");
 				myErrorHandler(MISSING_TITLE, null);
-			} else if (!d.getText().equals(".")) {
-				System.err.println("ERROR: dot missing in title");
+			} 
+			else if (!d.getText().equals(".")) {
+				//System.err.println("ERROR: dot missing in title");
 				myErrorHandler(MISSING_DOT, d);
 				// System.out.println(d.getText());
 			}
-//		} catch (NullPointerException ex) {
-//			System.err.println(ex.toString());
-			// myErrorHandler(MISSING_TITLE, null);
-//		}
+		} 
+		catch (NullPointerException ex) {
+			System.err.println(ex.toString());
+			 myErrorHandler(MISSING_TITLE, null);
+		}
 	}
 
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
-		 System.err.println(ch.getText());
-		 System.err.println(co.getText());
-		if (ch == null) {
+		 //System.out.println(ch.getText());
+		 //System.out.println(co.getText());
+
+		
+		//controllo se token corrisponde a token CHARACTERS
+		if(ch.getType() != ShakespeareLexer.CHARACTER) {
+			myErrorHandler(INVALID_CHARACTER, ch);
+			System.err.println("personagguio sbagliato");
+		}
+		
+		if (ch.getType() != ShakespeareLexer.CHARACTER && co != null) {
 			System.err.println("ERROR: missing character name");
 			myErrorHandler(MISSING_CHARACTER, ch);
 		}
@@ -141,89 +155,89 @@ public class Handler {
 
 	}
 
-	public void declareVar(Token t, Token v) {
-		if (t != null && v != null) {
-			String name = v.getText();
-			VarDescriptor vd = new VarDescriptor(name, t.getText());
-			if (symbolTable.containsKey(name))
-				myErrorHandler(DECLARED_VAR_ERROR, v);
-			else {
-				symbolTable.putIfAbsent(name, vd);
-				System.out.println("Hai appena dichiarato:" + name + " di tipo " + t.getText());
-			}
-		}
-	}
-
-	public void checkIncDec(Token o1, Token o2, Token id) {
-		if (o1 != null && o2 != null)
-			myErrorHandler(INC_ERROR, id);
-		else if (o1 == null && o2 == null)
-			myErrorHandler(MISS_INC_ERROR, id);
-	}
-
-	// ****
-	public boolean checkReference(Token var) {
-		if (var != null) {
-			String name = var.getText();
-			if (!symbolTable.containsKey(name))
-				myErrorHandler(UNDECLARED_VAR_ERROR, var);
-			else
-				return true;
-		}
-		return false;
-	}
-
-	public void assignValue(Token n, float v) {
-		if (n != null && checkReference(n)) {
-			String name = n.getText();
-			VarDescriptor vd = symbolTable.get(name);
-			if (vd != null)
-				vd.value = v;
-			System.out.println("Hai assegnato il valore " + v + " alla variabile " + name);
-		}
-	}
-
-	// *****
-	public float getVarValue(Token x) {
-		if (x != null && checkReference(x)) {
-			String name = x.getText();
-			VarDescriptor vd = symbolTable.get(name);
-			if (vd != null)
-				return vd.value;
-		}
-		return 0;
-	}
-
-	public float convertToFloat(Token n) { // passo un token
-		if (n != null) // controllo non sia nullo
-			return Float.parseFloat(n.getText()); // lo converto
-		return 0;
-	}
-
-	public float calculateAdd(float t1, Token op, float t2) { // valore 1' termine, token oprazione, valore 2' termine
-		float res = t1;
-		if (op != null) { // token opreatore non nullo
-			if (op.getText().equals("+")) // se il token vale "+"
-				res = t1 + t2; // allora sommo
-			else
-				res = t1 - t2; // altrimenti sottraggo
-		}
-
-		return res;
-	}
-
-	public float calculateMul(float f1, Token op, float f2) {
-		float res = f1;
-		if (op != null) {
-			if (op.getText().equals("*"))
-				res = f1 * f2;
-			else if (f2 != 0)
-				res = f1 / f2;
-			else // se denominatore divisione ==0
-				myErrorHandler(DIV_BY_ZERO_ERROR, op); // segnalo errore
-		}
-
-		return res;
-	}
+//	public void declareVar(Token t, Token v) {
+//		if (t != null && v != null) {
+//			String name = v.getText();
+//			VarDescriptor vd = new VarDescriptor(name, t.getText());
+//			if (symbolTable.containsKey(name))
+//				myErrorHandler(DECLARED_VAR_ERROR, v);
+//			else {
+//				symbolTable.putIfAbsent(name, vd);
+//				System.out.println("Hai appena dichiarato:" + name + " di tipo " + t.getText());
+//			}
+//		}
+//	}
+//
+//	public void checkIncDec(Token o1, Token o2, Token id) {
+//		if (o1 != null && o2 != null)
+//			myErrorHandler(INC_ERROR, id);
+//		else if (o1 == null && o2 == null)
+//			myErrorHandler(MISS_INC_ERROR, id);
+//	}
+//
+//	// ****
+//	public boolean checkReference(Token var) {
+//		if (var != null) {
+//			String name = var.getText();
+//			if (!symbolTable.containsKey(name))
+//				myErrorHandler(UNDECLARED_VAR_ERROR, var);
+//			else
+//				return true;
+//		}
+//		return false;
+//	}
+//
+//	public void assignValue(Token n, float v) {
+//		if (n != null && checkReference(n)) {
+//			String name = n.getText();
+//			VarDescriptor vd = symbolTable.get(name);
+//			if (vd != null)
+//				vd.value = v;
+//			System.out.println("Hai assegnato il valore " + v + " alla variabile " + name);
+//		}
+//	}
+//
+//	// *****
+//	public float getVarValue(Token x) {
+//		if (x != null && checkReference(x)) {
+//			String name = x.getText();
+//			VarDescriptor vd = symbolTable.get(name);
+//			if (vd != null)
+//				return vd.value;
+//		}
+//		return 0;
+//	}
+//
+//	public float convertToFloat(Token n) { // passo un token
+//		if (n != null) // controllo non sia nullo
+//			return Float.parseFloat(n.getText()); // lo converto
+//		return 0;
+//	}
+//
+//	public float calculateAdd(float t1, Token op, float t2) { // valore 1' termine, token oprazione, valore 2' termine
+//		float res = t1;
+//		if (op != null) { // token opreatore non nullo
+//			if (op.getText().equals("+")) // se il token vale "+"
+//				res = t1 + t2; // allora sommo
+//			else
+//				res = t1 - t2; // altrimenti sottraggo
+//		}
+//
+//		return res;
+//	}
+//
+//	public float calculateMul(float f1, Token op, float f2) {
+//		float res = f1;
+//		if (op != null) {
+//			if (op.getText().equals("*"))
+//				res = f1 * f2;
+//			else if (f2 != 0)
+//				res = f1 / f2;
+//			else // se denominatore divisione ==0
+//				myErrorHandler(DIV_BY_ZERO_ERROR, op); // segnalo errore
+//		}
+//
+//		return res;
+//	}
 
 }
