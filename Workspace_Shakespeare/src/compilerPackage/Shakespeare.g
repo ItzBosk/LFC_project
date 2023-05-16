@@ -54,7 +54,7 @@ title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
 	
-        t=ID* d=DOT nl=NL+ {h.checkNullTitle($t, $d, $nl);} //controlla il valore
+        t=ID* d=DOT nl=NL+ {h.checkTitle($t, $d, $nl);} //controlla il valore
 
 	{System.out.println("    - Ho riconosciuto il titolo");}
 	body
@@ -69,7 +69,7 @@ body	:
 dramatisPersonae
 	:
 	{System.out.println("* Sto per riconoscere un attore");}
-	ch=CHARACTER cm=CM co=(ID | CHARACTER)+ d=DOT nl=NL+ {h.checkPersonae($ch, $cm, $co, $d, $nl);}
+	ch=CHARACTER cm=CM co=(CHARACTER | ID)+ d=DOT nl=NL+ {h.checkPersonae($ch, $cm, $co, $d, $nl);}
 	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
 	//altri caratteri ma che li skippi... come si fa?
 	//Nel senso, se non avessi specificato un altra volta char o one
@@ -83,12 +83,12 @@ dramatisPersonae
 acts
 	:
 	{System.out.println("* Sto per riconoscere un atto");}	
-	ACT root ID+
+	ACT rn=root cl=CL co=(CHARACTER | ID)+ d=DOT nl=NL+ {h.checkAct($rn, $cl, $co, $d, $nl);}
 	{System.out.println("    - Ho riconosciuto un atto");}
 	;
 	
 scenes	:	
-	SCENE root ID+
+	SCENE root co=(CHARACTER | ID)+
 	;
 
 
@@ -108,7 +108,10 @@ oneHundred  : 'C';
 fiveHundred : 'D';
 oneThousand : 'M';
 
-root  : (oneThousand)* hundreds? tens? units?;
+root  returns [Token romNum]
+	: 
+	rn=((oneThousand)* hundreds? tens? units?) { romNum = $rn; }
+	;
 
 // --- I, II, III, IV, IX or V VI, VII, VIII
 units : one ((one)* | five  | ten) | five (one)*; 
@@ -363,7 +366,7 @@ DIGIT : '0'..'9';
 
 
 // punteggiatura
-PP 	:	':';
+CL 	:	':';
 CM 	:	',';
 DOT   	: 	'.';
 //SC 	:	';';

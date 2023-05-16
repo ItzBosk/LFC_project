@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-15 17:51:27
+// $ANTLR 3.5.1 C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-16 07:50:45
 
 	package compilerPackage;
 
@@ -274,7 +274,7 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "dramatisPersonae"
-	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:1: dramatisPersonae :ch= CHARACTER cm= CM co= ( ID | CHARACTER )+ d= DOT (nl= NL )+ ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:1: dramatisPersonae :ch= CHARACTER cm= CM (co= ID )+ d= DOT (nl= NL )+ ;
 	public final void dramatisPersonae() throws RecognitionException {
 		Token ch=null;
 		Token cm=null;
@@ -283,34 +283,27 @@ public class ShakespeareParser extends Parser {
 		Token nl=null;
 
 		try {
-			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:2: (ch= CHARACTER cm= CM co= ( ID | CHARACTER )+ d= DOT (nl= NL )+ )
-			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:2: ch= CHARACTER cm= CM co= ( ID | CHARACTER )+ d= DOT (nl= NL )+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:2: (ch= CHARACTER cm= CM (co= ID )+ d= DOT (nl= NL )+ )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:2: ch= CHARACTER cm= CM (co= ID )+ d= DOT (nl= NL )+
 			{
 			System.out.println("* Sto per riconoscere un attore");
 			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_dramatisPersonae146); 
 			cm=(Token)match(input,CM,FOLLOW_CM_in_dramatisPersonae150); 
-			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:24: ( ID | CHARACTER )+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:23: (co= ID )+
 			int cnt4=0;
 			loop4:
 			while (true) {
 				int alt4=2;
 				int LA4_0 = input.LA(1);
-				if ( (LA4_0==CHARACTER||LA4_0==ID) ) {
+				if ( (LA4_0==ID) ) {
 					alt4=1;
 				}
 
 				switch (alt4) {
 				case 1 :
-					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:23: co= ID
 					{
-					if ( input.LA(1)==CHARACTER||input.LA(1)==ID ) {
-						input.consume();
-						state.errorRecovery=false;
-					}
-					else {
-						MismatchedSetException mse = new MismatchedSetException(null,input);
-						throw mse;
-					}
+					co=(Token)match(input,ID,FOLLOW_ID_in_dramatisPersonae154); 
 					}
 					break;
 
@@ -322,8 +315,8 @@ public class ShakespeareParser extends Parser {
 				cnt4++;
 			}
 
-			d=(Token)match(input,DOT,FOLLOW_DOT_in_dramatisPersonae165); 
-			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:50: (nl= NL )+
+			d=(Token)match(input,DOT,FOLLOW_DOT_in_dramatisPersonae159); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:36: (nl= NL )+
 			int cnt5=0;
 			loop5:
 			while (true) {
@@ -335,9 +328,9 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt5) {
 				case 1 :
-					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:50: nl= NL
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:36: nl= NL
 					{
-					nl=(Token)match(input,NL,FOLLOW_NL_in_dramatisPersonae169); 
+					nl=(Token)match(input,NL,FOLLOW_NL_in_dramatisPersonae163); 
 					}
 					break;
 
@@ -374,8 +367,8 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:85:2: ACT root ( ID )+
 			{
 			System.out.println("* Sto per riconoscere un atto");
-			match(input,ACT,FOLLOW_ACT_in_acts204); 
-			pushFollow(FOLLOW_root_in_acts206);
+			match(input,ACT,FOLLOW_ACT_in_acts198); 
+			pushFollow(FOLLOW_root_in_acts200);
 			root();
 			state._fsp--;
 
@@ -393,7 +386,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:86:11: ID
 					{
-					match(input,ID,FOLLOW_ID_in_acts208); 
+					match(input,ID,FOLLOW_ID_in_acts202); 
 					}
 					break;
 
@@ -428,8 +421,8 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:90:8: ( SCENE root ( ID )+ )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:2: SCENE root ( ID )+
 			{
-			match(input,SCENE,FOLLOW_SCENE_in_scenes225); 
-			pushFollow(FOLLOW_root_in_scenes227);
+			match(input,SCENE,FOLLOW_SCENE_in_scenes219); 
+			pushFollow(FOLLOW_root_in_scenes221);
 			root();
 			state._fsp--;
 
@@ -447,7 +440,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:13: ID
 					{
-					match(input,ID,FOLLOW_ID_in_scenes229); 
+					match(input,ID,FOLLOW_ID_in_scenes223); 
 					}
 					break;
 
@@ -481,7 +474,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:13: ( 'I' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:15: 'I'
 			{
-			match(input,38,FOLLOW_38_in_one255); 
+			match(input,38,FOLLOW_38_in_one249); 
 			}
 
 		}
@@ -504,7 +497,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:13: ( 'V' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:15: 'V'
 			{
-			match(input,41,FOLLOW_41_in_five269); 
+			match(input,41,FOLLOW_41_in_five263); 
 			}
 
 		}
@@ -527,7 +520,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:13: ( 'X' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:15: 'X'
 			{
-			match(input,42,FOLLOW_42_in_ten284); 
+			match(input,42,FOLLOW_42_in_ten278); 
 			}
 
 		}
@@ -550,7 +543,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:106:13: ( 'L' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:106:15: 'L'
 			{
-			match(input,39,FOLLOW_39_in_fifty297); 
+			match(input,39,FOLLOW_39_in_fifty291); 
 			}
 
 		}
@@ -573,7 +566,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:13: ( 'C' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:15: 'C'
 			{
-			match(input,36,FOLLOW_36_in_oneHundred305); 
+			match(input,36,FOLLOW_36_in_oneHundred299); 
 			}
 
 		}
@@ -596,7 +589,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:108:13: ( 'D' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:108:15: 'D'
 			{
-			match(input,37,FOLLOW_37_in_fiveHundred312); 
+			match(input,37,FOLLOW_37_in_fiveHundred306); 
 			}
 
 		}
@@ -619,7 +612,7 @@ public class ShakespeareParser extends Parser {
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:13: ( 'M' )
 			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:15: 'M'
 			{
-			match(input,40,FOLLOW_40_in_oneThousand319); 
+			match(input,40,FOLLOW_40_in_oneThousand313); 
 			}
 
 		}
@@ -655,7 +648,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:10: oneThousand
 					{
-					pushFollow(FOLLOW_oneThousand_in_root329);
+					pushFollow(FOLLOW_oneThousand_in_root323);
 					oneThousand();
 					state._fsp--;
 
@@ -677,7 +670,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:24: hundreds
 					{
-					pushFollow(FOLLOW_hundreds_in_root333);
+					pushFollow(FOLLOW_hundreds_in_root327);
 					hundreds();
 					state._fsp--;
 
@@ -696,7 +689,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:34: tens
 					{
-					pushFollow(FOLLOW_tens_in_root336);
+					pushFollow(FOLLOW_tens_in_root330);
 					tens();
 					state._fsp--;
 
@@ -715,7 +708,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:40: units
 					{
-					pushFollow(FOLLOW_units_in_root339);
+					pushFollow(FOLLOW_units_in_root333);
 					units();
 					state._fsp--;
 
@@ -763,7 +756,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:9: one ( ( one )* | five | ten )
 					{
-					pushFollow(FOLLOW_one_in_units349);
+					pushFollow(FOLLOW_one_in_units343);
 					one();
 					state._fsp--;
 
@@ -808,7 +801,7 @@ public class ShakespeareParser extends Parser {
 								case 1 :
 									// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:15: one
 									{
-									pushFollow(FOLLOW_one_in_units353);
+									pushFollow(FOLLOW_one_in_units347);
 									one();
 									state._fsp--;
 
@@ -825,7 +818,7 @@ public class ShakespeareParser extends Parser {
 						case 2 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:23: five
 							{
-							pushFollow(FOLLOW_five_in_units359);
+							pushFollow(FOLLOW_five_in_units353);
 							five();
 							state._fsp--;
 
@@ -834,7 +827,7 @@ public class ShakespeareParser extends Parser {
 						case 3 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:31: ten
 							{
-							pushFollow(FOLLOW_ten_in_units364);
+							pushFollow(FOLLOW_ten_in_units358);
 							ten();
 							state._fsp--;
 
@@ -848,7 +841,7 @@ public class ShakespeareParser extends Parser {
 				case 2 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:38: five ( one )*
 					{
-					pushFollow(FOLLOW_five_in_units369);
+					pushFollow(FOLLOW_five_in_units363);
 					five();
 					state._fsp--;
 
@@ -865,7 +858,7 @@ public class ShakespeareParser extends Parser {
 						case 1 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:44: one
 							{
-							pushFollow(FOLLOW_one_in_units372);
+							pushFollow(FOLLOW_one_in_units366);
 							one();
 							state._fsp--;
 
@@ -918,7 +911,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:9: ten ( ( ten )* | fifty | oneHundred )
 					{
-					pushFollow(FOLLOW_ten_in_tens385);
+					pushFollow(FOLLOW_ten_in_tens379);
 					ten();
 					state._fsp--;
 
@@ -965,7 +958,7 @@ public class ShakespeareParser extends Parser {
 								case 1 :
 									// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:15: ten
 									{
-									pushFollow(FOLLOW_ten_in_tens389);
+									pushFollow(FOLLOW_ten_in_tens383);
 									ten();
 									state._fsp--;
 
@@ -982,7 +975,7 @@ public class ShakespeareParser extends Parser {
 						case 2 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:23: fifty
 							{
-							pushFollow(FOLLOW_fifty_in_tens395);
+							pushFollow(FOLLOW_fifty_in_tens389);
 							fifty();
 							state._fsp--;
 
@@ -991,7 +984,7 @@ public class ShakespeareParser extends Parser {
 						case 3 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:31: oneHundred
 							{
-							pushFollow(FOLLOW_oneHundred_in_tens399);
+							pushFollow(FOLLOW_oneHundred_in_tens393);
 							oneHundred();
 							state._fsp--;
 
@@ -1005,7 +998,7 @@ public class ShakespeareParser extends Parser {
 				case 2 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:45: fifty ( ten )*
 					{
-					pushFollow(FOLLOW_fifty_in_tens404);
+					pushFollow(FOLLOW_fifty_in_tens398);
 					fifty();
 					state._fsp--;
 
@@ -1022,7 +1015,7 @@ public class ShakespeareParser extends Parser {
 						case 1 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:52: ten
 							{
-							pushFollow(FOLLOW_ten_in_tens407);
+							pushFollow(FOLLOW_ten_in_tens401);
 							ten();
 							state._fsp--;
 
@@ -1075,7 +1068,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:12: oneHundred ( ( oneHundred )* | fiveHundred | oneThousand )
 					{
-					pushFollow(FOLLOW_oneHundred_in_hundreds418);
+					pushFollow(FOLLOW_oneHundred_in_hundreds412);
 					oneHundred();
 					state._fsp--;
 
@@ -1124,7 +1117,7 @@ public class ShakespeareParser extends Parser {
 								case 1 :
 									// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:25: oneHundred
 									{
-									pushFollow(FOLLOW_oneHundred_in_hundreds422);
+									pushFollow(FOLLOW_oneHundred_in_hundreds416);
 									oneHundred();
 									state._fsp--;
 
@@ -1141,7 +1134,7 @@ public class ShakespeareParser extends Parser {
 						case 2 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:40: fiveHundred
 							{
-							pushFollow(FOLLOW_fiveHundred_in_hundreds428);
+							pushFollow(FOLLOW_fiveHundred_in_hundreds422);
 							fiveHundred();
 							state._fsp--;
 
@@ -1150,7 +1143,7 @@ public class ShakespeareParser extends Parser {
 						case 3 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:54: oneThousand
 							{
-							pushFollow(FOLLOW_oneThousand_in_hundreds432);
+							pushFollow(FOLLOW_oneThousand_in_hundreds426);
 							oneThousand();
 							state._fsp--;
 
@@ -1164,7 +1157,7 @@ public class ShakespeareParser extends Parser {
 				case 2 :
 					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:69: fiveHundred ( oneHundred )*
 					{
-					pushFollow(FOLLOW_fiveHundred_in_hundreds437);
+					pushFollow(FOLLOW_fiveHundred_in_hundreds431);
 					fiveHundred();
 					state._fsp--;
 
@@ -1181,7 +1174,7 @@ public class ShakespeareParser extends Parser {
 						case 1 :
 							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:82: oneHundred
 							{
-							pushFollow(FOLLOW_oneHundred_in_hundreds440);
+							pushFollow(FOLLOW_oneHundred_in_hundreds434);
 							oneHundred();
 							state._fsp--;
 
@@ -1221,42 +1214,43 @@ public class ShakespeareParser extends Parser {
 	public static final BitSet FOLLOW_acts_in_body126 = new BitSet(new long[]{0x0000000400000000L});
 	public static final BitSet FOLLOW_scenes_in_body129 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_CHARACTER_in_dramatisPersonae146 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CM_in_dramatisPersonae150 = new BitSet(new long[]{0x0000000000020040L});
-	public static final BitSet FOLLOW_DOT_in_dramatisPersonae165 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_NL_in_dramatisPersonae169 = new BitSet(new long[]{0x0000000004000002L});
-	public static final BitSet FOLLOW_ACT_in_acts204 = new BitSet(new long[]{0x000007F000020000L});
-	public static final BitSet FOLLOW_root_in_acts206 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_ID_in_acts208 = new BitSet(new long[]{0x0000000000020002L});
-	public static final BitSet FOLLOW_SCENE_in_scenes225 = new BitSet(new long[]{0x000007F000020000L});
-	public static final BitSet FOLLOW_root_in_scenes227 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_ID_in_scenes229 = new BitSet(new long[]{0x0000000000020002L});
-	public static final BitSet FOLLOW_38_in_one255 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_41_in_five269 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_42_in_ten284 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_39_in_fifty297 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_36_in_oneHundred305 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_37_in_fiveHundred312 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_40_in_oneThousand319 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_oneThousand_in_root329 = new BitSet(new long[]{0x000007F000000002L});
-	public static final BitSet FOLLOW_hundreds_in_root333 = new BitSet(new long[]{0x000006C000000002L});
-	public static final BitSet FOLLOW_tens_in_root336 = new BitSet(new long[]{0x0000024000000002L});
-	public static final BitSet FOLLOW_units_in_root339 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_one_in_units349 = new BitSet(new long[]{0x0000064000000002L});
-	public static final BitSet FOLLOW_one_in_units353 = new BitSet(new long[]{0x0000004000000002L});
-	public static final BitSet FOLLOW_five_in_units359 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ten_in_units364 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_five_in_units369 = new BitSet(new long[]{0x0000004000000002L});
-	public static final BitSet FOLLOW_one_in_units372 = new BitSet(new long[]{0x0000004000000002L});
-	public static final BitSet FOLLOW_ten_in_tens385 = new BitSet(new long[]{0x0000049000000002L});
-	public static final BitSet FOLLOW_ten_in_tens389 = new BitSet(new long[]{0x0000040000000002L});
-	public static final BitSet FOLLOW_fifty_in_tens395 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_oneHundred_in_tens399 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_fifty_in_tens404 = new BitSet(new long[]{0x0000040000000002L});
-	public static final BitSet FOLLOW_ten_in_tens407 = new BitSet(new long[]{0x0000040000000002L});
-	public static final BitSet FOLLOW_oneHundred_in_hundreds418 = new BitSet(new long[]{0x0000013000000002L});
-	public static final BitSet FOLLOW_oneHundred_in_hundreds422 = new BitSet(new long[]{0x0000001000000002L});
-	public static final BitSet FOLLOW_fiveHundred_in_hundreds428 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_oneThousand_in_hundreds432 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_fiveHundred_in_hundreds437 = new BitSet(new long[]{0x0000001000000002L});
-	public static final BitSet FOLLOW_oneHundred_in_hundreds440 = new BitSet(new long[]{0x0000001000000002L});
+	public static final BitSet FOLLOW_CM_in_dramatisPersonae150 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_ID_in_dramatisPersonae154 = new BitSet(new long[]{0x0000000000020200L});
+	public static final BitSet FOLLOW_DOT_in_dramatisPersonae159 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_NL_in_dramatisPersonae163 = new BitSet(new long[]{0x0000000004000002L});
+	public static final BitSet FOLLOW_ACT_in_acts198 = new BitSet(new long[]{0x000007F000020000L});
+	public static final BitSet FOLLOW_root_in_acts200 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_ID_in_acts202 = new BitSet(new long[]{0x0000000000020002L});
+	public static final BitSet FOLLOW_SCENE_in_scenes219 = new BitSet(new long[]{0x000007F000020000L});
+	public static final BitSet FOLLOW_root_in_scenes221 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_ID_in_scenes223 = new BitSet(new long[]{0x0000000000020002L});
+	public static final BitSet FOLLOW_38_in_one249 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_41_in_five263 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_42_in_ten278 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_39_in_fifty291 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_36_in_oneHundred299 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_37_in_fiveHundred306 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_40_in_oneThousand313 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_oneThousand_in_root323 = new BitSet(new long[]{0x000007F000000002L});
+	public static final BitSet FOLLOW_hundreds_in_root327 = new BitSet(new long[]{0x000006C000000002L});
+	public static final BitSet FOLLOW_tens_in_root330 = new BitSet(new long[]{0x0000024000000002L});
+	public static final BitSet FOLLOW_units_in_root333 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_one_in_units343 = new BitSet(new long[]{0x0000064000000002L});
+	public static final BitSet FOLLOW_one_in_units347 = new BitSet(new long[]{0x0000004000000002L});
+	public static final BitSet FOLLOW_five_in_units353 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ten_in_units358 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_five_in_units363 = new BitSet(new long[]{0x0000004000000002L});
+	public static final BitSet FOLLOW_one_in_units366 = new BitSet(new long[]{0x0000004000000002L});
+	public static final BitSet FOLLOW_ten_in_tens379 = new BitSet(new long[]{0x0000049000000002L});
+	public static final BitSet FOLLOW_ten_in_tens383 = new BitSet(new long[]{0x0000040000000002L});
+	public static final BitSet FOLLOW_fifty_in_tens389 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_oneHundred_in_tens393 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_fifty_in_tens398 = new BitSet(new long[]{0x0000040000000002L});
+	public static final BitSet FOLLOW_ten_in_tens401 = new BitSet(new long[]{0x0000040000000002L});
+	public static final BitSet FOLLOW_oneHundred_in_hundreds412 = new BitSet(new long[]{0x0000013000000002L});
+	public static final BitSet FOLLOW_oneHundred_in_hundreds416 = new BitSet(new long[]{0x0000001000000002L});
+	public static final BitSet FOLLOW_fiveHundred_in_hundreds422 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_oneThousand_in_hundreds426 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_fiveHundred_in_hundreds431 = new BitSet(new long[]{0x0000001000000002L});
+	public static final BitSet FOLLOW_oneHundred_in_hundreds434 = new BitSet(new long[]{0x0000001000000002L});
 }
