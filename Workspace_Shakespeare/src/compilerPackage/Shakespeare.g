@@ -83,12 +83,14 @@ dramatisPersonae
 acts
 	:
 	{System.out.println("* Sto per riconoscere un atto");}	
-	ACT root COMMENT
+	ACT root co=COMMENT 
 	{System.out.println("    - Ho riconosciuto un atto");}
 	;
 	
 scenes	:	
-	SCENE root COMMENT
+	{System.out.println("* Sto per riconoscere una scena");}
+	SCENE root co=COMMENT
+	{System.out.println("    - Ho riconosciuto una scena");}
 	;
 
 
@@ -108,19 +110,34 @@ oneHundred  : 'C';
 fiveHundred : 'D';
 oneThousand : 'M';
 
-root  : (oneThousand)* hundreds? tens? units?;
+root returns [Token tk]  
+	: 
+	rn=((oneThousand)* hundreds? tens? units?) {tk = $rn;}
+	;
 
 // --- I, II, III, IV, IX or V VI, VII, VIII
-units : one ((one)* | five  | ten) | five (one)*; 
+units 
+	: 
+	one ((one)* | five  | ten) | five (one)*
+	; 
 
 // --- X, XX, XXX, XL, XC or L, LX, LXX, LXXX
-tens  : ten ((ten)* | fifty | oneHundred) | fifty (ten)*;
+tens	
+	: 
+	ten ((ten)* | fifty | oneHundred) | fifty (ten)*
+	;
 
 // --- C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
-hundreds : oneHundred ((oneHundred)* | fiveHundred | oneThousand) | fiveHundred (oneHundred)*; 
+hundreds
+	:
+	oneHundred ((oneHundred)* | fiveHundred | oneThousand) | fiveHundred (oneHundred)*
+	; 
+
 
 COMMENT
-    :   (', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n';
+   	:   
+    	(', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n'
+    	;
     
 
 CHARACTER

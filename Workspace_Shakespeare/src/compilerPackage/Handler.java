@@ -10,7 +10,7 @@ import org.antlr.runtime.TokenStream;
 
 import antlr.Parser;
 import compilerPackage.temp.Shakespeare;
-import compilerPackage.util.VarDescriptor;
+import compilerPackage.util.CharacterDescriptor;
 
 public class Handler {
 
@@ -28,19 +28,20 @@ public class Handler {
 	public static int INVALID_CHARACTER = 10;
 	public static int MISSING_COMMENT = 11;
 
-	Hashtable<String, VarDescriptor> symbolTable; // con chiave e oggetto
-	// ******
-	List<String> errorList; // lista in cui registro errori
 	TokenStream input; // mi rappresenta lo scanner
-
-	// ******
+	List<String> errorList; // lista in cui registro errori
+	
+	Hashtable<String, CharacterDescriptor> characterList;	// character, value, on stage or not
+	float scenicMoment;				// gestione atti e scene
+	
 	public Handler(TokenStream input) {
 		this.input = input;
-		symbolTable = new Hashtable<String, VarDescriptor>(101);
 		errorList = new ArrayList<String>();
+		characterList = new Hashtable<String, CharacterDescriptor>(101);
+		scenicMoment = 0;
 	}
 
-	// ******
+	// lista degli errori printata dal Parser
 	public List<String> getErrorList() {
 		return errorList;
 	}
@@ -49,7 +50,8 @@ public class Handler {
 	public void handleError(Token tk, String hdr, String msg) {
 		String errMsg;
 		if (tk == null)
-			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal file)
+			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal
+			// file)
 			if (input.LT(-1) == null)
 				tk = input.LT(+1);
 			else
@@ -62,7 +64,7 @@ public class Handler {
 
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: " + " on token '"
 				+ tk.getText() + "'";
-		//errMsg += "\n" + hdr + "\n**********\n" + msg;   // scarto msg automatico
+		// errMsg += "\n" + hdr + "\n**********\n" + msg; // scarto msg automatico
 		errorList.add(errMsg); // msg di errore che ho in output
 	}
 
@@ -78,7 +80,8 @@ public class Handler {
 			errMsg = "Semantic Error " + code;
 
 		if (tk == null)
-			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal file)
+			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal
+			// file)
 			if (input.LT(-1) == null)
 				tk = input.LT(+1);
 			else
@@ -106,7 +109,7 @@ public class Handler {
 			errMsg += "Invalid character name";
 		else if (code == MISSING_COMMENT)
 			errMsg += "Missing comment";
-		
+
 		errorList.add(errMsg);
 	}
 
@@ -114,45 +117,56 @@ public class Handler {
 	public void checkNullTitle(Token t, Token d) { // t=testo, d=dot
 		try {
 			if (t == null) {
-				//System.err.println("ERROR: missing title, please declare it");
+//				System.err.println("ERROR: missing title, please declare it");
 				myErrorHandler(MISSING_TITLE, null);
-			} 
-			else if (!d.getText().equals(".")) {
-				//System.err.println("ERROR: dot missing in title");
+			} else if (!d.getText().equals(".")) {
+//				System.err.println("ERROR: dot missing in title");
 				myErrorHandler(MISSING_DOT, d);
-				// System.out.println(d.getText());
+//				System.out.println(d.getText());
 			}
-		} 
-		catch (NullPointerException ex) {
+		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
-			 myErrorHandler(MISSING_TITLE, null);
+			myErrorHandler(MISSING_TITLE, null);
 		}
 	}
 
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
-		 //System.out.println(ch.getText());
-		 //System.out.println(co.getText());
+//		System.out.println(ch.getText());
+//		System.out.println(co.getText());
 
-		
-		//controllo se token corrisponde a token CHARACTERS
-		if(ch.getType() != ShakespeareLexer.CHARACTER) {
+		// controllo se token corrisponde a token CHARACTERS
+		if (ch.getType() != ShakespeareLexer.CHARACTER) {
+//			System.err.println("personagguio sbagliato");
 			myErrorHandler(INVALID_CHARACTER, ch);
-			System.err.println("personagguio sbagliato");
 		}
-		
+
 		if (ch.getType() != ShakespeareLexer.CHARACTER && co != null) {
-			System.err.println("ERROR: missing character name");
+//			System.err.println("ERROR: missing character name");
 			myErrorHandler(MISSING_CHARACTER, ch);
 		}
 		// to do: check personaggio valido
 		if (co == null) {
-			System.err.println("ERROR: missing comment after character name");
+//			System.err.println("ERROR: missing comment after character name");
 			myErrorHandler(MISSING_COMMENT, co);
 		}
-		
+
 		// System.out.println(ch.getText().toString());
 
+	}
+
+	// dichiarazione atto
+	public void checkAct(Token rn, Token co) {
+		// non è un numero romano
+		// già definito
+		// maggiore di ultimo atto definito + 1 (salto nella numerazione)
+	}
+
+	// dichiarazione atto
+	public void checkScene(Token rn, Token co) {
+		// non è un numero romano
+		// già definita in questo atto -> serve tenere traccia dell'atto in cui sono
+		// maggiore di ultima scena definita in questo atto + 1 (salto nella numerazione)
 	}
 
 //	public void declareVar(Token t, Token v) {
