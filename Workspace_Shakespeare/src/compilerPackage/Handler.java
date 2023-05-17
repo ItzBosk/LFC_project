@@ -28,8 +28,6 @@ public class Handler {
 	public static int MISSING_COMMENT = 11;
 	public static int MISSING_NEWLINE = 12;
 	public static int MISSING_COMMA = 13;
-	public static int MISSING_COLON = 14;
-	public static int MISSING_ROMANIAN_NUMBER = 15;
 
 	Hashtable<String, VarDescriptor> symbolTable; // con chiave e oggetto
 	// ******
@@ -52,8 +50,7 @@ public class Handler {
 	public void handleError(Token tk, String hdr, String msg) {
 		String errMsg;
 		if (tk == null)
-			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal
-			// file)
+			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal file)
 			if (input.LT(-1) == null)
 				tk = input.LT(+1);
 			else
@@ -66,7 +63,7 @@ public class Handler {
 
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: " + " on token '"
 				+ tk.getText() + "'";
-		// errMsg += "\n" + hdr + "\n**********\n" + msg; // scarto msg automatico
+		//errMsg += "\n" + hdr + "\n**********\n" + msg;   // scarto msg automatico
 		errorList.add(errMsg); // msg di errore che ho in output
 	}
 
@@ -82,8 +79,7 @@ public class Handler {
 			errMsg = "Semantic Error " + code;
 
 		if (tk == null)
-			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal
-			// file)
+			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal file)
 			if (input.LT(-1) == null)
 				tk = input.LT(+1);
 			else
@@ -115,28 +111,25 @@ public class Handler {
 			errMsg += "Missing new line";
 		else if (code == MISSING_COMMA)
 			errMsg += "Missing comma";
-		else if (code == MISSING_COLON)
-			errMsg += "Missing colon";
-		else if (code == MISSING_ROMANIAN_NUMBER);
-			errMsg += "Missing romanian number";
 		
 		errorList.add(errMsg);
 	}
 
 	// controlla titolo
-	public void checkTitle(Token t, Token d, Token nl) { // t=testo, d=dot
+	public void checkNullTitle(Token t, Token d, Token nl) { // t=testo, d=dot
 //		try {
-		if (t == null) {
-			// System.err.println("ERROR: missing title, please declare it");
-			myErrorHandler(MISSING_TITLE, null);
-		} else if (!d.getText().equals(".")) {
-			// System.err.println("ERROR: dot missing in title");
-			myErrorHandler(MISSING_DOT, d);
-			// System.out.println(d.getText());
-		}
-		if (nl.getType() != ShakespeareLexer.NL) {
-			myErrorHandler(MISSING_NEWLINE, nl);
-		}
+			if (t == null) {
+				//System.err.println("ERROR: missing title, please declare it");
+				myErrorHandler(MISSING_TITLE, null);
+			} 
+			else if (!d.getText().equals(".")) {
+				//System.err.println("ERROR: dot missing in title");
+				myErrorHandler(MISSING_DOT, d);
+				// System.out.println(d.getText());
+			}
+			if(nl.getType() != ShakespeareLexer.NL) {
+				myErrorHandler(MISSING_NEWLINE, nl);
+			}
 //		} 
 //		catch (NullPointerException ex) {
 //			System.err.println(ex.toString());
@@ -146,65 +139,36 @@ public class Handler {
 
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token cm, Token co, Token d, Token nl) { // ch=characters, co=comment
-		// System.err.println(ch.getText());
-		// System.err.println(co.getText());
-
-		// controllo se token corrisponde a token CHARACTERS
+		 //System.out.println(ch.getText());
+		 //System.out.println(co.getText());
+		
+		//controllo se token corrisponde a token CHARACTERS
 		if (ch == null) {
 			System.err.println("ERROR: missing character name");
 			myErrorHandler(MISSING_CHARACTER, ch);
-		}
-		if (ch.getType() != ShakespeareLexer.CHARACTER) {
-			System.err.println("personagguio sbagliato");
+		}	
+		if(ch.getType() != ShakespeareLexer.CHARACTER) {
 			myErrorHandler(INVALID_CHARACTER, ch);
+			System.err.println("personagguio sbagliato");
 		}
-		if (cm.getType() != ShakespeareLexer.CM) {
+		if(cm.getType() != ShakespeareLexer.CM) {
 			myErrorHandler(MISSING_COMMA, cm);
 		}
 		if (co == null) {
-			System.err.println("ERROR: missing character comment");
+			System.err.println("ERROR: missing character name");
 			myErrorHandler(MISSING_COMMENT, co);
 		}
 		if (!d.getText().equals(".")) {
-			// System.err.println("ERROR: dot missing after character comment");
+			//System.err.println("ERROR: dot missing after character comment");
 			myErrorHandler(MISSING_DOT, d);
 			// System.out.println(d.getText());
 		}
-		if (nl.getType() != ShakespeareLexer.NL) {
+		if(nl.getType() != ShakespeareLexer.NL) {
 			myErrorHandler(MISSING_NEWLINE, nl);
 		}
 		// System.out.println(ch.getText().toString());
 	}
 
-	
-	public void checkAct(Token rn, Token cl, Token co, Token d, Token nl) {
-		if (rn == null) {
-			System.err.println("ERROR: missing romanian number");
-			myErrorHandler(MISSING_ROMANIAN_NUMBER, rn);
-		}
-		
-		// check numero romano valido
-		// check atto non già dichiarato
-		// check si procede in ordine senza saltare numeri
-		
-		if (cl.getType() != ShakespeareLexer.CL) {
-			System.err.println("ERROR: missing colon");
-			myErrorHandler(MISSING_COLON, cl);
-		}
-		if (co == null) {
-			System.err.println("ERROR: missing act comment");
-			myErrorHandler(MISSING_COMMENT, co);
-		}
-		if (!d.getText().equals(".")) {
-			// System.err.println("ERROR: dot missing after character comment");
-			myErrorHandler(MISSING_DOT, d);
-			// System.out.println(d.getText());
-		}
-		if (nl.getType() != ShakespeareLexer.NL) {
-			myErrorHandler(MISSING_NEWLINE, nl);
-		}
-	}
-	
 //	public void declareVar(Token t, Token v) {
 //		if (t != null && v != null) {
 //			String name = v.getText();
