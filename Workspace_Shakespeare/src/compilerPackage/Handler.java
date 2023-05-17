@@ -13,6 +13,7 @@ import compilerPackage.temp.Shakespeare;
 import compilerPackage.util.VarDescriptor;
 
 public class Handler {
+
 	public static int LEXICAL_ERROR = 0;
 	public static int SYNTAX_ERROR = 1;
 	public static int UNDECLARED_VAR_ERROR = 2;
@@ -26,8 +27,6 @@ public class Handler {
 	public static int MISSING_CHARACTER = 9;
 	public static int INVALID_CHARACTER = 10;
 	public static int MISSING_COMMENT = 11;
-	public static int MISSING_NEWLINE = 12;
-	public static int MISSING_COMMA = 13;
 
 	Hashtable<String, VarDescriptor> symbolTable; // con chiave e oggetto
 	// ******
@@ -107,17 +106,13 @@ public class Handler {
 			errMsg += "Invalid character name";
 		else if (code == MISSING_COMMENT)
 			errMsg += "Missing comment";
-		else if (code == MISSING_NEWLINE)
-			errMsg += "Missing new line";
-		else if (code == MISSING_COMMA)
-			errMsg += "Missing comma";
 		
 		errorList.add(errMsg);
 	}
 
 	// controlla titolo
-	public void checkNullTitle(Token t, Token d, Token nl) { // t=testo, d=dot
-//		try {
+	public void checkNullTitle(Token t, Token d) { // t=testo, d=dot
+		try {
 			if (t == null) {
 				//System.err.println("ERROR: missing title, please declare it");
 				myErrorHandler(MISSING_TITLE, null);
@@ -127,46 +122,37 @@ public class Handler {
 				myErrorHandler(MISSING_DOT, d);
 				// System.out.println(d.getText());
 			}
-			if(nl.getType() != ShakespeareLexer.NL) {
-				myErrorHandler(MISSING_NEWLINE, nl);
-			}
-//		} 
-//		catch (NullPointerException ex) {
-//			System.err.println(ex.toString());
-//			 myErrorHandler(MISSING_TITLE, null);
-//		}
+		} 
+		catch (NullPointerException ex) {
+			System.err.println(ex.toString());
+			 myErrorHandler(MISSING_TITLE, null);
+		}
 	}
 
 	// dramatisPersonae
-	public void checkPersonae(Token ch, Token cm, Token co, Token d, Token nl) { // ch=characters, co=comment
+	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
 		 //System.out.println(ch.getText());
 		 //System.out.println(co.getText());
+
 		
 		//controllo se token corrisponde a token CHARACTERS
-		if (ch == null) {
-			System.err.println("ERROR: missing character name");
-			myErrorHandler(MISSING_CHARACTER, ch);
-		}	
 		if(ch.getType() != ShakespeareLexer.CHARACTER) {
 			myErrorHandler(INVALID_CHARACTER, ch);
 			System.err.println("personagguio sbagliato");
 		}
-		if(cm.getType() != ShakespeareLexer.CM) {
-			myErrorHandler(MISSING_COMMA, cm);
-		}
-		if (co == null) {
+		
+		if (ch.getType() != ShakespeareLexer.CHARACTER && co != null) {
 			System.err.println("ERROR: missing character name");
+			myErrorHandler(MISSING_CHARACTER, ch);
+		}
+		// to do: check personaggio valido
+		if (co == null) {
+			System.err.println("ERROR: missing comment after character name");
 			myErrorHandler(MISSING_COMMENT, co);
 		}
-		if (!d.getText().equals(".")) {
-			//System.err.println("ERROR: dot missing after character comment");
-			myErrorHandler(MISSING_DOT, d);
-			// System.out.println(d.getText());
-		}
-		if(nl.getType() != ShakespeareLexer.NL) {
-			myErrorHandler(MISSING_NEWLINE, nl);
-		}
+		
 		// System.out.println(ch.getText().toString());
+
 	}
 
 //	public void declareVar(Token t, Token v) {

@@ -54,7 +54,7 @@ title
 	:
 	{System.out.println("* Sto per riconoscere il titolo");}
 	
-        t=ID* d=DOT nl=NL+ {h.checkNullTitle($t, $d, $nl);} //controlla il valore
+        t=ID* d=DOT WS? {h.checkNullTitle($t, $d);} //controlla il valore
 
 	{System.out.println("    - Ho riconosciuto il titolo");}
 	body
@@ -69,7 +69,7 @@ body	:
 dramatisPersonae
 	:
 	{System.out.println("* Sto per riconoscere un attore");}
-	ch=CHARACTER cm=CM co=(ID | CHARACTER)+ d=DOT nl=NL+ {h.checkPersonae($ch, $cm, $co, $d, $nl);}
+	ch=CHARACTER co=COMMENT {h.checkPersonae($ch, $co);}
 	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
 	//altri caratteri ma che li skippi... come si fa?
 	//Nel senso, se non avessi specificato un altra volta char o one
@@ -83,12 +83,12 @@ dramatisPersonae
 acts
 	:
 	{System.out.println("* Sto per riconoscere un atto");}	
-	ACT root ID+
+	ACT root COMMENT
 	{System.out.println("    - Ho riconosciuto un atto");}
 	;
 	
 scenes	:	
-	SCENE root ID+
+	SCENE root COMMENT
 	;
 
 
@@ -119,8 +119,10 @@ tens  : ten ((ten)* | fifty | oneHundred) | fifty (ten)*;
 // --- C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
 hundreds : oneHundred ((oneHundred)* | fiveHundred | oneThousand) | fiveHundred (oneHundred)*; 
 
-//COMMENT   :   (', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n';
+COMMENT
+    :   (', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n';
     
+
 CHARACTER
     :   'Romeo'
     |   'Juliet'
@@ -382,12 +384,11 @@ ID  :   ( LETTER |'_')
 WS  :   ( ' '
         | '\t'
         | '\r'
-        //| '\n'
+        | '\n'
         )+ {$channel=HIDDEN;}
     ;
 
-NL	:   	'\n';
-
+  
 // Brackets
 LB	:	'[';		
 RB	:	']';
