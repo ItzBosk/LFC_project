@@ -171,14 +171,14 @@ public class Handler {
 	}
 
 	// entrata in scena
-	public void checkEnter() {
+	public void checkEnter(Token ch1, Token ch2) {
 		// personaggio dichiarato?
 		// personaggio era già in scena?
 		// aggiorno onStage
 	}
 
 	// uscita di scena
-	public void checkExit() {
+	public void checkExit(Token ch) {
 		// personaggio dichiarato?
 		// personaggio era in scena?
 		// aggiorno onStage
@@ -186,12 +186,21 @@ public class Handler {
 	}
 
 	// uscita di scena multipla
-	public void checkMultipleExit() {
+	public void checkExeunt(Token ch1, Token ch2) {
 		// personaggi dichiarati?
 		// personaggi erano in scena?
 		// aggiorno onStage
 		// aggiorno valori (azzero o lascio)
 	}
+
+	// operazioni svolte su/da un personaggio
+	public void checkStageEvent() {
+		// personaggi dichiarato?
+		// personaggio era in scena?
+		// aggiorno valore personaggio
+	}
+
+// --------------------------------------------------------------------------	
 
 //	public void declareVar(Token t, Token v) {
 //		if (t != null && v != null) {

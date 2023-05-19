@@ -53,7 +53,8 @@ parseSPL
 title
 	:
     	{System.out.println("* Sto per riconoscere il titolo");}
-    	t=ID* d=DOT WS? {h.checkNullTitle($t, $d);} //controlla il valore
+    	t=ID* d=DOT WS?
+    	{h.checkNullTitle($t, $d);} //controlla il valore
     	{System.out.println("    - Ho riconosciuto il titolo");}
     	body
     	;
@@ -68,7 +69,8 @@ body
 dramatisPersonae
     	:
    	{System.out.println("* Sto per riconoscere un attore");}
-    	ch=CHARACTER co=COMMENT {h.checkPersonae($ch, $co);}
+    	ch=CHARACTER co=COMMENT
+    	{h.checkPersonae($ch, $co);}
     	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
     	//altri caratteri ma che li skippi... come si fa?
     	//Nel senso, se non avessi specificato un altra volta char o one
@@ -89,32 +91,46 @@ scenes
     	{System.out.println("* Sto per riconoscere una scena");}
     	SCENE root co=COMMENT
     	{System.out.println("    - Ho riconosciuto una scena");}
+    	enterRule?
+    	stageEvent+
     	;
 
 // entrano uno o due personaggi
 enterRule
-    :
-    {System.out.println("* Sto per riconoscere un'entrata in scena");}
-    LB ENTER CHARACTER (AND CHARACTER)? RB
-    // o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
-    {System.out.println("    - Ho riconosciuto un'entrata in scena");}
-    ;
+	:
+	{System.out.println("* Sto per riconoscere un'entrata in scena");}
+   	LB ENTER ch1=CHARACTER (AND ch2=CHARACTER)? RB
+   	{h.checkEnter($ch1, $ch2);}
+   	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
+   	{System.out.println("    - Ho riconosciuto un'entrata in scena");}
+   	//stageEvent+
+    	;
 
 // esce un solo personaggio
 exitRule
 	:
     	{System.out.println("* Sto per riconoscere un'uscita di scena");}
-    	LB EXIT CHARACTER RB
+    	LB EXIT ch=CHARACTER RB
+    	{h.checkExit($ch);}
     	{System.out.println("    - Ho riconosciuto un'uscita di scena");}
     	;
     
 // escono tutti i personaggi se non specifico nulla, oppure due
-multipleExitRule
+exeuntRule
     	:
     	{System.out.println("* Sto per riconoscere un'uscita di scena multipla");}
-    	LB EXEUNT (CHARACTER AND CHARACTER)? RB
+    	LB EXEUNT (ch1=CHARACTER AND ch2=CHARACTER)? RB
+    	{h.checkExeunt($ch1, $ch2);}
     	{System.out.println("    - Ho riconosciuto un'uscita di scena multipla");}
     	;
+
+stageEvent
+	:
+	{System.out.println("* Sto per riconoscere degli stage events");}
+	CHARACTER CL ID DOT
+	{h.checkStageEvent();}
+	{System.out.println("    - Ho riconosciuto degli stage events");}
+	;
 
 /* ****************************
 **   Analizzatore sintattico 
@@ -386,13 +402,13 @@ SCENE      	:   	'Scene';
 ENTER           :       'Enter';
 EXIT            :       'Exit';
 EXEUNT          :       'Exeunt';
-AND         	:   	'and';
+AND         	:	'and';
 //GOTO          :     	'goto';       
 // le prossime hanno senso/si può fare?  credo di si
-OUTPUTVALUE     :       'Open your heart';  
-OUTPUTASCII     :       'Speak your mind';
-INPUTVALUE      :       'Open your mind';  
-INPUTASCII      :       'Listen to your heart';
+PRINTVALUE     	:       'Open your heart';  
+PRINTASCII     	:       'Speak your mind';
+READVALUE      	:       'Open your mind';  
+READASCII      	:       'Listen to your heart';
 
 
 
@@ -418,6 +434,7 @@ FS  	:   '/';
 ID  :   ( LETTER |'_') 
         ( LETTER |DIGIT |'_')* 
     ;
+
 
 //spazi e new line. non sono visibili come token perche hidden
 WS  :   
