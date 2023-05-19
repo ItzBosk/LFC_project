@@ -30,10 +30,10 @@ public class Handler {
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
-	
-	Hashtable<String, CharacterDescriptor> characterList;	// character, value, on stage or not
-	float scenicMoment;				// gestione atti e scene
-	
+
+	Hashtable<String, CharacterDescriptor> characterList; // character, value, on stage or not
+	float scenicMoment; // gestione atti e scene
+
 	public Handler(TokenStream input) {
 		this.input = input;
 		errorList = new ArrayList<String>();
@@ -166,7 +166,31 @@ public class Handler {
 	public void checkScene(Token rn, Token co) {
 		// non è un numero romano
 		// già definita in questo atto -> serve tenere traccia dell'atto in cui sono
-		// maggiore di ultima scena definita in questo atto + 1 (salto nella numerazione)
+		// maggiore di ultima scena definita in questo atto + 1 (salto nella
+		// numerazione)
+	}
+
+	// entrata in scena
+	public void checkEnter() {
+		// personaggio dichiarato?
+		// personaggio era già in scena?
+		// aggiorno onStage
+	}
+
+	// uscita di scena
+	public void checkExit() {
+		// personaggio dichiarato?
+		// personaggio era in scena?
+		// aggiorno onStage
+		// aggiorno valore (azzero o lascio)
+	}
+
+	// uscita di scena multipla
+	public void checkMultipleExit() {
+		// personaggi dichiarati?
+		// personaggi erano in scena?
+		// aggiorno onStage
+		// aggiorno valori (azzero o lascio)
 	}
 
 //	public void declareVar(Token t, Token v) {
