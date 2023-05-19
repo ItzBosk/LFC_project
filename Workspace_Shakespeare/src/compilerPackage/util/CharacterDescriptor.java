@@ -5,9 +5,9 @@ public class CharacterDescriptor {
 	public int value;
 	public boolean onStage;
 	
-	public CharacterDescriptor (String n, int t) {
+	public CharacterDescriptor (String n, int t,boolean o) {
 		name = n;
 		value = t;
-		onStage = false;
+		onStage = o;
 	}
 }

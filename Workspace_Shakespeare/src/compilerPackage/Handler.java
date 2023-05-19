@@ -175,6 +175,30 @@ public class Handler {
 		// personaggio dichiarato?
 		// personaggio era già in scena?
 		// aggiorno onStage
+		
+		// Quanti personaggi possono entrare al massimo? due?
+		if(!characterList.containsKey(ch1.getText()))
+			characterList.put(ch1.getText(),new CharacterDescriptor(ch1.getText(),0,true));
+		else {
+			if(characterList.get(ch1.getText()).onStage) {
+				// lanciare errore personaggio gia in scena e togliere le parentesi {}
+			}
+			else
+				characterList.get(ch1.getText()).onStage = true;
+		}
+		if(ch2 != null) {
+			if(!characterList.containsKey(ch2.getText()))
+				characterList.put(ch2.getText(),new CharacterDescriptor(ch2.getText(),0,true));
+			else {
+				if(characterList.get(ch2.getText()).onStage) {
+					// lanciare errore personaggio gia in scena e togliere le parentesi {}
+				}
+				else
+					characterList.get(ch2.getText()).onStage = true;
+			}
+		}
+		stampaPersonaggi();
+		
 	}
 
 	// uscita di scena
@@ -183,6 +207,13 @@ public class Handler {
 		// personaggio era in scena?
 		// aggiorno onStage
 		// aggiorno valore (azzero o lascio)
+		if(!characterList.containsKey(ch.getText())) {
+			//Errore cazz and mazz and il char non esiste
+		}else if (!characterList.get(ch.getText()).onStage){
+			//Errore il personaggio esiste ma non era in scena
+		}else{
+			characterList.get(ch.getText()).onStage = false;
+		}
 	}
 
 	// uscita di scena multipla
@@ -191,6 +222,10 @@ public class Handler {
 		// personaggi erano in scena?
 		// aggiorno onStage
 		// aggiorno valori (azzero o lascio)
+		if(ch1 != null)
+			checkExit(ch1);
+		if(ch2 != null)
+			checkExit(ch2);
 	}
 
 	// operazioni svolte su/da un personaggio
@@ -198,6 +233,14 @@ public class Handler {
 		// personaggi dichiarato?
 		// personaggio era in scena?
 		// aggiorno valore personaggio
+	}
+	
+	public void stampaPersonaggi() {
+		System.out.println("---------------");
+		System.out.println("U' Guagliu':");
+		for(String character : characterList.keySet())				
+			System.out.println("name= "+character+"\t|val= "+characterList.get(character).value+"\t|onstage= "+String.valueOf(characterList.get(character).onStage));
+		System.out.println("---------------");
 	}
 
 // --------------------------------------------------------------------------	
