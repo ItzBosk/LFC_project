@@ -12,6 +12,7 @@ import org.antlr.runtime.TokenStream;
 import antlr.Parser;
 import compilerPackage.temp.Shakespeare;
 import compilerPackage.util.CharacterDescriptor;
+import compilerPackage.util.RomanNumber;
 
 public class Handler {
 
@@ -30,7 +31,7 @@ public class Handler {
 	public static int INVALID_CHARACTER = 6;
 	public static int MISSING_COMMENT = 7;
 	public static int ALREADY_DECLARED_CHARACTER = 8;
-	public static int INVALID_ROMANIAN_NUMBER = 9;
+	public static int INVALID_ROMAN_NUMBER = 9;
 	public static int ALREADY_DEFINED_ACT = 10;
 	public static int ALREADY_DEFINED_SCENE_IN_ACT = 11;
 	public static int SKIPPED_ACT = 12;
@@ -124,8 +125,8 @@ public class Handler {
 			errMsg += "Missing comment";
 		else if (code == ALREADY_DECLARED_CHARACTER)
 			errMsg += "The character has been already declared";
-		else if (code == INVALID_ROMANIAN_NUMBER)
-			errMsg += "The number is not a romanian number";
+		else if (code == INVALID_ROMAN_NUMBER)
+			errMsg += "The number is not a roman number";
 		else if (code == ALREADY_DEFINED_ACT)
 			errMsg += "Already defined act";
 		else if (code == ALREADY_DEFINED_SCENE_IN_ACT)
@@ -142,7 +143,6 @@ public class Handler {
 			errMsg += "There are already two characters on stage";
 		else if (code == CHARACTER_NOT_ON_STAGE)
 			errMsg += "The character is not on stage";
-		
 
 		errorList.add(errMsg);
 	}
@@ -179,24 +179,63 @@ public class Handler {
 			myErrorHandler(MISSING_COMMENT, co);
 	}
 
-	// converte il numero romano in int, 0 se non è un numero romano
-	public int convertToRomanianNumber(Token rn) {
-		return 0;
+	//////////////////////// RomanNumber.java /////////////////////////////////////
+	public static boolean isRoman(String s) {
+		return s.matches("M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})");
 	}
+
+	public static int decodeSingle(char letter) {
+		switch (letter) {
+		case 'M':
+			return 1000;
+		case 'D':
+			return 500;
+		case 'C':
+			return 100;
+		case 'L':
+			return 50;
+		case 'X':
+			return 10;
+		case 'V':
+			return 5;
+		case 'I':
+			return 1;
+		default:
+			return 0;
+		}
+	}
+
+	public static int decode(String romanNumber) {
+		int result = 0;
+		// loop over all but the last character
+		for (int i = 0; i < romanNumber.length() - 1; i++) {
+			// if this character has a lower value than the next character
+			if (decodeSingle(romanNumber.charAt(i)) < decodeSingle(romanNumber.charAt(i + 1))) {
+				result -= decodeSingle(romanNumber.charAt(i)); // subtract it
+			} else {
+				result += decodeSingle(romanNumber.charAt(i)); // add it
+			}
+		}
+		// decode the last character, which is always added
+		result += decodeSingle(romanNumber.charAt(romanNumber.length() - 1));
+		return result;
+	}
+	//////////////////////////////////////////////////////////////////////////////////////
 
 	// dichiarazione atto
 	public void checkAct(Token rn, Token co) {
 //		if (rn != null) {
-//			int newAct = convertToRomanianNumber(rn);
-//			if (newAct == 0)   // non è un numero romano
-//				myErrorHandler(INVALID_ROMANIAN_NUMBER, rn);
+//			String romanNumber = rn.getText();
+//			if (!isRoman(romanNumber))
+//				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 //			else {
-//				if (scenicMoment > newAct)   // già definito
+//				int newAct = decode(romanNumber);
+//				if (scenicMoment > newAct) 		// già definito
 //					myErrorHandler(ALREADY_DEFINED_ACT, rn);
-//				else if (newAct > scenicMoment + 1)  // salto nella numerazione   
+//				else if (newAct > scenicMoment + 1) 	// salto nella numerazione
 //					myErrorHandler(SKIPPED_ACT, rn);
 //				else
-//					scenicMoment = (int)scenicMoment + 1;
+//					scenicMoment = (int) scenicMoment + 1;
 //			}
 //		}
 //		if (co == null)
@@ -206,16 +245,18 @@ public class Handler {
 	// dichiarazione atto
 	public void checkScene(Token rn, Token co) {
 //		if (rn != null) {
-//			double newScene = convertToRomanianNumber(rn);
-//			if (newScene == 0)   // non è un numero romano
-//				myErrorHandler(INVALID_ROMANIAN_NUMBER, rn);
+//			String romanNumber = rn.getText();
+//			if (!isRoman(romanNumber))
+//				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 //			else {
-//				if ((scenicMoment - (int)scenicMoment) > newScene)   // già definita in questo atto
+//				// sarebbe bello arrotondare, però va e penso che in caso di moooolte scene potrebbe dare problemi
+//				double newScene = (double) decode(romanNumber) / 10;
+//				if ((scenicMoment - (int) scenicMoment) > newScene) // già definita in questo atto
 //					myErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
-//				else if (scenicMoment + newScene > scenicMoment + 0.1)  // salto nella numerazione   
+//				else if ((scenicMoment + newScene - 0.1) > (scenicMoment + 0.1)) // salto nella numerazione
 //					myErrorHandler(SKIPPED_SCENE, rn);
 //				else
-//					scenicMoment = scenicMoment + 0.1;
+//					scenicMoment = scenicMoment + 0.1;  // okappa
 //			}
 //		}
 //		if (co == null)
