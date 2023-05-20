@@ -2,6 +2,7 @@ package compilerPackage;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.List;
 
@@ -16,23 +17,34 @@ public class Handler {
 
 	public static int LEXICAL_ERROR = 0;
 	public static int SYNTAX_ERROR = 1;
-	public static int UNDECLARED_VAR_ERROR = 2;
-	public static int DECLARED_VAR_ERROR = 3;
-	public static int INC_ERROR = 4;
-	public static int MISS_INC_ERROR = 5;
-	public static int DIV_BY_ZERO_ERROR = 6;
+//	public static int UNDECLARED_VAR_ERROR = 2;
+//	public static int DECLARED_VAR_ERROR = 3;
+//	public static int INC_ERROR = 4;
+//	public static int MISS_INC_ERROR = 5;
+//	public static int DIV_BY_ZERO_ERROR = 6;
+
 	// Shakespeare errors
-	public static int MISSING_TITLE = 7;
-	public static int MISSING_DOT = 8;
-	public static int MISSING_CHARACTER = 9;
-	public static int INVALID_CHARACTER = 10;
-	public static int MISSING_COMMENT = 11;
+	public static int MISSING_TITLE = 3;
+	public static int MISSING_DOT = 4;
+	public static int MISSING_CHARACTER = 5;
+	public static int INVALID_CHARACTER = 6;
+	public static int MISSING_COMMENT = 7;
+	public static int ALREADY_DECLARED_CHARACTER = 8;
+	public static int INVALID_ROMANIAN_NUMBER = 9;
+	public static int ALREADY_DEFINED_ACT = 10;
+	public static int ALREADY_DEFINED_SCENE_IN_ACT = 11;
+	public static int SKIPPED_ACT = 12;
+	public static int SKIPPED_SCENE = 13;
+	public static int UNDECLARED_CHARACTER = 14;
+	public static int CHARACTER_ALREADY_ON_STAGE = 15;
+	public static int ALREADY_TWO_CARACTERS_ON_STAGE = 16;
+	public static int CHARACTER_NOT_ON_STAGE = 17;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
 
 	Hashtable<String, CharacterDescriptor> characterList; // character, value, on stage or not
-	float scenicMoment; // gestione atti e scene
+	double scenicMoment; // gestione atti e scene
 
 	public Handler(TokenStream input) {
 		this.input = input;
@@ -88,18 +100,19 @@ public class Handler {
 				tk = input.LT(-1);
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: ";
 
-		if (code == UNDECLARED_VAR_ERROR)
-			errMsg += "The variable '" + tk.getText() + "' is undeclared";
-		else if (code == DECLARED_VAR_ERROR)
-			errMsg += "The variable '" + tk.getText() + "' has been already declared";
-		else if (code == INC_ERROR)
-			errMsg += "Cannot use '++' or '--' before and after the variable '" + tk.getText() + "'";
-		else if (code == MISS_INC_ERROR)
-			errMsg += "Missing '++' or '--' before or after the variable '" + tk.getText() + "'";
-		else if (code == DIV_BY_ZERO_ERROR)
-			errMsg += "Division by 0";
+//		if (code == UNDECLARED_VAR_ERROR)
+//			errMsg += "The variable '" + tk.getText() + "' is undeclared";
+//		else if (code == DECLARED_VAR_ERROR)
+//			errMsg += "The variable '" + tk.getText() + "' has been already declared";
+//		else if (code == INC_ERROR)
+//			errMsg += "Cannot use '++' or '--' before and after the variable '" + tk.getText() + "'";
+//		else if (code == MISS_INC_ERROR)
+//			errMsg += "Missing '++' or '--' before or after the variable '" + tk.getText() + "'";
+//		else if (code == DIV_BY_ZERO_ERROR)
+//			errMsg += "Division by 0";
+
 		// Shakespeare errors
-		else if (code == MISSING_TITLE)
+		if (code == MISSING_TITLE)
 			errMsg += "Missing title";
 		else if (code == MISSING_DOT)
 			errMsg += "Missing dot after " + input.LT(-1).getText();
@@ -109,6 +122,27 @@ public class Handler {
 			errMsg += "Invalid character name";
 		else if (code == MISSING_COMMENT)
 			errMsg += "Missing comment";
+		else if (code == ALREADY_DECLARED_CHARACTER)
+			errMsg += "The character has been already declared";
+		else if (code == INVALID_ROMANIAN_NUMBER)
+			errMsg += "The number is not a romanian number";
+		else if (code == ALREADY_DEFINED_ACT)
+			errMsg += "Already defined act";
+		else if (code == ALREADY_DEFINED_SCENE_IN_ACT)
+			errMsg += "Already defined scene in this act";
+		else if (code == SKIPPED_ACT)
+			errMsg += "Skipped one or more act in numeration";
+		else if (code == SKIPPED_SCENE)
+			errMsg += "Skipped one or more scene in this act in numeration";
+		else if (code == UNDECLARED_CHARACTER)
+			errMsg += "Character never declared";
+		else if (code == CHARACTER_ALREADY_ON_STAGE)
+			errMsg += "Character already on stage";
+		else if (code == ALREADY_TWO_CARACTERS_ON_STAGE)
+			errMsg += "There are already two characters on stage";
+		else if (code == CHARACTER_NOT_ON_STAGE)
+			errMsg += "The character is not on stage";
+		
 
 		errorList.add(errMsg);
 	}
@@ -117,12 +151,9 @@ public class Handler {
 	public void checkNullTitle(Token t, Token d) { // t=testo, d=dot
 		try {
 			if (t == null) {
-//				System.err.println("ERROR: missing title, please declare it");
 				myErrorHandler(MISSING_TITLE, null);
 			} else if (!d.getText().equals(".")) {
-//				System.err.println("ERROR: dot missing in title");
 				myErrorHandler(MISSING_DOT, d);
-//				System.out.println(d.getText());
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
@@ -132,99 +163,136 @@ public class Handler {
 
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
-//		System.out.println(ch.getText());
-//		System.out.println(co.getText());
-
-		// controllo se token corrisponde a token CHARACTERS
-		if (ch.getType() != ShakespeareLexer.CHARACTER) {
-//			System.err.println("personagguio sbagliato");
-			myErrorHandler(INVALID_CHARACTER, ch);
-		}
-
-		if (ch.getType() != ShakespeareLexer.CHARACTER && co != null) {
-//			System.err.println("ERROR: missing character name");
+		if (ch == null)
 			myErrorHandler(MISSING_CHARACTER, ch);
+		else {
+			// controllo se token corrisponde a token CHARACTERS
+			if (ch.getType() != ShakespeareLexer.CHARACTER)
+				myErrorHandler(INVALID_CHARACTER, ch);
+			if (!characterList.containsKey(ch.getText()))
+				characterList.put(ch.getText(), new CharacterDescriptor(ch.getText(), 0, false));
+			else
+				myErrorHandler(ALREADY_DECLARED_CHARACTER, ch);
 		}
-		// to do: check personaggio valido
-		if (co == null) {
-//			System.err.println("ERROR: missing comment after character name");
+		stampaPersonaggi();
+		if (co == null)
 			myErrorHandler(MISSING_COMMENT, co);
-		}
+	}
 
-		// System.out.println(ch.getText().toString());
-
+	// converte il numero romano in int, 0 se non è un numero romano
+	public int convertToRomanianNumber(Token rn) {
+		return 0;
 	}
 
 	// dichiarazione atto
 	public void checkAct(Token rn, Token co) {
-		// non è un numero romano
-		// già definito
-		// maggiore di ultimo atto definito + 1 (salto nella numerazione)
+//		if (rn != null) {
+//			int newAct = convertToRomanianNumber(rn);
+//			if (newAct == 0)   // non è un numero romano
+//				myErrorHandler(INVALID_ROMANIAN_NUMBER, rn);
+//			else {
+//				if (scenicMoment > newAct)   // già definito
+//					myErrorHandler(ALREADY_DEFINED_ACT, rn);
+//				else if (newAct > scenicMoment + 1)  // salto nella numerazione   
+//					myErrorHandler(SKIPPED_ACT, rn);
+//				else
+//					scenicMoment = (int)scenicMoment + 1;
+//			}
+//		}
+//		if (co == null)
+//			myErrorHandler(MISSING_COMMENT, co);
 	}
 
 	// dichiarazione atto
 	public void checkScene(Token rn, Token co) {
-		// non è un numero romano
-		// già definita in questo atto -> serve tenere traccia dell'atto in cui sono
-		// maggiore di ultima scena definita in questo atto + 1 (salto nella
-		// numerazione)
+//		if (rn != null) {
+//			double newScene = convertToRomanianNumber(rn);
+//			if (newScene == 0)   // non è un numero romano
+//				myErrorHandler(INVALID_ROMANIAN_NUMBER, rn);
+//			else {
+//				if ((scenicMoment - (int)scenicMoment) > newScene)   // già definita in questo atto
+//					myErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
+//				else if (scenicMoment + newScene > scenicMoment + 0.1)  // salto nella numerazione   
+//					myErrorHandler(SKIPPED_SCENE, rn);
+//				else
+//					scenicMoment = scenicMoment + 0.1;
+//			}
+//		}
+//		if (co == null)
+//			myErrorHandler(MISSING_COMMENT, co);
+	}
+
+	// controlla se ci sono già due character in scena
+	public boolean onStageCheck() {
+		int onStageCounter = 0;
+		Enumeration<String> characters = characterList.keys();
+		while (characters.hasMoreElements()) {
+			String character = characters.nextElement();
+			CharacterDescriptor description = characterList.get(character);
+			if (description.onStage) {
+				if (onStageCounter < 1)
+					onStageCounter++;
+				else // c'è già un altro personaggio
+					return true;
+			}
+		}
+		return false; // c'è al massimo un solo personaggio
 	}
 
 	// entrata in scena
 	public void checkEnter(Token ch1, Token ch2) {
-		// personaggio dichiarato?
-		// personaggio era già in scena?
-		// aggiorno onStage
-		
 		// Quanti personaggi possono entrare al massimo? due?
-		if(!characterList.containsKey(ch1.getText()))
-			characterList.put(ch1.getText(),new CharacterDescriptor(ch1.getText(),0,true));
-		else {
-			if(characterList.get(ch1.getText()).onStage) {
-				// lanciare errore personaggio gia in scena e togliere le parentesi {}
-			}
-			else
-				characterList.get(ch1.getText()).onStage = true;
-		}
-		if(ch2 != null) {
-			if(!characterList.containsKey(ch2.getText()))
-				characterList.put(ch2.getText(),new CharacterDescriptor(ch2.getText(),0,true));
-			else {
-				if(characterList.get(ch2.getText()).onStage) {
-					// lanciare errore personaggio gia in scena e togliere le parentesi {}
+		// direi di sì -> onStageCheck()
+		if (ch1 != null) {
+			if (!onStageCheck()) { // se non ci sono già due personaggi onStage
+				if (!characterList.containsKey(ch1.getText())) // dichiarato?
+					myErrorHandler(UNDECLARED_CHARACTER, ch1);
+				else {
+					if (characterList.get(ch1.getText()).onStage) // era già in scena?
+						myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
+					else
+						characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
 				}
-				else
-					characterList.get(ch2.getText()).onStage = true;
-			}
-		}
+			} else
+				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
+		} else
+			myErrorHandler(MISSING_CHARACTER, ch1);
+		if (ch2 != null) {
+			if (!onStageCheck()) {
+				if (!characterList.containsKey(ch2.getText())) // dichiarato?
+					myErrorHandler(UNDECLARED_CHARACTER, ch2);
+				else {
+					if (characterList.get(ch2.getText()).onStage) // era già in scena?
+						myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch2);
+					else
+						characterList.get(ch2.getText()).onStage = true; // aggiorno onStage
+				}
+			} else
+				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
+		} else
+			myErrorHandler(MISSING_CHARACTER, ch2);
+
 		stampaPersonaggi();
-		
 	}
 
 	// uscita di scena
 	public void checkExit(Token ch) {
-		// personaggio dichiarato?
-		// personaggio era in scena?
-		// aggiorno onStage
-		// aggiorno valore (azzero o lascio)
-		if(!characterList.containsKey(ch.getText())) {
-			//Errore cazz and mazz and il char non esiste
-		}else if (!characterList.get(ch.getText()).onStage){
-			//Errore il personaggio esiste ma non era in scena
-		}else{
-			characterList.get(ch.getText()).onStage = false;
-		}
+		if (ch != null) {
+			if (!characterList.containsKey(ch.getText())) // dichiarato?
+				myErrorHandler(UNDECLARED_CHARACTER, ch);
+			else if (!characterList.get(ch.getText()).onStage) // esiste ma non era in scena
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+			else // esce di scena -> valore (azzero o lascio)
+				characterList.get(ch.getText()).onStage = false;
+		} else
+			myErrorHandler(MISSING_CHARACTER, ch);
 	}
 
 	// uscita di scena multipla
 	public void checkExeunt(Token ch1, Token ch2) {
-		// personaggi dichiarati?
-		// personaggi erano in scena?
-		// aggiorno onStage
-		// aggiorno valori (azzero o lascio)
-		if(ch1 != null)
+		if (ch1 != null)
 			checkExit(ch1);
-		if(ch2 != null)
+		if (ch2 != null)
 			checkExit(ch2);
 	}
 
@@ -234,12 +302,13 @@ public class Handler {
 		// personaggio era in scena?
 		// aggiorno valore personaggio
 	}
-	
+
 	public void stampaPersonaggi() {
 		System.out.println("---------------");
 		System.out.println("U' Guagliu':");
-		for(String character : characterList.keySet())				
-			System.out.println("name= "+character+"\t|val= "+characterList.get(character).value+"\t|onstage= "+String.valueOf(characterList.get(character).onStage));
+		for (String character : characterList.keySet())
+			System.out.println("name= " + character + "\t|val= " + characterList.get(character).value + "\t|onstage= "
+					+ String.valueOf(characterList.get(character).onStage));
 		System.out.println("---------------");
 	}
 
