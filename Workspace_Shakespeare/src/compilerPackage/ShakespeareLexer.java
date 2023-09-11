@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-05-19 17:48:46
+// $ANTLR 3.5.1 C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-11 14:09:00
 
     package compilerPackage;
 
@@ -11,13 +11,6 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class ShakespeareLexer extends Lexer {
 	public static final int EOF=-1;
-	public static final int T__36=36;
-	public static final int T__37=37;
-	public static final int T__38=38;
-	public static final int T__39=39;
-	public static final int T__40=40;
-	public static final int T__41=41;
-	public static final int T__42=42;
 	public static final int ACT=4;
 	public static final int AND=5;
 	public static final int AP=6;
@@ -48,8 +41,9 @@ public class ShakespeareLexer extends Lexer {
 	public static final int RB=31;
 	public static final int READASCII=32;
 	public static final int READVALUE=33;
-	public static final int SCENE=34;
-	public static final int WS=35;
+	public static final int RN=34;
+	public static final int SCENE=35;
+	public static final int WS=36;
 
 	// delegates
 	// delegators
@@ -64,243 +58,102 @@ public class ShakespeareLexer extends Lexer {
 	public ShakespeareLexer(CharStream input, RecognizerSharedState state) {
 		super(input,state);
 	}
-	@Override public String getGrammarFileName() { return "C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
 
-	// $ANTLR start "T__36"
-	public final void mT__36() throws RecognitionException {
+	// $ANTLR start "RN"
+	public final void mRN() throws RecognitionException {
 		try {
-			int _type = T__36;
+			int _type = RN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:11:7: ( 'C' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:11:9: 'C'
-			{
-			match('C'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__36"
-
-	// $ANTLR start "T__37"
-	public final void mT__37() throws RecognitionException {
-		try {
-			int _type = T__37;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:12:7: ( 'D' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:12:9: 'D'
-			{
-			match('D'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__37"
-
-	// $ANTLR start "T__38"
-	public final void mT__38() throws RecognitionException {
-		try {
-			int _type = T__38;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:13:7: ( 'I' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:13:9: 'I'
-			{
-			match('I'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__38"
-
-	// $ANTLR start "T__39"
-	public final void mT__39() throws RecognitionException {
-		try {
-			int _type = T__39;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:14:7: ( 'L' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:14:9: 'L'
-			{
-			match('L'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__39"
-
-	// $ANTLR start "T__40"
-	public final void mT__40() throws RecognitionException {
-		try {
-			int _type = T__40;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:15:7: ( 'M' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:15:9: 'M'
-			{
-			match('M'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__40"
-
-	// $ANTLR start "T__41"
-	public final void mT__41() throws RecognitionException {
-		try {
-			int _type = T__41;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:16:7: ( 'V' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:16:9: 'V'
-			{
-			match('V'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__41"
-
-	// $ANTLR start "T__42"
-	public final void mT__42() throws RecognitionException {
-		try {
-			int _type = T__42;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:17:7: ( 'X' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:17:9: 'X'
-			{
-			match('X'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "T__42"
-
-	// $ANTLR start "COMMENT"
-	public final void mCOMMENT() throws RecognitionException {
-		try {
-			int _type = COMMENT;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:175:6: ( ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:9: ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n'
-			{
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:9: ( ', ' | ': ' )
-			int alt1=2;
-			int LA1_0 = input.LA(1);
-			if ( (LA1_0==',') ) {
-				alt1=1;
-			}
-			else if ( (LA1_0==':') ) {
-				alt1=2;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:2: ( ( ( 'V' )? ( 'I' )* ) | 'IX' | 'IV' )
+			int alt3=3;
+			int LA3_0 = input.LA(1);
+			if ( (LA3_0=='I') ) {
+				switch ( input.LA(2) ) {
+				case 'X':
+					{
+					alt3=2;
+					}
+					break;
+				case 'V':
+					{
+					alt3=3;
+					}
+					break;
+				default:
+					alt3=1;
+				}
 			}
 
 			else {
-				NoViableAltException nvae =
-					new NoViableAltException("", 1, 0, input);
-				throw nvae;
+				alt3=1;
 			}
 
-			switch (alt1) {
+			switch (alt3) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:10: ', '
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:2: ( ( 'V' )? ( 'I' )* )
 					{
-					match(", "); 
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:2: ( ( 'V' )? ( 'I' )* )
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:3: ( 'V' )? ( 'I' )*
+					{
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:3: ( 'V' )?
+					int alt1=2;
+					int LA1_0 = input.LA(1);
+					if ( (LA1_0=='V') ) {
+						alt1=1;
+					}
+					switch (alt1) {
+						case 1 :
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:4: 'V'
+							{
+							match('V'); 
+							}
+							break;
+
+					}
+
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:10: ( 'I' )*
+					loop2:
+					while (true) {
+						int alt2=2;
+						int LA2_0 = input.LA(1);
+						if ( (LA2_0=='I') ) {
+							alt2=1;
+						}
+
+						switch (alt2) {
+						case 1 :
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:11: 'I'
+							{
+							match('I'); 
+							}
+							break;
+
+						default :
+							break loop2;
+						}
+					}
+
+					}
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:17: ': '
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:20: 'IX'
 					{
-					match(": "); 
+					match("IX"); 
+
+					}
+					break;
+				case 3 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:27: 'IV'
+					{
+					match("IV"); 
 
 					}
 					break;
 
 			}
-
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:23: ( (~ ( '\\n' | '\\r' ) )* )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:26: (~ ( '\\n' | '\\r' ) )*
-			{
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:26: (~ ( '\\n' | '\\r' ) )*
-			loop2:
-			while (true) {
-				int alt2=2;
-				int LA2_0 = input.LA(1);
-				if ( ((LA2_0 >= '\u0000' && LA2_0 <= '\t')||(LA2_0 >= '\u000B' && LA2_0 <= '\f')||(LA2_0 >= '\u000E' && LA2_0 <= '\uFFFF')) ) {
-					alt2=1;
-				}
-
-				switch (alt2) {
-				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
-					{
-					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
-						input.consume();
-					}
-					else {
-						MismatchedSetException mse = new MismatchedSetException(null,input);
-						recover(mse);
-						throw mse;
-					}
-					}
-					break;
-
-				default :
-					break loop2;
-				}
-			}
-
-			}
-
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:42: ( '\\r' )?
-			int alt3=2;
-			int LA3_0 = input.LA(1);
-			if ( (LA3_0=='\r') ) {
-				alt3=1;
-			}
-			switch (alt3) {
-				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:42: '\\r'
-					{
-					match('\r'); 
-					}
-					break;
-
-			}
-
-			match('\n'); 
-			}
-
 			state.type = _type;
 			state.channel = _channel;
 		}
@@ -308,14 +161,14 @@ public class ShakespeareLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "COMMENT"
+	// $ANTLR end "RN"
 
 	// $ANTLR start "CHARACTER"
 	public final void mCHARACTER() throws RecognitionException {
 		try {
 			int _type = CHARACTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:5: ( 'Romeo' | 'Juliet' | 'Hamlet' | 'Ghost' | 'LadyMacbeth' | 'Ophelia' | 'Tebaldo' | 'Claudio' | 'Mercuzio' | 'Banquo' | 'Fulgencio' | 'Gertrude' | 'Desdemona' | 'Jago' | 'Polonio' | 'Macduff' | 'Shylock' | 'Laerte' | 'Orazio' | 'Prospero' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:154:5: ( 'Romeo' | 'Juliet' | 'Hamlet' | 'Ghost' | 'LadyMacbeth' | 'Ophelia' | 'Tebaldo' | 'Claudio' | 'Mercuzio' | 'Banquo' | 'Fulgencio' | 'Gertrude' | 'Desdemona' | 'Jago' | 'Polonio' | 'Macduff' | 'Shylock' | 'Laerte' | 'Orazio' | 'Prospero' )
 			int alt4=20;
 			switch ( input.LA(1) ) {
 			case 'R':
@@ -527,140 +380,140 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt4) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:9: 'Romeo'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:154:9: 'Romeo'
 					{
 					match("Romeo"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:9: 'Juliet'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:155:9: 'Juliet'
 					{
 					match("Juliet"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:183:9: 'Hamlet'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:156:9: 'Hamlet'
 					{
 					match("Hamlet"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:184:9: 'Ghost'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:157:9: 'Ghost'
 					{
 					match("Ghost"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:185:9: 'LadyMacbeth'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:158:9: 'LadyMacbeth'
 					{
 					match("LadyMacbeth"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:186:9: 'Ophelia'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:159:9: 'Ophelia'
 					{
 					match("Ophelia"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:187:9: 'Tebaldo'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:160:9: 'Tebaldo'
 					{
 					match("Tebaldo"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:9: 'Claudio'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:161:9: 'Claudio'
 					{
 					match("Claudio"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:9: 'Mercuzio'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:162:9: 'Mercuzio'
 					{
 					match("Mercuzio"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: 'Banquo'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:163:9: 'Banquo'
 					{
 					match("Banquo"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:191:9: 'Fulgencio'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:9: 'Fulgencio'
 					{
 					match("Fulgencio"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:192:9: 'Gertrude'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:165:9: 'Gertrude'
 					{
 					match("Gertrude"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:193:9: 'Desdemona'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:166:9: 'Desdemona'
 					{
 					match("Desdemona"); 
 
 					}
 					break;
 				case 14 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:194:9: 'Jago'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:9: 'Jago'
 					{
 					match("Jago"); 
 
 					}
 					break;
 				case 15 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:195:9: 'Polonio'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:168:9: 'Polonio'
 					{
 					match("Polonio"); 
 
 					}
 					break;
 				case 16 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:196:9: 'Macduff'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:169:9: 'Macduff'
 					{
 					match("Macduff"); 
 
 					}
 					break;
 				case 17 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:197:9: 'Shylock'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:170:9: 'Shylock'
 					{
 					match("Shylock"); 
 
 					}
 					break;
 				case 18 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:198:9: 'Laerte'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:9: 'Laerte'
 					{
 					match("Laerte"); 
 
 					}
 					break;
 				case 19 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:9: 'Orazio'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:172:9: 'Orazio'
 					{
 					match("Orazio"); 
 
 					}
 					break;
 				case 20 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:200:9: 'Prospero'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:173:9: 'Prospero'
 					{
 					match("Prospero"); 
 
@@ -682,7 +535,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = POSITIVENOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:206:5: ( 'Heaven' | 'King' | 'Lord' | 'angel' | 'flower' | 'happiness' | 'joy' | 'plum' | 'summer’s day' | 'hero' | 'rose' | 'kingdom' | 'pony' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:179:5: ( 'Heaven' | 'King' | 'Lord' | 'angel' | 'flower' | 'happiness' | 'joy' | 'plum' | 'summer’s day' | 'hero' | 'rose' | 'kingdom' | 'pony' )
 			int alt5=13;
 			switch ( input.LA(1) ) {
 			case 'H':
@@ -785,91 +638,91 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt5) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:206:9: 'Heaven'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:179:9: 'Heaven'
 					{
 					match("Heaven"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:207:9: 'King'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:180:9: 'King'
 					{
 					match("King"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:208:9: 'Lord'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:9: 'Lord'
 					{
 					match("Lord"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:209:9: 'angel'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:9: 'angel'
 					{
 					match("angel"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:9: 'flower'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:183:9: 'flower'
 					{
 					match("flower"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:211:9: 'happiness'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:184:9: 'happiness'
 					{
 					match("happiness"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:212:9: 'joy'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:185:9: 'joy'
 					{
 					match("joy"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:9: 'plum'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:186:9: 'plum'
 					{
 					match("plum"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:214:9: 'summer’s day'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:187:9: 'summer’s day'
 					{
 					match("summer’s day"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:215:9: 'hero'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:9: 'hero'
 					{
 					match("hero"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:9: 'rose'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:9: 'rose'
 					{
 					match("rose"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:9: 'kingdom'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: 'kingdom'
 					{
 					match("kingdom"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:9: 'pony'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:191:9: 'pony'
 					{
 					match("pony"); 
 
@@ -891,292 +744,292 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEUTRALNOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:5: ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:197:5: ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' )
 			int alt6=41;
 			alt6 = dfa6.predict(input);
 			switch (alt6) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:9: 'animal'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:197:9: 'animal'
 					{
 					match("animal"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:9: 'aunt'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:198:9: 'aunt'
 					{
 					match("aunt"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:226:9: 'brother'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:9: 'brother'
 					{
 					match("brother"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:227:9: 'cat'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:200:9: 'cat'
 					{
 					match("cat"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:228:9: 'chihuahua'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:201:9: 'chihuahua'
 					{
 					match("chihuahua"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:229:9: 'cousin'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:202:9: 'cousin'
 					{
 					match("cousin"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:230:9: 'cow'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:203:9: 'cow'
 					{
 					match("cow"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:9: 'daughter'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:204:9: 'daughter'
 					{
 					match("daughter"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:232:9: 'door'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:205:9: 'door'
 					{
 					match("door"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:233:9: 'face'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:206:9: 'face'
 					{
 					match("face"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:234:9: 'father'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:207:9: 'father'
 					{
 					match("father"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:235:9: 'fellow'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:208:9: 'fellow'
 					{
 					match("fellow"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:236:9: 'granddaughter'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:209:9: 'granddaughter'
 					{
 					match("granddaughter"); 
 
 					}
 					break;
 				case 14 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:237:9: 'grandfather'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:9: 'grandfather'
 					{
 					match("grandfather"); 
 
 					}
 					break;
 				case 15 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:238:9: 'grandmother'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:211:9: 'grandmother'
 					{
 					match("grandmother"); 
 
 					}
 					break;
 				case 16 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:239:9: 'grandson'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:212:9: 'grandson'
 					{
 					match("grandson"); 
 
 					}
 					break;
 				case 17 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:240:9: 'hair'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:9: 'hair'
 					{
 					match("hair"); 
 
 					}
 					break;
 				case 18 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:241:9: 'hamster'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:214:9: 'hamster'
 					{
 					match("hamster"); 
 
 					}
 					break;
 				case 19 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:242:9: 'horse'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:215:9: 'horse'
 					{
 					match("horse"); 
 
 					}
 					break;
 				case 20 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:9: 'lamp'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:9: 'lamp'
 					{
 					match("lamp"); 
 
 					}
 					break;
 				case 21 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:244:9: 'lantern'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:9: 'lantern'
 					{
 					match("lantern"); 
 
 					}
 					break;
 				case 22 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:245:9: 'mistletoe'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:9: 'mistletoe'
 					{
 					match("mistletoe"); 
 
 					}
 					break;
 				case 23 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:246:9: 'moon'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:219:9: 'moon'
 					{
 					match("moon"); 
 
 					}
 					break;
 				case 24 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:247:9: 'morning'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:220:9: 'morning'
 					{
 					match("morning"); 
 
 					}
 					break;
 				case 25 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:248:9: 'mother'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:221:9: 'mother'
 					{
 					match("mother"); 
 
 					}
 					break;
 				case 26 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:249:9: 'nephew'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:222:9: 'nephew'
 					{
 					match("nephew"); 
 
 					}
 					break;
 				case 27 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:9: 'niece'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:223:9: 'niece'
 					{
 					match("niece"); 
 
 					}
 					break;
 				case 28 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:251:9: 'nose'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:9: 'nose'
 					{
 					match("nose"); 
 
 					}
 					break;
 				case 29 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:252:9: 'purse'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:9: 'purse'
 					{
 					match("purse"); 
 
 					}
 					break;
 				case 30 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:253:9: 'road'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:226:9: 'road'
 					{
 					match("road"); 
 
 					}
 					break;
 				case 31 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:254:9: 'roman'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:227:9: 'roman'
 					{
 					match("roman"); 
 
 					}
 					break;
 				case 32 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:255:9: 'sister'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:228:9: 'sister'
 					{
 					match("sister"); 
 
 					}
 					break;
 				case 33 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:256:9: 'sky'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:229:9: 'sky'
 					{
 					match("sky"); 
 
 					}
 					break;
 				case 34 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:257:9: 'son'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:230:9: 'son'
 					{
 					match("son"); 
 
 					}
 					break;
 				case 35 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:258:9: 'squirrel'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:9: 'squirrel'
 					{
 					match("squirrel"); 
 
 					}
 					break;
 				case 36 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:259:9: 'stonewall'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:232:9: 'stonewall'
 					{
 					match("stonewall"); 
 
 					}
 					break;
 				case 37 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:260:9: 'thing'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:233:9: 'thing'
 					{
 					match("thing"); 
 
 					}
 					break;
 				case 38 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:261:9: 'town'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:234:9: 'town'
 					{
 					match("town"); 
 
 					}
 					break;
 				case 39 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:262:9: 'tree'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:235:9: 'tree'
 					{
 					match("tree"); 
 
 					}
 					break;
 				case 40 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:263:9: 'uncle'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:236:9: 'uncle'
 					{
 					match("uncle"); 
 
 					}
 					break;
 				case 41 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:264:9: 'wind'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:237:9: 'wind'
 					{
 					match("wind"); 
 
@@ -1198,7 +1051,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEGATIVENOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:270:5: ( 'Hell' | 'Microsoft' | 'bastard' | 'beggar' | 'blister' | 'codpiece' | 'coward' | 'curse' | 'death' | 'devil' | 'draught' | 'famine' | 'flirt-gill' | 'goat' | 'hate' | 'hog' | 'hound' | 'leech' | 'lie' | 'pig' | 'plague' | 'starvation' | 'toad' | 'war' | 'wolf' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:5: ( 'Hell' | 'Microsoft' | 'bastard' | 'beggar' | 'blister' | 'codpiece' | 'coward' | 'curse' | 'death' | 'devil' | 'draught' | 'famine' | 'flirt-gill' | 'goat' | 'hate' | 'hog' | 'hound' | 'leech' | 'lie' | 'pig' | 'plague' | 'starvation' | 'toad' | 'war' | 'wolf' )
 			int alt7=25;
 			switch ( input.LA(1) ) {
 			case 'H':
@@ -1495,175 +1348,175 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt7) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:270:9: 'Hell'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:9: 'Hell'
 					{
 					match("Hell"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:271:9: 'Microsoft'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:244:9: 'Microsoft'
 					{
 					match("Microsoft"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:272:9: 'bastard'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:245:9: 'bastard'
 					{
 					match("bastard"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:273:9: 'beggar'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:246:9: 'beggar'
 					{
 					match("beggar"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:9: 'blister'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:247:9: 'blister'
 					{
 					match("blister"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:275:9: 'codpiece'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:248:9: 'codpiece'
 					{
 					match("codpiece"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:276:9: 'coward'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:249:9: 'coward'
 					{
 					match("coward"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:9: 'curse'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:9: 'curse'
 					{
 					match("curse"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:278:9: 'death'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:251:9: 'death'
 					{
 					match("death"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:279:9: 'devil'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:252:9: 'devil'
 					{
 					match("devil"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:280:9: 'draught'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:253:9: 'draught'
 					{
 					match("draught"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:281:9: 'famine'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:254:9: 'famine'
 					{
 					match("famine"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:282:9: 'flirt-gill'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:255:9: 'flirt-gill'
 					{
 					match("flirt-gill"); 
 
 					}
 					break;
 				case 14 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:283:9: 'goat'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:256:9: 'goat'
 					{
 					match("goat"); 
 
 					}
 					break;
 				case 15 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:284:9: 'hate'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:257:9: 'hate'
 					{
 					match("hate"); 
 
 					}
 					break;
 				case 16 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:285:9: 'hog'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:258:9: 'hog'
 					{
 					match("hog"); 
 
 					}
 					break;
 				case 17 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:286:9: 'hound'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:259:9: 'hound'
 					{
 					match("hound"); 
 
 					}
 					break;
 				case 18 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:287:9: 'leech'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:260:9: 'leech'
 					{
 					match("leech"); 
 
 					}
 					break;
 				case 19 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:9: 'lie'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:261:9: 'lie'
 					{
 					match("lie"); 
 
 					}
 					break;
 				case 20 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:289:9: 'pig'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:262:9: 'pig'
 					{
 					match("pig"); 
 
 					}
 					break;
 				case 21 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:290:9: 'plague'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:263:9: 'plague'
 					{
 					match("plague"); 
 
 					}
 					break;
 				case 22 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:291:9: 'starvation'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:264:9: 'starvation'
 					{
 					match("starvation"); 
 
 					}
 					break;
 				case 23 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:292:9: 'toad'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:265:9: 'toad'
 					{
 					match("toad"); 
 
 					}
 					break;
 				case 24 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:293:9: 'war'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:266:9: 'war'
 					{
 					match("war"); 
 
 					}
 					break;
 				case 25 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:294:9: 'wolf'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:267:9: 'wolf'
 					{
 					match("wolf"); 
 
@@ -1685,7 +1538,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = POSITIVEADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:5: ( 'amazing' | 'beautiful' | 'blossoming' | 'bold' | 'brave' | 'charming' | 'clearest' | 'cunning' | 'cute' | 'delicious' | 'embroidered' | 'fair' | 'fine' | 'gentle' | 'golden' | 'good' | 'handsome' | 'happy' | 'healthy' | 'honest' | 'lovely' | 'loving' | 'mighty' | 'noble' | 'peaceful' | 'pretty' | 'prompt' | 'proud' | 'reddest' | 'rich' | 'smooth' | 'sunny' | 'sweet' | 'sweetest' | 'trustworthy' | 'warm' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:272:5: ( 'amazing' | 'beautiful' | 'blossoming' | 'bold' | 'brave' | 'charming' | 'clearest' | 'cunning' | 'cute' | 'delicious' | 'embroidered' | 'fair' | 'fine' | 'gentle' | 'golden' | 'good' | 'handsome' | 'happy' | 'healthy' | 'honest' | 'lovely' | 'loving' | 'mighty' | 'noble' | 'peaceful' | 'pretty' | 'prompt' | 'proud' | 'reddest' | 'rich' | 'smooth' | 'sunny' | 'sweet' | 'sweetest' | 'trustworthy' | 'warm' )
 			int alt8=36;
 			switch ( input.LA(1) ) {
 			case 'a':
@@ -2182,252 +2035,252 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt8) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:9: 'amazing'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:272:9: 'amazing'
 					{
 					match("amazing"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:300:9: 'beautiful'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:273:9: 'beautiful'
 					{
 					match("beautiful"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:301:9: 'blossoming'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:9: 'blossoming'
 					{
 					match("blossoming"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:302:9: 'bold'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:275:9: 'bold'
 					{
 					match("bold"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:303:9: 'brave'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:276:9: 'brave'
 					{
 					match("brave"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:304:9: 'charming'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:9: 'charming'
 					{
 					match("charming"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:305:9: 'clearest'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:278:9: 'clearest'
 					{
 					match("clearest"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:306:9: 'cunning'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:279:9: 'cunning'
 					{
 					match("cunning"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:307:9: 'cute'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:280:9: 'cute'
 					{
 					match("cute"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:308:9: 'delicious'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:281:9: 'delicious'
 					{
 					match("delicious"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:309:9: 'embroidered'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:282:9: 'embroidered'
 					{
 					match("embroidered"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:310:9: 'fair'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:283:9: 'fair'
 					{
 					match("fair"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:9: 'fine'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:284:9: 'fine'
 					{
 					match("fine"); 
 
 					}
 					break;
 				case 14 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:9: 'gentle'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:285:9: 'gentle'
 					{
 					match("gentle"); 
 
 					}
 					break;
 				case 15 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:9: 'golden'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:286:9: 'golden'
 					{
 					match("golden"); 
 
 					}
 					break;
 				case 16 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:9: 'good'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:287:9: 'good'
 					{
 					match("good"); 
 
 					}
 					break;
 				case 17 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:9: 'handsome'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:9: 'handsome'
 					{
 					match("handsome"); 
 
 					}
 					break;
 				case 18 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:9: 'happy'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:289:9: 'happy'
 					{
 					match("happy"); 
 
 					}
 					break;
 				case 19 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:317:9: 'healthy'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:290:9: 'healthy'
 					{
 					match("healthy"); 
 
 					}
 					break;
 				case 20 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:9: 'honest'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:291:9: 'honest'
 					{
 					match("honest"); 
 
 					}
 					break;
 				case 21 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:9: 'lovely'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:292:9: 'lovely'
 					{
 					match("lovely"); 
 
 					}
 					break;
 				case 22 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:9: 'loving'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:293:9: 'loving'
 					{
 					match("loving"); 
 
 					}
 					break;
 				case 23 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:9: 'mighty'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:294:9: 'mighty'
 					{
 					match("mighty"); 
 
 					}
 					break;
 				case 24 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:322:9: 'noble'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:295:9: 'noble'
 					{
 					match("noble"); 
 
 					}
 					break;
 				case 25 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:323:9: 'peaceful'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:296:9: 'peaceful'
 					{
 					match("peaceful"); 
 
 					}
 					break;
 				case 26 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:324:9: 'pretty'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:297:9: 'pretty'
 					{
 					match("pretty"); 
 
 					}
 					break;
 				case 27 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:325:9: 'prompt'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:298:9: 'prompt'
 					{
 					match("prompt"); 
 
 					}
 					break;
 				case 28 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:326:9: 'proud'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:9: 'proud'
 					{
 					match("proud"); 
 
 					}
 					break;
 				case 29 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:327:9: 'reddest'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:300:9: 'reddest'
 					{
 					match("reddest"); 
 
 					}
 					break;
 				case 30 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:328:9: 'rich'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:301:9: 'rich'
 					{
 					match("rich"); 
 
 					}
 					break;
 				case 31 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:329:9: 'smooth'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:302:9: 'smooth'
 					{
 					match("smooth"); 
 
 					}
 					break;
 				case 32 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:330:9: 'sunny'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:303:9: 'sunny'
 					{
 					match("sunny"); 
 
 					}
 					break;
 				case 33 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:331:9: 'sweet'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:304:9: 'sweet'
 					{
 					match("sweet"); 
 
 					}
 					break;
 				case 34 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:332:9: 'sweetest'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:305:9: 'sweetest'
 					{
 					match("sweetest"); 
 
 					}
 					break;
 				case 35 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:9: 'trustworthy'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:306:9: 'trustworthy'
 					{
 					match("trustworthy"); 
 
 					}
 					break;
 				case 36 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:9: 'warm'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:307:9: 'warm'
 					{
 					match("warm"); 
 
@@ -2449,7 +2302,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEUTRALADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:5: ( 'big' | 'black' | 'blue' | 'bluest' | 'bottomless' | 'furry' | 'green' | 'hard' | 'huge' | 'large' | 'little' | 'normal' | 'old' | 'purple' | 'red' | 'rural' | 'small' | 'tiny' | 'white' | 'yellow' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:5: ( 'big' | 'black' | 'blue' | 'bluest' | 'bottomless' | 'furry' | 'green' | 'hard' | 'huge' | 'large' | 'little' | 'normal' | 'old' | 'purple' | 'red' | 'rural' | 'small' | 'tiny' | 'white' | 'yellow' )
 			int alt9=20;
 			switch ( input.LA(1) ) {
 			case 'b':
@@ -2654,140 +2507,140 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt9) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:9: 'big'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:9: 'big'
 					{
 					match("big"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:340:9: 'black'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:9: 'black'
 					{
 					match("black"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:341:9: 'blue'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:9: 'blue'
 					{
 					match("blue"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:342:9: 'bluest'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:9: 'bluest'
 					{
 					match("bluest"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:9: 'bottomless'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:9: 'bottomless'
 					{
 					match("bottomless"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:344:9: 'furry'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:317:9: 'furry'
 					{
 					match("furry"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:345:9: 'green'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:9: 'green'
 					{
 					match("green"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:346:9: 'hard'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:9: 'hard'
 					{
 					match("hard"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:347:9: 'huge'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:9: 'huge'
 					{
 					match("huge"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: 'large'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:9: 'large'
 					{
 					match("large"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:349:9: 'little'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:322:9: 'little'
 					{
 					match("little"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:350:9: 'normal'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:323:9: 'normal'
 					{
 					match("normal"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:351:9: 'old'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:324:9: 'old'
 					{
 					match("old"); 
 
 					}
 					break;
 				case 14 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:352:9: 'purple'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:325:9: 'purple'
 					{
 					match("purple"); 
 
 					}
 					break;
 				case 15 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:353:9: 'red'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:326:9: 'red'
 					{
 					match("red"); 
 
 					}
 					break;
 				case 16 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:354:9: 'rural'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:327:9: 'rural'
 					{
 					match("rural"); 
 
 					}
 					break;
 				case 17 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:355:9: 'small'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:328:9: 'small'
 					{
 					match("small"); 
 
 					}
 					break;
 				case 18 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:356:9: 'tiny'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:329:9: 'tiny'
 					{
 					match("tiny"); 
 
 					}
 					break;
 				case 19 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:9: 'white'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:330:9: 'white'
 					{
 					match("white"); 
 
 					}
 					break;
 				case 20 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:9: 'yellow'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:331:9: 'yellow'
 					{
 					match("yellow"); 
 
@@ -2809,7 +2662,7 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEGATIVEADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:363:5: ( 'bad' | 'cowardly' | 'cursed' | 'damned' | 'dirty' | 'disgusting' | 'distasteful' | 'dusty' | 'evil' | 'fat' | 'fat-kidneyed' | 'fatherless' | 'foul' | 'hairy' | 'half-witted' | 'horrible' | 'horrid' | 'infected' | 'lying' | 'miserable' | 'misused' | 'oozing' | 'rotten' | 'smelly' | 'snotty' | 'sorry' | 'stinking' | 'stuffed' | 'stupid' | 'vile' | 'villainous' | 'worried' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:336:5: ( 'bad' | 'cowardly' | 'cursed' | 'damned' | 'dirty' | 'disgusting' | 'distasteful' | 'dusty' | 'evil' | 'fat' | 'fat-kidneyed' | 'fatherless' | 'foul' | 'hairy' | 'half-witted' | 'horrible' | 'horrid' | 'infected' | 'lying' | 'miserable' | 'misused' | 'oozing' | 'rotten' | 'smelly' | 'snotty' | 'sorry' | 'stinking' | 'stuffed' | 'stupid' | 'vile' | 'villainous' | 'worried' )
 			int alt10=32;
 			switch ( input.LA(1) ) {
 			case 'b':
@@ -3324,224 +3177,224 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt10) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:363:9: 'bad'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:336:9: 'bad'
 					{
 					match("bad"); 
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:364:9: 'cowardly'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:337:9: 'cowardly'
 					{
 					match("cowardly"); 
 
 					}
 					break;
 				case 3 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:365:9: 'cursed'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:9: 'cursed'
 					{
 					match("cursed"); 
 
 					}
 					break;
 				case 4 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:366:9: 'damned'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:9: 'damned'
 					{
 					match("damned"); 
 
 					}
 					break;
 				case 5 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:367:9: 'dirty'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:340:9: 'dirty'
 					{
 					match("dirty"); 
 
 					}
 					break;
 				case 6 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:368:9: 'disgusting'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:341:9: 'disgusting'
 					{
 					match("disgusting"); 
 
 					}
 					break;
 				case 7 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:369:9: 'distasteful'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:342:9: 'distasteful'
 					{
 					match("distasteful"); 
 
 					}
 					break;
 				case 8 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:370:9: 'dusty'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:9: 'dusty'
 					{
 					match("dusty"); 
 
 					}
 					break;
 				case 9 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:371:9: 'evil'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:344:9: 'evil'
 					{
 					match("evil"); 
 
 					}
 					break;
 				case 10 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:372:9: 'fat'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:345:9: 'fat'
 					{
 					match("fat"); 
 
 					}
 					break;
 				case 11 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:373:9: 'fat-kidneyed'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:346:9: 'fat-kidneyed'
 					{
 					match("fat-kidneyed"); 
 
 					}
 					break;
 				case 12 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:374:9: 'fatherless'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:347:9: 'fatherless'
 					{
 					match("fatherless"); 
 
 					}
 					break;
 				case 13 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:375:9: 'foul'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: 'foul'
 					{
 					match("foul"); 
 
 					}
 					break;
 				case 14 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:376:9: 'hairy'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:349:9: 'hairy'
 					{
 					match("hairy"); 
 
 					}
 					break;
 				case 15 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:377:9: 'half-witted'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:350:9: 'half-witted'
 					{
 					match("half-witted"); 
 
 					}
 					break;
 				case 16 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:378:9: 'horrible'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:351:9: 'horrible'
 					{
 					match("horrible"); 
 
 					}
 					break;
 				case 17 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:379:9: 'horrid'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:352:9: 'horrid'
 					{
 					match("horrid"); 
 
 					}
 					break;
 				case 18 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:380:9: 'infected'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:353:9: 'infected'
 					{
 					match("infected"); 
 
 					}
 					break;
 				case 19 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:381:9: 'lying'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:354:9: 'lying'
 					{
 					match("lying"); 
 
 					}
 					break;
 				case 20 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:382:9: 'miserable'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:355:9: 'miserable'
 					{
 					match("miserable"); 
 
 					}
 					break;
 				case 21 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:383:9: 'misused'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:356:9: 'misused'
 					{
 					match("misused"); 
 
 					}
 					break;
 				case 22 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:384:9: 'oozing'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:9: 'oozing'
 					{
 					match("oozing"); 
 
 					}
 					break;
 				case 23 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:385:9: 'rotten'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:9: 'rotten'
 					{
 					match("rotten"); 
 
 					}
 					break;
 				case 24 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:386:9: 'smelly'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:359:9: 'smelly'
 					{
 					match("smelly"); 
 
 					}
 					break;
 				case 25 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:387:9: 'snotty'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:360:9: 'snotty'
 					{
 					match("snotty"); 
 
 					}
 					break;
 				case 26 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:388:9: 'sorry'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:361:9: 'sorry'
 					{
 					match("sorry"); 
 
 					}
 					break;
 				case 27 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:389:9: 'stinking'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:362:9: 'stinking'
 					{
 					match("stinking"); 
 
 					}
 					break;
 				case 28 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:390:9: 'stuffed'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:363:9: 'stuffed'
 					{
 					match("stuffed"); 
 
 					}
 					break;
 				case 29 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:391:9: 'stupid'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:364:9: 'stupid'
 					{
 					match("stupid"); 
 
 					}
 					break;
 				case 30 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:392:9: 'vile'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:365:9: 'vile'
 					{
 					match("vile"); 
 
 					}
 					break;
 				case 31 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:393:9: 'villainous'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:366:9: 'villainous'
 					{
 					match("villainous"); 
 
 					}
 					break;
 				case 32 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:394:9: 'worried'
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:367:9: 'worried'
 					{
 					match("worried"); 
 
@@ -3563,8 +3416,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ACT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:400:10: ( 'Act' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:400:14: 'Act'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:372:10: ( 'Act' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:372:14: 'Act'
 			{
 			match("Act"); 
 
@@ -3584,8 +3437,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = SCENE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:401:13: ( 'Scene' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:401:18: 'Scene'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:373:13: ( 'Scene' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:373:18: 'Scene'
 			{
 			match("Scene"); 
 
@@ -3605,8 +3458,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ENTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:402:17: ( 'Enter' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:402:25: 'Enter'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:374:17: ( 'Enter' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:374:25: 'Enter'
 			{
 			match("Enter"); 
 
@@ -3626,8 +3479,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EXIT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:403:17: ( 'Exit' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:403:25: 'Exit'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:375:17: ( 'Exit' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:375:25: 'Exit'
 			{
 			match("Exit"); 
 
@@ -3647,8 +3500,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EXEUNT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:404:17: ( 'Exeunt' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:404:25: 'Exeunt'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:376:17: ( 'Exeunt' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:376:25: 'Exeunt'
 			{
 			match("Exeunt"); 
 
@@ -3668,8 +3521,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = AND;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:405:14: ( 'and' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:405:16: 'and'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:377:14: ( 'and' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:377:16: 'and'
 			{
 			match("and"); 
 
@@ -3689,8 +3542,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = PRINTVALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:408:17: ( 'Open your heart' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:408:25: 'Open your heart'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:380:17: ( 'Open your heart' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:380:25: 'Open your heart'
 			{
 			match("Open your heart"); 
 
@@ -3710,8 +3563,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = PRINTASCII;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:409:17: ( 'Speak your mind' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:409:25: 'Speak your mind'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:381:17: ( 'Speak your mind' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:381:25: 'Speak your mind'
 			{
 			match("Speak your mind"); 
 
@@ -3731,8 +3584,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = READVALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:410:17: ( 'Open your mind' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:410:25: 'Open your mind'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:382:17: ( 'Open your mind' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:382:25: 'Open your mind'
 			{
 			match("Open your mind"); 
 
@@ -3752,8 +3605,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = READASCII;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:411:17: ( 'Listen to your heart' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:411:25: 'Listen to your heart'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:383:17: ( 'Listen to your heart' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:383:25: 'Listen to your heart'
 			{
 			match("Listen to your heart"); 
 
@@ -3771,8 +3624,8 @@ public class ShakespeareLexer extends Lexer {
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:417:10: ( 'a' .. 'z' | 'A' .. 'Z' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:389:10: ( 'a' .. 'z' | 'A' .. 'Z' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -3794,8 +3647,8 @@ public class ShakespeareLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:420:9: ( '0' .. '9' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:392:9: ( '0' .. '9' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 				input.consume();
@@ -3819,8 +3672,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:423:6: ( ':' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:423:10: ':'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:395:6: ( ':' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:395:10: ':'
 			{
 			match(':'); 
 			}
@@ -3839,8 +3692,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:424:6: ( ',' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:424:10: ','
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:396:6: ( ',' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:396:10: ','
 			{
 			match(','); 
 			}
@@ -3859,8 +3712,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = DOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:425:9: ( '.' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:425:13: '.'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:397:9: ( '.' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:397:13: '.'
 			{
 			match('.'); 
 			}
@@ -3879,8 +3732,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = AP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:427:9: ( '\\'' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:427:13: '\\''
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:399:9: ( '\\'' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:399:13: '\\''
 			{
 			match('\''); 
 			}
@@ -3899,8 +3752,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:428:9: ( '!' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:428:13: '!'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:400:9: ( '!' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:400:13: '!'
 			{
 			match('!'); 
 			}
@@ -3919,8 +3772,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = QM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:429:9: ( '?' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:429:13: '?'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:401:9: ( '?' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:401:13: '?'
 			{
 			match('?'); 
 			}
@@ -3939,8 +3792,8 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = FS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:430:6: ( '/' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:430:10: '/'
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:402:6: ( '/' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:402:10: '/'
 			{
 			match('/'); 
 			}
@@ -3954,13 +3807,53 @@ public class ShakespeareLexer extends Lexer {
 	}
 	// $ANTLR end "FS"
 
+	// $ANTLR start "LB"
+	public final void mLB() throws RecognitionException {
+		try {
+			int _type = LB;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:403:6: ( '[' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:403:10: '['
+			{
+			match('['); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "LB"
+
+	// $ANTLR start "RB"
+	public final void mRB() throws RecognitionException {
+		try {
+			int _type = RB;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:404:6: ( ']' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:404:10: ']'
+			{
+			match(']'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "RB"
+
 	// $ANTLR start "ID"
 	public final void mID() throws RecognitionException {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:434:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:434:9: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:407:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:407:9: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -3970,7 +3863,7 @@ public class ShakespeareLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:435:9: ( LETTER | DIGIT | '_' )*
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:408:9: ( LETTER | DIGIT | '_' )*
 			loop11:
 			while (true) {
 				int alt11=2;
@@ -3981,7 +3874,7 @@ public class ShakespeareLexer extends Lexer {
 
 				switch (alt11) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 					{
 					if ( (input.LA(1) >= '0' && input.LA(1) <= '9')||(input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 						input.consume();
@@ -4010,27 +3903,131 @@ public class ShakespeareLexer extends Lexer {
 	}
 	// $ANTLR end "ID"
 
+	// $ANTLR start "COMMENT"
+	public final void mCOMMENT() throws RecognitionException {
+		try {
+			int _type = COMMENT;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:413:6: ( ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:9: ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n'
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:9: ( ', ' | ': ' )
+			int alt12=2;
+			int LA12_0 = input.LA(1);
+			if ( (LA12_0==',') ) {
+				alt12=1;
+			}
+			else if ( (LA12_0==':') ) {
+				alt12=2;
+			}
+
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 12, 0, input);
+				throw nvae;
+			}
+
+			switch (alt12) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:10: ', '
+					{
+					match(", "); 
+
+					}
+					break;
+				case 2 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:17: ': '
+					{
+					match(": "); 
+
+					}
+					break;
+
+			}
+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:23: ( (~ ( '\\n' | '\\r' ) )* )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:26: (~ ( '\\n' | '\\r' ) )*
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:26: (~ ( '\\n' | '\\r' ) )*
+			loop13:
+			while (true) {
+				int alt13=2;
+				int LA13_0 = input.LA(1);
+				if ( ((LA13_0 >= '\u0000' && LA13_0 <= '\t')||(LA13_0 >= '\u000B' && LA13_0 <= '\f')||(LA13_0 >= '\u000E' && LA13_0 <= '\uFFFF')) ) {
+					alt13=1;
+				}
+
+				switch (alt13) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+					{
+					if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '\t')||(input.LA(1) >= '\u000B' && input.LA(1) <= '\f')||(input.LA(1) >= '\u000E' && input.LA(1) <= '\uFFFF') ) {
+						input.consume();
+					}
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
+					}
+					break;
+
+				default :
+					break loop13;
+				}
+			}
+
+			}
+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:42: ( '\\r' )?
+			int alt14=2;
+			int LA14_0 = input.LA(1);
+			if ( (LA14_0=='\r') ) {
+				alt14=1;
+			}
+			switch (alt14) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:414:42: '\\r'
+					{
+					match('\r'); 
+					}
+					break;
+
+			}
+
+			match('\n'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "COMMENT"
+
 	// $ANTLR start "WS"
 	public final void mWS() throws RecognitionException {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:440:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:441:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:418:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:419:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:441:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
-			int cnt12=0;
-			loop12:
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:419:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			int cnt15=0;
+			loop15:
 			while (true) {
-				int alt12=2;
-				int LA12_0 = input.LA(1);
-				if ( ((LA12_0 >= '\t' && LA12_0 <= '\n')||LA12_0=='\r'||LA12_0==' ') ) {
-					alt12=1;
+				int alt15=2;
+				int LA15_0 = input.LA(1);
+				if ( ((LA15_0 >= '\t' && LA15_0 <= '\n')||LA15_0=='\r'||LA15_0==' ') ) {
+					alt15=1;
 				}
 
-				switch (alt12) {
+				switch (alt15) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
 					{
 					if ( (input.LA(1) >= '\t' && input.LA(1) <= '\n')||input.LA(1)=='\r'||input.LA(1)==' ' ) {
 						input.consume();
@@ -4044,11 +4041,11 @@ public class ShakespeareLexer extends Lexer {
 					break;
 
 				default :
-					if ( cnt12 >= 1 ) break loop12;
-					EarlyExitException eee = new EarlyExitException(12, input);
+					if ( cnt15 >= 1 ) break loop15;
+					EarlyExitException eee = new EarlyExitException(15, input);
 					throw eee;
 				}
-				cnt12++;
+				cnt15++;
 			}
 
 			_channel=HIDDEN;
@@ -4063,53 +4060,13 @@ public class ShakespeareLexer extends Lexer {
 	}
 	// $ANTLR end "WS"
 
-	// $ANTLR start "LB"
-	public final void mLB() throws RecognitionException {
-		try {
-			int _type = LB;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:450:5: ( '[' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:450:9: '['
-			{
-			match('['); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "LB"
-
-	// $ANTLR start "RB"
-	public final void mRB() throws RecognitionException {
-		try {
-			int _type = RB;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:451:5: ( ']' )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:451:9: ']'
-			{
-			match(']'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "RB"
-
 	// $ANTLR start "ERROR_TK"
 	public final void mERROR_TK() throws RecognitionException {
 		try {
 			int _type = ERROR_TK;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:460:17: ( . )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:460:19: .
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:433:17: ( . )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:433:19: .
 			{
 			matchAny(); 
 			}
@@ -4125,264 +4082,222 @@ public class ShakespeareLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:8: ( T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | COMMENT | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | AND | PRINTVALUE | PRINTASCII | READVALUE | READASCII | CL | CM | DOT | AP | EP | QM | FS | ID | WS | LB | RB | ERROR_TK )
-		int alt13=37;
-		alt13 = dfa13.predict(input);
-		switch (alt13) {
+		// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:8: ( RN | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | AND | PRINTVALUE | PRINTASCII | READVALUE | READASCII | CL | CM | DOT | AP | EP | QM | FS | LB | RB | ID | COMMENT | WS | ERROR_TK )
+		int alt16=31;
+		alt16 = dfa16.predict(input);
+		switch (alt16) {
 			case 1 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:10: T__36
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:10: RN
 				{
-				mT__36(); 
+				mRN(); 
 
 				}
 				break;
 			case 2 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:16: T__37
-				{
-				mT__37(); 
-
-				}
-				break;
-			case 3 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:22: T__38
-				{
-				mT__38(); 
-
-				}
-				break;
-			case 4 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:28: T__39
-				{
-				mT__39(); 
-
-				}
-				break;
-			case 5 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:34: T__40
-				{
-				mT__40(); 
-
-				}
-				break;
-			case 6 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:40: T__41
-				{
-				mT__41(); 
-
-				}
-				break;
-			case 7 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:46: T__42
-				{
-				mT__42(); 
-
-				}
-				break;
-			case 8 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:52: COMMENT
-				{
-				mCOMMENT(); 
-
-				}
-				break;
-			case 9 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:60: CHARACTER
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:13: CHARACTER
 				{
 				mCHARACTER(); 
 
 				}
 				break;
-			case 10 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:70: POSITIVENOUN
+			case 3 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:23: POSITIVENOUN
 				{
 				mPOSITIVENOUN(); 
 
 				}
 				break;
-			case 11 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:83: NEUTRALNOUN
+			case 4 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:36: NEUTRALNOUN
 				{
 				mNEUTRALNOUN(); 
 
 				}
 				break;
-			case 12 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:95: NEGATIVENOUN
+			case 5 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:48: NEGATIVENOUN
 				{
 				mNEGATIVENOUN(); 
 
 				}
 				break;
-			case 13 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:108: POSITIVEADJECTIVE
+			case 6 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:61: POSITIVEADJECTIVE
 				{
 				mPOSITIVEADJECTIVE(); 
 
 				}
 				break;
-			case 14 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:126: NEUTRALADJECTIVE
+			case 7 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:79: NEUTRALADJECTIVE
 				{
 				mNEUTRALADJECTIVE(); 
 
 				}
 				break;
-			case 15 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:143: NEGATIVEADJECTIVE
+			case 8 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:96: NEGATIVEADJECTIVE
 				{
 				mNEGATIVEADJECTIVE(); 
 
 				}
 				break;
-			case 16 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:161: ACT
+			case 9 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:114: ACT
 				{
 				mACT(); 
 
 				}
 				break;
-			case 17 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:165: SCENE
+			case 10 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:118: SCENE
 				{
 				mSCENE(); 
 
 				}
 				break;
-			case 18 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:171: ENTER
+			case 11 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:124: ENTER
 				{
 				mENTER(); 
 
 				}
 				break;
-			case 19 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:177: EXIT
+			case 12 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:130: EXIT
 				{
 				mEXIT(); 
 
 				}
 				break;
-			case 20 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:182: EXEUNT
+			case 13 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:135: EXEUNT
 				{
 				mEXEUNT(); 
 
 				}
 				break;
-			case 21 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:189: AND
+			case 14 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:142: AND
 				{
 				mAND(); 
 
 				}
 				break;
-			case 22 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:193: PRINTVALUE
+			case 15 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:146: PRINTVALUE
 				{
 				mPRINTVALUE(); 
 
 				}
 				break;
-			case 23 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:204: PRINTASCII
+			case 16 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:157: PRINTASCII
 				{
 				mPRINTASCII(); 
 
 				}
 				break;
-			case 24 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:215: READVALUE
+			case 17 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:168: READVALUE
 				{
 				mREADVALUE(); 
 
 				}
 				break;
-			case 25 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:225: READASCII
+			case 18 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:178: READASCII
 				{
 				mREADASCII(); 
 
 				}
 				break;
-			case 26 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:235: CL
+			case 19 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:188: CL
 				{
 				mCL(); 
 
 				}
 				break;
-			case 27 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:238: CM
+			case 20 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:191: CM
 				{
 				mCM(); 
 
 				}
 				break;
-			case 28 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:241: DOT
+			case 21 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:194: DOT
 				{
 				mDOT(); 
 
 				}
 				break;
-			case 29 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:245: AP
+			case 22 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:198: AP
 				{
 				mAP(); 
 
 				}
 				break;
-			case 30 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:248: EP
+			case 23 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:201: EP
 				{
 				mEP(); 
 
 				}
 				break;
-			case 31 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:251: QM
+			case 24 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:204: QM
 				{
 				mQM(); 
 
 				}
 				break;
-			case 32 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:254: FS
+			case 25 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:207: FS
 				{
 				mFS(); 
 
 				}
 				break;
-			case 33 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:257: ID
-				{
-				mID(); 
-
-				}
-				break;
-			case 34 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:260: WS
-				{
-				mWS(); 
-
-				}
-				break;
-			case 35 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:263: LB
+			case 26 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:210: LB
 				{
 				mLB(); 
 
 				}
 				break;
-			case 36 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:266: RB
+			case 27 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:213: RB
 				{
 				mRB(); 
 
 				}
 				break;
-			case 37 :
-				// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:269: ERROR_TK
+			case 28 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:216: ID
+				{
+				mID(); 
+
+				}
+				break;
+			case 29 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:219: COMMENT
+				{
+				mCOMMENT(); 
+
+				}
+				break;
+			case 30 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:227: WS
+				{
+				mWS(); 
+
+				}
+				break;
+			case 31 :
+				// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:1:230: ERROR_TK
 				{
 				mERROR_TK(); 
 
@@ -4394,7 +4309,7 @@ public class ShakespeareLexer extends Lexer {
 
 
 	protected DFA6 dfa6 = new DFA6(this);
-	protected DFA13 dfa13 = new DFA13(this);
+	protected DFA16 dfa16 = new DFA16(this);
 	static final String DFA6_eotS =
 		"\100\uffff";
 	static final String DFA6_eofS =
@@ -4515,252 +4430,249 @@ public class ShakespeareLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "223:1: NEUTRALNOUN : ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' );";
+			return "196:1: NEUTRALNOUN : ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' );";
 		}
 	}
 
-	static final String DFA13_eotS =
-		"\1\uffff\1\71\1\74\1\75\1\101\1\105\1\106\1\107\1\111\1\112\44\72\12\uffff"+
-		"\1\72\2\uffff\1\72\2\uffff\3\72\1\uffff\3\72\6\uffff\145\72\10\uffff\37"+
-		"\72\1\u0182\5\72\1\u0189\20\72\1\u019b\3\72\1\u019f\4\72\1\u019b\6\72"+
-		"\2\u01ac\17\72\1\u01be\6\72\1\u0189\10\72\1\u01be\1\u01ac\3\72\1\u01ac"+
-		"\31\72\1\u019b\25\72\1\u019b\5\72\1\u01be\4\72\1\u020e\7\72\1\u019f\6"+
-		"\72\1\u021c\2\72\1\u019b\15\72\1\u019f\2\72\1\uffff\1\u01ac\3\72\1\u01ac"+
-		"\1\72\1\uffff\1\72\1\u0233\1\72\1\u0233\1\72\1\u0189\1\72\1\u01ac\1\72"+
-		"\1\u019b\1\72\1\u01be\1\72\1\u019f\3\72\1\uffff\2\72\1\u01be\1\uffff\1"+
-		"\u019f\1\72\1\u019f\11\72\1\uffff\14\72\1\u019f\1\u01ac\3\72\1\uffff\1"+
-		"\u0233\12\72\1\u01be\1\u0233\10\72\1\u0233\3\72\1\u01ac\12\72\1\u019b"+
-		"\1\72\1\u0233\1\72\1\u01ac\13\72\1\u01ac\4\72\1\u01ac\3\72\1\u01ac\1\u019b"+
-		"\1\u01ac\1\72\1\u01be\1\72\1\u01ac\1\u0233\1\u019b\3\72\1\u0189\3\72\1"+
-		"\u0189\1\72\1\uffff\1\72\1\u0297\11\72\1\u021c\1\72\1\uffff\2\72\1\u021c"+
-		"\2\72\1\uffff\7\72\1\u02ae\1\72\1\u019f\6\72\1\uffff\1\72\1\u01be\1\72"+
-		"\1\u0233\1\u0189\3\72\1\u01ac\1\72\1\u019b\2\72\1\u01ac\4\72\1\u0233\1"+
-		"\72\1\u0233\1\72\1\u0189\7\72\1\u01be\1\72\1\u0233\1\72\1\u01ac\2\72\1"+
-		"\u01be\2\72\1\u0233\5\72\1\u01be\7\72\1\u019b\4\72\2\u019b\2\72\1\u0189"+
-		"\2\72\1\u0189\1\72\1\u01be\3\72\1\u01be\1\u019b\3\72\1\u0189\7\72\1\u01ac"+
-		"\1\u0233\1\72\1\u01ac\1\72\1\u01ac\1\72\1\u01be\5\72\1\u0300\1\uffff\4"+
-		"\72\1\u021c\4\72\2\u021c\1\u019f\2\72\1\uffff\1\u021c\1\72\1\u021c\4\72"+
-		"\2\uffff\1\u01ac\1\72\1\u019f\1\u01ac\1\u019b\1\u01ac\5\72\1\u0189\1\u0233"+
-		"\1\u019b\1\u01be\1\72\2\u0233\1\72\1\u01ac\5\72\1\u0189\1\u0233\1\u0189"+
-		"\1\72\2\u0189\4\72\1\u019b\3\72\1\u01be\3\72\1\u01ac\1\u019b\1\72\1\u0189"+
-		"\3\72\1\u0189\10\72\2\u0233\1\72\1\u01be\2\u0233\3\72\1\u0233\1\72\2\u01ac"+
-		"\1\u01be\3\72\1\u0189\1\u01be\2\72\1\uffff\1\u0340\1\u021c\2\72\1\uffff"+
-		"\1\72\1\u021c\2\72\1\u021c\1\uffff\1\u021c\1\72\1\u021c\1\72\1\u021c\1"+
-		"\u0233\2\72\1\u01ac\1\72\1\u0233\6\72\1\u0189\1\72\1\u0233\1\u019f\1\u01ac"+
-		"\1\u019b\1\72\1\u019b\6\72\1\u0233\3\72\1\u019b\6\72\1\u01ac\2\72\1\u0189"+
-		"\1\u01ac\1\72\1\u0189\3\72\1\uffff\2\72\1\u021c\1\72\1\u021c\1\uffff\1"+
-		"\72\1\u021c\2\72\1\u0233\1\u0189\1\u0233\1\u01ac\2\72\1\u0189\1\u0233"+
-		"\4\72\1\u0233\1\u0189\1\u019b\1\u0233\1\u01ac\6\72\1\u01ac\4\72\1\u0189"+
-		"\1\72\1\u021c\1\72\1\u019b\1\uffff\1\u021c\1\72\1\u019f\1\u01ac\1\72\1"+
-		"\u0233\2\72\1\u01ac\1\u0233\5\72\1\u01ac\1\u0189\4\72\1\uffff\1\u0189"+
-		"\1\u019b\1\u0233\1\u01be\1\u0189\6\72\1\u0189\1\u021c\2\uffff\1\u0189"+
-		"\1\72\2\u01ac\2\u0233\1\72\1\u01ac";
-	static final String DFA13_eofS =
-		"\u039a\uffff";
-	static final String DFA13_minS =
-		"\1\0\7\60\2\40\1\157\2\141\1\145\1\160\1\145\1\141\1\165\1\157\1\143\1"+
-		"\151\1\155\2\141\1\157\1\145\1\151\1\145\1\151\3\141\1\145\1\141\1\151"+
-		"\1\145\1\150\1\156\1\141\1\155\1\154\1\145\1\156\1\151\1\143\1\156\12"+
-		"\uffff\1\141\2\uffff\1\163\2\uffff\1\144\1\162\1\163\1\uffff\1\162\2\143"+
-		"\6\uffff\1\155\1\154\1\147\1\155\1\141\1\157\1\162\1\145\1\141\1\142\1"+
-		"\156\2\154\1\157\1\171\2\145\1\156\1\144\1\156\1\141\1\151\1\143\1\154"+
-		"\1\156\1\162\1\165\1\151\1\141\2\147\1\171\1\141\1\156\1\162\1\147\1\141"+
-		"\1\145\1\155\1\163\1\171\1\156\1\165\2\141\1\145\1\157\1\141\1\144\1\143"+
-		"\1\162\1\156\1\141\1\144\2\141\1\154\1\147\1\164\1\141\1\144\1\156\1\145"+
-		"\1\155\1\157\2\141\1\162\1\163\2\141\1\156\1\155\2\145\1\166\1\151\1\147"+
-		"\1\157\1\160\1\145\1\142\1\151\1\141\1\145\1\156\1\143\1\156\1\162\1\154"+
-		"\1\151\1\142\1\151\1\144\1\172\1\154\1\146\1\154\2\164\1\145\10\uffff"+
-		"\1\165\1\144\1\171\1\162\1\144\1\164\1\143\1\144\1\162\1\145\1\151\1\157"+
-		"\1\154\1\166\1\154\1\163\1\164\1\145\1\156\1\172\1\141\1\161\1\147\1\157"+
-		"\1\163\1\154\1\156\1\141\1\147\1\145\1\155\1\60\1\164\1\172\1\167\1\162"+
-		"\1\145\1\60\1\151\1\162\1\154\1\145\1\162\1\154\1\160\1\162\1\163\1\145"+
-		"\2\144\1\146\1\157\1\154\1\162\1\60\1\156\2\145\1\60\1\155\1\147\1\171"+
-		"\1\160\1\60\1\143\1\164\2\155\1\156\1\164\2\60\1\162\1\151\1\156\1\162"+
-		"\1\156\1\146\1\157\2\154\1\145\1\164\1\145\1\144\1\141\1\164\1\60\1\150"+
-		"\1\141\1\147\1\164\1\166\1\164\1\60\1\147\1\165\2\163\1\143\1\145\1\144"+
-		"\1\164\2\60\1\150\1\162\1\163\1\60\1\160\1\163\1\156\1\145\1\141\1\147"+
-		"\1\156\1\162\1\164\2\151\1\165\1\164\1\147\1\164\1\156\1\145\1\164\2\144"+
-		"\1\164\1\160\1\164\1\147\1\143\1\60\1\164\1\145\1\156\1\145\1\150\2\156"+
-		"\2\150\1\143\1\145\1\154\1\155\2\156\1\144\1\145\1\163\1\171\1\154\1\144"+
-		"\1\60\1\146\1\162\1\164\1\162\1\154\1\60\1\151\1\154\2\145\1\60\1\145"+
-		"\1\164\1\165\1\144\1\145\1\115\1\164\1\60\1\145\2\165\2\157\1\145\1\60"+
-		"\2\145\1\60\1\164\1\162\1\154\1\40\1\151\1\154\1\165\1\145\1\156\1\160"+
-		"\1\157\1\145\1\153\1\60\1\154\1\141\1\uffff\1\60\1\151\1\145\1\164\1\60"+
-		"\1\145\1\uffff\1\156\1\60\1\157\1\60\1\171\1\60\1\151\1\60\1\164\1\60"+
-		"\1\163\1\60\1\55\1\60\1\164\1\145\1\151\1\uffff\1\144\1\163\1\60\1\uffff"+
-		"\1\60\1\165\1\60\1\145\1\154\1\145\1\164\1\160\1\144\1\145\1\171\1\145"+
-		"\1\uffff\1\171\1\162\1\145\1\166\1\153\1\146\1\151\1\164\2\154\2\164\2"+
-		"\60\1\156\2\145\1\uffff\1\60\1\154\1\144\1\150\1\145\2\141\2\164\1\163"+
-		"\1\153\2\60\1\157\1\165\1\155\1\151\1\162\1\151\1\145\1\151\1\60\1\162"+
-		"\1\150\1\145\1\60\1\150\1\154\1\143\1\147\1\171\1\165\1\141\1\171\1\144"+
-		"\1\156\1\60\1\145\1\60\1\154\1\60\2\145\1\150\2\154\1\156\1\147\1\154"+
-		"\1\162\1\163\1\164\1\60\1\151\3\145\1\60\1\145\1\141\1\147\3\60\1\164"+
-		"\1\60\1\145\3\60\1\151\1\145\1\157\1\60\1\156\1\157\1\143\1\60\1\141\1"+
-		"\uffff\1\162\1\60\1\156\1\151\1\155\1\141\1\145\1\156\1\172\1\146\1\163"+
-		"\1\60\1\164\1\uffff\1\164\1\156\1\60\1\165\1\151\1\171\1\157\1\144\1\157"+
-		"\1\156\1\151\1\145\1\143\1\60\1\40\1\60\1\154\1\156\1\162\1\55\1\162\1"+
-		"\145\1\uffff\1\167\1\60\1\156\2\60\1\145\1\157\1\150\1\60\1\142\1\60\1"+
-		"\164\1\145\1\60\1\145\1\146\1\171\1\164\1\60\1\162\1\60\1\162\1\60\1\162"+
-		"\1\167\1\141\1\151\1\145\1\144\1\150\1\60\1\171\1\60\1\171\1\60\1\156"+
-		"\1\163\1\60\1\157\1\145\1\60\2\162\1\151\1\145\1\157\1\60\1\164\1\155"+
-		"\1\141\1\151\1\156\1\144\1\145\1\60\1\156\1\145\1\164\1\144\2\60\1\151"+
-		"\1\150\1\60\2\163\1\60\1\144\1\60\1\156\1\145\1\162\2\60\1\145\1\171\1"+
-		"\147\1\60\1\145\1\141\1\145\1\171\1\156\1\162\1\167\2\60\1\154\1\60\1"+
-		"\167\1\60\1\145\1\60\1\151\1\147\1\167\1\164\1\151\1\60\1\uffff\1\164"+
-		"\2\157\1\143\1\60\1\40\1\151\1\146\1\157\3\60\1\144\1\141\1\157\1\60\1"+
-		"\157\1\60\1\143\1\157\1\162\1\153\2\uffff\1\60\1\147\4\60\1\145\1\162"+
-		"\1\155\1\171\1\154\4\60\1\165\2\60\1\u00e2\1\60\1\145\1\141\1\164\1\156"+
-		"\1\144\3\60\1\163\2\60\1\164\1\155\1\162\1\144\1\60\1\146\1\162\1\155"+
-		"\1\60\1\154\1\150\1\156\2\60\1\143\1\60\1\147\1\163\1\145\1\60\1\157\3"+
-		"\164\2\141\2\157\2\60\1\156\3\60\1\164\1\142\1\144\1\60\1\147\3\60\1\157"+
-		"\2\144\2\60\1\145\1\156\1\uffff\2\60\1\156\1\142\1\uffff\1\157\1\60\1"+
-		"\146\1\145\1\60\1\165\1\60\1\151\1\60\1\157\2\60\1\145\1\163\1\60\1\145"+
-		"\1\60\1\145\3\154\1\151\1\147\1\60\1\164\4\60\1\165\1\60\1\151\1\145\1"+
-		"\165\1\147\1\171\1\145\1\60\1\164\1\162\1\165\1\60\1\151\1\145\1\165\2"+
-		"\164\1\156\1\60\1\157\1\154\2\60\1\162\1\60\1\145\1\144\1\157\1\uffff"+
-		"\1\141\1\145\1\60\1\164\1\60\1\162\1\157\1\60\2\163\4\60\1\154\1\157\2"+
-		"\60\1\154\1\156\1\163\1\141\5\60\1\163\1\156\1\146\1\147\2\150\1\60\2"+
-		"\145\1\164\1\162\1\60\1\165\1\60\1\164\1\60\1\40\1\60\1\163\2\60\1\156"+
-		"\1\60\1\147\1\163\2\60\1\147\1\165\1\150\2\145\2\60\1\150\1\145\1\163"+
-		"\2\150\5\60\1\154\1\164\2\162\1\171\1\144\2\60\2\uffff\1\60\1\145\4\60"+
-		"\1\162\1\60";
-	static final String DFA13_maxS =
-		"\1\uffff\7\172\2\40\1\157\1\165\1\145\1\150\1\162\1\145\1\141\1\165\1"+
-		"\162\1\160\1\151\3\165\1\157\1\165\1\167\1\165\1\151\1\162\2\165\1\162"+
-		"\1\171\2\157\1\162\1\156\1\157\1\166\1\157\1\145\1\156\1\151\1\143\1\170"+
-		"\12\uffff\1\141\2\uffff\1\163\2\uffff\1\145\1\162\1\163\1\uffff\1\162"+
-		"\2\143\6\uffff\1\155\1\154\1\147\1\155\1\154\1\157\1\162\1\150\1\141\1"+
-		"\142\1\156\2\154\1\157\1\171\2\145\1\156\1\151\1\156\1\141\1\157\1\164"+
-		"\1\154\1\156\1\162\1\165\1\164\1\162\1\165\1\147\1\171\1\165\1\156\1\162"+
-		"\1\147\1\141\1\157\1\156\1\163\1\171\1\162\2\165\1\157\1\145\1\157\1\164"+
-		"\1\144\1\143\1\162\1\156\1\157\1\163\1\147\1\165\1\164\1\147\1\164\1\151"+
-		"\1\167\1\164\1\145\1\165\1\157\1\166\1\141\2\163\1\145\1\157\1\156\1\162"+
-		"\1\145\1\164\1\166\1\151\1\163\1\164\1\160\1\145\1\163\1\151\1\167\1\165"+
-		"\1\156\1\143\1\156\2\162\1\151\1\142\1\151\1\144\1\172\1\154\1\146\1\154"+
-		"\2\164\1\151\10\uffff\1\165\1\144\1\171\1\162\1\144\1\164\1\143\1\144"+
-		"\1\162\1\145\1\151\1\157\1\154\1\166\1\154\1\163\1\164\1\145\1\156\1\172"+
-		"\1\141\1\161\1\147\1\157\1\163\1\154\1\156\1\141\1\147\1\145\1\155\1\172"+
-		"\1\164\1\172\1\167\1\162\1\145\1\172\1\151\1\162\1\154\1\145\1\162\1\154"+
-		"\1\160\1\162\1\163\1\145\2\144\1\146\1\157\1\154\1\163\1\172\1\156\2\145"+
-		"\1\172\1\155\1\147\1\171\1\163\1\172\1\143\1\164\1\165\1\155\1\156\1\164"+
-		"\2\172\1\162\1\151\1\156\1\162\1\156\1\160\1\157\2\154\1\145\1\164\1\145"+
-		"\1\144\1\141\1\164\1\172\1\150\1\141\1\147\1\164\1\166\1\164\1\172\1\147"+
-		"\1\165\2\163\1\143\1\145\1\144\1\164\2\172\1\150\1\162\1\163\1\172\1\160"+
-		"\1\163\1\156\1\145\1\141\1\147\1\156\1\162\1\164\2\151\1\165\3\164\1\156"+
-		"\1\145\1\164\2\144\1\164\1\160\1\164\1\147\1\143\1\172\1\164\1\151\1\156"+
-		"\1\165\1\150\2\156\2\150\1\143\1\145\1\154\1\155\2\156\1\144\1\145\1\163"+
-		"\1\171\1\154\1\144\1\172\1\146\1\162\1\164\1\162\1\154\1\172\1\151\1\154"+
-		"\1\145\1\154\1\172\1\145\1\164\1\165\1\144\1\145\1\115\1\164\1\172\1\145"+
-		"\2\165\2\157\1\145\1\172\2\145\1\172\1\164\1\162\1\154\1\40\1\151\1\154"+
-		"\1\165\1\145\1\156\1\160\1\157\1\145\1\153\1\172\1\154\1\141\1\uffff\1"+
-		"\172\1\151\1\145\1\164\1\172\1\145\1\uffff\1\156\1\172\1\157\1\172\1\171"+
-		"\1\172\1\171\1\172\1\164\1\172\1\163\1\172\1\55\1\172\1\164\1\145\1\151"+
-		"\1\uffff\1\144\1\163\1\172\1\uffff\1\172\1\165\1\172\1\145\1\154\1\145"+
-		"\1\164\1\160\1\144\1\145\1\171\1\145\1\uffff\1\171\1\162\1\145\1\166\1"+
-		"\153\1\146\1\151\1\164\2\154\2\164\2\172\1\156\2\145\1\uffff\1\172\1\154"+
-		"\1\144\1\150\1\145\2\141\2\164\1\163\1\153\2\172\1\157\1\165\1\155\1\151"+
-		"\1\162\1\151\1\145\1\151\1\172\1\162\1\150\1\145\1\172\1\150\1\154\1\143"+
-		"\1\147\1\171\1\165\1\141\1\171\1\144\1\156\1\172\1\145\1\172\1\154\1\172"+
-		"\2\145\1\150\2\154\1\156\1\147\1\154\1\162\1\163\1\164\1\172\1\151\3\145"+
-		"\1\172\1\145\1\141\1\147\3\172\1\164\1\172\1\145\3\172\1\151\1\145\1\157"+
-		"\1\172\1\156\1\157\1\143\1\172\1\141\1\uffff\1\162\1\172\1\156\1\151\1"+
-		"\155\1\141\1\145\1\156\1\172\1\146\1\163\1\172\1\164\1\uffff\1\164\1\156"+
-		"\1\172\1\165\1\151\1\171\1\157\1\144\1\157\1\156\1\151\1\145\1\143\1\172"+
-		"\1\40\1\172\1\154\1\156\1\162\1\55\1\162\1\145\1\uffff\1\167\1\172\1\156"+
-		"\2\172\1\145\1\157\1\150\1\172\1\144\1\172\1\164\1\145\1\172\1\145\1\146"+
-		"\1\171\1\164\1\172\1\162\1\172\1\162\1\172\1\162\1\167\1\141\1\151\1\145"+
-		"\1\144\1\150\1\172\1\171\1\172\1\171\1\172\1\156\1\163\1\172\1\157\1\145"+
-		"\1\172\2\162\1\151\1\145\1\157\1\172\1\164\1\155\1\141\1\151\1\156\1\144"+
-		"\1\145\1\172\1\156\1\145\1\164\1\144\2\172\1\151\1\150\1\172\2\163\1\172"+
-		"\1\163\1\172\1\156\1\145\1\162\2\172\1\145\1\171\1\147\1\172\1\145\1\141"+
-		"\1\145\1\171\1\156\1\162\1\167\2\172\1\154\1\172\1\167\1\172\1\145\1\172"+
-		"\1\151\1\147\1\167\1\164\1\151\1\172\1\uffff\1\164\2\157\1\143\1\172\1"+
-		"\40\1\151\1\146\1\157\3\172\1\144\1\141\1\157\1\172\1\157\1\172\1\143"+
-		"\1\157\1\162\1\153\2\uffff\1\172\1\147\4\172\1\145\1\162\1\155\1\171\1"+
-		"\154\4\172\1\165\2\172\1\u00e2\1\172\1\145\1\141\1\164\1\156\1\144\3\172"+
-		"\1\163\2\172\1\164\1\155\1\162\1\144\1\172\1\146\1\162\1\155\1\172\1\154"+
-		"\1\150\1\156\2\172\1\143\1\172\1\147\1\163\1\145\1\172\1\157\3\164\2\141"+
-		"\2\157\2\172\1\156\3\172\1\164\1\142\1\144\1\172\1\147\3\172\1\157\2\144"+
-		"\2\172\1\145\1\156\1\uffff\2\172\1\156\1\142\1\uffff\1\157\1\172\1\146"+
-		"\1\145\1\172\1\165\1\172\1\151\1\172\1\157\2\172\1\145\1\163\1\172\1\145"+
-		"\1\172\1\145\3\154\1\151\1\147\1\172\1\164\4\172\1\165\1\172\1\151\1\145"+
-		"\1\165\1\147\1\171\1\145\1\172\1\164\1\162\1\165\1\172\1\151\1\145\1\165"+
-		"\2\164\1\156\1\172\1\157\1\154\2\172\1\162\1\172\1\145\1\144\1\157\1\uffff"+
-		"\1\141\1\145\1\172\1\164\1\172\1\162\1\157\1\172\2\163\4\172\1\154\1\157"+
-		"\2\172\1\154\1\156\1\163\1\141\5\172\1\163\1\156\1\146\1\147\2\150\1\172"+
-		"\2\145\1\164\1\162\1\172\1\165\1\172\1\164\1\172\1\40\1\172\1\163\2\172"+
-		"\1\156\1\172\1\147\1\163\2\172\1\147\1\165\1\150\2\145\2\172\1\150\1\145"+
-		"\1\163\1\150\1\155\5\172\1\154\1\164\2\162\1\171\1\144\2\172\2\uffff\1"+
-		"\172\1\145\4\172\1\162\1\172";
-	static final String DFA13_acceptS =
-		"\56\uffff\1\34\1\35\1\36\1\37\1\40\1\41\1\42\1\43\1\44\1\45\1\uffff\1"+
-		"\1\1\41\1\uffff\1\2\1\3\3\uffff\1\4\3\uffff\1\5\1\6\1\7\1\10\1\33\1\32"+
-		"\145\uffff\1\34\1\35\1\36\1\37\1\40\1\42\1\43\1\44\u00ca\uffff\1\25\6"+
-		"\uffff\1\17\21\uffff\1\14\3\uffff\1\12\14\uffff\1\13\21\uffff\1\16\117"+
-		"\uffff\1\20\15\uffff\1\11\26\uffff\1\15\143\uffff\1\23\26\uffff\1\21\1"+
-		"\27\120\uffff\1\22\4\uffff\1\31\72\uffff\1\24\117\uffff\1\26\1\30\10\uffff";
-	static final String DFA13_specialS =
-		"\1\0\u0399\uffff}>";
-	static final String[] DFA13_transitionS = {
-			"\11\67\2\64\2\67\1\64\22\67\1\64\1\60\5\67\1\57\4\67\1\10\1\67\1\56\1"+
-			"\62\12\67\1\11\4\67\1\61\1\67\1\54\1\20\1\1\1\2\1\55\1\21\1\15\1\14\1"+
-			"\3\1\13\1\24\1\4\1\5\1\63\1\16\1\22\1\63\1\12\1\23\1\17\1\63\1\6\1\63"+
-			"\1\7\2\63\1\65\1\67\1\66\1\67\1\63\1\67\1\25\1\35\1\36\1\37\1\47\1\26"+
-			"\1\40\1\27\1\52\1\30\1\34\1\41\1\42\1\43\1\50\1\31\1\63\1\33\1\32\1\44"+
-			"\1\45\1\53\1\46\1\63\1\51\1\63\uff85\67",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\13\72\1\70\16\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\4\72\1\73\25\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\1\76\7\72\1\100\5\72\1\77"+
-			"\13\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\1\103\3\72\1\102\3\72\1\104"+
-			"\21\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+	static final String DFA16_eotS =
+		"\3\3\1\uffff\50\71\1\u00aa\1\u00ab\12\uffff\1\3\1\uffff\2\3\155\71\13"+
+		"\uffff\37\71\1\u017e\5\71\1\u0185\20\71\1\u0197\3\71\1\u019b\4\71\1\u0197"+
+		"\6\71\2\u01a8\17\71\1\u01ba\6\71\1\u0185\10\71\1\u01ba\1\u01a8\3\71\1"+
+		"\u01a8\31\71\1\u0197\25\71\1\u0197\5\71\1\u01ba\4\71\1\u020a\5\71\1\u0210"+
+		"\2\71\1\u0197\4\71\1\u019b\21\71\1\u019b\2\71\1\uffff\1\u01a8\3\71\1\u01a8"+
+		"\1\71\1\uffff\1\71\1\u022f\1\71\1\u022f\1\71\1\u0185\1\71\1\u01a8\1\71"+
+		"\1\u0197\1\71\1\u01ba\1\71\1\u019b\3\71\1\uffff\2\71\1\u01ba\1\uffff\1"+
+		"\u019b\1\71\1\u019b\11\71\1\uffff\14\71\1\u019b\1\u01a8\3\71\1\uffff\1"+
+		"\u022f\12\71\1\u01ba\1\u022f\10\71\1\u022f\3\71\1\u01a8\12\71\1\u0197"+
+		"\1\71\1\u022f\1\71\1\u01a8\13\71\1\u01a8\4\71\1\u01a8\3\71\1\u01a8\1\u0197"+
+		"\1\u01a8\1\71\1\u01ba\1\71\1\u01a8\1\u022f\1\u0197\3\71\1\u0185\3\71\1"+
+		"\u0185\1\71\1\uffff\1\71\1\u0293\1\71\1\u0210\1\71\1\uffff\2\71\1\u0210"+
+		"\5\71\1\uffff\14\71\1\u02aa\1\71\1\u019b\6\71\1\uffff\1\71\1\u01ba\1\71"+
+		"\1\u022f\1\u0185\3\71\1\u01a8\1\71\1\u0197\2\71\1\u01a8\4\71\1\u022f\1"+
+		"\71\1\u022f\1\71\1\u0185\7\71\1\u01ba\1\71\1\u022f\1\71\1\u01a8\2\71\1"+
+		"\u01ba\2\71\1\u022f\5\71\1\u01ba\7\71\1\u0197\4\71\2\u0197\2\71\1\u0185"+
+		"\2\71\1\u0185\1\71\1\u01ba\3\71\1\u01ba\1\u0197\3\71\1\u0185\7\71\1\u01a8"+
+		"\1\u022f\1\71\1\u01a8\1\71\1\u01a8\1\71\1\u01ba\5\71\1\u02fc\1\uffff\1"+
+		"\71\2\u0210\1\u019b\2\71\1\u0210\2\71\1\uffff\1\u0210\5\71\1\u0210\5\71"+
+		"\2\uffff\1\u01a8\1\71\1\u019b\1\u01a8\1\u0197\1\u01a8\5\71\1\u0185\1\u022f"+
+		"\1\u0197\1\u01ba\1\71\2\u022f\1\71\1\u01a8\5\71\1\u0185\1\u022f\1\u0185"+
+		"\1\71\2\u0185\4\71\1\u0197\3\71\1\u01ba\3\71\1\u01a8\1\u0197\1\71\1\u0185"+
+		"\3\71\1\u0185\10\71\2\u022f\1\71\1\u01ba\2\u022f\3\71\1\u022f\1\71\2\u01a8"+
+		"\1\u01ba\3\71\1\u0185\1\u01ba\2\71\1\uffff\1\u033c\2\71\1\uffff\1\u0210"+
+		"\1\uffff\2\u0210\1\71\1\u0210\3\71\1\u0210\1\71\1\u0210\1\u022f\2\71\1"+
+		"\u01a8\1\71\1\u022f\6\71\1\u0185\1\71\1\u022f\1\u019b\1\u01a8\1\u0197"+
+		"\1\71\1\u0197\6\71\1\u022f\3\71\1\u0197\6\71\1\u01a8\2\71\1\u0185\1\u01a8"+
+		"\1\71\1\u0185\3\71\1\uffff\1\u0210\1\71\1\uffff\1\u0210\3\71\1\u0210\2"+
+		"\71\1\u022f\1\u0185\1\u022f\1\u01a8\2\71\1\u0185\1\u022f\4\71\1\u022f"+
+		"\1\u0185\1\u0197\1\u022f\1\u01a8\6\71\1\u01a8\4\71\1\u0185\2\71\1\uffff"+
+		"\1\u0197\2\u0210\1\71\1\u019b\1\u01a8\1\71\1\u022f\2\71\1\u01a8\1\u022f"+
+		"\5\71\1\u01a8\1\u0185\4\71\1\uffff\1\u0185\1\u0197\1\u022f\1\u01ba\1\u0185"+
+		"\6\71\1\u0185\1\u0210\2\uffff\1\u0185\1\71\2\u01a8\2\u022f\1\71\1\u01a8";
+	static final String DFA16_eofS =
+		"\u0396\uffff";
+	static final String DFA16_minS =
+		"\1\0\2\60\1\uffff\1\157\2\141\1\145\1\141\1\160\1\145\1\154\2\141\1\165"+
+		"\1\145\1\157\1\143\1\151\1\155\2\141\1\157\1\145\1\151\1\145\1\151\3\141"+
+		"\1\145\1\141\1\151\1\145\1\150\1\156\1\141\1\155\1\154\1\145\1\156\1\151"+
+		"\1\143\1\156\2\40\12\uffff\1\60\1\uffff\2\60\1\155\1\154\1\147\1\155\1"+
+		"\141\1\157\1\162\1\144\1\162\1\163\1\145\1\141\1\142\1\141\1\162\2\143"+
+		"\1\156\1\154\1\163\1\154\1\157\1\171\2\145\1\156\1\144\1\156\1\141\1\151"+
+		"\1\143\1\154\1\156\1\162\1\165\1\151\1\141\2\147\1\171\1\141\1\156\1\162"+
+		"\1\147\1\141\1\145\1\155\1\163\1\171\1\156\1\165\2\141\1\145\1\157\1\141"+
+		"\1\144\1\143\1\162\1\156\1\141\1\144\2\141\1\154\1\147\1\164\1\141\1\144"+
+		"\1\156\1\145\1\155\1\157\2\141\1\162\1\163\2\141\1\156\1\155\2\145\1\166"+
+		"\1\151\1\147\1\157\1\160\1\145\1\142\1\151\1\141\1\145\1\156\1\143\1\156"+
+		"\1\162\1\154\1\151\1\142\1\151\1\144\1\172\1\154\1\146\1\154\2\164\1\145"+
+		"\13\uffff\1\145\1\151\1\157\1\154\1\166\1\154\1\163\1\164\1\171\1\162"+
+		"\1\144\1\164\1\145\1\156\1\172\1\141\1\165\1\143\1\144\1\162\1\161\1\147"+
+		"\1\144\1\157\1\163\1\154\1\156\1\141\1\147\1\145\1\155\1\60\1\164\1\172"+
+		"\1\167\1\162\1\145\1\60\1\151\1\162\1\154\1\145\1\162\1\154\1\160\1\162"+
+		"\1\163\1\145\2\144\1\146\1\157\1\154\1\162\1\60\1\156\2\145\1\60\1\155"+
+		"\1\147\1\171\1\160\1\60\1\143\1\164\2\155\1\156\1\164\2\60\1\162\1\151"+
+		"\1\156\1\162\1\156\1\146\1\157\2\154\1\145\1\164\1\145\1\144\1\141\1\164"+
+		"\1\60\1\150\1\141\1\147\1\164\1\166\1\164\1\60\1\147\1\165\2\163\1\143"+
+		"\1\145\1\144\1\164\2\60\1\150\1\162\1\163\1\60\1\160\1\163\1\156\1\145"+
+		"\1\141\1\147\1\156\1\162\1\164\2\151\1\165\1\164\1\147\1\164\1\156\1\145"+
+		"\1\164\2\144\1\164\1\160\1\164\1\147\1\143\1\60\1\164\1\145\1\156\1\145"+
+		"\1\150\2\156\2\150\1\143\1\145\1\154\1\155\2\156\1\144\1\145\1\163\1\171"+
+		"\1\154\1\144\1\60\1\146\1\162\1\164\1\162\1\154\1\60\1\151\1\154\2\145"+
+		"\1\60\1\145\1\164\1\165\1\157\1\145\1\60\2\145\1\60\1\164\1\162\1\115"+
+		"\1\164\1\60\1\145\1\154\1\40\1\151\1\154\1\144\2\165\1\157\1\165\2\145"+
+		"\1\156\1\160\1\157\1\145\1\153\1\60\1\154\1\141\1\uffff\1\60\1\151\1\145"+
+		"\1\164\1\60\1\145\1\uffff\1\156\1\60\1\157\1\60\1\171\1\60\1\151\1\60"+
+		"\1\164\1\60\1\163\1\60\1\55\1\60\1\164\1\145\1\151\1\uffff\1\144\1\163"+
+		"\1\60\1\uffff\1\60\1\165\1\60\1\145\1\154\1\145\1\164\1\160\1\144\1\145"+
+		"\1\171\1\145\1\uffff\1\171\1\162\1\145\1\166\1\153\1\146\1\151\1\164\2"+
+		"\154\2\164\2\60\1\156\2\145\1\uffff\1\60\1\154\1\144\1\150\1\145\2\141"+
+		"\2\164\1\163\1\153\2\60\1\157\1\165\1\155\1\151\1\162\1\151\1\145\1\151"+
+		"\1\60\1\162\1\150\1\145\1\60\1\150\1\154\1\143\1\147\1\171\1\165\1\141"+
+		"\1\171\1\144\1\156\1\60\1\145\1\60\1\154\1\60\2\145\1\150\2\154\1\156"+
+		"\1\147\1\154\1\162\1\163\1\164\1\60\1\151\3\145\1\60\1\145\1\141\1\147"+
+		"\3\60\1\164\1\60\1\145\3\60\1\151\1\145\1\157\1\60\1\156\1\157\1\143\1"+
+		"\60\1\141\1\uffff\1\162\1\60\1\156\1\60\1\164\1\uffff\1\164\1\156\1\60"+
+		"\1\165\1\141\1\145\1\156\1\151\1\171\1\157\1\144\1\151\1\172\1\146\1\163"+
+		"\1\157\1\156\1\155\1\151\1\145\1\143\1\60\1\40\1\60\1\154\1\156\1\162"+
+		"\1\55\1\162\1\145\1\uffff\1\167\1\60\1\156\2\60\1\145\1\157\1\150\1\60"+
+		"\1\142\1\60\1\164\1\145\1\60\1\145\1\146\1\171\1\164\1\60\1\162\1\60\1"+
+		"\162\1\60\1\162\1\167\1\141\1\151\1\145\1\144\1\150\1\60\1\171\1\60\1"+
+		"\171\1\60\1\156\1\163\1\60\1\157\1\145\1\60\2\162\1\151\1\145\1\157\1"+
+		"\60\1\164\1\155\1\141\1\151\1\156\1\144\1\145\1\60\1\156\1\145\1\164\1"+
+		"\144\2\60\1\151\1\150\1\60\2\163\1\60\1\144\1\60\1\156\1\145\1\162\2\60"+
+		"\1\145\1\171\1\147\1\60\1\145\1\141\1\145\1\171\1\156\1\162\1\167\2\60"+
+		"\1\154\1\60\1\167\1\60\1\145\1\60\1\151\1\147\1\167\1\164\1\151\1\60\1"+
+		"\uffff\1\164\3\60\1\144\1\143\1\60\1\40\1\141\1\157\1\60\2\157\1\151\1"+
+		"\146\1\157\1\60\1\143\2\157\1\162\1\153\2\uffff\1\60\1\147\4\60\1\145"+
+		"\1\162\1\155\1\171\1\154\4\60\1\165\2\60\1\u2019\1\60\1\145\1\141\1\164"+
+		"\1\156\1\144\3\60\1\163\2\60\1\164\1\155\1\162\1\144\1\60\1\146\1\162"+
+		"\1\155\1\60\1\154\1\150\1\156\2\60\1\143\1\60\1\147\1\163\1\145\1\60\1"+
+		"\157\3\164\2\141\2\157\2\60\1\156\3\60\1\164\1\142\1\144\1\60\1\147\3"+
+		"\60\1\157\2\144\2\60\1\145\1\156\1\uffff\1\60\1\145\1\142\1\uffff\1\60"+
+		"\1\165\2\60\1\157\1\60\1\146\1\151\1\156\1\60\1\157\2\60\1\145\1\163\1"+
+		"\60\1\145\1\60\1\145\3\154\1\151\1\147\1\60\1\164\4\60\1\165\1\60\1\151"+
+		"\1\145\1\165\1\147\1\171\1\145\1\60\1\164\1\162\1\165\1\60\1\151\1\145"+
+		"\1\165\2\164\1\156\1\60\1\157\1\154\2\60\1\162\1\60\1\145\1\144\1\157"+
+		"\1\uffff\1\60\1\145\1\162\1\60\1\164\1\157\1\141\1\60\2\163\4\60\1\154"+
+		"\1\157\2\60\1\154\1\156\1\163\1\141\5\60\1\163\1\156\1\146\1\147\2\150"+
+		"\1\60\2\145\1\164\1\162\1\60\1\165\1\164\1\40\3\60\1\163\2\60\1\156\1"+
+		"\60\1\147\1\163\2\60\1\147\1\165\1\150\2\145\2\60\1\150\1\145\1\163\2"+
+		"\150\5\60\1\154\1\164\2\162\1\171\1\144\2\60\2\uffff\1\60\1\145\4\60\1"+
+		"\162\1\60";
+	static final String DFA16_maxS =
+		"\1\uffff\2\172\1\uffff\1\157\1\165\1\145\1\150\1\157\1\162\1\145\1\154"+
+		"\1\151\1\141\1\165\1\145\1\162\1\160\1\151\3\165\1\157\1\165\1\167\1\165"+
+		"\1\151\1\162\2\165\1\162\1\171\2\157\1\162\1\156\1\157\1\166\1\157\1\145"+
+		"\1\156\1\151\1\143\1\170\2\40\12\uffff\1\172\1\uffff\2\172\1\155\1\154"+
+		"\1\147\1\155\1\154\1\157\1\162\1\145\1\162\1\163\1\150\1\141\1\142\1\141"+
+		"\1\162\2\143\1\156\1\154\1\163\1\154\1\157\1\171\2\145\1\156\1\151\1\156"+
+		"\1\141\1\157\1\164\1\154\1\156\1\162\1\165\1\164\1\162\1\165\1\147\1\171"+
+		"\1\165\1\156\1\162\1\147\1\141\1\157\1\156\1\163\1\171\1\162\2\165\1\157"+
+		"\1\145\1\157\1\164\1\144\1\143\1\162\1\156\1\157\1\163\1\147\1\165\1\164"+
+		"\1\147\1\164\1\151\1\167\1\164\1\145\1\165\1\157\1\166\1\141\2\163\1\145"+
+		"\1\157\1\156\1\162\1\145\1\164\1\166\1\151\1\163\1\164\1\160\1\145\1\163"+
+		"\1\151\1\167\1\165\1\156\1\143\1\156\2\162\1\151\1\142\1\151\1\144\1\172"+
+		"\1\154\1\146\1\154\2\164\1\151\13\uffff\1\145\1\151\1\157\1\154\1\166"+
+		"\1\154\1\163\1\164\1\171\1\162\1\144\1\164\1\145\1\156\1\172\1\141\1\165"+
+		"\1\143\1\144\1\162\1\161\1\147\1\144\1\157\1\163\1\154\1\156\1\141\1\147"+
+		"\1\145\1\155\1\172\1\164\1\172\1\167\1\162\1\145\1\172\1\151\1\162\1\154"+
+		"\1\145\1\162\1\154\1\160\1\162\1\163\1\145\2\144\1\146\1\157\1\154\1\163"+
+		"\1\172\1\156\2\145\1\172\1\155\1\147\1\171\1\163\1\172\1\143\1\164\1\165"+
+		"\1\155\1\156\1\164\2\172\1\162\1\151\1\156\1\162\1\156\1\160\1\157\2\154"+
+		"\1\145\1\164\1\145\1\144\1\141\1\164\1\172\1\150\1\141\1\147\1\164\1\166"+
+		"\1\164\1\172\1\147\1\165\2\163\1\143\1\145\1\144\1\164\2\172\1\150\1\162"+
+		"\1\163\1\172\1\160\1\163\1\156\1\145\1\141\1\147\1\156\1\162\1\164\2\151"+
+		"\1\165\3\164\1\156\1\145\1\164\2\144\1\164\1\160\1\164\1\147\1\143\1\172"+
+		"\1\164\1\151\1\156\1\165\1\150\2\156\2\150\1\143\1\145\1\154\1\155\2\156"+
+		"\1\144\1\145\1\163\1\171\1\154\1\144\1\172\1\146\1\162\1\164\1\162\1\154"+
+		"\1\172\1\151\1\154\1\145\1\154\1\172\1\145\1\164\1\165\1\157\1\145\1\172"+
+		"\2\145\1\172\1\164\1\162\1\115\1\164\1\172\1\145\1\154\1\40\1\151\1\154"+
+		"\1\144\2\165\1\157\1\165\2\145\1\156\1\160\1\157\1\145\1\153\1\172\1\154"+
+		"\1\141\1\uffff\1\172\1\151\1\145\1\164\1\172\1\145\1\uffff\1\156\1\172"+
+		"\1\157\1\172\1\171\1\172\1\171\1\172\1\164\1\172\1\163\1\172\1\55\1\172"+
+		"\1\164\1\145\1\151\1\uffff\1\144\1\163\1\172\1\uffff\1\172\1\165\1\172"+
+		"\1\145\1\154\1\145\1\164\1\160\1\144\1\145\1\171\1\145\1\uffff\1\171\1"+
+		"\162\1\145\1\166\1\153\1\146\1\151\1\164\2\154\2\164\2\172\1\156\2\145"+
+		"\1\uffff\1\172\1\154\1\144\1\150\1\145\2\141\2\164\1\163\1\153\2\172\1"+
+		"\157\1\165\1\155\1\151\1\162\1\151\1\145\1\151\1\172\1\162\1\150\1\145"+
+		"\1\172\1\150\1\154\1\143\1\147\1\171\1\165\1\141\1\171\1\144\1\156\1\172"+
+		"\1\145\1\172\1\154\1\172\2\145\1\150\2\154\1\156\1\147\1\154\1\162\1\163"+
+		"\1\164\1\172\1\151\3\145\1\172\1\145\1\141\1\147\3\172\1\164\1\172\1\145"+
+		"\3\172\1\151\1\145\1\157\1\172\1\156\1\157\1\143\1\172\1\141\1\uffff\1"+
+		"\162\1\172\1\156\1\172\1\164\1\uffff\1\164\1\156\1\172\1\165\1\141\1\145"+
+		"\1\156\1\151\1\171\1\157\1\144\1\151\1\172\1\146\1\163\1\157\1\156\1\155"+
+		"\1\151\1\145\1\143\1\172\1\40\1\172\1\154\1\156\1\162\1\55\1\162\1\145"+
+		"\1\uffff\1\167\1\172\1\156\2\172\1\145\1\157\1\150\1\172\1\144\1\172\1"+
+		"\164\1\145\1\172\1\145\1\146\1\171\1\164\1\172\1\162\1\172\1\162\1\172"+
+		"\1\162\1\167\1\141\1\151\1\145\1\144\1\150\1\172\1\171\1\172\1\171\1\172"+
+		"\1\156\1\163\1\172\1\157\1\145\1\172\2\162\1\151\1\145\1\157\1\172\1\164"+
+		"\1\155\1\141\1\151\1\156\1\144\1\145\1\172\1\156\1\145\1\164\1\144\2\172"+
+		"\1\151\1\150\1\172\2\163\1\172\1\163\1\172\1\156\1\145\1\162\2\172\1\145"+
+		"\1\171\1\147\1\172\1\145\1\141\1\145\1\171\1\156\1\162\1\167\2\172\1\154"+
+		"\1\172\1\167\1\172\1\145\1\172\1\151\1\147\1\167\1\164\1\151\1\172\1\uffff"+
+		"\1\164\3\172\1\144\1\143\1\172\1\40\1\141\1\157\1\172\2\157\1\151\1\146"+
+		"\1\157\1\172\1\143\2\157\1\162\1\153\2\uffff\1\172\1\147\4\172\1\145\1"+
+		"\162\1\155\1\171\1\154\4\172\1\165\2\172\1\u2019\1\172\1\145\1\141\1\164"+
+		"\1\156\1\144\3\172\1\163\2\172\1\164\1\155\1\162\1\144\1\172\1\146\1\162"+
+		"\1\155\1\172\1\154\1\150\1\156\2\172\1\143\1\172\1\147\1\163\1\145\1\172"+
+		"\1\157\3\164\2\141\2\157\2\172\1\156\3\172\1\164\1\142\1\144\1\172\1\147"+
+		"\3\172\1\157\2\144\2\172\1\145\1\156\1\uffff\1\172\1\145\1\142\1\uffff"+
+		"\1\172\1\165\2\172\1\157\1\172\1\146\1\151\1\156\1\172\1\157\2\172\1\145"+
+		"\1\163\1\172\1\145\1\172\1\145\3\154\1\151\1\147\1\172\1\164\4\172\1\165"+
+		"\1\172\1\151\1\145\1\165\1\147\1\171\1\145\1\172\1\164\1\162\1\165\1\172"+
+		"\1\151\1\145\1\165\2\164\1\156\1\172\1\157\1\154\2\172\1\162\1\172\1\145"+
+		"\1\144\1\157\1\uffff\1\172\1\145\1\162\1\172\1\164\1\157\1\141\1\172\2"+
+		"\163\4\172\1\154\1\157\2\172\1\154\1\156\1\163\1\141\5\172\1\163\1\156"+
+		"\1\146\1\147\2\150\1\172\2\145\1\164\1\162\1\172\1\165\1\164\1\40\3\172"+
+		"\1\163\2\172\1\156\1\172\1\147\1\163\2\172\1\147\1\165\1\150\2\145\2\172"+
+		"\1\150\1\145\1\163\1\150\1\155\5\172\1\154\1\164\2\162\1\171\1\144\2\172"+
+		"\2\uffff\1\172\1\145\4\172\1\162\1\172";
+	static final String DFA16_acceptS =
+		"\3\uffff\1\1\52\uffff\1\25\1\26\1\27\1\30\1\31\1\32\1\33\1\34\1\36\1\37"+
+		"\1\uffff\1\34\157\uffff\1\35\1\23\1\24\1\25\1\26\1\27\1\30\1\31\1\32\1"+
+		"\33\1\36\u00ca\uffff\1\16\6\uffff\1\10\21\uffff\1\5\3\uffff\1\3\14\uffff"+
+		"\1\4\21\uffff\1\7\117\uffff\1\11\5\uffff\1\2\36\uffff\1\6\143\uffff\1"+
+		"\14\26\uffff\1\12\1\20\120\uffff\1\13\3\uffff\1\22\73\uffff\1\15\117\uffff"+
+		"\1\17\1\21\10\uffff";
+	static final String DFA16_specialS =
+		"\1\0\u0395\uffff}>";
+	static final String[] DFA16_transitionS = {
+			"\11\67\2\66\2\67\1\66\22\67\1\66\1\60\5\67\1\57\4\67\1\55\1\67\1\56\1"+
+			"\62\12\67\1\54\4\67\1\61\1\67\1\52\1\15\1\13\1\17\1\53\1\16\1\7\1\6\1"+
+			"\2\1\5\1\22\1\10\1\14\1\65\1\11\1\20\1\65\1\4\1\21\1\12\1\65\1\1\4\65"+
+			"\1\63\1\67\1\64\1\67\1\65\1\67\1\23\1\33\1\34\1\35\1\45\1\24\1\36\1\25"+
+			"\1\50\1\26\1\32\1\37\1\40\1\41\1\46\1\27\1\65\1\31\1\30\1\42\1\43\1\51"+
+			"\1\44\1\65\1\47\1\65\uff85\67",
+			"\12\71\7\uffff\10\71\1\70\21\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\10\71\1\70\14\71\1\73\1\71\1\72\2\71\4\uffff\1\71\1\uffff"+
+			"\32\71",
+			"",
+			"\1\74",
+			"\1\76\23\uffff\1\75",
+			"\1\77\3\uffff\1\100",
+			"\1\102\2\uffff\1\101",
+			"\1\103\7\uffff\1\105\5\uffff\1\104",
+			"\1\106\1\uffff\1\107",
 			"\1\110",
-			"\1\110",
-			"\1\113",
-			"\1\115\23\uffff\1\114",
-			"\1\116\3\uffff\1\117",
-			"\1\121\2\uffff\1\120",
-			"\1\122\1\uffff\1\123",
-			"\1\124",
+			"\1\111",
+			"\1\113\3\uffff\1\112\3\uffff\1\114",
+			"\1\115",
+			"\1\116",
+			"\1\117",
+			"\1\120\2\uffff\1\121",
+			"\1\123\4\uffff\1\122\7\uffff\1\124",
 			"\1\125",
-			"\1\126",
-			"\1\127\2\uffff\1\130",
-			"\1\132\4\uffff\1\131\7\uffff\1\133",
-			"\1\134",
-			"\1\137\1\135\6\uffff\1\136",
-			"\1\141\3\uffff\1\142\3\uffff\1\143\2\uffff\1\140\2\uffff\1\145\5\uffff"+
-			"\1\144",
-			"\1\146\3\uffff\1\147\11\uffff\1\150\5\uffff\1\151",
-			"\1\152",
-			"\1\157\3\uffff\1\156\2\uffff\1\153\2\uffff\1\154\2\uffff\1\160\2\uffff"+
-			"\1\155",
-			"\1\162\1\uffff\1\163\1\uffff\1\167\1\171\1\164\1\uffff\1\165\2\uffff"+
-			"\1\166\1\161\1\uffff\1\170",
-			"\1\173\3\uffff\1\174\5\uffff\1\172\5\uffff\1\175",
-			"\1\176",
-			"\1\u0080\3\uffff\1\u0081\3\uffff\1\u0084\2\uffff\1\u0082\2\uffff\1\u0083"+
-			"\2\uffff\1\177",
-			"\1\u0085\6\uffff\1\u0086\3\uffff\1\u0089\2\uffff\1\u0087\5\uffff\1\u0088",
-			"\1\u008a\3\uffff\1\u008c\3\uffff\1\u008e\5\uffff\1\u008b\2\uffff\1\u008d"+
-			"\2\uffff\1\u008f",
-			"\1\u0092\11\uffff\1\u0091\2\uffff\1\u0090",
-			"\1\u0093\3\uffff\1\u0094\3\uffff\1\u0095\5\uffff\1\u0096\11\uffff\1"+
-			"\u0097",
-			"\1\u0098\5\uffff\1\u0099",
-			"\1\u009a\3\uffff\1\u009b\5\uffff\1\u009c",
-			"\1\u009d\1\u00a0\5\uffff\1\u009e\2\uffff\1\u009f",
-			"\1\u00a1",
-			"\1\u00a3\6\uffff\1\u00a5\1\u00a2\5\uffff\1\u00a4",
-			"\1\u00a6\10\uffff\1\u00a7",
-			"\1\u00a8\2\uffff\1\u00a9",
-			"\1\u00aa",
-			"\1\u00ab",
-			"\1\u00ac",
-			"\1\u00ad",
-			"\1\u00ae\11\uffff\1\u00af",
+			"\1\130\1\126\6\uffff\1\127",
+			"\1\132\3\uffff\1\133\3\uffff\1\134\2\uffff\1\131\2\uffff\1\136\5\uffff"+
+			"\1\135",
+			"\1\137\3\uffff\1\140\11\uffff\1\141\5\uffff\1\142",
+			"\1\143",
+			"\1\150\3\uffff\1\147\2\uffff\1\144\2\uffff\1\145\2\uffff\1\151\2\uffff"+
+			"\1\146",
+			"\1\153\1\uffff\1\154\1\uffff\1\160\1\162\1\155\1\uffff\1\156\2\uffff"+
+			"\1\157\1\152\1\uffff\1\161",
+			"\1\164\3\uffff\1\165\5\uffff\1\163\5\uffff\1\166",
+			"\1\167",
+			"\1\171\3\uffff\1\172\3\uffff\1\175\2\uffff\1\173\2\uffff\1\174\2\uffff"+
+			"\1\170",
+			"\1\176\6\uffff\1\177\3\uffff\1\u0082\2\uffff\1\u0080\5\uffff\1\u0081",
+			"\1\u0083\3\uffff\1\u0085\3\uffff\1\u0087\5\uffff\1\u0084\2\uffff\1\u0086"+
+			"\2\uffff\1\u0088",
+			"\1\u008b\11\uffff\1\u008a\2\uffff\1\u0089",
+			"\1\u008c\3\uffff\1\u008d\3\uffff\1\u008e\5\uffff\1\u008f\11\uffff\1"+
+			"\u0090",
+			"\1\u0091\5\uffff\1\u0092",
+			"\1\u0093\3\uffff\1\u0094\5\uffff\1\u0095",
+			"\1\u0096\1\u0099\5\uffff\1\u0097\2\uffff\1\u0098",
+			"\1\u009a",
+			"\1\u009c\6\uffff\1\u009e\1\u009b\5\uffff\1\u009d",
+			"\1\u009f\10\uffff\1\u00a0",
+			"\1\u00a1\2\uffff\1\u00a2",
+			"\1\u00a3",
+			"\1\u00a4",
+			"\1\u00a5",
+			"\1\u00a6",
+			"\1\u00a7\11\uffff\1\u00a8",
+			"\1\u00a9",
+			"\1\u00a9",
 			"",
 			"",
 			"",
@@ -4771,135 +4683,135 @@ public class ShakespeareLexer extends Lexer {
 			"",
 			"",
 			"",
-			"\1\u00b8",
+			"\12\71\7\uffff\10\71\1\70\21\71\4\uffff\1\71\1\uffff\32\71",
 			"",
-			"",
-			"\1\u00b9",
-			"",
-			"",
-			"\1\u00ba\1\u00bb",
-			"\1\u00bc",
-			"\1\u00bd",
-			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u00b4",
+			"\1\u00b5",
+			"\1\u00b6",
+			"\1\u00b7",
+			"\1\u00b8\12\uffff\1\u00b9",
+			"\1\u00ba",
+			"\1\u00bb",
+			"\1\u00bc\1\u00bd",
 			"\1\u00be",
 			"\1\u00bf",
-			"\1\u00c0",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"\1\u00c1",
+			"\1\u00c1\2\uffff\1\u00c0",
 			"\1\u00c2",
 			"\1\u00c3",
 			"\1\u00c4",
-			"\1\u00c5\12\uffff\1\u00c6",
+			"\1\u00c5",
+			"\1\u00c6",
 			"\1\u00c7",
 			"\1\u00c8",
-			"\1\u00ca\2\uffff\1\u00c9",
+			"\1\u00c9",
+			"\1\u00ca",
 			"\1\u00cb",
 			"\1\u00cc",
 			"\1\u00cd",
 			"\1\u00ce",
 			"\1\u00cf",
 			"\1\u00d0",
-			"\1\u00d1",
-			"\1\u00d2",
-			"\1\u00d3",
+			"\1\u00d3\2\uffff\1\u00d1\1\uffff\1\u00d2",
 			"\1\u00d4",
-			"\1\u00d7\2\uffff\1\u00d5\1\uffff\1\u00d6",
-			"\1\u00d8",
-			"\1\u00d9",
-			"\1\u00db\5\uffff\1\u00da",
-			"\1\u00dc\5\uffff\1\u00df\3\uffff\1\u00de\6\uffff\1\u00dd",
-			"\1\u00e0",
-			"\1\u00e1",
-			"\1\u00e2",
-			"\1\u00e3",
-			"\1\u00e5\2\uffff\1\u00ea\1\u00e6\1\u00e8\1\uffff\1\u00e4\1\uffff\1\u00e9"+
-			"\1\uffff\1\u00e7",
-			"\1\u00ec\20\uffff\1\u00eb",
-			"\1\u00ee\6\uffff\1\u00f0\3\uffff\1\u00ed\2\uffff\1\u00ef",
+			"\1\u00d5",
+			"\1\u00d7\5\uffff\1\u00d6",
+			"\1\u00d8\5\uffff\1\u00db\3\uffff\1\u00da\6\uffff\1\u00d9",
+			"\1\u00dc",
+			"\1\u00dd",
+			"\1\u00de",
+			"\1\u00df",
+			"\1\u00e1\2\uffff\1\u00e6\1\u00e2\1\u00e4\1\uffff\1\u00e0\1\uffff\1\u00e5"+
+			"\1\uffff\1\u00e3",
+			"\1\u00e8\20\uffff\1\u00e7",
+			"\1\u00ea\6\uffff\1\u00ec\3\uffff\1\u00e9\2\uffff\1\u00eb",
+			"\1\u00ed",
+			"\1\u00ee",
+			"\1\u00f0\23\uffff\1\u00ef",
 			"\1\u00f1",
 			"\1\u00f2",
-			"\1\u00f4\23\uffff\1\u00f3",
-			"\1\u00f5",
-			"\1\u00f6",
-			"\1\u00f7",
-			"\1\u00f8",
-			"\1\u00f9\11\uffff\1\u00fa",
-			"\1\u00fb\1\u00fc",
+			"\1\u00f3",
+			"\1\u00f4",
+			"\1\u00f5\11\uffff\1\u00f6",
+			"\1\u00f7\1\u00f8",
+			"\1\u00f9",
+			"\1\u00fa",
+			"\1\u00fb\3\uffff\1\u00fc",
 			"\1\u00fd",
-			"\1\u00fe",
-			"\1\u00ff\3\uffff\1\u0100",
-			"\1\u0101",
-			"\1\u0103\7\uffff\1\u0104\5\uffff\1\u0102\5\uffff\1\u0105",
-			"\1\u0107\3\uffff\1\u0108\11\uffff\1\u0106",
-			"\1\u0109",
-			"\1\u010a",
-			"\1\u010c\13\uffff\1\u010d\5\uffff\1\u010b\1\u010e",
-			"\1\u010f",
-			"\1\u0110",
-			"\1\u0111",
-			"\1\u0112",
-			"\1\u0114\15\uffff\1\u0113",
-			"\1\u0116\16\uffff\1\u0115",
-			"\1\u0118\5\uffff\1\u0117",
-			"\1\u011b\7\uffff\1\u0119\5\uffff\1\u011a\5\uffff\1\u011c",
-			"\1\u011d\7\uffff\1\u011e",
-			"\1\u011f",
-			"\1\u0120",
-			"\1\u0122\7\uffff\1\u0121",
-			"\1\u0125\20\uffff\1\u0123\1\uffff\1\u0124",
-			"\1\u0127\3\uffff\1\u0126\1\uffff\1\u0128",
-			"\1\u0129",
-			"\1\u012b\7\uffff\1\u012a",
+			"\1\u00ff\7\uffff\1\u0100\5\uffff\1\u00fe\5\uffff\1\u0101",
+			"\1\u0103\3\uffff\1\u0104\11\uffff\1\u0102",
+			"\1\u0105",
+			"\1\u0106",
+			"\1\u0108\13\uffff\1\u0109\5\uffff\1\u0107\1\u010a",
+			"\1\u010b",
+			"\1\u010c",
+			"\1\u010d",
+			"\1\u010e",
+			"\1\u0110\15\uffff\1\u010f",
+			"\1\u0112\16\uffff\1\u0111",
+			"\1\u0114\5\uffff\1\u0113",
+			"\1\u0117\7\uffff\1\u0115\5\uffff\1\u0116\5\uffff\1\u0118",
+			"\1\u0119\7\uffff\1\u011a",
+			"\1\u011b",
+			"\1\u011c",
+			"\1\u011e\7\uffff\1\u011d",
+			"\1\u0121\20\uffff\1\u011f\1\uffff\1\u0120",
+			"\1\u0123\3\uffff\1\u0122\1\uffff\1\u0124",
+			"\1\u0125",
+			"\1\u0127\7\uffff\1\u0126",
+			"\1\u0128",
+			"\1\u0129\12\uffff\1\u012b\11\uffff\1\u012a",
 			"\1\u012c",
-			"\1\u012d\12\uffff\1\u012f\11\uffff\1\u012e",
-			"\1\u0130",
-			"\1\u0131\1\u0132",
-			"\1\u0133",
-			"\1\u0134\3\uffff\1\u0135",
-			"\1\u0136\12\uffff\1\u0137\2\uffff\1\u0138",
+			"\1\u012d\1\u012e",
+			"\1\u012f",
+			"\1\u0130\3\uffff\1\u0131",
+			"\1\u0132\12\uffff\1\u0133\2\uffff\1\u0134",
+			"\1\u0135",
+			"\1\u0136\1\u0137\3\uffff\1\u0138",
 			"\1\u0139",
-			"\1\u013a\1\u013b\3\uffff\1\u013c",
+			"\1\u013a\16\uffff\1\u013b",
+			"\1\u013c",
 			"\1\u013d",
-			"\1\u013e\16\uffff\1\u013f",
-			"\1\u0140",
-			"\1\u0141",
-			"\1\u0143\13\uffff\1\u0142",
-			"\1\u0144\2\uffff\1\u0145\1\uffff\1\u0146",
-			"\1\u0147",
+			"\1\u013f\13\uffff\1\u013e",
+			"\1\u0140\2\uffff\1\u0141\1\uffff\1\u0142",
+			"\1\u0143",
+			"\1\u0144",
+			"\1\u0146\17\uffff\1\u0147\1\u0145",
 			"\1\u0148",
-			"\1\u014a\17\uffff\1\u014b\1\u0149",
-			"\1\u014c",
-			"\1\u014e\25\uffff\1\u014d",
-			"\1\u014f\17\uffff\1\u0150",
-			"\1\u0151",
-			"\1\u0152",
+			"\1\u014a\25\uffff\1\u0149",
+			"\1\u014b\17\uffff\1\u014c",
+			"\1\u014d",
+			"\1\u014e",
+			"\1\u014f",
+			"\1\u0150",
+			"\1\u0151\5\uffff\1\u0152",
 			"\1\u0153",
 			"\1\u0154",
-			"\1\u0155\5\uffff\1\u0156",
+			"\1\u0155",
+			"\1\u0156",
 			"\1\u0157",
 			"\1\u0158",
 			"\1\u0159",
 			"\1\u015a",
 			"\1\u015b",
 			"\1\u015c",
-			"\1\u015d",
-			"\1\u015e",
+			"\1\u015e\3\uffff\1\u015d",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
 			"\1\u015f",
 			"\1\u0160",
-			"\1\u0162\3\uffff\1\u0161",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
+			"\1\u0161",
+			"\1\u0162",
 			"\1\u0163",
 			"\1\u0164",
 			"\1\u0165",
@@ -4927,17 +4839,17 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u017b",
 			"\1\u017c",
 			"\1\u017d",
-			"\1\u017e",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u017f",
 			"\1\u0180",
 			"\1\u0181",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u0182",
 			"\1\u0183",
-			"\1\u0184",
-			"\1\u0185",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\7\71\1\u0184\22\71",
 			"\1\u0186",
 			"\1\u0187",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\7\72\1\u0188\22\72",
+			"\1\u0188",
+			"\1\u0189",
 			"\1\u018a",
 			"\1\u018b",
 			"\1\u018c",
@@ -4949,66 +4861,66 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0192",
 			"\1\u0193",
 			"\1\u0194",
-			"\1\u0195",
-			"\1\u0196",
-			"\1\u0197",
+			"\1\u0196\1\u0195",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0198",
-			"\1\u019a\1\u0199",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u0199",
+			"\1\u019a",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u019c",
 			"\1\u019d",
 			"\1\u019e",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u01a0",
+			"\1\u01a0\2\uffff\1\u019f",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u01a1",
 			"\1\u01a2",
-			"\1\u01a4\2\uffff\1\u01a3",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u01a3\7\uffff\1\u01a4",
 			"\1\u01a5",
 			"\1\u01a6",
-			"\1\u01a7\7\uffff\1\u01a8",
+			"\1\u01a7",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u01a9",
 			"\1\u01aa",
 			"\1\u01ab",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u01ac",
 			"\1\u01ad",
-			"\1\u01ae",
-			"\1\u01af",
+			"\1\u01ae\11\uffff\1\u01af",
 			"\1\u01b0",
 			"\1\u01b1",
-			"\1\u01b2\11\uffff\1\u01b3",
+			"\1\u01b2",
+			"\1\u01b3",
 			"\1\u01b4",
 			"\1\u01b5",
 			"\1\u01b6",
 			"\1\u01b7",
 			"\1\u01b8",
-			"\1\u01b9",
-			"\1\u01ba",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\3\71\1\u01b9\26\71",
 			"\1\u01bb",
 			"\1\u01bc",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\3\72\1\u01bd\26\72",
+			"\1\u01bd",
+			"\1\u01be",
 			"\1\u01bf",
 			"\1\u01c0",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u01c1",
 			"\1\u01c2",
 			"\1\u01c3",
 			"\1\u01c4",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u01c5",
 			"\1\u01c6",
 			"\1\u01c7",
 			"\1\u01c8",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u01c9",
 			"\1\u01ca",
 			"\1\u01cb",
-			"\1\u01cc",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\1\u01cc\31\71",
 			"\1\u01cd",
 			"\1\u01ce",
 			"\1\u01cf",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\1\u01d0\31\72",
+			"\1\u01d0",
 			"\1\u01d1",
 			"\1\u01d2",
 			"\1\u01d3",
@@ -5018,11 +4930,11 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01d7",
 			"\1\u01d8",
 			"\1\u01d9",
-			"\1\u01da",
-			"\1\u01db",
+			"\1\u01da\14\uffff\1\u01db",
 			"\1\u01dc",
 			"\1\u01dd",
-			"\1\u01de\14\uffff\1\u01df",
+			"\1\u01de",
+			"\1\u01df",
 			"\1\u01e0",
 			"\1\u01e1",
 			"\1\u01e2",
@@ -5030,15 +4942,15 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01e4",
 			"\1\u01e5",
 			"\1\u01e6",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u01e7",
-			"\1\u01e8",
-			"\1\u01e9",
+			"\1\u01e8\3\uffff\1\u01e9",
 			"\1\u01ea",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u01eb",
-			"\1\u01ec\3\uffff\1\u01ed",
+			"\1\u01ec\16\uffff\1\u01eb\1\u01ed",
 			"\1\u01ee",
-			"\1\u01f0\16\uffff\1\u01ef\1\u01f1",
+			"\1\u01ef",
+			"\1\u01f0",
+			"\1\u01f1",
 			"\1\u01f2",
 			"\1\u01f3",
 			"\1\u01f4",
@@ -5052,40 +4964,40 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u01fc",
 			"\1\u01fd",
 			"\1\u01fe",
-			"\1\u01ff",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\14\71\1\u01ff\15\71",
 			"\1\u0200",
 			"\1\u0201",
 			"\1\u0202",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\14\72\1\u0203\15\72",
+			"\1\u0203",
 			"\1\u0204",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0205",
 			"\1\u0206",
 			"\1\u0207",
-			"\1\u0208",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u0209",
-			"\1\u020a",
+			"\1\u0208\6\uffff\1\u0209",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u020b",
-			"\1\u020c\6\uffff\1\u020d",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u020c",
+			"\1\u020d",
+			"\1\u020e",
 			"\1\u020f",
-			"\1\u0210",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0211",
 			"\1\u0212",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0213",
 			"\1\u0214",
 			"\1\u0215",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0216",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0217",
 			"\1\u0218",
 			"\1\u0219",
 			"\1\u021a",
 			"\1\u021b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u021c",
 			"\1\u021d",
 			"\1\u021e",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u021f",
 			"\1\u0220",
 			"\1\u0221",
@@ -5095,56 +5007,56 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u0225",
 			"\1\u0226",
 			"\1\u0227",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0228",
 			"\1\u0229",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u022a",
 			"\1\u022b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u022c",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u022d",
 			"",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u022e",
-			"\1\u022f",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0230",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0231",
-			"",
-			"\1\u0232",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u0234",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u0232\17\uffff\1\u0233",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\30\71\1\u0234\1\71",
 			"\1\u0235",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u0236\17\uffff\1\u0237",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\30\72\1\u0238\1\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u0236",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u0185",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u0237",
+			"\1\u0238",
 			"\1\u0239",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u023a",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u0189",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u023b",
-			"\1\u023c",
-			"\1\u023d",
 			"",
+			"\1\u023a",
+			"\1\u023b",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u023c",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u023d",
 			"\1\u023e",
 			"\1\u023f",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0240",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0241",
 			"\1\u0242",
 			"\1\u0243",
 			"\1\u0244",
 			"\1\u0245",
+			"",
 			"\1\u0246",
 			"\1\u0247",
 			"\1\u0248",
 			"\1\u0249",
-			"",
 			"\1\u024a",
 			"\1\u024b",
 			"\1\u024c",
@@ -5153,57 +5065,57 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u024f",
 			"\1\u0250",
 			"\1\u0251",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0252",
 			"\1\u0253",
 			"\1\u0254",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0255",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0256",
 			"\1\u0257",
 			"\1\u0258",
-			"",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0259",
 			"\1\u025a",
 			"\1\u025b",
 			"\1\u025c",
 			"\1\u025d",
 			"\1\u025e",
-			"\1\u025f",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\22\71\1\u025f\7\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0260",
 			"\1\u0261",
 			"\1\u0262",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\22\72\1\u0263\7\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u0263",
 			"\1\u0264",
 			"\1\u0265",
 			"\1\u0266",
 			"\1\u0267",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0268",
 			"\1\u0269",
 			"\1\u026a",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u026b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u026c",
 			"\1\u026d",
 			"\1\u026e",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u026f",
 			"\1\u0270",
 			"\1\u0271",
 			"\1\u0272",
 			"\1\u0273",
 			"\1\u0274",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0275",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0276",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0277",
 			"\1\u0278",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0279",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u027a",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u027b",
 			"\1\u027c",
 			"\1\u027d",
@@ -5211,40 +5123,43 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u027f",
 			"\1\u0280",
 			"\1\u0281",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0282",
 			"\1\u0283",
 			"\1\u0284",
 			"\1\u0285",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0286",
 			"\1\u0287",
 			"\1\u0288",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0289",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u028a",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u028b",
 			"\1\u028c",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u028d",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u028e",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u028f",
 			"\1\u0290",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0291",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"",
 			"\1\u0292",
-			"\1\u0293",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0294",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0295",
 			"",
 			"\1\u0296",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u0297",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0298",
 			"\1\u0299",
 			"\1\u029a",
@@ -5254,424 +5169,417 @@ public class ShakespeareLexer extends Lexer {
 			"\1\u029e",
 			"\1\u029f",
 			"\1\u02a0",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02a1",
-			"",
 			"\1\u02a2",
 			"\1\u02a3",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02a4",
 			"\1\u02a5",
 			"\1\u02a6",
 			"\1\u02a7",
 			"\1\u02a8",
 			"\1\u02a9",
-			"\1\u02aa",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02ab",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02ac",
 			"\1\u02ad",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u02ae",
+			"\1\u0197",
 			"\1\u02af",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02b0",
+			"",
 			"\1\u02b1",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02b2",
-			"\1\u019b",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02b3",
 			"\1\u02b4",
-			"",
 			"\1\u02b5",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u02b6",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u02b7",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u02b6\1\uffff\1\u02b7",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02b8",
 			"\1\u02b9",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u02ba\1\uffff\1\u02bb",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u02ba",
+			"\1\u02bb",
 			"\1\u02bc",
 			"\1\u02bd",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02be",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02bf",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02c0",
 			"\1\u02c1",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02c2",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02c3",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02c4",
 			"\1\u02c5",
 			"\1\u02c6",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02c7",
-			"\1\u02c8",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\4\71\1\u02c8\25\71",
 			"\1\u02c9",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02ca",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02cb",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\4\72\1\u02cc\25\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u02cc",
 			"\1\u02cd",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02ce",
 			"\1\u02cf",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02d0",
 			"\1\u02d1",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02d2",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02d3",
 			"\1\u02d4",
 			"\1\u02d5",
 			"\1\u02d6",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02d7",
 			"\1\u02d8",
 			"\1\u02d9",
-			"\1\u02da",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\3\71\1\u02da\26\71",
 			"\1\u02db",
 			"\1\u02dc",
 			"\1\u02dd",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\3\72\1\u02de\26\72",
+			"\1\u02de",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02df",
 			"\1\u02e0",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02e1",
 			"\1\u02e2",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u02e3",
-			"\1\u02e4",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u02e5",
-			"\1\u02e6",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u02e7\1\uffff\1\u02e8\6\uffff\1\u02e9\5\uffff\1\u02ea",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u02e3\1\uffff\1\u02e4\6\uffff\1\u02e5\5\uffff\1\u02e6",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u02e7",
+			"\1\u02e8",
+			"\1\u02e9",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u02ea",
 			"\1\u02eb",
 			"\1\u02ec",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02ed",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02ee",
 			"\1\u02ef",
 			"\1\u02f0",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02f1",
 			"\1\u02f2",
 			"\1\u02f3",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02f4",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02f5",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02f6",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02f7",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02f8",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02f9",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02fa",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u02fb",
-			"\1\u02fc",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"",
 			"\1\u02fd",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u02fe",
 			"\1\u02ff",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u0300",
 			"\1\u0301",
 			"\1\u0302",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0303",
 			"\1\u0304",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0305",
 			"\1\u0306",
 			"\1\u0307",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0308",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0309",
 			"\1\u030a",
 			"\1\u030b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u030c",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u030d",
-			"\1\u030e",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\13\71\1\u030e\16\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u030f",
 			"\1\u0310",
-			"",
-			"",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0311",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\13\72\1\u0312\16\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u0312",
 			"\1\u0313",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0314",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u019b",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0315",
 			"\1\u0316",
 			"\1\u0317",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0318",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u019f",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0319",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u031a",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u031b",
 			"\1\u031c",
 			"\1\u031d",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u031e",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u031f",
 			"\1\u0320",
 			"\1\u0321",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0322",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0323",
 			"\1\u0324",
-			"\1\u0325",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\13\71\1\u0325\16\71",
 			"\1\u0326",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0327",
 			"\1\u0328",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\13\72\1\u0329\16\72",
+			"\1\u0329",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u032a",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u032b",
 			"\1\u032c",
 			"\1\u032d",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u032e",
 			"\1\u032f",
 			"\1\u0330",
 			"\1\u0331",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0332",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0333",
 			"\1\u0334",
 			"\1\u0335",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0336",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0337",
 			"\1\u0338",
 			"\1\u0339",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u033a",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u033b",
-			"\1\u033c",
-			"\1\u033d",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u033e",
-			"\1\u033f",
 			"",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u033d",
+			"\1\u033e",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u033f",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\1\u0340",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0341",
 			"\1\u0342",
-			"",
 			"\1\u0343",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0344",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0345",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0346",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0347",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0348",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0349",
 			"\1\u034a",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u034b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u034c",
 			"\1\u034d",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u034e",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u034f",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0350",
 			"\1\u0351",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0352",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0353",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0354",
 			"\1\u0355",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0356",
 			"\1\u0357",
 			"\1\u0358",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0359",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u035a",
 			"\1\u035b",
 			"\1\u035c",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u035d",
 			"\1\u035e",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u035f",
 			"\1\u0360",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0361",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0362",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0363",
 			"\1\u0364",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0365",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0366",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0367",
 			"\1\u0368",
-			"",
 			"\1\u0369",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u036a",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u036b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u036c",
 			"\1\u036d",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u036e",
 			"\1\u036f",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0370",
 			"\1\u0371",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0372",
 			"\1\u0373",
 			"\1\u0374",
 			"\1\u0375",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0376",
 			"\1\u0377",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0378",
 			"\1\u0379",
 			"\1\u037a",
 			"\1\u037b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u037c",
 			"\1\u037d",
 			"\1\u037e",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u037f",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0380",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0381",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0382",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0383",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0384",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0385",
 			"\1\u0386",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
 			"\1\u0387",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0388",
 			"\1\u0389",
 			"\1\u038a",
 			"\1\u038b",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u038c",
-			"\1\u038d",
+			"\1\u038c\4\uffff\1\u038d",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u038e",
 			"\1\u038f",
-			"\1\u0390\4\uffff\1\u0391",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
+			"\1\u0390",
+			"\1\u0391",
 			"\1\u0392",
 			"\1\u0393",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"",
+			"",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0394",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71",
 			"\1\u0395",
-			"\1\u0396",
-			"\1\u0397",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"",
-			"",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u0398",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72",
-			"\1\u0399",
-			"\12\72\7\uffff\32\72\4\uffff\1\72\1\uffff\32\72"
+			"\12\71\7\uffff\32\71\4\uffff\1\71\1\uffff\32\71"
 	};
 
-	static final short[] DFA13_eot = DFA.unpackEncodedString(DFA13_eotS);
-	static final short[] DFA13_eof = DFA.unpackEncodedString(DFA13_eofS);
-	static final char[] DFA13_min = DFA.unpackEncodedStringToUnsignedChars(DFA13_minS);
-	static final char[] DFA13_max = DFA.unpackEncodedStringToUnsignedChars(DFA13_maxS);
-	static final short[] DFA13_accept = DFA.unpackEncodedString(DFA13_acceptS);
-	static final short[] DFA13_special = DFA.unpackEncodedString(DFA13_specialS);
-	static final short[][] DFA13_transition;
+	static final short[] DFA16_eot = DFA.unpackEncodedString(DFA16_eotS);
+	static final short[] DFA16_eof = DFA.unpackEncodedString(DFA16_eofS);
+	static final char[] DFA16_min = DFA.unpackEncodedStringToUnsignedChars(DFA16_minS);
+	static final char[] DFA16_max = DFA.unpackEncodedStringToUnsignedChars(DFA16_maxS);
+	static final short[] DFA16_accept = DFA.unpackEncodedString(DFA16_acceptS);
+	static final short[] DFA16_special = DFA.unpackEncodedString(DFA16_specialS);
+	static final short[][] DFA16_transition;
 
 	static {
-		int numStates = DFA13_transitionS.length;
-		DFA13_transition = new short[numStates][];
+		int numStates = DFA16_transitionS.length;
+		DFA16_transition = new short[numStates][];
 		for (int i=0; i<numStates; i++) {
-			DFA13_transition[i] = DFA.unpackEncodedString(DFA13_transitionS[i]);
+			DFA16_transition[i] = DFA.unpackEncodedString(DFA16_transitionS[i]);
 		}
 	}
 
-	protected class DFA13 extends DFA {
+	protected class DFA16 extends DFA {
 
-		public DFA13(BaseRecognizer recognizer) {
+		public DFA16(BaseRecognizer recognizer) {
 			this.recognizer = recognizer;
-			this.decisionNumber = 13;
-			this.eot = DFA13_eot;
-			this.eof = DFA13_eof;
-			this.min = DFA13_min;
-			this.max = DFA13_max;
-			this.accept = DFA13_accept;
-			this.special = DFA13_special;
-			this.transition = DFA13_transition;
+			this.decisionNumber = 16;
+			this.eot = DFA16_eot;
+			this.eof = DFA16_eof;
+			this.min = DFA16_min;
+			this.max = DFA16_max;
+			this.accept = DFA16_accept;
+			this.special = DFA16_special;
+			this.transition = DFA16_transition;
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__36 | T__37 | T__38 | T__39 | T__40 | T__41 | T__42 | COMMENT | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | AND | PRINTVALUE | PRINTASCII | READVALUE | READASCII | CL | CM | DOT | AP | EP | QM | FS | ID | WS | LB | RB | ERROR_TK );";
+			return "1:1: Tokens : ( RN | CHARACTER | POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN | POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE | ACT | SCENE | ENTER | EXIT | EXEUNT | AND | PRINTVALUE | PRINTASCII | READVALUE | READASCII | CL | CM | DOT | AP | EP | QM | FS | LB | RB | ID | COMMENT | WS | ERROR_TK );";
 		}
 		@Override
 		public int specialStateTransition(int s, IntStream _input) throws NoViableAltException {
@@ -5679,68 +5587,68 @@ public class ShakespeareLexer extends Lexer {
 			int _s = s;
 			switch ( s ) {
 					case 0 : 
-						int LA13_0 = input.LA(1);
+						int LA16_0 = input.LA(1);
 						s = -1;
-						if ( (LA13_0=='C') ) {s = 1;}
-						else if ( (LA13_0=='D') ) {s = 2;}
-						else if ( (LA13_0=='I') ) {s = 3;}
-						else if ( (LA13_0=='L') ) {s = 4;}
-						else if ( (LA13_0=='M') ) {s = 5;}
-						else if ( (LA13_0=='V') ) {s = 6;}
-						else if ( (LA13_0=='X') ) {s = 7;}
-						else if ( (LA13_0==',') ) {s = 8;}
-						else if ( (LA13_0==':') ) {s = 9;}
-						else if ( (LA13_0=='R') ) {s = 10;}
-						else if ( (LA13_0=='J') ) {s = 11;}
-						else if ( (LA13_0=='H') ) {s = 12;}
-						else if ( (LA13_0=='G') ) {s = 13;}
-						else if ( (LA13_0=='O') ) {s = 14;}
-						else if ( (LA13_0=='T') ) {s = 15;}
-						else if ( (LA13_0=='B') ) {s = 16;}
-						else if ( (LA13_0=='F') ) {s = 17;}
-						else if ( (LA13_0=='P') ) {s = 18;}
-						else if ( (LA13_0=='S') ) {s = 19;}
-						else if ( (LA13_0=='K') ) {s = 20;}
-						else if ( (LA13_0=='a') ) {s = 21;}
-						else if ( (LA13_0=='f') ) {s = 22;}
-						else if ( (LA13_0=='h') ) {s = 23;}
-						else if ( (LA13_0=='j') ) {s = 24;}
-						else if ( (LA13_0=='p') ) {s = 25;}
-						else if ( (LA13_0=='s') ) {s = 26;}
-						else if ( (LA13_0=='r') ) {s = 27;}
-						else if ( (LA13_0=='k') ) {s = 28;}
-						else if ( (LA13_0=='b') ) {s = 29;}
-						else if ( (LA13_0=='c') ) {s = 30;}
-						else if ( (LA13_0=='d') ) {s = 31;}
-						else if ( (LA13_0=='g') ) {s = 32;}
-						else if ( (LA13_0=='l') ) {s = 33;}
-						else if ( (LA13_0=='m') ) {s = 34;}
-						else if ( (LA13_0=='n') ) {s = 35;}
-						else if ( (LA13_0=='t') ) {s = 36;}
-						else if ( (LA13_0=='u') ) {s = 37;}
-						else if ( (LA13_0=='w') ) {s = 38;}
-						else if ( (LA13_0=='e') ) {s = 39;}
-						else if ( (LA13_0=='o') ) {s = 40;}
-						else if ( (LA13_0=='y') ) {s = 41;}
-						else if ( (LA13_0=='i') ) {s = 42;}
-						else if ( (LA13_0=='v') ) {s = 43;}
-						else if ( (LA13_0=='A') ) {s = 44;}
-						else if ( (LA13_0=='E') ) {s = 45;}
-						else if ( (LA13_0=='.') ) {s = 46;}
-						else if ( (LA13_0=='\'') ) {s = 47;}
-						else if ( (LA13_0=='!') ) {s = 48;}
-						else if ( (LA13_0=='?') ) {s = 49;}
-						else if ( (LA13_0=='/') ) {s = 50;}
-						else if ( (LA13_0=='N'||LA13_0=='Q'||LA13_0=='U'||LA13_0=='W'||(LA13_0 >= 'Y' && LA13_0 <= 'Z')||LA13_0=='_'||LA13_0=='q'||LA13_0=='x'||LA13_0=='z') ) {s = 51;}
-						else if ( ((LA13_0 >= '\t' && LA13_0 <= '\n')||LA13_0=='\r'||LA13_0==' ') ) {s = 52;}
-						else if ( (LA13_0=='[') ) {s = 53;}
-						else if ( (LA13_0==']') ) {s = 54;}
-						else if ( ((LA13_0 >= '\u0000' && LA13_0 <= '\b')||(LA13_0 >= '\u000B' && LA13_0 <= '\f')||(LA13_0 >= '\u000E' && LA13_0 <= '\u001F')||(LA13_0 >= '\"' && LA13_0 <= '&')||(LA13_0 >= '(' && LA13_0 <= '+')||LA13_0=='-'||(LA13_0 >= '0' && LA13_0 <= '9')||(LA13_0 >= ';' && LA13_0 <= '>')||LA13_0=='@'||LA13_0=='\\'||LA13_0=='^'||LA13_0=='`'||(LA13_0 >= '{' && LA13_0 <= '\uFFFF')) ) {s = 55;}
+						if ( (LA16_0=='V') ) {s = 1;}
+						else if ( (LA16_0=='I') ) {s = 2;}
+						else if ( (LA16_0=='R') ) {s = 4;}
+						else if ( (LA16_0=='J') ) {s = 5;}
+						else if ( (LA16_0=='H') ) {s = 6;}
+						else if ( (LA16_0=='G') ) {s = 7;}
+						else if ( (LA16_0=='L') ) {s = 8;}
+						else if ( (LA16_0=='O') ) {s = 9;}
+						else if ( (LA16_0=='T') ) {s = 10;}
+						else if ( (LA16_0=='C') ) {s = 11;}
+						else if ( (LA16_0=='M') ) {s = 12;}
+						else if ( (LA16_0=='B') ) {s = 13;}
+						else if ( (LA16_0=='F') ) {s = 14;}
+						else if ( (LA16_0=='D') ) {s = 15;}
+						else if ( (LA16_0=='P') ) {s = 16;}
+						else if ( (LA16_0=='S') ) {s = 17;}
+						else if ( (LA16_0=='K') ) {s = 18;}
+						else if ( (LA16_0=='a') ) {s = 19;}
+						else if ( (LA16_0=='f') ) {s = 20;}
+						else if ( (LA16_0=='h') ) {s = 21;}
+						else if ( (LA16_0=='j') ) {s = 22;}
+						else if ( (LA16_0=='p') ) {s = 23;}
+						else if ( (LA16_0=='s') ) {s = 24;}
+						else if ( (LA16_0=='r') ) {s = 25;}
+						else if ( (LA16_0=='k') ) {s = 26;}
+						else if ( (LA16_0=='b') ) {s = 27;}
+						else if ( (LA16_0=='c') ) {s = 28;}
+						else if ( (LA16_0=='d') ) {s = 29;}
+						else if ( (LA16_0=='g') ) {s = 30;}
+						else if ( (LA16_0=='l') ) {s = 31;}
+						else if ( (LA16_0=='m') ) {s = 32;}
+						else if ( (LA16_0=='n') ) {s = 33;}
+						else if ( (LA16_0=='t') ) {s = 34;}
+						else if ( (LA16_0=='u') ) {s = 35;}
+						else if ( (LA16_0=='w') ) {s = 36;}
+						else if ( (LA16_0=='e') ) {s = 37;}
+						else if ( (LA16_0=='o') ) {s = 38;}
+						else if ( (LA16_0=='y') ) {s = 39;}
+						else if ( (LA16_0=='i') ) {s = 40;}
+						else if ( (LA16_0=='v') ) {s = 41;}
+						else if ( (LA16_0=='A') ) {s = 42;}
+						else if ( (LA16_0=='E') ) {s = 43;}
+						else if ( (LA16_0==':') ) {s = 44;}
+						else if ( (LA16_0==',') ) {s = 45;}
+						else if ( (LA16_0=='.') ) {s = 46;}
+						else if ( (LA16_0=='\'') ) {s = 47;}
+						else if ( (LA16_0=='!') ) {s = 48;}
+						else if ( (LA16_0=='?') ) {s = 49;}
+						else if ( (LA16_0=='/') ) {s = 50;}
+						else if ( (LA16_0=='[') ) {s = 51;}
+						else if ( (LA16_0==']') ) {s = 52;}
+						else if ( (LA16_0=='N'||LA16_0=='Q'||LA16_0=='U'||(LA16_0 >= 'W' && LA16_0 <= 'Z')||LA16_0=='_'||LA16_0=='q'||LA16_0=='x'||LA16_0=='z') ) {s = 53;}
+						else if ( ((LA16_0 >= '\t' && LA16_0 <= '\n')||LA16_0=='\r'||LA16_0==' ') ) {s = 54;}
+						else if ( ((LA16_0 >= '\u0000' && LA16_0 <= '\b')||(LA16_0 >= '\u000B' && LA16_0 <= '\f')||(LA16_0 >= '\u000E' && LA16_0 <= '\u001F')||(LA16_0 >= '\"' && LA16_0 <= '&')||(LA16_0 >= '(' && LA16_0 <= '+')||LA16_0=='-'||(LA16_0 >= '0' && LA16_0 <= '9')||(LA16_0 >= ';' && LA16_0 <= '>')||LA16_0=='@'||LA16_0=='\\'||LA16_0=='^'||LA16_0=='`'||(LA16_0 >= '{' && LA16_0 <= '\uFFFF')) ) {s = 55;}
+						else s = 3;
 						if ( s>=0 ) return s;
 						break;
 			}
 			NoViableAltException nvae =
-				new NoViableAltException(getDescription(), 13, _s, input);
+				new NoViableAltException(getDescription(), 16, _s, input);
 			error(nvae);
 			throw nvae;
 		}

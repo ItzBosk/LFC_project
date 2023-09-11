@@ -132,50 +132,23 @@ stageEvent
 	{System.out.println("    - Ho riconosciuto degli stage events");}
 	;
 
+root returns [Token tk]  
+    	: 
+    	rn=RN {tk = $rn;}
+    	;
+
 /* ****************************
 **   Analizzatore sintattico 
 **   aka Lexer, aka Scanner
 ***************************** */
 
 
-// --- atomic definitions
-one         : 'I';
-five        : 'V';
-ten         : 'X';
-fifty       : 'L';
-oneHundred  : 'C';
-fiveHundred : 'D';
-oneThousand : 'M';
+// roman number
+RN
+	:
+	(('V')? ('I')*) | 'IX' | 'IV'
+	;
 
-root returns [Token tk]  
-    	: 
-    	rn=((oneThousand)* hundreds? tens? units?) {tk = $rn;}
-    	;
-
-// --- I, II, III, IV, IX or V VI, VII, VIII
-units 
-    	: 
-    	one ((one)* | five  | ten) | five (one)*
-    	; 
-
-// --- X, XX, XXX, XL, XC or L, LX, LXX, LXXX
-tens    
-    	: 
-    	ten ((ten)* | fifty | oneHundred) | fifty (ten)*
-   	;	
-
-// --- C, CC, CCC, CD, CM or D, DC, DCC, DCCC 
-hundreds
-    :
-    oneHundred ((oneHundred)* | fiveHundred | oneThousand) | fiveHundred (oneHundred)*
-    ; 
-
-
-COMMENT
-    	:   
-        (', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n'
-        ;
-    
 
 CHARACTER
     :   'Romeo'
@@ -395,7 +368,6 @@ NEGATIVEADJECTIVE
     ;
 
 
-
 // keywords
 ACT     	:  	'Act';
 SCENE      	:   	'Scene';    
@@ -428,7 +400,8 @@ AP      :   '\'';
 EP      :   '!';
 QM      :   '?';
 FS  	:   '/';
-
+LB  	:   '[';        
+RB  	:   ']';
 
 // sono le lettere che compongono ogni parola che usiamo
 ID  :   ( LETTER |'_') 
@@ -436,7 +409,12 @@ ID  :   ( LETTER |'_')
     ;
 
 
-//spazi e new line. non sono visibili come token perche hidden
+COMMENT
+    	:   
+        (', ' | ': ') (  ~('\n'|'\r')* ) '\r'? '\n'
+        ;
+
+
 WS  :   
 	( ' '
         | '\t'
@@ -444,11 +422,6 @@ WS  :
         | '\n'
         )+ {$channel=HIDDEN;}
     ;
-
-  
-// Brackets
-LB  :   '[';        
-RB  :   ']';
 
 
 // ho visto questo esempio:
