@@ -31,15 +31,17 @@ public class Handler {
 	public static int INVALID_CHARACTER = 6;
 	public static int MISSING_COMMENT = 7;
 	public static int ALREADY_DECLARED_CHARACTER = 8;
-	public static int INVALID_ROMAN_NUMBER = 9;
-	public static int ALREADY_DEFINED_ACT = 10;
-	public static int ALREADY_DEFINED_SCENE_IN_ACT = 11;
-	public static int SKIPPED_ACT = 12;
-	public static int SKIPPED_SCENE = 13;
-	public static int UNDECLARED_CHARACTER = 14;
-	public static int CHARACTER_ALREADY_ON_STAGE = 15;
-	public static int ALREADY_TWO_CARACTERS_ON_STAGE = 16;
-	public static int CHARACTER_NOT_ON_STAGE = 17;
+	public static int MISSING_ACT_NUMBER = 9;
+	public static int INVALID_ROMAN_NUMBER = 10;
+	public static int ALREADY_DEFINED_ACT = 11;
+	public static int MISSING_SCENE_NUMBER = 12;
+	public static int ALREADY_DEFINED_SCENE_IN_ACT = 13;
+	public static int SKIPPED_ACT = 14;
+	public static int SKIPPED_SCENE = 15;
+	public static int UNDECLARED_CHARACTER = 16;
+	public static int CHARACTER_ALREADY_ON_STAGE = 17;
+	public static int ALREADY_TWO_CARACTERS_ON_STAGE = 18;
+	public static int CHARACTER_NOT_ON_STAGE = 19;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -125,10 +127,14 @@ public class Handler {
 			errMsg += "Missing comment";
 		else if (code == ALREADY_DECLARED_CHARACTER)
 			errMsg += "The character has been already declared";
+		else if (code == MISSING_ACT_NUMBER)
+			errMsg += "The act number is missing";
 		else if (code == INVALID_ROMAN_NUMBER)
 			errMsg += "The number is not a roman number";
 		else if (code == ALREADY_DEFINED_ACT)
 			errMsg += "Already defined act";
+		else if (code == MISSING_SCENE_NUMBER)
+			errMsg += "The scene number is missing";
 		else if (code == ALREADY_DEFINED_SCENE_IN_ACT)
 			errMsg += "Already defined scene in this act";
 		else if (code == SKIPPED_ACT)
@@ -148,12 +154,17 @@ public class Handler {
 	}
 
 	// controlla titolo
-	public void checkNullTitle(Token t, Token d) { // t=testo, d=dot
+	public void checkTitle(Token t, Token d) { // t=testo, d=dot
 		try {
 			if (t == null) {
 				myErrorHandler(MISSING_TITLE, null);
 			} else if (!d.getText().equals(".")) {
 				myErrorHandler(MISSING_DOT, d);
+			}
+			else {
+				System.out.println("* I recognized the title");
+				// vorrei aggiungere anche il titolo
+				System.out.println();
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
@@ -174,12 +185,15 @@ public class Handler {
 			else
 				myErrorHandler(ALREADY_DECLARED_CHARACTER, ch);
 		}
-		stampaPersonaggi();
+		printCharacters();
 		if (co == null)
 			myErrorHandler(MISSING_COMMENT, co);
 	}
 
 	//////////////////////// RomanNumber.java /////////////////////////////////////
+	// dovrebbe essere visibile la classe apposita, non me la vede, 
+	// non ho voglia, per ora cago qua tutto :)
+	
 	public static boolean isRoman(String s) {
 		return s.matches("M{0,3}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})");
 	}
@@ -222,45 +236,60 @@ public class Handler {
 	}
 	//////////////////////////////////////////////////////////////////////////////////////
 
+	
 	// dichiarazione atto
 	public void checkAct(Token rn, Token co) {
-//		if (rn != null) {
-//			String romanNumber = rn.getText();
-//			if (!isRoman(romanNumber))
-//				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
-//			else {
-//				int newAct = decode(romanNumber);
-//				if (scenicMoment > newAct) 		// già definito
-//					myErrorHandler(ALREADY_DEFINED_ACT, rn);
-//				else if (newAct > scenicMoment + 1) 	// salto nella numerazione
-//					myErrorHandler(SKIPPED_ACT, rn);
-//				else
-//					scenicMoment = (int) scenicMoment + 1;
-//			}
-//		}
-//		if (co == null)
-//			myErrorHandler(MISSING_COMMENT, co);
+		if (rn != null) {
+			String romanNumber = rn.getText();
+			if (!isRoman(romanNumber))
+				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+			else {
+				int newAct = decode(romanNumber);
+				if (scenicMoment > newAct) 		// già definito
+					myErrorHandler(ALREADY_DEFINED_ACT, rn);
+				else if (newAct > scenicMoment + 1) 	// salto nella numerazione
+					myErrorHandler(SKIPPED_ACT, rn);
+				else {
+					if (co == null)
+						myErrorHandler(MISSING_COMMENT, co);
+					else {
+						scenicMoment = (int) scenicMoment + 1;
+						System.out.println("* I recognized the act " + newAct);
+						// vorrei aggiungere anche il commento ma co.toString() non funge come credevo
+						System.out.println();
+					}
+				}
+			}
+		}
+		else
+			myErrorHandler(MISSING_ACT_NUMBER, rn);
 	}
 
-	// dichiarazione atto
+	// dichiarazione scena
 	public void checkScene(Token rn, Token co) {
-//		if (rn != null) {
-//			String romanNumber = rn.getText();
-//			if (!isRoman(romanNumber))
-//				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
-//			else {
-//				// sarebbe bello arrotondare, però va e penso che in caso di moooolte scene potrebbe dare problemi
-//				double newScene = (double) decode(romanNumber) / 10;
-//				if ((scenicMoment - (int) scenicMoment) > newScene) // già definita in questo atto
-//					myErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
-//				else if ((scenicMoment + newScene - 0.1) > (scenicMoment + 0.1)) // salto nella numerazione
-//					myErrorHandler(SKIPPED_SCENE, rn);
-//				else
-//					scenicMoment = scenicMoment + 0.1;  // okappa
-//			}
-//		}
-//		if (co == null)
-//			myErrorHandler(MISSING_COMMENT, co);
+		if (rn != null) {
+			String romanNumber = rn.getText();
+			if (!isRoman(romanNumber))
+				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+			else {
+				// sarebbe bello arrotondare, però va e penso che solo in caso di moooolte scene potrebbe dare problemi
+				double newScene = (double) decode(romanNumber) / 10;
+				if ((scenicMoment - (int) scenicMoment) > newScene) // già definita in questo atto
+					myErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
+				else if ((scenicMoment + newScene - 0.1) > (scenicMoment + 0.1)) // salto nella numerazione
+					myErrorHandler(SKIPPED_SCENE, rn);
+				else {
+					if (co == null)
+						myErrorHandler(MISSING_COMMENT, co);
+					scenicMoment = scenicMoment + 0.1;  // okappa
+					System.out.println("* I recognized the scene " + decode(romanNumber));
+					// vorrei aggiungere anche il commento ma co.toString() non funge come credevo
+					System.out.println();
+				}
+			}
+		}
+		else
+			myErrorHandler(MISSING_SCENE_NUMBER, rn);
 	}
 
 	// controlla se ci sono già due character in scena
@@ -313,7 +342,7 @@ public class Handler {
 		} else
 			myErrorHandler(MISSING_CHARACTER, ch2);
 
-		stampaPersonaggi();
+		printCharacters();
 	}
 
 	// uscita di scena
@@ -339,18 +368,20 @@ public class Handler {
 
 	// operazioni svolte su/da un personaggio
 	public void checkStageEvent() {
-		// personaggi dichiarato?
+		// personaggio dichiarato?
 		// personaggio era in scena?
 		// aggiorno valore personaggio
 	}
 
-	public void stampaPersonaggi() {
-		System.out.println("---------------");
-		System.out.println("U' Guagliu':");
+	public void printCharacters() {
+//		System.out.println("---------------");
+		System.out.println("	State of the characters:");
+		System.out.println("	--------------------------------------------------");
 		for (String character : characterList.keySet())
-			System.out.println("name= " + character + "\t|val= " + characterList.get(character).value + "\t|onstage= "
+			System.out.println("	|name = " + character + "\t|value = " + characterList.get(character).value + "\t|on stage = "
 					+ String.valueOf(characterList.get(character).onStage));
-		System.out.println("---------------");
+//		System.out.println("---------------");
+		System.out.println("	--------------------------------------------------");
 	}
 
 // --------------------------------------------------------------------------	

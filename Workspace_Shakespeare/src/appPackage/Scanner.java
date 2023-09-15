@@ -18,7 +18,9 @@ public class Scanner {
 		int i;
 
 		try {
-			System.out.println("Test ANTLR lexer");
+			System.out.println();
+			System.out.println("Syntactic analysis of Shakespeare program");
+			System.out.println ("-----------------------------------------");
 			// istanzio lo scanner passandogli un stream di ingresso
 			ShakespeareLexer lexer = new ShakespeareLexer(new ANTLRReaderStream(new FileReader(fileIn)));
 
@@ -45,12 +47,12 @@ public class Scanner {
 						// stampo le informazioni del token di errore sullo standard error
 						System.err.println("Token " + i++ + ": "
 								+ "(" + line + "," + col + ")\t\t" 
-								+ "TokenType: " + type + "\t" + text + " ERRORE!");
+								+ "TokenType: " + type + "\t" + text + " ERROR!");
 						
 			} 
 
 		} catch (Exception e) {
-			System.out.println ("Test ANTLR abortito");
+			System.out.println ("Syntactic analysis aborted");
 			e.printStackTrace();
 		}
 

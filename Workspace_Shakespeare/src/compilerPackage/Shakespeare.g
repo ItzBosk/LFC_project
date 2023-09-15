@@ -39,23 +39,23 @@ options {
 
 
 /* ****************************
-**   Analizzatore sintattico 
-**   aka Lexer, aka Scanner
+**   Analizzatore semantico (Parser) 
 ***************************** */
 parseSPL 
 @init {initParser();} //pezzo di codice eseguito quando regola chiamata, questo metodo inizializza h.
 	: 
-	{System.out.println("* Sto per riconoscere un documento Shakespeare");}
+	{System.out.println("* I'm about to recognize a Shakespeare document..");}
     	title
-    	{System.out.println("    - Ho riconosciuto un documento Shakespeare");}
+    	{System.out.println("* I recognized a Shakespeare document");}
+    	{System.out.println();}
     	;
 
 title
 	:
-    	{System.out.println("* Sto per riconoscere il titolo");}
+    	{System.out.println("* I'm about to recognize the title..");}
     	t=ID* d=DOT WS?
-    	{h.checkNullTitle($t, $d);} //controlla il valore
-    	{System.out.println("    - Ho riconosciuto il titolo");}
+    	{h.checkTitle($t, $d);} //controlla il valore
+    	//{System.out.println("    - I recognized the title");}
     	body
     	;
 
@@ -68,7 +68,7 @@ body
 
 dramatisPersonae
     	:
-   	{System.out.println("* Sto per riconoscere un attore");}
+   	{System.out.println("* I'm about to recognize a new actor..");}
     	ch=CHARACTER co=COMMENT
     	{h.checkPersonae($ch, $co);}
     	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
@@ -76,21 +76,24 @@ dramatisPersonae
     	//Nel senso, se non avessi specificato un altra volta char o one
     	//avrebbe preso Hamlet come personaggio al posto di ID e anche la i maiscola
     	//come one al posto di id 
-    	{System.out.println("    - Ho riconosciuto un attore");}
+    	{System.out.println("* I recognized the new actor");}
+    	{System.out.println();}
     	;
 
 acts
     	:
-    	{System.out.println("* Sto per riconoscere un atto");}  
-    	ACT root co=COMMENT 
-    	{System.out.println("    - Ho riconosciuto un atto");}
+    	{System.out.println("* I am about to recognize the next act..");}  
+    	ACT rn=ID co=COMMENT   // rn = roman number
+    	{h.checkAct($rn, $co);}
+    	//{System.out.println("    - Ho riconosciuto un atto");}
     	;
     
 scenes  
 	:   
-    	{System.out.println("* Sto per riconoscere una scena");}
-    	SCENE root co=COMMENT
-    	{System.out.println("    - Ho riconosciuto una scena");}
+    	{System.out.println("* I'm about to recognize the next scene..");}
+    	SCENE rn=ID co=COMMENT
+    	{h.checkScene($rn, $co);}    // rn = roman number
+    	//{System.out.println("    - Ho riconosciuto una scena");}
     	enterRule?
     	stageEvent+
     	;
@@ -98,57 +101,48 @@ scenes
 // entrano uno o due personaggi
 enterRule
 	:
-	{System.out.println("* Sto per riconoscere un'entrata in scena");}
+	{System.out.println("* I'm about to recognize an entrance on the scene..");}
    	LB ENTER ch1=CHARACTER (AND ch2=CHARACTER)? RB
    	{h.checkEnter($ch1, $ch2);}
    	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
-   	{System.out.println("    - Ho riconosciuto un'entrata in scena");}
+   	{System.out.println("* I recognized an entrance on the scene");}
+   	{System.out.println();}
    	//stageEvent+
     	;
 
 // esce un solo personaggio
 exitRule
 	:
-    	{System.out.println("* Sto per riconoscere un'uscita di scena");}
+    	{System.out.println("* I'm about to recognize an exit..");}
     	LB EXIT ch=CHARACTER RB
     	{h.checkExit($ch);}
-    	{System.out.println("    - Ho riconosciuto un'uscita di scena");}
+    	{System.out.println("* I recognized an exit");}
+    	{System.out.println();}
     	;
     
 // escono tutti i personaggi se non specifico nulla, oppure due
 exeuntRule
     	:
-    	{System.out.println("* Sto per riconoscere un'uscita di scena multipla");}
+    	{System.out.println("* I'm about to recognize a multiple exit..");}
     	LB EXEUNT (ch1=CHARACTER AND ch2=CHARACTER)? RB
     	{h.checkExeunt($ch1, $ch2);}
-    	{System.out.println("    - Ho riconosciuto un'uscita di scena multipla");}
+    	{System.out.println("* I recognized a multiple exit");}
+    	{System.out.println();}
     	;
 
 stageEvent
 	:
-	{System.out.println("* Sto per riconoscere degli stage events");}
+	{System.out.println("* I am about to recognize stage events..");}
 	CHARACTER CL ID DOT
 	{h.checkStageEvent();}
-	{System.out.println("    - Ho riconosciuto degli stage events");}
+	{System.out.println("* I recognized some stage events");}
+	{System.out.println();}
 	;
-
-root returns [Token tk]  
-    	: 
-    	rn=RN {tk = $rn;}
-    	;
+	
 
 /* ****************************
-**   Analizzatore sintattico 
-**   aka Lexer, aka Scanner
+**   Analizzatore sintattico (Lexer/Scanner)
 ***************************** */
-
-
-// roman number
-RN
-	:
-	(('V')? ('I')*) | 'IX' | 'IV'
-	;
-
 
 CHARACTER
     :   'Romeo'
