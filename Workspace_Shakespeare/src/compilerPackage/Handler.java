@@ -374,14 +374,26 @@ public class Handler {
 	}
 
 	public void printCharacters() {
-//		System.out.println("---------------");
 		System.out.println("	State of the characters:");
-		System.out.println("	--------------------------------------------------");
-		for (String character : characterList.keySet())
-			System.out.println("	|name = " + character + "\t|value = " + characterList.get(character).value + "\t|on stage = "
-					+ String.valueOf(characterList.get(character).onStage));
-//		System.out.println("---------------");
-		System.out.println("	--------------------------------------------------");
+		System.out.println("	-------------------------------------");
+		System.out.println("	|NAME             |VALUE  |ON STAGE |");
+		for (String character : characterList.keySet()) {
+			var stringa = "	|" + character;
+			var count = 17-character.length();
+			while(count !=0){stringa += ' '; count--;};
+			if(characterList.get(character).value > 9999)
+				stringa += "|" + 9999; //Viene filtrata solo la stampa e non il valore vero
+			else
+				stringa += "|" + characterList.get(character).value;
+			count = 7-String.valueOf(characterList.get(character).value).length();
+			while(count !=0){stringa += ' '; count--;};
+			if(String.valueOf(characterList.get(character).onStage)=="false")
+				stringa += "|"+String.valueOf(characterList.get(character).onStage) + "    |";
+			else
+				stringa += "|"+String.valueOf(characterList.get(character).onStage) + "     |";		
+			System.out.println(stringa);
+		}
+		System.out.println("	-------------------------------------");
 	}
 
 // --------------------------------------------------------------------------	
