@@ -62,8 +62,8 @@ title
 body    
 	:   
     	dramatisPersonae+ //definisco almeno 1 personaggio
-    	acts
-    	scenes
+    	(acts
+    	scenes)+
     	;
 
 dramatisPersonae
@@ -82,7 +82,7 @@ dramatisPersonae
 
 acts
     	:
-    	{System.out.println("* I am about to recognize the next act..");}  
+    	//{System.out.println("* I am about to recognize the next act..");}  
     	ACT rn=ID co=COMMENT   // rn = roman number
     	{h.checkAct($rn, $co);}
     	//{System.out.println("    - Ho riconosciuto un atto");}
@@ -133,8 +133,8 @@ exeuntRule
 stageEvent
 	:
 	{System.out.println("* I am about to recognize stage events..");}
-	CHARACTER CL ID DOT
-	{h.checkStageEvent();}
+	ch1=CHARACTER CL ID DOT
+	{h.checkStageEvent($ch1);}
 	{System.out.println("* I recognized some stage events");}
 	{System.out.println();}
 	;
