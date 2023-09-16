@@ -165,9 +165,10 @@ public class Handler {
 				myErrorHandler(MISSING_DOT, d);
 			}
 			else {
-				System.out.println("* I recognized the title");
-				// vorrei aggiungere anche il titolo
-				System.out.println();
+				System.out.println("\n\n");
+				System.out.println("==================================== TITLE ==================================");
+				System.out.println(Util.middleSpacer(t.getText(),77));
+				System.out.println("=============================================================================\n");
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
@@ -188,9 +189,14 @@ public class Handler {
 			else
 				myErrorHandler(ALREADY_DECLARED_CHARACTER, ch);
 		}
-		printCharacters();
 		if (co == null)
 			myErrorHandler(MISSING_COMMENT, co);
+		System.out.println("--------------------------------- NEW ACTOR ---------------------------------");
+		System.out.println("   - Name: \t\t"+ch.getText());
+		System.out.println("   - Description: \t"+co.getText().substring(2,co.getText().length()-3)+"\n");
+		printCharacters();
+		System.out.println("\n-----------------------------------------------------------------------------\n");
+		
 	}
 	
 	// dichiarazione atto
@@ -211,10 +217,9 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						System.out.println("* ===============================    ACT " + Util.evenSpacer(actNumber,3)+"   ===============================");
-						System.out.println("* "+co.getText().substring(2,co.getText().length()-3));
-						System.out.println("* ============================================================================");
-						System.out.println();
+						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber,3)+"   ===============================");
+						System.out.println(co.getText().substring(2,co.getText().length()-3));
+						System.out.println("============================================================================\n");
 					}
 				}
 			}
@@ -240,9 +245,9 @@ public class Handler {
 						myErrorHandler(MISSING_COMMENT, co);
 					else {
 						sceneNumber++;
-						System.out.println("* ==============================    SCENE " + Util.evenSpacer(sceneNumber,3)+"   ==============================");
-						System.out.println("* "+co.getText().substring(2,co.getText().length()-3));
-						System.out.println("* ============================================================================");System.out.println();
+						System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber,3)+"   ==============================");
+						System.out.println(co.getText().substring(2,co.getText().length()-3));
+						System.out.println("============================================================================");System.out.println();
 					}
 				}
 			}

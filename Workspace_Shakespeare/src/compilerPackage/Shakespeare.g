@@ -44,18 +44,14 @@ options {
 parseSPL 
 @init {initParser();} //pezzo di codice eseguito quando regola chiamata, questo metodo inizializza h.
 	: 
-	{System.out.println("* I'm about to recognize a Shakespeare document..");}
     	title
-    	{System.out.println("* I recognized a Shakespeare document");}
-    	{System.out.println();}
     	;
 
 title
 	:
-    	{System.out.println("* I'm about to recognize the title..");}
+
     	t=ID* d=DOT WS?
-    	{h.checkTitle($t, $d);} //controlla il valore
-    	//{System.out.println("    - I recognized the title");}
+    	{h.checkTitle($t, $d);}
     	body
     	;
 
@@ -68,7 +64,6 @@ body
 
 dramatisPersonae
     	:
-   	{System.out.println("* I'm about to recognize a new actor..");}
     	ch=CHARACTER co=COMMENT
     	{h.checkPersonae($ch, $co);}
     	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
@@ -76,8 +71,6 @@ dramatisPersonae
     	//Nel senso, se non avessi specificato un altra volta char o one
     	//avrebbe preso Hamlet come personaggio al posto di ID e anche la i maiscola
     	//come one al posto di id 
-    	{System.out.println("* I recognized the new actor");}
-    	{System.out.println();}
     	;
 
 acts
@@ -94,10 +87,10 @@ scenes
     	SCENE rn=ID co=COMMENT 
     	{h.checkScene($rn, $co);}    // rn = roman number
     	//{System.out.println("    - Ho riconosciuto una scena");}
-    	//enterRule?
-    	//stageEvent*
-    	//exitRule?
-    	//exeuntRule?
+    	enterRule?
+    	stageEvent*
+    	exitRule?
+    	exeuntRule?
     	
     	;
 
