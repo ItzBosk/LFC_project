@@ -105,7 +105,7 @@ scenes
 enterRule
 	:
 	{System.out.println("* I'm about to recognize an entrance on the scene..");}
-   	LB ENTER ch1=CHARACTER (AND ch2=CHARACTER)? RB
+   	LB ENTER ch1=CHARACTER (AND ch2=CHARACTER)? RB WS?
    	{h.checkEnter($ch1, $ch2);}
    	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
    	{System.out.println("* I recognized an entrance on the scene");}
@@ -136,8 +136,12 @@ exeuntRule
 stageEvent
 	:
 	{System.out.println("* I am about to recognize stage events..");}
-	ch1=CHARACTER CL ID DOT
-	{h.checkStageEvent($ch1);}
+	(CHARACTER CL WS
+	(YOU ARE? | THOUART ) A? 
+	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)*(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP )
+	 
+	
+	//{h.checkStageEvent($ch1);}
 	{System.out.println("* I recognized some stage events");}
 	{System.out.println();}
 	;
@@ -372,6 +376,17 @@ ENTER           :       'Enter';
 EXIT            :       'Exit';
 EXEUNT          :       'Exeunt';
 AND         	:	'and';
+
+
+
+YOU         	:   'You';
+ARE     	:   'are';
+THOUART    	:   'Thou art';
+AS      	:   'as';
+SUMOF       	:   'the sum of';
+DIFF        	:   'the difference between a';
+A		:   'a';
+
 //GOTO          :     	'goto';       
 // le prossime hanno senso/si può fare?  credo di si
 PRINTVALUE     	:       'Open your heart';  
