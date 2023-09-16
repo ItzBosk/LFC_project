@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
@@ -48,6 +50,7 @@ public class Handler {
 	List<String> errorList; // lista in cui registro errori
 
 	Hashtable<String, CharacterDescriptor> characterList; // character, value, on stage or not
+	Iterator<Map.Entry<String, CharacterDescriptor>> it; //per exeunt multipla.
 	int actNumber;
 	int sceneNumber;
 
@@ -57,6 +60,7 @@ public class Handler {
 		characterList = new Hashtable<String, CharacterDescriptor>(101);
 		actNumber = 0;
 		sceneNumber = 0;
+		it= characterList.entrySet().iterator();
 	}
 
 	// lista degli errori printata dal Parser
@@ -328,6 +332,12 @@ public class Handler {
 			checkExit(ch1);
 		if (ch2 != null)
 			checkExit(ch2);
+		if(ch1 == null && ch2==null) { //exeunt multipla, fa uscire tutti i personaggi presenti.
+			while (it.hasNext()) {
+				  Map.Entry<String, CharacterDescriptor> entry = it.next();
+				  entry.getValue().onStage = false;
+			}
+		}
 	}
 
 	// operazioni svolte su/da un personaggio
