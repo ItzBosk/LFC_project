@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-16 12:35:12
+// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-16 12:45:59
 
     package compilerPackage;
 
@@ -341,19 +341,18 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "scenes"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:1: scenes : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )+ ;
+	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:1: scenes : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )+ ( exitRule )? ( exeuntRule )? ;
 	public final void scenes() throws RecognitionException {
 		Token rn=null;
 		Token co=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )+ )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )+
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )+ ( exitRule )? ( exeuntRule )? )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:94:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )+ ( exitRule )? ( exeuntRule )?
 			{
-			System.out.println("* I'm about to recognize the next scene..");
-			match(input,SCENE,FOLLOW_SCENE_in_scenes362); 
-			rn=(Token)match(input,ID,FOLLOW_ID_in_scenes366); 
-			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_scenes370); 
+			match(input,SCENE,FOLLOW_SCENE_in_scenes361); 
+			rn=(Token)match(input,ID,FOLLOW_ID_in_scenes365); 
+			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_scenes369); 
 			h.checkScene(rn, co);
 			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:6: ( enterRule )?
 			int alt5=2;
@@ -365,7 +364,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:6: enterRule
 					{
-					pushFollow(FOLLOW_enterRule_in_scenes394);
+					pushFollow(FOLLOW_enterRule_in_scenes393);
 					enterRule();
 					state._fsp--;
 
@@ -388,7 +387,7 @@ public class ShakespeareParser extends Parser {
 				case 1 :
 					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:6: stageEvent
 					{
-					pushFollow(FOLLOW_stageEvent_in_scenes402);
+					pushFollow(FOLLOW_stageEvent_in_scenes401);
 					stageEvent();
 					state._fsp--;
 
@@ -401,6 +400,47 @@ public class ShakespeareParser extends Parser {
 					throw eee;
 				}
 				cnt6++;
+			}
+
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:99:6: ( exitRule )?
+			int alt7=2;
+			int LA7_0 = input.LA(1);
+			if ( (LA7_0==LB) ) {
+				int LA7_1 = input.LA(2);
+				if ( (LA7_1==EXIT) ) {
+					alt7=1;
+				}
+			}
+			switch (alt7) {
+				case 1 :
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:99:6: exitRule
+					{
+					pushFollow(FOLLOW_exitRule_in_scenes409);
+					exitRule();
+					state._fsp--;
+
+					}
+					break;
+
+			}
+
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:100:6: ( exeuntRule )?
+			int alt8=2;
+			int LA8_0 = input.LA(1);
+			if ( (LA8_0==LB) ) {
+				alt8=1;
+			}
+			switch (alt8) {
+				case 1 :
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:100:6: exeuntRule
+					{
+					pushFollow(FOLLOW_exeuntRule_in_scenes417);
+					exeuntRule();
+					state._fsp--;
+
+					}
+					break;
+
 			}
 
 			}
@@ -419,37 +459,37 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "enterRule"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:102:1: enterRule : LB ENTER ch1= CHARACTER ( AND ch2= CHARACTER )? RB ;
+	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:1: enterRule : LB ENTER ch1= CHARACTER ( AND ch2= CHARACTER )? RB ;
 	public final void enterRule() throws RecognitionException {
 		Token ch1=null;
 		Token ch2=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:2: ( LB ENTER ch1= CHARACTER ( AND ch2= CHARACTER )? RB )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:2: LB ENTER ch1= CHARACTER ( AND ch2= CHARACTER )? RB
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:2: ( LB ENTER ch1= CHARACTER ( AND ch2= CHARACTER )? RB )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:106:2: LB ENTER ch1= CHARACTER ( AND ch2= CHARACTER )? RB
 			{
 			System.out.println("* I'm about to recognize an entrance on the scene..");
-			match(input,LB,FOLLOW_LB_in_enterRule426); 
-			match(input,ENTER,FOLLOW_ENTER_in_enterRule428); 
-			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule432); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:28: ( AND ch2= CHARACTER )?
-			int alt7=2;
-			int LA7_0 = input.LA(1);
-			if ( (LA7_0==AND) ) {
-				alt7=1;
+			match(input,LB,FOLLOW_LB_in_enterRule441); 
+			match(input,ENTER,FOLLOW_ENTER_in_enterRule443); 
+			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule447); 
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:28: ( AND ch2= CHARACTER )?
+			int alt9=2;
+			int LA9_0 = input.LA(1);
+			if ( (LA9_0==AND) ) {
+				alt9=1;
 			}
-			switch (alt7) {
+			switch (alt9) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:29: AND ch2= CHARACTER
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:29: AND ch2= CHARACTER
 					{
-					match(input,AND,FOLLOW_AND_in_enterRule435); 
-					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule439); 
+					match(input,AND,FOLLOW_AND_in_enterRule450); 
+					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule454); 
 					}
 					break;
 
 			}
 
-			match(input,RB,FOLLOW_RB_in_enterRule443); 
+			match(input,RB,FOLLOW_RB_in_enterRule458); 
 			h.checkEnter(ch1, ch2);
 			System.out.println("* I recognized an entrance on the scene");
 			System.out.println();
@@ -469,19 +509,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exitRule"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:114:1: exitRule : LB EXIT ch= CHARACTER RB ;
+	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:116:1: exitRule : LB EXIT ch= CHARACTER RB ;
 	public final void exitRule() throws RecognitionException {
 		Token ch=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:115:2: ( LB EXIT ch= CHARACTER RB )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:116:6: LB EXIT ch= CHARACTER RB
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:2: ( LB EXIT ch= CHARACTER RB )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:6: LB EXIT ch= CHARACTER RB
 			{
 			System.out.println("* I'm about to recognize an exit..");
-			match(input,LB,FOLLOW_LB_in_exitRule499); 
-			match(input,EXIT,FOLLOW_EXIT_in_exitRule501); 
-			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exitRule505); 
-			match(input,RB,FOLLOW_RB_in_exitRule507); 
+			match(input,LB,FOLLOW_LB_in_exitRule514); 
+			match(input,EXIT,FOLLOW_EXIT_in_exitRule516); 
+			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exitRule520); 
+			match(input,RB,FOLLOW_RB_in_exitRule522); 
 			h.checkExit(ch);
 			System.out.println("* I recognized an exit");
 			System.out.println();
@@ -501,37 +541,37 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exeuntRule"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:1: exeuntRule : LB EXEUNT (ch1= CHARACTER AND ch2= CHARACTER )? RB ;
+	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:126:1: exeuntRule : LB EXEUNT (ch1= CHARACTER AND ch2= CHARACTER )? RB ;
 	public final void exeuntRule() throws RecognitionException {
 		Token ch1=null;
 		Token ch2=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:6: ( LB EXEUNT (ch1= CHARACTER AND ch2= CHARACTER )? RB )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:126:6: LB EXEUNT (ch1= CHARACTER AND ch2= CHARACTER )? RB
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:127:6: ( LB EXEUNT (ch1= CHARACTER AND ch2= CHARACTER )? RB )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:128:6: LB EXEUNT (ch1= CHARACTER AND ch2= CHARACTER )? RB
 			{
 			System.out.println("* I'm about to recognize a multiple exit..");
-			match(input,LB,FOLLOW_LB_in_exeuntRule564); 
-			match(input,EXEUNT,FOLLOW_EXEUNT_in_exeuntRule566); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:127:16: (ch1= CHARACTER AND ch2= CHARACTER )?
-			int alt8=2;
-			int LA8_0 = input.LA(1);
-			if ( (LA8_0==CHARACTER) ) {
-				alt8=1;
+			match(input,LB,FOLLOW_LB_in_exeuntRule579); 
+			match(input,EXEUNT,FOLLOW_EXEUNT_in_exeuntRule581); 
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:129:16: (ch1= CHARACTER AND ch2= CHARACTER )?
+			int alt10=2;
+			int LA10_0 = input.LA(1);
+			if ( (LA10_0==CHARACTER) ) {
+				alt10=1;
 			}
-			switch (alt8) {
+			switch (alt10) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:127:17: ch1= CHARACTER AND ch2= CHARACTER
+					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:129:17: ch1= CHARACTER AND ch2= CHARACTER
 					{
-					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule571); 
-					match(input,AND,FOLLOW_AND_in_exeuntRule573); 
-					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule577); 
+					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule586); 
+					match(input,AND,FOLLOW_AND_in_exeuntRule588); 
+					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule592); 
 					}
 					break;
 
 			}
 
-			match(input,RB,FOLLOW_RB_in_exeuntRule581); 
+			match(input,RB,FOLLOW_RB_in_exeuntRule596); 
 			h.checkExeunt(ch1, ch2);
 			System.out.println("* I recognized a multiple exit");
 			System.out.println();
@@ -551,19 +591,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "stageEvent"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:1: stageEvent :ch1= CHARACTER CL ID DOT ;
+	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:1: stageEvent :ch1= CHARACTER CL ID DOT ;
 	public final void stageEvent() throws RecognitionException {
 		Token ch1=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:2: (ch1= CHARACTER CL ID DOT )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:2: ch1= CHARACTER CL ID DOT
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:136:2: (ch1= CHARACTER CL ID DOT )
+			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:2: ch1= CHARACTER CL ID DOT
 			{
 			System.out.println("* I am about to recognize stage events..");
-			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEvent623); 
-			match(input,CL,FOLLOW_CL_in_stageEvent625); 
-			match(input,ID,FOLLOW_ID_in_stageEvent627); 
-			match(input,DOT,FOLLOW_DOT_in_stageEvent629); 
+			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEvent638); 
+			match(input,CL,FOLLOW_CL_in_stageEvent640); 
+			match(input,ID,FOLLOW_ID_in_stageEvent642); 
+			match(input,DOT,FOLLOW_DOT_in_stageEvent644); 
 			h.checkStageEvent(ch1);
 			System.out.println("* I recognized some stage events");
 			System.out.println();
@@ -597,29 +637,31 @@ public class ShakespeareParser extends Parser {
 	public static final BitSet FOLLOW_ACT_in_acts302 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_ID_in_acts306 = new BitSet(new long[]{0x0000000000000400L});
 	public static final BitSet FOLLOW_COMMENT_in_acts310 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SCENE_in_scenes362 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_ID_in_scenes366 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_COMMENT_in_scenes370 = new BitSet(new long[]{0x0000000000100080L});
-	public static final BitSet FOLLOW_enterRule_in_scenes394 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_stageEvent_in_scenes402 = new BitSet(new long[]{0x0000000000000082L});
-	public static final BitSet FOLLOW_LB_in_enterRule426 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_ENTER_in_enterRule428 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHARACTER_in_enterRule432 = new BitSet(new long[]{0x0000000080000020L});
-	public static final BitSet FOLLOW_AND_in_enterRule435 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHARACTER_in_enterRule439 = new BitSet(new long[]{0x0000000080000000L});
-	public static final BitSet FOLLOW_RB_in_enterRule443 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LB_in_exitRule499 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_EXIT_in_exitRule501 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHARACTER_in_exitRule505 = new BitSet(new long[]{0x0000000080000000L});
-	public static final BitSet FOLLOW_RB_in_exitRule507 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LB_in_exeuntRule564 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_EXEUNT_in_exeuntRule566 = new BitSet(new long[]{0x0000000080000080L});
-	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule571 = new BitSet(new long[]{0x0000000000000020L});
-	public static final BitSet FOLLOW_AND_in_exeuntRule573 = new BitSet(new long[]{0x0000000000000080L});
-	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule577 = new BitSet(new long[]{0x0000000080000000L});
-	public static final BitSet FOLLOW_RB_in_exeuntRule581 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CHARACTER_in_stageEvent623 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_CL_in_stageEvent625 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_ID_in_stageEvent627 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_DOT_in_stageEvent629 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SCENE_in_scenes361 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_ID_in_scenes365 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_COMMENT_in_scenes369 = new BitSet(new long[]{0x0000000000100080L});
+	public static final BitSet FOLLOW_enterRule_in_scenes393 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_stageEvent_in_scenes401 = new BitSet(new long[]{0x0000000000100082L});
+	public static final BitSet FOLLOW_exitRule_in_scenes409 = new BitSet(new long[]{0x0000000000100002L});
+	public static final BitSet FOLLOW_exeuntRule_in_scenes417 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_enterRule441 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_ENTER_in_enterRule443 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHARACTER_in_enterRule447 = new BitSet(new long[]{0x0000000080000020L});
+	public static final BitSet FOLLOW_AND_in_enterRule450 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHARACTER_in_enterRule454 = new BitSet(new long[]{0x0000000080000000L});
+	public static final BitSet FOLLOW_RB_in_enterRule458 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_exitRule514 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_EXIT_in_exitRule516 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHARACTER_in_exitRule520 = new BitSet(new long[]{0x0000000080000000L});
+	public static final BitSet FOLLOW_RB_in_exitRule522 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_exeuntRule579 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_EXEUNT_in_exeuntRule581 = new BitSet(new long[]{0x0000000080000080L});
+	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule586 = new BitSet(new long[]{0x0000000000000020L});
+	public static final BitSet FOLLOW_AND_in_exeuntRule588 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule592 = new BitSet(new long[]{0x0000000080000000L});
+	public static final BitSet FOLLOW_RB_in_exeuntRule596 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_stageEvent638 = new BitSet(new long[]{0x0000000000000100L});
+	public static final BitSet FOLLOW_CL_in_stageEvent640 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_ID_in_stageEvent642 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_DOT_in_stageEvent644 = new BitSet(new long[]{0x0000000000000002L});
 }

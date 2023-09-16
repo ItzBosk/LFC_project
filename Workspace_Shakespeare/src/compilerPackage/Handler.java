@@ -211,9 +211,9 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						System.out.println("* ======== ACT " + Util.evenSpacer(actNumber,3)+" ========");
+						System.out.println("* ===============================    ACT " + Util.evenSpacer(actNumber,3)+"   ===============================");
 						System.out.println("* "+co.getText().substring(2,co.getText().length()-3));
-						System.out.println("* ==========================");
+						System.out.println("* ============================================================================");
 						System.out.println();
 					}
 				}
@@ -240,9 +240,9 @@ public class Handler {
 						myErrorHandler(MISSING_COMMENT, co);
 					else {
 						sceneNumber++;
-						System.out.println("* I recognized the scene" + sceneNumber);
-						// vorrei aggiungere anche il commento ma co.toString() non funge come credevo
-						System.out.println();
+						System.out.println("* ==============================    SCENE " + Util.evenSpacer(sceneNumber,3)+"   ==============================");
+						System.out.println("* "+co.getText().substring(2,co.getText().length()-3));
+						System.out.println("* ============================================================================");System.out.println();
 					}
 				}
 			}
@@ -330,10 +330,14 @@ public class Handler {
 		// personaggio dichiarato?
 		// personaggio era in scena?
 		// aggiorno valore personaggio
-		System.out.println(characterList.get(ch1.getText()).onStage);
-		if(!characterList.get(ch1.getText()).onStage)
-			myErrorHandler(CHARACTER_NOT_ON_STAGE,ch1);
-	}
+		if(!characterList.containsKey(ch1.getText()))
+			myErrorHandler(UNDECLARED_CHARACTER,ch1);
+		else
+		{
+			if(!characterList.get(ch1.getText()).onStage)
+				myErrorHandler(CHARACTER_NOT_ON_STAGE,ch1);
+			}
+		}
 
 	public void printCharacters() {
 		System.out.println("	State of the characters:");

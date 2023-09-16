@@ -90,12 +90,14 @@ acts
     
 scenes  
 	:   
-    	{System.out.println("* I'm about to recognize the next scene..");}
+    	//{System.out.println("* I'm about to recognize the next scene..");}
     	SCENE rn=ID co=COMMENT
     	{h.checkScene($rn, $co);}    // rn = roman number
     	//{System.out.println("    - Ho riconosciuto una scena");}
     	enterRule?
     	stageEvent+
+    	exitRule?
+    	exeuntRule?
     	;
 
 // entrano uno o due personaggi
