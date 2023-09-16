@@ -63,7 +63,7 @@ body
 	:   
     	dramatisPersonae+ //definisco almeno 1 personaggio
     	(acts
-    	scenes)+
+    	scenes+)+ // --> anche mettendo scene multiple qua oltre la 1 non viene riconosciuta
     	;
 
 dramatisPersonae
@@ -83,7 +83,7 @@ dramatisPersonae
 acts
     	:
     	//{System.out.println("* I am about to recognize the next act..");}  
-    	ACT rn=ID co=COMMENT   // rn = roman number
+    	ACT rn=ID co=COMMENT  // rn = roman number
     	{h.checkAct($rn, $co);}
     	//{System.out.println("    - Ho riconosciuto un atto");}
     	;
@@ -91,13 +91,14 @@ acts
 scenes  
 	:   
     	//{System.out.println("* I'm about to recognize the next scene..");}
-    	SCENE rn=ID co=COMMENT
+    	SCENE rn=ID co=COMMENT 
     	{h.checkScene($rn, $co);}    // rn = roman number
     	//{System.out.println("    - Ho riconosciuto una scena");}
-    	enterRule?
-    	stageEvent+
-    	exitRule?
-    	exeuntRule?
+    	//enterRule?
+    	//stageEvent*
+    	//exitRule?
+    	//exeuntRule?
+    	
     	;
 
 // entrano uno o due personaggi
