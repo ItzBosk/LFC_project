@@ -136,16 +136,19 @@ exeuntRule
 stageEvent
 	:
 	{System.out.println("* I am about to recognize stage events..");}
-	(CHARACTER CL WS
-	(YOU ARE? | THOUART ) A? 
-	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)*(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP )
-	 
-	
-	//{h.checkStageEvent($ch1);}
+	(ch1=CHARACTER CL WS?
+	(YOU ARE? | THOUART ) A?  
+	(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) EP)
+	{h.checkStageEvent($ch1, $noun);}
 	{System.out.println("* I recognized some stage events");}
 	{System.out.println();}
 	;
 	
+adjective
+	:
+	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	{h.adjectiveCounter++;}
+	;
 
 /* ****************************
 **   Analizzatore sintattico (Lexer/Scanner)

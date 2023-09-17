@@ -26,6 +26,7 @@
 		1  se NON nice
 		-1 se nice
 	- valore associato ad un personaggio = noun * 2^(numero di aggettivi)
+		- Positive and neutral nouns have a value of 1 and negative nouns have a value of -1
 		- mettendo degli aggettivi prima di un noun permette di modificare il valore associato
 			ES. my little pony = 1 * 2^1
 				sorry little goat = (-1) * 2^2

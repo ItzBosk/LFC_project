@@ -50,9 +50,10 @@ public class Handler {
 	List<String> errorList; // lista in cui registro errori
 
 	Hashtable<String, CharacterDescriptor> characterList; // character, value, on stage or not
-	Iterator<Map.Entry<String, CharacterDescriptor>> it; //per exeunt multipla.
+	Iterator<Map.Entry<String, CharacterDescriptor>> it; // per exeunt multipla.
 	int actNumber;
 	int sceneNumber;
+	int adjectiveCounter;
 
 	public Handler(TokenStream input) {
 		this.input = input;
@@ -60,7 +61,8 @@ public class Handler {
 		characterList = new Hashtable<String, CharacterDescriptor>(101);
 		actNumber = 0;
 		sceneNumber = 0;
-		it= characterList.entrySet().iterator();
+		adjectiveCounter = 0;
+		it = characterList.entrySet().iterator();
 	}
 
 	// lista degli errori printata dal Parser
@@ -167,11 +169,10 @@ public class Handler {
 				myErrorHandler(MISSING_TITLE, null);
 			} else if (!d.getText().equals(".")) {
 				myErrorHandler(MISSING_DOT, d);
-			}
-			else {
+			} else {
 				System.out.println("\n\n");
 				System.out.println("==================================== TITLE ==================================");
-				System.out.println(Util.middleSpacer(t.getText(),77));
+				System.out.println(Util.middleSpacer(t.getText(), 77));
 				System.out.println("=============================================================================\n");
 			}
 		} catch (NullPointerException ex) {
@@ -196,13 +197,13 @@ public class Handler {
 		if (co == null)
 			myErrorHandler(MISSING_COMMENT, co);
 		System.out.println("--------------------------------- NEW ACTOR ---------------------------------");
-		System.out.println("   - Name: \t\t"+ch.getText());
-		System.out.println("   - Description: \t"+co.getText().substring(2,co.getText().length()-3)+"\n");
+		System.out.println("   - Name: \t\t" + ch.getText());
+		System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 3) + "\n");
 		printCharacters();
 		System.out.println("\n-----------------------------------------------------------------------------\n");
-		
+
 	}
-	
+
 	// dichiarazione atto
 	public void checkAct(Token rn, Token co) {
 		if (rn != null) {
@@ -211,9 +212,9 @@ public class Handler {
 				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 			else {
 				int newAct = RomanNumber.decode(romanNumber);
-				if (newAct <= actNumber) 		// già definito
+				if (newAct <= actNumber) // già definito
 					myErrorHandler(ALREADY_DEFINED_ACT, rn);
-				else if (newAct > actNumber + 1) 	// salto nella numerazione
+				else if (newAct > actNumber + 1) // salto nella numerazione
 					myErrorHandler(SKIPPED_ACT, rn);
 				else {
 					if (co == null)
@@ -221,14 +222,15 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber,3)+"   ===============================");
-						System.out.println(co.getText().substring(2,co.getText().length()-3));
-						System.out.println("============================================================================\n");
+						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
+								+ "   ===============================");
+						System.out.println(co.getText().substring(2, co.getText().length() - 3));
+						System.out.println(
+								"============================================================================\n");
 					}
 				}
 			}
-		}
-		else
+		} else
 			myErrorHandler(MISSING_ACT_NUMBER, rn);
 	}
 
@@ -240,23 +242,25 @@ public class Handler {
 				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 			else {
 				int newScene = RomanNumber.decode(romanNumber);
-				if (newScene == newScene + 1) 		// già definito
+				if (newScene == newScene + 1) // già definito
 					myErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
-				else if (newScene > sceneNumber + 1) 	// salto nella numerazione
+				else if (newScene > sceneNumber + 1) // salto nella numerazione
 					myErrorHandler(SKIPPED_SCENE, rn);
 				else {
 					if (co == null)
 						myErrorHandler(MISSING_COMMENT, co);
 					else {
 						sceneNumber++;
-						System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber,3)+"   ==============================");
-						System.out.println(co.getText().substring(2,co.getText().length()-3));
-						System.out.println("============================================================================");System.out.println();
+						System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber, 3)
+								+ "   ==============================");
+						System.out.println(co.getText().substring(2, co.getText().length() - 3));
+						System.out.println(
+								"============================================================================");
+						System.out.println();
 					}
 				}
 			}
-		}
-		else
+		} else
 			myErrorHandler(MISSING_SCENE_NUMBER, rn);
 	}
 
@@ -332,27 +336,33 @@ public class Handler {
 			checkExit(ch1);
 		if (ch2 != null)
 			checkExit(ch2);
-		if(ch1 == null && ch2==null) { //exeunt multipla, fa uscire tutti i personaggi presenti.
+		if (ch1 == null && ch2 == null) { // exeunt multipla, fa uscire tutti i personaggi presenti.
 			while (it.hasNext()) {
-				  Map.Entry<String, CharacterDescriptor> entry = it.next();
-				  entry.getValue().onStage = false;
+				Map.Entry<String, CharacterDescriptor> entry = it.next();
+				entry.getValue().onStage = false;
 			}
 		}
 	}
 
 	// operazioni svolte su/da un personaggio
-	public void checkStageEvent(Token ch1) {
-		// personaggio dichiarato?
-		// personaggio era in scena?
-		// aggiorno valore personaggio
-		if(!characterList.containsKey(ch1.getText()))
-			myErrorHandler(UNDECLARED_CHARACTER,ch1);
-		else
-		{
-			if(!characterList.get(ch1.getText()).onStage)
-				myErrorHandler(CHARACTER_NOT_ON_STAGE,ch1);
-			}
+	public void checkStageEvent(Token ch1, Token noun) {
+		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch1);
+		else {
+			if (!characterList.get(ch1.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
 		}
+		// aggiorno valore personaggio
+		if (noun.getType() == ShakespeareLexer.POSITIVENOUN || 
+				noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
+			characterList.get(ch1.getText()).value = (int) Math.pow(2, adjectiveCounter);
+		} else
+			characterList.get(ch1.getText()).value = -1 * (int) Math.pow(2, adjectiveCounter);
+
+//		System.err.println("provaaa");
+		printCharacters();
+		adjectiveCounter = 0;
+	}
 
 	public void printCharacters() {
 		System.out.println("	State of the characters:");
@@ -360,18 +370,26 @@ public class Handler {
 		System.out.println("	|NAME             |VALUE  |ON STAGE |");
 		for (String character : characterList.keySet()) {
 			var stringa = "	|" + character;
-			var count = 17-character.length();
-			while(count !=0){stringa += ' '; count--;};
-			if(characterList.get(character).value > 9999)
-				stringa += "|" + 9999; //Viene filtrata solo la stampa e non il valore vero
+			var count = 17 - character.length();
+			while (count != 0) {
+				stringa += ' ';
+				count--;
+			}
+			;
+			if (characterList.get(character).value > 9999)
+				stringa += "|" + 9999; // Viene filtrata solo la stampa e non il valore vero
 			else
 				stringa += "|" + characterList.get(character).value;
-			count = 7-String.valueOf(characterList.get(character).value).length();
-			while(count !=0){stringa += ' '; count--;};
-			if(String.valueOf(characterList.get(character).onStage)=="false")
-				stringa += "|"+String.valueOf(characterList.get(character).onStage) + "    |";
+			count = 7 - String.valueOf(characterList.get(character).value).length();
+			while (count != 0) {
+				stringa += ' ';
+				count--;
+			}
+			;
+			if (String.valueOf(characterList.get(character).onStage) == "false")
+				stringa += "|" + String.valueOf(characterList.get(character).onStage) + "    |";
 			else
-				stringa += "|"+String.valueOf(characterList.get(character).onStage) + "     |";		
+				stringa += "|" + String.valueOf(characterList.get(character).onStage) + "     |";
 			System.out.println(stringa);
 		}
 		System.out.println("	-------------------------------------");
