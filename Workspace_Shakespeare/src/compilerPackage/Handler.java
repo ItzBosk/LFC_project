@@ -30,7 +30,7 @@ public class Handler {
 	// Shakespeare errors
 	public static int MISSING_TITLE = 3;
 	public static int MISSING_DOT = 4;
-	public static int MISSING_CHARACTER = 5;
+	public static int UNDECLARED_CHARACTER = 5;
 	public static int INVALID_CHARACTER = 6;
 	public static int MISSING_COMMENT = 7;
 	public static int ALREADY_DECLARED_CHARACTER = 8;
@@ -41,10 +41,16 @@ public class Handler {
 	public static int ALREADY_DEFINED_SCENE_IN_ACT = 13;
 	public static int SKIPPED_ACT = 14;
 	public static int SKIPPED_SCENE = 15;
-	public static int UNDECLARED_CHARACTER = 16;
-	public static int CHARACTER_ALREADY_ON_STAGE = 17;
-	public static int ALREADY_TWO_CARACTERS_ON_STAGE = 18;
-	public static int CHARACTER_NOT_ON_STAGE = 19;
+	public static int CHARACTER_ALREADY_ON_STAGE = 16;
+	public static int ALREADY_TWO_CARACTERS_ON_STAGE = 17;
+	public static int CHARACTER_NOT_ON_STAGE = 18;
+	public static int ONLY_ONE_CHARACTER_ON_STAGE = 19;
+	public static int MISSING_CHARACTER_IN_MULTIPLE_ENTER = 20;
+	public static int MISSING_CHARACTER_IN_MULTIPLE_EXIT = 21;
+	public static int MISSING_CHARACTER_IN_ENTER = 22;
+	public static int MISSING_CHARACTER_IN_EXIT = 23;
+	public static int MISSING_AND_IN_MULTIPLE_EXIT = 24;
+	public static int MISSING_AND_IN_MULTIPLE_ENTER = 25;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -128,7 +134,7 @@ public class Handler {
 			errMsg += "Missing title";
 		else if (code == MISSING_DOT)
 			errMsg += "Missing dot after " + input.LT(-1).getText();
-		else if (code == MISSING_CHARACTER)
+		else if (code == UNDECLARED_CHARACTER)
 			errMsg += "Missing character name in declaration";
 		else if (code == INVALID_CHARACTER)
 			errMsg += "Invalid character name";
@@ -158,6 +164,20 @@ public class Handler {
 			errMsg += "There are already two characters on stage";
 		else if (code == CHARACTER_NOT_ON_STAGE)
 			errMsg += "The character is not on stage";
+		else if (code == ONLY_ONE_CHARACTER_ON_STAGE)
+			errMsg += "There is only one character on stage";
+		else if (code == MISSING_CHARACTER_IN_MULTIPLE_ENTER)
+			errMsg += "One character is missing in multiple entrance";
+		else if (code == MISSING_CHARACTER_IN_MULTIPLE_EXIT)
+			errMsg += "One character is missing in multiple exit";
+		else if (code == MISSING_CHARACTER_IN_ENTER)
+			errMsg += "One character is missing in entrance";
+		else if (code == MISSING_CHARACTER_IN_EXIT)
+			errMsg += "One character is missing in exit";
+		else if (code == MISSING_AND_IN_MULTIPLE_EXIT)
+			errMsg += "AND is missing in multiple exit";
+		else if (code == MISSING_AND_IN_MULTIPLE_ENTER)
+			errMsg += "AND is missing in multiple enter";
 
 		errorList.add(errMsg);
 	}
@@ -184,7 +204,7 @@ public class Handler {
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
 		if (ch == null)
-			myErrorHandler(MISSING_CHARACTER, ch);
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
 		else {
 			// controllo se token corrisponde a token CHARACTERS
 			if (ch.getType() != ShakespeareLexer.CHARACTER)
@@ -281,12 +301,24 @@ public class Handler {
 		return false; // c'è al massimo un solo personaggio
 	}
 
+	// trova quale altro personaggio è in scena
+	public String otherCharacter(Token ch1) {
+		Enumeration<String> characters = characterList.keys();
+		while (characters.hasMoreElements()) {
+			String character = characters.nextElement();
+			CharacterDescriptor description = characterList.get(character);
+			if (description.onStage && (!description.name.equals(ch1.getText()))) {
+				return description.name;
+			}
+		}
+		return null;
+	}
+
 	// entrata in scena
-	public void checkEnter(Token ch1, Token ch2) {
-		// Quanti personaggi possono entrare al massimo? due?
-		// direi di sì -> onStageCheck()
-		if (ch1 != null) {
-			if (!onStageCheck()) { // se non ci sono già due personaggi onStage
+	public void checkEnter(Token ch1, Token and, Token ch2) {
+		// entrata singola
+		if (ch1 != null && (and == null && ch2 == null)) {
+			if (!onStageCheck()) {
 				if (!characterList.containsKey(ch1.getText())) // dichiarato?
 					myErrorHandler(UNDECLARED_CHARACTER, ch1);
 				else {
@@ -297,9 +329,25 @@ public class Handler {
 				}
 			} else
 				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
-		} else
-			myErrorHandler(MISSING_CHARACTER, ch1);
-		if (ch2 != null) {
+			return;
+		}
+		
+		// entrata doppia
+		if (ch1 != null && and != null && ch2 != null) {
+			// ch1
+			if (!onStageCheck()) {
+				if (!characterList.containsKey(ch1.getText())) // dichiarato?
+					myErrorHandler(UNDECLARED_CHARACTER, ch1);
+				else {
+					if (characterList.get(ch1.getText()).onStage) // era già in scena?
+						myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
+					else
+						characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
+				}
+			} else
+				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
+			
+			// ch2
 			if (!onStageCheck()) {
 				if (!characterList.containsKey(ch2.getText())) // dichiarato?
 					myErrorHandler(UNDECLARED_CHARACTER, ch2);
@@ -310,9 +358,23 @@ public class Handler {
 						characterList.get(ch2.getText()).onStage = true; // aggiorno onStage
 				}
 			} else
-				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
-		} else
-			myErrorHandler(MISSING_CHARACTER, ch2);
+				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch2);
+			return;
+		}
+		
+		// entrata doppia ma manca qualcosa
+		if (ch1 == null) {
+			myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch1);		// (AND ch2) o (ch2) o ()
+			if (and == null)
+				myErrorHandler(MISSING_AND_IN_MULTIPLE_ENTER, and);			// (ch2)
+			if (ch2 == null)
+				myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch2);	// (AND)
+		} else {
+			if (and == null)
+				myErrorHandler(MISSING_AND_IN_MULTIPLE_ENTER, and);			// (ch1 ch2)
+			if (ch2 == null)
+				myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch2);	// (ch1 AND)
+		}
 
 		printCharacters();
 	}
@@ -327,21 +389,43 @@ public class Handler {
 			else // esce di scena -> valore (azzero o lascio)
 				characterList.get(ch.getText()).onStage = false;
 		} else
-			myErrorHandler(MISSING_CHARACTER, ch);
+			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
+
+		printCharacters();
 	}
 
 	// uscita di scena multipla
-	public void checkExeunt(Token ch1, Token ch2) {
-		if (ch1 != null)
-			checkExit(ch1);
-		if (ch2 != null)
-			checkExit(ch2);
-		if (ch1 == null && ch2 == null) { // exeunt multipla, fa uscire tutti i personaggi presenti.
+	public void checkExeunt(Token ch1, Token and, Token ch2) {
+		// exeunt multipla, fa uscire tutti i personaggi on stage
+		if (ch1 == null && and == null && ch2 == null) {
 			while (it.hasNext()) {
 				Map.Entry<String, CharacterDescriptor> entry = it.next();
 				entry.getValue().onStage = false;
 			}
+			return;
+		} else {
+			// uscita doppia
+			if (ch1 != null && and != null && ch2 != null) { // ch1 AND ch2
+				checkExit(ch1);
+				checkExit(ch2);
+				return;
+			}
+
+			// uscita doppia ma manca qualcosa
+			if (ch1 == null) {
+				myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_EXIT, ch1);
+				if (and == null)
+					myErrorHandler(MISSING_AND_IN_MULTIPLE_EXIT, and);
+				if (ch2 == null)
+					myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_EXIT, ch2);
+			} else {
+				if (and == null)
+					myErrorHandler(MISSING_AND_IN_MULTIPLE_EXIT, and);
+				if (ch2 == null)
+					myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_EXIT, ch2);
+			}
 		}
+		printCharacters();
 	}
 
 	// operazioni svolte su/da un personaggio
@@ -352,16 +436,19 @@ public class Handler {
 			if (!characterList.get(ch1.getText()).onStage) // on stage?
 				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
 		}
-		// aggiorno valore personaggio
-		if (noun.getType() == ShakespeareLexer.POSITIVENOUN || 
-				noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
-			characterList.get(ch1.getText()).value = (int) Math.pow(2, adjectiveCounter);
-		} else
-			characterList.get(ch1.getText()).value = -1 * (int) Math.pow(2, adjectiveCounter);
 
-//		System.err.println("provaaa");
-		printCharacters();
-		adjectiveCounter = 0;
+		// check se e quale altro ch è in scena e aggiorno value
+		if (onStageCheck()) {
+			String updateCh = otherCharacter(ch1);
+			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
+			} else
+				characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
+
+			printCharacters();
+			adjectiveCounter = 0;
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
 	}
 
 	public void printCharacters() {

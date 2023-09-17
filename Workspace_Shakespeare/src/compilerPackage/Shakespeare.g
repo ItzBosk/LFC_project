@@ -105,8 +105,8 @@ scenes
 enterRule
 	:
 	{System.out.println("* I'm about to recognize an entrance on the scene..");}
-   	LB ENTER ch1=CHARACTER (AND ch2=CHARACTER)? RB WS?
-   	{h.checkEnter($ch1, $ch2);}
+   	LB ENTER ch1=CHARACTER (and=AND ch2=CHARACTER)? RB WS?
+   	{h.checkEnter($ch1, $and, $ch2);}
    	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
    	{System.out.println("* I recognized an entrance on the scene");}
    	{System.out.println();}
@@ -117,7 +117,7 @@ enterRule
 exitRule
 	:
     	{System.out.println("* I'm about to recognize an exit..");}
-    	LB EXIT ch=CHARACTER RB
+    	LB EXIT ch=CHARACTER RB WS?
     	{h.checkExit($ch);}
     	{System.out.println("* I recognized an exit");}
     	{System.out.println();}
@@ -127,8 +127,8 @@ exitRule
 exeuntRule
     	:
     	{System.out.println("* I'm about to recognize a multiple exit..");}
-    	LB EXEUNT (ch1=CHARACTER AND ch2=CHARACTER)? RB
-    	{h.checkExeunt($ch1, $ch2);}
+    	LB EXEUNT (ch1=CHARACTER and=AND ch2=CHARACTER)? RB WS?
+    	{h.checkExeunt($ch1, $and, $ch2);}
     	{System.out.println("* I recognized a multiple exit");}
     	{System.out.println();}
     	;
