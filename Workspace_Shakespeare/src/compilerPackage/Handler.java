@@ -183,16 +183,16 @@ public class Handler {
 	}
 
 	// controlla titolo
-	public void checkTitle(Token t, Token d) { // t=testo, d=dot
+	public void checkTitle( Token d) { // t=testo, d=dot
 		try {
-			if (t == null) {
+			if (title == null) {
 				myErrorHandler(MISSING_TITLE, null);
 			} else if (!d.getText().equals(".")) {
 				myErrorHandler(MISSING_DOT, d);
 			} else {
 				System.out.println("\n\n");
 				System.out.println("==================================== TITLE ==================================");
-				System.out.println(Util.middleSpacer(t.getText(), 77));
+				System.out.println(Util.middleSpacer(title, 77));
 				System.out.println("=============================================================================\n");
 			}
 		} catch (NullPointerException ex) {
@@ -200,7 +200,11 @@ public class Handler {
 			myErrorHandler(MISSING_TITLE, null);
 		}
 	}
-
+	public static String title = "";
+	public void buildTitle(Token ch) {
+		title += ch.getText()+" ";
+	}
+	
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
 		if (ch == null)
@@ -216,11 +220,11 @@ public class Handler {
 		}
 		if (co == null)
 			myErrorHandler(MISSING_COMMENT, co);
-		System.out.println("--------------------------------- NEW ACTOR ---------------------------------");
+		System.out.println("--------------------------------- NEW ACTOR --------------------------------");
 		System.out.println("   - Name: \t\t" + ch.getText());
 		System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 3) + "\n");
 		printCharacters();
-		System.out.println("\n-----------------------------------------------------------------------------\n");
+		System.out.println("\n----------------------------------------------------------------------------\n");
 
 	}
 
@@ -244,7 +248,7 @@ public class Handler {
 						sceneNumber = 0;
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
-						System.out.println(co.getText().substring(2, co.getText().length() - 3));
+						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 77));
 						System.out.println(
 								"============================================================================\n");
 					}
@@ -273,7 +277,7 @@ public class Handler {
 						sceneNumber++;
 						System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber, 3)
 								+ "   ==============================");
-						System.out.println(co.getText().substring(2, co.getText().length() - 3));
+						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 77));
 						System.out.println(
 								"============================================================================");
 						System.out.println();
@@ -343,7 +347,6 @@ public class Handler {
 					}
 				} else
 					myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch2);
-				return;
 			} else {
 				if (and == null && ch2 == null) { // entrata singola
 					if (!onStageCheck()) {
@@ -367,12 +370,14 @@ public class Handler {
 			}
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
-
+		System.out.println("---------------------------- Entering "+ Util.evenSpacer(ch1.getText(),9) +" ----------------------------");
+		if(ch2 != null) 
+			System.out.println("---------------------------- Entering "+ Util.evenSpacer(ch2.getText(),9) +" ----------------------------");
 		printCharacters();
 	}
 
 	// uscita di scena
-	public void checkExit(Token ch) {
+	public void checkExit(Token ch, boolean print) {
 		if (ch != null) {
 			if (!characterList.containsKey(ch.getText())) // dichiarato?
 				myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -382,9 +387,12 @@ public class Handler {
 				characterList.get(ch.getText()).onStage = false;
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
-
+		if(print)
+			System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch.getText(),9) +" ----------------------------");
 		printCharacters();
 	}
+	public void checkExit(Token ch) {checkExit(ch,true);}
+	
 
 	// uscita di scena multipla
 	public void checkExeunt(Token ch1, Token and, Token ch2) {
@@ -398,8 +406,11 @@ public class Handler {
 		} else {
 			// uscita doppia
 			if (ch1 != null && and != null && ch2 != null) { // ch1 AND ch2
-				checkExit(ch1);
-				checkExit(ch2);
+				checkExit(ch1,false);
+				checkExit(ch2,false);
+				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch1.getText(),9) +" -----------------------------");
+				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch2.getText(),9) +" -----------------------------");
+
 				return;
 			}
 
