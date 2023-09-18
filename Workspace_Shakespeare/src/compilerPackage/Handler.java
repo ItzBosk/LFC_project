@@ -60,6 +60,7 @@ public class Handler {
 	int actNumber;
 	int sceneNumber;
 	int adjectiveCounter;
+	boolean checkError; // rimesso a false all'inizio di ogni metodo
 
 	public Handler(TokenStream input) {
 		this.input = input;
@@ -68,6 +69,7 @@ public class Handler {
 		actNumber = 0;
 		sceneNumber = 0;
 		adjectiveCounter = 0;
+		checkError = false;
 		it = characterList.entrySet().iterator();
 	}
 
@@ -100,6 +102,7 @@ public class Handler {
 
 	// gestione errori semantici
 	void myErrorHandler(int code, Token tk) {
+		checkError = true; // c'è sicuramente un errore
 		String errMsg;
 		// i primi due casi non dovrebbero mai avvenire... ma giusto in caso...
 		if (code == LEXICAL_ERROR)
@@ -183,7 +186,7 @@ public class Handler {
 	}
 
 	// controlla titolo
-	public void checkTitle( Token d) { // t=testo, d=dot
+	public void checkTitle(Token d) { // t=testo, d=dot
 		try {
 			if (title == null) {
 				myErrorHandler(MISSING_TITLE, null);
@@ -200,11 +203,13 @@ public class Handler {
 			myErrorHandler(MISSING_TITLE, null);
 		}
 	}
+
 	public static String title = "";
+
 	public void buildTitle(Token ch) {
-		title += ch.getText()+" ";
+		title += ch.getText() + " ";
 	}
-	
+
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
 		if (ch == null)
@@ -318,48 +323,31 @@ public class Handler {
 		return null;
 	}
 
+	public void checkEntrance(Token ch) {
+		checkError = false;
+		if (!onStageCheck()) {
+			if (!characterList.containsKey(ch.getText())) // dichiarato?
+				myErrorHandler(UNDECLARED_CHARACTER, ch);
+			else {
+				if (characterList.get(ch.getText()).onStage) // era già in scena?
+					myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch);
+				else
+					characterList.get(ch.getText()).onStage = true; // aggiorno onStage
+			}
+		} else
+			myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch);
+	}
+
 	// entrata in scena
 	public void checkEnter(Token ch1, Token and, Token ch2) {
+		checkError = false;
 		if (ch1 != null) {
 			if (and != null && ch2 != null) { // entrata doppia
-				// ch1
-				if (!onStageCheck()) {
-					if (!characterList.containsKey(ch1.getText())) // dichiarato?
-						myErrorHandler(UNDECLARED_CHARACTER, ch1);
-					else {
-						if (characterList.get(ch1.getText()).onStage) // era già in scena?
-							myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
-						else
-							characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
-					}
-				} else
-					myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
-
-				// ch2
-				if (!onStageCheck()) {
-					if (!characterList.containsKey(ch2.getText())) // dichiarato?
-						myErrorHandler(UNDECLARED_CHARACTER, ch2);
-					else {
-						if (characterList.get(ch2.getText()).onStage) // era già in scena?
-							myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch2);
-						else
-							characterList.get(ch2.getText()).onStage = true; // aggiorno onStage
-					}
-				} else
-					myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch2);
+				checkEntrance(ch1);
+				checkEntrance(ch2);
 			} else {
 				if (and == null && ch2 == null) { // entrata singola
-					if (!onStageCheck()) {
-						if (!characterList.containsKey(ch1.getText())) // dichiarato?
-							myErrorHandler(UNDECLARED_CHARACTER, ch1);
-						else {
-							if (characterList.get(ch1.getText()).onStage) // era già in scena?
-								myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
-							else
-								characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
-						}
-					} else
-						myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
+					checkEntrance(ch1);		
 				} else {
 					// entrata doppia ma manca qualcosa
 					if (and == null)
@@ -371,11 +359,14 @@ public class Handler {
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
 
-		System.out.println("---------------------------- "+Util.middleSpacer("Entering "+ ch1.getText(),18) +" ---------------------------");
-		if(ch2 != null) 
-			System.out.println("---------------------------- "+Util.middleSpacer("Entering "+ ch1.getText(),18) +" ---------------------------");
-		printCharacters();
-
+		if (checkError == false) {
+			System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch1.getText(), 18)
+					+ " ---------------------------");
+			if (ch2 != null)
+				System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch1.getText(), 18)
+						+ " ---------------------------");
+			printCharacters();
+		}
 	}
 
 	// uscita di scena
@@ -389,13 +380,17 @@ public class Handler {
 				characterList.get(ch.getText()).onStage = false;
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
-		if(print)
-			{System.out.println("---------------------------- "+ Util.middleSpacer("Exiting "+ch.getText(),17) +" -----------------------------");
-		printCharacters();}
+		if (print) {
+			System.out.println("---------------------------- " + Util.middleSpacer("Exiting " + ch.getText(), 17)
+					+ " -----------------------------");
+			printCharacters();
+		}
 
 	}
-	public void checkExit(Token ch) {checkExit(ch,true);}
-	
+
+	public void checkExit(Token ch) {
+		checkExit(ch, true);
+	}
 
 	// uscita di scena multipla
 	public void checkExeunt(Token ch1, Token and, Token ch2) {
@@ -409,10 +404,12 @@ public class Handler {
 		} else {
 			// uscita doppia
 			if (ch1 != null && and != null && ch2 != null) { // ch1 AND ch2
-				checkExit(ch1,false);
-				checkExit(ch2,false);
-				System.out.println("--------------------------- "+ Util.middleSpacer("Exiting "+ch1.getText(),17) +" -----------------------------");
-				System.out.println("--------------------------- "+ Util.middleSpacer("Exiting "+ch2.getText(),17) +" -----------------------------");
+				checkExit(ch1, false);
+				checkExit(ch2, false);
+				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch1.getText(), 17)
+						+ " -----------------------------");
+				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch2.getText(), 17)
+						+ " -----------------------------");
 				printCharacters();
 				return;
 			}
@@ -453,11 +450,11 @@ public class Handler {
 			adjectiveCounter = 0;
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-		
-		//da capire dove mettere sta parte
+
+		// da capire dove mettere sta parte
 		System.out.println("------------------------------ STAGE EVENT ---------------------------------");
 		System.out.println("   - Actor: \t\t" + ch1.getText());
-		System.out.println("   - Phrase: \t" + noun.getText()+ "\n");
+		System.out.println("   - Phrase: \t" + noun.getText() + "\n");
 
 	}
 
