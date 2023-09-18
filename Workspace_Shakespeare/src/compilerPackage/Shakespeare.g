@@ -105,7 +105,7 @@ scenes
 enterRule
 	:
 	{System.out.println("* I'm about to recognize an entrance on the scene..");}
-   	LB ENTER ch1=CHARACTER (and=AND ch2=CHARACTER)? RB WS?
+   	LB ENTER (ch1=CHARACTER)? (and=AND)? (ch2=CHARACTER)? RB WS?
    	{h.checkEnter($ch1, $and, $ch2);}
    	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
    	{System.out.println("* I recognized an entrance on the scene");}

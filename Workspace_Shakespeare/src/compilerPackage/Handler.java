@@ -171,13 +171,13 @@ public class Handler {
 		else if (code == MISSING_CHARACTER_IN_MULTIPLE_EXIT)
 			errMsg += "One character is missing in multiple exit";
 		else if (code == MISSING_CHARACTER_IN_ENTER)
-			errMsg += "One character is missing in entrance";
+			errMsg += "Character missing in entrance";
 		else if (code == MISSING_CHARACTER_IN_EXIT)
 			errMsg += "One character is missing in exit";
 		else if (code == MISSING_AND_IN_MULTIPLE_EXIT)
 			errMsg += "AND is missing in multiple exit";
 		else if (code == MISSING_AND_IN_MULTIPLE_ENTER)
-			errMsg += "AND is missing in multiple enter";
+			errMsg += "AND is missing in multiple entrance";
 
 		errorList.add(errMsg);
 	}
@@ -316,65 +316,57 @@ public class Handler {
 
 	// entrata in scena
 	public void checkEnter(Token ch1, Token and, Token ch2) {
-		// entrata singola
-		if (ch1 != null && (and == null && ch2 == null)) {
-			if (!onStageCheck()) {
-				if (!characterList.containsKey(ch1.getText())) // dichiarato?
-					myErrorHandler(UNDECLARED_CHARACTER, ch1);
-				else {
-					if (characterList.get(ch1.getText()).onStage) // era già in scena?
-						myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
-					else
-						characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
+		if (ch1 != null) {
+			if (and != null && ch2 != null) { // entrata doppia
+				// ch1
+				if (!onStageCheck()) {
+					if (!characterList.containsKey(ch1.getText())) // dichiarato?
+						myErrorHandler(UNDECLARED_CHARACTER, ch1);
+					else {
+						if (characterList.get(ch1.getText()).onStage) // era già in scena?
+							myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
+						else
+							characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
+					}
+				} else
+					myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
+
+				// ch2
+				if (!onStageCheck()) {
+					if (!characterList.containsKey(ch2.getText())) // dichiarato?
+						myErrorHandler(UNDECLARED_CHARACTER, ch2);
+					else {
+						if (characterList.get(ch2.getText()).onStage) // era già in scena?
+							myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch2);
+						else
+							characterList.get(ch2.getText()).onStage = true; // aggiorno onStage
+					}
+				} else
+					myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch2);
+				return;
+			} else {
+				if (and == null && ch2 == null) { // entrata singola
+					if (!onStageCheck()) {
+						if (!characterList.containsKey(ch1.getText())) // dichiarato?
+							myErrorHandler(UNDECLARED_CHARACTER, ch1);
+						else {
+							if (characterList.get(ch1.getText()).onStage) // era già in scena?
+								myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
+							else
+								characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
+						}
+					} else
+						myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
+				} else {
+					// entrata doppia ma manca qualcosa
+					if (and == null)
+						myErrorHandler(MISSING_AND_IN_MULTIPLE_ENTER, and);
+					if (ch2 == null)
+						myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch2);
 				}
-			} else
-				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
-			return;
-		}
-		
-		// entrata doppia
-		if (ch1 != null && and != null && ch2 != null) {
-			// ch1
-			if (!onStageCheck()) {
-				if (!characterList.containsKey(ch1.getText())) // dichiarato?
-					myErrorHandler(UNDECLARED_CHARACTER, ch1);
-				else {
-					if (characterList.get(ch1.getText()).onStage) // era già in scena?
-						myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch1);
-					else
-						characterList.get(ch1.getText()).onStage = true; // aggiorno onStage
-				}
-			} else
-				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch1);
-			
-			// ch2
-			if (!onStageCheck()) {
-				if (!characterList.containsKey(ch2.getText())) // dichiarato?
-					myErrorHandler(UNDECLARED_CHARACTER, ch2);
-				else {
-					if (characterList.get(ch2.getText()).onStage) // era già in scena?
-						myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch2);
-					else
-						characterList.get(ch2.getText()).onStage = true; // aggiorno onStage
-				}
-			} else
-				myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch2);
-			return;
-		}
-		
-		// entrata doppia ma manca qualcosa
-		if (ch1 == null) {
-			myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch1);		// (AND ch2) o (ch2) o ()
-			if (and == null)
-				myErrorHandler(MISSING_AND_IN_MULTIPLE_ENTER, and);			// (ch2)
-			if (ch2 == null)
-				myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch2);	// (AND)
-		} else {
-			if (and == null)
-				myErrorHandler(MISSING_AND_IN_MULTIPLE_ENTER, and);			// (ch1 ch2)
-			if (ch2 == null)
-				myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch2);	// (ch1 AND)
-		}
+			}
+		} else
+			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
 
 		printCharacters();
 	}
