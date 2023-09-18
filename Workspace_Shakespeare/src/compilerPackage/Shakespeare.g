@@ -52,10 +52,8 @@ parseSPL
 
 title
 	:
-    	//{System.out.println("* I'm about to recognize the title..");}
     	titlechar* d=DOT t=WS?
     	{h.checkTitle($d);} //controlla il valore
-    	//{System.out.println("    - I recognized the title");}
     	body
     	;
     	
@@ -72,32 +70,20 @@ body
 
 dramatisPersonae
     	:
-   	//{System.out.println("* I'm about to recognize a new actor..");}
     	ch=CHARACTER co=COMMENT
     	{h.checkPersonae($ch, $co);}
-    	//nella parentesi della regola sopra dovremmo fare in modo che non cerchi
-    	//altri caratteri ma che li skippi... come si fa?
-    	//Nel senso, se non avessi specificato un altra volta char o one
-    	//avrebbe preso Hamlet come personaggio al posto di ID e anche la i maiscola
-    	//come one al posto di id 
-    	//{System.out.println("* I recognized the new actor");}
-    	//{System.out.println();}
     	;
 
 acts
     	:
-    	//{System.out.println("* I am about to recognize the next act..");}  
     	ACT rn=ID co=COMMENT  // rn = roman number
     	{h.checkAct($rn, $co);}
-    	//{System.out.println("    - Ho riconosciuto un atto");}
     	;
     
 scenes  
 	:   
-    	//{System.out.println("* I'm about to recognize the next scene..");}
     	SCENE rn=ID co=COMMENT 
     	{h.checkScene($rn, $co);}    // rn = roman number
-    	//{System.out.println("    - Ho riconosciuto una scena");}
     	enterRule?
     	stageEvent*
     	(exitRule |
@@ -108,44 +94,30 @@ scenes
 // entrano uno o due personaggi
 enterRule
 	:
-	//{System.out.println("* I'm about to recognize an entrance on the scene..");}
    	LB ENTER (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB WS?
    	{h.checkEnter($ch1, $and, $ch2);}
-   	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
-   	//{System.out.println("* I recognized an entrance on the scene");}
-   	//{System.out.println();}
-   	//stageEvent+
     	;
 
 // esce un solo personaggio
 exitRule
 	:
-    	//{System.out.println("* I'm about to recognize an exit..");}
     	LB EXIT ch=CHARACTER RB WS?
     	{h.checkExit($ch);}
-    	//{System.out.println("* I recognized an exit");}
-    	//{System.out.println();}
     	;
     
 // escono tutti i personaggi se non specifico nulla, oppure due
 exeuntRule
     	:
-    	//{System.out.println("* I'm about to recognize a multiple exit..");}
     	LB EXEUNT (ch1=CHARACTER and=AND ch2=CHARACTER)? RB WS?
     	{h.checkExeunt($ch1, $and, $ch2);}
-    	//{System.out.println("* I recognized a multiple exit");}
-    	//{System.out.println();}
     	;
 
 stageEvent
 	:
-	{System.out.println("* I am about to recognize stage events..");}
 	(ch1=CHARACTER CL WS?
 	(YOU ARE? | THOUART ) A?  
 	(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) EP)
 	{h.checkStageEvent($ch1, $noun);}
-	{System.out.println("* I recognized some stage events");}
-	{System.out.println();}
 	;
 	
 adjective

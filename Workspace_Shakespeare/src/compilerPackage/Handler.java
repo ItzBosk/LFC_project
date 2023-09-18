@@ -191,9 +191,9 @@ public class Handler {
 				myErrorHandler(MISSING_DOT, d);
 			} else {
 				System.out.println("\n\n");
-				System.out.println("==================================== TITLE ==================================");
+				System.out.println("==================================== TITLE =================================");
 				System.out.println(Util.middleSpacer(title, 77));
-				System.out.println("=============================================================================\n");
+				System.out.println("============================================================================\n");
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
@@ -370,9 +370,9 @@ public class Handler {
 			}
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
-		System.out.println("---------------------------- Entering "+ Util.evenSpacer(ch1.getText(),9) +" ----------------------------");
+		System.out.println("----------------------------   Entering "+ Util.evenSpacer(ch1.getText(),9) +" --------------------------");
 		if(ch2 != null) 
-			System.out.println("---------------------------- Entering "+ Util.evenSpacer(ch2.getText(),9) +" ----------------------------");
+			System.out.println("----------------------------   Entering "+ Util.evenSpacer(ch2.getText(),9) +" --------------------------");
 		printCharacters();
 	}
 
@@ -388,8 +388,8 @@ public class Handler {
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
 		if(print)
-			System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch.getText(),9) +" ----------------------------");
-		printCharacters();
+			{System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch.getText(),9) +" ----------------------------");
+		printCharacters();}
 	}
 	public void checkExit(Token ch) {checkExit(ch,true);}
 	
@@ -410,7 +410,7 @@ public class Handler {
 				checkExit(ch2,false);
 				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch1.getText(),9) +" -----------------------------");
 				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch2.getText(),9) +" -----------------------------");
-
+				printCharacters();
 				return;
 			}
 
@@ -447,11 +447,15 @@ public class Handler {
 				characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
 			} else
 				characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
-
-			printCharacters();
 			adjectiveCounter = 0;
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
+		
+		//da capire dove mettere sta parte
+		System.out.println("------------------------------ STAGE EVENT ---------------------------------");
+		System.out.println("   - Actor: \t\t" + ch1.getText());
+		System.out.println("   - Noun: \t" + noun.getText()+ "\n");
+
 	}
 
 	public void printCharacters() {
