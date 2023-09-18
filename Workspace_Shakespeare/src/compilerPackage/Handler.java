@@ -370,10 +370,13 @@ public class Handler {
 			}
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
+<<<<<<< Updated upstream
 		System.out.println("----------------------------   Entering "+ Util.evenSpacer(ch1.getText(),9) +" --------------------------");
 		if(ch2 != null) 
 			System.out.println("----------------------------   Entering "+ Util.evenSpacer(ch2.getText(),9) +" --------------------------");
 		printCharacters();
+=======
+>>>>>>> Stashed changes
 	}
 
 	// uscita di scena
@@ -387,9 +390,11 @@ public class Handler {
 				characterList.get(ch.getText()).onStage = false;
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
+<<<<<<< Updated upstream
 		if(print)
 			{System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch.getText(),9) +" ----------------------------");
 		printCharacters();}
+
 	}
 	public void checkExit(Token ch) {checkExit(ch,true);}
 	
@@ -406,11 +411,14 @@ public class Handler {
 		} else {
 			// uscita doppia
 			if (ch1 != null && and != null && ch2 != null) { // ch1 AND ch2
+<<<<<<< Updated upstream
 				checkExit(ch1,false);
 				checkExit(ch2,false);
 				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch1.getText(),9) +" -----------------------------");
 				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch2.getText(),9) +" -----------------------------");
 				printCharacters();
+=======
+>>>>>>> Stashed changes
 				return;
 			}
 
