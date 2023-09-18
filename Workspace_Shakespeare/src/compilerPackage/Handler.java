@@ -45,12 +45,9 @@ public class Handler {
 	public static int ALREADY_TWO_CARACTERS_ON_STAGE = 17;
 	public static int CHARACTER_NOT_ON_STAGE = 18;
 	public static int ONLY_ONE_CHARACTER_ON_STAGE = 19;
-	public static int MISSING_CHARACTER_IN_MULTIPLE_ENTER = 20;
-	public static int MISSING_CHARACTER_IN_MULTIPLE_EXIT = 21;
-	public static int MISSING_CHARACTER_IN_ENTER = 22;
-	public static int MISSING_CHARACTER_IN_EXIT = 23;
-	public static int MISSING_AND_IN_MULTIPLE_EXIT = 24;
-	public static int MISSING_AND_IN_MULTIPLE_ENTER = 25;
+	public static int MISSING_CHARACTER_IN_ENTER = 20;
+	public static int MISSING_CHARACTER_IN_EXIT = 21;
+	public static int EXEUNT_SINGLE_CHARACTER = 22;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -169,18 +166,12 @@ public class Handler {
 			errMsg += "The character is not on stage";
 		else if (code == ONLY_ONE_CHARACTER_ON_STAGE)
 			errMsg += "There is only one character on stage";
-		else if (code == MISSING_CHARACTER_IN_MULTIPLE_ENTER)
-			errMsg += "One character is missing in multiple entrance";
-		else if (code == MISSING_CHARACTER_IN_MULTIPLE_EXIT)
-			errMsg += "One character is missing in multiple exit";
 		else if (code == MISSING_CHARACTER_IN_ENTER)
 			errMsg += "Character missing in entrance";
 		else if (code == MISSING_CHARACTER_IN_EXIT)
 			errMsg += "One character is missing in exit";
-		else if (code == MISSING_AND_IN_MULTIPLE_EXIT)
-			errMsg += "AND is missing in multiple exit";
-		else if (code == MISSING_AND_IN_MULTIPLE_ENTER)
-			errMsg += "AND is missing in multiple entrance";
+		else if (code == EXEUNT_SINGLE_CHARACTER)
+			errMsg += "Single exit is not allowed with Exeunt, use Exit instead";
 
 		errorList.add(errMsg);
 	}
@@ -346,15 +337,9 @@ public class Handler {
 				checkEntrance(ch1);
 				checkEntrance(ch2);
 			} else {
-				if (and == null && ch2 == null) { // entrata singola
-					checkEntrance(ch1);		
-				} else {
-					// entrata doppia ma manca qualcosa
-					if (and == null)
-						myErrorHandler(MISSING_AND_IN_MULTIPLE_ENTER, and);
-					if (ch2 == null)
-						myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_ENTER, ch2);
-				}
+				// entrata singola
+				if (and == null && ch2 == null)
+					checkEntrance(ch1);
 			}
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
@@ -371,6 +356,7 @@ public class Handler {
 
 	// uscita di scena
 	public void checkExit(Token ch, boolean print) {
+		checkError = false;
 		if (ch != null) {
 			if (!characterList.containsKey(ch.getText())) // dichiarato?
 				myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -380,7 +366,7 @@ public class Handler {
 				characterList.get(ch.getText()).onStage = false;
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
-		if (print) {
+		if (print && !checkError) {
 			System.out.println("---------------------------- " + Util.middleSpacer("Exiting " + ch.getText(), 17)
 					+ " -----------------------------");
 			printCharacters();
@@ -394,45 +380,36 @@ public class Handler {
 
 	// uscita di scena multipla
 	public void checkExeunt(Token ch1, Token and, Token ch2) {
+		checkError = false;
 		// exeunt multipla, fa uscire tutti i personaggi on stage
 		if (ch1 == null && and == null && ch2 == null) {
 			while (it.hasNext()) {
 				Map.Entry<String, CharacterDescriptor> entry = it.next();
 				entry.getValue().onStage = false;
 			}
-			return;
-		} else {
-			// uscita doppia
-			if (ch1 != null && and != null && ch2 != null) { // ch1 AND ch2
+			printCharacters();
+		}
+		// uscita doppia
+		if (ch1 != null) {
+			if (and != null && ch2 != null) { // ch1 AND ch2
 				checkExit(ch1, false);
 				checkExit(ch2, false);
-				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch1.getText(), 17)
-						+ " -----------------------------");
-				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch2.getText(), 17)
-						+ " -----------------------------");
-				printCharacters();
-				return;
+				if (!checkError) {
+					System.out.println("--------------------------- "
+							+ Util.middleSpacer("Exiting " + ch1.getText(), 17) + " -----------------------------");
+					System.out.println("--------------------------- "
+							+ Util.middleSpacer("Exiting " + ch2.getText(), 17) + " -----------------------------");
+					printCharacters();
+				}
 			}
-
-			// uscita doppia ma manca qualcosa
-			if (ch1 == null) {
-				myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_EXIT, ch1);
-				if (and == null)
-					myErrorHandler(MISSING_AND_IN_MULTIPLE_EXIT, and);
-				if (ch2 == null)
-					myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_EXIT, ch2);
-			} else {
-				if (and == null)
-					myErrorHandler(MISSING_AND_IN_MULTIPLE_EXIT, and);
-				if (ch2 == null)
-					myErrorHandler(MISSING_CHARACTER_IN_MULTIPLE_EXIT, ch2);
-			}
+			else
+				myErrorHandler(EXEUNT_SINGLE_CHARACTER, ch1);
 		}
-		printCharacters();
 	}
 
 	// operazioni svolte su/da un personaggio
 	public void checkStageEvent(Token ch1, Token noun) {
+		checkError = false;
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch1);
 		else {
@@ -452,10 +429,11 @@ public class Handler {
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
 
 		// da capire dove mettere sta parte
-		System.out.println("------------------------------ STAGE EVENT ---------------------------------");
-		System.out.println("   - Actor: \t\t" + ch1.getText());
-		System.out.println("   - Phrase: \t" + noun.getText() + "\n");
-
+		if (checkError == false) {
+			System.out.println("------------------------------ STAGE EVENT ---------------------------------");
+			System.out.println("   - Actor: \t\t" + ch1.getText());
+			System.out.println("   - Phrase: \t" + noun.getText() + "\n");
+		}
 	}
 
 	public void printCharacters() {

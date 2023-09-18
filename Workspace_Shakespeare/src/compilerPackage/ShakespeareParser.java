@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-18 14:24:01
+// $ANTLR 3.5.1 C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-18 16:28:57
 
     package compilerPackage;
 
@@ -75,7 +75,7 @@ public class ShakespeareParser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return ShakespeareParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
 
 
 	    Handler h; //dichiaro l'handler con dentro le funzioni di controllo in jav
@@ -104,12 +104,12 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "parseSPL"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:44:1: parseSPL : title ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:44:1: parseSPL : title ;
 	public final void parseSPL() throws RecognitionException {
 		initParser();
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:2: ( title )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:47:2: title
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:2: ( title )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:47:2: title
 			{
 			System.out.println("* I'm about to recognize a Shakespeare document..");
 			pushFollow(FOLLOW_title_in_parseSPL67);
@@ -134,16 +134,16 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "title"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:53:1: title : ( titlechar )* d= DOT (t= WS )? body ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:53:1: title : ( titlechar )* d= DOT (t= WS )? body ;
 	public final void title() throws RecognitionException {
 		Token d=null;
 		Token t=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:54:2: ( ( titlechar )* d= DOT (t= WS )? body )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:55:6: ( titlechar )* d= DOT (t= WS )? body
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:54:2: ( ( titlechar )* d= DOT (t= WS )? body )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:56:6: ( titlechar )* d= DOT (t= WS )? body
 			{
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:55:6: ( titlechar )*
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:56:6: ( titlechar )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -154,9 +154,9 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:55:6: titlechar
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:56:6: titlechar
 					{
-					pushFollow(FOLLOW_titlechar_in_title101);
+					pushFollow(FOLLOW_titlechar_in_title107);
 					titlechar();
 					state._fsp--;
 
@@ -168,8 +168,8 @@ public class ShakespeareParser extends Parser {
 				}
 			}
 
-			d=(Token)match(input,DOT,FOLLOW_DOT_in_title106); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:55:24: (t= WS )?
+			d=(Token)match(input,DOT,FOLLOW_DOT_in_title112); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:56:24: (t= WS )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==WS) ) {
@@ -177,16 +177,16 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt2) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:55:24: t= WS
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:56:24: t= WS
 					{
-					t=(Token)match(input,WS,FOLLOW_WS_in_title110); 
+					t=(Token)match(input,WS,FOLLOW_WS_in_title116); 
 					}
 					break;
 
 			}
 
 			h.checkTitle(d);
-			pushFollow(FOLLOW_body_in_title126);
+			pushFollow(FOLLOW_body_in_title138);
 			body();
 			state._fsp--;
 
@@ -206,15 +206,15 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "titlechar"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:60:1: titlechar : f= ID ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:62:1: titlechar : f= ID ;
 	public final void titlechar() throws RecognitionException {
 		Token f=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:60:11: (f= ID )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:61:2: f= ID
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:62:11: (f= ID )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:63:2: f= ID
 			{
-			f=(Token)match(input,ID,FOLLOW_ID_in_titlechar149); 
+			f=(Token)match(input,ID,FOLLOW_ID_in_titlechar161); 
 			h.buildTitle(f);
 			}
 
@@ -232,13 +232,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "body"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:64:1: body : ( dramatisPersonae )+ ( acts ( scenes )+ )+ ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:1: body : ( dramatisPersonae )+ ( acts ( scenes )+ )+ ;
 	public final void body() throws RecognitionException {
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:65:2: ( ( dramatisPersonae )+ ( acts ( scenes )+ )+ )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:6: ( dramatisPersonae )+ ( acts ( scenes )+ )+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:2: ( ( dramatisPersonae )+ ( acts ( scenes )+ )+ )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:6: ( dramatisPersonae )+ ( acts ( scenes )+ )+
 			{
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:6: ( dramatisPersonae )+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:6: ( dramatisPersonae )+
 			int cnt3=0;
 			loop3:
 			while (true) {
@@ -250,9 +250,9 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt3) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:6: dramatisPersonae
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:6: dramatisPersonae
 					{
-					pushFollow(FOLLOW_dramatisPersonae_in_body174);
+					pushFollow(FOLLOW_dramatisPersonae_in_body186);
 					dramatisPersonae();
 					state._fsp--;
 
@@ -267,7 +267,7 @@ public class ShakespeareParser extends Parser {
 				cnt3++;
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:6: ( acts ( scenes )+ )+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:6: ( acts ( scenes )+ )+
 			int cnt5=0;
 			loop5:
 			while (true) {
@@ -279,13 +279,13 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt5) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:7: acts ( scenes )+
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:69:7: acts ( scenes )+
 					{
-					pushFollow(FOLLOW_acts_in_body184);
+					pushFollow(FOLLOW_acts_in_body196);
 					acts();
 					state._fsp--;
 
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:6: ( scenes )+
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:6: ( scenes )+
 					int cnt4=0;
 					loop4:
 					while (true) {
@@ -297,9 +297,9 @@ public class ShakespeareParser extends Parser {
 
 						switch (alt4) {
 						case 1 :
-							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:68:6: scenes
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:70:6: scenes
 							{
-							pushFollow(FOLLOW_scenes_in_body191);
+							pushFollow(FOLLOW_scenes_in_body203);
 							scenes();
 							state._fsp--;
 
@@ -341,17 +341,17 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "dramatisPersonae"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:1: dramatisPersonae : ch= CHARACTER co= COMMENT ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:1: dramatisPersonae : ch= CHARACTER co= COMMENT ;
 	public final void dramatisPersonae() throws RecognitionException {
 		Token ch=null;
 		Token co=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:6: (ch= CHARACTER co= COMMENT )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:6: ch= CHARACTER co= COMMENT
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:74:6: (ch= CHARACTER co= COMMENT )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:76:6: ch= CHARACTER co= COMMENT
 			{
-			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_dramatisPersonae221); 
-			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_dramatisPersonae225); 
+			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_dramatisPersonae238); 
+			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_dramatisPersonae242); 
 			h.checkPersonae(ch, co);
 			}
 
@@ -369,18 +369,18 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "acts"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:77:1: acts : ACT rn= ID co= COMMENT ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:1: acts : ACT rn= ID co= COMMENT ;
 	public final void acts() throws RecognitionException {
 		Token rn=null;
 		Token co=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:78:6: ( ACT rn= ID co= COMMENT )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:6: ACT rn= ID co= COMMENT
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:88:6: ( ACT rn= ID co= COMMENT )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:90:6: ACT rn= ID co= COMMENT
 			{
-			match(input,ACT,FOLLOW_ACT_in_acts256); 
-			rn=(Token)match(input,ID,FOLLOW_ID_in_acts260); 
-			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_acts264); 
+			match(input,ACT,FOLLOW_ACT_in_acts321); 
+			rn=(Token)match(input,ID,FOLLOW_ID_in_acts325); 
+			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_acts329); 
 			h.checkAct(rn, co);
 			}
 
@@ -398,20 +398,20 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "scenes"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:83:1: scenes : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( exitRule | exeuntRule )? ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:95:1: scenes : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( exitRule | exeuntRule )? ;
 	public final void scenes() throws RecognitionException {
 		Token rn=null;
 		Token co=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:84:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( exitRule | exeuntRule )? )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:85:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( exitRule | exeuntRule )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:96:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( exitRule | exeuntRule )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( exitRule | exeuntRule )?
 			{
-			match(input,SCENE,FOLLOW_SCENE_in_scenes302); 
-			rn=(Token)match(input,ID,FOLLOW_ID_in_scenes306); 
-			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_scenes310); 
+			match(input,SCENE,FOLLOW_SCENE_in_scenes379); 
+			rn=(Token)match(input,ID,FOLLOW_ID_in_scenes383); 
+			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_scenes387); 
 			h.checkScene(rn, co);
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:6: ( enterRule )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:101:6: ( enterRule )?
 			int alt6=2;
 			int LA6_0 = input.LA(1);
 			if ( (LA6_0==LB) ) {
@@ -422,9 +422,9 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt6) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:6: enterRule
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:101:6: enterRule
 					{
-					pushFollow(FOLLOW_enterRule_in_scenes329);
+					pushFollow(FOLLOW_enterRule_in_scenes412);
 					enterRule();
 					state._fsp--;
 
@@ -433,7 +433,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:88:6: ( stageEvent )*
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:102:6: ( stageEvent )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -444,9 +444,9 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt7) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:88:6: stageEvent
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:102:6: stageEvent
 					{
-					pushFollow(FOLLOW_stageEvent_in_scenes337);
+					pushFollow(FOLLOW_stageEvent_in_scenes420);
 					stageEvent();
 					state._fsp--;
 
@@ -458,7 +458,7 @@ public class ShakespeareParser extends Parser {
 				}
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:6: ( exitRule | exeuntRule )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:6: ( exitRule | exeuntRule )?
 			int alt8=3;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0==LB) ) {
@@ -472,18 +472,18 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt8) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:7: exitRule
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:7: exitRule
 					{
-					pushFollow(FOLLOW_exitRule_in_scenes346);
+					pushFollow(FOLLOW_exitRule_in_scenes429);
 					exitRule();
 					state._fsp--;
 
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:90:6: exeuntRule
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:6: exeuntRule
 					{
-					pushFollow(FOLLOW_exeuntRule_in_scenes355);
+					pushFollow(FOLLOW_exeuntRule_in_scenes438);
 					exeuntRule();
 					state._fsp--;
 
@@ -508,19 +508,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "enterRule"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:95:1: enterRule : LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:1: enterRule : LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
 	public final void enterRule() throws RecognitionException {
 		Token ch1=null;
 		Token and=null;
 		Token ch2=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:96:2: ( LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:5: LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:2: ( LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:5: LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
 			{
-			match(input,LB,FOLLOW_LB_in_enterRule383); 
-			match(input,ENTER,FOLLOW_ENTER_in_enterRule385); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:14: (ch1= CHARACTER )?
+			match(input,LB,FOLLOW_LB_in_enterRule468); 
+			match(input,ENTER,FOLLOW_ENTER_in_enterRule470); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:14: (ch1= CHARACTER )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==CHARACTER) ) {
@@ -528,15 +528,15 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:15: ch1= CHARACTER
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:15: ch1= CHARACTER
 					{
-					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule390); 
+					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule475); 
 					}
 					break;
 
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:31: (and= AND ch2= CHARACTER )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:31: (and= AND ch2= CHARACTER )?
 			int alt10=2;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==AND) ) {
@@ -544,17 +544,17 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt10) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:32: and= AND ch2= CHARACTER
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:32: and= AND ch2= CHARACTER
 					{
-					and=(Token)match(input,AND,FOLLOW_AND_in_enterRule397); 
-					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule401); 
+					and=(Token)match(input,AND,FOLLOW_AND_in_enterRule482); 
+					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule486); 
 					}
 					break;
 
 			}
 
-			match(input,RB,FOLLOW_RB_in_enterRule405); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:59: ( WS )?
+			match(input,RB,FOLLOW_RB_in_enterRule490); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:59: ( WS )?
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0==WS) ) {
@@ -562,9 +562,9 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:59: WS
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:59: WS
 					{
-					match(input,WS,FOLLOW_WS_in_enterRule407); 
+					match(input,WS,FOLLOW_WS_in_enterRule492); 
 					}
 					break;
 
@@ -587,19 +587,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exitRule"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:102:1: exitRule : LB EXIT ch= CHARACTER RB ( WS )? ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:121:1: exitRule : LB EXIT ch= CHARACTER RB ( WS )? ;
 	public final void exitRule() throws RecognitionException {
 		Token ch=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:2: ( LB EXIT ch= CHARACTER RB ( WS )? )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:6: LB EXIT ch= CHARACTER RB ( WS )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:122:2: ( LB EXIT ch= CHARACTER RB ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:6: LB EXIT ch= CHARACTER RB ( WS )?
 			{
-			match(input,LB,FOLLOW_LB_in_exitRule435); 
-			match(input,EXIT,FOLLOW_EXIT_in_exitRule437); 
-			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exitRule441); 
-			match(input,RB,FOLLOW_RB_in_exitRule443); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:30: ( WS )?
+			match(input,LB,FOLLOW_LB_in_exitRule546); 
+			match(input,EXIT,FOLLOW_EXIT_in_exitRule548); 
+			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exitRule552); 
+			match(input,RB,FOLLOW_RB_in_exitRule554); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:30: ( WS )?
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==WS) ) {
@@ -607,9 +607,9 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:30: WS
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:30: WS
 					{
-					match(input,WS,FOLLOW_WS_in_exitRule445); 
+					match(input,WS,FOLLOW_WS_in_exitRule556); 
 					}
 					break;
 
@@ -632,19 +632,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exeuntRule"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:1: exeuntRule : LB EXEUNT (ch1= CHARACTER and= AND ch2= CHARACTER )? RB ( WS )? ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:131:1: exeuntRule : LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
 	public final void exeuntRule() throws RecognitionException {
 		Token ch1=null;
 		Token and=null;
 		Token ch2=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:6: ( LB EXEUNT (ch1= CHARACTER and= AND ch2= CHARACTER )? RB ( WS )? )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:6: LB EXEUNT (ch1= CHARACTER and= AND ch2= CHARACTER )? RB ( WS )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:132:6: ( LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:6: LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
 			{
-			match(input,LB,FOLLOW_LB_in_exeuntRule482); 
-			match(input,EXEUNT,FOLLOW_EXEUNT_in_exeuntRule484); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:16: (ch1= CHARACTER and= AND ch2= CHARACTER )?
+			match(input,LB,FOLLOW_LB_in_exeuntRule611); 
+			match(input,EXEUNT,FOLLOW_EXEUNT_in_exeuntRule613); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:16: (ch1= CHARACTER )?
 			int alt13=2;
 			int LA13_0 = input.LA(1);
 			if ( (LA13_0==CHARACTER) ) {
@@ -652,28 +652,43 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt13) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:17: ch1= CHARACTER and= AND ch2= CHARACTER
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:17: ch1= CHARACTER
 					{
-					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule489); 
-					and=(Token)match(input,AND,FOLLOW_AND_in_exeuntRule493); 
-					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule497); 
+					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule618); 
 					}
 					break;
 
 			}
 
-			match(input,RB,FOLLOW_RB_in_exeuntRule501); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:58: ( WS )?
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:33: (and= AND ch2= CHARACTER )?
 			int alt14=2;
 			int LA14_0 = input.LA(1);
-			if ( (LA14_0==WS) ) {
+			if ( (LA14_0==AND) ) {
 				alt14=1;
 			}
 			switch (alt14) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:58: WS
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:34: and= AND ch2= CHARACTER
 					{
-					match(input,WS,FOLLOW_WS_in_exeuntRule503); 
+					and=(Token)match(input,AND,FOLLOW_AND_in_exeuntRule625); 
+					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule629); 
+					}
+					break;
+
+			}
+
+			match(input,RB,FOLLOW_RB_in_exeuntRule633); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:61: ( WS )?
+			int alt15=2;
+			int LA15_0 = input.LA(1);
+			if ( (LA15_0==WS) ) {
+				alt15=1;
+			}
+			switch (alt15) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:134:61: WS
+					{
+					match(input,WS,FOLLOW_WS_in_exeuntRule635); 
 					}
 					break;
 
@@ -696,68 +711,69 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "stageEvent"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:115:1: stageEvent : (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP ) ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:1: stageEvent : (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP ) ;
 	public final void stageEvent() throws RecognitionException {
 		Token ch1=null;
 		Token noun=null;
 
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:116:2: ( (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP ) )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:2: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:2: ( (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:2: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP )
 			{
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:2: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:3: ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP
+			System.out.println("* I am about to recognize stage events..");
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:2: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:3: ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) EP
 			{
-			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEvent530); 
-			match(input,CL,FOLLOW_CL_in_stageEvent532); 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:20: ( WS )?
-			int alt15=2;
-			int LA15_0 = input.LA(1);
-			if ( (LA15_0==WS) ) {
-				alt15=1;
+			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEvent677); 
+			match(input,CL,FOLLOW_CL_in_stageEvent679); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:20: ( WS )?
+			int alt16=2;
+			int LA16_0 = input.LA(1);
+			if ( (LA16_0==WS) ) {
+				alt16=1;
 			}
-			switch (alt15) {
+			switch (alt16) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:20: WS
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:20: WS
 					{
-					match(input,WS,FOLLOW_WS_in_stageEvent534); 
+					match(input,WS,FOLLOW_WS_in_stageEvent681); 
 					}
 					break;
 
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:2: ( YOU ( ARE )? | THOUART )
-			int alt17=2;
-			int LA17_0 = input.LA(1);
-			if ( (LA17_0==YOU) ) {
-				alt17=1;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:2: ( YOU ( ARE )? | THOUART )
+			int alt18=2;
+			int LA18_0 = input.LA(1);
+			if ( (LA18_0==YOU) ) {
+				alt18=1;
 			}
-			else if ( (LA17_0==THOUART) ) {
-				alt17=2;
+			else if ( (LA18_0==THOUART) ) {
+				alt18=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 17, 0, input);
+					new NoViableAltException("", 18, 0, input);
 				throw nvae;
 			}
 
-			switch (alt17) {
+			switch (alt18) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:3: YOU ( ARE )?
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:3: YOU ( ARE )?
 					{
-					match(input,YOU,FOLLOW_YOU_in_stageEvent539); 
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:7: ( ARE )?
-					int alt16=2;
-					int LA16_0 = input.LA(1);
-					if ( (LA16_0==ARE) ) {
-						alt16=1;
+					match(input,YOU,FOLLOW_YOU_in_stageEvent686); 
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: ( ARE )?
+					int alt17=2;
+					int LA17_0 = input.LA(1);
+					if ( (LA17_0==ARE) ) {
+						alt17=1;
 					}
-					switch (alt16) {
+					switch (alt17) {
 						case 1 :
-							// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:7: ARE
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: ARE
 							{
-							match(input,ARE,FOLLOW_ARE_in_stageEvent541); 
+							match(input,ARE,FOLLOW_ARE_in_stageEvent688); 
 							}
 							break;
 
@@ -766,44 +782,44 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 2 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:14: THOUART
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:14: THOUART
 					{
-					match(input,THOUART,FOLLOW_THOUART_in_stageEvent546); 
+					match(input,THOUART,FOLLOW_THOUART_in_stageEvent693); 
 					}
 					break;
 
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:24: ( A )?
-			int alt18=2;
-			int LA18_0 = input.LA(1);
-			if ( (LA18_0==A) ) {
-				alt18=1;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:24: ( A )?
+			int alt19=2;
+			int LA19_0 = input.LA(1);
+			if ( (LA19_0==A) ) {
+				alt19=1;
 			}
-			switch (alt18) {
+			switch (alt19) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:24: A
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:24: A
 					{
-					match(input,A,FOLLOW_A_in_stageEvent550); 
+					match(input,A,FOLLOW_A_in_stageEvent697); 
 					}
 					break;
 
 			}
 
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:119:2: ( adjective )*
-			loop19:
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:2: ( adjective )*
+			loop20:
 			while (true) {
-				int alt19=2;
-				int LA19_0 = input.LA(1);
-				if ( (LA19_0==NEGATIVEADJECTIVE||LA19_0==NEUTRALADJECTIVE||LA19_0==POSITIVEADJECTIVE) ) {
-					alt19=1;
+				int alt20=2;
+				int LA20_0 = input.LA(1);
+				if ( (LA20_0==NEGATIVEADJECTIVE||LA20_0==NEUTRALADJECTIVE||LA20_0==POSITIVEADJECTIVE) ) {
+					alt20=1;
 				}
 
-				switch (alt19) {
+				switch (alt20) {
 				case 1 :
-					// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:119:3: adjective
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:3: adjective
 					{
-					pushFollow(FOLLOW_adjective_in_stageEvent557);
+					pushFollow(FOLLOW_adjective_in_stageEvent704);
 					adjective();
 					state._fsp--;
 
@@ -811,7 +827,7 @@ public class ShakespeareParser extends Parser {
 					break;
 
 				default :
-					break loop19;
+					break loop20;
 				}
 			}
 
@@ -824,10 +840,12 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			match(input,EP,FOLLOW_EP_in_stageEvent575); 
+			match(input,EP,FOLLOW_EP_in_stageEvent722); 
 			}
 
 			h.checkStageEvent(ch1, noun);
+			System.out.println("* I recognized some stage events");
+			System.out.println();
 			}
 
 		}
@@ -844,11 +862,11 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "adjective"
-	// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:1: adjective : ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:151:1: adjective : ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
 	public final void adjective() throws RecognitionException {
 		try {
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:2: ( ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
-			// C:\\Users\\TestBox\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:2: ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:152:2: ( ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:153:2: ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
 			{
 			if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
 				input.consume();
@@ -877,54 +895,54 @@ public class ShakespeareParser extends Parser {
 
 
 	public static final BitSet FOLLOW_title_in_parseSPL67 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_titlechar_in_title101 = new BitSet(new long[]{0x0000000000810000L});
-	public static final BitSet FOLLOW_DOT_in_title106 = new BitSet(new long[]{0x0000020000000400L});
-	public static final BitSet FOLLOW_WS_in_title110 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_body_in_title126 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ID_in_titlechar149 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_dramatisPersonae_in_body174 = new BitSet(new long[]{0x0000000000000420L});
-	public static final BitSet FOLLOW_acts_in_body184 = new BitSet(new long[]{0x0000004000000000L});
-	public static final BitSet FOLLOW_scenes_in_body191 = new BitSet(new long[]{0x0000004000000022L});
-	public static final BitSet FOLLOW_CHARACTER_in_dramatisPersonae221 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_COMMENT_in_dramatisPersonae225 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ACT_in_acts256 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_ID_in_acts260 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_COMMENT_in_acts264 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SCENE_in_scenes302 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_ID_in_scenes306 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_COMMENT_in_scenes310 = new BitSet(new long[]{0x0000000001000402L});
-	public static final BitSet FOLLOW_enterRule_in_scenes329 = new BitSet(new long[]{0x0000000001000402L});
-	public static final BitSet FOLLOW_stageEvent_in_scenes337 = new BitSet(new long[]{0x0000000001000402L});
-	public static final BitSet FOLLOW_exitRule_in_scenes346 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_exeuntRule_in_scenes355 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LB_in_enterRule383 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_ENTER_in_enterRule385 = new BitSet(new long[]{0x0000000800000440L});
-	public static final BitSet FOLLOW_CHARACTER_in_enterRule390 = new BitSet(new long[]{0x0000000800000040L});
-	public static final BitSet FOLLOW_AND_in_enterRule397 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_CHARACTER_in_enterRule401 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_RB_in_enterRule405 = new BitSet(new long[]{0x0000020000000002L});
-	public static final BitSet FOLLOW_WS_in_enterRule407 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LB_in_exitRule435 = new BitSet(new long[]{0x0000000000200000L});
-	public static final BitSet FOLLOW_EXIT_in_exitRule437 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_CHARACTER_in_exitRule441 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_RB_in_exitRule443 = new BitSet(new long[]{0x0000020000000002L});
-	public static final BitSet FOLLOW_WS_in_exitRule445 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LB_in_exeuntRule482 = new BitSet(new long[]{0x0000000000100000L});
-	public static final BitSet FOLLOW_EXEUNT_in_exeuntRule484 = new BitSet(new long[]{0x0000000800000400L});
-	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule489 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_AND_in_exeuntRule493 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule497 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_RB_in_exeuntRule501 = new BitSet(new long[]{0x0000020000000002L});
-	public static final BitSet FOLLOW_WS_in_exeuntRule503 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CHARACTER_in_stageEvent530 = new BitSet(new long[]{0x0000000000000800L});
-	public static final BitSet FOLLOW_CL_in_stageEvent532 = new BitSet(new long[]{0x0000070000000000L});
-	public static final BitSet FOLLOW_WS_in_stageEvent534 = new BitSet(new long[]{0x0000050000000000L});
-	public static final BitSet FOLLOW_YOU_in_stageEvent539 = new BitSet(new long[]{0x00000000FC000110L});
-	public static final BitSet FOLLOW_ARE_in_stageEvent541 = new BitSet(new long[]{0x00000000FC000010L});
-	public static final BitSet FOLLOW_THOUART_in_stageEvent546 = new BitSet(new long[]{0x00000000FC000010L});
-	public static final BitSet FOLLOW_A_in_stageEvent550 = new BitSet(new long[]{0x00000000FC000000L});
-	public static final BitSet FOLLOW_adjective_in_stageEvent557 = new BitSet(new long[]{0x00000000FC000000L});
-	public static final BitSet FOLLOW_set_in_stageEvent563 = new BitSet(new long[]{0x0000000000040000L});
-	public static final BitSet FOLLOW_EP_in_stageEvent575 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_set_in_adjective592 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_titlechar_in_title107 = new BitSet(new long[]{0x0000000000810000L});
+	public static final BitSet FOLLOW_DOT_in_title112 = new BitSet(new long[]{0x0000020000000400L});
+	public static final BitSet FOLLOW_WS_in_title116 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_body_in_title138 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ID_in_titlechar161 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_dramatisPersonae_in_body186 = new BitSet(new long[]{0x0000000000000420L});
+	public static final BitSet FOLLOW_acts_in_body196 = new BitSet(new long[]{0x0000004000000000L});
+	public static final BitSet FOLLOW_scenes_in_body203 = new BitSet(new long[]{0x0000004000000022L});
+	public static final BitSet FOLLOW_CHARACTER_in_dramatisPersonae238 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_COMMENT_in_dramatisPersonae242 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ACT_in_acts321 = new BitSet(new long[]{0x0000000000800000L});
+	public static final BitSet FOLLOW_ID_in_acts325 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_COMMENT_in_acts329 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SCENE_in_scenes379 = new BitSet(new long[]{0x0000000000800000L});
+	public static final BitSet FOLLOW_ID_in_scenes383 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_COMMENT_in_scenes387 = new BitSet(new long[]{0x0000000001000402L});
+	public static final BitSet FOLLOW_enterRule_in_scenes412 = new BitSet(new long[]{0x0000000001000402L});
+	public static final BitSet FOLLOW_stageEvent_in_scenes420 = new BitSet(new long[]{0x0000000001000402L});
+	public static final BitSet FOLLOW_exitRule_in_scenes429 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_exeuntRule_in_scenes438 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_enterRule468 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_ENTER_in_enterRule470 = new BitSet(new long[]{0x0000000800000440L});
+	public static final BitSet FOLLOW_CHARACTER_in_enterRule475 = new BitSet(new long[]{0x0000000800000040L});
+	public static final BitSet FOLLOW_AND_in_enterRule482 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_CHARACTER_in_enterRule486 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_RB_in_enterRule490 = new BitSet(new long[]{0x0000020000000002L});
+	public static final BitSet FOLLOW_WS_in_enterRule492 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_exitRule546 = new BitSet(new long[]{0x0000000000200000L});
+	public static final BitSet FOLLOW_EXIT_in_exitRule548 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_CHARACTER_in_exitRule552 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_RB_in_exitRule554 = new BitSet(new long[]{0x0000020000000002L});
+	public static final BitSet FOLLOW_WS_in_exitRule556 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_exeuntRule611 = new BitSet(new long[]{0x0000000000100000L});
+	public static final BitSet FOLLOW_EXEUNT_in_exeuntRule613 = new BitSet(new long[]{0x0000000800000440L});
+	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule618 = new BitSet(new long[]{0x0000000800000040L});
+	public static final BitSet FOLLOW_AND_in_exeuntRule625 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule629 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_RB_in_exeuntRule633 = new BitSet(new long[]{0x0000020000000002L});
+	public static final BitSet FOLLOW_WS_in_exeuntRule635 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_stageEvent677 = new BitSet(new long[]{0x0000000000000800L});
+	public static final BitSet FOLLOW_CL_in_stageEvent679 = new BitSet(new long[]{0x0000070000000000L});
+	public static final BitSet FOLLOW_WS_in_stageEvent681 = new BitSet(new long[]{0x0000050000000000L});
+	public static final BitSet FOLLOW_YOU_in_stageEvent686 = new BitSet(new long[]{0x00000000FC000110L});
+	public static final BitSet FOLLOW_ARE_in_stageEvent688 = new BitSet(new long[]{0x00000000FC000010L});
+	public static final BitSet FOLLOW_THOUART_in_stageEvent693 = new BitSet(new long[]{0x00000000FC000010L});
+	public static final BitSet FOLLOW_A_in_stageEvent697 = new BitSet(new long[]{0x00000000FC000000L});
+	public static final BitSet FOLLOW_adjective_in_stageEvent704 = new BitSet(new long[]{0x00000000FC000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent710 = new BitSet(new long[]{0x0000000000040000L});
+	public static final BitSet FOLLOW_EP_in_stageEvent722 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_set_in_adjective745 = new BitSet(new long[]{0x0000000000000002L});
 }
