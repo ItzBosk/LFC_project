@@ -370,13 +370,12 @@ public class Handler {
 			}
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
-<<<<<<< Updated upstream
-		System.out.println("----------------------------   Entering "+ Util.evenSpacer(ch1.getText(),9) +" --------------------------");
+
+		System.out.println("---------------------------- "+Util.middleSpacer("Entering "+ ch1.getText(),18) +" ---------------------------");
 		if(ch2 != null) 
-			System.out.println("----------------------------   Entering "+ Util.evenSpacer(ch2.getText(),9) +" --------------------------");
+			System.out.println("---------------------------- "+Util.middleSpacer("Entering "+ ch1.getText(),18) +" ---------------------------");
 		printCharacters();
-=======
->>>>>>> Stashed changes
+
 	}
 
 	// uscita di scena
@@ -390,9 +389,8 @@ public class Handler {
 				characterList.get(ch.getText()).onStage = false;
 		} else
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
-<<<<<<< Updated upstream
 		if(print)
-			{System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch.getText(),9) +" ----------------------------");
+			{System.out.println("---------------------------- "+ Util.middleSpacer("Exiting "+ch.getText(),17) +" -----------------------------");
 		printCharacters();}
 
 	}
@@ -411,14 +409,11 @@ public class Handler {
 		} else {
 			// uscita doppia
 			if (ch1 != null && and != null && ch2 != null) { // ch1 AND ch2
-<<<<<<< Updated upstream
 				checkExit(ch1,false);
 				checkExit(ch2,false);
-				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch1.getText(),9) +" -----------------------------");
-				System.out.println("---------------------------- Exiting "+ Util.evenSpacer(ch2.getText(),9) +" -----------------------------");
+				System.out.println("--------------------------- "+ Util.middleSpacer("Exiting "+ch1.getText(),17) +" -----------------------------");
+				System.out.println("--------------------------- "+ Util.middleSpacer("Exiting "+ch2.getText(),17) +" -----------------------------");
 				printCharacters();
-=======
->>>>>>> Stashed changes
 				return;
 			}
 
@@ -462,7 +457,7 @@ public class Handler {
 		//da capire dove mettere sta parte
 		System.out.println("------------------------------ STAGE EVENT ---------------------------------");
 		System.out.println("   - Actor: \t\t" + ch1.getText());
-		System.out.println("   - Noun: \t" + noun.getText()+ "\n");
+		System.out.println("   - Phrase: \t" + noun.getText()+ "\n");
 
 	}
 
