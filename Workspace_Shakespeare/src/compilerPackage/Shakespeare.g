@@ -44,10 +44,7 @@ options {
 parseSPL 
 @init {initParser();} //pezzo di codice eseguito quando regola chiamata, questo metodo inizializza h.
 	: 
-	{System.out.println("* I'm about to recognize a Shakespeare document..");}
     	title
-    	{System.out.println("* I recognized a Shakespeare document");}
-    	{System.out.println();}
     	;
 
 title

@@ -346,14 +346,14 @@ public class Handler {
 
 		if (checkError == false) {
 			System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch1.getText(), 18)
-					+ " ---------------------------");
+					+ " ----------------------------");
 			if (ch2 != null)
-				System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch1.getText(), 18)
-						+ " ---------------------------");
+				System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch2.getText(), 18)
+					+ " ----------------------------");
 			printCharacters();
 		}
 	}
-
+	
 	// uscita di scena
 	public void checkExit(Token ch, boolean print) {
 		checkError = false;
@@ -383,9 +383,10 @@ public class Handler {
 		checkError = false;
 		// exeunt multipla, fa uscire tutti i personaggi on stage
 		if (ch1 == null && and == null && ch2 == null) {
-			while (it.hasNext()) {
-				Map.Entry<String, CharacterDescriptor> entry = it.next();
-				entry.getValue().onStage = false;
+			for(String str : characterList.keySet()) {
+				characterList.get(str).onStage = false;
+				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + str,17)
+				+ " -----------------------------");
 			}
 			printCharacters();
 		}
@@ -395,10 +396,12 @@ public class Handler {
 				checkExit(ch1, false);
 				checkExit(ch2, false);
 				if (!checkError) {
-					System.out.println("--------------------------- "
-							+ Util.middleSpacer("Exiting " + ch1.getText(), 17) + " -----------------------------");
-					System.out.println("--------------------------- "
-							+ Util.middleSpacer("Exiting " + ch2.getText(), 17) + " -----------------------------");
+					checkExit(ch2, false);
+					System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch1.getText(), 17)
+							+ " -----------------------------");
+					System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch2.getText(), 17)
+							+ " -----------------------------");
+					System.out.print("\n");
 					printCharacters();
 				}
 			}
@@ -432,39 +435,25 @@ public class Handler {
 		if (checkError == false) {
 			System.out.println("------------------------------ STAGE EVENT ---------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t" + noun.getText() + "\n");
+			System.out.println("   - Phrase: \t\t" + noun.getText() + "\n");
 		}
+
 	}
 
 	public void printCharacters() {
-		System.out.println("	State of the characters:");
-		System.out.println("	-------------------------------------");
-		System.out.println("	|NAME             |VALUE  |ON STAGE |");
+		System.out.println("	         State of the characters:");
+		System.out.println("	         -------------------------------------");
+		System.out.println("	         |NAME             |VALUE  |ON STAGE |");
 		for (String character : characterList.keySet()) {
-			var stringa = "	|" + character;
-			var count = 17 - character.length();
-			while (count != 0) {
-				stringa += ' ';
-				count--;
-			}
-			;
+			var stringa = "	         |" + Util.evenSpacer(character, 17);
 			if (characterList.get(character).value > 9999)
 				stringa += "|" + 9999; // Viene filtrata solo la stampa e non il valore vero
 			else
-				stringa += "|" + characterList.get(character).value;
-			count = 7 - String.valueOf(characterList.get(character).value).length();
-			while (count != 0) {
-				stringa += ' ';
-				count--;
-			}
-			;
-			if (String.valueOf(characterList.get(character).onStage) == "false")
-				stringa += "|" + String.valueOf(characterList.get(character).onStage) + "    |";
-			else
-				stringa += "|" + String.valueOf(characterList.get(character).onStage) + "     |";
+				stringa += "|" + Util.evenSpacer(characterList.get(character).value,7);
+			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage),9) + "|";
 			System.out.println(stringa);
 		}
-		System.out.println("	-------------------------------------");
+		System.out.println("	         -------------------------------------");
 	}
 
 // --------------------------------------------------------------------------	

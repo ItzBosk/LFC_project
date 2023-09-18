@@ -20,8 +20,11 @@ public class Util {
 		if (text.length()>totalSpace)
 			return "";
 		totalSpace -= text.length();
-		if(totalSpace%2==1)
-			totalSpace+=1;
+		if(totalSpace%2==1) {
+			text = " "+text;
+			totalSpace -=1;
+		}
+			
 		while(totalSpace!=0) {
 			text = " "+text+" ";
 			totalSpace -=2;
