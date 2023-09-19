@@ -410,35 +410,35 @@ public class Handler {
 		}
 	}
 
-	// operazioni svolte su/da un personaggio
-	public void checkStageEvent(Token ch1, Token noun) {
-		checkError = false;
-		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch1);
-		else {
-			if (!characterList.get(ch1.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
-		}
-
-		// check se e quale altro ch è in scena e aggiorno value
-		if (onStageCheck()) {
-			String updateCh = otherCharacter(ch1);
-			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
-				characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
-			} else
-				characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
-			adjectiveCounter = 0;
-		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-
-		// da capire dove mettere sta parte
-		if (checkError == false) {
-			System.out.println("------------------------------ STAGE EVENT ---------------------------------");
-			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun.getText() + "\n");
-		}
-
-	}
+//	// operazioni svolte su/da un personaggio
+//	public void checkStageEvent(Token ch1, Token noun) {
+//		checkError = false;
+//		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
+//			myErrorHandler(UNDECLARED_CHARACTER, ch1);
+//		else {
+//			if (!characterList.get(ch1.getText()).onStage) // on stage?
+//				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
+//		}
+//
+//		// check se e quale altro ch è in scena e aggiorno value
+//		if (onStageCheck()) {
+//			String updateCh = otherCharacter(ch1);
+//			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
+//				characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
+//			} else
+//				characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
+//			adjectiveCounter = 0;
+//		} else
+//			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
+//
+//		// da capire dove mettere sta parte
+//		if (checkError == false) {
+//			System.out.println("------------------------------ STAGE EVENT ---------------------------------");
+//			System.out.println("   - Actor: \t\t" + ch1.getText());
+//			System.out.println("   - Phrase: \t\t" + noun.getText() + "\n");
+//		}
+//
+//	}
 
 	public void printCharacters() {
 		System.out.println("	         State of the characters:");

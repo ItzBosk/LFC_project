@@ -134,12 +134,17 @@ exeuntRule
     	//{System.out.println();}
     	;
 
+
 stageEvent
-	:
-	{System.out.println("* I am about to recognize stage events..");}
-	(ch1=CHARACTER CL WS?
-	(YOU ARE? | THOUART ) A?  
-	(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) EP)
+    	:
+    	{System.out.println("* I am about to recognize stage events..");}
+    	(ch1=CHARACTER CL WS?
+    	(YOU ARE? | THOUART ) 
+    	(A?(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
+    	(AS adjective AS (SUMOF | DIFFBET | PRODOF) A  adjective+ (POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+    	AND A (POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
+    	((SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ (POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
+    	(EP| DOT))
 	{h.checkStageEvent($ch1, $noun);}
 	{System.out.println("* I recognized some stage events");}
 	{System.out.println();}
@@ -388,8 +393,11 @@ ARE     	:   'are';
 THOUART    	:   'Thou art';
 AS      	:   'as';
 SUMOF       	:   'the sum of';
-DIFF        	:   'the difference between a';
+DIFFBET        	:   'the difference between';
+PRODOF 		:   'the product of';
 A		:   'a';
+THYSELF		:   'thyself';
+
 
 //GOTO          :     	'goto';       
 // le prossime hanno senso/si può fare?  credo di si
