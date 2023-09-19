@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-19 19:27:39
+// $ANTLR 3.5.1 D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-19 19:34:47
 
     package compilerPackage;
 
@@ -710,18 +710,21 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "stageEvent"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:138:1: stageEvent : (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) ;
+	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:138:1: stageEvent : (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) ;
 	public final void stageEvent() throws RecognitionException {
 		Token ch1=null;
-		Token noun=null;
+		Token noun1=null;
+		Token noun2=null;
+		Token noun3=null;
+		Token noun4=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:139:6: ( (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:139:6: ( (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
 			{
 			System.out.println("* I am about to recognize stage events..");
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:7: ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:7: ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT )
 			{
 			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEvent673); 
 			match(input,CL,FOLLOW_CL_in_stageEvent675); 
@@ -789,7 +792,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:6: ( ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) )
+			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:6: ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) )
 			int alt23=3;
 			switch ( input.LA(1) ) {
 			case A:
@@ -822,7 +825,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt23) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:7: ( A )? ( adjective )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:7: ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
 					{
 					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:7: ( A )?
 					int alt19=2;
@@ -865,7 +868,7 @@ public class ShakespeareParser extends Parser {
 						}
 					}
 
-					noun=input.LT(1);
+					noun1=input.LT(1);
 					if ( input.LA(1)==NEGATIVENOUN||input.LA(1)==NEUTRALNOUN||input.LA(1)==POSITIVENOUN ) {
 						input.consume();
 						state.errorRecovery=false;
@@ -877,10 +880,10 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:6: ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:6: ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
 					{
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:6: ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:6: ( AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: AS adjective AS ( SUMOF | DIFFBET | PRODOF ) A ( adjective )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
 					{
 					match(input,AS,FOLLOW_AS_in_stageEvent733); 
 					pushFollow(FOLLOW_adjective_in_stageEvent735);
@@ -926,6 +929,7 @@ public class ShakespeareParser extends Parser {
 						cnt21++;
 					}
 
+					noun2=input.LT(1);
 					if ( input.LA(1)==NEGATIVENOUN||input.LA(1)==NEUTRALNOUN||input.LA(1)==POSITIVENOUN ) {
 						input.consume();
 						state.errorRecovery=false;
@@ -934,8 +938,9 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					match(input,AND,FOLLOW_AND_in_stageEvent775); 
-					match(input,A,FOLLOW_A_in_stageEvent777); 
+					match(input,AND,FOLLOW_AND_in_stageEvent777); 
+					match(input,A,FOLLOW_A_in_stageEvent779); 
+					noun3=input.LT(1);
 					if ( input.LA(1)==NEGATIVENOUN||input.LA(1)==NEUTRALNOUN||input.LA(1)==POSITIVENOUN ) {
 						input.consume();
 						state.errorRecovery=false;
@@ -949,10 +954,10 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:6: ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:6: ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
 					{
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:6: ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:7: ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:6: ( ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:7: ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
 					{
 					if ( input.LA(1)==DIFFBET||input.LA(1)==PRODOF||input.LA(1)==SUMOF ) {
 						input.consume();
@@ -962,9 +967,9 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					match(input,THYSELF,FOLLOW_THYSELF_in_stageEvent811); 
-					match(input,AND,FOLLOW_AND_in_stageEvent813); 
-					match(input,A,FOLLOW_A_in_stageEvent815); 
+					match(input,THYSELF,FOLLOW_THYSELF_in_stageEvent815); 
+					match(input,AND,FOLLOW_AND_in_stageEvent817); 
+					match(input,A,FOLLOW_A_in_stageEvent819); 
 					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:48: ( adjective )+
 					int cnt22=0;
 					loop22:
@@ -979,7 +984,7 @@ public class ShakespeareParser extends Parser {
 						case 1 :
 							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:48: adjective
 							{
-							pushFollow(FOLLOW_adjective_in_stageEvent817);
+							pushFollow(FOLLOW_adjective_in_stageEvent821);
 							adjective();
 							state._fsp--;
 
@@ -994,6 +999,7 @@ public class ShakespeareParser extends Parser {
 						cnt22++;
 					}
 
+					noun4=input.LT(1);
 					if ( input.LA(1)==NEGATIVENOUN||input.LA(1)==NEUTRALNOUN||input.LA(1)==POSITIVENOUN ) {
 						input.consume();
 						state.errorRecovery=false;
@@ -1019,7 +1025,7 @@ public class ShakespeareParser extends Parser {
 			}
 			}
 
-			//h.checkStageEvent(ch1, noun);
+			h.checkStageEvent(ch1,noun1,noun2,noun3,noun4);
 			System.out.println("* I recognized some stage events");
 			System.out.println();
 			}
@@ -1125,16 +1131,16 @@ public class ShakespeareParser extends Parser {
 	public static final BitSet FOLLOW_set_in_stageEvent739 = new BitSet(new long[]{0x0000000000000010L});
 	public static final BitSet FOLLOW_A_in_stageEvent751 = new BitSet(new long[]{0x0000000054000000L});
 	public static final BitSet FOLLOW_adjective_in_stageEvent754 = new BitSet(new long[]{0x00000000FC000000L});
-	public static final BitSet FOLLOW_set_in_stageEvent757 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_AND_in_stageEvent775 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_A_in_stageEvent777 = new BitSet(new long[]{0x00000000A8000000L});
-	public static final BitSet FOLLOW_set_in_stageEvent779 = new BitSet(new long[]{0x0000000000050000L});
-	public static final BitSet FOLLOW_set_in_stageEvent799 = new BitSet(new long[]{0x0000040000000000L});
-	public static final BitSet FOLLOW_THYSELF_in_stageEvent811 = new BitSet(new long[]{0x0000000000000040L});
-	public static final BitSet FOLLOW_AND_in_stageEvent813 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_A_in_stageEvent815 = new BitSet(new long[]{0x0000000054000000L});
-	public static final BitSet FOLLOW_adjective_in_stageEvent817 = new BitSet(new long[]{0x00000000FC000000L});
-	public static final BitSet FOLLOW_set_in_stageEvent820 = new BitSet(new long[]{0x0000000000050000L});
-	public static final BitSet FOLLOW_set_in_stageEvent839 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_set_in_adjective867 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_set_in_stageEvent759 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_AND_in_stageEvent777 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_A_in_stageEvent779 = new BitSet(new long[]{0x00000000A8000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent783 = new BitSet(new long[]{0x0000000000050000L});
+	public static final BitSet FOLLOW_set_in_stageEvent803 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_THYSELF_in_stageEvent815 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_AND_in_stageEvent817 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_A_in_stageEvent819 = new BitSet(new long[]{0x0000000054000000L});
+	public static final BitSet FOLLOW_adjective_in_stageEvent821 = new BitSet(new long[]{0x00000000FC000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent826 = new BitSet(new long[]{0x0000000000050000L});
+	public static final BitSet FOLLOW_set_in_stageEvent845 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_set_in_adjective873 = new BitSet(new long[]{0x0000000000000002L});
 }

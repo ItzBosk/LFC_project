@@ -410,35 +410,61 @@ public class Handler {
 		}
 	}
 
-//	// operazioni svolte su/da un personaggio
-//	public void checkStageEvent(Token ch1, Token noun) {
-//		checkError = false;
-//		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
-//			myErrorHandler(UNDECLARED_CHARACTER, ch1);
-//		else {
-//			if (!characterList.get(ch1.getText()).onStage) // on stage?
-//				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
-//		}
-//
-//		// check se e quale altro ch è in scena e aggiorno value
-//		if (onStageCheck()) {
-//			String updateCh = otherCharacter(ch1);
-//			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
-//				characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
-//			} else
-//				characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
-//			adjectiveCounter = 0;
-//		} else
-//			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-//
-//		// da capire dove mettere sta parte
-//		if (checkError == false) {
-//			System.out.println("------------------------------ STAGE EVENT ---------------------------------");
-//			System.out.println("   - Actor: \t\t" + ch1.getText());
-//			System.out.println("   - Phrase: \t\t" + noun.getText() + "\n");
-//		}
-//
-//	}
+	// operazioni svolte su/da un personaggio
+	public void checkStageEvent(Token ch1,Token noun1,Token noun2,Token noun3,Token noun4) {
+		checkError = false;
+		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch1);
+		else {
+			if (!characterList.get(ch1.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
+		}
+
+		// check se e quale altro ch è in scena e aggiorno value
+		if (onStageCheck()) {
+			String updateCh = otherCharacter(ch1);
+			
+			if(noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
+				//1' tipologia di frase
+				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
+				} else
+					characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
+				adjectiveCounter = 0;
+			}
+			else if(noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
+				//2' tipologia di frase
+			}
+			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
+				//3' tipologia di frase
+			}
+			else {
+				//errore. non rientra in nessuna tipologia.
+			}
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
+
+		
+		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
+		if (checkError == false && noun1 != null) {
+			System.out.println("------------------------------ STAGE EVENT 1' frase ---------------------------------");
+			System.out.println("   - Actor: \t\t" + ch1.getText());
+			System.out.println("   - Phrase: \t\t" + noun1.getText() + "\n");
+		}
+		else if (checkError == false && noun2 != null && noun3 != null) {
+			System.out.println("------------------------------ STAGE EVENT 2' frase ---------------------------------");
+			System.out.println("   - Actor: \t\t" + ch1.getText());
+			System.out.println("   - Phrase: \t\t" + noun2.getText() + "\n");
+			System.out.println("   - Phrase: \t\t" + noun3.getText() + "\n");
+		}
+		else if (checkError == false && noun4 != null) {
+			System.out.println("------------------------------ STAGE EVENT 3' frase ---------------------------------");
+			System.out.println("   - Actor: \t\t" + ch1.getText());
+			System.out.println("   - Phrase: \t\t" + noun4.getText() + "\n");
+		}
+		
+
+	}
 
 	public void printCharacters() {
 		System.out.println("	         State of the characters:");

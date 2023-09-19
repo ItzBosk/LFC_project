@@ -140,12 +140,12 @@ stageEvent
     	{System.out.println("* I am about to recognize stage events..");}
     	(ch1=CHARACTER CL WS?
     	(YOU ARE? | THOUART ) 
-    	(A?(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
-    	(AS adjective AS (SUMOF | DIFFBET | PRODOF) A  adjective+ (POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
-    	AND A (POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
-    	((SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ (POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
+    	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
+    	(AS adjective AS (SUMOF | DIFFBET | PRODOF) A  adjective+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+    	AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
+    	((SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
     	(EP| DOT))
-	{h.checkStageEvent($ch1, $noun);}
+	{h.checkStageEvent($ch1,$noun1,$noun2,$noun3,$noun4);}
 	{System.out.println("* I recognized some stage events");}
 	{System.out.println();}
 	;
