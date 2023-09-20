@@ -243,7 +243,8 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						//goTo.print();////urca
+						System.out.println("Goto List");////urca
+						goTo.print();////urca
 						goTo.clearLog();
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
@@ -453,20 +454,20 @@ public class Handler {
 		
 		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
 		if (checkError == false && noun1 != null) {
-			System.out.println("------------------------------ STAGE EVENT 1' frase ---------------------------------");
+			System.out.println("---------------------------   STAGE EVENT 1'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun1.getText() + "\n");
+			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
 		}
 		else if (checkError == false && noun2 != null && noun3 != null) {
-			System.out.println("------------------------------ STAGE EVENT 2' frase ---------------------------------");
+			System.out.println("---------------------------   STAGE EVENT 2'  -----------------------------");			
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun2.getText() + "\n");
-			System.out.println("   - Phrase: \t\t" + noun3.getText() + "\n");
+			System.out.println("   - Noun: \t\t" + noun2.getText());
+			System.out.println("   - Noun: \t\t" + noun3.getText() + "\n");
 		}
 		else if (checkError == false && noun4 != null) {
-			System.out.println("------------------------------ STAGE EVENT 3' frase ---------------------------------");
+			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun4.getText() + "\n");
+			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
 		}
 		
 
