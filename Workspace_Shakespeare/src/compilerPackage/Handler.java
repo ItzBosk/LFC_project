@@ -48,6 +48,7 @@ public class Handler {
 	public static int MISSING_CHARACTER_IN_ENTER = 20;
 	public static int MISSING_CHARACTER_IN_EXIT = 21;
 	public static int EXEUNT_SINGLE_CHARACTER = 22;
+	public static int MISSING_IF_STATEMENT = 23;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -173,6 +174,8 @@ public class Handler {
 			errMsg += "One character is missing in exit";
 		else if (code == EXEUNT_SINGLE_CHARACTER)
 			errMsg += "Single exit is not allowed with Exeunt, use Exit instead";
+		else if (code == MISSING_IF_STATEMENT)
+			errMsg += "Missing 'If so' or 'If not' statement";
 
 		errorList.add(errMsg);
 	}
@@ -243,7 +246,7 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						//goTo.print();////urca
+						// goTo.print();////urca
 						goTo.clearLog();
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
@@ -352,11 +355,11 @@ public class Handler {
 					+ " ----------------------------");
 			if (ch2 != null)
 				System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch2.getText(), 18)
-					+ " ----------------------------");
+						+ " ----------------------------");
 			printCharacters();
 		}
 	}
-	
+
 	// uscita di scena
 	public void checkExit(Token ch, boolean print) {
 		checkError = false;
@@ -386,10 +389,10 @@ public class Handler {
 		checkError = false;
 		// exeunt multipla, fa uscire tutti i personaggi on stage
 		if (ch1 == null && and == null && ch2 == null) {
-			for(String str : characterList.keySet()) {
+			for (String str : characterList.keySet()) {
 				characterList.get(str).onStage = false;
-				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + str,17)
-				+ " -----------------------------");
+				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + str, 17)
+						+ " -----------------------------");
 			}
 			printCharacters();
 		}
@@ -400,21 +403,20 @@ public class Handler {
 				checkExit(ch2, false);
 				if (!checkError) {
 					checkExit(ch2, false);
-					System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch1.getText(), 17)
-							+ " -----------------------------");
-					System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + ch2.getText(), 17)
-							+ " -----------------------------");
+					System.out.println("--------------------------- "
+							+ Util.middleSpacer("Exiting " + ch1.getText(), 17) + " -----------------------------");
+					System.out.println("--------------------------- "
+							+ Util.middleSpacer("Exiting " + ch2.getText(), 17) + " -----------------------------");
 					System.out.print("\n");
 					printCharacters();
 				}
-			}
-			else
+			} else
 				myErrorHandler(EXEUNT_SINGLE_CHARACTER, ch1);
 		}
 	}
 
 	// operazioni svolte su/da un personaggio
-	public void checkStageEvent(Token ch1,Token noun1,Token noun2,Token noun3,Token noun4) {
+	public void checkStageEvent(Token ch1, Token noun1, Token noun2, Token noun3, Token noun4) {
 		checkError = false;
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch1);
@@ -426,49 +428,102 @@ public class Handler {
 		// check se e quale altro ch è in scena e aggiorno value
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch1);
-			
-			if(noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
-				//1' tipologia di frase
-				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
+
+			if (noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
+				// 1' tipologia di frase
+				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).value);
 				} else {
 					characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).value);
 				}
 				adjectiveCounter = 0;
-			}
-			else if(noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
-				//2' tipologia di frase
-			}
-			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
-				//3' tipologia di frase
-			}
-			else {
-				//errore. non rientra in nessuna tipologia.
+			} else if (noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
+				// 2' tipologia di frase
+			} else if (noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
+				// 3' tipologia di frase
+			} else {
+				// errore. non rientra in nessuna tipologia.
 			}
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
 
-		
 		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
 		if (checkError == false && noun1 != null) {
 			System.out.println("------------------------------ STAGE EVENT 1' frase ---------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Phrase: \t\t" + noun1.getText() + "\n");
-		}
-		else if (checkError == false && noun2 != null && noun3 != null) {
+		} else if (checkError == false && noun2 != null && noun3 != null) {
 			System.out.println("------------------------------ STAGE EVENT 2' frase ---------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Phrase: \t\t" + noun2.getText() + "\n");
 			System.out.println("   - Phrase: \t\t" + noun3.getText() + "\n");
-		}
-		else if (checkError == false && noun4 != null) {
+		} else if (checkError == false && noun4 != null) {
 			System.out.println("------------------------------ STAGE EVENT 3' frase ---------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Phrase: \t\t" + noun4.getText() + "\n");
 		}
-		
+
+	}
+
+	// comparazione tra i valori dei personaggi
+	public void checkComparison(Token ch1, Token ev, Token ch2, Token gt, Token rn) {
+		checkError = false;
+
+		// check se ch1 != ch2 ??
+
+		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch1);
+		else {
+			if (!characterList.get(ch1.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
+		}
+		if (!characterList.containsKey(ch2.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch2);
+		else {
+			if (!characterList.get(ch2.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch2);
+		}
+
+		if (onStageCheck()) {
+			boolean comparison = false;
+			switch (ev.getType()) {
+			case ShakespeareLexer.BETTER:
+				if (characterList.get(ch1.getText()).value > characterList.get(ch2.getText()).value)
+					comparison = true;
+				break;
+			case ShakespeareLexer.WORSE:
+				if (characterList.get(ch1.getText()).value < characterList.get(ch2.getText()).value)
+					comparison = true;
+				break;
+			default:
+				if (characterList.get(ch1.getText()).value == characterList.get(ch2.getText()).value)
+					comparison = true;
+				break;
+			}
+
+			if (gt != null) {
+				if (comparison) {
+					if (gt.getType() == ShakespeareLexer.IFSO) {
+						if (!RomanNumber.isRoman(rn.getText()))
+							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+						else
+							goTo.Jump(RomanNumber.decode(rn.getText()));
+					}
+				} else {
+					if (gt.getType() == ShakespeareLexer.IFNOT) {
+						if (!RomanNumber.isRoman(rn.getText()))
+							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+						else
+							goTo.Jump(RomanNumber.decode(rn.getText()));
+					}
+				}
+			} else
+				myErrorHandler(MISSING_IF_STATEMENT, gt);
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
 
 	}
 
@@ -481,156 +536,66 @@ public class Handler {
 			if (characterList.get(character).value > 9999)
 				stringa += "|" + 9999; // Viene filtrata solo la stampa e non il valore vero
 			else
-				stringa += "|" + Util.evenSpacer(characterList.get(character).value,7);
-			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage),9) + "|";
+				stringa += "|" + Util.evenSpacer(characterList.get(character).value, 7);
+			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage), 9) + "|";
 			System.out.println(stringa);
 		}
 		System.out.println("	         -------------------------------------");
 	}
 
-	
-	/////urca
+	///// urca
 	private class loggedAction {
 		int scene;
 		String character;
 		int assignedValue;
-		int actionType; //Switch che utilizzo per capire di che tipo e' l'azione salvata nel log
-				///////
-				// 1 -> Settaggio del character ad un value
-				// 2 -> Speak your mind che stampa il valore di un character in console
-				// 3 ->
-				///////
-		
-		public loggedAction(int scene,String character,int actionType, int assignedValue) {
+		int actionType; // Switch che utilizzo per capire di che tipo e' l'azione salvata nel log
+		///////
+		// 1 -> Settaggio del character ad un value
+		// 2 -> Speak your mind che stampa il valore di un character in console
+		// 3 ->
+		///////
+
+		public loggedAction(int scene, String character, int actionType, int assignedValue) {
 			this.scene = scene;
 			this.character = character;
 			this.assignedValue = assignedValue;
 			this.actionType = actionType;
 		}
-		
+
 	}
-	
-	
-	private  class gotoHandler {
-		 ArrayList<loggedAction> logList = new ArrayList<loggedAction>();
-		
-		public  void newLog(int Scene, String CharacterName, int ActionType, int AssignedValue) {
-			logList.add(new loggedAction(Scene,CharacterName,ActionType,AssignedValue));
+
+	private class gotoHandler {
+		ArrayList<loggedAction> logList = new ArrayList<loggedAction>();
+
+		public void newLog(int Scene, String CharacterName, int ActionType, int AssignedValue) {
+			logList.add(new loggedAction(Scene, CharacterName, ActionType, AssignedValue));
 		}
-		
+
 		public void clearLog() {
 			logList.clear();
 		}
-		
+
 		public void Jump(int scene) {
-			for(loggedAction singleLog : logList) {
-				if(singleLog.scene>= scene)
-				{
-					switch(singleLog.actionType) {
+			for (loggedAction singleLog : logList) {
+				if (singleLog.scene >= scene) {
+					switch (singleLog.actionType) {
 					case 1:
 						characterList.get(singleLog.character).value = singleLog.assignedValue;
 						break;
 					case 2:
-						//System.out.println("IL TIPO DICE COSE");
+						// System.out.println("IL TIPO DICE COSE");
 						break;
 					}
 				}
 			}
 		}
-		
+
 		public void print() {
-			for(loggedAction singleLog : logList) {
-				System.out.println("Scene: "+singleLog.scene+", Character: "+singleLog.character+"\t, Action: "+singleLog.actionType+", Value: "+singleLog.assignedValue);
+			for (loggedAction singleLog : logList) {
+				System.out.println("Scene: " + singleLog.scene + ", Character: " + singleLog.character + "\t, Action: "
+						+ singleLog.actionType + ", Value: " + singleLog.assignedValue);
 			}
 		}
-		
 	}
-	
-// --------------------------------------------------------------------------	
-
-//	public void declareVar(Token t, Token v) {
-//		if (t != null && v != null) {
-//			String name = v.getText();
-//			VarDescriptor vd = new VarDescriptor(name, t.getText());
-//			if (symbolTable.containsKey(name))
-//				myErrorHandler(DECLARED_VAR_ERROR, v);
-//			else {
-//				symbolTable.putIfAbsent(name, vd);
-//				System.out.println("Hai appena dichiarato:" + name + " di tipo " + t.getText());
-//			}
-//		}
-//	}
-//
-//	public void checkIncDec(Token o1, Token o2, Token id) {
-//		if (o1 != null && o2 != null)
-//			myErrorHandler(INC_ERROR, id);
-//		else if (o1 == null && o2 == null)
-//			myErrorHandler(MISS_INC_ERROR, id);
-//	}
-//
-//	// ****
-//	public boolean checkReference(Token var) {
-//		if (var != null) {
-//			String name = var.getText();
-//			if (!symbolTable.containsKey(name))
-//				myErrorHandler(UNDECLARED_VAR_ERROR, var);
-//			else
-//				return true;
-//		}
-//		return false;
-//	}
-//
-//	public void assignValue(Token n, float v) {
-//		if (n != null && checkReference(n)) {
-//			String name = n.getText();
-//			VarDescriptor vd = symbolTable.get(name);
-//			if (vd != null)
-//				vd.value = v;
-//			System.out.println("Hai assegnato il valore " + v + " alla variabile " + name);
-//		}
-//	}
-//
-//	// *****
-//	public float getVarValue(Token x) {
-//		if (x != null && checkReference(x)) {
-//			String name = x.getText();
-//			VarDescriptor vd = symbolTable.get(name);
-//			if (vd != null)
-//				return vd.value;
-//		}
-//		return 0;
-//	}
-//
-//	public float convertToFloat(Token n) { // passo un token
-//		if (n != null) // controllo non sia nullo
-//			return Float.parseFloat(n.getText()); // lo converto
-//		return 0;
-//	}
-//
-//	public float calculateAdd(float t1, Token op, float t2) { // valore 1' termine, token oprazione, valore 2' termine
-//		float res = t1;
-//		if (op != null) { // token opreatore non nullo
-//			if (op.getText().equals("+")) // se il token vale "+"
-//				res = t1 + t2; // allora sommo
-//			else
-//				res = t1 - t2; // altrimenti sottraggo
-//		}
-//
-//		return res;
-//	}
-//
-//	public float calculateMul(float f1, Token op, float f2) {
-//		float res = f1;
-//		if (op != null) {
-//			if (op.getText().equals("*"))
-//				res = f1 * f2;
-//			else if (f2 != 0)
-//				res = f1 / f2;
-//			else // se denominatore divisione ==0
-//				myErrorHandler(DIV_BY_ZERO_ERROR, op); // segnalo errore
-//		}
-//
-//		return res;
-//	}
 
 }

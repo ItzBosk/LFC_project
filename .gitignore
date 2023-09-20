@@ -1,3 +1,5 @@
 
 Workspace_Shakespeare/src/compilerPackage/ShakespeareLexer.java
 Workspace_Shakespeare/src/compilerPackage/ShakespeareParser.java
+Workspace_Shakespeare/bin/appPackage/Parser.class
+Workspace_Shakespeare/bin/appPackage/Scanner.class

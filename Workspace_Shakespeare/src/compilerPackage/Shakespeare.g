@@ -97,6 +97,7 @@ scenes
     	//{System.out.println("    - Ho riconosciuto una scena");}
     	enterRule?
     	stageEvent*
+    	comparison?
     	(exitRule |
     	exeuntRule)?
     	
@@ -138,7 +139,7 @@ exeuntRule
 stageEvent
     	:
     	{System.out.println("* I am about to recognize stage events..");}
-    	(ch1=CHARACTER CL WS?
+    	(ch1=CHARACTER CL	 WS?
     	(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
     	(AS adjective AS (SUMOF | DIFFBET | PRODOF) A  adjective+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
@@ -155,6 +156,20 @@ adjective
 	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	{h.adjectiveCounter++;}
 	;
+
+comparison
+	:
+	ch1=CHARACTER CL WS?
+	AMI 
+	ev=(BETTER | (AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS) | WORSE) 
+	THAN YOUC QM
+	
+	ch2=CHARACTER CL WS?
+	gt=(IFSO | IFNOT) (LETUS | WESHALL | WEMUST) (RETURNTO | PROCEEDTO) SCENEC rn=ID
+	
+	{h.checkComparison($ch1, $ev, $ch2, $gt, $rn);}
+	;
+	
 
 /* ****************************
 **   Analizzatore sintattico (Lexer/Scanner)
@@ -381,13 +396,13 @@ NEGATIVEADJECTIVE
 // keywords
 ACT     	:  	'Act';
 SCENE      	:   	'Scene';    
-ENTER           :       'Enter';
+ENTER           :	'Enter';
 EXIT            :       'Exit';
 EXEUNT          :       'Exeunt';
 AND         	:	'and';
 
 
-
+// assegnamento
 YOU         	:   'You';
 ARE     	:   'are';
 THOUART    	:   'Thou art';
@@ -398,6 +413,21 @@ PRODOF 		:   'the product of';
 A		:   'a';
 THYSELF		:   'thyself';
 
+
+// comparison
+AMI		:	'Am I';
+BETTER		:   	'better';
+WORSE		: 	'worse';
+THAN		:	'than';
+YOUC		: 	'you';		// you con y minuscola
+SCENEC		:	'scene';	// scene con s minuscola
+IFSO		:	'If so,';
+IFNOT		:	'If not,';
+LETUS		:	'let us';
+WESHALL		:	'we shall';
+WEMUST		:	'we must';
+RETURNTO	:	'return to';		
+PROCEEDTO	:	'proceed to';
 
 //GOTO          :     	'goto';       
 // le prossime hanno senso/si può fare?  credo di si
@@ -419,7 +449,7 @@ DIGIT 		: 	'0'..'9';
 CL  	:   ':';
 CM  	:   ',';
 DOT     :   '.';
-//SC    :   ';';
+SC    :   ';';
 AP      :   '\'';
 EP      :   '!';
 QM      :   '?';

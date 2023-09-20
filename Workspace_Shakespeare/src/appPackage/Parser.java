@@ -19,11 +19,11 @@ public class Parser {
 	  	String fileIn = ".\\resources\\input.file";
 
 		try {
-			System.out.println ("============================================================================");
+//			System.out.println ("============================================================================");
 			System.out.println ("============================================================================");
 			System.out.println ("================ Semantic analysis of the Shakespeare program ==============");
 			System.out.println ("============================================================================");
-			System.out.println ("============================================================================");
+//			System.out.println ("============================================================================");
 
 			// 1.Istanzio il lexer passandogli il documento da analizzare
 			ShakespeareLexer lexer = new ShakespeareLexer(
@@ -45,11 +45,11 @@ public class Parser {
 			{
 				System.out.println();
 				System.out.println();
-				System.out.println ("============================================================================");
+//				System.out.println ("============================================================================");
 				System.out.println ("============================================================================");
 				System.out.println ("================= Semantic analysis completed successfully =================");
 				System.out.println ("============================================================================");
-				System.out.println ("============================================================================");
+//				System.out.println ("============================================================================");
 			}
 			else
 				for (int i=0; i<h.getErrorList().size(); i++)
@@ -58,11 +58,11 @@ public class Parser {
 								
 			//non dovrebbe mai essere attivato, se si attiva non ho gestito errori
 		} catch (Exception e) {
-			System.out.println ("============================================================================");
+//			System.out.println ("============================================================================");
 			System.out.println ("============================================================================");
 			System.out.println ("========================= Semantic analysis aborted ========================");
 			System.out.println ("============================================================================");
-			System.out.println ("============================================================================");
+//			System.out.println ("============================================================================");
 			e.printStackTrace();
 		}
 		
