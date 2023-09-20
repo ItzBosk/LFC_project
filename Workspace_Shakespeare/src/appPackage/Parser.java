@@ -16,7 +16,7 @@ public class Parser {
   
 	public static void main(String[] args) {
 		CommonTokenStream tokens;
-	  	String fileIn = ".\\resources\\input.file";
+	  	String fileIn = "./resources/input.file";
 
 		try {
 //			System.out.println ("============================================================================");

@@ -138,17 +138,15 @@ exeuntRule
 
 stageEvent
     	:
-    	{System.out.println("* I am about to recognize stage events..");}
-    	(ch1=CHARACTER CL	 WS?
+    	(ch1=CHARACTER CL WS?
+
     	(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
-    	(AS adjective AS (SUMOF | DIFFBET | PRODOF) A  adjective+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+    	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
     	AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
-    	((SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
+    	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
     	(EP| DOT))
-	{h.checkStageEvent($ch1,$noun1,$noun2,$noun3,$noun4);}
-	{System.out.println("* I recognized some stage events");}
-	{System.out.println();}
+	{h.checkStageEvent($ch1,$noun1,$noun2,$noun3,$noun4, $operationtype);}
 	;
 	
 adjective
@@ -156,6 +154,7 @@ adjective
 	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	{h.adjectiveCounter++;}
 	;
+
 
 comparison
 	:
@@ -170,6 +169,13 @@ comparison
 	{h.checkComparison($ch1, $ev, $ch2, $gt, $rn);}
 	;
 	
+//serve per le frasi con as...as per comparare i due pezzi di frase.
+adjectiveSecond
+	:
+	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	{h.adjectiveCounter2++;}
+	;
+
 
 /* ****************************
 **   Analizzatore sintattico (Lexer/Scanner)

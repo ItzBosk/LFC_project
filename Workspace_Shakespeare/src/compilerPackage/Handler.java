@@ -58,6 +58,7 @@ public class Handler {
 	int actNumber;
 	int sceneNumber;
 	int adjectiveCounter;
+	int adjectiveCounter2; //serve per la 2° tipologia di frase, per fare sottrazioni, somme, ..
 	boolean checkError; // rimesso a false all'inizio di ogni metodo
 	gotoHandler goTo = new gotoHandler();
 
@@ -68,6 +69,7 @@ public class Handler {
 		actNumber = 0;
 		sceneNumber = 0;
 		adjectiveCounter = 0;
+		adjectiveCounter2=0;
 		checkError = false;
 		it = characterList.entrySet().iterator();
 	}
@@ -246,7 +248,8 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						// goTo.print();////urca
+						System.out.println("Goto List");////urca
+						goTo.print();////urca
 						goTo.clearLog();
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
@@ -416,7 +419,9 @@ public class Handler {
 	}
 
 	// operazioni svolte su/da un personaggio
-	public void checkStageEvent(Token ch1, Token noun1, Token noun2, Token noun3, Token noun4) {
+
+	public void checkStageEvent(Token ch1,Token noun1,Token noun2,Token noun3,Token noun4, Token operationtype) {
+
 		checkError = false;
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch1);
@@ -429,10 +434,12 @@ public class Handler {
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch1);
 
-			if (noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
-				// 1' tipologia di frase
-				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN
-						|| noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
+			
+			if(noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
+				//1' tipologia di frase
+				//You amazing amazing amazing amazing amazing hero !
+				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
+
 					characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).value);
 				} else {
@@ -440,30 +447,89 @@ public class Handler {
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).value);
 				}
 				adjectiveCounter = 0;
-			} else if (noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
-				// 2' tipologia di frase
-			} else if (noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
-				// 3' tipologia di frase
-			} else {
-				// errore. non rientra in nessuna tipologia.
+
+			}
+			
+			else if(noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
+				//2' tipologia di frase
+				//You are as pretty as the sum of a big lovely rose and a kingdom.
+				//l'aggettivo compreso tra as..as non serve.
+				//uso e annullo adjectiveCounter e adjectiveCounter2.
+				//(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS (SUMOF | DIFFBET | PRODOF) A  adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+		    	//AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+				
+				// IF: NOME2 POS NEUTRO
+				// ELSE: NOME2 NEG
+				
+				//IF NOME3 POS NEUTRO
+				//ELSE NOME3 NEG
+				
+				//IF SUMOF --> SOMMO e assegno a nome2
+		 		//IF ELSE DIFFBET --> SOTTRAGGO e assegno a nome2
+				//ELSE PRODOF --> PRODOTTO e assegno a nome2
+					 
+				
+				//1 personaggio
+				int charact1=0;
+				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					charact1 = (int) Math.pow(2, adjectiveCounter);
+				} else
+					charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
+				adjectiveCounter = 0; //dopo ogni operazione lo azzera
+				System.err.println("charact1: "+ charact1);
+
+				
+				//2 personaggio
+				int charact2=0;
+				if (noun3.getType() == ShakespeareLexer.POSITIVENOUN || noun3.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					charact2 = (int) Math.pow(2, adjectiveCounter2);
+				} else
+					charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
+				adjectiveCounter2 = 0; //dopo ogni operazione lo azzera
+				System.err.println("charact2: "+ charact2);
+
+				
+				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
+					characterList.get(updateCh).value= charact1 + charact2;
+				}
+				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					characterList.get(updateCh).value= charact1 - charact2;
+				}
+				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					characterList.get(updateCh).value= charact1 * charact2;
+				}
+				
+			}
+			
+			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
+				//3' tipologia di frase
+			}
+			
+			else {
+				//errore. non rientra in nessuna tipologia.
 			}
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
 
 		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
 		if (checkError == false && noun1 != null) {
-			System.out.println("------------------------------ STAGE EVENT 1' frase ---------------------------------");
+			System.out.println("---------------------------   STAGE EVENT 1'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun1.getText() + "\n");
-		} else if (checkError == false && noun2 != null && noun3 != null) {
-			System.out.println("------------------------------ STAGE EVENT 2' frase ---------------------------------");
+
+			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
+		}
+		else if (checkError == false && noun2 != null && noun3 != null) {
+			System.out.println("---------------------------   STAGE EVENT 2'  -----------------------------");			
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun2.getText() + "\n");
-			System.out.println("   - Phrase: \t\t" + noun3.getText() + "\n");
-		} else if (checkError == false && noun4 != null) {
-			System.out.println("------------------------------ STAGE EVENT 3' frase ---------------------------------");
+			System.out.println("   - Noun: \t\t" + noun2.getText());
+			System.out.println("   - Noun: \t\t" + noun3.getText());
+			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).value + "\n");
+		}
+		else if (checkError == false && noun4 != null) {
+			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
+
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Phrase: \t\t" + noun4.getText() + "\n");
+			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
 		}
 
 	}
