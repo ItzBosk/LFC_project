@@ -555,7 +555,7 @@ public class Handler {
 			if (!characterList.get(ch2.getText()).onStage) // on stage?
 				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch2);
 		}
-
+		
 		if (onStageCheck()) {
 			boolean comparison = false;
 			switch (ev.getType()) {
@@ -645,6 +645,7 @@ public class Handler {
 		}
 
 		public void Jump(int scene) {
+			System.err.println("Salto a scena "+scene);
 			for (loggedAction singleLog : logList) {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
@@ -655,6 +656,7 @@ public class Handler {
 						// System.out.println("IL TIPO DICE COSE");
 						break;
 					}
+					System.err.println("eseguo azione per "+singleLog.character);
 				}
 			}
 		}

@@ -164,7 +164,7 @@ comparison
 	THAN YOUC QM
 	
 	ch2=CHARACTER CL WS?
-	gt=(IFSO | IFNOT) (LETUS | WESHALL | WEMUST) (RETURNTO | PROCEEDTO) SCENEC rn=ID
+	gt=(IFSO | IFNOT) (LETUS | WESHALL | WEMUST) (RETURNTO | PROCEEDTO) SCENEC rn=ID DOT WS?
 	
 	{h.checkComparison($ch1, $ev, $ch2, $gt, $rn);}
 	;
