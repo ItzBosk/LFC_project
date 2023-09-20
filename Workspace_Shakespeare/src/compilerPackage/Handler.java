@@ -491,12 +491,15 @@ public class Handler {
 				
 				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).value= charact1 + charact2;
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value);
 				}
 				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).value= charact1 - charact2;
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
 				}
 				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).value= charact1 * charact2;
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
 				}
 				
 			}
