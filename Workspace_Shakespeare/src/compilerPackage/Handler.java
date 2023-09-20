@@ -58,6 +58,7 @@ public class Handler {
 	int sceneNumber;
 	int adjectiveCounter;
 	boolean checkError; // rimesso a false all'inizio di ogni metodo
+	gotoHandler goTo = new gotoHandler();
 
 	public Handler(TokenStream input) {
 		this.input = input;
@@ -242,6 +243,8 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
+						//goTo.print();////urca
+						goTo.clearLog();
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
 						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 77));
@@ -428,8 +431,11 @@ public class Handler {
 				//1' tipologia di frase
 				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
-				} else
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
+				} else {
 					characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
+				}
 				adjectiveCounter = 0;
 			}
 			else if(noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
@@ -482,6 +488,64 @@ public class Handler {
 		System.out.println("	         -------------------------------------");
 	}
 
+	
+	/////urca
+	private class loggedAction {
+		int scene;
+		String character;
+		int assignedValue;
+		int actionType; //Switch che utilizzo per capire di che tipo e' l'azione salvata nel log
+				///////
+				// 1 -> Settaggio del character ad un value
+				// 2 -> Speak your mind che stampa il valore di un character in console
+				// 3 ->
+				///////
+		
+		public loggedAction(int scene,String character,int actionType, int assignedValue) {
+			this.scene = scene;
+			this.character = character;
+			this.assignedValue = assignedValue;
+			this.actionType = actionType;
+		}
+		
+	}
+	
+	
+	private  class gotoHandler {
+		 ArrayList<loggedAction> logList = new ArrayList<loggedAction>();
+		
+		public  void newLog(int Scene, String CharacterName, int ActionType, int AssignedValue) {
+			logList.add(new loggedAction(Scene,CharacterName,ActionType,AssignedValue));
+		}
+		
+		public void clearLog() {
+			logList.clear();
+		}
+		
+		public void Jump(int scene) {
+			for(loggedAction singleLog : logList) {
+				if(singleLog.scene>= scene)
+				{
+					switch(singleLog.actionType) {
+					case 1:
+						characterList.get(singleLog.character).value = singleLog.assignedValue;
+						break;
+					case 2:
+						//System.out.println("IL TIPO DICE COSE");
+						break;
+					}
+				}
+			}
+		}
+		
+		public void print() {
+			for(loggedAction singleLog : logList) {
+				System.out.println("Scene: "+singleLog.scene+", Character: "+singleLog.character+"\t, Action: "+singleLog.actionType+", Value: "+singleLog.assignedValue);
+			}
+		}
+		
+	}
+	
 // --------------------------------------------------------------------------	
 
 //	public void declareVar(Token t, Token v) {
