@@ -12,7 +12,6 @@ import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 
 import antlr.Parser;
-import compilerPackage.temp.Shakespeare;
 import compilerPackage.util.CharacterDescriptor;
 import compilerPackage.util.RomanNumber;
 import compilerPackage.util.Util;
