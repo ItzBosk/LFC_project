@@ -137,7 +137,6 @@ exeuntRule
 
 stageEvent
     	:
-    	{System.out.println("* I am about to recognize stage events..");}
     	(ch1=CHARACTER CL WS?
     	(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
@@ -146,8 +145,6 @@ stageEvent
     	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
     	(EP| DOT))
 	{h.checkStageEvent($ch1,$noun1,$noun2,$noun3,$noun4, $operationtype);}
-	{System.out.println("* I recognized some stage events");}
-	{System.out.println();}
 	;
 	
 adjective
