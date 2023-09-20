@@ -57,6 +57,7 @@ public class Handler {
 	int actNumber;
 	int sceneNumber;
 	int adjectiveCounter;
+	int adjectiveCounter2; //serve per la 2° tipologia di frase, per fare sottrazioni, somme, ..
 	boolean checkError; // rimesso a false all'inizio di ogni metodo
 
 	public Handler(TokenStream input) {
@@ -66,6 +67,7 @@ public class Handler {
 		actNumber = 0;
 		sceneNumber = 0;
 		adjectiveCounter = 0;
+		adjectiveCounter2=0;
 		checkError = false;
 		it = characterList.entrySet().iterator();
 	}
@@ -411,7 +413,7 @@ public class Handler {
 	}
 
 	// operazioni svolte su/da un personaggio
-	public void checkStageEvent(Token ch1,Token noun1,Token noun2,Token noun3,Token noun4) {
+	public void checkStageEvent(Token ch1,Token noun1,Token noun2,Token noun3,Token noun4, Token operationtype) {
 		checkError = false;
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch1);
@@ -426,18 +428,69 @@ public class Handler {
 			
 			if(noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
 				//1' tipologia di frase
+				//You amazing amazing amazing amazing amazing hero !
 				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
 				} else
 					characterList.get(updateCh).value = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0;
+				adjectiveCounter = 0; //dopo ogni operazione lo azzera
 			}
+			
 			else if(noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
 				//2' tipologia di frase
+				//You are as pretty as the sum of a big lovely rose and a kingdom.
+				//l'aggettivo compreso tra as..as non serve.
+				//uso e annullo adjectiveCounter e adjectiveCounter2.
+				//(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS (SUMOF | DIFFBET | PRODOF) A  adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+		    	//AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+				
+				// IF: NOME2 POS NEUTRO
+				// ELSE: NOME2 NEG
+				
+				//IF NOME3 POS NEUTRO
+				//ELSE NOME3 NEG
+				
+				//IF SUMOF --> SOMMO e assegno a nome2
+		 		//IF ELSE DIFFBET --> SOTTRAGGO e assegno a nome2
+				//ELSE PRODOF --> PRODOTTO e assegno a nome2
+					 
+				
+				//1 personaggio
+				int charact1=0;
+				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					charact1 = (int) Math.pow(2, adjectiveCounter);
+				} else
+					charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
+				adjectiveCounter = 0; //dopo ogni operazione lo azzera
+				System.err.println("charact1: "+ charact1);
+
+				
+				//2 personaggio
+				int charact2=0;
+				if (noun3.getType() == ShakespeareLexer.POSITIVENOUN || noun3.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					charact2 = (int) Math.pow(2, adjectiveCounter2);
+				} else
+					charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
+				adjectiveCounter2 = 0; //dopo ogni operazione lo azzera
+				System.err.println("charact2: "+ charact2);
+
+				
+				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
+					characterList.get(updateCh).value= charact1 + charact2;
+				}
+				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					characterList.get(updateCh).value= charact1 - charact2;
+				}
+				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					characterList.get(updateCh).value= charact1 * charact2;
+				}
+				
 			}
+			
 			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
 				//3' tipologia di frase
 			}
+			
 			else {
 				//errore. non rientra in nessuna tipologia.
 			}
@@ -456,6 +509,8 @@ public class Handler {
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Phrase: \t\t" + noun2.getText() + "\n");
 			System.out.println("   - Phrase: \t\t" + noun3.getText() + "\n");
+			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).value + "\n");
+
 		}
 		else if (checkError == false && noun4 != null) {
 			System.out.println("------------------------------ STAGE EVENT 3' frase ---------------------------------");
