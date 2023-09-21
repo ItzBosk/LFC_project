@@ -437,6 +437,7 @@ public class Handler {
 			if(noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
 				//1' tipologia di frase
 				//You amazing amazing amazing amazing amazing hero !
+				//1 nome
 				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 
 					characterList.get(updateCh).value = (int) Math.pow(2, adjectiveCounter);
@@ -446,6 +447,7 @@ public class Handler {
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).value);
 				}
 				adjectiveCounter = 0;
+				System.err.println("### result frase1: "+ characterList.get(updateCh).value);
 
 			}
 			
@@ -468,36 +470,39 @@ public class Handler {
 				//ELSE PRODOF --> PRODOTTO e assegno a nome2
 					 
 				
-				//1 personaggio
+				//2 nome
 				int charact1=0;
 				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					charact1 = (int) Math.pow(2, adjectiveCounter);
 				} else
 					charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
 				adjectiveCounter = 0; //dopo ogni operazione lo azzera
-				System.err.println("charact1: "+ charact1);
+				System.err.println("frase2 charact1: "+ charact1);
 
 				
-				//2 personaggio
+				//3 nome
 				int charact2=0;
 				if (noun3.getType() == ShakespeareLexer.POSITIVENOUN || noun3.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					charact2 = (int) Math.pow(2, adjectiveCounter2);
 				} else
 					charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
 				adjectiveCounter2 = 0; //dopo ogni operazione lo azzera
-				System.err.println("charact2: "+ charact2);
+				System.err.println("frase2 charact2: "+ charact2);
 
 				
 				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).value= charact1 + charact2;
+					System.err.println("### result frase2: "+ characterList.get(updateCh).value);
 					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value);
 				}
 				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).value= charact1 - charact2;
+					System.err.println("### result frase2: "+ characterList.get(updateCh).value);
 					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
 				}
 				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).value= charact1 * charact2;
+					System.err.println("### result frase2: "+ characterList.get(updateCh).value);
 					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
 				}
 				
@@ -505,6 +510,36 @@ public class Handler {
 			
 			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
 				//3' tipologia di frase
+				
+				int thyself = characterList.get(ch1.getText()).value;
+				
+				//4 nome
+				int charact4=0;
+				if (noun4.getType() == ShakespeareLexer.POSITIVENOUN || noun4.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					charact4 = (int) Math.pow(2, adjectiveCounter);
+				} else
+					charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
+				adjectiveCounter = 0; //dopo ogni operazione lo azzera
+				
+				System.err.println("frase3 charact4: "+ charact4);
+				System.err.println("frase3 thyself: "+ thyself);
+				
+				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
+					characterList.get(updateCh).value= thyself + charact4;
+					System.err.println("### result frase3: "+ characterList.get(updateCh).value);
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value);
+				}
+				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					characterList.get(updateCh).value= thyself - charact4;
+					System.err.println("### result frase3: "+ characterList.get(updateCh).value);
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
+				}
+				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					characterList.get(updateCh).value= thyself * charact4;
+					System.err.println("### result frase3: "+ characterList.get(updateCh).value);
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).value );
+				}
+
 			}
 			
 			else {
