@@ -707,6 +707,17 @@ public class Handler {
 	// push
 	public void checkRemember(Token ch, Token who) {
 		checkError = false;
+		if (onStageCheck()) {
+			String updateCh = otherCharacter(ch);
+			if (who.getType() == ShakespeareLexer.ME) {
+//				characterList.get(updateCh).
+			}
+			else {
+//				characterList.get(updateCh).
+			}
+		}
+		else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 	}
 
 	// pop
@@ -715,6 +726,7 @@ public class Handler {
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch);
 			// update value con valore poppato
+//			characterList.get(updateCh).
 		}
 		else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);

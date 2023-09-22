@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // $ANTLR 3.5.1 C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-22 11:08:08
+=======
+// $ANTLR 3.5.1 C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-22 11:15:33
+>>>>>>> Stashed changes
 
     package compilerPackage;
 
@@ -413,14 +417,23 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "scenes"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:1: scenes : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( comparison )? ( exitRule | exeuntRule )? ;
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:1: scenes : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( comparison )? ( exitRule | exeuntRule )? ( remember )? ( recall )? ;
+>>>>>>> Stashed changes
 	public final void scenes() throws RecognitionException {
 		Token rn=null;
 		Token co=null;
 
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( comparison )? ( exitRule | exeuntRule )? )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:95:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( comparison )? ( exitRule | exeuntRule )?
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:93:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( comparison )? ( exitRule | exeuntRule )? ( remember )? ( recall )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:95:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEvent )* ( comparison )? ( exitRule | exeuntRule )? ( remember )? ( recall )?
+>>>>>>> Stashed changes
 			{
 			match(input,SCENE,FOLLOW_SCENE_in_scenes362); 
 			rn=(Token)match(input,ID,FOLLOW_ID_in_scenes366); 
@@ -541,6 +554,59 @@ public class ShakespeareParser extends Parser {
 
 			}
 
+<<<<<<< Updated upstream
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:6: ( remember )?
+			int alt10=2;
+			int LA10_0 = input.LA(1);
+			if ( (LA10_0==CHARACTER) ) {
+				int LA10_1 = input.LA(2);
+				if ( (LA10_1==CL) ) {
+					int LA10_3 = input.LA(3);
+					if ( (LA10_3==WS) ) {
+						int LA10_4 = input.LA(4);
+						if ( (LA10_4==REMEMBER) ) {
+							alt10=1;
+						}
+					}
+					else if ( (LA10_3==REMEMBER) ) {
+						alt10=1;
+					}
+				}
+			}
+			switch (alt10) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:6: remember
+					{
+					pushFollow(FOLLOW_remember_in_scenes438);
+					remember();
+					state._fsp--;
+
+					}
+					break;
+
+			}
+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:6: ( recall )?
+			int alt11=2;
+			int LA11_0 = input.LA(1);
+			if ( (LA11_0==CHARACTER) ) {
+				alt11=1;
+			}
+			switch (alt11) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:6: recall
+					{
+					pushFollow(FOLLOW_recall_in_scenes446);
+					recall();
+					state._fsp--;
+
+					}
+					break;
+
+			}
+
+>>>>>>> Stashed changes
 			}
 
 		}
@@ -557,13 +623,18 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "enterRule"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:107:1: enterRule : LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:108:1: enterRule : LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
+>>>>>>> Stashed changes
 	public final void enterRule() throws RecognitionException {
 		Token ch1=null;
 		Token and=null;
 		Token ch2=null;
 
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:108:2: ( LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:5: LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
 			{
@@ -607,13 +678,64 @@ public class ShakespeareParser extends Parser {
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==WS) ) {
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:109:2: ( LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:5: LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
+			{
+			match(input,LB,FOLLOW_LB_in_enterRule469); 
+			match(input,ENTER,FOLLOW_ENTER_in_enterRule471); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:14: (ch1= CHARACTER )?
+			int alt12=2;
+			int LA12_0 = input.LA(1);
+			if ( (LA12_0==CHARACTER) ) {
+>>>>>>> Stashed changes
 				alt12=1;
 			}
 			switch (alt12) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:59: WS
 					{
 					match(input,WS,FOLLOW_WS_in_enterRule483); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:15: ch1= CHARACTER
+					{
+					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule476); 
+					}
+					break;
+
+			}
+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:31: (and= AND ch2= CHARACTER )?
+			int alt13=2;
+			int LA13_0 = input.LA(1);
+			if ( (LA13_0==AND) ) {
+				alt13=1;
+			}
+			switch (alt13) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:32: and= AND ch2= CHARACTER
+					{
+					and=(Token)match(input,AND,FOLLOW_AND_in_enterRule483); 
+					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule487); 
+					}
+					break;
+
+			}
+
+			match(input,RB,FOLLOW_RB_in_enterRule491); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:59: ( WS )?
+			int alt14=2;
+			int LA14_0 = input.LA(1);
+			if ( (LA14_0==WS) ) {
+				alt14=1;
+			}
+			switch (alt14) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:59: WS
+					{
+					match(input,WS,FOLLOW_WS_in_enterRule493); 
+>>>>>>> Stashed changes
 					}
 					break;
 
@@ -636,11 +758,16 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exitRule"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:119:1: exitRule : LB EXIT ch= CHARACTER RB ( WS )? ;
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:1: exitRule : LB EXIT ch= CHARACTER RB ( WS )? ;
+>>>>>>> Stashed changes
 	public final void exitRule() throws RecognitionException {
 		Token ch=null;
 
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:2: ( LB EXIT ch= CHARACTER RB ( WS )? )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:122:6: LB EXIT ch= CHARACTER RB ( WS )?
 			{
@@ -659,6 +786,26 @@ public class ShakespeareParser extends Parser {
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:122:30: WS
 					{
 					match(input,WS,FOLLOW_WS_in_exitRule547); 
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:121:2: ( LB EXIT ch= CHARACTER RB ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:6: LB EXIT ch= CHARACTER RB ( WS )?
+			{
+			match(input,LB,FOLLOW_LB_in_exitRule547); 
+			match(input,EXIT,FOLLOW_EXIT_in_exitRule549); 
+			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exitRule553); 
+			match(input,RB,FOLLOW_RB_in_exitRule555); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:30: ( WS )?
+			int alt15=2;
+			int LA15_0 = input.LA(1);
+			if ( (LA15_0==WS) ) {
+				alt15=1;
+			}
+			switch (alt15) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:30: WS
+					{
+					match(input,WS,FOLLOW_WS_in_exitRule557); 
+>>>>>>> Stashed changes
 					}
 					break;
 
@@ -681,13 +828,18 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exeuntRule"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:129:1: exeuntRule : LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:130:1: exeuntRule : LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? ;
+>>>>>>> Stashed changes
 	public final void exeuntRule() throws RecognitionException {
 		Token ch1=null;
 		Token and=null;
 		Token ch2=null;
 
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:130:6: ( LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:132:6: LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
 			{
@@ -731,13 +883,64 @@ public class ShakespeareParser extends Parser {
 			int alt16=2;
 			int LA16_0 = input.LA(1);
 			if ( (LA16_0==WS) ) {
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:131:6: ( LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:6: LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ( WS )?
+			{
+			match(input,LB,FOLLOW_LB_in_exeuntRule612); 
+			match(input,EXEUNT,FOLLOW_EXEUNT_in_exeuntRule614); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:16: (ch1= CHARACTER )?
+			int alt16=2;
+			int LA16_0 = input.LA(1);
+			if ( (LA16_0==CHARACTER) ) {
+>>>>>>> Stashed changes
 				alt16=1;
 			}
 			switch (alt16) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:132:61: WS
 					{
 					match(input,WS,FOLLOW_WS_in_exeuntRule626); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:17: ch1= CHARACTER
+					{
+					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule619); 
+					}
+					break;
+
+			}
+
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:33: (and= AND ch2= CHARACTER )?
+			int alt17=2;
+			int LA17_0 = input.LA(1);
+			if ( (LA17_0==AND) ) {
+				alt17=1;
+			}
+			switch (alt17) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:34: and= AND ch2= CHARACTER
+					{
+					and=(Token)match(input,AND,FOLLOW_AND_in_exeuntRule626); 
+					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule630); 
+					}
+					break;
+
+			}
+
+			match(input,RB,FOLLOW_RB_in_exeuntRule634); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:61: ( WS )?
+			int alt18=2;
+			int LA18_0 = input.LA(1);
+			if ( (LA18_0==WS) ) {
+				alt18=1;
+			}
+			switch (alt18) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:133:61: WS
+					{
+					match(input,WS,FOLLOW_WS_in_exeuntRule636); 
+>>>>>>> Stashed changes
 					}
 					break;
 
@@ -760,7 +963,11 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "stageEvent"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:139:1: stageEvent : (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) ;
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:1: stageEvent : (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) ;
+>>>>>>> Stashed changes
 	public final void stageEvent() throws RecognitionException {
 		Token ch1=null;
 		Token noun1=null;
@@ -770,6 +977,7 @@ public class ShakespeareParser extends Parser {
 		Token noun4=null;
 
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:140:6: ( (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
 			{
@@ -789,11 +997,33 @@ public class ShakespeareParser extends Parser {
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:24: WS
 					{
 					match(input,WS,FOLLOW_WS_in_stageEvent678); 
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:141:6: ( (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:6: (ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:7: ch1= CHARACTER CL ( WS )? ( YOU ( ARE )? | THOUART ) ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) ) ( EP | DOT )
+			{
+			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEvent684); 
+			match(input,CL,FOLLOW_CL_in_stageEvent686); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:24: ( WS )?
+			int alt19=2;
+			int LA19_0 = input.LA(1);
+			if ( (LA19_0==WS) ) {
+				alt19=1;
+			}
+			switch (alt19) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:142:24: WS
+					{
+					match(input,WS,FOLLOW_WS_in_stageEvent688); 
+>>>>>>> Stashed changes
 					}
 					break;
 
 			}
 
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:6: ( YOU ( ARE )? | THOUART )
 			int alt19=2;
 			int LA19_0 = input.LA(1);
@@ -802,10 +1032,21 @@ public class ShakespeareParser extends Parser {
 			}
 			else if ( (LA19_0==THOUART) ) {
 				alt19=2;
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:6: ( YOU ( ARE )? | THOUART )
+			int alt21=2;
+			int LA21_0 = input.LA(1);
+			if ( (LA21_0==YOU) ) {
+				alt21=1;
+			}
+			else if ( (LA21_0==THOUART) ) {
+				alt21=2;
+>>>>>>> Stashed changes
 			}
 
 			else {
 				NoViableAltException nvae =
+<<<<<<< Updated upstream
 					new NoViableAltException("", 19, 0, input);
 				throw nvae;
 			}
@@ -826,6 +1067,28 @@ public class ShakespeareParser extends Parser {
 							// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:11: ARE
 							{
 							match(input,ARE,FOLLOW_ARE_in_stageEvent690); 
+=======
+					new NoViableAltException("", 21, 0, input);
+				throw nvae;
+			}
+
+			switch (alt21) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: YOU ( ARE )?
+					{
+					match(input,YOU,FOLLOW_YOU_in_stageEvent698); 
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:11: ( ARE )?
+					int alt20=2;
+					int LA20_0 = input.LA(1);
+					if ( (LA20_0==ARE) ) {
+						alt20=1;
+					}
+					switch (alt20) {
+						case 1 :
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:11: ARE
+							{
+							match(input,ARE,FOLLOW_ARE_in_stageEvent700); 
+>>>>>>> Stashed changes
 							}
 							break;
 
@@ -834,16 +1097,27 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:18: THOUART
 					{
 					match(input,THOUART,FOLLOW_THOUART_in_stageEvent695); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:18: THOUART
+					{
+					match(input,THOUART,FOLLOW_THOUART_in_stageEvent705); 
+>>>>>>> Stashed changes
 					}
 					break;
 
 			}
 
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:6: ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) )
 			int alt25=3;
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:6: ( ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) | (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) )
+			int alt26=3;
+>>>>>>> Stashed changes
 			switch ( input.LA(1) ) {
 			case A:
 			case NEGATIVEADJECTIVE:
@@ -853,28 +1127,29 @@ public class ShakespeareParser extends Parser {
 			case POSITIVEADJECTIVE:
 			case POSITIVENOUN:
 				{
-				alt25=1;
+				alt26=1;
 				}
 				break;
 			case AS:
 				{
-				alt25=2;
+				alt26=2;
 				}
 				break;
 			case DIFFBET:
 			case PRODOF:
 			case SUMOF:
 				{
-				alt25=3;
+				alt26=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 25, 0, input);
+					new NoViableAltException("", 26, 0, input);
 				throw nvae;
 			}
-			switch (alt25) {
+			switch (alt26) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
 					{
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: ( A )?
@@ -888,11 +1163,27 @@ public class ShakespeareParser extends Parser {
 							// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:7: A
 							{
 							match(input,A,FOLLOW_A_in_stageEvent706); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:7: ( A )? ( adjective )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+					{
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:7: ( A )?
+					int alt22=2;
+					int LA22_0 = input.LA(1);
+					if ( (LA22_0==A) ) {
+						alt22=1;
+					}
+					switch (alt22) {
+						case 1 :
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:7: A
+							{
+							match(input,A,FOLLOW_A_in_stageEvent716); 
+>>>>>>> Stashed changes
 							}
 							break;
 
 					}
 
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:9: ( adjective )*
 					loop21:
 					while (true) {
@@ -907,6 +1198,22 @@ public class ShakespeareParser extends Parser {
 							// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:10: adjective
 							{
 							pushFollow(FOLLOW_adjective_in_stageEvent709);
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:9: ( adjective )*
+					loop23:
+					while (true) {
+						int alt23=2;
+						int LA23_0 = input.LA(1);
+						if ( (LA23_0==NEGATIVEADJECTIVE||LA23_0==NEUTRALADJECTIVE||LA23_0==POSITIVEADJECTIVE) ) {
+							alt23=1;
+						}
+
+						switch (alt23) {
+						case 1 :
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:10: adjective
+							{
+							pushFollow(FOLLOW_adjective_in_stageEvent719);
+>>>>>>> Stashed changes
 							adjective();
 							state._fsp--;
 
@@ -914,7 +1221,11 @@ public class ShakespeareParser extends Parser {
 							break;
 
 						default :
+<<<<<<< Updated upstream
 							break loop21;
+=======
+							break loop23;
+>>>>>>> Stashed changes
 						}
 					}
 
@@ -930,12 +1241,21 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:6: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
 					{
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:6: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:7: AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjective )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecond )* noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
 					{
 					match(input,AS,FOLLOW_AS_in_stageEvent735); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:6: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					{
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:6: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:7: AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveSecond )+ noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A noun3= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+					{
+					match(input,AS,FOLLOW_AS_in_stageEvent745); 
+>>>>>>> Stashed changes
 					if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
 						input.consume();
 						state.errorRecovery=false;
@@ -944,7 +1264,11 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
+<<<<<<< Updated upstream
 					match(input,AS,FOLLOW_AS_in_stageEvent749); 
+=======
+					match(input,AS,FOLLOW_AS_in_stageEvent759); 
+>>>>>>> Stashed changes
 					operationtype=input.LT(1);
 					if ( input.LA(1)==DIFFBET||input.LA(1)==PRODOF||input.LA(1)==SUMOF ) {
 						input.consume();
@@ -954,6 +1278,7 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
+<<<<<<< Updated upstream
 					match(input,A,FOLLOW_A_in_stageEvent765); 
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:116: ( adjective )*
 					loop22:
@@ -970,14 +1295,41 @@ public class ShakespeareParser extends Parser {
 							{
 							pushFollow(FOLLOW_adjective_in_stageEvent768);
 							adjective();
+=======
+					match(input,A,FOLLOW_A_in_stageEvent775); 
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:116: ( adjectiveSecond )+
+					int cnt24=0;
+					loop24:
+					while (true) {
+						int alt24=2;
+						int LA24_0 = input.LA(1);
+						if ( (LA24_0==NEGATIVEADJECTIVE||LA24_0==NEUTRALADJECTIVE||LA24_0==POSITIVEADJECTIVE) ) {
+							alt24=1;
+						}
+
+						switch (alt24) {
+						case 1 :
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:116: adjectiveSecond
+							{
+							pushFollow(FOLLOW_adjectiveSecond_in_stageEvent778);
+							adjectiveSecond();
+>>>>>>> Stashed changes
 							state._fsp--;
 
 							}
 							break;
 
 						default :
+<<<<<<< Updated upstream
 							break loop22;
 						}
+=======
+							if ( cnt24 >= 1 ) break loop24;
+							EarlyExitException eee = new EarlyExitException(24, input);
+							throw eee;
+						}
+						cnt24++;
+>>>>>>> Stashed changes
 					}
 
 					noun2=input.LT(1);
@@ -989,6 +1341,7 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
+<<<<<<< Updated upstream
 					match(input,AND,FOLLOW_AND_in_stageEvent791); 
 					match(input,A,FOLLOW_A_in_stageEvent793); 
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:146:12: ( adjectiveSecond )*
@@ -1016,6 +1369,10 @@ public class ShakespeareParser extends Parser {
 						}
 					}
 
+=======
+					match(input,AND,FOLLOW_AND_in_stageEvent801); 
+					match(input,A,FOLLOW_A_in_stageEvent803); 
+>>>>>>> Stashed changes
 					noun3=input.LT(1);
 					if ( input.LA(1)==NEGATIVENOUN||input.LA(1)==NEUTRALNOUN||input.LA(1)==POSITIVENOUN ) {
 						input.consume();
@@ -1030,10 +1387,17 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:6: (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
 					{
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:6: (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:7: operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:6: (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					{
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:6: (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:7: operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjective )+ noun4= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+>>>>>>> Stashed changes
 					{
 					operationtype=input.LT(1);
 					if ( input.LA(1)==DIFFBET||input.LA(1)==PRODOF||input.LA(1)==SUMOF ) {
@@ -1044,24 +1408,39 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
+<<<<<<< Updated upstream
 					match(input,THYSELF,FOLLOW_THYSELF_in_stageEvent834); 
 					match(input,AND,FOLLOW_AND_in_stageEvent836); 
 					match(input,A,FOLLOW_A_in_stageEvent838); 
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:62: ( adjective )+
 					int cnt24=0;
 					loop24:
+=======
+					match(input,THYSELF,FOLLOW_THYSELF_in_stageEvent841); 
+					match(input,AND,FOLLOW_AND_in_stageEvent843); 
+					match(input,A,FOLLOW_A_in_stageEvent845); 
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:62: ( adjective )+
+					int cnt25=0;
+					loop25:
+>>>>>>> Stashed changes
 					while (true) {
-						int alt24=2;
-						int LA24_0 = input.LA(1);
-						if ( (LA24_0==NEGATIVEADJECTIVE||LA24_0==NEUTRALADJECTIVE||LA24_0==POSITIVEADJECTIVE) ) {
-							alt24=1;
+						int alt25=2;
+						int LA25_0 = input.LA(1);
+						if ( (LA25_0==NEGATIVEADJECTIVE||LA25_0==NEUTRALADJECTIVE||LA25_0==POSITIVEADJECTIVE) ) {
+							alt25=1;
 						}
 
-						switch (alt24) {
+						switch (alt25) {
 						case 1 :
+<<<<<<< Updated upstream
 							// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:147:62: adjective
 							{
 							pushFollow(FOLLOW_adjective_in_stageEvent840);
+=======
+							// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:148:62: adjective
+							{
+							pushFollow(FOLLOW_adjective_in_stageEvent847);
+>>>>>>> Stashed changes
 							adjective();
 							state._fsp--;
 
@@ -1069,11 +1448,11 @@ public class ShakespeareParser extends Parser {
 							break;
 
 						default :
-							if ( cnt24 >= 1 ) break loop24;
-							EarlyExitException eee = new EarlyExitException(24, input);
+							if ( cnt25 >= 1 ) break loop25;
+							EarlyExitException eee = new EarlyExitException(25, input);
 							throw eee;
 						}
-						cnt24++;
+						cnt25++;
 					}
 
 					noun4=input.LT(1);
@@ -1119,11 +1498,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "adjective"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:152:1: adjective : ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
 	public final void adjective() throws RecognitionException {
 		try {
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:153:2: ( ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:154:2: ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:153:1: adjective : ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
+	public final void adjective() throws RecognitionException {
+		try {
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:154:2: ( ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:155:2: ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
+>>>>>>> Stashed changes
 			{
 			if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
 				input.consume();
@@ -1181,7 +1568,11 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "comparison"
+<<<<<<< Updated upstream
 	// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:1: comparison : ch1= CHARACTER CL ( WS )? AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL ( WS )? gt= ( IFSO | IFNOT ) ( LETUS | WESHALL | WEMUST ) ( RETURNTO | PROCEEDTO ) SCENEC rn= ID DOT ( WS )? ;
+=======
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:160:1: comparison : ch1= CHARACTER CL ( WS )? AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL ( WS )? gt= ( IFSO | IFNOT ) ( LETUS | WESHALL | WEMUST ) ( RETURNTO | PROCEEDTO ) SCENEC rn= ID DOT ( WS )? ;
+>>>>>>> Stashed changes
 	public final void comparison() throws RecognitionException {
 		Token ch1=null;
 		Token ev=null;
@@ -1190,6 +1581,7 @@ public class ShakespeareParser extends Parser {
 		Token rn=null;
 
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:168:2: (ch1= CHARACTER CL ( WS )? AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL ( WS )? gt= ( IFSO | IFNOT ) ( LETUS | WESHALL | WEMUST ) ( RETURNTO | PROCEEDTO ) SCENEC rn= ID DOT ( WS )? )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:169:2: ch1= CHARACTER CL ( WS )? AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL ( WS )? gt= ( IFSO | IFNOT ) ( LETUS | WESHALL | WEMUST ) ( RETURNTO | PROCEEDTO ) SCENEC rn= ID DOT ( WS )?
 			{
@@ -1200,43 +1592,68 @@ public class ShakespeareParser extends Parser {
 			int LA26_0 = input.LA(1);
 			if ( (LA26_0==WS) ) {
 				alt26=1;
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:161:2: (ch1= CHARACTER CL ( WS )? AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL ( WS )? gt= ( IFSO | IFNOT ) ( LETUS | WESHALL | WEMUST ) ( RETURNTO | PROCEEDTO ) SCENEC rn= ID DOT ( WS )? )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:162:2: ch1= CHARACTER CL ( WS )? AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL ( WS )? gt= ( IFSO | IFNOT ) ( LETUS | WESHALL | WEMUST ) ( RETURNTO | PROCEEDTO ) SCENEC rn= ID DOT ( WS )?
+			{
+			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_comparison921); 
+			match(input,CL,FOLLOW_CL_in_comparison923); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:162:19: ( WS )?
+			int alt27=2;
+			int LA27_0 = input.LA(1);
+			if ( (LA27_0==WS) ) {
+				alt27=1;
+>>>>>>> Stashed changes
 			}
-			switch (alt26) {
+			switch (alt27) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:169:19: WS
 					{
 					match(input,WS,FOLLOW_WS_in_comparison947); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:162:19: WS
+					{
+					match(input,WS,FOLLOW_WS_in_comparison925); 
+>>>>>>> Stashed changes
 					}
 					break;
 
 			}
 
+<<<<<<< Updated upstream
 			match(input,AMI,FOLLOW_AMI_in_comparison951); 
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:5: ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE )
 			int alt27=3;
+=======
+			match(input,AMI,FOLLOW_AMI_in_comparison929); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:5: ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE )
+			int alt28=3;
+>>>>>>> Stashed changes
 			switch ( input.LA(1) ) {
 			case BETTER:
 				{
-				alt27=1;
+				alt28=1;
 				}
 				break;
 			case AS:
 				{
-				alt27=2;
+				alt28=2;
 				}
 				break;
 			case WORSE:
 				{
-				alt27=3;
+				alt28=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 27, 0, input);
+					new NoViableAltException("", 28, 0, input);
 				throw nvae;
 			}
-			switch (alt27) {
+			switch (alt28) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:6: BETTER
 					{
 					ev=(Token)match(input,BETTER,FOLLOW_BETTER_in_comparison958); 
@@ -1249,6 +1666,20 @@ public class ShakespeareParser extends Parser {
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:16: AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS
 					{
 					ev=(Token)match(input,AS,FOLLOW_AS_in_comparison963); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:6: BETTER
+					{
+					ev=(Token)match(input,BETTER,FOLLOW_BETTER_in_comparison936); 
+					}
+					break;
+				case 2 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:15: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS )
+					{
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:15: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS )
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:16: AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS
+					{
+					ev=(Token)match(input,AS,FOLLOW_AS_in_comparison941); 
+>>>>>>> Stashed changes
 					ev=input.LT(1);
 					if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
 						input.consume();
@@ -1258,20 +1689,31 @@ public class ShakespeareParser extends Parser {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
+<<<<<<< Updated upstream
 					ev=(Token)match(input,AS,FOLLOW_AS_in_comparison977); 
+=======
+					ev=(Token)match(input,AS,FOLLOW_AS_in_comparison955); 
+>>>>>>> Stashed changes
 					}
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:171:84: WORSE
 					{
 					ev=(Token)match(input,WORSE,FOLLOW_WORSE_in_comparison982); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:164:84: WORSE
+					{
+					ev=(Token)match(input,WORSE,FOLLOW_WORSE_in_comparison960); 
+>>>>>>> Stashed changes
 					}
 					break;
 
 			}
 
+<<<<<<< Updated upstream
 			match(input,THAN,FOLLOW_THAN_in_comparison987); 
 			match(input,YOUC,FOLLOW_YOUC_in_comparison989); 
 			match(input,QM,FOLLOW_QM_in_comparison991); 
@@ -1282,12 +1724,30 @@ public class ShakespeareParser extends Parser {
 			int LA28_0 = input.LA(1);
 			if ( (LA28_0==WS) ) {
 				alt28=1;
+=======
+			match(input,THAN,FOLLOW_THAN_in_comparison965); 
+			match(input,YOUC,FOLLOW_YOUC_in_comparison967); 
+			match(input,QM,FOLLOW_QM_in_comparison969); 
+			ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_comparison976); 
+			match(input,CL,FOLLOW_CL_in_comparison978); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:19: ( WS )?
+			int alt29=2;
+			int LA29_0 = input.LA(1);
+			if ( (LA29_0==WS) ) {
+				alt29=1;
+>>>>>>> Stashed changes
 			}
-			switch (alt28) {
+			switch (alt29) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:174:19: WS
 					{
 					match(input,WS,FOLLOW_WS_in_comparison1002); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:19: WS
+					{
+					match(input,WS,FOLLOW_WS_in_comparison980); 
+>>>>>>> Stashed changes
 					}
 					break;
 
@@ -1318,6 +1778,7 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
+<<<<<<< Updated upstream
 			match(input,SCENEC,FOLLOW_SCENEC_in_comparison1036); 
 			rn=(Token)match(input,ID,FOLLOW_ID_in_comparison1040); 
 			match(input,DOT,FOLLOW_DOT_in_comparison1042); 
@@ -1326,12 +1787,28 @@ public class ShakespeareParser extends Parser {
 			int LA29_0 = input.LA(1);
 			if ( (LA29_0==WS) ) {
 				alt29=1;
+=======
+			match(input,SCENEC,FOLLOW_SCENEC_in_comparison1014); 
+			rn=(Token)match(input,ID,FOLLOW_ID_in_comparison1018); 
+			match(input,DOT,FOLLOW_DOT_in_comparison1020); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:168:87: ( WS )?
+			int alt30=2;
+			int LA30_0 = input.LA(1);
+			if ( (LA30_0==WS) ) {
+				alt30=1;
+>>>>>>> Stashed changes
 			}
-			switch (alt29) {
+			switch (alt30) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:175:87: WS
 					{
 					match(input,WS,FOLLOW_WS_in_comparison1044); 
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:168:87: WS
+					{
+					match(input,WS,FOLLOW_WS_in_comparison1022); 
+>>>>>>> Stashed changes
 					}
 					break;
 
@@ -1351,6 +1828,179 @@ public class ShakespeareParser extends Parser {
 	}
 	// $ANTLR end "comparison"
 
+<<<<<<< Updated upstream
+=======
+
+
+	// $ANTLR start "adjectiveSecond"
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:174:1: adjectiveSecond : ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
+	public final void adjectiveSecond() throws RecognitionException {
+		try {
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:175:2: ( ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:176:2: ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
+			{
+			if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
+				input.consume();
+				state.errorRecovery=false;
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				throw mse;
+			}
+			h.adjectiveCounter2++;
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "adjectiveSecond"
+
+
+
+	// $ANTLR start "remember"
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:180:1: remember : (ch= CHARACTER ) CL ( WS )? REMEMBER who= ( ME | YOURSELF ) DOT ;
+	public final void remember() throws RecognitionException {
+		Token ch=null;
+		Token who=null;
+
+		try {
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:181:2: ( (ch= CHARACTER ) CL ( WS )? REMEMBER who= ( ME | YOURSELF ) DOT )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:2: (ch= CHARACTER ) CL ( WS )? REMEMBER who= ( ME | YOURSELF ) DOT
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:2: (ch= CHARACTER )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:3: ch= CHARACTER
+			{
+			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_remember1070); 
+			}
+
+			match(input,CL,FOLLOW_CL_in_remember1073); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:20: ( WS )?
+			int alt31=2;
+			int LA31_0 = input.LA(1);
+			if ( (LA31_0==WS) ) {
+				alt31=1;
+			}
+			switch (alt31) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:182:20: WS
+					{
+					match(input,WS,FOLLOW_WS_in_remember1075); 
+					}
+					break;
+
+			}
+
+			match(input,REMEMBER,FOLLOW_REMEMBER_in_remember1079); 
+			who=input.LT(1);
+			if ( input.LA(1)==ME||input.LA(1)==YOURSELF ) {
+				input.consume();
+				state.errorRecovery=false;
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				throw mse;
+			}
+			match(input,DOT,FOLLOW_DOT_in_remember1091); 
+			h.checkRemember(ch, who);
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "remember"
+
+
+
+	// $ANTLR start "recall"
+	// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:187:1: recall : (ch= CHARACTER ) CL ( WS )? RECALL ( ID )* ( DOT | EP ) ;
+	public final void recall() throws RecognitionException {
+		Token ch=null;
+
+		try {
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:2: ( (ch= CHARACTER ) CL ( WS )? RECALL ( ID )* ( DOT | EP ) )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:2: (ch= CHARACTER ) CL ( WS )? RECALL ( ID )* ( DOT | EP )
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:2: (ch= CHARACTER )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:3: ch= CHARACTER
+			{
+			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_recall1109); 
+			}
+
+			match(input,CL,FOLLOW_CL_in_recall1112); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:20: ( WS )?
+			int alt32=2;
+			int LA32_0 = input.LA(1);
+			if ( (LA32_0==WS) ) {
+				alt32=1;
+			}
+			switch (alt32) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:20: WS
+					{
+					match(input,WS,FOLLOW_WS_in_recall1114); 
+					}
+					break;
+
+			}
+
+			match(input,RECALL,FOLLOW_RECALL_in_recall1118); 
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: ( ID )*
+			loop33:
+			while (true) {
+				int alt33=2;
+				int LA33_0 = input.LA(1);
+				if ( (LA33_0==ID) ) {
+					alt33=1;
+				}
+
+				switch (alt33) {
+				case 1 :
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: ID
+					{
+					match(input,ID,FOLLOW_ID_in_recall1120); 
+					}
+					break;
+
+				default :
+					break loop33;
+				}
+			}
+
+			if ( input.LA(1)==DOT||input.LA(1)==EP ) {
+				input.consume();
+				state.errorRecovery=false;
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				throw mse;
+			}
+			h.chechRecall(ch);
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "recall"
+
+>>>>>>> Stashed changes
 	// Delegated rules
 
 
@@ -1374,6 +2024,7 @@ public class ShakespeareParser extends Parser {
 	public static final BitSet FOLLOW_COMMENT_in_scenes370 = new BitSet(new long[]{0x0000000010001002L});
 	public static final BitSet FOLLOW_enterRule_in_scenes395 = new BitSet(new long[]{0x0000000010001002L});
 	public static final BitSet FOLLOW_stageEvent_in_scenes403 = new BitSet(new long[]{0x0000000010001002L});
+<<<<<<< Updated upstream
 	public static final BitSet FOLLOW_comparison_in_scenes411 = new BitSet(new long[]{0x0000000010000002L});
 	public static final BitSet FOLLOW_exitRule_in_scenes420 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_exeuntRule_in_scenes429 = new BitSet(new long[]{0x0000000000000002L});
@@ -1447,4 +2098,92 @@ public class ShakespeareParser extends Parser {
 	public static final BitSet FOLLOW_ID_in_comparison1040 = new BitSet(new long[]{0x0000000000040000L});
 	public static final BitSet FOLLOW_DOT_in_comparison1042 = new BitSet(new long[]{0x0100000000000002L});
 	public static final BitSet FOLLOW_WS_in_comparison1044 = new BitSet(new long[]{0x0000000000000002L});
+=======
+	public static final BitSet FOLLOW_comparison_in_scenes411 = new BitSet(new long[]{0x0000000010001002L});
+	public static final BitSet FOLLOW_exitRule_in_scenes420 = new BitSet(new long[]{0x0000000000001002L});
+	public static final BitSet FOLLOW_exeuntRule_in_scenes429 = new BitSet(new long[]{0x0000000000001002L});
+	public static final BitSet FOLLOW_remember_in_scenes438 = new BitSet(new long[]{0x0000000000001002L});
+	public static final BitSet FOLLOW_recall_in_scenes446 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_enterRule469 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_ENTER_in_enterRule471 = new BitSet(new long[]{0x0000080000001080L});
+	public static final BitSet FOLLOW_CHARACTER_in_enterRule476 = new BitSet(new long[]{0x0000080000000080L});
+	public static final BitSet FOLLOW_AND_in_enterRule483 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CHARACTER_in_enterRule487 = new BitSet(new long[]{0x0000080000000000L});
+	public static final BitSet FOLLOW_RB_in_enterRule491 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_WS_in_enterRule493 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_exitRule547 = new BitSet(new long[]{0x0000000000800000L});
+	public static final BitSet FOLLOW_EXIT_in_exitRule549 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CHARACTER_in_exitRule553 = new BitSet(new long[]{0x0000080000000000L});
+	public static final BitSet FOLLOW_RB_in_exitRule555 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_WS_in_exitRule557 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LB_in_exeuntRule612 = new BitSet(new long[]{0x0000000000400000L});
+	public static final BitSet FOLLOW_EXEUNT_in_exeuntRule614 = new BitSet(new long[]{0x0000080000001080L});
+	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule619 = new BitSet(new long[]{0x0000080000000080L});
+	public static final BitSet FOLLOW_AND_in_exeuntRule626 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CHARACTER_in_exeuntRule630 = new BitSet(new long[]{0x0000080000000000L});
+	public static final BitSet FOLLOW_RB_in_exeuntRule634 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_WS_in_exeuntRule636 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_stageEvent684 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CL_in_stageEvent686 = new BitSet(new long[]{0x1840000000000000L});
+	public static final BitSet FOLLOW_WS_in_stageEvent688 = new BitSet(new long[]{0x1040000000000000L});
+	public static final BitSet FOLLOW_YOU_in_stageEvent698 = new BitSet(new long[]{0x0010023F00010610L});
+	public static final BitSet FOLLOW_ARE_in_stageEvent700 = new BitSet(new long[]{0x0010023F00010410L});
+	public static final BitSet FOLLOW_THOUART_in_stageEvent705 = new BitSet(new long[]{0x0010023F00010410L});
+	public static final BitSet FOLLOW_A_in_stageEvent716 = new BitSet(new long[]{0x0000003F00000000L});
+	public static final BitSet FOLLOW_adjective_in_stageEvent719 = new BitSet(new long[]{0x0000003F00000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent725 = new BitSet(new long[]{0x0000000000140000L});
+	public static final BitSet FOLLOW_AS_in_stageEvent745 = new BitSet(new long[]{0x0000001500000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent747 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_AS_in_stageEvent759 = new BitSet(new long[]{0x0010020000010000L});
+	public static final BitSet FOLLOW_set_in_stageEvent763 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_A_in_stageEvent775 = new BitSet(new long[]{0x0000001500000000L});
+	public static final BitSet FOLLOW_adjectiveSecond_in_stageEvent778 = new BitSet(new long[]{0x0000003F00000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent783 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_AND_in_stageEvent801 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_A_in_stageEvent803 = new BitSet(new long[]{0x0000002A00000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent807 = new BitSet(new long[]{0x0000000000140000L});
+	public static final BitSet FOLLOW_set_in_stageEvent829 = new BitSet(new long[]{0x0080000000000000L});
+	public static final BitSet FOLLOW_THYSELF_in_stageEvent841 = new BitSet(new long[]{0x0000000000000080L});
+	public static final BitSet FOLLOW_AND_in_stageEvent843 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_A_in_stageEvent845 = new BitSet(new long[]{0x0000001500000000L});
+	public static final BitSet FOLLOW_adjective_in_stageEvent847 = new BitSet(new long[]{0x0000003F00000000L});
+	public static final BitSet FOLLOW_set_in_stageEvent852 = new BitSet(new long[]{0x0000000000140000L});
+	public static final BitSet FOLLOW_set_in_stageEvent871 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_set_in_adjective893 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_comparison921 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CL_in_comparison923 = new BitSet(new long[]{0x0800000000000040L});
+	public static final BitSet FOLLOW_WS_in_comparison925 = new BitSet(new long[]{0x0000000000000040L});
+	public static final BitSet FOLLOW_AMI_in_comparison929 = new BitSet(new long[]{0x0400000000000C00L});
+	public static final BitSet FOLLOW_BETTER_in_comparison936 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_AS_in_comparison941 = new BitSet(new long[]{0x0000001500000000L});
+	public static final BitSet FOLLOW_set_in_comparison943 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_AS_in_comparison955 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_WORSE_in_comparison960 = new BitSet(new long[]{0x0020000000000000L});
+	public static final BitSet FOLLOW_THAN_in_comparison965 = new BitSet(new long[]{0x2000000000000000L});
+	public static final BitSet FOLLOW_YOUC_in_comparison967 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_QM_in_comparison969 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CHARACTER_in_comparison976 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CL_in_comparison978 = new BitSet(new long[]{0x080000000C000000L});
+	public static final BitSet FOLLOW_WS_in_comparison980 = new BitSet(new long[]{0x000000000C000000L});
+	public static final BitSet FOLLOW_set_in_comparison986 = new BitSet(new long[]{0x0300000040000000L});
+	public static final BitSet FOLLOW_set_in_comparison994 = new BitSet(new long[]{0x0001010000000000L});
+	public static final BitSet FOLLOW_set_in_comparison1006 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_SCENEC_in_comparison1014 = new BitSet(new long[]{0x0000000002000000L});
+	public static final BitSet FOLLOW_ID_in_comparison1018 = new BitSet(new long[]{0x0000000000040000L});
+	public static final BitSet FOLLOW_DOT_in_comparison1020 = new BitSet(new long[]{0x0800000000000002L});
+	public static final BitSet FOLLOW_WS_in_comparison1022 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_set_in_adjectiveSecond1042 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_remember1070 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CL_in_remember1073 = new BitSet(new long[]{0x0800800000000000L});
+	public static final BitSet FOLLOW_WS_in_remember1075 = new BitSet(new long[]{0x0000800000000000L});
+	public static final BitSet FOLLOW_REMEMBER_in_remember1079 = new BitSet(new long[]{0x4000000080000000L});
+	public static final BitSet FOLLOW_set_in_remember1083 = new BitSet(new long[]{0x0000000000040000L});
+	public static final BitSet FOLLOW_DOT_in_remember1091 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CHARACTER_in_recall1109 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_CL_in_recall1112 = new BitSet(new long[]{0x0800400000000000L});
+	public static final BitSet FOLLOW_WS_in_recall1114 = new BitSet(new long[]{0x0000400000000000L});
+	public static final BitSet FOLLOW_RECALL_in_recall1118 = new BitSet(new long[]{0x0000000002140000L});
+	public static final BitSet FOLLOW_ID_in_recall1120 = new BitSet(new long[]{0x0000000002140000L});
+	public static final BitSet FOLLOW_set_in_recall1123 = new BitSet(new long[]{0x0000000000000002L});
+>>>>>>> Stashed changes
 }

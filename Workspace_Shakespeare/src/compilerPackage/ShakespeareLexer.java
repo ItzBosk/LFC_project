@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 // $ANTLR 3.5.1 C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-22 11:08:09
+=======
+// $ANTLR 3.5.1 C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-09-22 11:15:33
+>>>>>>> Stashed changes
 
     package compilerPackage;
 
@@ -87,7 +91,11 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CHARACTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:5: ( 'Romeo' | 'Juliet' | 'Hamlet' | 'Ghost' | 'LadyMacbeth' | 'Ophelia' | 'Tebaldo' | 'Claudio' | 'Mercuzio' | 'Banquo' | 'Fulgencio' | 'Gertrude' | 'Desdemona' | 'Jago' | 'Polonio' | 'Macduff' | 'Shylock' | 'Laerte' | 'Orazio' | 'Prospero' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:5: ( 'Romeo' | 'Juliet' | 'Hamlet' | 'Ghost' | 'LadyMacbeth' | 'Ophelia' | 'Tebaldo' | 'Claudio' | 'Mercuzio' | 'Banquo' | 'Fulgencio' | 'Gertrude' | 'Desdemona' | 'Jago' | 'Polonio' | 'Macduff' | 'Shylock' | 'Laerte' | 'Orazio' | 'Prospero' )
+>>>>>>> Stashed changes
 			int alt1=20;
 			switch ( input.LA(1) ) {
 			case 'R':
@@ -299,140 +307,220 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:188:9: 'Romeo'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:9: 'Romeo'
+>>>>>>> Stashed changes
 					{
 					match("Romeo"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:189:9: 'Juliet'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:200:9: 'Juliet'
+>>>>>>> Stashed changes
 					{
 					match("Juliet"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:190:9: 'Hamlet'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:201:9: 'Hamlet'
+>>>>>>> Stashed changes
 					{
 					match("Hamlet"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:191:9: 'Ghost'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:202:9: 'Ghost'
+>>>>>>> Stashed changes
 					{
 					match("Ghost"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:192:9: 'LadyMacbeth'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:203:9: 'LadyMacbeth'
+>>>>>>> Stashed changes
 					{
 					match("LadyMacbeth"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:193:9: 'Ophelia'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:204:9: 'Ophelia'
+>>>>>>> Stashed changes
 					{
 					match("Ophelia"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:194:9: 'Tebaldo'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:205:9: 'Tebaldo'
+>>>>>>> Stashed changes
 					{
 					match("Tebaldo"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:195:9: 'Claudio'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:206:9: 'Claudio'
+>>>>>>> Stashed changes
 					{
 					match("Claudio"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:196:9: 'Mercuzio'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:207:9: 'Mercuzio'
+>>>>>>> Stashed changes
 					{
 					match("Mercuzio"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:197:9: 'Banquo'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:208:9: 'Banquo'
+>>>>>>> Stashed changes
 					{
 					match("Banquo"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:198:9: 'Fulgencio'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:209:9: 'Fulgencio'
+>>>>>>> Stashed changes
 					{
 					match("Fulgencio"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:199:9: 'Gertrude'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:9: 'Gertrude'
+>>>>>>> Stashed changes
 					{
 					match("Gertrude"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:200:9: 'Desdemona'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:211:9: 'Desdemona'
+>>>>>>> Stashed changes
 					{
 					match("Desdemona"); 
 
 					}
 					break;
 				case 14 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:201:9: 'Jago'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:212:9: 'Jago'
+>>>>>>> Stashed changes
 					{
 					match("Jago"); 
 
 					}
 					break;
 				case 15 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:202:9: 'Polonio'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:9: 'Polonio'
+>>>>>>> Stashed changes
 					{
 					match("Polonio"); 
 
 					}
 					break;
 				case 16 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:203:9: 'Macduff'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:214:9: 'Macduff'
+>>>>>>> Stashed changes
 					{
 					match("Macduff"); 
 
 					}
 					break;
 				case 17 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:204:9: 'Shylock'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:215:9: 'Shylock'
+>>>>>>> Stashed changes
 					{
 					match("Shylock"); 
 
 					}
 					break;
 				case 18 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:205:9: 'Laerte'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:9: 'Laerte'
+>>>>>>> Stashed changes
 					{
 					match("Laerte"); 
 
 					}
 					break;
 				case 19 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:206:9: 'Orazio'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:9: 'Orazio'
+>>>>>>> Stashed changes
 					{
 					match("Orazio"); 
 
 					}
 					break;
 				case 20 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:207:9: 'Prospero'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:9: 'Prospero'
+>>>>>>> Stashed changes
 					{
 					match("Prospero"); 
 
@@ -454,7 +542,11 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = POSITIVENOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:5: ( 'Heaven' | 'King' | 'Lord' | 'angel' | 'flower' | 'happiness' | 'joy' | 'plum' | 'summer’s day' | 'hero' | 'rose' | 'kingdom' | 'pony' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:5: ( 'Heaven' | 'King' | 'Lord' | 'angel' | 'flower' | 'happiness' | 'joy' | 'plum' | 'summer’s day' | 'hero' | 'rose' | 'kingdom' | 'pony' )
+>>>>>>> Stashed changes
 			int alt2=13;
 			switch ( input.LA(1) ) {
 			case 'H':
@@ -557,91 +649,143 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt2) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:213:9: 'Heaven'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:9: 'Heaven'
+>>>>>>> Stashed changes
 					{
 					match("Heaven"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:214:9: 'King'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:9: 'King'
+>>>>>>> Stashed changes
 					{
 					match("King"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:215:9: 'Lord'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:226:9: 'Lord'
+>>>>>>> Stashed changes
 					{
 					match("Lord"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:9: 'angel'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:227:9: 'angel'
+>>>>>>> Stashed changes
 					{
 					match("angel"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:9: 'flower'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:228:9: 'flower'
+>>>>>>> Stashed changes
 					{
 					match("flower"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:9: 'happiness'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:229:9: 'happiness'
+>>>>>>> Stashed changes
 					{
 					match("happiness"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:219:9: 'joy'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:230:9: 'joy'
+>>>>>>> Stashed changes
 					{
 					match("joy"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:220:9: 'plum'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:9: 'plum'
+>>>>>>> Stashed changes
 					{
 					match("plum"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:221:9: 'summer’s day'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:232:9: 'summer’s day'
+>>>>>>> Stashed changes
 					{
 					match("summer’s day"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:222:9: 'hero'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:233:9: 'hero'
+>>>>>>> Stashed changes
 					{
 					match("hero"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:223:9: 'rose'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:234:9: 'rose'
+>>>>>>> Stashed changes
 					{
 					match("rose"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:9: 'kingdom'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:235:9: 'kingdom'
+>>>>>>> Stashed changes
 					{
 					match("kingdom"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:9: 'pony'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:236:9: 'pony'
+>>>>>>> Stashed changes
 					{
 					match("pony"); 
 
@@ -663,292 +807,460 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEUTRALNOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:5: ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:242:5: ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' )
+>>>>>>> Stashed changes
 			int alt3=41;
 			alt3 = dfa3.predict(input);
 			switch (alt3) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:231:9: 'animal'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:242:9: 'animal'
+>>>>>>> Stashed changes
 					{
 					match("animal"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:232:9: 'aunt'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:9: 'aunt'
+>>>>>>> Stashed changes
 					{
 					match("aunt"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:233:9: 'brother'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:244:9: 'brother'
+>>>>>>> Stashed changes
 					{
 					match("brother"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:234:9: 'cat'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:245:9: 'cat'
+>>>>>>> Stashed changes
 					{
 					match("cat"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:235:9: 'chihuahua'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:246:9: 'chihuahua'
+>>>>>>> Stashed changes
 					{
 					match("chihuahua"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:236:9: 'cousin'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:247:9: 'cousin'
+>>>>>>> Stashed changes
 					{
 					match("cousin"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:237:9: 'cow'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:248:9: 'cow'
+>>>>>>> Stashed changes
 					{
 					match("cow"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:238:9: 'daughter'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:249:9: 'daughter'
+>>>>>>> Stashed changes
 					{
 					match("daughter"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:239:9: 'door'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:9: 'door'
+>>>>>>> Stashed changes
 					{
 					match("door"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:240:9: 'face'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:251:9: 'face'
+>>>>>>> Stashed changes
 					{
 					match("face"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:241:9: 'father'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:252:9: 'father'
+>>>>>>> Stashed changes
 					{
 					match("father"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:242:9: 'fellow'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:253:9: 'fellow'
+>>>>>>> Stashed changes
 					{
 					match("fellow"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:243:9: 'granddaughter'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:254:9: 'granddaughter'
+>>>>>>> Stashed changes
 					{
 					match("granddaughter"); 
 
 					}
 					break;
 				case 14 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:244:9: 'grandfather'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:255:9: 'grandfather'
+>>>>>>> Stashed changes
 					{
 					match("grandfather"); 
 
 					}
 					break;
 				case 15 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:245:9: 'grandmother'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:256:9: 'grandmother'
+>>>>>>> Stashed changes
 					{
 					match("grandmother"); 
 
 					}
 					break;
 				case 16 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:246:9: 'grandson'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:257:9: 'grandson'
+>>>>>>> Stashed changes
 					{
 					match("grandson"); 
 
 					}
 					break;
 				case 17 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:247:9: 'hair'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:258:9: 'hair'
+>>>>>>> Stashed changes
 					{
 					match("hair"); 
 
 					}
 					break;
 				case 18 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:248:9: 'hamster'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:259:9: 'hamster'
+>>>>>>> Stashed changes
 					{
 					match("hamster"); 
 
 					}
 					break;
 				case 19 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:249:9: 'horse'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:260:9: 'horse'
+>>>>>>> Stashed changes
 					{
 					match("horse"); 
 
 					}
 					break;
 				case 20 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:250:9: 'lamp'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:261:9: 'lamp'
+>>>>>>> Stashed changes
 					{
 					match("lamp"); 
 
 					}
 					break;
 				case 21 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:251:9: 'lantern'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:262:9: 'lantern'
+>>>>>>> Stashed changes
 					{
 					match("lantern"); 
 
 					}
 					break;
 				case 22 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:252:9: 'mistletoe'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:263:9: 'mistletoe'
+>>>>>>> Stashed changes
 					{
 					match("mistletoe"); 
 
 					}
 					break;
 				case 23 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:253:9: 'moon'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:264:9: 'moon'
+>>>>>>> Stashed changes
 					{
 					match("moon"); 
 
 					}
 					break;
 				case 24 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:254:9: 'morning'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:265:9: 'morning'
+>>>>>>> Stashed changes
 					{
 					match("morning"); 
 
 					}
 					break;
 				case 25 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:255:9: 'mother'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:266:9: 'mother'
+>>>>>>> Stashed changes
 					{
 					match("mother"); 
 
 					}
 					break;
 				case 26 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:256:9: 'nephew'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:267:9: 'nephew'
+>>>>>>> Stashed changes
 					{
 					match("nephew"); 
 
 					}
 					break;
 				case 27 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:257:9: 'niece'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:268:9: 'niece'
+>>>>>>> Stashed changes
 					{
 					match("niece"); 
 
 					}
 					break;
 				case 28 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:258:9: 'nose'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:269:9: 'nose'
+>>>>>>> Stashed changes
 					{
 					match("nose"); 
 
 					}
 					break;
 				case 29 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:259:9: 'purse'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:270:9: 'purse'
+>>>>>>> Stashed changes
 					{
 					match("purse"); 
 
 					}
 					break;
 				case 30 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:260:9: 'road'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:271:9: 'road'
+>>>>>>> Stashed changes
 					{
 					match("road"); 
 
 					}
 					break;
 				case 31 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:261:9: 'roman'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:272:9: 'roman'
+>>>>>>> Stashed changes
 					{
 					match("roman"); 
 
 					}
 					break;
 				case 32 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:262:9: 'sister'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:273:9: 'sister'
+>>>>>>> Stashed changes
 					{
 					match("sister"); 
 
 					}
 					break;
 				case 33 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:263:9: 'sky'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:274:9: 'sky'
+>>>>>>> Stashed changes
 					{
 					match("sky"); 
 
 					}
 					break;
 				case 34 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:264:9: 'son'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:275:9: 'son'
+>>>>>>> Stashed changes
 					{
 					match("son"); 
 
 					}
 					break;
 				case 35 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:265:9: 'squirrel'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:276:9: 'squirrel'
+>>>>>>> Stashed changes
 					{
 					match("squirrel"); 
 
 					}
 					break;
 				case 36 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:266:9: 'stonewall'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:9: 'stonewall'
+>>>>>>> Stashed changes
 					{
 					match("stonewall"); 
 
 					}
 					break;
 				case 37 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:267:9: 'thing'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:278:9: 'thing'
+>>>>>>> Stashed changes
 					{
 					match("thing"); 
 
 					}
 					break;
 				case 38 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:268:9: 'town'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:279:9: 'town'
+>>>>>>> Stashed changes
 					{
 					match("town"); 
 
 					}
 					break;
 				case 39 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:269:9: 'tree'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:280:9: 'tree'
+>>>>>>> Stashed changes
 					{
 					match("tree"); 
 
 					}
 					break;
 				case 40 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:270:9: 'uncle'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:281:9: 'uncle'
+>>>>>>> Stashed changes
 					{
 					match("uncle"); 
 
 					}
 					break;
 				case 41 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:271:9: 'wind'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:282:9: 'wind'
+>>>>>>> Stashed changes
 					{
 					match("wind"); 
 
@@ -970,7 +1282,11 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEGATIVENOUN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:5: ( 'Hell' | 'Microsoft' | 'bastard' | 'beggar' | 'blister' | 'codpiece' | 'coward' | 'curse' | 'death' | 'devil' | 'draught' | 'famine' | 'flirt-gill' | 'goat' | 'hate' | 'hog' | 'hound' | 'leech' | 'lie' | 'pig' | 'plague' | 'starvation' | 'toad' | 'war' | 'wolf' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:5: ( 'Hell' | 'Microsoft' | 'bastard' | 'beggar' | 'blister' | 'codpiece' | 'coward' | 'curse' | 'death' | 'devil' | 'draught' | 'famine' | 'flirt-gill' | 'goat' | 'hate' | 'hog' | 'hound' | 'leech' | 'lie' | 'pig' | 'plague' | 'starvation' | 'toad' | 'war' | 'wolf' )
+>>>>>>> Stashed changes
 			int alt4=25;
 			switch ( input.LA(1) ) {
 			case 'H':
@@ -1267,175 +1583,275 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt4) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:277:9: 'Hell'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:9: 'Hell'
+>>>>>>> Stashed changes
 					{
 					match("Hell"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:278:9: 'Microsoft'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:289:9: 'Microsoft'
+>>>>>>> Stashed changes
 					{
 					match("Microsoft"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:279:9: 'bastard'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:290:9: 'bastard'
+>>>>>>> Stashed changes
 					{
 					match("bastard"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:280:9: 'beggar'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:291:9: 'beggar'
+>>>>>>> Stashed changes
 					{
 					match("beggar"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:281:9: 'blister'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:292:9: 'blister'
+>>>>>>> Stashed changes
 					{
 					match("blister"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:282:9: 'codpiece'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:293:9: 'codpiece'
+>>>>>>> Stashed changes
 					{
 					match("codpiece"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:283:9: 'coward'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:294:9: 'coward'
+>>>>>>> Stashed changes
 					{
 					match("coward"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:284:9: 'curse'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:295:9: 'curse'
+>>>>>>> Stashed changes
 					{
 					match("curse"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:285:9: 'death'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:296:9: 'death'
+>>>>>>> Stashed changes
 					{
 					match("death"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:286:9: 'devil'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:297:9: 'devil'
+>>>>>>> Stashed changes
 					{
 					match("devil"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:287:9: 'draught'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:298:9: 'draught'
+>>>>>>> Stashed changes
 					{
 					match("draught"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:288:9: 'famine'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:9: 'famine'
+>>>>>>> Stashed changes
 					{
 					match("famine"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:289:9: 'flirt-gill'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:300:9: 'flirt-gill'
+>>>>>>> Stashed changes
 					{
 					match("flirt-gill"); 
 
 					}
 					break;
 				case 14 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:290:9: 'goat'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:301:9: 'goat'
+>>>>>>> Stashed changes
 					{
 					match("goat"); 
 
 					}
 					break;
 				case 15 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:291:9: 'hate'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:302:9: 'hate'
+>>>>>>> Stashed changes
 					{
 					match("hate"); 
 
 					}
 					break;
 				case 16 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:292:9: 'hog'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:303:9: 'hog'
+>>>>>>> Stashed changes
 					{
 					match("hog"); 
 
 					}
 					break;
 				case 17 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:293:9: 'hound'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:304:9: 'hound'
+>>>>>>> Stashed changes
 					{
 					match("hound"); 
 
 					}
 					break;
 				case 18 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:294:9: 'leech'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:305:9: 'leech'
+>>>>>>> Stashed changes
 					{
 					match("leech"); 
 
 					}
 					break;
 				case 19 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:295:9: 'lie'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:306:9: 'lie'
+>>>>>>> Stashed changes
 					{
 					match("lie"); 
 
 					}
 					break;
 				case 20 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:296:9: 'pig'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:307:9: 'pig'
+>>>>>>> Stashed changes
 					{
 					match("pig"); 
 
 					}
 					break;
 				case 21 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:297:9: 'plague'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:308:9: 'plague'
+>>>>>>> Stashed changes
 					{
 					match("plague"); 
 
 					}
 					break;
 				case 22 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:298:9: 'starvation'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:309:9: 'starvation'
+>>>>>>> Stashed changes
 					{
 					match("starvation"); 
 
 					}
 					break;
 				case 23 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:299:9: 'toad'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:310:9: 'toad'
+>>>>>>> Stashed changes
 					{
 					match("toad"); 
 
 					}
 					break;
 				case 24 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:300:9: 'war'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:9: 'war'
+>>>>>>> Stashed changes
 					{
 					match("war"); 
 
 					}
 					break;
 				case 25 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:301:9: 'wolf'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:9: 'wolf'
+>>>>>>> Stashed changes
 					{
 					match("wolf"); 
 
@@ -1457,7 +1873,11 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = POSITIVEADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:306:5: ( 'amazing' | 'beautiful' | 'blossoming' | 'bold' | 'brave' | 'charming' | 'clearest' | 'cunning' | 'cute' | 'delicious' | 'embroidered' | 'fair' | 'fine' | 'gentle' | 'golden' | 'good' | 'handsome' | 'happy' | 'healthy' | 'honest' | 'lovely' | 'loving' | 'mighty' | 'noble' | 'peaceful' | 'pretty' | 'prompt' | 'proud' | 'reddest' | 'rich' | 'smooth' | 'sunny' | 'sweet' | 'sweetest' | 'trustworthy' | 'warm' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:317:5: ( 'amazing' | 'beautiful' | 'blossoming' | 'bold' | 'brave' | 'charming' | 'clearest' | 'cunning' | 'cute' | 'delicious' | 'embroidered' | 'fair' | 'fine' | 'gentle' | 'golden' | 'good' | 'handsome' | 'happy' | 'healthy' | 'honest' | 'lovely' | 'loving' | 'mighty' | 'noble' | 'peaceful' | 'pretty' | 'prompt' | 'proud' | 'reddest' | 'rich' | 'smooth' | 'sunny' | 'sweet' | 'sweetest' | 'trustworthy' | 'warm' )
+>>>>>>> Stashed changes
 			int alt5=36;
 			switch ( input.LA(1) ) {
 			case 'a':
@@ -1954,252 +2374,396 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt5) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:306:9: 'amazing'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:317:9: 'amazing'
+>>>>>>> Stashed changes
 					{
 					match("amazing"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:307:9: 'beautiful'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:9: 'beautiful'
+>>>>>>> Stashed changes
 					{
 					match("beautiful"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:308:9: 'blossoming'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:9: 'blossoming'
+>>>>>>> Stashed changes
 					{
 					match("blossoming"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:309:9: 'bold'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:9: 'bold'
+>>>>>>> Stashed changes
 					{
 					match("bold"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:310:9: 'brave'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:9: 'brave'
+>>>>>>> Stashed changes
 					{
 					match("brave"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:311:9: 'charming'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:322:9: 'charming'
+>>>>>>> Stashed changes
 					{
 					match("charming"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:312:9: 'clearest'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:323:9: 'clearest'
+>>>>>>> Stashed changes
 					{
 					match("clearest"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:313:9: 'cunning'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:324:9: 'cunning'
+>>>>>>> Stashed changes
 					{
 					match("cunning"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:314:9: 'cute'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:325:9: 'cute'
+>>>>>>> Stashed changes
 					{
 					match("cute"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:315:9: 'delicious'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:326:9: 'delicious'
+>>>>>>> Stashed changes
 					{
 					match("delicious"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:316:9: 'embroidered'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:327:9: 'embroidered'
+>>>>>>> Stashed changes
 					{
 					match("embroidered"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:317:9: 'fair'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:328:9: 'fair'
+>>>>>>> Stashed changes
 					{
 					match("fair"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:318:9: 'fine'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:329:9: 'fine'
+>>>>>>> Stashed changes
 					{
 					match("fine"); 
 
 					}
 					break;
 				case 14 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:319:9: 'gentle'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:330:9: 'gentle'
+>>>>>>> Stashed changes
 					{
 					match("gentle"); 
 
 					}
 					break;
 				case 15 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:320:9: 'golden'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:331:9: 'golden'
+>>>>>>> Stashed changes
 					{
 					match("golden"); 
 
 					}
 					break;
 				case 16 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:321:9: 'good'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:332:9: 'good'
+>>>>>>> Stashed changes
 					{
 					match("good"); 
 
 					}
 					break;
 				case 17 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:322:9: 'handsome'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:9: 'handsome'
+>>>>>>> Stashed changes
 					{
 					match("handsome"); 
 
 					}
 					break;
 				case 18 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:323:9: 'happy'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:9: 'happy'
+>>>>>>> Stashed changes
 					{
 					match("happy"); 
 
 					}
 					break;
 				case 19 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:324:9: 'healthy'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:335:9: 'healthy'
+>>>>>>> Stashed changes
 					{
 					match("healthy"); 
 
 					}
 					break;
 				case 20 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:325:9: 'honest'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:336:9: 'honest'
+>>>>>>> Stashed changes
 					{
 					match("honest"); 
 
 					}
 					break;
 				case 21 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:326:9: 'lovely'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:337:9: 'lovely'
+>>>>>>> Stashed changes
 					{
 					match("lovely"); 
 
 					}
 					break;
 				case 22 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:327:9: 'loving'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:9: 'loving'
+>>>>>>> Stashed changes
 					{
 					match("loving"); 
 
 					}
 					break;
 				case 23 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:328:9: 'mighty'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:9: 'mighty'
+>>>>>>> Stashed changes
 					{
 					match("mighty"); 
 
 					}
 					break;
 				case 24 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:329:9: 'noble'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:340:9: 'noble'
+>>>>>>> Stashed changes
 					{
 					match("noble"); 
 
 					}
 					break;
 				case 25 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:330:9: 'peaceful'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:341:9: 'peaceful'
+>>>>>>> Stashed changes
 					{
 					match("peaceful"); 
 
 					}
 					break;
 				case 26 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:331:9: 'pretty'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:342:9: 'pretty'
+>>>>>>> Stashed changes
 					{
 					match("pretty"); 
 
 					}
 					break;
 				case 27 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:332:9: 'prompt'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:343:9: 'prompt'
+>>>>>>> Stashed changes
 					{
 					match("prompt"); 
 
 					}
 					break;
 				case 28 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:333:9: 'proud'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:344:9: 'proud'
+>>>>>>> Stashed changes
 					{
 					match("proud"); 
 
 					}
 					break;
 				case 29 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:334:9: 'reddest'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:345:9: 'reddest'
+>>>>>>> Stashed changes
 					{
 					match("reddest"); 
 
 					}
 					break;
 				case 30 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:335:9: 'rich'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:346:9: 'rich'
+>>>>>>> Stashed changes
 					{
 					match("rich"); 
 
 					}
 					break;
 				case 31 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:336:9: 'smooth'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:347:9: 'smooth'
+>>>>>>> Stashed changes
 					{
 					match("smooth"); 
 
 					}
 					break;
 				case 32 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:337:9: 'sunny'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: 'sunny'
+>>>>>>> Stashed changes
 					{
 					match("sunny"); 
 
 					}
 					break;
 				case 33 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:338:9: 'sweet'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:349:9: 'sweet'
+>>>>>>> Stashed changes
 					{
 					match("sweet"); 
 
 					}
 					break;
 				case 34 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:339:9: 'sweetest'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:350:9: 'sweetest'
+>>>>>>> Stashed changes
 					{
 					match("sweetest"); 
 
 					}
 					break;
 				case 35 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:340:9: 'trustworthy'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:351:9: 'trustworthy'
+>>>>>>> Stashed changes
 					{
 					match("trustworthy"); 
 
 					}
 					break;
 				case 36 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:341:9: 'warm'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:352:9: 'warm'
+>>>>>>> Stashed changes
 					{
 					match("warm"); 
 
@@ -2221,7 +2785,11 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEUTRALADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:346:5: ( 'big' | 'black' | 'blue' | 'bluest' | 'bottomless' | 'furry' | 'green' | 'hard' | 'huge' | 'large' | 'little' | 'normal' | 'old' | 'purple' | 'red' | 'rural' | 'small' | 'tiny' | 'white' | 'yellow' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:5: ( 'big' | 'black' | 'blue' | 'bluest' | 'bottomless' | 'furry' | 'green' | 'hard' | 'huge' | 'large' | 'little' | 'normal' | 'old' | 'purple' | 'red' | 'rural' | 'small' | 'tiny' | 'white' | 'yellow' )
+>>>>>>> Stashed changes
 			int alt6=20;
 			switch ( input.LA(1) ) {
 			case 'b':
@@ -2426,140 +2994,220 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt6) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:346:9: 'big'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:9: 'big'
+>>>>>>> Stashed changes
 					{
 					match("big"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:347:9: 'black'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:9: 'black'
+>>>>>>> Stashed changes
 					{
 					match("black"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:348:9: 'blue'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:359:9: 'blue'
+>>>>>>> Stashed changes
 					{
 					match("blue"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:349:9: 'bluest'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:360:9: 'bluest'
+>>>>>>> Stashed changes
 					{
 					match("bluest"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:350:9: 'bottomless'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:361:9: 'bottomless'
+>>>>>>> Stashed changes
 					{
 					match("bottomless"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:351:9: 'furry'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:362:9: 'furry'
+>>>>>>> Stashed changes
 					{
 					match("furry"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:352:9: 'green'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:363:9: 'green'
+>>>>>>> Stashed changes
 					{
 					match("green"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:353:9: 'hard'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:364:9: 'hard'
+>>>>>>> Stashed changes
 					{
 					match("hard"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:354:9: 'huge'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:365:9: 'huge'
+>>>>>>> Stashed changes
 					{
 					match("huge"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:355:9: 'large'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:366:9: 'large'
+>>>>>>> Stashed changes
 					{
 					match("large"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:356:9: 'little'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:367:9: 'little'
+>>>>>>> Stashed changes
 					{
 					match("little"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:357:9: 'normal'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:368:9: 'normal'
+>>>>>>> Stashed changes
 					{
 					match("normal"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:358:9: 'old'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:369:9: 'old'
+>>>>>>> Stashed changes
 					{
 					match("old"); 
 
 					}
 					break;
 				case 14 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:359:9: 'purple'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:370:9: 'purple'
+>>>>>>> Stashed changes
 					{
 					match("purple"); 
 
 					}
 					break;
 				case 15 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:360:9: 'red'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:371:9: 'red'
+>>>>>>> Stashed changes
 					{
 					match("red"); 
 
 					}
 					break;
 				case 16 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:361:9: 'rural'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:372:9: 'rural'
+>>>>>>> Stashed changes
 					{
 					match("rural"); 
 
 					}
 					break;
 				case 17 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:362:9: 'small'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:373:9: 'small'
+>>>>>>> Stashed changes
 					{
 					match("small"); 
 
 					}
 					break;
 				case 18 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:363:9: 'tiny'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:374:9: 'tiny'
+>>>>>>> Stashed changes
 					{
 					match("tiny"); 
 
 					}
 					break;
 				case 19 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:364:9: 'white'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:375:9: 'white'
+>>>>>>> Stashed changes
 					{
 					match("white"); 
 
 					}
 					break;
 				case 20 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:365:9: 'yellow'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:376:9: 'yellow'
+>>>>>>> Stashed changes
 					{
 					match("yellow"); 
 
@@ -2581,7 +3229,11 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = NEGATIVEADJECTIVE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:370:5: ( 'bad' | 'cowardly' | 'cursed' | 'damned' | 'dirty' | 'disgusting' | 'distasteful' | 'dusty' | 'evil' | 'fat' | 'fat-kidneyed' | 'fatherless' | 'foul' | 'hairy' | 'half-witted' | 'horrible' | 'horrid' | 'infected' | 'lying' | 'miserable' | 'misused' | 'oozing' | 'rotten' | 'smelly' | 'snotty' | 'sorry' | 'stinking' | 'stuffed' | 'stupid' | 'vile' | 'villainous' | 'worried' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:381:5: ( 'bad' | 'cowardly' | 'cursed' | 'damned' | 'dirty' | 'disgusting' | 'distasteful' | 'dusty' | 'evil' | 'fat' | 'fat-kidneyed' | 'fatherless' | 'foul' | 'hairy' | 'half-witted' | 'horrible' | 'horrid' | 'infected' | 'lying' | 'miserable' | 'misused' | 'oozing' | 'rotten' | 'smelly' | 'snotty' | 'sorry' | 'stinking' | 'stuffed' | 'stupid' | 'vile' | 'villainous' | 'worried' )
+>>>>>>> Stashed changes
 			int alt7=32;
 			switch ( input.LA(1) ) {
 			case 'b':
@@ -3096,224 +3748,352 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt7) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:370:9: 'bad'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:381:9: 'bad'
+>>>>>>> Stashed changes
 					{
 					match("bad"); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:371:9: 'cowardly'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:382:9: 'cowardly'
+>>>>>>> Stashed changes
 					{
 					match("cowardly"); 
 
 					}
 					break;
 				case 3 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:372:9: 'cursed'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:383:9: 'cursed'
+>>>>>>> Stashed changes
 					{
 					match("cursed"); 
 
 					}
 					break;
 				case 4 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:373:9: 'damned'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:384:9: 'damned'
+>>>>>>> Stashed changes
 					{
 					match("damned"); 
 
 					}
 					break;
 				case 5 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:374:9: 'dirty'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:385:9: 'dirty'
+>>>>>>> Stashed changes
 					{
 					match("dirty"); 
 
 					}
 					break;
 				case 6 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:375:9: 'disgusting'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:386:9: 'disgusting'
+>>>>>>> Stashed changes
 					{
 					match("disgusting"); 
 
 					}
 					break;
 				case 7 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:376:9: 'distasteful'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:387:9: 'distasteful'
+>>>>>>> Stashed changes
 					{
 					match("distasteful"); 
 
 					}
 					break;
 				case 8 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:377:9: 'dusty'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:388:9: 'dusty'
+>>>>>>> Stashed changes
 					{
 					match("dusty"); 
 
 					}
 					break;
 				case 9 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:378:9: 'evil'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:389:9: 'evil'
+>>>>>>> Stashed changes
 					{
 					match("evil"); 
 
 					}
 					break;
 				case 10 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:379:9: 'fat'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:390:9: 'fat'
+>>>>>>> Stashed changes
 					{
 					match("fat"); 
 
 					}
 					break;
 				case 11 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:380:9: 'fat-kidneyed'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:391:9: 'fat-kidneyed'
+>>>>>>> Stashed changes
 					{
 					match("fat-kidneyed"); 
 
 					}
 					break;
 				case 12 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:381:9: 'fatherless'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:392:9: 'fatherless'
+>>>>>>> Stashed changes
 					{
 					match("fatherless"); 
 
 					}
 					break;
 				case 13 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:382:9: 'foul'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:393:9: 'foul'
+>>>>>>> Stashed changes
 					{
 					match("foul"); 
 
 					}
 					break;
 				case 14 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:383:9: 'hairy'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:394:9: 'hairy'
+>>>>>>> Stashed changes
 					{
 					match("hairy"); 
 
 					}
 					break;
 				case 15 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:384:9: 'half-witted'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:395:9: 'half-witted'
+>>>>>>> Stashed changes
 					{
 					match("half-witted"); 
 
 					}
 					break;
 				case 16 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:385:9: 'horrible'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:396:9: 'horrible'
+>>>>>>> Stashed changes
 					{
 					match("horrible"); 
 
 					}
 					break;
 				case 17 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:386:9: 'horrid'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:397:9: 'horrid'
+>>>>>>> Stashed changes
 					{
 					match("horrid"); 
 
 					}
 					break;
 				case 18 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:387:9: 'infected'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:398:9: 'infected'
+>>>>>>> Stashed changes
 					{
 					match("infected"); 
 
 					}
 					break;
 				case 19 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:388:9: 'lying'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:399:9: 'lying'
+>>>>>>> Stashed changes
 					{
 					match("lying"); 
 
 					}
 					break;
 				case 20 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:389:9: 'miserable'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:400:9: 'miserable'
+>>>>>>> Stashed changes
 					{
 					match("miserable"); 
 
 					}
 					break;
 				case 21 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:390:9: 'misused'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:401:9: 'misused'
+>>>>>>> Stashed changes
 					{
 					match("misused"); 
 
 					}
 					break;
 				case 22 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:391:9: 'oozing'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:402:9: 'oozing'
+>>>>>>> Stashed changes
 					{
 					match("oozing"); 
 
 					}
 					break;
 				case 23 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:392:9: 'rotten'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:403:9: 'rotten'
+>>>>>>> Stashed changes
 					{
 					match("rotten"); 
 
 					}
 					break;
 				case 24 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:393:9: 'smelly'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:404:9: 'smelly'
+>>>>>>> Stashed changes
 					{
 					match("smelly"); 
 
 					}
 					break;
 				case 25 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:394:9: 'snotty'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:405:9: 'snotty'
+>>>>>>> Stashed changes
 					{
 					match("snotty"); 
 
 					}
 					break;
 				case 26 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:395:9: 'sorry'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:406:9: 'sorry'
+>>>>>>> Stashed changes
 					{
 					match("sorry"); 
 
 					}
 					break;
 				case 27 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:396:9: 'stinking'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:407:9: 'stinking'
+>>>>>>> Stashed changes
 					{
 					match("stinking"); 
 
 					}
 					break;
 				case 28 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:397:9: 'stuffed'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:408:9: 'stuffed'
+>>>>>>> Stashed changes
 					{
 					match("stuffed"); 
 
 					}
 					break;
 				case 29 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:398:9: 'stupid'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:409:9: 'stupid'
+>>>>>>> Stashed changes
 					{
 					match("stupid"); 
 
 					}
 					break;
 				case 30 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:399:9: 'vile'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:410:9: 'vile'
+>>>>>>> Stashed changes
 					{
 					match("vile"); 
 
 					}
 					break;
 				case 31 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:400:9: 'villainous'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:411:9: 'villainous'
+>>>>>>> Stashed changes
 					{
 					match("villainous"); 
 
 					}
 					break;
 				case 32 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:401:9: 'worried'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:412:9: 'worried'
+>>>>>>> Stashed changes
 					{
 					match("worried"); 
 
@@ -3335,8 +4115,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ACT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:406:10: ( 'Act' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:406:14: 'Act'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:417:10: ( 'Act' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:417:14: 'Act'
+>>>>>>> Stashed changes
 			{
 			match("Act"); 
 
@@ -3356,8 +4141,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = SCENE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:407:13: ( 'Scene' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:407:18: 'Scene'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:418:13: ( 'Scene' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:418:18: 'Scene'
+>>>>>>> Stashed changes
 			{
 			match("Scene"); 
 
@@ -3377,8 +4167,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ENTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:408:17: ( 'Enter' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:408:19: 'Enter'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:419:17: ( 'Enter' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:419:19: 'Enter'
+>>>>>>> Stashed changes
 			{
 			match("Enter"); 
 
@@ -3398,8 +4193,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EXIT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:409:17: ( 'Exit' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:409:25: 'Exit'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:420:17: ( 'Exit' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:420:25: 'Exit'
+>>>>>>> Stashed changes
 			{
 			match("Exit"); 
 
@@ -3419,8 +4219,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EXEUNT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:410:17: ( 'Exeunt' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:410:25: 'Exeunt'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:421:17: ( 'Exeunt' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:421:25: 'Exeunt'
+>>>>>>> Stashed changes
 			{
 			match("Exeunt"); 
 
@@ -3440,8 +4245,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = AND;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:411:14: ( 'and' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:411:16: 'and'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:422:14: ( 'and' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:422:16: 'and'
+>>>>>>> Stashed changes
 			{
 			match("and"); 
 
@@ -3461,8 +4271,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = YOU;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:415:14: ( 'You' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:415:18: 'You'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:426:14: ( 'You' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:426:18: 'You'
+>>>>>>> Stashed changes
 			{
 			match("You"); 
 
@@ -3482,8 +4297,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ARE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:416:10: ( 'are' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:416:14: 'are'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:427:10: ( 'are' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:427:14: 'are'
+>>>>>>> Stashed changes
 			{
 			match("are"); 
 
@@ -3503,8 +4323,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = THOUART;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:417:13: ( 'Thou art' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:417:17: 'Thou art'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:428:13: ( 'Thou art' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:428:17: 'Thou art'
+>>>>>>> Stashed changes
 			{
 			match("Thou art"); 
 
@@ -3524,8 +4349,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = AS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:418:10: ( 'as' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:418:14: 'as'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:429:10: ( 'as' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:429:14: 'as'
+>>>>>>> Stashed changes
 			{
 			match("as"); 
 
@@ -3545,8 +4375,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = SUMOF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:419:14: ( 'the sum of' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:419:18: 'the sum of'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:430:14: ( 'the sum of' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:430:18: 'the sum of'
+>>>>>>> Stashed changes
 			{
 			match("the sum of"); 
 
@@ -3566,8 +4401,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = DIFFBET;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:420:17: ( 'the difference between' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:420:21: 'the difference between'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:431:17: ( 'the difference between' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:431:21: 'the difference between'
+>>>>>>> Stashed changes
 			{
 			match("the difference between"); 
 
@@ -3587,8 +4427,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = PRODOF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:421:10: ( 'the product of' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:421:14: 'the product of'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:432:10: ( 'the product of' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:432:14: 'the product of'
+>>>>>>> Stashed changes
 			{
 			match("the product of"); 
 
@@ -3608,8 +4453,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = A;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:422:4: ( 'a' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:422:8: 'a'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:433:4: ( 'a' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:433:8: 'a'
+>>>>>>> Stashed changes
 			{
 			match('a'); 
 			}
@@ -3628,8 +4478,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = THYSELF;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:423:10: ( 'thyself' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:423:14: 'thyself'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:434:10: ( 'thyself' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:434:14: 'thyself'
+>>>>>>> Stashed changes
 			{
 			match("thyself"); 
 
@@ -3649,8 +4504,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = AMI;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:427:6: ( 'Am I' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:427:8: 'Am I'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:438:6: ( 'Am I' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:438:8: 'Am I'
+>>>>>>> Stashed changes
 			{
 			match("Am I"); 
 
@@ -3670,8 +4530,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = BETTER;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:428:9: ( 'better' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:428:14: 'better'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:439:9: ( 'better' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:439:14: 'better'
+>>>>>>> Stashed changes
 			{
 			match("better"); 
 
@@ -3691,8 +4556,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = WORSE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:429:8: ( 'worse' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:429:11: 'worse'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:440:8: ( 'worse' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:440:11: 'worse'
+>>>>>>> Stashed changes
 			{
 			match("worse"); 
 
@@ -3712,8 +4582,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = THAN;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:430:7: ( 'than' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:430:9: 'than'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:441:7: ( 'than' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:441:9: 'than'
+>>>>>>> Stashed changes
 			{
 			match("than"); 
 
@@ -3733,8 +4608,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = YOUC;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:431:7: ( 'you' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:431:10: 'you'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:442:7: ( 'you' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:442:10: 'you'
+>>>>>>> Stashed changes
 			{
 			match("you"); 
 
@@ -3754,8 +4634,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = SCENEC;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:432:9: ( 'scene' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:432:11: 'scene'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:443:9: ( 'scene' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:443:11: 'scene'
+>>>>>>> Stashed changes
 			{
 			match("scene"); 
 
@@ -3775,8 +4660,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = IFSO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:433:7: ( 'If so,' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:433:9: 'If so,'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:444:7: ( 'If so,' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:444:9: 'If so,'
+>>>>>>> Stashed changes
 			{
 			match("If so,"); 
 
@@ -3796,8 +4686,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = IFNOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:434:8: ( 'If not,' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:434:10: 'If not,'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:445:8: ( 'If not,' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:445:10: 'If not,'
+>>>>>>> Stashed changes
 			{
 			match("If not,"); 
 
@@ -3817,8 +4712,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = LETUS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:435:8: ( 'let us' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:435:10: 'let us'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:446:8: ( 'let us' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:446:10: 'let us'
+>>>>>>> Stashed changes
 			{
 			match("let us"); 
 
@@ -3838,8 +4738,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = WESHALL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:436:10: ( 'we shall' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:436:12: 'we shall'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:447:10: ( 'we shall' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:447:12: 'we shall'
+>>>>>>> Stashed changes
 			{
 			match("we shall"); 
 
@@ -3859,8 +4764,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = WEMUST;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:437:9: ( 'we must' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:437:11: 'we must'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:448:9: ( 'we must' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:448:11: 'we must'
+>>>>>>> Stashed changes
 			{
 			match("we must"); 
 
@@ -3880,8 +4790,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = RETURNTO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:438:10: ( 'return to' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:438:12: 'return to'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:449:10: ( 'return to' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:449:12: 'return to'
+>>>>>>> Stashed changes
 			{
 			match("return to"); 
 
@@ -3901,8 +4816,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = PROCEEDTO;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:439:11: ( 'proceed to' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:439:13: 'proceed to'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:450:11: ( 'proceed to' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:450:13: 'proceed to'
+>>>>>>> Stashed changes
 			{
 			match("proceed to"); 
 
@@ -3922,8 +4842,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = PRINTVALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:443:17: ( 'Open your heart' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:443:25: 'Open your heart'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:454:17: ( 'Open your heart' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:454:25: 'Open your heart'
+>>>>>>> Stashed changes
 			{
 			match("Open your heart"); 
 
@@ -3943,8 +4868,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = PRINTASCII;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:444:17: ( 'Speak your mind' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:444:25: 'Speak your mind'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:455:17: ( 'Speak your mind' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:455:25: 'Speak your mind'
+>>>>>>> Stashed changes
 			{
 			match("Speak your mind"); 
 
@@ -3964,8 +4894,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = READVALUE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:445:17: ( 'Open your mind' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:445:25: 'Open your mind'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:456:17: ( 'Open your mind' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:456:25: 'Open your mind'
+>>>>>>> Stashed changes
 			{
 			match("Open your mind"); 
 
@@ -3985,8 +4920,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = READASCII;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:446:17: ( 'Listen to your heart' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:446:25: 'Listen to your heart'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:457:17: ( 'Listen to your heart' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:457:25: 'Listen to your heart'
+>>>>>>> Stashed changes
 			{
 			match("Listen to your heart"); 
 
@@ -4001,11 +4941,103 @@ public class ShakespeareLexer extends Lexer {
 	}
 	// $ANTLR end "READASCII"
 
+<<<<<<< Updated upstream
 	// $ANTLR start "LETTER"
 	public final void mLETTER() throws RecognitionException {
 		try {
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:452:10: ( 'a' .. 'z' | 'A' .. 'Z' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+=======
+	// $ANTLR start "REMEMBER"
+	public final void mREMEMBER() throws RecognitionException {
+		try {
+			int _type = REMEMBER;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:461:10: ( 'Remember' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:461:15: 'Remember'
+			{
+			match("Remember"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "REMEMBER"
+
+	// $ANTLR start "ME"
+	public final void mME() throws RecognitionException {
+		try {
+			int _type = ME;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:462:5: ( 'me' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:462:10: 'me'
+			{
+			match("me"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "ME"
+
+	// $ANTLR start "YOURSELF"
+	public final void mYOURSELF() throws RecognitionException {
+		try {
+			int _type = YOURSELF;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:463:10: ( 'yourself' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:463:15: 'yourself'
+			{
+			match("yourself"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "YOURSELF"
+
+	// $ANTLR start "RECALL"
+	public final void mRECALL() throws RecognitionException {
+		try {
+			int _type = RECALL;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:464:9: ( 'Recall' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:464:14: 'Recall'
+			{
+			match("Recall"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "RECALL"
+
+	// $ANTLR start "LETTER"
+	public final void mLETTER() throws RecognitionException {
+		try {
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:469:10: ( 'a' .. 'z' | 'A' .. 'Z' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+>>>>>>> Stashed changes
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -4027,8 +5059,13 @@ public class ShakespeareLexer extends Lexer {
 	// $ANTLR start "DIGIT"
 	public final void mDIGIT() throws RecognitionException {
 		try {
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:455:9: ( '0' .. '9' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:472:9: ( '0' .. '9' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:
+>>>>>>> Stashed changes
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
 				input.consume();
@@ -4052,8 +5089,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CL;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:458:6: ( ':' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:458:10: ':'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:475:6: ( ':' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:475:10: ':'
+>>>>>>> Stashed changes
 			{
 			match(':'); 
 			}
@@ -4072,8 +5114,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = CM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:459:6: ( ',' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:459:10: ','
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:476:6: ( ',' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:476:10: ','
+>>>>>>> Stashed changes
 			{
 			match(','); 
 			}
@@ -4092,8 +5139,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = DOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:460:9: ( '.' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:460:13: '.'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:9: ( '.' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:13: '.'
+>>>>>>> Stashed changes
 			{
 			match('.'); 
 			}
@@ -4112,8 +5164,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = SC;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:461:7: ( ';' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:461:11: ';'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:478:7: ( ';' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:478:11: ';'
+>>>>>>> Stashed changes
 			{
 			match(';'); 
 			}
@@ -4132,8 +5189,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = AP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:462:9: ( '\\'' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:462:13: '\\''
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:479:9: ( '\\'' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:479:13: '\\''
+>>>>>>> Stashed changes
 			{
 			match('\''); 
 			}
@@ -4152,8 +5214,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = EP;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:463:9: ( '!' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:463:13: '!'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:480:9: ( '!' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:480:13: '!'
+>>>>>>> Stashed changes
 			{
 			match('!'); 
 			}
@@ -4172,8 +5239,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = QM;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:464:9: ( '?' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:464:13: '?'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:481:9: ( '?' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:481:13: '?'
+>>>>>>> Stashed changes
 			{
 			match('?'); 
 			}
@@ -4192,8 +5264,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = FS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:465:6: ( '/' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:465:10: '/'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:482:6: ( '/' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:482:10: '/'
+>>>>>>> Stashed changes
 			{
 			match('/'); 
 			}
@@ -4212,8 +5289,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = LB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:466:6: ( '[' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:466:10: '['
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:483:6: ( '[' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:483:10: '['
+>>>>>>> Stashed changes
 			{
 			match('['); 
 			}
@@ -4232,8 +5314,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = RB;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:467:6: ( ']' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:467:10: ']'
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:484:6: ( ']' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:484:10: ']'
+>>>>>>> Stashed changes
 			{
 			match(']'); 
 			}
@@ -4252,8 +5339,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ID;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:470:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:470:9: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:487:5: ( ( LETTER | '_' ) ( LETTER | DIGIT | '_' )* )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:487:9: ( LETTER | '_' ) ( LETTER | DIGIT | '_' )*
+>>>>>>> Stashed changes
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -4263,7 +5355,11 @@ public class ShakespeareLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:471:9: ( LETTER | DIGIT | '_' )*
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:488:9: ( LETTER | DIGIT | '_' )*
+>>>>>>> Stashed changes
 			loop8:
 			while (true) {
 				int alt8=2;
@@ -4308,10 +5404,17 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = COMMENT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:476:6: ( ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n' )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:9: ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n'
 			{
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:9: ( ', ' | ': ' )
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:493:6: ( ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n' )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:9: ( ', ' | ': ' ) ( (~ ( '\\n' | '\\r' ) )* ) ( '\\r' )? '\\n'
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:9: ( ', ' | ': ' )
+>>>>>>> Stashed changes
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==',') ) {
@@ -4329,14 +5432,22 @@ public class ShakespeareLexer extends Lexer {
 
 			switch (alt9) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:10: ', '
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:10: ', '
+>>>>>>> Stashed changes
 					{
 					match(", "); 
 
 					}
 					break;
 				case 2 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:17: ': '
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:17: ': '
+>>>>>>> Stashed changes
 					{
 					match(": "); 
 
@@ -4345,10 +5456,17 @@ public class ShakespeareLexer extends Lexer {
 
 			}
 
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:23: ( (~ ( '\\n' | '\\r' ) )* )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:26: (~ ( '\\n' | '\\r' ) )*
 			{
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:26: (~ ( '\\n' | '\\r' ) )*
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:23: ( (~ ( '\\n' | '\\r' ) )* )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:26: (~ ( '\\n' | '\\r' ) )*
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:26: (~ ( '\\n' | '\\r' ) )*
+>>>>>>> Stashed changes
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -4379,7 +5497,11 @@ public class ShakespeareLexer extends Lexer {
 
 			}
 
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:42: ( '\\r' )?
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:42: ( '\\r' )?
+>>>>>>> Stashed changes
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0=='\r') ) {
@@ -4387,7 +5509,11 @@ public class ShakespeareLexer extends Lexer {
 			}
 			switch (alt11) {
 				case 1 :
+<<<<<<< Updated upstream
 					// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:477:42: '\\r'
+=======
+					// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:494:42: '\\r'
+>>>>>>> Stashed changes
 					{
 					match('\r'); 
 					}
@@ -4412,10 +5538,17 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:482:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:483:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
 			{
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:483:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:499:5: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:500:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
+			{
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:500:2: ( ' ' | '\\t' | '\\r' | '\\n' )+
+>>>>>>> Stashed changes
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -4465,8 +5598,13 @@ public class ShakespeareLexer extends Lexer {
 		try {
 			int _type = ERROR_TK;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
+<<<<<<< Updated upstream
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:497:17: ( . )
 			// C:\\Users\\UrchinaSfaso\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:497:19: .
+=======
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:514:17: ( . )
+			// C:\\Users\\kevbosk\\Documents\\Università\\github_repo\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:514:19: .
+>>>>>>> Stashed changes
 			{
 			matchAny(); 
 			}
@@ -4984,7 +6122,11 @@ public class ShakespeareLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
+<<<<<<< Updated upstream
 			return "230:1: NEUTRALNOUN : ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' );";
+=======
+			return "241:1: NEUTRALNOUN : ( 'animal' | 'aunt' | 'brother' | 'cat' | 'chihuahua' | 'cousin' | 'cow' | 'daughter' | 'door' | 'face' | 'father' | 'fellow' | 'granddaughter' | 'grandfather' | 'grandmother' | 'grandson' | 'hair' | 'hamster' | 'horse' | 'lamp' | 'lantern' | 'mistletoe' | 'moon' | 'morning' | 'mother' | 'nephew' | 'niece' | 'nose' | 'purse' | 'road' | 'roman' | 'sister' | 'sky' | 'son' | 'squirrel' | 'stonewall' | 'thing' | 'town' | 'tree' | 'uncle' | 'wind' );";
+>>>>>>> Stashed changes
 		}
 	}
 

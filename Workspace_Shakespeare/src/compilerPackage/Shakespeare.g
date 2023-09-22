@@ -101,6 +101,7 @@ scenes
     	(exitRule |
     	exeuntRule)?
     	remember?
+    	recall?
     	;
 
 // entrano uno o due personaggi
