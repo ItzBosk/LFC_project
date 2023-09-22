@@ -57,7 +57,7 @@ public class Handler {
 	int actNumber;
 	int sceneNumber;
 	int adjectiveCounter;
-	int adjectiveCounter2; //serve per la 2° tipologia di frase, per fare sottrazioni, somme, ..
+	int adjectiveCounter2; // serve per la 2° tipologia di frase, per fare sottrazioni, somme, ..
 	boolean checkError; // rimesso a false all'inizio di ogni metodo
 	gotoHandler goTo = new gotoHandler();
 
@@ -68,7 +68,7 @@ public class Handler {
 		actNumber = 0;
 		sceneNumber = 0;
 		adjectiveCounter = 0;
-		adjectiveCounter2=0;
+		adjectiveCounter2 = 0;
 		checkError = false;
 		it = characterList.entrySet().iterator();
 	}
@@ -247,8 +247,8 @@ public class Handler {
 					else {
 						actNumber++;
 						sceneNumber = 0;
-						System.out.println("Goto List");////urca
-						goTo.print();////urca
+						System.out.println("Goto List");//// urca
+						goTo.print();//// urca
 						goTo.clearLog();
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
@@ -292,7 +292,7 @@ public class Handler {
 			myErrorHandler(MISSING_SCENE_NUMBER, rn);
 	}
 
-	// controlla se ci sono già due character in scena
+	// controlla se ci sono due character in scena
 	public boolean onStageCheck() {
 		int onStageCounter = 0;
 		Enumeration<String> characters = characterList.keys();
@@ -419,7 +419,7 @@ public class Handler {
 
 	// operazioni svolte su/da un personaggio
 
-	public void checkStageEvent(Token ch1,Token noun1,Token noun2,Token noun3,Token noun4, Token operationtype) {
+	public void checkStageEvent(Token ch1, Token noun1, Token noun2, Token noun3, Token noun4, Token operationtype) {
 
 		checkError = false;
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
@@ -433,116 +433,114 @@ public class Handler {
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch1);
 
-			
-			if(noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
-				//1' tipologia di frase
-				//You amazing amazing amazing amazing amazing hero !
-				//1 nome
-				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
+			if (noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
+				// 1' tipologia di frase
+				// You amazing amazing amazing amazing amazing hero !
+				// 1 nome
+				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					characterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
 				} else {
-					characterList.get(updateCh).assignValue( -1 * (int) Math.pow(2, adjectiveCounter));
+					characterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
 				}
 				adjectiveCounter = 0;
-				System.err.println("### result frase1: "+ characterList.get(updateCh).firstElement());
+				System.err.println("### result frase1: " + characterList.get(updateCh).firstElement());
 
 			}
-			
-			else if(noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
-				//2' tipologia di frase
-				//You are as pretty as the sum of a big lovely rose and a kingdom.
-				//l'aggettivo compreso tra as..as non serve.
-				//uso e annullo adjectiveCounter e adjectiveCounter2.
-				//(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS (SUMOF | DIFFBET | PRODOF) A  adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
-		    	//AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-				
+
+			else if (noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
+				// 2' tipologia di frase
+				// You are as pretty as the sum of a big lovely rose and a kingdom.
+				// l'aggettivo compreso tra as..as non serve.
+				// uso e annullo adjectiveCounter e adjectiveCounter2.
+				// (AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS (SUMOF |
+				// DIFFBET | PRODOF) A adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN |
+				// NEGATIVENOUN)
+				// AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+
 				// IF: NOME2 POS NEUTRO
 				// ELSE: NOME2 NEG
-				
-				//IF NOME3 POS NEUTRO
-				//ELSE NOME3 NEG
-				
-				//IF SUMOF --> SOMMO e assegno a nome2
-		 		//IF ELSE DIFFBET --> SOTTRAGGO e assegno a nome2
-				//ELSE PRODOF --> PRODOTTO e assegno a nome2
-					 
-				
-				//2 nome
-				int charact1=0;
-				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
+
+				// IF NOME3 POS NEUTRO
+				// ELSE NOME3 NEG
+
+				// IF SUMOF --> SOMMO e assegno a nome2
+				// IF ELSE DIFFBET --> SOTTRAGGO e assegno a nome2
+				// ELSE PRODOF --> PRODOTTO e assegno a nome2
+
+				// 2 nome
+				int charact1 = 0;
+				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					charact1 = (int) Math.pow(2, adjectiveCounter);
 				} else
 					charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0; //dopo ogni operazione lo azzera
-				System.err.println("frase2 charact1: "+ charact1);
+				adjectiveCounter = 0; // dopo ogni operazione lo azzera
+				System.err.println("frase2 charact1: " + charact1);
 
-				
-				//3 nome
-				int charact2=0;
-				if (noun3.getType() == ShakespeareLexer.POSITIVENOUN || noun3.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				// 3 nome
+				int charact2 = 0;
+				if (noun3.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun3.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					charact2 = (int) Math.pow(2, adjectiveCounter2);
 				} else
 					charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
-				adjectiveCounter2 = 0; //dopo ogni operazione lo azzera
-				System.err.println("frase2 charact2: "+ charact2);
+				adjectiveCounter2 = 0; // dopo ogni operazione lo azzera
+				System.err.println("frase2 charact2: " + charact2);
 
-				
-				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
+				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(charact1 + charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
-				}
-				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					System.err.println("### result frase2: " + characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
+				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(charact1 - charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement() );
-				}
-				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					System.err.println("### result frase2: " + characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
+				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(charact1 * charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement() );
+					System.err.println("### result frase2: " + characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
 				}
-				
+
 			}
-			
-			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
-				//3' tipologia di frase
-				
+
+			else if (noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
+				// 3' tipologia di frase
+
 				int thyself = characterList.get(ch1.getText()).firstElement();
-				
-				//4 nome
-				int charact4=0;
-				if (noun4.getType() == ShakespeareLexer.POSITIVENOUN || noun4.getType() == ShakespeareLexer.NEUTRALNOUN) {
+
+				// 4 nome
+				int charact4 = 0;
+				if (noun4.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun4.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					charact4 = (int) Math.pow(2, adjectiveCounter);
 				} else
 					charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0; //dopo ogni operazione lo azzera
-				
-				System.err.println("frase3 charact4: "+ charact4);
-				System.err.println("frase3 thyself: "+ thyself);
-				
-				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
+				adjectiveCounter = 0; // dopo ogni operazione lo azzera
+
+				System.err.println("frase3 charact4: " + charact4);
+				System.err.println("frase3 thyself: " + thyself);
+
+				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(thyself + charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
-				}
-				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					System.err.println("### result frase3: " + characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
+				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(thyself - charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
-				}
-				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					System.err.println("### result frase3: " + characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
+				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(thyself * charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
+					System.err.println("### result frase3: " + characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
 				}
 
 			}
-			
+
 			else {
-				//errore. non rientra in nessuna tipologia.
+				// errore. non rientra in nessuna tipologia.
 			}
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
@@ -553,15 +551,13 @@ public class Handler {
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 
 			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
-		}
-		else if (checkError == false && noun2 != null && noun3 != null) {
-			System.out.println("---------------------------   STAGE EVENT 2'  -----------------------------");			
+		} else if (checkError == false && noun2 != null && noun3 != null) {
+			System.out.println("---------------------------   STAGE EVENT 2'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Noun: \t\t" + noun3.getText());
 			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).firstElement() + "\n");
-		}
-		else if (checkError == false && noun4 != null) {
+		} else if (checkError == false && noun4 != null) {
 			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
 
 			System.out.println("   - Actor: \t\t" + ch1.getText());
@@ -588,7 +584,7 @@ public class Handler {
 			if (!characterList.get(ch2.getText()).onStage) // on stage?
 				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch2);
 		}
-		
+
 		if (onStageCheck()) {
 			boolean comparison = false;
 			switch (ev.getType()) {
@@ -678,7 +674,7 @@ public class Handler {
 		}
 
 		public void Jump(int scene) {
-			System.err.println("Salto a scena "+scene);
+			System.err.println("Salto a scena " + scene);
 			for (loggedAction singleLog : logList) {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
@@ -689,7 +685,7 @@ public class Handler {
 						// System.out.println("IL TIPO DICE COSE");
 						break;
 					}
-					System.err.println("eseguo azione per "+singleLog.character);
+					System.err.println("eseguo azione per " + singleLog.character);
 				}
 			}
 		}
@@ -702,4 +698,19 @@ public class Handler {
 		}
 	}
 
+	// push
+	public void checkRemember(Token ch, Token who) {
+		checkError = false;
+	}
+
+	// pop
+	public void checkRecall(Token ch) {
+		checkError = false;
+		if (onStageCheck()) {
+			String updateCh = otherCharacter(ch);
+			// update value con valore poppato
+		}
+		else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+	}
 }
