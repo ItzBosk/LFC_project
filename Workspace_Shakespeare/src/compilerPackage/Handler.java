@@ -3,11 +3,13 @@ package compilerPackage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
+import java.util.Formatter;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import org.antlr.grammar.v3.ANTLRParser.tokenSpec_return;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 
@@ -49,6 +51,7 @@ public class Handler {
 	public static int EXEUNT_SINGLE_CHARACTER = 22;
 	public static int MISSING_IF_STATEMENT = 23;
 	public static int EMPTY_STACK = 24;
+	public static int INVALID_ASCII_VALUE = 25;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -61,6 +64,7 @@ public class Handler {
 	int adjectiveCounter2; // serve per la 2° tipologia di frase, per fare sottrazioni, somme, ..
 	boolean checkError; // rimesso a false all'inizio di ogni metodo
 	gotoHandler goTo = new gotoHandler();
+	String execOutput;
 
 	public Handler(TokenStream input) {
 		this.input = input;
@@ -72,6 +76,7 @@ public class Handler {
 		adjectiveCounter2 = 0;
 		checkError = false;
 		it = characterList.entrySet().iterator();
+		execOutput = "";
 	}
 
 	// lista degli errori printata dal Parser
@@ -180,6 +185,8 @@ public class Handler {
 			errMsg += "Missing 'If so' or 'If not' statement";
 		else if (code == EMPTY_STACK)
 			errMsg += "Stack is empty, cannot assign a new value";
+		else if (code == INVALID_ASCII_VALUE)
+			errMsg += "Does not exist a corresponding ASCII character";
 
 		errorList.add(errMsg);
 	}
@@ -446,11 +453,11 @@ public class Handler {
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
 				} else {
 
-					characterList.get(updateCh).assignValue( -1 * (int) Math.pow(2, adjectiveCounter));
+					characterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
 					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
 				}
 				adjectiveCounter = 0;
-				System.err.println("### result frase1: "+ characterList.get(updateCh).getValue());
+				System.err.println("### result frase1: " + characterList.get(updateCh).getValue());
 
 			}
 
@@ -496,30 +503,29 @@ public class Handler {
 
 				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(charact1 + charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
-				}
-				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(charact1 - charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue() );
-				}
-				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(charact1 * charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue() );
+					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
 				}
 
 			}
-			
-			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
-				//3' tipologia di frase
-				
+
+			else if (noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
+				// 3' tipologia di frase
+
 				int thyself = characterList.get(ch1.getText()).getValue();
-				
-				//4 nome
-				int charact4=0;
-				if (noun4.getType() == ShakespeareLexer.POSITIVENOUN || noun4.getType() == ShakespeareLexer.NEUTRALNOUN) {
+
+				// 4 nome
+				int charact4 = 0;
+				if (noun4.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun4.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					charact4 = (int) Math.pow(2, adjectiveCounter);
 				} else
 					charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
@@ -530,18 +536,16 @@ public class Handler {
 
 				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(thyself + charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
-				}
-				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
+					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(thyself - charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
-				}
-				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
+					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(thyself * charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
+					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
 				}
 			}
 			else {
@@ -561,8 +565,7 @@ public class Handler {
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Noun: \t\t" + noun3.getText());
 			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).getValue() + "\n");
-		}
-		else if (checkError == false && noun4 != null) {
+		} else if (checkError == false && noun4 != null) {
 			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
@@ -727,22 +730,21 @@ public class Handler {
 	// push
 	public void checkRemember(Token ch, Token who) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText()))	// dichiarato?
+		if (!characterList.containsKey(ch.getText())) // dichiarato?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
-		if (!characterList.get(ch.getText()).onStage)	// on stage?
+		if (!characterList.get(ch.getText()).onStage) // on stage?
 			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
-		
+
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch);
-			if (who.getType() == ShakespeareLexer.ME)	// me
+			if (who.getType() == ShakespeareLexer.ME) // me
 				characterList.get(updateCh).push(characterList.get(ch.getText()).getValue());
-			else	// yourself
+			else // yourself
 				characterList.get(updateCh).push(characterList.get(updateCh).getValue());
-		}
-		else
+		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
-		
-		if(!checkError) {
+
+		if (!checkError) {
 			System.out.println("---------------------------   REMEMBER ACTION  -----------------------------");
 			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
 			if (who.getType() == ShakespeareLexer.ME)
@@ -756,25 +758,52 @@ public class Handler {
 	// pop
 	public void checkRecall(Token ch) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText()))	// dichiarato?
+		if (!characterList.containsKey(ch.getText())) // dichiarato?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
-		if (!characterList.get(ch.getText()).onStage)	// on stage?
+		if (!characterList.get(ch.getText()).onStage) // on stage?
 			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
-			
+
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch);
 			// update value con valore poppato
-			if(!characterList.get(updateCh).pop())
+			if (!characterList.get(updateCh).pop())
 				myErrorHandler(EMPTY_STACK, ch);
-		}
-		else
+		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
-		
-		if(!checkError) {
+		System.err.println(execOutput);
+		if (!checkError) {
 			System.out.println("---------------------------   RECALL ACTION  -----------------------------");
 			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
 			System.out.println("   - Popped value: \t" + characterList.get(ch.getText()).getValue() + "\n");
 			printCharacters();
 		}
 	}
+
+	// stampa int/ASCII
+	public void checkPrint(Token ch, Token phrase) {
+		if (!characterList.containsKey(ch.getText())) // dichiarato?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!characterList.get(ch.getText()).onStage) // on stage?
+			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+
+		if (onStageCheck()) {
+			String otherCh = otherCharacter(ch);
+			if (phrase.getType() == ShakespeareLexer.PRINTVALUE)
+				execOutput += characterList.get(otherCh).getValue();
+			else {
+				if (characterList.get(ch.getText()).getValue() >= 32
+						&& characterList.get(ch.getText()).getValue() <= 126) {
+					char asciiValue = (char) characterList.get(ch.getText()).getValue();	// conversione ASCII
+					execOutput += asciiValue;
+				} else
+					myErrorHandler(INVALID_ASCII_VALUE, ch);;
+			}
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+	}
+
+	public void checkRead(Token ch, Token phrase) {
+
+	}
+
 }

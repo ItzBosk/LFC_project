@@ -97,11 +97,13 @@ scenes
     	//{System.out.println("    - Ho riconosciuto una scena");}
     	enterRule?
     	stageEvent*
+    	//remember?
+    	//recall?
+    	//printRule?
+    	//readRule?
     	comparison?
     	(exitRule |
     	exeuntRule)?
-    	remember?
-    	recall?
     	;
 
 // entrano uno o due personaggi
@@ -136,17 +138,16 @@ exeuntRule
     	//{System.out.println();}
     	;
 
-
 stageEvent
     	:
-    	(ch1=CHARACTER CL 
-
+    	ch1=CHARACTER CL
+    	(remember[ch1] | recall[ch1] | printRule[ch1] | readRule[ch1])*
     	(WS?(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
     	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjective* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
     	AND A adjectiveSecond* noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
     	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective* noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
-    	(EP| DOT))*)
+    	(EP| DOT))*
 	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
 	;
 	
@@ -155,7 +156,6 @@ adjective
 	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	{h.adjectiveCounter++;}
 	;
-
 
 comparison
 	:
@@ -177,30 +177,35 @@ adjectiveSecond
 	{h.adjectiveCounter2++;}
 	;
 
-remember
+remember [Token ch]
 	:
-	(ch=CHARACTER) CL WS?
+	//(ch=CHARACTER) CL WS?
 	REMEMBER who=(ME | YOURSELF) DOT
 	{h.checkRemember($ch, $who);}
 	;
 
-recall
+recall [Token ch]
 	:
-	(ch=CHARACTER) CL WS?
-	RECALL
+	//(ch=CHARACTER) CL WS?
+	RECALL DOT
 	{h.checkRecall($ch);}
 	;
 
-printRule //Open your heart, Speak your mind
+// Open your heart, Speak your mind
+printRule [Token ch]
 	:
+	//ch=CHARACTER CL WS?
 	phrase=(PRINTVALUE | PRINTASCII)
-	{h.chechPrint($phrase);}
+	(DOT | EP)
+	{h.checkPrint($ch, $phrase);}
 	;
 
-readRule //Open your mind, Listen to your heart
+// Open your mind, Listen to your heart
+readRule [Token ch]
 	:
+	//ch=CHARACTER CL WS?
 	phrase=(READVALUE | READASCII)
-	{h.chechRead($phrase);}
+	{h.checkRead($ch, $phrase);}
 	;
 
 
