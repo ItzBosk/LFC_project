@@ -6,34 +6,32 @@ public class CharacterDescriptor {
 
 	public String name;
 	public boolean onStage;
+	private int currentValue;
 	private ArrayList<Integer> memoryList;
 
-	public CharacterDescriptor(String n, int t, boolean o) {
+	public CharacterDescriptor(String n) {
 		name = n;
-		onStage = o;
+		onStage = false;
+		currentValue = 0;
 		memoryList = new ArrayList<Integer>();
-		memoryList.add(t);
 	}
 	
-	public boolean assignValue(int ii) {
-		if(this.memoryList.size()<1) {
-			return true;
-		}		
-		this.memoryList.remove(memoryList.size()-1);
-		this.memoryList.add(ii);
-		return false;
+	public void assignValue(int ii) {
+		this.currentValue = ii;
 	}
 	
-	public int firstElement() {
-		return this.memoryList.get(0);
+	public int getValue() {
+		return this.currentValue;
 	}
 	
 	public void push(int ii) {
 		this.memoryList.add(0, ii);
 	}
-	public int pop() {
-		int temp = this.memoryList.get(0); 
+	public boolean pop() {
+		if(this.memoryList.size()<1)
+			return true;
+		this.currentValue= this.memoryList.get(0); 
 		this.memoryList.remove(0);
-		return temp;
+		return false;
 	}
 }

@@ -215,7 +215,7 @@ public class Handler {
 			if (ch.getType() != ShakespeareLexer.CHARACTER)
 				myErrorHandler(INVALID_CHARACTER, ch);
 			if (!characterList.containsKey(ch.getText()))
-				characterList.put(ch.getText(), new CharacterDescriptor(ch.getText(), 0, false));
+				characterList.put(ch.getText(), new CharacterDescriptor(ch.getText()));
 			else
 				myErrorHandler(ALREADY_DECLARED_CHARACTER, ch);
 		}
@@ -440,13 +440,13 @@ public class Handler {
 				//1 nome
 				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					characterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
 				} else {
 					characterList.get(updateCh).assignValue( -1 * (int) Math.pow(2, adjectiveCounter));
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).firstElement());
+					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
 				}
 				adjectiveCounter = 0;
-				System.err.println("### result frase1: "+ characterList.get(updateCh).firstElement());
+				System.err.println("### result frase1: "+ characterList.get(updateCh).getValue());
 
 			}
 			
@@ -491,18 +491,18 @@ public class Handler {
 				
 				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(charact1 + charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
+					System.err.println("### result frase2: "+ characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
 				}
 				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(charact1 - charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement() );
+					System.err.println("### result frase2: "+ characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue() );
 				}
 				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(charact1 * charact2);
-					System.err.println("### result frase2: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement() );
+					System.err.println("### result frase2: "+ characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue() );
 				}
 				
 			}
@@ -510,7 +510,7 @@ public class Handler {
 			else if(noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
 				//3' tipologia di frase
 				
-				int thyself = characterList.get(ch1.getText()).firstElement();
+				int thyself = characterList.get(ch1.getText()).getValue();
 				
 				//4 nome
 				int charact4=0;
@@ -525,18 +525,18 @@ public class Handler {
 				
 				if(operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(thyself + charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
+					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
 				}
 				else if(operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(thyself - charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
+					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
 				}
 				else if(operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(thyself * charact4);
-					System.err.println("### result frase3: "+ characterList.get(updateCh).firstElement());
-					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).firstElement());
+					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
 				}
 
 			}
@@ -559,7 +559,7 @@ public class Handler {
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Noun: \t\t" + noun3.getText());
-			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).firstElement() + "\n");
+			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).getValue() + "\n");
 		}
 		else if (checkError == false && noun4 != null) {
 			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
@@ -593,15 +593,15 @@ public class Handler {
 			boolean comparison = false;
 			switch (ev.getType()) {
 			case ShakespeareLexer.BETTER:
-				if (characterList.get(ch1.getText()).firstElement() > characterList.get(ch2.getText()).firstElement())
+				if (characterList.get(ch1.getText()).getValue() > characterList.get(ch2.getText()).getValue())
 					comparison = true;
 				break;
 			case ShakespeareLexer.WORSE:
-				if (characterList.get(ch1.getText()).firstElement() < characterList.get(ch2.getText()).firstElement())
+				if (characterList.get(ch1.getText()).getValue() < characterList.get(ch2.getText()).getValue())
 					comparison = true;
 				break;
 			default:
-				if (characterList.get(ch1.getText()).firstElement() == characterList.get(ch2.getText()).firstElement())
+				if (characterList.get(ch1.getText()).getValue() == characterList.get(ch2.getText()).getValue())
 					comparison = true;
 				break;
 			}
@@ -635,10 +635,10 @@ public class Handler {
 		System.out.println("	         |NAME             |VALUE  |ON STAGE |");
 		for (String character : characterList.keySet()) {
 			var stringa = "	         |" + Util.evenSpacer(character, 17);
-			if (characterList.get(character).firstElement() > 9999)
+			if (characterList.get(character).getValue() > 9999)
 				stringa += "|" + 9999; // Viene filtrata solo la stampa e non il valore vero
 			else
-				stringa += "|" + Util.evenSpacer(characterList.get(character).firstElement(), 7);
+				stringa += "|" + Util.evenSpacer(characterList.get(character).getValue(), 7);
 			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage), 9) + "|";
 			System.out.println(stringa);
 		}
