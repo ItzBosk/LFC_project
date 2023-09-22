@@ -187,8 +187,8 @@ remember
 recall
 	:
 	(ch=CHARACTER) CL WS?
-	RECALL ID* (DOT | EP)
-	{h.chechRecall($ch);}
+	RECALL
+	{h.checkRecall($ch);}
 	;
 
 printRule //Open your heart, Speak your mind
@@ -475,7 +475,7 @@ READASCII      	:       'Listen to your heart';
 REMEMBER	:   	'Remember';
 ME		:   	'me';
 YOURSELF	:   	'yourself';
-RECALL		:   	'Recall';
+RECALL		:   	('Recall') (  ~('.'|'!')* ) ;
 
 
 fragment 

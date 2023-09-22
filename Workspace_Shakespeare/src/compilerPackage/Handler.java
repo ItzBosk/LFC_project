@@ -48,6 +48,7 @@ public class Handler {
 	public static int MISSING_CHARACTER_IN_EXIT = 21;
 	public static int EXEUNT_SINGLE_CHARACTER = 22;
 	public static int MISSING_IF_STATEMENT = 23;
+	public static int EMPTY_STACK = 24;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -177,6 +178,8 @@ public class Handler {
 			errMsg += "Single exit is not allowed with Exeunt, use Exit instead";
 		else if (code == MISSING_IF_STATEMENT)
 			errMsg += "Missing 'If so' or 'If not' statement";
+		else if (code == EMPTY_STACK)
+			errMsg += "Stack is empty, cannot assign a new value";
 
 		errorList.add(errMsg);
 	}
@@ -707,28 +710,54 @@ public class Handler {
 	// push
 	public void checkRemember(Token ch, Token who) {
 		checkError = false;
+		if (!characterList.containsKey(ch.getText()))	// dichiarato?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!characterList.get(ch.getText()).onStage)	// on stage?
+			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch);
-			if (who.getType() == ShakespeareLexer.ME) {
-//				characterList.get(updateCh).
-			}
-			else {
-//				characterList.get(updateCh).
-			}
+			if (who.getType() == ShakespeareLexer.ME)	// me
+				characterList.get(updateCh).push(characterList.get(ch.getText()).getValue());
+			else	// yourself
+				characterList.get(updateCh).push(characterList.get(updateCh).getValue());
 		}
 		else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+		
+		if(!checkError) {
+			System.out.println("---------------------------   REMEMBER ACTION  -----------------------------");
+			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
+			if (who.getType() == ShakespeareLexer.ME)
+				System.out.println("   - Pushed value: \t" + characterList.get(ch.getText()).getValue() + "\n");
+			else
+				System.out.println("   - Pushed value: \t" + characterList.get(otherCharacter(ch)).getValue() + "\n");
+			printCharacters();
+		}
 	}
 
 	// pop
 	public void checkRecall(Token ch) {
 		checkError = false;
+		if (!characterList.containsKey(ch.getText()))	// dichiarato?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!characterList.get(ch.getText()).onStage)	// on stage?
+			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+			
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch);
 			// update value con valore poppato
-//			characterList.get(updateCh).
+			if(!characterList.get(updateCh).pop())
+				myErrorHandler(EMPTY_STACK, ch);
 		}
 		else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+		
+		if(!checkError) {
+			System.out.println("---------------------------   RECALL ACTION  -----------------------------");
+			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
+			System.out.println("   - Popped value: \t" + characterList.get(ch.getText()).getValue() + "\n");
+			printCharacters();
+		}
 	}
 }
