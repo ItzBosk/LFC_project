@@ -691,7 +691,7 @@ public class Handler {
 	}
 
 	public void finalPrint() {
-		String execOutput = "123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL";
+		//String execOutput = "123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL";
 		System.out.println("\n");
 		System.out.println("================================= OUTPUT ===================================");
 		while(execOutput.length()>77) {
@@ -823,9 +823,9 @@ public class Handler {
 			if (phrase.getType() == ShakespeareLexer.PRINTVALUE)
 				execOutput += characterList.get(otherCh).getValue();
 			else {
-				if (characterList.get(ch.getText()).getValue() >= 32
-						&& characterList.get(ch.getText()).getValue() <= 126) {
-					char asciiValue = (char) characterList.get(ch.getText()).getValue();	// conversione ASCII
+				if (characterList.get(otherCh).getValue() >= 32
+						&& characterList.get(otherCh).getValue() <= 126) {
+					char asciiValue = (char) characterList.get(otherCh).getValue();	// conversione ASCII
 					execOutput += asciiValue;
 				} else
 					myErrorHandler(INVALID_ASCII_VALUE, ch);;
