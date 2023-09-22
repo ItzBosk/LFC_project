@@ -820,6 +820,10 @@ public class Handler {
 
 		if (onStageCheck()) {
 			String otherCh = otherCharacter(ch);
+			System.out.print(otherCh);
+			System.out.print(characterList.get(otherCh).getValue());
+			System.out.print(characterList.get(otherCh).getValue() >= 32);
+			System.out.print(characterList.get(otherCh).getValue() <= 126);
 			if (phrase.getType() == ShakespeareLexer.PRINTVALUE)
 				execOutput += characterList.get(otherCh).getValue();
 			else {

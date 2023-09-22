@@ -141,14 +141,16 @@ exeuntRule
 stageEvent
     	:
     	ch1=CHARACTER CL
-    	(remember[ch1] | recall[ch1] | printRule[ch1] | readRule[ch1])*
-    	(WS?(YOU ARE? | THOUART ) 
+    	(remember[ch1] | recall[ch1] | printRule[ch1] | readRule[ch1]|WS?(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
     	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjective* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
     	AND A adjectiveSecond* noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
     	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective* noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
-    	(EP| DOT))*
-	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
+    	(EP| DOT)
+    	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
+    	)*
+
+	
 	;
 	
 adjective
