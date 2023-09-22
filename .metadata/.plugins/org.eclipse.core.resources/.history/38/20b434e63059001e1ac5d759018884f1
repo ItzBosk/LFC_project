@@ -1543,7 +1543,7 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			//h.chechRecall(ch);
+			h.chechRecall(ch);
 			}
 
 		}
@@ -1577,7 +1577,7 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			//h.chechPrint(phrase);
+			h.chechPrint(phrase);
 			}
 
 		}
@@ -1611,7 +1611,7 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			//h.chechRead(phrase);
+			h.chechRead(phrase);
 			}
 
 		}

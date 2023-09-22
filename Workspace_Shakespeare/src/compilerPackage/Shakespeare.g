@@ -101,6 +101,7 @@ scenes
     	(exitRule |
     	exeuntRule)?
     	remember?
+    	recall?
     	;
 
 // entrano uno o due personaggi
@@ -138,14 +139,14 @@ exeuntRule
 
 stageEvent
     	:
-    	(ch1=CHARACTER CL WS?
+    	(ch1=CHARACTER CL 
 
-    	(YOU ARE? | THOUART ) 
+    	(WS?(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
     	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
     	AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
     	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
-    	(EP| DOT))
+    	(EP| DOT))*)
 	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
 	;
 	
@@ -189,6 +190,20 @@ recall
 	RECALL ID* (DOT | EP)
 	{h.chechRecall($ch);}
 	;
+
+printRule //Open your heart, Speak your mind
+	:
+	phrase=(PRINTVALUE | PRINTASCII)
+	{h.chechPrint($phrase);}
+	;
+
+readRule //Open your mind, Listen to your heart
+	:
+	phrase=(READVALUE | READASCII)
+	{h.chechRead($phrase);}
+	;
+
+
 
 /* ****************************
 **   Analizzatore sintattico (Lexer/Scanner)
