@@ -638,26 +638,43 @@ public class Handler {
 		System.out.println("	         -------------------------------------");
 		for (String character : characterList.keySet()) {
 			var stringa = "	         |" + Util.evenSpacer(character, 17);
-			if (characterList.get(character).getValue() > 9999)
-				stringa += "|" + Util.evenSpacer("99999..", 7); // Viene filtrata solo la stampa e non il valore vero
+			if (characterList.get(character).getValue() > 9999999)
+				stringa += "|" + Util.evenSpacer("xxxxx..", 7); // Viene filtrata solo la stampa e non il valore vero
 			else
 				stringa += "|" + Util.evenSpacer(characterList.get(character).getValue(), 7);
 			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage), 9) + "|";
 			System.out.println(stringa);
 			
 			stringa = "";
+			boolean first = true;
+			
+			//TEST MULTILINEA
+			//ArrayList<Integer> temp = new ArrayList();
+			//temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
+			//temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
+			//temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
+			//for(Integer f : temp)
 			for(Integer f : characterList.get(character).getStack())
 			{
 				String g = String.valueOf(f);
 				//Solo il numero e' piu lungo della tabella
 				while(String.valueOf(g+",").length()>31) {
-					System.out.println("	         |->["+Util.evenSpacer(g.substring(0,31),31)+"]|");
+					if(first) {
+						System.out.println("	         |->["+Util.evenSpacer(g.substring(0,31),31)+"]|");
+						first = false;
+					}else
+						System.out.println("	         |  ["+Util.evenSpacer(g.substring(0,31),31)+"]|");
 					 g = g.substring(32,g.length());
 				}
 				
 				//Il numero piu la stringa attuale sono piu lunghi della tabella
 				if(String.valueOf(g+",").length()+stringa.length()>31) {
-					System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+					if(first) {
+						System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+						first = false;
+					}else
+						System.out.println("	         |  ["+Util.evenSpacer(stringa,31)+"]|");
+					
 					stringa = "";
 				}
 				
@@ -665,11 +682,26 @@ public class Handler {
 			}
 			if(stringa!="")
 				stringa  = stringa.substring(0,stringa.length()-1);
-			System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+			if(first)
+				System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+			else
+				System.out.println("	         |  ["+Util.evenSpacer(stringa,31)+"]|");
 			System.out.println("	         -------------------------------------");
 		}
 	}
 
+	public void finalPrint() {
+		String execOutput = "123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL";
+		System.out.println("\n");
+		System.out.println("================================= OUTPUT ===================================");
+		while(execOutput.length()>77) {
+			System.out.println(execOutput.substring(0,76));
+			execOutput = execOutput.substring(77,execOutput.length());
+		}
+		System.out.println(execOutput);
+		System.out.println("============================================================================\n");
+	}
+	
 	///// urca
 	private class loggedAction {
 		int scene;

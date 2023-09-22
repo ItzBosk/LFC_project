@@ -43,6 +43,7 @@ public class Parser {
 			Handler h = parser.getHandler();
 			if (h.getErrorList().size() == 0)
 			{
+				h.finalPrint();
 				System.out.println();
 				System.out.println();
 //				System.out.println ("============================================================================");
