@@ -100,7 +100,7 @@ scenes
     	comparison?
     	(exitRule |
     	exeuntRule)?
-    	
+    	remember?
     	;
 
 // entrano uno o due personaggi
@@ -142,11 +142,11 @@ stageEvent
 
     	(YOU ARE? | THOUART ) 
     	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
-    	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjective* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
-    	AND A adjectiveSecond* noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
+    	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+    	AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
     	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective+ noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
     	(EP| DOT))
-	{h.checkStageEvent($ch1,$noun1,$noun2,$noun3,$noun4, $operationtype);}
+	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
 	;
 	
 adjective
@@ -156,14 +156,6 @@ adjective
 	;
 
 
-//serve per le frasi con as...as per comparare i due pezzi di frase.
-adjectiveSecond
-	:
-	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
-	{h.adjectiveCounter2++;}
-	;
-	
-	
 comparison
 	:
 	ch1=CHARACTER CL WS?
@@ -177,8 +169,26 @@ comparison
 	{h.checkComparison($ch1, $ev, $ch2, $gt, $rn);}
 	;
 	
+//serve per le frasi con as...as per comparare i due pezzi di frase.
+adjectiveSecond
+	:
+	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	{h.adjectiveCounter2++;}
+	;
 
+remember
+	:
+	(ch=CHARACTER) CL WS?
+	REMEMBER who=(ME | YOURSELF) DOT
+	{h.checkRemember($ch, $who);}
+	;
 
+recall
+	:
+	(ch=CHARACTER) CL WS?
+	RECALL ID* (DOT | EP)
+	{h.chechRecall($ch);}
+	;
 
 /* ****************************
 **   Analizzatore sintattico (Lexer/Scanner)
@@ -438,13 +448,19 @@ WEMUST		:	'we must';
 RETURNTO	:	'return to';		
 PROCEEDTO	:	'proceed to';
 
-//GOTO          :     	'goto';       
-// le prossime hanno senso/si può fare?  credo di si
+
+// input/output
 PRINTVALUE     	:       'Open your heart';  
 PRINTASCII     	:       'Speak your mind';
 READVALUE      	:       'Open your mind';  
 READASCII      	:       'Listen to your heart';
 
+
+// push/pop
+REMEMBER	:   	'Remember';
+ME		:   	'me';
+YOURSELF	:   	'yourself';
+RECALL		:   	'Recall';
 
 
 fragment 
