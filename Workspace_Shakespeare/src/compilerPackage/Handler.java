@@ -543,36 +543,31 @@ public class Handler {
 					System.err.println("### result frase3: "+ characterList.get(updateCh).getValue());
 					goTo.newLog(sceneNumber, updateCh, 1,characterList.get(updateCh).getValue());
 				}
-
 			}
-
 			else {
 				// errore. non rientra in nessuna tipologia.
 			}
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-
+		
 		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
 		if (checkError == false && noun1 != null) {
 			System.out.println("---------------------------   STAGE EVENT 1'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
-
 			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
 		} else if (checkError == false && noun2 != null && noun3 != null) {
 			System.out.println("---------------------------   STAGE EVENT 2'  -----------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Noun: \t\t" + noun3.getText());
-
 			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).getValue() + "\n");
 		}
 		else if (checkError == false && noun4 != null) {
 			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
-
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
 		}
-
+		printCharacters();//del
 	}
 
 	// comparazione tra i valori dei personaggi
@@ -631,23 +626,45 @@ public class Handler {
 				myErrorHandler(MISSING_IF_STATEMENT, gt);
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-
 	}
 
 	public void printCharacters() {
 		System.out.println("	         State of the characters:");
 		System.out.println("	         -------------------------------------");
 		System.out.println("	         |NAME             |VALUE  |ON STAGE |");
+		System.out.println("	         -------------------------------------");
 		for (String character : characterList.keySet()) {
 			var stringa = "	         |" + Util.evenSpacer(character, 17);
 			if (characterList.get(character).getValue() > 9999)
-				stringa += "|" + 9999; // Viene filtrata solo la stampa e non il valore vero
+				stringa += "|" + Util.evenSpacer("99999..", 7); // Viene filtrata solo la stampa e non il valore vero
 			else
 				stringa += "|" + Util.evenSpacer(characterList.get(character).getValue(), 7);
 			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage), 9) + "|";
 			System.out.println(stringa);
+			
+			stringa = "";
+			for(Integer f : characterList.get(character).getStack())
+			{
+				String g = String.valueOf(f);
+				//Solo il numero e' piu lungo della tabella
+				while(String.valueOf(g+",").length()>31) {
+					System.out.println("	         |->["+Util.evenSpacer(g.substring(0,31),31)+"]|");
+					 g = g.substring(32,g.length());
+				}
+				
+				//Il numero piu la stringa attuale sono piu lunghi della tabella
+				if(String.valueOf(g+",").length()+stringa.length()>31) {
+					System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+					stringa = "";
+				}
+				
+				stringa += g+",";
+			}
+			if(stringa!="")
+				stringa  = stringa.substring(0,stringa.length()-1);
+			System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+			System.out.println("	         -------------------------------------");
 		}
-		System.out.println("	         -------------------------------------");
 	}
 
 	///// urca

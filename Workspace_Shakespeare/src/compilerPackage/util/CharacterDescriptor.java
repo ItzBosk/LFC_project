@@ -35,4 +35,8 @@ public class CharacterDescriptor {
 		this.memoryList.remove(0);
 		return true;
 	}
+	
+	public ArrayList<Integer> getStack() {
+		return this.memoryList;
+	}
 }
