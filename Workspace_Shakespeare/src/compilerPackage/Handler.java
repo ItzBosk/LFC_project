@@ -390,7 +390,7 @@ public class Handler {
 			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
 		if (print && !checkError) {
 			System.out.println("---------------------------- " + Util.middleSpacer("Exiting " + ch.getText(), 17)
-					+ " -----------------------------");
+					+ " ------------------------------");
 			printCharacters();
 		}
 
@@ -408,7 +408,7 @@ public class Handler {
 			for (String str : characterList.keySet()) {
 				characterList.get(str).onStage = false;
 				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + str, 17)
-						+ " -----------------------------");
+						+ " ------------------------------");
 			}
 			printCharacters();
 		}
@@ -559,17 +559,17 @@ public class Handler {
 
 		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
 		if (checkError == false && noun1 != null) {
-			System.out.println("---------------------------   STAGE EVENT 1'  -----------------------------");
+			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
 		} else if (checkError == false && noun2 != null && noun3 != null) {
-			System.out.println("---------------------------   STAGE EVENT 2'  -----------------------------");
+			System.out.println("---------------------------   STAGE EVENT 2'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Noun: \t\t" + noun3.getText());
 			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).getValue() + "\n");
 		} else if (checkError == false && noun4 != null) {
-			System.out.println("---------------------------   STAGE EVENT 3'  -----------------------------");
+			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
 		}
@@ -693,8 +693,6 @@ public class Handler {
 	}
 
 	public void finalPrint() {
-		// String execOutput =
-		// "123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL";
 		System.out.println("\n");
 		System.out.println("================================= OUTPUT ===================================");
 		while (execOutput.length() > 77) {
@@ -754,8 +752,7 @@ public class Handler {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
 					case 1:
-						characterList.get(singleLog.character)
-								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
+						characterList.get(singleLog.character).assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
 						execOutput += (String) singleLog.assignedValue;
@@ -833,7 +830,7 @@ public class Handler {
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 		System.err.println(execOutput);
 		if (!checkError) {
-			System.out.println("---------------------------   RECALL ACTION  -----------------------------");
+			System.out.println("----------------------------   RECALL ACTION  ------------------------------");
 			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
 			System.out.println("   - Popped value: \t" + characterList.get(ch.getText()).getValue() + "\n");
 			goTo.newLog(sceneNumber, otherCharacter(ch), 4);
@@ -885,15 +882,22 @@ public class Handler {
 				try {
 					int intInput = Integer.parseInt(input);
 					characterList.get(otherCh).assignValue(intInput);
+					goTo.newLog(sceneNumber, otherCh, 1, String.valueOf(intInput));
+
 				} catch (NumberFormatException e) {
 					myErrorHandler(INVALID_INPUT, ch);
 				}
 			} else { // leggo ASCII
 				try {
+					if (input.length() > 1) {
+						myErrorHandler(INVALID_INPUT, ch);
+						return;
+					}
 					char asciiInput = (char) input.charAt(0);
 					int newValue = asciiInput;
 					if (newValue >= 32 && newValue <= 126) {
 						characterList.get(otherCh).assignValue(newValue);
+						goTo.newLog(sceneNumber, otherCh, 1, String.valueOf(newValue));
 					} else
 						myErrorHandler(INVALID_ASCII_VALUE, ch);
 				} catch (Exception e) {
