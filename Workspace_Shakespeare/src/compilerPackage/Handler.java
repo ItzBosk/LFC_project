@@ -18,6 +18,7 @@ import antlr.Parser;
 import compilerPackage.util.CharacterDescriptor;
 import compilerPackage.util.RomanNumber;
 import compilerPackage.util.Util;
+import outputPackage.PdfWriterOutput;
 
 public class Handler {
 
@@ -207,6 +208,12 @@ public class Handler {
 				System.out.println("==================================== TITLE =================================");
 				System.out.println(Util.middleSpacer(title, 77));
 				System.out.println("============================================================================\n");
+				PdfWriterOutput.open();
+				PdfWriterOutput.setChunk("==================================== TITLE =================================");
+				PdfWriterOutput.setChunk(Util.middleSpacer(title, 77));
+				PdfWriterOutput.setChunk("============================================================================\n");
+				PdfWriterOutput.close();
+				
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
