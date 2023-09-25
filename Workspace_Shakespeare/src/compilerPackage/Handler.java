@@ -890,6 +890,10 @@ public class Handler {
 				}
 			} else { // leggo ASCII
 				try {
+					if (input.length() > 1) {
+						myErrorHandler(INVALID_INPUT, ch);
+						return;
+					}
 					char asciiInput = (char) input.charAt(0);
 					int newValue = asciiInput;
 					if (newValue >= 32 && newValue <= 126) {
