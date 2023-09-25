@@ -149,8 +149,6 @@ stageEvent
     	(EP| DOT)
     	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
     	)*
-
-	
 	;
 	
 adjective
@@ -207,6 +205,7 @@ readRule [Token ch]
 	:
 	//ch=CHARACTER CL WS?
 	phrase=(READVALUE | READASCII)
+	(DOT | EP)
 	{h.checkRead($ch, $phrase);}
 	;
 
@@ -474,7 +473,7 @@ PROCEEDTO	:	'proceed to';
 // input/output
 PRINTVALUE     	:       'Open your heart';  
 PRINTASCII     	:       'Speak your mind';
-READVALUE      	:       'Open your mind';  
+READVALUE      	:       'Open your mind';
 READASCII      	:       'Listen to your heart';
 
 
