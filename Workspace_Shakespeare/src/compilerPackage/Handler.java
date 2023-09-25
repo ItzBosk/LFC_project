@@ -3,12 +3,13 @@ package compilerPackage;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
-import java.util.Formatter;
 import java.util.Hashtable;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 
+import org.antlr.grammar.v3.ANTLRParser.exceptionGroup_return;
 import org.antlr.grammar.v3.ANTLRParser.tokenSpec_return;
 import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
@@ -52,6 +53,7 @@ public class Handler {
 	public static int MISSING_IF_STATEMENT = 23;
 	public static int EMPTY_STACK = 24;
 	public static int INVALID_ASCII_VALUE = 25;
+	public static int INVALID_INPUT = 26;
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -187,6 +189,8 @@ public class Handler {
 			errMsg += "Stack is empty, cannot assign a new value";
 		else if (code == INVALID_ASCII_VALUE)
 			errMsg += "Does not exist a corresponding ASCII character";
+		else if (code == INVALID_INPUT)
+			errMsg += "The input value is not valid";
 
 		errorList.add(errMsg);
 	}
@@ -450,11 +454,11 @@ public class Handler {
 				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN
 						|| noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					characterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				} else {
 
 					characterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				}
 				adjectiveCounter = 0;
 				System.err.println("### result frase1: " + characterList.get(updateCh).getValue());
@@ -504,15 +508,15 @@ public class Handler {
 				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(charact1 + charact2);
 					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(charact1 - charact2);
 					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(charact1 * charact2);
 					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				}
 
 			}
@@ -537,23 +541,22 @@ public class Handler {
 				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 					characterList.get(updateCh).assignValue(thyself + charact4);
 					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 					characterList.get(updateCh).assignValue(thyself - charact4);
 					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 					characterList.get(updateCh).assignValue(thyself * charact4);
 					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, characterList.get(updateCh).getValue());
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
 				}
-			}
-			else {
+			} else {
 				// errore. non rientra in nessuna tipologia.
 			}
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-		
+
 		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
 		if (checkError == false && noun1 != null) {
 			System.out.println("---------------------------   STAGE EVENT 1'  -----------------------------");
@@ -570,15 +573,13 @@ public class Handler {
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
 		}
-		printCharacters();//del
+		printCharacters();// del
 	}
 
 	// comparazione tra i valori dei personaggi
 	public void checkComparison(Token ch1, Token ev, Token ch2, Token gt, Token rn) {
 		checkError = false;
-
 		// check se ch1 != ch2 ??
-
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch1);
 		else {
@@ -610,12 +611,14 @@ public class Handler {
 			}
 
 			if (gt != null) {
+				System.out.println(gt.getType());
 				if (comparison) {
 					if (gt.getType() == ShakespeareLexer.IFSO) {
 						if (!RomanNumber.isRoman(rn.getText()))
 							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
-						else
+						else {
 							goTo.Jump(RomanNumber.decode(rn.getText()));
+						}
 					}
 				} else {
 					if (gt.getType() == ShakespeareLexer.IFNOT) {
@@ -644,90 +647,101 @@ public class Handler {
 				stringa += "|" + Util.evenSpacer(characterList.get(character).getValue(), 7);
 			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage), 9) + "|";
 			System.out.println(stringa);
-			
+
 			stringa = "";
 			boolean first = true;
-			
-			//TEST MULTILINEA
-			//ArrayList<Integer> temp = new ArrayList();
-			//temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
-			//temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
-			//temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
-			//for(Integer f : temp)
-			for(Integer f : characterList.get(character).getStack())
-			{
+
+			// TEST MULTILINEA
+			// ArrayList<Integer> temp = new ArrayList();
+			// temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
+			// temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
+			// temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
+			// for(Integer f : temp)
+			for (Integer f : characterList.get(character).getStack()) {
 				String g = String.valueOf(f);
-				//Solo il numero e' piu lungo della tabella
-				while(String.valueOf(g+",").length()>31) {
-					if(first) {
-						System.out.println("	         |->["+Util.evenSpacer(g.substring(0,31),31)+"]|");
+				// Solo il numero e' piu lungo della tabella
+				while (String.valueOf(g + ",").length() > 31) {
+					if (first) {
+						System.out.println("	         |->[" + Util.evenSpacer(g.substring(0, 31), 31) + "]|");
 						first = false;
-					}else
-						System.out.println("	         |  ["+Util.evenSpacer(g.substring(0,31),31)+"]|");
-					 g = g.substring(32,g.length());
+					} else
+						System.out.println("	         |  [" + Util.evenSpacer(g.substring(0, 31), 31) + "]|");
+					g = g.substring(32, g.length());
 				}
-				
-				//Il numero piu la stringa attuale sono piu lunghi della tabella
-				if(String.valueOf(g+",").length()+stringa.length()>31) {
-					if(first) {
-						System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+
+				// Il numero piu la stringa attuale sono piu lunghi della tabella
+				if (String.valueOf(g + ",").length() + stringa.length() > 31) {
+					if (first) {
+						System.out.println("	         |->[" + Util.evenSpacer(stringa, 31) + "]|");
 						first = false;
-					}else
-						System.out.println("	         |  ["+Util.evenSpacer(stringa,31)+"]|");
-					
+					} else
+						System.out.println("	         |  [" + Util.evenSpacer(stringa, 31) + "]|");
+
 					stringa = "";
 				}
-				
-				stringa += g+",";
+
+				stringa += g + ",";
 			}
-			if(stringa!="")
-				stringa  = stringa.substring(0,stringa.length()-1);
-			if(first)
-				System.out.println("	         |->["+Util.evenSpacer(stringa,31)+"]|");
+			if (stringa != "")
+				stringa = stringa.substring(0, stringa.length() - 1);
+			if (first)
+				System.out.println("	         |->[" + Util.evenSpacer(stringa, 31) + "]|");
 			else
-				System.out.println("	         |  ["+Util.evenSpacer(stringa,31)+"]|");
+				System.out.println("	         |  [" + Util.evenSpacer(stringa, 31) + "]|");
 			System.out.println("	         -------------------------------------");
 		}
 	}
 
 	public void finalPrint() {
-		//String execOutput = "123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL";
+		// String execOutput =
+		// "123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL123123HELOLODAOSDL";
 		System.out.println("\n");
 		System.out.println("================================= OUTPUT ===================================");
-		while(execOutput.length()>77) {
-			System.out.println(execOutput.substring(0,76));
-			execOutput = execOutput.substring(77,execOutput.length());
+		while (execOutput.length() > 77) {
+			System.out.println(execOutput.substring(0, 76));
+			execOutput = execOutput.substring(77, execOutput.length());
 		}
 		System.out.println(execOutput);
 		System.out.println("============================================================================\n");
 	}
-	
+
 	///// urca
 	private class loggedAction {
 		int scene;
 		String character;
-		int assignedValue;
+		Object assignedValue;
 		int actionType; // Switch che utilizzo per capire di che tipo e' l'azione salvata nel log
+
 		///////
 		// 1 -> Settaggio del character ad un value
 		// 2 -> Speak your mind che stampa il valore di un character in console
-		// 3 ->
+		// 3 -> remember, push
+		// 4 -> recall, pop
 		///////
 
-		public loggedAction(int scene, String character, int actionType, int assignedValue) {
+		public loggedAction(int scene, String character, int actionType, Object assignedValue) {
 			this.scene = scene;
 			this.character = character;
 			this.assignedValue = assignedValue;
 			this.actionType = actionType;
 		}
 
+		public loggedAction(int scene, String character, int actionType) {
+			this.scene = scene;
+			this.character = character;
+			this.actionType = actionType;
+		}
 	}
 
 	private class gotoHandler {
 		ArrayList<loggedAction> logList = new ArrayList<loggedAction>();
 
-		public void newLog(int Scene, String CharacterName, int ActionType, int AssignedValue) {
+		public void newLog(int Scene, String CharacterName, int ActionType, Object AssignedValue) {
 			logList.add(new loggedAction(Scene, CharacterName, ActionType, AssignedValue));
+		}
+
+		public void newLog(int Scene, String Character, int ActionType) {
+			logList.add(new loggedAction(Scene, Character, ActionType));
 		}
 
 		public void clearLog() {
@@ -740,10 +754,17 @@ public class Handler {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
 					case 1:
-						characterList.get(singleLog.character).assignValue(singleLog.assignedValue);
+						characterList.get(singleLog.character)
+								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
-						// System.out.println("IL TIPO DICE COSE");
+						execOutput += (String) singleLog.assignedValue;
+						break;
+					case 3:
+						characterList.get(singleLog.character).push((int) singleLog.assignedValue);
+						break;
+					case 4:
+						characterList.get(singleLog.character).pop();
 						break;
 					}
 					System.err.println("eseguo azione per " + singleLog.character);
@@ -770,9 +791,17 @@ public class Handler {
 		if (onStageCheck()) {
 			String updateCh = otherCharacter(ch);
 			if (who.getType() == ShakespeareLexer.ME) // me
+			{
 				characterList.get(updateCh).push(characterList.get(ch.getText()).getValue());
+				goTo.newLog(sceneNumber, updateCh, 3, characterList.get(ch.getText()).getValue());
+			}
+
 			else // yourself
+			{
 				characterList.get(updateCh).push(characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 3, characterList.get(updateCh).getValue());
+			}
+
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
@@ -807,6 +836,7 @@ public class Handler {
 			System.out.println("---------------------------   RECALL ACTION  -----------------------------");
 			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
 			System.out.println("   - Popped value: \t" + characterList.get(ch.getText()).getValue() + "\n");
+			goTo.newLog(sceneNumber, otherCharacter(ch), 4);
 			printCharacters();
 		}
 	}
@@ -820,26 +850,56 @@ public class Handler {
 
 		if (onStageCheck()) {
 			String otherCh = otherCharacter(ch);
-			System.out.print(otherCh);
-			System.out.print(characterList.get(otherCh).getValue());
-			System.out.print(characterList.get(otherCh).getValue() >= 32);
-			System.out.print(characterList.get(otherCh).getValue() <= 126);
-			if (phrase.getType() == ShakespeareLexer.PRINTVALUE)
+			if (phrase.getType() == ShakespeareLexer.PRINTVALUE) {
 				execOutput += characterList.get(otherCh).getValue();
-			else {
-				if (characterList.get(otherCh).getValue() >= 32
-						&& characterList.get(otherCh).getValue() <= 126) {
-					char asciiValue = (char) characterList.get(otherCh).getValue();	// conversione ASCII
+				goTo.newLog(sceneNumber, otherCh, 2, String.valueOf(characterList.get(otherCh).getValue()));
+			} else {
+				if (characterList.get(otherCh).getValue() >= 32 && characterList.get(otherCh).getValue() <= 126) {
+					char asciiValue = (char) characterList.get(otherCh).getValue(); // conversione ASCII
+					goTo.newLog(sceneNumber, otherCh, 2, String.valueOf(asciiValue));
 					execOutput += asciiValue;
 				} else
-					myErrorHandler(INVALID_ASCII_VALUE, ch);;
+					myErrorHandler(INVALID_ASCII_VALUE, ch);
+				;
 			}
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 	}
 
 	public void checkRead(Token ch, Token phrase) {
+		checkError = false;
+		if (!characterList.containsKey(ch.getText())) // dichiarato?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!characterList.get(ch.getText()).onStage) // on stage?
+			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 
+		if (!onStageCheck())
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+
+		if (!checkError) {
+			String otherCh = otherCharacter(ch);
+			Scanner myScanner = new Scanner(System.in);
+			System.err.println("Enter the value for " + otherCh + ": ");
+			String input = myScanner.next();
+			if (phrase.getType() == ShakespeareLexer.READVALUE) { // leggo int
+				try {
+					int intInput = Integer.parseInt(input);
+					characterList.get(otherCh).assignValue(intInput);
+				} catch (NumberFormatException e) {
+					myErrorHandler(INVALID_INPUT, ch);
+				}
+			} else { // leggo ASCII
+				try {
+					char asciiInput = (char) input.charAt(0);
+					int newValue = asciiInput;
+					if (newValue >= 32 && newValue <= 126) {
+						characterList.get(otherCh).assignValue(newValue);
+					} else
+						myErrorHandler(INVALID_ASCII_VALUE, ch);
+				} catch (Exception e) {
+					myErrorHandler(INVALID_INPUT, ch);
+				}
+			}
+		}
 	}
-
 }
