@@ -1,37 +1,99 @@
 <html>
     <head>
         <style>
-
+			.title{
+			color:red;background-color:black; border:3px solid green;text-align:center
+			}
+			.image{
+			float:left; width:170px; height:170px; padding : 10px;
+			}
+			.spacer{
+			width:100%;background-color:gray;height:20px;padding 30px
+			}
+			.act{
+			font-size:30px;background-color:yellow;text-align:center
+			}
+			.scene{
+			font-size:25px;background-color:green;text-align:center
+			}
+			.stageEvent{
+			 clear: both;  display: table; width:100%;
+			}
+			.left{
+			text-align:left
+			}
+			.right{
+			text-align:right
+			}
+			.fleft{
+			float:left;
+			}
+			.fright{
+			float:right;
+			}
+			.text{
+			padding:20px;
+			}
         </style>
     </head>
     <body>
-        <div style="color:red;background-color:black; border:3px solid green;text-align:center"> 
+        <div class="title"> 
 			<h1> Titolo bello! </h1>
 		</div>
-		<div>
-		<h3>Personaggi:</h3>
-		<center>
-		<table>
-		<tr>
-		<td>1</td><td>2</td><td>3</td><td>4</td>
-		</tr>
-		<tr>
-		<td>5</td><td>6</td><td>7</td><td>8</td>
-		</tr>
-		</table></center>
+		
+		<div style=" clear: both;  display: table; width:100%; text-align:left; margin:20px 0px 20px 0px">
+		<h2>Character list:</h2>
+		<img class="image"  src="picture.jpg" /></img>
+		<img class="image"  src="picture.jpg" /></img>
+		<img class="image"  src="picture.jpg" /></img>
+		<img class="image"  src="picture.jpg" /></img>
+		<img class="image"  src="picture.jpg" /></img>
 		</div>
-		<div>
+		
+		<div class="spacer"></div>
+		
+		<div class="act">ACT I</div>
+		<div class="scene">SCENE I</div>
 
-		<div style=" clear: both;  display: table; width:100%">
-		<img style="float:left" src="picture.jpg"  width="170" height="170"/> </img>
-		Juliet:
-		Esghere
+		<div class="stageEvent left">
+			<img class="image fleft" src="picture.jpg" /> </img>
+			<div class="text fleft" width="100%"> 
+				<h2>JULIET:</h2>
+				Esghere
+			</div>
 		</div>
-		<div style=" clear: both;  display: table; width:100%; text-align:right;">
-		<img style="float:right" src="picture.jpg"  width="170" height="170"/></img>
-		HAMLET:
-		pipo pipo
+		<div class="stageEvent right">
+			<img class="image fright" src="picture.jpg" /> </img>
+			<div class="text fright" width="100%"> 
+				<h2>HAMLET:</h2>
+				pipo pipo
+			</div>
 		</div>
+		<div class="stageEvent left">
+			<img class="image fleft" src="picture.jpg" /> </img>
+			<div class="text fleft" width="100%"> 
+				<h2>JULIET:</h2>
+				Esghere
+			</div>
 		</div>
+		
+		<div class="act">ACT II</div>
+		<div class="scene">SCENE I</div>
+
+		<div class="stageEvent right">
+			<img class="image fright" src="picture.jpg" /> </img>
+			<div class="text fright" width="100%"> 
+				<h2>HAMLET:</h2>
+				pipo pipo
+			</div>
+		</div>
+		<div class="stageEvent left">
+			<img class="image fleft" src="picture.jpg" /> </img>
+			<div class="text fleft" width="100%"> 
+				<h2>JULIET:</h2>
+				Esghere
+			</div>
+		</div>
+		
     </body>
 </html>
