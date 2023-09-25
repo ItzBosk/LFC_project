@@ -14,10 +14,10 @@ import org.xhtmlrenderer.pdf.ITextRenderer;
 public class HtmlToPDF {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
-		try (OutputStream outputStream = new FileOutputStream("./src/outputPackage/out.pdf")) {
-		File inputHTML = new File("./src/outputPackage/test.html");
+		try (OutputStream outputStream = new FileOutputStream("./resources/out.pdf")) {
+		File inputHTML = new File("./resources/test.html");
 		Document document = Jsoup.parse(inputHTML, "UTF-8");
-		//document.outputSettings().syntax(Document.OutputSettings.Syntax.xml);
+		document.outputSettings().syntax(Document.OutputSettings.Syntax.xml);
 		
 		    ITextRenderer renderer = new ITextRenderer();
 		    SharedContext sharedContext = renderer.getSharedContext();
