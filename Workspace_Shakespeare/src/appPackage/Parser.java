@@ -5,8 +5,6 @@ import java.io.FileReader;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-import com.itextpdf.text.pdf.PdfWriter;
-
 import compilerPackage.Handler;
 import compilerPackage.ShakespeareLexer;
 import compilerPackage.ShakespeareParser;
