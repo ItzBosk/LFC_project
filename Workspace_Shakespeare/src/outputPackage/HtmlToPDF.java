@@ -11,6 +11,8 @@ import org.jsoup.nodes.Document;
 import org.xhtmlrenderer.layout.SharedContext;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
+import com.lowagie.text.pdf.BaseFont;
+
 public class HtmlToPDF {
 	
 	public static void main(String[] args) throws FileNotFoundException, IOException {
@@ -23,7 +25,10 @@ public class HtmlToPDF {
 		    SharedContext sharedContext = renderer.getSharedContext();
 		    sharedContext.setPrint(true);
 		    sharedContext.setInteractive(false);
+		    renderer.getFontResolver().addFont("Seagramtfb.ttf", BaseFont.IDENTITY_H, true);
 		    renderer.setDocumentFromString(document.html());
+
+		    //System.out.println(renderer.getFontResolver().getFontFamily("Seagram.ttf"));
 		    renderer.layout();
 		    renderer.createPDF(outputStream);
 	}
