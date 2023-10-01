@@ -3,6 +3,9 @@ package interfaceSPL;
 
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.awt.EventQueue;
 
 import javax.swing.BorderFactory;
@@ -64,6 +67,11 @@ public class SPLinterrface extends JFrame {
 					parser = new Parser();
 					System.out.println("parser caricato: " + parser.getClass().toString());
 					frame.setVisible(true);
+					
+					 String file = new String(Files.readAllBytes(Paths.get("./resources/input.file")), StandardCharsets.UTF_8); //carico file
+					 codeTextArea.setText(file);
+					 
+					 
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -266,6 +274,17 @@ public class SPLinterrface extends JFrame {
 		compileButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+			 try {
+			      FileWriter myWriter = new FileWriter( "./resources/input.file");
+			      myWriter.write(codeTextArea.getText());
+			      myWriter.close();
+			      System.out.println("Successfully wrote to the file.");
+			    } catch (IOException ee) {
+			      System.out.println("An error occurred.");
+			      ee.printStackTrace();
+			    }
+				 
 				parser.main(null);
 //				txtpnOutputConsole.setText(parser.toString());
 				System.out.println(parser.getConsoleOuput());
@@ -486,11 +505,11 @@ public class SPLinterrface extends JFrame {
 		
 		
 	}
-	
-	public static String getInputFile() {	
-		return codeTextArea.getText();			
-	}
-	
+//	
+//	public static String getInputFile() {	
+//		return codeTextArea.getText();			
+//	}
+//	
 
 }
 

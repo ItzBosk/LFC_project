@@ -29,9 +29,11 @@ public class Parser {
 		PrintStream ps = new PrintStream(baos);
 		// IMPORTANT: Save the old System.out!
 		PrintStream old = System.out;
+		PrintStream old2 = System.err;
+
 		// Tell Java to use your special stream
 		System.setOut(ps);
-		
+		System.setErr(ps);
 		
 		CommonTokenStream tokens;
 	  	String fileIn = "./resources/input.file";   //da file
@@ -92,10 +94,14 @@ public class Parser {
 		
 			
 		// Put things back
+		System.err.flush();
+		System.setOut(old2);
 		System.out.flush();
 		System.setOut(old);
+	
 		// Show what happened
-		
+		System.err.println ("============================================================================");
+
 		System.out.println(baos.toString());
 
   }

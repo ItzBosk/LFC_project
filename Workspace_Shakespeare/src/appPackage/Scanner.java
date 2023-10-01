@@ -14,8 +14,8 @@ public class Scanner {
 
 	public static void main(String[] args) throws IOException {
 
-//		String fileIn = "./resources/input.file"; // path-name del file di input
-	  	String fileIn = SPLinterrface.getInputFile();   //da GUI
+		String fileIn = "./resources/input.file"; // path-name del file di input
+//	  	String fileIn = SPLinterrface.getInputFile();   //da GUI
 
 		
 		Token tk;
