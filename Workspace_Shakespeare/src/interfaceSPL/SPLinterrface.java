@@ -1,5 +1,8 @@
 package interfaceSPL;
 
+
+import java.io.*;
+import java.net.*;
 import java.awt.EventQueue;
 
 import javax.swing.BorderFactory;
@@ -11,6 +14,8 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
 
 import com.lowagie.text.pdf.PdfLayer;
+
+import appPackage.Parser;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
@@ -46,7 +51,8 @@ public class SPLinterrface extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-
+	public static JTextPane codeTextArea;
+	public static Parser parser;
 	/**
 	 * Launch the application.
 	 */
@@ -55,6 +61,8 @@ public class SPLinterrface extends JFrame {
 			public void run() {
 				try {
 					SPLinterrface frame = new SPLinterrface();
+					parser = new Parser();
+					System.out.println("parser caricato: " + parser.getClass().toString());
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -65,6 +73,8 @@ public class SPLinterrface extends JFrame {
 
 
 	
+	
+	
 	/**
 	 * Create the frame.
 	 */
@@ -73,7 +83,7 @@ public class SPLinterrface extends JFrame {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(SPLinterrface.class.getResource("/interfaceSPL/icon.png")));
 		setTitle("SPL GUI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1280, 800);
+		setBounds(100, 100, 1414, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		
@@ -83,7 +93,7 @@ public class SPLinterrface extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(10, 125, 1256, 619);
+		layeredPane.setBounds(10, 125, 1390, 619);
 		contentPane.add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
 		
@@ -202,17 +212,20 @@ public class SPLinterrface extends JFrame {
 		
 		
 //		//codice effettivo di FILE
-		JTextPane codeTextArea = new JTextPane();
+		codeTextArea = new JTextPane();
 		codeTextArea.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		codeTextArea.setText("input file");
 		codeTextArea.setBounds(39, 22, 515, 534);
 		filePanel.add(codeTextArea);
 		
 		JScrollPane scrollPane_input = new JScrollPane(codeTextArea);
-		scrollPane_input.setBounds(0, 43, 723, 513);
+		scrollPane_input.setBounds(0, 43, 720, 513);
 		filePanel.add(scrollPane_input);
 		
+		
+		//button COMPILA click
 		JButton compileButton = new JButton("Compila");
+
 		compileButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		compileButton.setBounds(295, 566, 115, 34);
 		filePanel.add(compileButton);
@@ -233,22 +246,40 @@ public class SPLinterrface extends JFrame {
 		filePanel.add(lblNewLabel_3);
 		
 		JScrollPane scrollPane_console = new JScrollPane();
-		scrollPane_console.setBounds(762, 43, 484, 557);
+		scrollPane_console.setBounds(746, 43, 634, 557);
 		filePanel.add(scrollPane_console);
 		
 		JTextPane txtpnOutputConsole = new JTextPane();
+		txtpnOutputConsole.setEditable(false);
+		scrollPane_console.setViewportView(txtpnOutputConsole);
 		txtpnOutputConsole.setText("output console");
 		txtpnOutputConsole.setFont(new Font("Consolas", Font.PLAIN, 14));
-		scrollPane_console.setViewportView(txtpnOutputConsole);
 		
 		JPanel divisotryPanel = new JPanel();
 		divisotryPanel.setBackground(new Color(0, 0, 0));
-		divisotryPanel.setBounds(0, 124, 1279, 1);
+		divisotryPanel.setBounds(0, 125, 1390, 0);
 		contentPane.add(divisotryPanel);
 		divisotryPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		
 		
+		//event button compila click
+		compileButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				parser.main(null);
+//				txtpnOutputConsole.setText(parser.toString());
+				System.out.println(parser.getConsoleOuput());
+//				System.out.println(parser.toString());
+				txtpnOutputConsole.setText(parser.getConsoleOuput());
+
+			}
+		});
 		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------------------
+		//-------------------------------------------------------------------------------------------------------------
 		//-------------------------------------------------------------------------------------------------------------
 		// PARTRE PDF
 //		    'Romeo'
@@ -452,8 +483,15 @@ public class SPLinterrface extends JFrame {
 		downloadPdfButton.setBounds(543, 522, 162, 75);
 		pdfPanel.add(downloadPdfButton);
 		
-
+		
+		
 	}
+	
+	public static String getInputFile() {	
+		return codeTextArea.getText();			
+	}
+	
+
 }
 
 

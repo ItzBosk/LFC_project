@@ -1,6 +1,11 @@
 package appPackage;
 
+import java.io.BufferedReader;
+import java.io.ByteArrayOutputStream;
 import java.io.FileReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintStream;
 
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -8,17 +13,30 @@ import org.antlr.runtime.CommonTokenStream;
 import compilerPackage.Handler;
 import compilerPackage.ShakespeareLexer;
 import compilerPackage.ShakespeareParser;
+import interfaceSPL.SPLinterrface;
 
 
 public class Parser {
 
 	
 	static ShakespeareParser parser;
-  
+	static ByteArrayOutputStream baos;
+	
 	public static void main(String[] args) {
+		
+		// Create a stream to hold the output
+		baos = new ByteArrayOutputStream();
+		PrintStream ps = new PrintStream(baos);
+		// IMPORTANT: Save the old System.out!
+		PrintStream old = System.out;
+		// Tell Java to use your special stream
+		System.setOut(ps);
+		
+		
 		CommonTokenStream tokens;
-	  	String fileIn = "./resources/input.file";
-
+	  	String fileIn = "./resources/input.file";   //da file
+//	  	String fileIn = SPLinterrface.getInputFile();   //da GUI
+	  	
 		try {
 //			System.out.println ("============================================================================");
 			System.out.println ("============================================================================");
@@ -58,6 +76,8 @@ public class Parser {
 					System.err.println ("Error " + (i+1) + 
 							":\t" + h.getErrorList().get(i)+"");
 								
+				
+			
 			//non dovrebbe mai essere attivato, se si attiva non ho gestito errori
 		} catch (Exception e) {
 //			System.out.println ("============================================================================");
@@ -68,6 +88,23 @@ public class Parser {
 			e.printStackTrace();
 		}
 		
+		
+		
+			
+		// Put things back
+		System.out.flush();
+		System.setOut(old);
+		// Show what happened
+		
+		System.out.println(baos.toString());
 
   }
+	
+	public String getConsoleOuput() {
+		return baos.toString();
+	}
 }
+
+
+
+
