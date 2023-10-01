@@ -16,6 +16,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
 import javax.swing.JLayeredPane;
 import javax.swing.JMenuBar;
+
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import javax.swing.JSplitPane;
 import javax.swing.JLabel;
@@ -29,6 +31,14 @@ import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.Toolkit;
+import javax.swing.JScrollBar;
+import javax.swing.JScrollPane;
+import javax.swing.JTextField;
+import javax.swing.JTextPane;
+import javax.swing.JEditorPane;
+import javax.swing.JTextArea;
+import java.awt.TextArea;
+import javax.swing.JButton;
 
 public class SPLinterrface extends JFrame {
 	
@@ -61,29 +71,25 @@ public class SPLinterrface extends JFrame {
 	public SPLinterrface() {
 		setResizable(false);
 		setIconImage(Toolkit.getDefaultToolkit().getImage(SPLinterrface.class.getResource("/interfaceSPL/icon.png")));
-		
 		setTitle("SPL GUI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1012, 781);
+		setBounds(100, 100, 1280, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		
+		
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JLayeredPane layeredPane = new JLayeredPane();
-		layeredPane.setBounds(10, 125, 978, 619);
+		layeredPane.setBounds(10, 125, 1256, 619);
 		contentPane.add(layeredPane);
 		layeredPane.setLayout(new CardLayout(0, 0));
 		
 		JPanel filePanel = new JPanel();
 		layeredPane.add(filePanel, "name_7993193991800");
 		filePanel.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("FILE");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
-		lblNewLabel.setBounds(383, 143, 208, 104);
-		filePanel.add(lblNewLabel);
 		
 		JPanel pdfPanel = new JPanel();
 		layeredPane.add(pdfPanel, "name_8009681722500");
@@ -94,8 +100,8 @@ public class SPLinterrface extends JFrame {
 		lblNewLabel_1.setBounds(451, 291, 147, 149);
 		pdfPanel.add(lblNewLabel_1);
 		
-		JLabel label = new JLabel("New label");
-		layeredPane.add(label, "name_18762670247100");
+//		JLabel label = new JLabel("New label");
+//		layeredPane.add(label, "name_18762670247100");
 		
 		
 		//-------------------------------------------------------------------------------------------------------------
@@ -105,7 +111,7 @@ public class SPLinterrface extends JFrame {
 		
 		
 		fileLabel.setFont(new Font("Open Sans", Font.PLAIN, 18));
-		fileLabel.setBackground(SystemColor.controlHighlight);
+		fileLabel.setBackground(SystemColor.controlShadow);
 		fileLabel.setBounds(10, 83, 150, 32);
 		contentPane.add(fileLabel);
 		fileLabel.setOpaque(true);
@@ -166,29 +172,77 @@ public class SPLinterrface extends JFrame {
 		//scritta SPL	
 		JLabel spllabelwrite = new JLabel(" SPL");
 		spllabelwrite.setFont(new Font("Lucida Handwriting", Font.BOLD, 28));
-		spllabelwrite.setBounds(212, 20, 73, 43);
+		spllabelwrite.setBounds(412, 20, 73, 43);
 		contentPane.add(spllabelwrite);
 	
 		//scritta Shakespeare Programming Language
-		JLabel lblNewLabel_2 = new JLabel("Shakespeare Programming Language");
-		lblNewLabel_2.setFont(new Font("Lucida Handwriting", Font.PLAIN, 18));
-		lblNewLabel_2.setBounds(285, 32, 399, 23);
-		contentPane.add(lblNewLabel_2);
+		JLabel titlelabel = new JLabel("Shakespeare Programming Language");
+		titlelabel.setFont(new Font("Lucida Handwriting", Font.PLAIN, 18));
+		titlelabel.setBounds(482, 34, 399, 23);
+		contentPane.add(titlelabel);
 		
 		//logo SPL
-		JLabel spllabellogo = new JLabel("spl logo");
-		spllabellogo.setBounds(10, 10, 200, 63);
-		contentPane.add(spllabellogo);
+//		JLabel spllabellogo = new JLabel("spl logo");
+//		spllabellogo.setBounds(10, 10, 200, 63);
+//		contentPane.add(spllabellogo);
+//		
+//		Image imgfile3 = new ImageIcon(this.getClass().getResource("spllogo.png")).getImage();
+//		spllabellogo.setIcon(new ImageIcon(imgfile3.getScaledInstance(spllabellogo.getWidth() , 
+//				spllabellogo.getHeight(), Image.SCALE_SMOOTH)));
+//		
 		
-		Image imgfile3 = new ImageIcon(this.getClass().getResource("spllogo.png")).getImage();
-		spllabellogo.setIcon(new ImageIcon(imgfile3.getScaledInstance(spllabellogo.getWidth() , 
-				spllabellogo.getHeight(), Image.SCALE_SMOOTH)));
-	
+		
+//		//codice effettivo di FILE
+		JTextPane codeTextArea = new JTextPane();
+		codeTextArea.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		codeTextArea.setText("input file");
+		codeTextArea.setBounds(39, 22, 515, 534);
+		filePanel.add(codeTextArea);
+		
+		JScrollPane scrollPane_input = new JScrollPane(codeTextArea);
+		scrollPane_input.setBounds(0, 43, 723, 513);
+		filePanel.add(scrollPane_input);
+		
+		JButton compileButton = new JButton("Compila");
+		compileButton.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		compileButton.setBounds(295, 566, 115, 34);
+		filePanel.add(compileButton);
+		
+		
+		JTextLineNumber tln = new JTextLineNumber(codeTextArea);
+		scrollPane_input.setRowHeaderView( tln );
+		tln.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("Input File");
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel.setBounds(300, 18, 97, 20);
+		filePanel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_3 = new JLabel("Output console");
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel_3.setBounds(955, 18, 107, 20);
+		filePanel.add(lblNewLabel_3);
+		
+		JScrollPane scrollPane_console = new JScrollPane();
+		scrollPane_console.setBounds(762, 43, 484, 557);
+		filePanel.add(scrollPane_console);
+		
+		JTextPane txtpnOutputConsole = new JTextPane();
+		txtpnOutputConsole.setText("output console");
+		txtpnOutputConsole.setFont(new Font("Consolas", Font.PLAIN, 14));
+		scrollPane_console.setViewportView(txtpnOutputConsole);
+		
+		JPanel divisotryPanel = new JPanel();
+		divisotryPanel.setBackground(new Color(0, 0, 0));
+		divisotryPanel.setBounds(0, 124, 1279, 1);
+		contentPane.add(divisotryPanel);
+		divisotryPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		
+		
 		
 
+		
 	}
-	
-	
 }
 
 
