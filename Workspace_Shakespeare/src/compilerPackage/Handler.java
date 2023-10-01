@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+import javax.print.attribute.standard.MediaSize.Other;
+
 import org.antlr.grammar.v3.ANTLRParser.exceptionGroup_return;
 import org.antlr.grammar.v3.ANTLRParser.tokenSpec_return;
 import org.antlr.runtime.Token;
@@ -32,7 +34,7 @@ public class Handler {
 	// Shakespeare errors
 	public static int MISSING_TITLE = 3;
 	public static int MISSING_DOT = 4;
-	public static int UNDECLARED_CHARACTER = 5;
+	public static int INVALID_DECLARATION = 5;
 	public static int INVALID_CHARACTER = 6;
 	public static int MISSING_COMMENT = 7;
 	public static int ALREADY_DECLARED_CHARACTER = 8;
@@ -52,8 +54,12 @@ public class Handler {
 	public static int EXEUNT_SINGLE_CHARACTER = 22;
 	public static int MISSING_IF_STATEMENT = 23;
 	public static int EMPTY_STACK = 24;
-	public static int INVALID_ASCII_VALUE = 25;
-	public static int INVALID_INPUT = 26;
+	public static int INVALID_ASCII_OUTPUT = 25;
+	public static int INVALID_INT_INPUT = 26;
+	public static int UNDECLARED_CHARACTER = 27;
+	public static int NO_MULTIPLE_ASCII_INPUT = 28;
+	public static int INVALID_ASCII_INPUT = 29;
+	
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -145,52 +151,56 @@ public class Handler {
 			errMsg += "Missing title";
 		else if (code == MISSING_DOT)
 			errMsg += "Missing dot after " + input.LT(-1).getText();
-		else if (code == UNDECLARED_CHARACTER)
-			errMsg += "Missing character name in declaration";
+		else if (code == INVALID_DECLARATION)
+			errMsg += "Missing stage character name in declaration";
 		else if (code == INVALID_CHARACTER)
-			errMsg += "Invalid character name";
+			errMsg += tk.getText() + " is an invalid stage character name";
 		else if (code == MISSING_COMMENT)
-			errMsg += "Missing comment";
+			errMsg += "Missing comment after " + input.LT(-1).getText();
 		else if (code == ALREADY_DECLARED_CHARACTER)
-			errMsg += "The character has been already declared";
+			errMsg += "The stage character " + tk.getText() + " has already been declared";
 		else if (code == MISSING_ACT_NUMBER)
 			errMsg += "The act number is missing";
 		else if (code == INVALID_ROMAN_NUMBER)
-			errMsg += "The number is not a roman one";
+			errMsg += "The inserted number " + tk.getText() + " is not roman";
 		else if (code == ALREADY_DEFINED_ACT)
-			errMsg += "Already defined act";
+			errMsg += "The act " + RomanNumber.decode(tk.getText()) + " has already been declared";
 		else if (code == MISSING_SCENE_NUMBER)
 			errMsg += "The scene number is missing";
 		else if (code == ALREADY_DEFINED_SCENE_IN_ACT)
-			errMsg += "Already defined scene in this act";
+			errMsg += "The scene " + RomanNumber.decode(tk.getText()) + " has already been declared in act " + actNumber;
 		else if (code == SKIPPED_ACT)
-			errMsg += "Skipped one or more acts in numeration";
+			errMsg += "Skipped " + (RomanNumber.decode(tk.getText()) - actNumber) + " acts: the last declared act is the " + actNumber + ", you are now going to act " + RomanNumber.decode(tk.getText());
 		else if (code == SKIPPED_SCENE)
-			errMsg += "Skipped one or more scenes in this act in numeration";
+			errMsg += "Skipped " + (RomanNumber.decode(tk.getText()) - sceneNumber) + " scenes in act " + actNumber + ": the last declared scene is the " + sceneNumber + ", you are now going to scene " + RomanNumber.decode(tk.getText());
 		else if (code == UNDECLARED_CHARACTER)
-			errMsg += "Character never declared";
+			errMsg += "The stage character " + tk.getText() + " has never been declared";
 		else if (code == CHARACTER_ALREADY_ON_STAGE)
-			errMsg += "Character already on stage";
+			errMsg += "The stage character " + tk.getText() + " is already on stage";
 		else if (code == ALREADY_TWO_CARACTERS_ON_STAGE)
-			errMsg += "There are already two characters on stage";
+			errMsg += "There are already two stage characters on stage, " + tk.getText() + " cannot enter";
 		else if (code == CHARACTER_NOT_ON_STAGE)
-			errMsg += "The character is not on stage";
+			errMsg += "The stage character " + tk.getText() + " is not on stage";
 		else if (code == ONLY_ONE_CHARACTER_ON_STAGE)
-			errMsg += "There is only one character on stage";
+			errMsg += tk.getText() + " is the only stage character on stage";
 		else if (code == MISSING_CHARACTER_IN_ENTER)
-			errMsg += "Character missing in entrance";
+			errMsg += "Stage character missing in entrance";
 		else if (code == MISSING_CHARACTER_IN_EXIT)
-			errMsg += "One character is missing in exit";
+			errMsg += "Missing stage character name in exit";
 		else if (code == EXEUNT_SINGLE_CHARACTER)
-			errMsg += "Single exit is not allowed with Exeunt, use Exit instead";
+			errMsg += "Single exit is not allowed with Exeunt, instead use Exit or add another stage character besides " + tk.getText();
 		else if (code == MISSING_IF_STATEMENT)
 			errMsg += "Missing 'If so' or 'If not' statement";
 		else if (code == EMPTY_STACK)
-			errMsg += "Stack is empty, cannot assign a new value";
-		else if (code == INVALID_ASCII_VALUE)
-			errMsg += "Does not exist a corresponding ASCII character";
-		else if (code == INVALID_INPUT)
-			errMsg += "The input value is not valid";
+			errMsg += "The stack of " + tk.getText() + " is empty, cannot assign a new value to stage character";
+		else if (code == INVALID_INT_INPUT)
+			errMsg += "The value inserted for " + otherCharacter(tk) + " is not an integer value";
+		else if (code == INVALID_ASCII_INPUT)
+			errMsg += "The inserted ASCII character for " + otherCharacter(tk) + " is not valid";
+		else if (code == INVALID_ASCII_OUTPUT)
+			errMsg += "Does not exist a valid ASCII character corresponding to " + characterList.get(otherCharacter(tk)).getValue();
+		else if (code == NO_MULTIPLE_ASCII_INPUT)
+			errMsg += "The inserted ASCII character for " + otherCharacter(tk) + " is not valid, only single character input is allowed";
 
 		errorList.add(errMsg);
 	}
@@ -224,7 +234,7 @@ public class Handler {
 	// dramatisPersonae
 	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
 		if (ch == null)
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
+			myErrorHandler(INVALID_DECLARATION, ch);
 		else {
 			// controllo se token corrisponde a token CHARACTERS
 			if (ch.getType() != ShakespeareLexer.CHARACTER)
@@ -857,7 +867,7 @@ public class Handler {
 					goTo.newLog(sceneNumber, otherCh, 2, String.valueOf(asciiValue));
 					execOutput += asciiValue;
 				} else
-					myErrorHandler(INVALID_ASCII_VALUE, ch);
+					myErrorHandler(INVALID_ASCII_OUTPUT, ch);
 				;
 			}
 		} else
@@ -877,21 +887,22 @@ public class Handler {
 		if (!checkError) {
 			String otherCh = otherCharacter(ch);
 			Scanner myScanner = new Scanner(System.in);
-			System.err.println("Enter the value for " + otherCh + ": ");
-			String input = myScanner.next();
 			if (phrase.getType() == ShakespeareLexer.READVALUE) { // leggo int
+				System.err.println("Enter an integer value for " + otherCh + ": ");
+				String input = myScanner.next();
 				try {
 					int intInput = Integer.parseInt(input);
 					characterList.get(otherCh).assignValue(intInput);
 					goTo.newLog(sceneNumber, otherCh, 1, String.valueOf(intInput));
-
 				} catch (NumberFormatException e) {
-					myErrorHandler(INVALID_INPUT, ch);
+					myErrorHandler(INVALID_INT_INPUT, ch);
 				}
 			} else { // leggo ASCII
+				System.err.println("Enter an ASCII character for " + otherCh + ": ");
+				String input = myScanner.next();
 				try {
 					if (input.length() > 1) {
-						myErrorHandler(INVALID_INPUT, ch);
+					myErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);
 						return;
 					}
 					char asciiInput = (char) input.charAt(0);
@@ -900,9 +911,9 @@ public class Handler {
 						characterList.get(otherCh).assignValue(newValue);
 						goTo.newLog(sceneNumber, otherCh, 1, String.valueOf(newValue));
 					} else
-						myErrorHandler(INVALID_ASCII_VALUE, ch);
+						myErrorHandler(INVALID_ASCII_INPUT, ch);
 				} catch (Exception e) {
-					myErrorHandler(INVALID_INPUT, ch);
+					myErrorHandler(INVALID_ASCII_INPUT, ch);
 				}
 			}
 		}

@@ -36,30 +36,8 @@ public class RomanNumber {
 	}
 	
 //	public static void main(String[] args) {
-//	// prova 1
-//	int test = 3;
-//	System.out.println((double)test / 10);
-//	String romanNumber = "III";
-//	double newScene = (double) decode(romanNumber) / 10;
-//	System.out.println(newScene);
-//
-//	// prova 2
-//	double scenicMoment = 1.1;
-//	String romanNumber = "III";
-//	if (!isRoman(romanNumber))
-//		System.out.println("invalid number");
-//	else {
-//		// sarebbe bello arrotondare, però va e penso che in caso di moooolte scene potrebbe dare problemi
-//		double newScene = (double) decode(romanNumber) / 10;
-//		if ((scenicMoment - (int) scenicMoment) > newScene) {
-//			System.out.println("already defined in act");
-//		} 
-//		else if ((scenicMoment + newScene - 0.1) > (scenicMoment + 0.1)) {
-//			System.out.println("skipped scene");
-//		} else {
-//			scenicMoment = scenicMoment + 0.1;
-//			System.out.println(scenicMoment);
-//		}
+//		String rn = "IIIX";
+//		System.out.println(decode(rn));
 //	}
-//}
+
 }

@@ -473,8 +473,8 @@ PROCEEDTO	:	'proceed to';
 // input/output
 PRINTVALUE     	:       'Open your heart';  
 PRINTASCII     	:       'Speak your mind';
-READVALUE      	:       'Open your mind';
-READASCII      	:       'Listen to your heart';
+READVALUE      	:       'Listen to your heart';
+READASCII      	:       'Open your mind';
 
 
 // push/pop
