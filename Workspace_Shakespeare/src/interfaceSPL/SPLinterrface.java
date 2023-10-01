@@ -95,10 +95,19 @@ public class SPLinterrface extends JFrame {
 		layeredPane.add(pdfPanel, "name_8009681722500");
 		pdfPanel.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("PDF");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 27));
-		lblNewLabel_1.setBounds(451, 291, 147, 149);
-		pdfPanel.add(lblNewLabel_1);
+		JPanel hamletPanel = new JPanel();
+		hamletPanel.setBounds(10, 10, 300, 100);
+		pdfPanel.add(hamletPanel);
+		hamletPanel.setLayout(null);
+		
+		JLabel hamletIcon = new JLabel("New label");
+		hamletIcon.setBounds(0, 0, 100, 100);
+		hamletPanel.add(hamletIcon);
+		
+		JLabel lblNewLabel_1 = new JLabel("Hamlet");
+		lblNewLabel_1.setBounds(200, 34, 100, 25);
+		hamletPanel.add(lblNewLabel_1);
+		lblNewLabel_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
 		
 //		JLabel label = new JLabel("New label");
 //		layeredPane.add(label, "name_18762670247100");
@@ -240,8 +249,210 @@ public class SPLinterrface extends JFrame {
 		
 		
 		
-
+		//-------------------------------------------------------------------------------------------------------------
+		// PARTRE PDF
+//		    'Romeo'
+//	    |   'Juliet'
+//	    |   'Hamlet'
+//	    |   'Ghost'
+//	    |   'LadyMacbeth'
+//	    |   'Ophelia'
+//	    |   'Tebaldo'
+//	    |   'Claudio'
+		hamletPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel.setBackground(SystemColor.controlHighlight);
 		
+		Image imgHamlet = new ImageIcon(this.getClass().getResource("resources/hamlet/hamlet.jpg")).getImage();
+		hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
+				hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
+		
+		JPanel julietPanel = new JPanel();
+		julietPanel.setLayout(null);
+		julietPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		julietPanel.setBackground(SystemColor.controlHighlight);
+		julietPanel.setBounds(480, 10, 300, 100);
+		pdfPanel.add(julietPanel);
+		
+		JLabel julietIcon = new JLabel("New label");
+		julietIcon.setBounds(0, 0, 100, 100);
+		julietPanel.add(julietIcon);
+		
+		Image imgJuliet = new ImageIcon(this.getClass().getResource("resources/juliet/juliet.jpg")).getImage();
+		julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
+				julietIcon.getHeight(), Image.SCALE_SMOOTH)));
+		
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Juliet");
+		lblNewLabel_1_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_1.setBounds(222, 34, 78, 25);
+		julietPanel.add(lblNewLabel_1_1);
+		
+		JPanel hamletPanel_2 = new JPanel();
+		hamletPanel_2.setLayout(null);
+		hamletPanel_2.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_2.setBackground(SystemColor.controlHighlight);
+		hamletPanel_2.setBounds(950, 10, 300, 100);
+		pdfPanel.add(hamletPanel_2);
+		
+		JLabel hamletIcon_2 = new JLabel("New label");
+		hamletIcon_2.setBounds(0, 0, 100, 100);
+		hamletPanel_2.add(hamletIcon_2);
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Hamlet");
+		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_2.setBounds(222, 34, 78, 25);
+		hamletPanel_2.add(lblNewLabel_1_2);
+		
+		JPanel hamletPanel_3 = new JPanel();
+		hamletPanel_3.setLayout(null);
+		hamletPanel_3.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_3.setBackground(SystemColor.controlHighlight);
+		hamletPanel_3.setBounds(10, 130, 300, 100);
+		pdfPanel.add(hamletPanel_3);
+		
+		JLabel hamletIcon_3 = new JLabel("New label");
+		hamletIcon_3.setBounds(0, 0, 100, 100);
+		hamletPanel_3.add(hamletIcon_3);
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Hamlet");
+		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_3.setBounds(222, 34, 78, 25);
+		hamletPanel_3.add(lblNewLabel_1_3);
+		
+		JPanel hamletPanel_4 = new JPanel();
+		hamletPanel_4.setLayout(null);
+		hamletPanel_4.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_4.setBackground(SystemColor.controlHighlight);
+		hamletPanel_4.setBounds(481, 133, 300, 100);
+		pdfPanel.add(hamletPanel_4);
+		
+		JLabel hamletIcon_4 = new JLabel("New label");
+		hamletIcon_4.setBounds(0, 0, 100, 100);
+		hamletPanel_4.add(hamletIcon_4);
+		
+		JLabel lblNewLabel_1_4 = new JLabel("Hamlet");
+		lblNewLabel_1_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_4.setBounds(222, 34, 78, 25);
+		hamletPanel_4.add(lblNewLabel_1_4);
+		
+		JPanel hamletPanel_5 = new JPanel();
+		hamletPanel_5.setLayout(null);
+		hamletPanel_5.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_5.setBackground(SystemColor.controlHighlight);
+		hamletPanel_5.setBounds(950, 130, 300, 100);
+		pdfPanel.add(hamletPanel_5);
+		
+		JLabel hamletIcon_5 = new JLabel("New label");
+		hamletIcon_5.setBounds(0, 0, 100, 100);
+		hamletPanel_5.add(hamletIcon_5);
+		
+		JLabel lblNewLabel_1_5 = new JLabel("Hamlet");
+		lblNewLabel_1_5.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_5.setBounds(222, 34, 78, 25);
+		hamletPanel_5.add(lblNewLabel_1_5);
+		
+		JPanel hamletPanel_6 = new JPanel();
+		hamletPanel_6.setLayout(null);
+		hamletPanel_6.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_6.setBackground(SystemColor.controlHighlight);
+		hamletPanel_6.setBounds(10, 250, 300, 100);
+		pdfPanel.add(hamletPanel_6);
+		
+		JLabel hamletIcon_6 = new JLabel("New label");
+		hamletIcon_6.setBounds(0, 0, 100, 100);
+		hamletPanel_6.add(hamletIcon_6);
+		
+		JLabel lblNewLabel_1_6 = new JLabel("Hamlet");
+		lblNewLabel_1_6.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_6.setBounds(222, 34, 78, 25);
+		hamletPanel_6.add(lblNewLabel_1_6);
+		
+		JPanel hamletPanel_6_1 = new JPanel();
+		hamletPanel_6_1.setLayout(null);
+		hamletPanel_6_1.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_6_1.setBackground(SystemColor.controlHighlight);
+		hamletPanel_6_1.setBounds(480, 250, 300, 100);
+		pdfPanel.add(hamletPanel_6_1);
+		
+		JLabel hamletIcon_6_1 = new JLabel("New label");
+		hamletIcon_6_1.setBounds(0, 0, 100, 100);
+		hamletPanel_6_1.add(hamletIcon_6_1);
+		
+		JLabel lblNewLabel_1_6_1 = new JLabel("Hamlet");
+		lblNewLabel_1_6_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_6_1.setBounds(222, 34, 78, 25);
+		hamletPanel_6_1.add(lblNewLabel_1_6_1);
+		
+		JPanel hamletPanel_6_2 = new JPanel();
+		hamletPanel_6_2.setLayout(null);
+		hamletPanel_6_2.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_6_2.setBackground(SystemColor.controlHighlight);
+		hamletPanel_6_2.setBounds(950, 250, 300, 100);
+		pdfPanel.add(hamletPanel_6_2);
+		
+		JLabel hamletIcon_6_2 = new JLabel("New label");
+		hamletIcon_6_2.setBounds(0, 0, 100, 100);
+		hamletPanel_6_2.add(hamletIcon_6_2);
+		
+		JLabel lblNewLabel_1_6_2 = new JLabel("Hamlet");
+		lblNewLabel_1_6_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_6_2.setBounds(222, 34, 78, 25);
+		hamletPanel_6_2.add(lblNewLabel_1_6_2);
+		
+		JPanel hamletPanel_6_3 = new JPanel();
+		hamletPanel_6_3.setLayout(null);
+		hamletPanel_6_3.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_6_3.setBackground(SystemColor.controlHighlight);
+		hamletPanel_6_3.setBounds(10, 370, 300, 100);
+		pdfPanel.add(hamletPanel_6_3);
+		
+		JLabel hamletIcon_6_3 = new JLabel("New label");
+		hamletIcon_6_3.setBounds(0, 0, 100, 100);
+		hamletPanel_6_3.add(hamletIcon_6_3);
+		
+		JLabel lblNewLabel_1_6_3 = new JLabel("Hamlet");
+		lblNewLabel_1_6_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_6_3.setBounds(222, 34, 78, 25);
+		hamletPanel_6_3.add(lblNewLabel_1_6_3);
+		
+		JPanel hamletPanel_6_3_1 = new JPanel();
+		hamletPanel_6_3_1.setLayout(null);
+		hamletPanel_6_3_1.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_6_3_1.setBackground(SystemColor.controlHighlight);
+		hamletPanel_6_3_1.setBounds(480, 370, 300, 100);
+		pdfPanel.add(hamletPanel_6_3_1);
+		
+		JLabel hamletIcon_6_3_1 = new JLabel("New label");
+		hamletIcon_6_3_1.setBounds(0, 0, 100, 100);
+		hamletPanel_6_3_1.add(hamletIcon_6_3_1);
+		
+		JLabel lblNewLabel_1_6_3_1 = new JLabel("Hamlet");
+		lblNewLabel_1_6_3_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_6_3_1.setBounds(222, 34, 78, 25);
+		hamletPanel_6_3_1.add(lblNewLabel_1_6_3_1);
+		
+		JPanel hamletPanel_6_3_2 = new JPanel();
+		hamletPanel_6_3_2.setLayout(null);
+		hamletPanel_6_3_2.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel_6_3_2.setBackground(SystemColor.controlHighlight);
+		hamletPanel_6_3_2.setBounds(950, 370, 300, 100);
+		pdfPanel.add(hamletPanel_6_3_2);
+		
+		JLabel hamletIcon_6_3_2 = new JLabel("New label");
+		hamletIcon_6_3_2.setBounds(0, 0, 100, 100);
+		hamletPanel_6_3_2.add(hamletIcon_6_3_2);
+		
+		JLabel lblNewLabel_1_6_3_2 = new JLabel("Hamlet");
+		lblNewLabel_1_6_3_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1_6_3_2.setBounds(222, 34, 78, 25);
+		hamletPanel_6_3_2.add(lblNewLabel_1_6_3_2);
+		
+		JButton downloadPdfButton = new JButton("Download PDF");
+		downloadPdfButton.setFont(new Font("Tahoma", Font.BOLD, 16));
+		downloadPdfButton.setBounds(543, 522, 162, 75);
+		pdfPanel.add(downloadPdfButton);
+		
+
 	}
 }
 
