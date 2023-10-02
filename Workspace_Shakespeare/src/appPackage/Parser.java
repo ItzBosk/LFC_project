@@ -14,6 +14,7 @@ import compilerPackage.Handler;
 import compilerPackage.ShakespeareLexer;
 import compilerPackage.ShakespeareParser;
 import interfaceSPL.SPLinterrface;
+import outputPackage.HtmlToPDF;
 
 
 public class Parser {
@@ -46,6 +47,9 @@ public class Parser {
 			System.out.println ("============================================================================");
 //			System.out.println ("============================================================================");
 
+			// 0.Creo il file html 
+			HtmlToPDF.HTML.initHTML();
+			
 			// 1.Istanzio il lexer passandogli il documento da analizzare
 			ShakespeareLexer lexer = new ShakespeareLexer(
 											new ANTLRReaderStream(

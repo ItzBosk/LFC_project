@@ -20,6 +20,7 @@ import antlr.Parser;
 import compilerPackage.util.CharacterDescriptor;
 import compilerPackage.util.RomanNumber;
 import compilerPackage.util.Util;
+import outputPackage.HtmlToPDF;
 
 public class Handler {
 
@@ -215,9 +216,9 @@ public class Handler {
 			} else {
 				System.out.println("\n\n");
 				System.out.println("==================================== TITLE =================================");
-				System.out.println(Util.middleSpacer(title, 77));
+				System.out.println(Util.middleSpacer(title, 72));
 				System.out.println("============================================================================\n");
-				
+				HtmlToPDF.HTML.addTitle(title);
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
@@ -251,7 +252,7 @@ public class Handler {
 		System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 3) + "\n");
 		printCharacters();
 		System.out.println("\n----------------------------------------------------------------------------\n");
-
+		HtmlToPDF.HTML.addPersonae(ch.getText());
 	}
 
 	// dichiarazione atto
@@ -277,9 +278,10 @@ public class Handler {
 						goTo.clearLog();
 						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 								+ "   ===============================");
-						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 77));
+						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
 						System.out.println(
 								"============================================================================\n");
+						HtmlToPDF.HTML.addAct(String.valueOf(actNumber));
 					}
 				}
 			}
@@ -306,10 +308,11 @@ public class Handler {
 						sceneNumber++;
 						System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber, 3)
 								+ "   ==============================");
-						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 77));
+						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
 						System.out.println(
 								"============================================================================");
 						System.out.println();
+						HtmlToPDF.HTML.addScene(String.valueOf(sceneNumber));
 					}
 				}
 			}
@@ -573,16 +576,19 @@ public class Handler {
 			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch1.getText(), noun1.getText());
 		} else if (checkError == false && noun2 != null && noun3 != null) {
 			System.out.println("---------------------------   STAGE EVENT 2'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Noun: \t\t" + noun3.getText());
 			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).getValue() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch1.getText(), noun2.getText());
 		} else if (checkError == false && noun4 != null) {
 			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch1.getText());
 			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch1.getText(), noun4.getText());
 		}
 		printCharacters();// del
 	}
@@ -706,9 +712,9 @@ public class Handler {
 	public void finalPrint() {
 		System.out.println("\n");
 		System.out.println("================================= OUTPUT ===================================");
-		while (execOutput.length() > 77) {
+		while (execOutput.length() > 72) {
 			System.out.println(execOutput.substring(0, 76));
-			execOutput = execOutput.substring(77, execOutput.length());
+			execOutput = execOutput.substring(72, execOutput.length());
 		}
 		System.out.println(execOutput);
 		System.out.println("============================================================================\n");

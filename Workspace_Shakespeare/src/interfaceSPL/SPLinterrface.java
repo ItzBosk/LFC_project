@@ -19,6 +19,7 @@ import javax.swing.border.EtchedBorder;
 import com.lowagie.text.pdf.PdfLayer;
 
 import appPackage.Parser;
+import outputPackage.HtmlToPDF;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
@@ -35,6 +36,7 @@ import java.awt.Image;
 import javax.swing.SwingConstants;
 import java.awt.FlowLayout;
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.SystemColor;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -88,7 +90,7 @@ public class SPLinterrface extends JFrame {
 	 */
 	public SPLinterrface() {
 		setResizable(false);
-		setIconImage(Toolkit.getDefaultToolkit().getImage(SPLinterrface.class.getResource("/interfaceSPL/icon.png")));
+		setIconImage(Toolkit.getDefaultToolkit().getImage("./resources/icon.png"));
 		setTitle("SPL GUI");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1414, 800);
@@ -146,7 +148,7 @@ public class SPLinterrface extends JFrame {
 		//fileLabel.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
 		fileLabel.setBorder(BorderFactory.createLineBorder(Color.black, 2, true));
 
-		Image imgfile = new ImageIcon(this.getClass().getResource("fileicon.png")).getImage();
+		Image imgfile = Toolkit.getDefaultToolkit().getImage("./resources/fileicon.png");
 		
 		fileLabel.setIcon(new ImageIcon(imgfile.getScaledInstance(fileLabel.getHeight()*60/100 , 
 				fileLabel.getHeight()*60/100, Image.SCALE_SMOOTH)));
@@ -189,7 +191,7 @@ public class SPLinterrface extends JFrame {
 		//pdfLabel.setBorder(BorderFactory.createLineBorder(Color.black));
 		pdfLabel.setBorder(BorderFactory.createLineBorder(Color.black, 2, true));
 		//pdfLabel.setBorder(BorderFactory.createEtchedBorder(EtchedBorder.LOWERED));
-		Image imgfile2 = new ImageIcon(this.getClass().getResource("pdficon.png")).getImage();
+		Image imgfile2 = Toolkit.getDefaultToolkit().getImage("./resources/pdficon.png");
 		
 		pdfLabel.setIcon(new ImageIcon(imgfile2.getScaledInstance(pdfLabel.getHeight()*60/100 , 
 				pdfLabel.getHeight()*60/100, Image.SCALE_SMOOTH)));
@@ -209,14 +211,14 @@ public class SPLinterrface extends JFrame {
 		contentPane.add(titlelabel);
 		
 		//logo SPL
-//		JLabel spllabellogo = new JLabel("spl logo");
-//		spllabellogo.setBounds(10, 10, 200, 63);
-//		contentPane.add(spllabellogo);
-//		
-//		Image imgfile3 = new ImageIcon(this.getClass().getResource("spllogo.png")).getImage();
-//		spllabellogo.setIcon(new ImageIcon(imgfile3.getScaledInstance(spllabellogo.getWidth() , 
-//				spllabellogo.getHeight(), Image.SCALE_SMOOTH)));
-//		
+		JLabel spllabellogo = new JLabel("spl logo");
+		spllabellogo.setBounds(10, 10, 200, 63);
+		contentPane.add(spllabellogo);
+		
+		Image imgfile3 = Toolkit.getDefaultToolkit().getImage("./resources/spllogo.png");
+		spllabellogo.setIcon(new ImageIcon(imgfile3.getScaledInstance(spllabellogo.getWidth() , 
+				spllabellogo.getHeight(), Image.SCALE_SMOOTH)));
+		
 		
 		
 //		//codice effettivo di FILE
@@ -312,7 +314,7 @@ public class SPLinterrface extends JFrame {
 		hamletPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		hamletPanel.setBackground(SystemColor.controlHighlight);
 		
-		Image imgHamlet = new ImageIcon(this.getClass().getResource("resources/hamlet/hamlet.jpg")).getImage();
+		Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/base_hamlet.jpg");
 		hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
 				hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
 		
@@ -327,7 +329,7 @@ public class SPLinterrface extends JFrame {
 		julietIcon.setBounds(0, 0, 100, 100);
 		julietPanel.add(julietIcon);
 		
-		Image imgJuliet = new ImageIcon(this.getClass().getResource("resources/juliet/juliet.jpg")).getImage();
+		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/base_juliet.jpg");
 		julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
 				julietIcon.getHeight(), Image.SCALE_SMOOTH)));
 		
@@ -500,10 +502,20 @@ public class SPLinterrface extends JFrame {
 		JButton downloadPdfButton = new JButton("Download PDF");
 		downloadPdfButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		downloadPdfButton.setBounds(543, 522, 162, 75);
+		downloadPdfButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			 try {
+				  contentPane.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+			      HtmlToPDF.generatePDFfromHTML();
+			      contentPane.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+			    } catch (Exception ee) {
+			      System.out.println("An error occurred.");
+			      ee.printStackTrace();
+			    }
+			}
+		});
 		pdfPanel.add(downloadPdfButton);
-		
-		
-		
 	}
 //	
 //	public static String getInputFile() {	
