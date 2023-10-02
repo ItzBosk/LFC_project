@@ -60,7 +60,6 @@ public class Handler {
 	public static int UNDECLARED_CHARACTER = 27;
 	public static int NO_MULTIPLE_ASCII_INPUT = 28;
 	public static int INVALID_ASCII_INPUT = 29;
-	
 
 	TokenStream input; // mi rappresenta lo scanner
 	List<String> errorList; // lista in cui registro errori
@@ -169,11 +168,16 @@ public class Handler {
 		else if (code == MISSING_SCENE_NUMBER)
 			errMsg += "The scene number is missing";
 		else if (code == ALREADY_DEFINED_SCENE_IN_ACT)
-			errMsg += "The scene " + RomanNumber.decode(tk.getText()) + " has already been declared in act " + actNumber;
+			errMsg += "The scene " + RomanNumber.decode(tk.getText()) + " has already been declared in act "
+					+ actNumber;
 		else if (code == SKIPPED_ACT)
-			errMsg += "Skipped " + (RomanNumber.decode(tk.getText()) - actNumber) + " acts: the last declared act is the " + actNumber + ", you are now going to act " + RomanNumber.decode(tk.getText());
+			errMsg += "Skipped " + (RomanNumber.decode(tk.getText()) - actNumber)
+					+ " acts: the last declared act is the " + actNumber + ", you are now going to act "
+					+ RomanNumber.decode(tk.getText());
 		else if (code == SKIPPED_SCENE)
-			errMsg += "Skipped " + (RomanNumber.decode(tk.getText()) - sceneNumber) + " scenes in act " + actNumber + ": the last declared scene is the " + sceneNumber + ", you are now going to scene " + RomanNumber.decode(tk.getText());
+			errMsg += "Skipped " + (RomanNumber.decode(tk.getText()) - sceneNumber) + " scenes in act " + actNumber
+					+ ": the last declared scene is the " + sceneNumber + ", you are now going to scene "
+					+ RomanNumber.decode(tk.getText());
 		else if (code == UNDECLARED_CHARACTER)
 			errMsg += "The stage character " + tk.getText() + " has never been declared";
 		else if (code == CHARACTER_ALREADY_ON_STAGE)
@@ -189,7 +193,8 @@ public class Handler {
 		else if (code == MISSING_CHARACTER_IN_EXIT)
 			errMsg += "Missing stage character name in exit";
 		else if (code == EXEUNT_SINGLE_CHARACTER)
-			errMsg += "Single exit is not allowed with Exeunt, instead use Exit or add another stage character besides " + tk.getText();
+			errMsg += "Single exit is not allowed with Exeunt, instead use Exit or add another stage character besides "
+					+ tk.getText();
 		else if (code == MISSING_IF_STATEMENT)
 			errMsg += "Missing 'If so' or 'If not' statement";
 		else if (code == EMPTY_STACK)
@@ -199,9 +204,11 @@ public class Handler {
 		else if (code == INVALID_ASCII_INPUT)
 			errMsg += "The inserted ASCII character for " + otherCharacter(tk) + " is not valid";
 		else if (code == INVALID_ASCII_OUTPUT)
-			errMsg += "Does not exist a valid ASCII character corresponding to " + characterList.get(otherCharacter(tk)).getValue();
+			errMsg += "Does not exist a valid ASCII character corresponding to "
+					+ characterList.get(otherCharacter(tk)).getValue();
 		else if (code == NO_MULTIPLE_ASCII_INPUT)
-			errMsg += "The inserted ASCII character for " + otherCharacter(tk) + " is not valid, only single character input is allowed";
+			errMsg += "The inserted ASCII character for " + otherCharacter(tk)
+					+ " is not valid, only single character input is allowed";
 
 		errorList.add(errMsg);
 	}
@@ -445,8 +452,157 @@ public class Handler {
 		}
 	}
 
-	// operazioni svolte su/da un personaggio
+	// stageEvent 1
+	public void checkAssignmentStatement(Token ch, Token noun) {
+		checkError = false;
+		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		else {
+			if (!characterList.get(ch.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		}
 
+		// 1' tipologia di frase
+		// You amazing amazing amazing amazing amazing hero !
+		// 1 nome
+		if (onStageCheck()) {
+			// 1' tipologia di frase
+			// You amazing amazing amazing amazing amazing hero !
+			// 1 nome
+			String updateCh = otherCharacter(ch);
+			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				characterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			} else {
+
+				characterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			}
+			adjectiveCounter = 0;
+			System.err.println("### result frase1: " + characterList.get(updateCh).getValue());
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+
+		if (checkError == false && noun != null) {
+			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
+			System.out.println("   - Actor: \t\t" + ch.getText());
+			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), noun.getText());
+		}
+		printCharacters();// del
+	}
+
+	// stageEvent 2
+	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype) {
+		checkError = false;
+		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		else {
+			if (!characterList.get(ch.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		}
+
+		if (onStageCheck()) {
+			String updateCh = otherCharacter(ch);
+			// 2 nome
+			int charact1 = 0;
+			if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				charact1 = (int) Math.pow(2, adjectiveCounter);
+			} else
+				charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
+			adjectiveCounter = 0; // dopo ogni operazione lo azzera
+			System.err.println("frase2 charact1: " + charact1);
+
+			// 3 nome
+			int charact2 = 0;
+			if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				charact2 = (int) Math.pow(2, adjectiveCounter2);
+			} else
+				charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
+			adjectiveCounter2 = 0; // dopo ogni operazione lo azzera
+			System.err.println("frase2 charact2: " + charact2);
+
+			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
+				characterList.get(updateCh).assignValue(charact1 + charact2);
+				System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
+				characterList.get(updateCh).assignValue(charact1 - charact2);
+				System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
+				characterList.get(updateCh).assignValue(charact1 * charact2);
+				System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			}
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+
+		if (checkError == false && noun1 != null && noun2 != null) {
+			System.out.println("---------------------------   STAGE EVENT 2'  ------------------------------");
+			System.out.println("   - Actor: \t\t" + ch.getText());
+			System.out.println("   - Noun: \t\t" + noun1.getText());
+			System.out.println("   - Noun: \t\t" + noun2.getText());
+			System.out.println("   - Value: \t\t" + characterList.get(ch.getText()).getValue() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), noun1.getText());
+		}
+		printCharacters();// del
+	}
+
+	// stageEvent 3
+	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype) {
+		checkError = false;
+		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
+			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		else {
+			if (!characterList.get(ch.getText()).onStage) // on stage?
+				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		}
+
+		// check se e quale altro ch è in scena e aggiorno value
+		if (onStageCheck()) {
+			String updateCh = otherCharacter(ch);
+
+			// 3' tipologia di frase
+			int thyself = characterList.get(ch.getText()).getValue();
+
+			// 4 nome
+			int charact4 = 0;
+			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				charact4 = (int) Math.pow(2, adjectiveCounter);
+			} else
+				charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
+			adjectiveCounter = 0; // dopo ogni operazione lo azzera
+
+			System.err.println("frase3 charact4: " + charact4);
+			System.err.println("frase3 thyself: " + thyself);
+
+			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
+				characterList.get(updateCh).assignValue(thyself + charact4);
+				System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
+				characterList.get(updateCh).assignValue(thyself - charact4);
+				System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
+				characterList.get(updateCh).assignValue(thyself * charact4);
+				System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+			}
+		} else
+			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+
+		if (checkError == false && noun != null) {
+			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
+			System.out.println("   - Actor: \t\t" + ch.getText());
+			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), noun.getText());
+		}
+		printCharacters();// del
+	}
+
+	// operazioni svolte su/da un personaggio
 	public void checkStageEvent(Token ch1, Token noun1, Token noun2, Token noun3, Token noun4, Token operationtype) {
 
 		checkError = false;
@@ -594,7 +750,7 @@ public class Handler {
 	}
 
 	// comparazione tra i valori dei personaggi
-	public void checkComparison(Token ch1, Token ev, Token ch2, Token gt, Token rn) {
+	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt, Token rn) {
 		checkError = false;
 		// check se ch1 != ch2 ??
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
@@ -769,7 +925,8 @@ public class Handler {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
 					case 1:
-						characterList.get(singleLog.character).assignValue(Integer.valueOf((String) singleLog.assignedValue));
+						characterList.get(singleLog.character)
+								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
 						execOutput += (String) singleLog.assignedValue;
@@ -908,7 +1065,7 @@ public class Handler {
 				String input = myScanner.next();
 				try {
 					if (input.length() > 1) {
-					myErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);
+						myErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);
 						return;
 					}
 					char asciiInput = (char) input.charAt(0);

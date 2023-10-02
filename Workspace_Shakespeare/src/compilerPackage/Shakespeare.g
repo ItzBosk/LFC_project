@@ -97,11 +97,7 @@ scenes
     	//{System.out.println("    - Ho riconosciuto una scena");}
     	enterRule?
     	stageEvent*
-    	//remember?
-    	//recall?
-    	//printRule?
-    	//readRule?
-    	comparison?
+    	conditionalRule?
     	(exitRule |
     	exeuntRule)?
     	;
@@ -110,7 +106,7 @@ scenes
 enterRule
 	:
 	//{System.out.println("* I'm about to recognize an entrance on the scene..");}
-   	LB ENTER (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB WS?
+   	LB ENTER (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB
    	{h.checkEnter($ch1, $and, $ch2);}
    	// o sarebbe meglio considerare and come id e fare check in java se ID = 'and' ???
    	//{System.out.println("* I recognized an entrance on the scene");}
@@ -122,7 +118,7 @@ enterRule
 exitRule
 	:
     	//{System.out.println("* I'm about to recognize an exit..");}
-    	LB EXIT ch=CHARACTER RB WS?
+    	LB EXIT ch=CHARACTER RB
     	{h.checkExit($ch);}
     	//{System.out.println("* I recognized an exit");}
     	//{System.out.println();}
@@ -132,7 +128,7 @@ exitRule
 exeuntRule
     	:
     	//{System.out.println("* I'm about to recognize a multiple exit..");}
-    	LB EXEUNT (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB WS?
+    	LB EXEUNT (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB
     	{h.checkExeunt($ch1, $and, $ch2);}
     	//{System.out.println("* I recognized a multiple exit");}
     	//{System.out.println();}
@@ -140,15 +136,44 @@ exeuntRule
 
 stageEvent
     	:
-    	ch1=CHARACTER CL
-    	(remember[ch1] | recall[ch1] | printRule[ch1] | readRule[ch1]|WS?(YOU ARE? | THOUART ) 
-    	(A?(adjective)* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) |
-    	(AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS operationtype=(SUMOF | DIFFBET | PRODOF) A  adjective* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
-    	AND A adjectiveSecond* noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))|
-    	(operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF AND A adjective* noun4=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)))
+    	ch=CHARACTER CL
+    	(
+    	rememberRule [ch] 
+    	| recallRule [ch] 
+    	| printRule[ch] 
+    	| readRule [ch] 
+    	| WS? (YOU ARE? | THOUART) 
+    		(
+    		assignmentStatement[ch]
+    		| assignmentComparison[ch]
+    		| assignmentOperation[ch]
+    		)
     	(EP| DOT)
-    	{h.checkStageEvent($ch1, $noun1, $noun2, $noun3, $noun4, $operationtype);}
+    	//{h.checkStageEvent($ch, noun1, $noun2, $noun3, $noun4, $operationtype);}
     	)*
+	;
+
+assignmentStatement [Token ch]
+	:	
+	A?(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	{h.checkAssignmentStatement($ch, $noun);}
+	;
+	
+assignmentComparison [Token ch]
+	:
+	(AS 
+	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	AS operationtype=(SUMOF | DIFFBET | PRODOF)
+	A adjective* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	AND A adjectiveSecond* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype);}
+	;
+	
+assignmentOperation [Token ch]
+	:
+	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
+	AND A adjective* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	{h.checkAssignmentOperation($ch, $noun, $operationtype);}
 	;
 	
 adjective
@@ -157,17 +182,17 @@ adjective
 	{h.adjectiveCounter++;}
 	;
 
-comparison
+conditionalRule
 	:
 	ch1=CHARACTER CL WS?
 	AMI 
 	ev=(BETTER | (AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS) | WORSE) 
 	THAN YOUC QM
 	
-	ch2=CHARACTER CL WS?
-	gt=(IFSO | IFNOT) (LETUS | WESHALL | WEMUST) (RETURNTO | PROCEEDTO) SCENEC rn=ID DOT WS?
+	ch2=CHARACTER CL
+	gt=(IFSO | IFNOT) (LETUS | WESHALL | WEMUST) (RETURNTO | PROCEEDTO) SCENEC rn=ID DOT
 	
-	{h.checkComparison($ch1, $ev, $ch2, $gt, $rn);}
+	{h.checkConditional($ch1, $ev, $ch2, $gt, $rn);}
 	;
 	
 //serve per le frasi con as...as per comparare i due pezzi di frase.
@@ -177,14 +202,14 @@ adjectiveSecond
 	{h.adjectiveCounter2++;}
 	;
 
-remember [Token ch]
+rememberRule [Token ch]
 	:
 	//(ch=CHARACTER) CL WS?
 	REMEMBER who=(ME | YOURSELF) DOT
 	{h.checkRemember($ch, $who);}
 	;
 
-recall [Token ch]
+recallRule [Token ch]
 	:
 	//(ch=CHARACTER) CL WS?
 	RECALL DOT
@@ -454,7 +479,7 @@ A		:   'a';
 THYSELF		:   'thyself';
 
 
-// comparison
+// conditional
 AMI		:	'Am I';
 BETTER		:   	'better';
 WORSE		: 	'worse';
