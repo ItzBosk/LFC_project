@@ -22,7 +22,6 @@ public class HtmlToPDF {
 	}
 	
 	public static void generatePDFfromHTML() throws Exception {
-			System.out.println("/n/n/n"+HTML.getFile());
 			String outPath = "./resources/out.pdf";
 			
 		try (OutputStream outputStream = new FileOutputStream(outPath)) {
@@ -88,14 +87,27 @@ public class HtmlToPDF {
 				+ "			float:left; width:170px; height:170px; padding : 10px; "
 				+ "			} "
 				+ "			.act{ "
-				+ "			font-size:30px; "
-				+ "			background-color:yellow; "
-				+ "			text-align:center; "
-				+ "			page-break-before: always; "
+				+ "    		font-size: 45px;\r\n"
+				+ "    		background-image: url(actBanner.png);\r\n"
+				+ "    		background-repeat: no-repeat;\r\n"
+				+ "         background-position:center;"	
+				+ "    		background-size: contain;\r\n"
+				+ "   		text-align: center;\r\n"
+				+ "    		page-break-before: always;\r\n"
+				+ "    		height: 250px;"
+				+ "         margin-top:400px;"
 				+ "			} "
 				+ "			.scene{ "
-				+ "			font-size:25px;background-color:green;text-align:center "
-				+ "			} "
+				+ "    		font-size: 25px;\r\n"
+				+ "    		background-image: url(sceneBanner.png);\r\n"
+				+ "    		background-repeat: no-repeat;\r\n"
+				+ "         background-position:center;"	
+				+ "    		background-size: contain;\r\n"
+				+ "   		text-align: center;\r\n"
+				+ "    		page-break-before: always;\r\n"
+				+ "    		height: 100px;"
+				+ "			}"
+				+ "         .sceneText{padding-top: 35px;}"
 				+ "			.stageEvent{ "
 				+ "			 clear: both;  display: table; width:100%; "
 				+ "			} "
@@ -105,6 +117,9 @@ public class HtmlToPDF {
 				+ "			.right{ "
 				+ "			text-align:right "
 				+ "			} "
+				+ "			.center{ "
+				+ "			text-align:center "
+				+ "			} "
 				+ "			.fleft{ "
 				+ "			float:left; "
 				+ "			} "
@@ -112,7 +127,7 @@ public class HtmlToPDF {
 				+ "			float:right; "
 				+ "			} "
 				+ "			.text{ "
-				+ "			padding:20px; "
+				+ "			padding:20px; width: 300px;"
 				+ "			} "
 				+ "        </style> "
 				+ "    </head> "
@@ -136,36 +151,46 @@ public class HtmlToPDF {
 					+ title +"</div>";
 		}
 		
+		public static void addStageEvent(String personae, String wh, String event) {
+			if(wh.compareTo("are")==0)
+				addStageEvent(personae,"you are"+event);
+			else
+				addStageEvent(personae,wh+" "+event);
+		}
+			
 		public static void addStageEvent(String personae, String event) {
 			if(stageEventLeft) {
 				htmlFile += "<div class=\"stageEvent no-page-break left\">\r\n"
 						+ "			<img class=\"image fleft\" src=\""+personae+".jpg\" /> </img>\r\n"
-						+ "			<div class=\"text fleft\" width=\"100%\"> ";
+						+ "			<div class=\"text fleft\" > ";
 			}
 			else
 			{
 				htmlFile += "<div class=\"stageEvent no-page-break right\">\r\n"
 						+ "			<img class=\"image fright\" src=\""+personae+".jpg\" /> </img>\r\n"
-						+ "			<div class=\"text fright\" width=\"100%\"> ";
+						+ "			<div class=\"text fright\" > ";
 			}
 			stageEventLeft = !stageEventLeft;
-			htmlFile += "<h2>"+personae+":</h2>\r\n"
-					+ event
-					+ "			</div>\r\n"
+			htmlFile += "<h2>"+personae+":</h2>"
+					+ "<p>"+event+"</p>"
+					+ "			</div>"
 					+ "		</div>";
 		}
 		
-		public static void addAct(String act) {
-			htmlFile += "<div class=\"act\">ACT "+act+"</div>";
+		public static void addAct(String act, String comment) {
+			htmlFile += "<div class=\"act\">ACT "+act+"</div><div class=\"center\"><h1>"+comment+"</h1></div>";
 		}
 		
-		public static void addScene(String scene) {
-			htmlFile += "<div class=\"scene\">SCENE "+scene+"</div>";
+		public static void addScene(String scene,String comment) {
+			htmlFile += "<div class=\"scene\"><div class=\"sceneText\">SCENE "+scene+"</div></div><div class=\"center\"><h2>"+comment+"</h2></div>";
 			stageEventLeft = true;
 		}
 		
 		public static String getFile() {
 			htmlFile += "</body></html>";
+			System.out.println();
+			System.out.println(htmlFile);
+			System.out.println();
 			return htmlFile;
 		}
 	}

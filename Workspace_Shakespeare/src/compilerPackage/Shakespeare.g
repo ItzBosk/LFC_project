@@ -142,44 +142,45 @@ stageEvent
     	| recallRule [ch] 
     	| printRule[ch] 
     	| readRule [ch] 
-    	| WS? (YOU ARE? | THOUART) 
+    	| WS? wh=(YOU ARE? | THOUART) 
     		(
-    		assignmentStatement[ch]
-    		| assignmentComparison[ch]
-    		| assignmentOperation[ch]
+    		assignmentStatement[ch,wh]
+    		| assignmentComparison[ch,wh]
+    		| assignmentOperation[ch,wh]
     		)
     	(EP| DOT)
     	//{h.checkStageEvent($ch, noun1, $noun2, $noun3, $noun4, $operationtype);}
     	)*
 	;
 
-assignmentStatement [Token ch]
+assignmentStatement [Token ch,Token wh]
 	:	
 	A?(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	{h.checkAssignmentStatement($ch, $noun);}
+	{h.checkAssignmentStatement($ch, $noun, $wh);}
 	;
 	
-assignmentComparison [Token ch]
+assignmentComparison [Token ch, Token wh]
 	:
 	(AS 
-	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	AS operationtype=(SUMOF | DIFFBET | PRODOF)
 	A adjective* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
 	AND A adjectiveSecond* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
-	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype);}
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype,$wh,$adj);}
 	;
 	
-assignmentOperation [Token ch]
+assignmentOperation [Token ch,Token wh]
 	:
 	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
 	AND A adjective* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype);}
+	{h.checkAssignmentOperation($ch, $noun, $operationtype,$wh);}
 	;
 	
 adjective
 	:
-	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
-	{h.adjectiveCounter++;}
+	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	{h.adjectiveCounter++;
+	 h.adjBuilder($adj);}
 	;
 
 conditionalRule
@@ -198,8 +199,9 @@ conditionalRule
 //serve per le frasi con as...as per comparare i due pezzi di frase.
 adjectiveSecond
 	:
-	(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
-	{h.adjectiveCounter2++;}
+	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
+	{h.adjectiveCounter2++;
+	 h.adjBuilder2($adj);}
 	;
 
 rememberRule [Token ch]

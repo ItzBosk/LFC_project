@@ -73,6 +73,8 @@ public class Handler {
 	boolean checkError; // rimesso a false all'inizio di ogni metodo
 	gotoHandler goTo = new gotoHandler();
 	String execOutput;
+	String adjString = "";
+	String adjString2 = "";
 
 	public Handler(TokenStream input) {
 		this.input = input;
@@ -288,7 +290,7 @@ public class Handler {
 						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
 						System.out.println(
 								"============================================================================\n");
-						HtmlToPDF.HTML.addAct(String.valueOf(actNumber));
+						HtmlToPDF.HTML.addAct(String.valueOf(actNumber),co.getText().substring(2, co.getText().length() - 3));
 					}
 				}
 			}
@@ -319,7 +321,7 @@ public class Handler {
 						System.out.println(
 								"============================================================================");
 						System.out.println();
-						HtmlToPDF.HTML.addScene(String.valueOf(sceneNumber));
+						HtmlToPDF.HTML.addScene(String.valueOf(sceneNumber),co.getText().substring(2, co.getText().length() - 3));
 					}
 				}
 			}
@@ -453,7 +455,7 @@ public class Handler {
 	}
 
 	// stageEvent 1
-	public void checkAssignmentStatement(Token ch, Token noun) {
+	public void checkAssignmentStatement(Token ch, Token noun,Token wh) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -487,13 +489,14 @@ public class Handler {
 			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), noun.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),adjString+noun.getText());
+			adjString = "";
 		}
 		printCharacters();// del
 	}
 
 	// stageEvent 2
-	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype) {
+	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype,Token wh, Token adj) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -544,13 +547,14 @@ public class Handler {
 			System.out.println("   - Noun: \t\t" + noun1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Value: \t\t" + characterList.get(ch.getText()).getValue() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), noun1.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(),wh.getText(), " as "+adj.getText()+" as the "+operationtype.getText()+" a "+adjString+noun2.getText()+" and a "+adjString2+noun1.getText());
+			adjString = ""; adjString2 = "" ;
 		}
 		printCharacters();// del
 	}
 
 	// stageEvent 3
-	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype) {
+	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype,Token wh) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -597,7 +601,8 @@ public class Handler {
 			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), noun.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),adjString+noun.getText());
+			adjString = "";
 		}
 		printCharacters();// del
 	}
@@ -805,6 +810,14 @@ public class Handler {
 				myErrorHandler(MISSING_IF_STATEMENT, gt);
 		} else
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
+	}
+	
+	public void adjBuilder(Token adj) {
+		adjString += adj.getText()+" ";
+	}
+	
+	public void adjBuilder2(Token adj) {
+		adjString2 += adj.getText()+" ";
 	}
 
 	public void printCharacters() {
