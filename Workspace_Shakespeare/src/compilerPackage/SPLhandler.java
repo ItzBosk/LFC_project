@@ -21,7 +21,7 @@ import compilerPackage.util.RomanNumber;
 import compilerPackage.util.Util;
 import outputPackage.HtmlToPDF;
 
-public class Handler {
+public class SPLhandler {
 
 	// generic errors
 	public static int LEXICAL_ERROR = 0;
@@ -71,7 +71,7 @@ public class Handler {
 	String adjString = "";
 	String adjString2 = "";
 
-	public Handler(TokenStream input) {
+	public SPLhandler(TokenStream input) {
 		this.input = input;
 		errorList = new ArrayList<String>();
 		stageCharacterList = new Hashtable<String, CharacterDescriptor>(101);

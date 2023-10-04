@@ -13,8 +13,8 @@ options {
 }
 
 @members {
-    Handler h;	// Handler declaration
-    public Handler getHandler () {
+    SPLhandler h;	// Handler declaration
+    public SPLhandler getHandler () {
         return h;
     }
     
@@ -33,7 +33,7 @@ options {
 
     // passing token stream to the handler	
     void initParser () {
-        h = new Handler(input);
+        h = new SPLhandler(input);
     }
 }
 
@@ -521,4 +521,4 @@ WS
         )+	{$channel=HIDDEN;}
 	;
 
-ERROR_TK        : . ;  //token di errore per handler
+ERROR_TK        : . ;  // error token  for the handler

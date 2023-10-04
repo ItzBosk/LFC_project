@@ -9,7 +9,7 @@ import interfaceSPL.SPLinterrface;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.Token;
 
-public class Scanner {
+public class SPLscanner {
 
 	public static void main(String[] args) throws IOException {
 

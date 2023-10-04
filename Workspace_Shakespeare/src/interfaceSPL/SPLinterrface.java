@@ -20,7 +20,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.lowagie.text.pdf.PdfLayer;
 
-import appPackage.Parser;
+import appPackage.SPLparser;
 import outputPackage.HtmlToPDF;
 
 import javax.swing.JTabbedPane;
@@ -64,7 +64,7 @@ public class SPLinterrface extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public static JTextPane codeTextArea;
-	public static Parser parser;
+	public static SPLparser parser;
     private Popup popup;
 
 	/**
@@ -75,7 +75,7 @@ public class SPLinterrface extends JFrame {
 			public void run() {
 				try {
 					SPLinterrface frame = new SPLinterrface();
-					parser = new Parser();
+					parser = new SPLparser();
 					System.out.println("parser caricato: " + parser.getClass().toString());
 					frame.setVisible(true);
 					

@@ -10,13 +10,13 @@ import java.io.PrintStream;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-import compilerPackage.Handler;
+import compilerPackage.SPLhandler;
 import compilerPackage.ShakespeareLexer;
 import compilerPackage.ShakespeareParser;
 import interfaceSPL.SPLinterrface;
 import outputPackage.HtmlToPDF;
 
-public class Parser {
+public class SPLparser {
 
 	static ShakespeareParser parser;
 	static ByteArrayOutputStream baos;
@@ -58,7 +58,7 @@ public class Parser {
 			parser.parseSPL();
 
 			// check results
-			Handler h = parser.getHandler();
+			SPLhandler h = parser.getHandler();
 			if (h.getErrorList().size() == 0) {
 				h.finalPrint();
 				System.out.println();
