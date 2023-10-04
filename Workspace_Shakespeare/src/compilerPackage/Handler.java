@@ -795,7 +795,7 @@ public class Handler {
 						if (!RomanNumber.isRoman(rn.getText()))
 							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 						else {
-							HtmlToPDF.HTML.addStageEvent(ch1.getText()," am i "+ ev.getText() + " than you?");
+							HtmlToPDF.HTML.addStageEvent(ch1.getText(),"Am i "+ ev.getText() + " than you?");
 							HtmlToPDF.HTML.addStageEvent(ch2.getText(),gt.getText() +" "+gt2.getText() +" "+ gt3rs.getText() +" "+ gt4.getText() +" "+ rn.getText() + "."); 
 							goTo.Jump(RomanNumber.decode(rn.getText()));
 						}
@@ -806,7 +806,7 @@ public class Handler {
 							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 						else
 						{
-							HtmlToPDF.HTML.addStageEvent(ch1.getText()," am i "+ ev.getText() + " than you?");
+							HtmlToPDF.HTML.addStageEvent(ch1.getText(),"Am i "+ ev.getText() + " than you?");
 							HtmlToPDF.HTML.addStageEvent(ch2.getText(),gt.getText() +" "+gt2.getText() +" "+ gt3rs.getText() +" "+ gt4.getText() +" "+ rn.getText() + "."); 
 							goTo.Jump(RomanNumber.decode(rn.getText()));
 							}

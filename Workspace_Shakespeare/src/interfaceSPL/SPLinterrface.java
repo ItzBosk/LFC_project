@@ -302,19 +302,23 @@ public class SPLinterrface extends JFrame {
 		//-------------------------------------------------------------------------------------------------------------
 		//-------------------------------------------------------------------------------------------------------------
 		//-------------------------------------------------------------------------------------------------------------
-		// PARTRE PDF
-//		    'Romeo'
-//	    |   'Juliet'
-//	    |   'Hamlet'
-//	    |   'Ghost'
-//	    |   'LadyMacbeth'
-//	    |   'Ophelia'
-//	    |   'Tebaldo'
-//	    |   'Claudio'
+		//   PARTE PDF
+	    //   'Romeo'
+	    //   'Juliet'
+	    //   'Hamlet'
+	    //   'Ghost'
+	    //   'LadyMacbeth'
+	    //   'Ophelia'
+	    //   'Mercutio'
+	    //   'Banquo'
+	    //   'Gertrude'
+	    //   'Polonio'
+	    //   'Shylock'
+	    //   'Prospero'
 		hamletPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		hamletPanel.setBackground(SystemColor.controlHighlight);
 		
-		Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/base_hamlet.jpg");
+		Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Hamlet.jpg");
 		hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
 				hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
 		
@@ -329,10 +333,9 @@ public class SPLinterrface extends JFrame {
 		julietIcon.setBounds(0, 0, 100, 100);
 		julietPanel.add(julietIcon);
 		
-		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/base_juliet.jpg");
+		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Juliet.jpg");
 		julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
 				julietIcon.getHeight(), Image.SCALE_SMOOTH)));
-		
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Juliet");
 		lblNewLabel_1_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));

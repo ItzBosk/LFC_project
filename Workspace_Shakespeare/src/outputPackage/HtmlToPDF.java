@@ -2,19 +2,33 @@ package outputPackage;
 
 import java.awt.Desktop;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 
+import org.apache.pdfbox.io.IOUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
+import org.w3c.dom.Element;
+import org.xhtmlrenderer.extend.FSImage;
+import org.xhtmlrenderer.extend.ReplacedElementFactory;
 import org.xhtmlrenderer.layout.SharedContext;
+import org.xhtmlrenderer.pdf.ITextFSImage;
+import org.xhtmlrenderer.pdf.ITextImageElement;
 import org.xhtmlrenderer.pdf.ITextRenderer;
+import org.xhtmlrenderer.simple.extend.FormSubmissionListener;
 
+import com.lowagie.text.Image;
 import com.lowagie.text.pdf.BaseFont;
+import com.openhtmltopdf.extend.ReplacedElement;
+import com.openhtmltopdf.extend.UserAgentCallback;
+import com.openhtmltopdf.layout.LayoutContext;
+import com.openhtmltopdf.render.BlockBox;
 
 public class HtmlToPDF {
 	
@@ -67,7 +81,7 @@ public class HtmlToPDF {
 				+ "			body{ "
 				+ "			padding: 25px; "
 				+ "			font-family:Seagram tfb, Seagram; "
-				+ "			background-image: url('background.jpg'); "
+				+ "			background-image: url('resources/images/background.jpg'); "
 				+ "			background-repeat: no-repeat; "
 				+ "			background-attachment: fixed; "
 				+ "			background-size: cover; "
@@ -88,7 +102,7 @@ public class HtmlToPDF {
 				+ "			} "
 				+ "			.act{ "
 				+ "    		font-size: 45px;\r\n"
-				+ "    		background-image: url(actBanner.png);\r\n"
+				+ "    		background-image: url(resources/images/actBanner.png);\r\n"
 				+ "    		background-repeat: no-repeat;\r\n"
 				+ "         background-position:center;"	
 				+ "    		background-size: contain;\r\n"
@@ -99,7 +113,7 @@ public class HtmlToPDF {
 				+ "			} "
 				+ "			.scene{ "
 				+ "    		font-size: 25px;\r\n"
-				+ "    		background-image: url(sceneBanner.png);\r\n"
+				+ "    		background-image: url(resources/images/sceneBanner.png);\r\n"
 				+ "    		background-repeat: no-repeat;\r\n"
 				+ "         background-position:center;"	
 				+ "    		background-size: contain;\r\n"
@@ -142,7 +156,7 @@ public class HtmlToPDF {
 			}
 			else
 				htmlFile = htmlFile.substring(0, htmlFile.length()-6);
-			htmlFile += "<img class=\"image\"  src=\""+personae+"_text.jpg\" /></img>	</div>";
+			htmlFile += "<img class=\"image\"  src=\"resources/images/text_"+personae+".jpg\" /></img>	</div>";
 			
 		}
 		
@@ -161,13 +175,13 @@ public class HtmlToPDF {
 		public static void addStageEvent(String personae, String event) {
 			if(stageEventLeft) {
 				htmlFile += "<div class=\"stageEvent no-page-break left\">\r\n"
-						+ "			<img class=\"image fleft\" src=\""+personae+".jpg\" /> </img>\r\n"
+						+ "			<img class=\"image fleft\" src=\"resources/images/base_"+personae+".jpg\" /> </img>\r\n"
 						+ "			<div class=\"text fleft\" > ";
 			}
 			else
 			{
 				htmlFile += "<div class=\"stageEvent no-page-break right\">\r\n"
-						+ "			<img class=\"image fright\" src=\""+personae+".jpg\" /> </img>\r\n"
+						+ "			<img class=\"image fright\" src=\"resources/images/base_"+personae+".jpg\" /> </img>\r\n"
 						+ "			<div class=\"text fright\" > ";
 			}
 			stageEventLeft = !stageEventLeft;
