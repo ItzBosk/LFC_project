@@ -153,7 +153,7 @@ public class HtmlToPDF {
 		
 		public static void addStageEvent(String personae, String wh, String event) {
 			if(wh.compareTo("are")==0)
-				addStageEvent(personae,"you are"+event);
+				addStageEvent(personae,"You are"+event);
 			else
 				addStageEvent(personae,wh+" "+event);
 		}

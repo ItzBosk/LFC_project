@@ -148,15 +148,15 @@ stageEvent
     		| assignmentComparison[ch,wh]
     		| assignmentOperation[ch,wh]
     		)
-    	(EP| DOT)
+ 
     	//{h.checkStageEvent($ch, noun1, $noun2, $noun3, $noun4, $operationtype);}
     	)*
 	;
 
 assignmentStatement [Token ch,Token wh]
 	:	
-	A?(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	{h.checkAssignmentStatement($ch, $noun, $wh);}
+	A?(adjective)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) el=(EP| DOT)
+	{h.checkAssignmentStatement($ch, $noun, $wh,$el);}
 	;
 	
 assignmentComparison [Token ch, Token wh]
@@ -165,15 +165,15 @@ assignmentComparison [Token ch, Token wh]
 	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	AS operationtype=(SUMOF | DIFFBET | PRODOF)
 	A adjective* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	AND A adjectiveSecond* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
-	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype,$wh,$adj);}
+	AND A adjectiveSecond* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)) el=(EP| DOT)
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype,$wh,$adj,$el);}
 	;
 	
 assignmentOperation [Token ch,Token wh]
 	:
 	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
-	AND A adjective* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype,$wh);}
+	AND A adjective* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) el=(EP| DOT)
+	{h.checkAssignmentOperation($ch, $noun, $operationtype,$wh,$el);}
 	;
 	
 adjective
@@ -189,11 +189,11 @@ conditionalRule
 	AMI 
 	ev=(BETTER | (AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS) | WORSE) 
 	THAN YOUC QM
+
+ 	ch2=CHARACTER CL
+	gt=(IFSO | IFNOT) gt2=(LETUS | WESHALL | WEMUST) gt3rs=(RETURNTO | PROCEEDTO) gt4=SCENEC rn=ID DOT
 	
-	ch2=CHARACTER CL
-	gt=(IFSO | IFNOT) (LETUS | WESHALL | WEMUST) (RETURNTO | PROCEEDTO) SCENEC rn=ID DOT
-	
-	{h.checkConditional($ch1, $ev, $ch2, $gt, $rn);}
+	{h.checkConditional($ch1, $ev, $ch2, $gt,$gt2,$gt3rs,$gt4, $rn);}
 	;
 	
 //serve per le frasi con as...as per comparare i due pezzi di frase.
@@ -223,8 +223,8 @@ printRule [Token ch]
 	:
 	//ch=CHARACTER CL WS?
 	phrase=(PRINTVALUE | PRINTASCII)
-	(DOT | EP)
-	{h.checkPrint($ch, $phrase);}
+	wh=(DOT | EP)
+	{h.checkPrint($ch, $phrase, $wh);}
 	;
 
 // Open your mind, Listen to your heart
@@ -232,8 +232,8 @@ readRule [Token ch]
 	:
 	//ch=CHARACTER CL WS?
 	phrase=(READVALUE | READASCII)
-	(DOT | EP)
-	{h.checkRead($ch, $phrase);}
+	wh=(DOT | EP)
+	{h.checkRead($ch, $phrase,$wh);}
 	;
 
 

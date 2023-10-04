@@ -455,7 +455,7 @@ public class Handler {
 	}
 
 	// stageEvent 1
-	public void checkAssignmentStatement(Token ch, Token noun,Token wh) {
+	public void checkAssignmentStatement(Token ch, Token noun,Token wh,Token el) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -489,14 +489,14 @@ public class Handler {
 			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),adjString+noun.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText()," "+adjString+noun.getText()+el.getText());
 			adjString = "";
 		}
 		printCharacters();// del
 	}
 
 	// stageEvent 2
-	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype,Token wh, Token adj) {
+	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype,Token wh, Token adj,Token el) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -547,14 +547,14 @@ public class Handler {
 			System.out.println("   - Noun: \t\t" + noun1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
 			System.out.println("   - Value: \t\t" + characterList.get(ch.getText()).getValue() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(),wh.getText(), " as "+adj.getText()+" as the "+operationtype.getText()+" a "+adjString+noun2.getText()+" and a "+adjString2+noun1.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(),wh.getText(), " as "+adj.getText()+" as the "+operationtype.getText()+" a "+adjString+noun2.getText()+" and a "+adjString2+noun1.getText()+el.getText());
 			adjString = ""; adjString2 = "" ;
 		}
 		printCharacters();// del
 	}
 
 	// stageEvent 3
-	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype,Token wh) {
+	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype,Token wh,Token el) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -601,7 +601,7 @@ public class Handler {
 			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),adjString+noun.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),adjString+noun.getText()+el.getText());
 			adjString = "";
 		}
 		printCharacters();// del
@@ -755,7 +755,7 @@ public class Handler {
 	}
 
 	// comparazione tra i valori dei personaggi
-	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt, Token rn) {
+	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt,Token gt2, Token gt3rs, Token gt4, Token rn) {
 		checkError = false;
 		// check se ch1 != ch2 ??
 		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
@@ -795,6 +795,8 @@ public class Handler {
 						if (!RomanNumber.isRoman(rn.getText()))
 							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 						else {
+							HtmlToPDF.HTML.addStageEvent(ch1.getText()," am i "+ ev.getText() + " than you?");
+							HtmlToPDF.HTML.addStageEvent(ch2.getText(),gt.getText() +" "+gt2.getText() +" "+ gt3rs.getText() +" "+ gt4.getText() +" "+ rn.getText() + "."); 
 							goTo.Jump(RomanNumber.decode(rn.getText()));
 						}
 					}
@@ -803,8 +805,12 @@ public class Handler {
 						if (!RomanNumber.isRoman(rn.getText()))
 							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
 						else
+						{
+							HtmlToPDF.HTML.addStageEvent(ch1.getText()," am i "+ ev.getText() + " than you?");
+							HtmlToPDF.HTML.addStageEvent(ch2.getText(),gt.getText() +" "+gt2.getText() +" "+ gt3rs.getText() +" "+ gt4.getText() +" "+ rn.getText() + "."); 
 							goTo.Jump(RomanNumber.decode(rn.getText()));
-					}
+							}
+						}
 				}
 			} else
 				myErrorHandler(MISSING_IF_STATEMENT, gt);
@@ -996,6 +1002,7 @@ public class Handler {
 				System.out.println("   - Pushed value: \t" + characterList.get(ch.getText()).getValue() + "\n");
 			else
 				System.out.println("   - Pushed value: \t" + characterList.get(otherCharacter(ch)).getValue() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch.getText(),"Remember "+who.getText()+".");
 			printCharacters();
 		}
 	}
@@ -1021,12 +1028,13 @@ public class Handler {
 			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
 			System.out.println("   - Popped value: \t" + characterList.get(ch.getText()).getValue() + "\n");
 			goTo.newLog(sceneNumber, otherCharacter(ch), 4);
+			HtmlToPDF.HTML.addStageEvent(ch.getText(),"Recall.");
 			printCharacters();
 		}
 	}
 
 	// stampa int/ASCII
-	public void checkPrint(Token ch, Token phrase) {
+	public void checkPrint(Token ch, Token phrase,Token ws) {
 		if (!characterList.containsKey(ch.getText())) // dichiarato?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
 		if (!characterList.get(ch.getText()).onStage) // on stage?
@@ -1034,6 +1042,7 @@ public class Handler {
 
 		if (onStageCheck()) {
 			String otherCh = otherCharacter(ch);
+			HtmlToPDF.HTML.addStageEvent(ch.getText(),phrase.getText()+ws.getText());
 			if (phrase.getType() == ShakespeareLexer.PRINTVALUE) {
 				execOutput += characterList.get(otherCh).getValue();
 				goTo.newLog(sceneNumber, otherCh, 2, String.valueOf(characterList.get(otherCh).getValue()));
@@ -1050,7 +1059,7 @@ public class Handler {
 			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 	}
 
-	public void checkRead(Token ch, Token phrase) {
+	public void checkRead(Token ch, Token phrase, Token ws) {
 		checkError = false;
 		if (!characterList.containsKey(ch.getText())) // dichiarato?
 			myErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -1063,6 +1072,7 @@ public class Handler {
 		if (!checkError) {
 			String otherCh = otherCharacter(ch);
 			Scanner myScanner = new Scanner(System.in);
+			HtmlToPDF.HTML.addStageEvent(ch.getText(),phrase.getText()+ws.getText());
 			if (phrase.getType() == ShakespeareLexer.READVALUE) { // leggo int
 				System.err.println("Enter an integer value for " + otherCh + ": ");
 				String input = myScanner.next();
