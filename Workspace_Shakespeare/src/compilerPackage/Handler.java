@@ -1,7 +1,6 @@
 package compilerPackage;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Iterator;
@@ -24,13 +23,9 @@ import outputPackage.HtmlToPDF;
 
 public class Handler {
 
+	// generic errors
 	public static int LEXICAL_ERROR = 0;
 	public static int SYNTAX_ERROR = 1;
-//	public static int UNDECLARED_VAR_ERROR = 2;
-//	public static int DECLARED_VAR_ERROR = 3;
-//	public static int INC_ERROR = 4;
-//	public static int MISS_INC_ERROR = 5;
-//	public static int DIV_BY_ZERO_ERROR = 6;
 
 	// Shakespeare errors
 	public static int MISSING_TITLE = 3;
@@ -61,31 +56,31 @@ public class Handler {
 	public static int NO_MULTIPLE_ASCII_INPUT = 28;
 	public static int INVALID_ASCII_INPUT = 29;
 
-	TokenStream input; // mi rappresenta lo scanner
-	List<String> errorList; // lista in cui registro errori
+	TokenStream input; 			// scanner of the input file
+	List<String> errorList; 	// errors log
 
-	Hashtable<String, CharacterDescriptor> characterList; // character, value, on stage or not
-	Iterator<Map.Entry<String, CharacterDescriptor>> it; // per exeunt multipla.
-	int actNumber;
-	int sceneNumber;
-	int adjectiveCounter;
-	int adjectiveCounter2; // serve per la 2° tipologia di frase, per fare sottrazioni, somme, ..
-	boolean checkError; // rimesso a false all'inizio di ogni metodo
+	Hashtable<String, CharacterDescriptor> stageCharacterList;
+	Iterator<Map.Entry<String, CharacterDescriptor>> it; // for multiple Exeunt
+	int actNumber;	 // current act
+	int sceneNumber; 	// current scene
+	int adjectiveCounter; // counter for adjective is assigment
+	int adjectiveCounter2; // counter for adjective is assigmentOperation
+	boolean checkError; // checks for occures errros in every checkMethod
 	gotoHandler goTo = new gotoHandler();
-	String execOutput;
+	String execOutput; // progressive building of the output
 	String adjString = "";
 	String adjString2 = "";
 
 	public Handler(TokenStream input) {
 		this.input = input;
 		errorList = new ArrayList<String>();
-		characterList = new Hashtable<String, CharacterDescriptor>(101);
+		stageCharacterList = new Hashtable<String, CharacterDescriptor>(101);
 		actNumber = 0;
 		sceneNumber = 0;
 		adjectiveCounter = 0;
 		adjectiveCounter2 = 0;
 		checkError = false;
-		it = characterList.entrySet().iterator();
+		it = stageCharacterList.entrySet().iterator();
 		execOutput = "";
 	}
 
@@ -98,8 +93,6 @@ public class Handler {
 	public void handleError(Token tk, String hdr, String msg) {
 		String errMsg;
 		if (tk == null)
-			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal
-			// file)
 			if (input.LT(-1) == null)
 				tk = input.LT(+1);
 			else
@@ -112,15 +105,13 @@ public class Handler {
 
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: " + " on token '"
 				+ tk.getText() + "'";
-		// errMsg += "\n" + hdr + "\n**********\n" + msg; // scarto msg automatico
-		errorList.add(errMsg); // msg di errore che ho in output
+		errorList.add(errMsg); // error message
 	}
 
-	// gestione errori semantici
-	void myErrorHandler(int code, Token tk) {
-		checkError = true; // c'è sicuramente un errore
+	// management of semantic errors
+	void dramaErrorHandler(int code, Token tk) {
+		checkError = true; // there is certainly an error
 		String errMsg;
-		// i primi due casi non dovrebbero mai avvenire... ma giusto in caso...
 		if (code == LEXICAL_ERROR)
 			errMsg = "Fake Lexical Error " + code;
 		else if (code == SYNTAX_ERROR)
@@ -128,25 +119,13 @@ public class Handler {
 		else
 			errMsg = "Semantic Error " + code;
 
+		// managing error at the beginning of the file
 		if (tk == null)
-			// gestione errore subito all'inizio del file (input.LT(-1) sarebbe fuori dal
-			// file)
 			if (input.LT(-1) == null)
 				tk = input.LT(+1);
 			else
 				tk = input.LT(-1);
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: ";
-
-//		if (code == UNDECLARED_VAR_ERROR)
-//			errMsg += "The variable '" + tk.getText() + "' is undeclared";
-//		else if (code == DECLARED_VAR_ERROR)
-//			errMsg += "The variable '" + tk.getText() + "' has been already declared";
-//		else if (code == INC_ERROR)
-//			errMsg += "Cannot use '++' or '--' before and after the variable '" + tk.getText() + "'";
-//		else if (code == MISS_INC_ERROR)
-//			errMsg += "Missing '++' or '--' before or after the variable '" + tk.getText() + "'";
-//		else if (code == DIV_BY_ZERO_ERROR)
-//			errMsg += "Division by 0";
 
 		// Shakespeare errors
 		if (code == MISSING_TITLE)
@@ -202,26 +181,25 @@ public class Handler {
 		else if (code == EMPTY_STACK)
 			errMsg += "The stack of " + tk.getText() + " is empty, cannot assign a new value to stage character";
 		else if (code == INVALID_INT_INPUT)
-			errMsg += "The value inserted for " + otherCharacter(tk) + " is not an integer value";
+			errMsg += "The value inserted for " + secondStageCharacter(tk) + " is not an integer value";
 		else if (code == INVALID_ASCII_INPUT)
-			errMsg += "The inserted ASCII character for " + otherCharacter(tk) + " is not valid";
+			errMsg += "The inserted ASCII character for " + secondStageCharacter(tk) + " is not valid";
 		else if (code == INVALID_ASCII_OUTPUT)
 			errMsg += "Does not exist a valid ASCII character corresponding to "
-					+ characterList.get(otherCharacter(tk)).getValue();
+					+ stageCharacterList.get(secondStageCharacter(tk)).getValue();
 		else if (code == NO_MULTIPLE_ASCII_INPUT)
-			errMsg += "The inserted ASCII character for " + otherCharacter(tk)
+			errMsg += "The inserted ASCII character for " + secondStageCharacter(tk)
 					+ " is not valid, only single character input is allowed";
 
 		errorList.add(errMsg);
 	}
 
-	// controlla titolo
-	public void checkTitle(Token d) { // t=testo, d=dot
+	public void checkTitle(Token d) {
 		try {
 			if (title == null) {
-				myErrorHandler(MISSING_TITLE, null);
+				dramaErrorHandler(MISSING_TITLE, null);
 			} else if (!d.getText().equals(".")) {
-				myErrorHandler(MISSING_DOT, d);
+				dramaErrorHandler(MISSING_DOT, d);
 			} else {
 				System.out.println("\n\n");
 				System.out.println("==================================== TITLE =================================");
@@ -231,7 +209,7 @@ public class Handler {
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());
-			myErrorHandler(MISSING_TITLE, null);
+			dramaErrorHandler(MISSING_TITLE, null);
 		}
 	}
 
@@ -241,117 +219,118 @@ public class Handler {
 		title += ch.getText() + " ";
 	}
 
-	// dramatisPersonae
-	public void checkPersonae(Token ch, Token co) { // ch=characters, co=comment
+	public void checkPersonae(Token ch, Token co) {
+		checkError = false;
 		if (ch == null)
-			myErrorHandler(INVALID_DECLARATION, ch);
+			dramaErrorHandler(INVALID_DECLARATION, ch);
 		else {
-			// controllo se token corrisponde a token CHARACTERS
 			if (ch.getType() != ShakespeareLexer.CHARACTER)
-				myErrorHandler(INVALID_CHARACTER, ch);
-			if (!characterList.containsKey(ch.getText()))
-				characterList.put(ch.getText(), new CharacterDescriptor(ch.getText()));
+				dramaErrorHandler(INVALID_CHARACTER, ch);
+			if (!stageCharacterList.containsKey(ch.getText()))
+				stageCharacterList.put(ch.getText(), new CharacterDescriptor(ch.getText()));
 			else
-				myErrorHandler(ALREADY_DECLARED_CHARACTER, ch);
+				dramaErrorHandler(ALREADY_DECLARED_CHARACTER, ch);
 		}
 		if (co == null)
-			myErrorHandler(MISSING_COMMENT, co);
-		System.out.println("--------------------------------- NEW ACTOR --------------------------------");
-		System.out.println("   - Name: \t\t" + ch.getText());
-		System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 3) + "\n");
-		printCharacters();
-		System.out.println("\n----------------------------------------------------------------------------\n");
-		HtmlToPDF.HTML.addPersonae(ch.getText());
+			dramaErrorHandler(MISSING_COMMENT, co);
+
+		if (!checkError) {
+			System.out.println("--------------------------------- NEW ACTOR --------------------------------");
+			System.out.println("   - Name: \t\t" + ch.getText());
+			System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 3) + "\n");
+			printCharacters();
+			System.out.println("\n----------------------------------------------------------------------------\n");
+			HtmlToPDF.HTML.addPersonae(ch.getText());
+		}
 	}
 
-	// dichiarazione atto
 	public void checkAct(Token rn, Token co) {
+		checkError = false;
 		if (rn != null) {
 			String romanNumber = rn.getText();
 			if (!RomanNumber.isRoman(romanNumber))
-				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+				dramaErrorHandler(INVALID_ROMAN_NUMBER, rn);
 			else {
 				int newAct = RomanNumber.decode(romanNumber);
-				if (newAct <= actNumber) // già definito
-					myErrorHandler(ALREADY_DEFINED_ACT, rn);
-				else if (newAct > actNumber + 1) // salto nella numerazione
-					myErrorHandler(SKIPPED_ACT, rn);
+				if (newAct <= actNumber)
+					dramaErrorHandler(ALREADY_DEFINED_ACT, rn);
+				else if (newAct > actNumber + 1)
+					dramaErrorHandler(SKIPPED_ACT, rn);
 				else {
 					if (co == null)
-						myErrorHandler(MISSING_COMMENT, co);
-					else {
-						actNumber++;
-						sceneNumber = 0;
-						System.out.println("Goto List");//// urca
-						goTo.print();//// urca
-						goTo.clearLog();
-						System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
-								+ "   ===============================");
-						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
-						System.out.println(
-								"============================================================================\n");
-						HtmlToPDF.HTML.addAct(String.valueOf(actNumber),co.getText().substring(2, co.getText().length() - 3));
-					}
+						dramaErrorHandler(MISSING_COMMENT, co);
 				}
 			}
 		} else
-			myErrorHandler(MISSING_ACT_NUMBER, rn);
+			dramaErrorHandler(MISSING_ACT_NUMBER, rn);
+
+		if (!checkError) {
+			actNumber++;
+			sceneNumber = 0;
+			System.out.println("Goto List");
+			goTo.print();
+			goTo.clearLog();
+			System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
+					+ "   ===============================");
+			System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
+			System.out.println("============================================================================\n");
+			HtmlToPDF.HTML.addAct(String.valueOf(actNumber), co.getText().substring(2, co.getText().length() - 3));
+		}
 	}
 
-	// dichiarazione scena
 	public void checkScene(Token rn, Token co) {
 		if (rn != null) {
 			String romanNumber = rn.getText();
 			if (!RomanNumber.isRoman(romanNumber))
-				myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+				dramaErrorHandler(INVALID_ROMAN_NUMBER, rn);
 			else {
 				int newScene = RomanNumber.decode(romanNumber);
-				if (newScene == newScene + 1) // già definito
-					myErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
-				else if (newScene > sceneNumber + 1) // salto nella numerazione
-					myErrorHandler(SKIPPED_SCENE, rn);
+				if (newScene == newScene + 1)
+					dramaErrorHandler(ALREADY_DEFINED_SCENE_IN_ACT, rn);
+				else if (newScene > sceneNumber + 1)
+					dramaErrorHandler(SKIPPED_SCENE, rn);
 				else {
 					if (co == null)
-						myErrorHandler(MISSING_COMMENT, co);
-					else {
-						sceneNumber++;
-						System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber, 3)
-								+ "   ==============================");
-						System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
-						System.out.println(
-								"============================================================================");
-						System.out.println();
-						HtmlToPDF.HTML.addScene(String.valueOf(sceneNumber),co.getText().substring(2, co.getText().length() - 3));
-					}
+						dramaErrorHandler(MISSING_COMMENT, co);
 				}
 			}
 		} else
-			myErrorHandler(MISSING_SCENE_NUMBER, rn);
+			dramaErrorHandler(MISSING_SCENE_NUMBER, rn);
+
+		if (!checkError) {
+			sceneNumber++;
+			System.out.println("==============================    SCENE " + Util.evenSpacer(sceneNumber, 3)
+					+ "   ==============================");
+			System.out.println(Util.middleSpacer(co.getText().substring(2, co.getText().length() - 3), 72));
+			System.out.println("============================================================================");
+			System.out.println();
+			HtmlToPDF.HTML.addScene(String.valueOf(sceneNumber), co.getText().substring(2, co.getText().length() - 3));
+		}
 	}
 
-	// controlla se ci sono due character in scena
+	// check if there are 2 stage characters on stage
 	public boolean onStageCheck() {
 		int onStageCounter = 0;
-		Enumeration<String> characters = characterList.keys();
-		while (characters.hasMoreElements()) {
-			String character = characters.nextElement();
-			CharacterDescriptor description = characterList.get(character);
+		Enumeration<String> stageCharacters = stageCharacterList.keys();
+		while (stageCharacters.hasMoreElements()) {
+			String character = stageCharacters.nextElement();
+			CharacterDescriptor description = stageCharacterList.get(character);
 			if (description.onStage) {
 				if (onStageCounter < 1)
 					onStageCounter++;
-				else // c'è già un altro personaggio
+				else // there is another stage character
 					return true;
 			}
 		}
-		return false; // c'è al massimo un solo personaggio
+		return false; // there is at most only one stage character
 	}
 
-	// trova quale altro personaggio è in scena
-	public String otherCharacter(Token ch1) {
-		Enumeration<String> characters = characterList.keys();
-		while (characters.hasMoreElements()) {
-			String character = characters.nextElement();
-			CharacterDescriptor description = characterList.get(character);
+	// find which other stage character is in the scene
+	public String secondStageCharacter(Token ch1) {
+		Enumeration<String> stageCharacters = stageCharacterList.keys();
+		while (stageCharacters.hasMoreElements()) {
+			String character = stageCharacters.nextElement();
+			CharacterDescriptor description = stageCharacterList.get(character);
 			if (description.onStage && (!description.name.equals(ch1.getText()))) {
 				return description.name;
 			}
@@ -362,34 +341,32 @@ public class Handler {
 	public void checkEntrance(Token ch) {
 		checkError = false;
 		if (!onStageCheck()) {
-			if (!characterList.containsKey(ch.getText())) // dichiarato?
-				myErrorHandler(UNDECLARED_CHARACTER, ch);
+			if (!stageCharacterList.containsKey(ch.getText()))
+				dramaErrorHandler(UNDECLARED_CHARACTER, ch);
 			else {
-				if (characterList.get(ch.getText()).onStage) // era già in scena?
-					myErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch);
+				if (stageCharacterList.get(ch.getText()).onStage)
+					dramaErrorHandler(CHARACTER_ALREADY_ON_STAGE, ch);
 				else
-					characterList.get(ch.getText()).onStage = true; // aggiorno onStage
+					stageCharacterList.get(ch.getText()).onStage = true;
 			}
 		} else
-			myErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch);
+			dramaErrorHandler(ALREADY_TWO_CARACTERS_ON_STAGE, ch);
 	}
 
-	// entrata in scena
 	public void checkEnter(Token ch1, Token and, Token ch2) {
 		checkError = false;
 		if (ch1 != null) {
-			if (and != null && ch2 != null) { // entrata doppia
+			if (and != null && ch2 != null) {	// multiple entrance
 				checkEntrance(ch1);
 				checkEntrance(ch2);
-			} else {
-				// entrata singola
+			} else {	// single entrance
 				if (and == null && ch2 == null)
 					checkEntrance(ch1);
 			}
 		} else
-			myErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
+			dramaErrorHandler(MISSING_CHARACTER_IN_ENTER, ch1);
 
-		if (checkError == false) {
+		if (!checkError) {
 			System.out.println("---------------------------- " + Util.middleSpacer("Entering " + ch1.getText(), 18)
 					+ " ----------------------------");
 			if (ch2 != null)
@@ -399,18 +376,18 @@ public class Handler {
 		}
 	}
 
-	// uscita di scena
 	public void checkExit(Token ch, boolean print) {
 		checkError = false;
 		if (ch != null) {
-			if (!characterList.containsKey(ch.getText())) // dichiarato?
-				myErrorHandler(UNDECLARED_CHARACTER, ch);
-			else if (!characterList.get(ch.getText()).onStage) // esiste ma non era in scena
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
-			else // esce di scena -> valore (azzero o lascio)
-				characterList.get(ch.getText()).onStage = false;
+			if (!stageCharacterList.containsKey(ch.getText()))
+				dramaErrorHandler(UNDECLARED_CHARACTER, ch);
+			else if (!stageCharacterList.get(ch.getText()).onStage)
+				dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+			else
+				stageCharacterList.get(ch.getText()).onStage = false;
 		} else
-			myErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
+			dramaErrorHandler(MISSING_CHARACTER_IN_EXIT, ch);
+
 		if (print && !checkError) {
 			System.out.println("---------------------------- " + Util.middleSpacer("Exiting " + ch.getText(), 17)
 					+ " ------------------------------");
@@ -423,21 +400,20 @@ public class Handler {
 		checkExit(ch, true);
 	}
 
-	// uscita di scena multipla
 	public void checkExeunt(Token ch1, Token and, Token ch2) {
 		checkError = false;
-		// exeunt multipla, fa uscire tutti i personaggi on stage
+		// all the characters in the scene leaves the stage
 		if (ch1 == null && and == null && ch2 == null) {
-			for (String str : characterList.keySet()) {
-				characterList.get(str).onStage = false;
+			for (String str : stageCharacterList.keySet()) {
+				stageCharacterList.get(str).onStage = false;
 				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + str, 17)
 						+ " ------------------------------");
 			}
 			printCharacters();
 		}
-		// uscita doppia
+		// double exit
 		if (ch1 != null) {
-			if (and != null && ch2 != null) { // ch1 AND ch2
+			if (and != null && ch2 != null) {
 				checkExit(ch1, false);
 				checkExit(ch2, false);
 				if (!checkError) {
@@ -450,340 +426,184 @@ public class Handler {
 					printCharacters();
 				}
 			} else
-				myErrorHandler(EXEUNT_SINGLE_CHARACTER, ch1);
+				dramaErrorHandler(EXEUNT_SINGLE_CHARACTER, ch1);
 		}
 	}
 
 	// stageEvent 1
-	public void checkAssignmentStatement(Token ch, Token noun,Token wh,Token el) {
+	public void checkAssignmentStatement(Token ch, Token noun, Token wh, Token el) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
 		else {
-			if (!characterList.get(ch.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+			if (!stageCharacterList.get(ch.getText()).onStage)
+				dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 		}
 
-		// 1' tipologia di frase
-		// You amazing amazing amazing amazing amazing hero !
-		// 1 nome
 		if (onStageCheck()) {
-			// 1' tipologia di frase
-			// You amazing amazing amazing amazing amazing hero !
-			// 1 nome
-			String updateCh = otherCharacter(ch);
+			String updateCh = secondStageCharacter(ch);
 			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
-				characterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else {
 
-				characterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
 			adjectiveCounter = 0;
-			System.err.println("### result frase1: " + characterList.get(updateCh).getValue());
+			System.err.println("### result frase1: " + stageCharacterList.get(updateCh).getValue());
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
-		if (checkError == false && noun != null) {
+		if (!checkError && noun != null) {
 			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText()," "+adjString+noun.getText()+el.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), " " + adjString + noun.getText() + el.getText());
 			adjString = "";
 		}
-		printCharacters();// del
+		printCharacters();
 	}
 
 	// stageEvent 2
-	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype,Token wh, Token adj,Token el) {
+	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype, Token wh, Token adj,
+			Token el) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
 		else {
-			if (!characterList.get(ch.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+			if (!stageCharacterList.get(ch.getText()).onStage)
+				dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 		}
 
 		if (onStageCheck()) {
-			String updateCh = otherCharacter(ch);
-			// 2 nome
+			String updateCh = secondStageCharacter(ch);
 			int charact1 = 0;
 			if (noun1.getType() == ShakespeareLexer.POSITIVENOUN || noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 				charact1 = (int) Math.pow(2, adjectiveCounter);
 			} else
 				charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
-			adjectiveCounter = 0; // dopo ogni operazione lo azzera
+			adjectiveCounter = 0; // after every assignment return 0
 			System.err.println("frase2 charact1: " + charact1);
 
-			// 3 nome
 			int charact2 = 0;
 			if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
 				charact2 = (int) Math.pow(2, adjectiveCounter2);
 			} else
 				charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
-			adjectiveCounter2 = 0; // dopo ogni operazione lo azzera
+			adjectiveCounter2 = 0; // after every assignment return 0
 			System.err.println("frase2 charact2: " + charact2);
 
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
-				characterList.get(updateCh).assignValue(charact1 + charact2);
-				System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(charact1 + charact2);
+				System.err.println("### result frase2: " + stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
-				characterList.get(updateCh).assignValue(charact1 - charact2);
-				System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(charact1 - charact2);
+				System.err.println("### result frase2: " + stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
-				characterList.get(updateCh).assignValue(charact1 * charact2);
-				System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(charact1 * charact2);
+				System.err.println("### result frase2: " + stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
-		if (checkError == false && noun1 != null && noun2 != null) {
+		if (!checkError && noun1 != null && noun2 != null) {
 			System.out.println("---------------------------   STAGE EVENT 2'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
-			System.out.println("   - Value: \t\t" + characterList.get(ch.getText()).getValue() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(),wh.getText(), " as "+adj.getText()+" as the "+operationtype.getText()+" a "+adjString+noun2.getText()+" and a "+adjString2+noun1.getText()+el.getText());
-			adjString = ""; adjString2 = "" ;
+			System.out.println("   - Value: \t\t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
+					" as " + adj.getText() + " as the " + operationtype.getText() + " a " + adjString + noun2.getText()
+							+ " and a " + adjString2 + noun1.getText() + el.getText());
+			adjString = "";
+			adjString2 = "";
 		}
-		printCharacters();// del
+		printCharacters();
 	}
 
 	// stageEvent 3
-	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype,Token wh,Token el) {
+	public void checkAssignmentOperation(Token ch, Token noun, Token operationtype, Token wh, Token el) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
 		else {
-			if (!characterList.get(ch.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+			if (!stageCharacterList.get(ch.getText()).onStage)
+				dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 		}
 
-		// check se e quale altro ch è in scena e aggiorno value
 		if (onStageCheck()) {
-			String updateCh = otherCharacter(ch);
-
-			// 3' tipologia di frase
-			int thyself = characterList.get(ch.getText()).getValue();
-
-			// 4 nome
+			String updateCh = secondStageCharacter(ch);
+			int thyself = stageCharacterList.get(ch.getText()).getValue();
 			int charact4 = 0;
 			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
 				charact4 = (int) Math.pow(2, adjectiveCounter);
 			} else
 				charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
-			adjectiveCounter = 0; // dopo ogni operazione lo azzera
+			adjectiveCounter = 0; // after every assignment return 0
 
 			System.err.println("frase3 charact4: " + charact4);
 			System.err.println("frase3 thyself: " + thyself);
 
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
-				characterList.get(updateCh).assignValue(thyself + charact4);
-				System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(thyself + charact4);
+				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
-				characterList.get(updateCh).assignValue(thyself - charact4);
-				System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(thyself - charact4);
+				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
-				characterList.get(updateCh).assignValue(thyself * charact4);
-				System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
+				stageCharacterList.get(updateCh).assignValue(thyself * charact4);
+				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
 		if (checkError == false && noun != null) {
 			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),adjString+noun.getText()+el.getText());
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), adjString + noun.getText() + el.getText());
 			adjString = "";
 		}
 		printCharacters();// del
 	}
 
-	// operazioni svolte su/da un personaggio
-	public void checkStageEvent(Token ch1, Token noun1, Token noun2, Token noun3, Token noun4, Token operationtype) {
-
+	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt, Token gt2, Token gt3rs, Token gt4,
+			Token rn) {
 		checkError = false;
-		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch1);
+		if (!stageCharacterList.containsKey(ch1.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch1);
 		else {
-			if (!characterList.get(ch1.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
+			if (!stageCharacterList.get(ch1.getText()).onStage)
+				dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
 		}
-
-		// check se e quale altro ch è in scena e aggiorno value
-		if (onStageCheck()) {
-			String updateCh = otherCharacter(ch1);
-
-			if (noun1 != null && noun2 == null && noun3 == null && noun4 == null) {
-				// 1' tipologia di frase
-				// You amazing amazing amazing amazing amazing hero !
-				// 1 nome
-				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN
-						|| noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
-					characterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				} else {
-
-					characterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				}
-				adjectiveCounter = 0;
-				System.err.println("### result frase1: " + characterList.get(updateCh).getValue());
-
-			}
-
-			else if (noun1 == null && noun2 != null && noun3 != null && noun4 == null) {
-				// 2' tipologia di frase
-				// You are as pretty as the sum of a big lovely rose and a kingdom.
-				// l'aggettivo compreso tra as..as non serve.
-				// uso e annullo adjectiveCounter e adjectiveCounter2.
-				// (AS (POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE) AS (SUMOF |
-				// DIFFBET | PRODOF) A adjectiveSecond+ noun2=(POSITIVENOUN | NEUTRALNOUN |
-				// NEGATIVENOUN)
-				// AND A noun3=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-
-				// IF: NOME2 POS NEUTRO
-				// ELSE: NOME2 NEG
-
-				// IF NOME3 POS NEUTRO
-				// ELSE NOME3 NEG
-
-				// IF SUMOF --> SOMMO e assegno a nome2
-				// IF ELSE DIFFBET --> SOTTRAGGO e assegno a nome2
-				// ELSE PRODOF --> PRODOTTO e assegno a nome2
-
-				// 2 nome
-				int charact1 = 0;
-				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN
-						|| noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
-					charact1 = (int) Math.pow(2, adjectiveCounter);
-				} else
-					charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0; // dopo ogni operazione lo azzera
-				System.err.println("frase2 charact1: " + charact1);
-
-				// 3 nome
-				int charact2 = 0;
-				if (noun3.getType() == ShakespeareLexer.POSITIVENOUN
-						|| noun3.getType() == ShakespeareLexer.NEUTRALNOUN) {
-					charact2 = (int) Math.pow(2, adjectiveCounter2);
-				} else
-					charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
-				adjectiveCounter2 = 0; // dopo ogni operazione lo azzera
-				System.err.println("frase2 charact2: " + charact2);
-
-				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
-					characterList.get(updateCh).assignValue(charact1 + charact2);
-					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
-					characterList.get(updateCh).assignValue(charact1 - charact2);
-					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
-					characterList.get(updateCh).assignValue(charact1 * charact2);
-					System.err.println("### result frase2: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				}
-
-			}
-
-			else if (noun1 == null && noun2 == null && noun3 == null && noun4 != null) {
-				// 3' tipologia di frase
-
-				int thyself = characterList.get(ch1.getText()).getValue();
-
-				// 4 nome
-				int charact4 = 0;
-				if (noun4.getType() == ShakespeareLexer.POSITIVENOUN
-						|| noun4.getType() == ShakespeareLexer.NEUTRALNOUN) {
-					charact4 = (int) Math.pow(2, adjectiveCounter);
-				} else
-					charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0; // dopo ogni operazione lo azzera
-
-				System.err.println("frase3 charact4: " + charact4);
-				System.err.println("frase3 thyself: " + thyself);
-
-				if (operationtype.getType() == ShakespeareLexer.SUMOF) {
-					characterList.get(updateCh).assignValue(thyself + charact4);
-					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
-					characterList.get(updateCh).assignValue(thyself - charact4);
-					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
-					characterList.get(updateCh).assignValue(thyself * charact4);
-					System.err.println("### result frase3: " + characterList.get(updateCh).getValue());
-					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(characterList.get(updateCh).getValue()));
-				}
-			} else {
-				// errore. non rientra in nessuna tipologia.
-			}
-		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
-
-		// da capire dove mettere sta parte --> PROVA DI CONTE, da sistemare e tutto
-		if (checkError == false && noun1 != null) {
-			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
-			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Noun: \t\t" + noun1.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch1.getText(), noun1.getText());
-		} else if (checkError == false && noun2 != null && noun3 != null) {
-			System.out.println("---------------------------   STAGE EVENT 2'  ------------------------------");
-			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Noun: \t\t" + noun2.getText());
-			System.out.println("   - Noun: \t\t" + noun3.getText());
-			System.out.println("   - Value: \t\t" + characterList.get(ch1.getText()).getValue() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch1.getText(), noun2.getText());
-		} else if (checkError == false && noun4 != null) {
-			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
-			System.out.println("   - Actor: \t\t" + ch1.getText());
-			System.out.println("   - Noun: \t\t" + noun4.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch1.getText(), noun4.getText());
-		}
-		printCharacters();// del
-	}
-
-	// comparazione tra i valori dei personaggi
-	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt,Token gt2, Token gt3rs, Token gt4, Token rn) {
-		checkError = false;
-		// check se ch1 != ch2 ??
-		if (!characterList.containsKey(ch1.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch1);
+		if (!stageCharacterList.containsKey(ch2.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch2);
 		else {
-			if (!characterList.get(ch1.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch1);
-		}
-		if (!characterList.containsKey(ch2.getText())) // dichiarato prima?
-			myErrorHandler(UNDECLARED_CHARACTER, ch2);
-		else {
-			if (!characterList.get(ch2.getText()).onStage) // on stage?
-				myErrorHandler(CHARACTER_NOT_ON_STAGE, ch2);
+			if (!stageCharacterList.get(ch2.getText()).onStage)
+				dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch2);
 		}
 
 		if (onStageCheck()) {
 			boolean comparison = false;
 			switch (ev.getType()) {
 			case ShakespeareLexer.BETTER:
-				if (characterList.get(ch1.getText()).getValue() > characterList.get(ch2.getText()).getValue())
+				if (stageCharacterList.get(ch1.getText()).getValue() > stageCharacterList.get(ch2.getText()).getValue())
 					comparison = true;
 				break;
 			case ShakespeareLexer.WORSE:
-				if (characterList.get(ch1.getText()).getValue() < characterList.get(ch2.getText()).getValue())
+				if (stageCharacterList.get(ch1.getText()).getValue() < stageCharacterList.get(ch2.getText()).getValue())
 					comparison = true;
 				break;
 			default:
-				if (characterList.get(ch1.getText()).getValue() == characterList.get(ch2.getText()).getValue())
+				if (stageCharacterList.get(ch1.getText()).getValue() == stageCharacterList.get(ch2.getText())
+						.getValue())
 					comparison = true;
 				break;
 			}
@@ -793,37 +613,38 @@ public class Handler {
 				if (comparison) {
 					if (gt.getType() == ShakespeareLexer.IFSO) {
 						if (!RomanNumber.isRoman(rn.getText()))
-							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
+							dramaErrorHandler(INVALID_ROMAN_NUMBER, rn);
 						else {
-							HtmlToPDF.HTML.addStageEvent(ch1.getText(),"Am i "+ ev.getText() + " than you?");
-							HtmlToPDF.HTML.addStageEvent(ch2.getText(),gt.getText() +" "+gt2.getText() +" "+ gt3rs.getText() +" "+ gt4.getText() +" "+ rn.getText() + "."); 
+							HtmlToPDF.HTML.addStageEvent(ch1.getText(), "Am i " + ev.getText() + " than you?");
+							HtmlToPDF.HTML.addStageEvent(ch2.getText(), gt.getText() + " " + gt2.getText() + " "
+									+ gt3rs.getText() + " " + gt4.getText() + " " + rn.getText() + ".");
 							goTo.Jump(RomanNumber.decode(rn.getText()));
 						}
 					}
 				} else {
 					if (gt.getType() == ShakespeareLexer.IFNOT) {
 						if (!RomanNumber.isRoman(rn.getText()))
-							myErrorHandler(INVALID_ROMAN_NUMBER, rn);
-						else
-						{
-							HtmlToPDF.HTML.addStageEvent(ch1.getText(),"Am i "+ ev.getText() + " than you?");
-							HtmlToPDF.HTML.addStageEvent(ch2.getText(),gt.getText() +" "+gt2.getText() +" "+ gt3rs.getText() +" "+ gt4.getText() +" "+ rn.getText() + "."); 
+							dramaErrorHandler(INVALID_ROMAN_NUMBER, rn);
+						else {
+							HtmlToPDF.HTML.addStageEvent(ch1.getText(), "Am i " + ev.getText() + " than you?");
+							HtmlToPDF.HTML.addStageEvent(ch2.getText(), gt.getText() + " " + gt2.getText() + " "
+									+ gt3rs.getText() + " " + gt4.getText() + " " + rn.getText() + ".");
 							goTo.Jump(RomanNumber.decode(rn.getText()));
-							}
 						}
+					}
 				}
 			} else
-				myErrorHandler(MISSING_IF_STATEMENT, gt);
+				dramaErrorHandler(MISSING_IF_STATEMENT, gt);
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch1);
 	}
-	
+
 	public void adjBuilder(Token adj) {
-		adjString += adj.getText()+" ";
+		adjString += adj.getText() + " ";
 	}
-	
+
 	public void adjBuilder2(Token adj) {
-		adjString2 += adj.getText()+" ";
+		adjString2 += adj.getText() + " ";
 	}
 
 	public void printCharacters() {
@@ -831,27 +652,20 @@ public class Handler {
 		System.out.println("	         -------------------------------------");
 		System.out.println("	         |NAME             |VALUE  |ON STAGE |");
 		System.out.println("	         -------------------------------------");
-		for (String character : characterList.keySet()) {
-			var stringa = "	         |" + Util.evenSpacer(character, 17);
-			if (characterList.get(character).getValue() > 9999999)
-				stringa += "|" + Util.evenSpacer("xxxxx..", 7); // Viene filtrata solo la stampa e non il valore vero
+		for (String character : stageCharacterList.keySet()) {
+			var str = "	         |" + Util.evenSpacer(character, 17);
+			if (stageCharacterList.get(character).getValue() > 9999999)
+				str += "|" + Util.evenSpacer("xxxxx..", 7); // Viene filtrata solo la stampa e non il valore vero
 			else
-				stringa += "|" + Util.evenSpacer(characterList.get(character).getValue(), 7);
-			stringa += "|" + Util.evenSpacer(String.valueOf(characterList.get(character).onStage), 9) + "|";
-			System.out.println(stringa);
+				str += "|" + Util.evenSpacer(stageCharacterList.get(character).getValue(), 7);
+			str += "|" + Util.evenSpacer(String.valueOf(stageCharacterList.get(character).onStage), 9) + "|";
+			System.out.println(str);
 
-			stringa = "";
+			str = "";
 			boolean first = true;
 
-			// TEST MULTILINEA
-			// ArrayList<Integer> temp = new ArrayList();
-			// temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
-			// temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
-			// temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);temp.add(123);
-			// for(Integer f : temp)
-			for (Integer f : characterList.get(character).getStack()) {
+			for (Integer f : stageCharacterList.get(character).getStack()) {
 				String g = String.valueOf(f);
-				// Solo il numero e' piu lungo della tabella
 				while (String.valueOf(g + ",").length() > 31) {
 					if (first) {
 						System.out.println("	         |->[" + Util.evenSpacer(g.substring(0, 31), 31) + "]|");
@@ -861,25 +675,24 @@ public class Handler {
 					g = g.substring(32, g.length());
 				}
 
-				// Il numero piu la stringa attuale sono piu lunghi della tabella
-				if (String.valueOf(g + ",").length() + stringa.length() > 31) {
+				if (String.valueOf(g + ",").length() + str.length() > 31) {
 					if (first) {
-						System.out.println("	         |->[" + Util.evenSpacer(stringa, 31) + "]|");
+						System.out.println("	         |->[" + Util.evenSpacer(str, 31) + "]|");
 						first = false;
 					} else
-						System.out.println("	         |  [" + Util.evenSpacer(stringa, 31) + "]|");
+						System.out.println("	         |  [" + Util.evenSpacer(str, 31) + "]|");
 
-					stringa = "";
+					str = "";
 				}
 
-				stringa += g + ",";
+				str += g + ",";
 			}
-			if (stringa != "")
-				stringa = stringa.substring(0, stringa.length() - 1);
+			if (str != "")
+				str = str.substring(0, str.length() - 1);
 			if (first)
-				System.out.println("	         |->[" + Util.evenSpacer(stringa, 31) + "]|");
+				System.out.println("	         |->[" + Util.evenSpacer(str, 31) + "]|");
 			else
-				System.out.println("	         |  [" + Util.evenSpacer(stringa, 31) + "]|");
+				System.out.println("	         |  [" + Util.evenSpacer(str, 31) + "]|");
 			System.out.println("	         -------------------------------------");
 		}
 	}
@@ -895,16 +708,15 @@ public class Handler {
 		System.out.println("============================================================================\n");
 	}
 
-	///// urca
 	private class loggedAction {
 		int scene;
 		String character;
 		Object assignedValue;
-		int actionType; // Switch che utilizzo per capire di che tipo e' l'azione salvata nel log
+		int actionType; // switch to understand the action type saved in the log
 
 		///////
-		// 1 -> Settaggio del character ad un value
-		// 2 -> Speak your mind che stampa il valore di un character in console
+		// 1 -> setting the value of a stage character
+		// 2 -> prints the value of a stage character
 		// 3 -> remember, push
 		// 4 -> recall, pop
 		///////
@@ -944,17 +756,17 @@ public class Handler {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
 					case 1:
-						characterList.get(singleLog.character)
+						stageCharacterList.get(singleLog.character)
 								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
 						execOutput += (String) singleLog.assignedValue;
 						break;
 					case 3:
-						characterList.get(singleLog.character).push((int) singleLog.assignedValue);
+						stageCharacterList.get(singleLog.character).push((int) singleLog.assignedValue);
 						break;
 					case 4:
-						characterList.get(singleLog.character).pop();
+						stageCharacterList.get(singleLog.character).pop();
 						break;
 					}
 					System.err.println("eseguo azione per " + singleLog.character);
@@ -970,136 +782,136 @@ public class Handler {
 		}
 	}
 
-	// push
 	public void checkRemember(Token ch, Token who) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText())) // dichiarato?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
-		if (!characterList.get(ch.getText()).onStage) // on stage?
-			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.get(ch.getText()).onStage)
+			dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 
 		if (onStageCheck()) {
-			String updateCh = otherCharacter(ch);
-			if (who.getType() == ShakespeareLexer.ME) // me
-			{
-				characterList.get(updateCh).push(characterList.get(ch.getText()).getValue());
-				goTo.newLog(sceneNumber, updateCh, 3, characterList.get(ch.getText()).getValue());
+			String updateCh = secondStageCharacter(ch);
+			if (who.getType() == ShakespeareLexer.ME) {
+				stageCharacterList.get(updateCh).push(stageCharacterList.get(ch.getText()).getValue());
+				goTo.newLog(sceneNumber, updateCh, 3, stageCharacterList.get(ch.getText()).getValue());
 			}
 
-			else // yourself
-			{
-				characterList.get(updateCh).push(characterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 3, characterList.get(updateCh).getValue());
+			else {
+				stageCharacterList.get(updateCh).push(stageCharacterList.get(updateCh).getValue());
+				goTo.newLog(sceneNumber, updateCh, 3, stageCharacterList.get(updateCh).getValue());
 			}
 
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
 		if (!checkError) {
 			System.out.println("---------------------------   REMEMBER ACTION  -----------------------------");
-			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
+			System.out.println("   - Actor: \t\t" + secondStageCharacter(ch));
 			if (who.getType() == ShakespeareLexer.ME)
-				System.out.println("   - Pushed value: \t" + characterList.get(ch.getText()).getValue() + "\n");
+				System.out.println("   - Pushed value: \t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
 			else
-				System.out.println("   - Pushed value: \t" + characterList.get(otherCharacter(ch)).getValue() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(),"Remember "+who.getText()+".");
+				System.out.println(
+						"   - Pushed value: \t" + stageCharacterList.get(secondStageCharacter(ch)).getValue() + "\n");
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), "Remember " + who.getText() + ".");
 			printCharacters();
 		}
 	}
 
-	// pop
 	public void checkRecall(Token ch) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText())) // dichiarato?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
-		if (!characterList.get(ch.getText()).onStage) // on stage?
-			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.get(ch.getText()).onStage)
+			dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 
 		if (onStageCheck()) {
-			String updateCh = otherCharacter(ch);
-			// update value con valore poppato
-			if (!characterList.get(updateCh).pop())
-				myErrorHandler(EMPTY_STACK, ch);
+			String updateCh = secondStageCharacter(ch);
+			if (!stageCharacterList.get(updateCh).pop())
+				dramaErrorHandler(EMPTY_STACK, ch);
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 		System.err.println(execOutput);
+
 		if (!checkError) {
 			System.out.println("----------------------------   RECALL ACTION  ------------------------------");
-			System.out.println("   - Actor: \t\t" + otherCharacter(ch));
-			System.out.println("   - Popped value: \t" + characterList.get(ch.getText()).getValue() + "\n");
-			goTo.newLog(sceneNumber, otherCharacter(ch), 4);
-			HtmlToPDF.HTML.addStageEvent(ch.getText(),"Recall.");
+			System.out.println("   - Actor: \t\t" + secondStageCharacter(ch));
+			System.out.println("   - Popped value: \t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
+			goTo.newLog(sceneNumber, secondStageCharacter(ch), 4);
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), "Recall.");
 			printCharacters();
 		}
 	}
 
-	// stampa int/ASCII
-	public void checkPrint(Token ch, Token phrase,Token ws) {
-		if (!characterList.containsKey(ch.getText())) // dichiarato?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
-		if (!characterList.get(ch.getText()).onStage) // on stage?
-			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+	public void checkPrint(Token ch, Token phrase, Token ws) {
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.get(ch.getText()).onStage)
+			dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 
 		if (onStageCheck()) {
-			String otherCh = otherCharacter(ch);
-			HtmlToPDF.HTML.addStageEvent(ch.getText(),phrase.getText()+ws.getText());
+			String secondCh = secondStageCharacter(ch);
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), phrase.getText() + ws.getText());
 			if (phrase.getType() == ShakespeareLexer.PRINTVALUE) {
-				execOutput += characterList.get(otherCh).getValue();
-				goTo.newLog(sceneNumber, otherCh, 2, String.valueOf(characterList.get(otherCh).getValue()));
+				execOutput += stageCharacterList.get(secondCh).getValue();
+				goTo.newLog(sceneNumber, secondCh, 2, String.valueOf(stageCharacterList.get(secondCh).getValue()));
 			} else {
-				if (characterList.get(otherCh).getValue() >= 32 && characterList.get(otherCh).getValue() <= 126) {
-					char asciiValue = (char) characterList.get(otherCh).getValue(); // conversione ASCII
-					goTo.newLog(sceneNumber, otherCh, 2, String.valueOf(asciiValue));
+				// only some values are considered valid and printed
+				if (stageCharacterList.get(secondCh).getValue() >= 32
+						&& stageCharacterList.get(secondCh).getValue() <= 126) {
+					char asciiValue = (char) stageCharacterList.get(secondCh).getValue(); // ASCII conversion
+					goTo.newLog(sceneNumber, secondCh, 2, String.valueOf(asciiValue));
 					execOutput += asciiValue;
 				} else
-					myErrorHandler(INVALID_ASCII_OUTPUT, ch);
+					dramaErrorHandler(INVALID_ASCII_OUTPUT, ch);
 				;
 			}
 		} else
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 	}
 
 	public void checkRead(Token ch, Token phrase, Token ws) {
 		checkError = false;
-		if (!characterList.containsKey(ch.getText())) // dichiarato?
-			myErrorHandler(UNDECLARED_CHARACTER, ch);
-		if (!characterList.get(ch.getText()).onStage) // on stage?
-			myErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
+		if (!stageCharacterList.containsKey(ch.getText()))
+			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
+		if (!stageCharacterList.get(ch.getText()).onStage)
+			dramaErrorHandler(CHARACTER_NOT_ON_STAGE, ch);
 
 		if (!onStageCheck())
-			myErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
+			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
 		if (!checkError) {
-			String otherCh = otherCharacter(ch);
-			Scanner myScanner = new Scanner(System.in);
-			HtmlToPDF.HTML.addStageEvent(ch.getText(),phrase.getText()+ws.getText());
-			if (phrase.getType() == ShakespeareLexer.READVALUE) { // leggo int
-				System.err.println("Enter an integer value for " + otherCh + ": ");
-				String input = myScanner.next();
+			String secondCh = secondStageCharacter(ch);
+			Scanner userInputScanner = new Scanner(System.in);
+			HtmlToPDF.HTML.addStageEvent(ch.getText(), phrase.getText() + ws.getText());
+			if (phrase.getType() == ShakespeareLexer.READVALUE) {
+				// read int value
+				System.err.println("Enter an integer value for " + secondCh + ": ");
+				String input = userInputScanner.next();
 				try {
 					int intInput = Integer.parseInt(input);
-					characterList.get(otherCh).assignValue(intInput);
-					goTo.newLog(sceneNumber, otherCh, 1, String.valueOf(intInput));
+					stageCharacterList.get(secondCh).assignValue(intInput);
+					goTo.newLog(sceneNumber, secondCh, 1, String.valueOf(intInput));
 				} catch (NumberFormatException e) {
-					myErrorHandler(INVALID_INT_INPUT, ch);
+					dramaErrorHandler(INVALID_INT_INPUT, ch);
 				}
-			} else { // leggo ASCII
-				System.err.println("Enter an ASCII character for " + otherCh + ": ");
-				String input = myScanner.next();
+			} else {
+				// read ASCII value
+				System.err.println("Enter an ASCII character for " + secondCh + ": ");
+				String input = userInputScanner.next();
 				try {
 					if (input.length() > 1) {
-						myErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);
+						dramaErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);
 						return;
 					}
 					char asciiInput = (char) input.charAt(0);
 					int newValue = asciiInput;
 					if (newValue >= 32 && newValue <= 126) {
-						characterList.get(otherCh).assignValue(newValue);
-						goTo.newLog(sceneNumber, otherCh, 1, String.valueOf(newValue));
+						stageCharacterList.get(secondCh).assignValue(newValue);
+						goTo.newLog(sceneNumber, secondCh, 1, String.valueOf(newValue));
 					} else
-						myErrorHandler(INVALID_ASCII_INPUT, ch);
+						dramaErrorHandler(INVALID_ASCII_INPUT, ch);
 				} catch (Exception e) {
-					myErrorHandler(INVALID_ASCII_INPUT, ch);
+					dramaErrorHandler(INVALID_ASCII_INPUT, ch);
 				}
 			}
 		}

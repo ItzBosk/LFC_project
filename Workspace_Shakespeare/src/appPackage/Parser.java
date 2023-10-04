@@ -16,15 +16,13 @@ import compilerPackage.ShakespeareParser;
 import interfaceSPL.SPLinterrface;
 import outputPackage.HtmlToPDF;
 
-
 public class Parser {
 
-	
 	static ShakespeareParser parser;
 	static ByteArrayOutputStream baos;
-	
+
 	public static void main(String[] args) {
-		
+
 		// Create a stream to hold the output
 		baos = new ByteArrayOutputStream();
 		PrintStream ps = new PrintStream(baos);
@@ -35,86 +33,63 @@ public class Parser {
 		// Tell Java to use your special stream
 		System.setOut(ps);
 		System.setErr(ps);
-		
+
 		CommonTokenStream tokens;
-	  	String fileIn = "./resources/input.file";   //da file
-//	  	String fileIn = SPLinterrface.getInputFile();   //da GUI
-	  	
+		String fileIn = "./resources/input.file";
+
 		try {
-//			System.out.println ("============================================================================");
-			System.out.println ("============================================================================");
-			System.out.println ("================ Semantic analysis of the Shakespeare program ==============");
-			System.out.println ("============================================================================");
-//			System.out.println ("============================================================================");
+			System.out.println("============================================================================");
+			System.out.println("================ Semantic analysis of the Shakespeare program ==============");
+			System.out.println("============================================================================");
 
-			// 0.Creo il file html 
+			// create the html file
 			HtmlToPDF.HTML.initHTML();
-			
-			// 1.Istanzio il lexer passandogli il documento da analizzare
-			ShakespeareLexer lexer = new ShakespeareLexer(
-											new ANTLRReaderStream(
-												new FileReader(fileIn))); 
 
-			// 2.Creo uno stream (canale) di token per la comunicazione tra lexer e parser
-		    tokens = new CommonTokenStream(lexer);
+			// Instantiate the lexer by passing it the document to analyze
+			ShakespeareLexer lexer = new ShakespeareLexer(new ANTLRReaderStream(new FileReader(fileIn)));
 
-		    // 3.Istanzio il parser
+			// Create a stream (channel) of tokens for communication between lexer and parser
+			tokens = new CommonTokenStream(lexer);
+
+			// Instantiate the parser
 			parser = new ShakespeareParser(tokens);
 
-			// 4.Lancio l'analisi sintattica del documento di ingresso
+			// Launch the syntactic analysis of the input document
 			parser.parseSPL();
-			
-			// 5.controllo i risultati
+
+			// check results
 			Handler h = parser.getHandler();
-			if (h.getErrorList().size() == 0)
-			{
+			if (h.getErrorList().size() == 0) {
 				h.finalPrint();
 				System.out.println();
 				System.out.println();
-//				System.out.println ("============================================================================");
-				System.out.println ("============================================================================");
-				System.out.println ("================= Semantic analysis completed successfully =================");
-				System.out.println ("============================================================================");
-//				System.out.println ("============================================================================");
-			}
-			else
-				for (int i=0; i<h.getErrorList().size(); i++)
-					System.err.println ("Error " + (i+1) + 
-							":\t" + h.getErrorList().get(i)+"");
-								
-				
-			
-			//non dovrebbe mai essere attivato, se si attiva non ho gestito errori
+				System.out.println("============================================================================");
+				System.out.println("================= Semantic analysis completed successfully =================");
+				System.out.println("============================================================================");
+			} else
+				for (int i = 0; i < h.getErrorList().size(); i++)
+					System.err.println("Error " + (i + 1) + ":\t" + h.getErrorList().get(i) + "");
+
 		} catch (Exception e) {
-//			System.out.println ("============================================================================");
-			System.out.println ("============================================================================");
-			System.out.println ("========================= Semantic analysis aborted ========================");
-			System.out.println ("============================================================================");
-//			System.out.println ("============================================================================");
+			System.out.println("============================================================================");
+			System.out.println("========================= Semantic analysis aborted ========================");
+			System.out.println("============================================================================");
 			e.printStackTrace();
 		}
-		
-		
-		
-			
+
 		// Put things back
 		System.err.flush();
 		System.setOut(old2);
 		System.out.flush();
 		System.setOut(old);
-	
-		// Show what happened
-		System.err.println ("============================================================================");
 
+		// Show what happened
+		System.err.println("============================================================================");
 		System.out.println(baos.toString());
 
-  }
-	
+	}
+
 	public String getConsoleOuput() {
 		return baos.toString();
 	}
 }
-
-
-
-
