@@ -7,6 +7,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.awt.EventQueue;
+import java.awt.FileDialog;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -15,6 +16,7 @@ import javax.swing.JPanel;
 import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.EtchedBorder;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.lowagie.text.pdf.PdfLayer;
 
@@ -23,14 +25,18 @@ import outputPackage.HtmlToPDF;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
+import javax.swing.Popup;
+import javax.swing.PopupFactory;
 import javax.swing.JLayeredPane;
 import javax.swing.JMenuBar;
 
 import java.awt.BorderLayout;
+import java.awt.Button;
 import java.awt.CardLayout;
 import javax.swing.JSplitPane;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Frame;
 import java.awt.Image;
 
 import javax.swing.SwingConstants;
@@ -46,6 +52,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import javax.swing.JEditorPane;
+import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import java.awt.TextArea;
 import javax.swing.JButton;
@@ -58,6 +65,8 @@ public class SPLinterrface extends JFrame {
 	private JPanel contentPane;
 	public static JTextPane codeTextArea;
 	public static Parser parser;
+    private Popup popup;
+
 	/**
 	 * Launch the application.
 	 */
@@ -115,19 +124,73 @@ public class SPLinterrface extends JFrame {
 		layeredPane.add(pdfPanel, "name_8009681722500");
 		pdfPanel.setLayout(null);
 		
+		
+		
 		JPanel hamletPanel = new JPanel();
-		hamletPanel.setBounds(10, 10, 300, 100);
+		hamletPanel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+			}
+		});
+		hamletPanel.setBounds(10, 10, 150, 180);
 		pdfPanel.add(hamletPanel);
 		hamletPanel.setLayout(null);
 		
 		JLabel hamletIcon = new JLabel("New label");
-		hamletIcon.setBounds(0, 0, 100, 100);
+		hamletIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				hamletPanel.setBackground(SystemColor.controlShadow);
+//				hamletIcon.setToolTipText("pspspsps");
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();
+                
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				hamletPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {
+
+				
+				
+//				TO DO:
+//				File root = new File("c:/java/jdk6.7");
+//				FileSystemView fsv = new SingleRootFileSystemView( root );
+				//https://tips4java.wordpress.com/2009/01/28/single-root-file-chooser/
+				
+				
+				
+				File fl = new File("./resources/images");
+				final JFileChooser fc = new JFileChooser(fl);
+
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg");
+				fc.setFileFilter(filter);
+
+				
+				fc.showDialog(SPLinterrface.this, null);
+//				int returnVal = fc.showOpenDialog(SPLinterrface.this);
+//				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
+//				fc.addChoosableFileFilter(new ImageFilter());
+//				fc.setAcceptAllFileFilterUsed(false);
+
+
+			}
+		});
+		hamletIcon.setBounds(0, 30, 150, 150);
 		hamletPanel.add(hamletIcon);
 		
 		JLabel lblNewLabel_1 = new JLabel("Hamlet");
-		lblNewLabel_1.setBounds(200, 34, 100, 25);
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(0, 0, 150, 30);
 		hamletPanel.add(lblNewLabel_1);
 		lblNewLabel_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		         
+		
 		
 //		JLabel label = new JLabel("New label");
 //		layeredPane.add(label, "name_18762670247100");
@@ -326,11 +389,11 @@ public class SPLinterrface extends JFrame {
 		julietPanel.setLayout(null);
 		julietPanel.setBorder(BorderFactory.createLineBorder(Color.black));
 		julietPanel.setBackground(SystemColor.controlHighlight);
-		julietPanel.setBounds(480, 10, 300, 100);
+		julietPanel.setBounds(200, 10, 150, 180);
 		pdfPanel.add(julietPanel);
 		
 		JLabel julietIcon = new JLabel("New label");
-		julietIcon.setBounds(0, 0, 100, 100);
+		julietIcon.setBounds(0, 30, 150, 150);
 		julietPanel.add(julietIcon);
 		
 		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Juliet.jpg");
@@ -338,8 +401,9 @@ public class SPLinterrface extends JFrame {
 				julietIcon.getHeight(), Image.SCALE_SMOOTH)));
 		
 		JLabel lblNewLabel_1_1 = new JLabel("Juliet");
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_1_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
-		lblNewLabel_1_1.setBounds(222, 34, 78, 25);
+		lblNewLabel_1_1.setBounds(0, 0, 150, 30);
 		julietPanel.add(lblNewLabel_1_1);
 		
 		JPanel hamletPanel_2 = new JPanel();
@@ -357,150 +421,6 @@ public class SPLinterrface extends JFrame {
 		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblNewLabel_1_2.setBounds(222, 34, 78, 25);
 		hamletPanel_2.add(lblNewLabel_1_2);
-		
-		JPanel hamletPanel_3 = new JPanel();
-		hamletPanel_3.setLayout(null);
-		hamletPanel_3.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_3.setBackground(SystemColor.controlHighlight);
-		hamletPanel_3.setBounds(10, 130, 300, 100);
-		pdfPanel.add(hamletPanel_3);
-		
-		JLabel hamletIcon_3 = new JLabel("New label");
-		hamletIcon_3.setBounds(0, 0, 100, 100);
-		hamletPanel_3.add(hamletIcon_3);
-		
-		JLabel lblNewLabel_1_3 = new JLabel("Hamlet");
-		lblNewLabel_1_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_3.setBounds(222, 34, 78, 25);
-		hamletPanel_3.add(lblNewLabel_1_3);
-		
-		JPanel hamletPanel_4 = new JPanel();
-		hamletPanel_4.setLayout(null);
-		hamletPanel_4.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_4.setBackground(SystemColor.controlHighlight);
-		hamletPanel_4.setBounds(481, 133, 300, 100);
-		pdfPanel.add(hamletPanel_4);
-		
-		JLabel hamletIcon_4 = new JLabel("New label");
-		hamletIcon_4.setBounds(0, 0, 100, 100);
-		hamletPanel_4.add(hamletIcon_4);
-		
-		JLabel lblNewLabel_1_4 = new JLabel("Hamlet");
-		lblNewLabel_1_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_4.setBounds(222, 34, 78, 25);
-		hamletPanel_4.add(lblNewLabel_1_4);
-		
-		JPanel hamletPanel_5 = new JPanel();
-		hamletPanel_5.setLayout(null);
-		hamletPanel_5.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_5.setBackground(SystemColor.controlHighlight);
-		hamletPanel_5.setBounds(950, 130, 300, 100);
-		pdfPanel.add(hamletPanel_5);
-		
-		JLabel hamletIcon_5 = new JLabel("New label");
-		hamletIcon_5.setBounds(0, 0, 100, 100);
-		hamletPanel_5.add(hamletIcon_5);
-		
-		JLabel lblNewLabel_1_5 = new JLabel("Hamlet");
-		lblNewLabel_1_5.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_5.setBounds(222, 34, 78, 25);
-		hamletPanel_5.add(lblNewLabel_1_5);
-		
-		JPanel hamletPanel_6 = new JPanel();
-		hamletPanel_6.setLayout(null);
-		hamletPanel_6.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_6.setBackground(SystemColor.controlHighlight);
-		hamletPanel_6.setBounds(10, 250, 300, 100);
-		pdfPanel.add(hamletPanel_6);
-		
-		JLabel hamletIcon_6 = new JLabel("New label");
-		hamletIcon_6.setBounds(0, 0, 100, 100);
-		hamletPanel_6.add(hamletIcon_6);
-		
-		JLabel lblNewLabel_1_6 = new JLabel("Hamlet");
-		lblNewLabel_1_6.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_6.setBounds(222, 34, 78, 25);
-		hamletPanel_6.add(lblNewLabel_1_6);
-		
-		JPanel hamletPanel_6_1 = new JPanel();
-		hamletPanel_6_1.setLayout(null);
-		hamletPanel_6_1.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_6_1.setBackground(SystemColor.controlHighlight);
-		hamletPanel_6_1.setBounds(480, 250, 300, 100);
-		pdfPanel.add(hamletPanel_6_1);
-		
-		JLabel hamletIcon_6_1 = new JLabel("New label");
-		hamletIcon_6_1.setBounds(0, 0, 100, 100);
-		hamletPanel_6_1.add(hamletIcon_6_1);
-		
-		JLabel lblNewLabel_1_6_1 = new JLabel("Hamlet");
-		lblNewLabel_1_6_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_6_1.setBounds(222, 34, 78, 25);
-		hamletPanel_6_1.add(lblNewLabel_1_6_1);
-		
-		JPanel hamletPanel_6_2 = new JPanel();
-		hamletPanel_6_2.setLayout(null);
-		hamletPanel_6_2.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_6_2.setBackground(SystemColor.controlHighlight);
-		hamletPanel_6_2.setBounds(950, 250, 300, 100);
-		pdfPanel.add(hamletPanel_6_2);
-		
-		JLabel hamletIcon_6_2 = new JLabel("New label");
-		hamletIcon_6_2.setBounds(0, 0, 100, 100);
-		hamletPanel_6_2.add(hamletIcon_6_2);
-		
-		JLabel lblNewLabel_1_6_2 = new JLabel("Hamlet");
-		lblNewLabel_1_6_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_6_2.setBounds(222, 34, 78, 25);
-		hamletPanel_6_2.add(lblNewLabel_1_6_2);
-		
-		JPanel hamletPanel_6_3 = new JPanel();
-		hamletPanel_6_3.setLayout(null);
-		hamletPanel_6_3.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_6_3.setBackground(SystemColor.controlHighlight);
-		hamletPanel_6_3.setBounds(10, 370, 300, 100);
-		pdfPanel.add(hamletPanel_6_3);
-		
-		JLabel hamletIcon_6_3 = new JLabel("New label");
-		hamletIcon_6_3.setBounds(0, 0, 100, 100);
-		hamletPanel_6_3.add(hamletIcon_6_3);
-		
-		JLabel lblNewLabel_1_6_3 = new JLabel("Hamlet");
-		lblNewLabel_1_6_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_6_3.setBounds(222, 34, 78, 25);
-		hamletPanel_6_3.add(lblNewLabel_1_6_3);
-		
-		JPanel hamletPanel_6_3_1 = new JPanel();
-		hamletPanel_6_3_1.setLayout(null);
-		hamletPanel_6_3_1.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_6_3_1.setBackground(SystemColor.controlHighlight);
-		hamletPanel_6_3_1.setBounds(480, 370, 300, 100);
-		pdfPanel.add(hamletPanel_6_3_1);
-		
-		JLabel hamletIcon_6_3_1 = new JLabel("New label");
-		hamletIcon_6_3_1.setBounds(0, 0, 100, 100);
-		hamletPanel_6_3_1.add(hamletIcon_6_3_1);
-		
-		JLabel lblNewLabel_1_6_3_1 = new JLabel("Hamlet");
-		lblNewLabel_1_6_3_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_6_3_1.setBounds(222, 34, 78, 25);
-		hamletPanel_6_3_1.add(lblNewLabel_1_6_3_1);
-		
-		JPanel hamletPanel_6_3_2 = new JPanel();
-		hamletPanel_6_3_2.setLayout(null);
-		hamletPanel_6_3_2.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_6_3_2.setBackground(SystemColor.controlHighlight);
-		hamletPanel_6_3_2.setBounds(950, 370, 300, 100);
-		pdfPanel.add(hamletPanel_6_3_2);
-		
-		JLabel hamletIcon_6_3_2 = new JLabel("New label");
-		hamletIcon_6_3_2.setBounds(0, 0, 100, 100);
-		hamletPanel_6_3_2.add(hamletIcon_6_3_2);
-		
-		JLabel lblNewLabel_1_6_3_2 = new JLabel("Hamlet");
-		lblNewLabel_1_6_3_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_6_3_2.setBounds(222, 34, 78, 25);
-		hamletPanel_6_3_2.add(lblNewLabel_1_6_3_2);
 		
 		JButton downloadPdfButton = new JButton("Download PDF");
 		downloadPdfButton.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -525,7 +445,27 @@ public class SPLinterrface extends JFrame {
 //		return codeTextArea.getText();			
 //	}
 //	
+	public boolean accept(File f) {
+	    if (f.isDirectory()) {
+	        return true;
+	    }
 
+	    String extension = Utils.getExtension(f);
+	    if (extension != null) {
+	        if (extension.equals(Utils.tiff) ||
+	            extension.equals(Utils.tif) ||
+	            extension.equals(Utils.gif) ||
+	            extension.equals(Utils.jpeg) ||
+	            extension.equals(Utils.jpg) ||
+	            extension.equals(Utils.png)) {
+	                return true;
+	        } else {
+	            return false;
+	        }
+	    }
+
+	    return false;
+	}
 }
 
 
