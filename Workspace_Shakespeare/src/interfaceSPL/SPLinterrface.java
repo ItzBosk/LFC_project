@@ -6,6 +6,7 @@ import java.net.*;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Hashtable;
 import java.awt.EventQueue;
 import java.awt.FileDialog;
 
@@ -21,6 +22,9 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import com.lowagie.text.pdf.PdfLayer;
 
 import appPackage.SPLparser;
+import compilerPackage.ShakespeareLexer;
+import compilerPackage.ShakespeareParser;
+import compilerPackage.util.CharacterDescriptor;
 import outputPackage.HtmlToPDF;
 
 import javax.swing.JTabbedPane;
@@ -40,6 +44,8 @@ import java.awt.Frame;
 import java.awt.Image;
 
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
+
 import java.awt.FlowLayout;
 import java.awt.Color;
 import java.awt.Cursor;
@@ -56,6 +62,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JTextArea;
 import java.awt.TextArea;
 import javax.swing.JButton;
+import javax.swing.filechooser.FileSystemView;
+
+import org.antlr.runtime.Lexer;
+
 
 public class SPLinterrface extends JFrame {
 	
@@ -66,6 +76,7 @@ public class SPLinterrface extends JFrame {
 	public static JTextPane codeTextArea;
 	public static SPLparser parser;
     private Popup popup;
+    public static Hashtable<CharacterDescriptor, String > characterListGUI; //nome personaggio, file image associato
 
 	/**
 	 * Launch the application.
@@ -74,6 +85,7 @@ public class SPLinterrface extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					characterListGUI = new Hashtable<CharacterDescriptor, String >();
 					SPLinterrface frame = new SPLinterrface();
 					parser = new SPLparser();
 					System.out.println("parser caricato: " + parser.getClass().toString());
@@ -156,27 +168,18 @@ public class SPLinterrface extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 
-				
-				
-//				TO DO:
-//				File root = new File("c:/java/jdk6.7");
-//				FileSystemView fsv = new SingleRootFileSystemView( root );
-				//https://tips4java.wordpress.com/2009/01/28/single-root-file-chooser/
-				
-				
-				
-				File fl = new File("./resources/images");
-				final JFileChooser fc = new JFileChooser(fl);
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg");
-				fc.setFileFilter(filter);
+				final JFileChooser fc = new JFileChooser(fsv);
 
-				
-				fc.showDialog(SPLinterrface.this, null);
-//				int returnVal = fc.showOpenDialog(SPLinterrface.this);
-//				fc.setFileSelectionMode(JFileChooser.FILES_ONLY);
-//				fc.addChoosableFileFilter(new ImageFilter());
-//				fc.setAcceptAllFileFilterUsed(false);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				System.out.println(fc.getSelectedFile().getName());
 
 
 			}
@@ -440,31 +443,9 @@ public class SPLinterrface extends JFrame {
 		});
 		pdfPanel.add(downloadPdfButton);
 	}
-//	
-//	public static String getInputFile() {	
-//		return codeTextArea.getText();			
-//	}
-//	
-	public boolean accept(File f) {
-	    if (f.isDirectory()) {
-	        return true;
-	    }
 
-	    String extension = Utils.getExtension(f);
-	    if (extension != null) {
-	        if (extension.equals(Utils.tiff) ||
-	            extension.equals(Utils.tif) ||
-	            extension.equals(Utils.gif) ||
-	            extension.equals(Utils.jpeg) ||
-	            extension.equals(Utils.jpg) ||
-	            extension.equals(Utils.png)) {
-	                return true;
-	        } else {
-	            return false;
-	        }
-	    }
-
-	    return false;
+	void loadBaseImage() {
+//		characterListGUI.put();
 	}
 }
 
