@@ -65,7 +65,7 @@ import javax.swing.JButton;
 import javax.swing.filechooser.FileSystemView;
 
 import org.antlr.runtime.Lexer;
-
+import compilerPackage.util.CharacterDescriptor;
 
 public class SPLinterrface extends JFrame {
 	
@@ -76,8 +76,6 @@ public class SPLinterrface extends JFrame {
 	public static JTextPane codeTextArea;
 	public static SPLparser parser;
     private Popup popup;
-    public static Hashtable<CharacterDescriptor, String > characterListGUI; //nome personaggio, file image associato
-
 	/**
 	 * Launch the application.
 	 */
@@ -85,7 +83,7 @@ public class SPLinterrface extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					characterListGUI = new Hashtable<CharacterDescriptor, String >();
+					
 					SPLinterrface frame = new SPLinterrface();
 					parser = new SPLparser();
 					System.out.println("parser caricato: " + parser.getClass().toString());
@@ -93,7 +91,7 @@ public class SPLinterrface extends JFrame {
 					
 					 String file = new String(Files.readAllBytes(Paths.get("./resources/input.file")), StandardCharsets.UTF_8); //carico file
 					 codeTextArea.setText(file);
-					 
+					 CharacterDescriptor.createBasePhotoPath(); //inizializzo foto
 					 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -136,67 +134,7 @@ public class SPLinterrface extends JFrame {
 		layeredPane.add(pdfPanel, "name_8009681722500");
 		pdfPanel.setLayout(null);
 		
-		
-		
-		JPanel hamletPanel = new JPanel();
-		hamletPanel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				
-			}
-		});
-		hamletPanel.setBounds(10, 10, 150, 180);
-		pdfPanel.add(hamletPanel);
-		hamletPanel.setLayout(null);
-		
-		JLabel hamletIcon = new JLabel("New label");
-		hamletIcon.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				hamletPanel.setBackground(SystemColor.controlShadow);
-//				hamletIcon.setToolTipText("pspspsps");
-				JLabel text = new JLabel("Click to change the Image");
-                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
-                popup.show();
-                
-			}
-			@Override
-			public void mouseExited(MouseEvent e) {
-				hamletPanel.setBackground(SystemColor.controlHighlight);
-				popup.hide();
-			}
-			@Override
-			public void mouseClicked(MouseEvent e) {
 
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
-				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
-
-				final JFileChooser fc = new JFileChooser(fsv);
-
-				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
-				fc.setFileFilter(filter); //applico filtro
-
-				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
-
-				System.out.println(fc.getSelectedFile().getName());
-
-
-			}
-		});
-		hamletIcon.setBounds(0, 30, 150, 150);
-		hamletPanel.add(hamletIcon);
-		
-		JLabel lblNewLabel_1 = new JLabel("Hamlet");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setBounds(0, 0, 150, 30);
-		hamletPanel.add(lblNewLabel_1);
-		lblNewLabel_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
-		         
-		
-		
-//		JLabel label = new JLabel("New label");
-//		layeredPane.add(label, "name_18762670247100");
 		
 		
 		//-------------------------------------------------------------------------------------------------------------
@@ -381,49 +319,6 @@ public class SPLinterrface extends JFrame {
 	    //   'Polonio'
 	    //   'Shylock'
 	    //   'Prospero'
-		hamletPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel.setBackground(SystemColor.controlHighlight);
-		
-		Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Hamlet.jpg");
-		hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
-				hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
-		
-		JPanel julietPanel = new JPanel();
-		julietPanel.setLayout(null);
-		julietPanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		julietPanel.setBackground(SystemColor.controlHighlight);
-		julietPanel.setBounds(200, 10, 150, 180);
-		pdfPanel.add(julietPanel);
-		
-		JLabel julietIcon = new JLabel("New label");
-		julietIcon.setBounds(0, 30, 150, 150);
-		julietPanel.add(julietIcon);
-		
-		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Juliet.jpg");
-		julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
-				julietIcon.getHeight(), Image.SCALE_SMOOTH)));
-		
-		JLabel lblNewLabel_1_1 = new JLabel("Juliet");
-		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
-		lblNewLabel_1_1.setBounds(0, 0, 150, 30);
-		julietPanel.add(lblNewLabel_1_1);
-		
-		JPanel hamletPanel_2 = new JPanel();
-		hamletPanel_2.setLayout(null);
-		hamletPanel_2.setBorder(BorderFactory.createLineBorder(Color.black));
-		hamletPanel_2.setBackground(SystemColor.controlHighlight);
-		hamletPanel_2.setBounds(950, 10, 300, 100);
-		pdfPanel.add(hamletPanel_2);
-		
-		JLabel hamletIcon_2 = new JLabel("New label");
-		hamletIcon_2.setBounds(0, 0, 100, 100);
-		hamletPanel_2.add(hamletIcon_2);
-		
-		JLabel lblNewLabel_1_2 = new JLabel("Hamlet");
-		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1_2.setBounds(222, 34, 78, 25);
-		hamletPanel_2.add(lblNewLabel_1_2);
 		
 		JButton downloadPdfButton = new JButton("Download PDF");
 		downloadPdfButton.setFont(new Font("Tahoma", Font.BOLD, 16));
@@ -442,11 +337,726 @@ public class SPLinterrface extends JFrame {
 			}
 		});
 		pdfPanel.add(downloadPdfButton);
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//HAMLET
+		JPanel hamletPanel = new JPanel();
+
+		hamletPanel.setBounds(100, 10, 150, 210);
+		pdfPanel.add(hamletPanel);
+		hamletPanel.setLayout(null);
+		hamletPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		
+		JLabel hamletIcon = new JLabel("New label");
+		hamletIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				hamletPanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				hamletPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Hamlet", fc.getSelectedFile().getName()); //cambio foto
+
+					//visualizzo nuova immagine
+					Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
+							hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}												
+			}
+		});
+		hamletIcon.setBounds(0, 30, 150, 150);
+		hamletIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel.add(hamletIcon);
+		
+		JLabel lblNewLabel_1 = new JLabel("Hamlet");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setBounds(0, 0, 150, 30);
+		hamletPanel.add(lblNewLabel_1);
+		lblNewLabel_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));				
+		hamletPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletPanel.setBackground(SystemColor.controlHighlight);
+		
+		Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Hamlet.jpg");
+		hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
+				hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
+		
+		JButton hamletButtonReset = new JButton("Reset Image");
+		hamletButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Hamlet");
+				Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Hamlet"));
+				hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
+						hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		hamletButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		hamletButtonReset.setBounds(0, 180, 150, 30);
+		hamletPanel.add(hamletButtonReset);
+		hamletButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		hamletButtonReset.setBackground(SystemColor.controlHighlight);
+		
+//		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Juliet.jpg");
+		
+
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//BANQUO
+		JPanel banquoPanel = new JPanel();
+		banquoPanel.setLayout(null);
+		banquoPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		banquoPanel.setBackground(SystemColor.controlHighlight);
+		banquoPanel.setBounds(300, 10, 150, 210);
+		pdfPanel.add(banquoPanel);
+		
+		JLabel banquoIcon = new JLabel("New label");
+		banquoIcon.setBounds(0, 30, 150, 150);
+		banquoPanel.add(banquoIcon);
+		banquoIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+		banquoIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				banquoPanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				banquoPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Banquo", fc.getSelectedFile().getName()); //cambio foto
+
+					//visualizzo nuova immagine
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					banquoIcon.setIcon(new ImageIcon(img.getScaledInstance(banquoIcon.getHeight() , 
+							banquoIcon.getHeight(), Image.SCALE_SMOOTH)));	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+												
+			}
+		});
+		
+		JLabel lblNewLabel_1_1 = new JLabel("Banquo");
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_1.setBounds(0, 0, 150, 30);
+		banquoPanel.add(lblNewLabel_1_1);
+		
+		Image imgBanquo = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Banquo.jpg");
+		banquoIcon.setIcon(new ImageIcon(imgBanquo.getScaledInstance(banquoIcon.getHeight() , 
+				banquoIcon.getHeight(), Image.SCALE_SMOOTH)));
+		
+		JButton banquoButtonReset = new JButton("Reset Image");
+		banquoButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Banquo");
+				Image imgBanquo = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Banquo"));
+				banquoIcon.setIcon(new ImageIcon(imgBanquo.getScaledInstance(banquoIcon.getHeight() , 
+						banquoIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		
+		banquoButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		banquoButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		banquoButtonReset.setBackground(SystemColor.controlHighlight);
+		banquoButtonReset.setBounds(0, 180, 150, 30);
+		banquoPanel.add(banquoButtonReset);
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//gertrude
+		JPanel gertrudePanel = new JPanel();
+		gertrudePanel.setLayout(null);
+		gertrudePanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		gertrudePanel.setBackground(SystemColor.controlHighlight);
+		gertrudePanel.setBounds(500, 10, 150, 210);
+		pdfPanel.add(gertrudePanel);
+		
+		JLabel gertrudeIcon = new JLabel("New label");
+		gertrudeIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+		gertrudeIcon.setBounds(0, 30, 150, 150);
+		gertrudePanel.add(gertrudeIcon);
+		gertrudeIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				gertrudePanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				gertrudePanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Gertrude", fc.getSelectedFile().getName()); //cambio foto
+					//visualizzo nuova immagine
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					gertrudeIcon.setIcon(new ImageIcon(img.getScaledInstance(gertrudeIcon.getHeight() , 
+							gertrudeIcon.getHeight(), Image.SCALE_SMOOTH)));	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		});
+		
+		
+		JLabel lblNewLabel_1_2 = new JLabel("Gertrude");
+		lblNewLabel_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_2.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_2.setBounds(0, 0, 150, 30);
+		gertrudePanel.add(lblNewLabel_1_2);
+		
+		Image imgGertrude = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Gertrude.jpg");
+		gertrudeIcon.setIcon(new ImageIcon(imgGertrude.getScaledInstance(gertrudeIcon.getHeight() , 
+				gertrudeIcon.getHeight(), Image.SCALE_SMOOTH)));
+		
+		
+		JButton gertrudeButtonReset = new JButton("Reset Image");
+		gertrudeButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		gertrudeButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		gertrudeButtonReset.setBackground(SystemColor.controlHighlight);
+		gertrudeButtonReset.setBounds(0, 180, 150, 30);
+		gertrudePanel.add(gertrudeButtonReset);
+		gertrudeButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Gertrude");
+				Image imgGertrude = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Gertrude"));
+				gertrudeIcon.setIcon(new ImageIcon(imgGertrude.getScaledInstance(gertrudeIcon.getHeight() , 
+						gertrudeIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//ghost
+		JPanel ghostPanel = new JPanel();
+		ghostPanel.setLayout(null);
+		ghostPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		ghostPanel.setBackground(SystemColor.controlHighlight);
+		ghostPanel.setBounds(100, 250, 150, 210);
+		pdfPanel.add(ghostPanel);
+		
+		JLabel ghostIcon = new JLabel("New label");
+		ghostIcon.setBounds(0, 30, 150, 150);
+		ghostPanel.add(ghostIcon);
+		ghostIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+
+		ghostIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				ghostPanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				ghostPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Ghost", fc.getSelectedFile().getName()); //cambio foto
+					//visualizzo nuova immagine
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					ghostIcon.setIcon(new ImageIcon(img.getScaledInstance(ghostIcon.getHeight() , 
+							ghostIcon.getHeight(), Image.SCALE_SMOOTH)));	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		});
+		
+		JLabel lblNewLabel_1_3 = new JLabel("Ghost");
+		lblNewLabel_1_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_3.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_3.setBounds(0, 0, 150, 30);
+		ghostPanel.add(lblNewLabel_1_3);
+		
+		Image imgGhost = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Ghost.jpg");
+		ghostIcon.setIcon(new ImageIcon(imgGhost.getScaledInstance(ghostIcon.getHeight() , 
+				ghostIcon.getHeight(), Image.SCALE_SMOOTH)));
+		
+		
+		JButton ghostButtonReset = new JButton("Reset Image");
+		ghostButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ghostButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		ghostButtonReset.setBackground(SystemColor.controlHighlight);
+		ghostButtonReset.setBounds(0, 180, 150, 30);
+		ghostPanel.add(ghostButtonReset);
+		ghostButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Ghost");
+				Image imgGhost = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Ghost"));
+				ghostIcon.setIcon(new ImageIcon(imgGhost.getScaledInstance(ghostIcon.getHeight() , 
+						ghostIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//juliet
+		JPanel julietPanel = new JPanel();
+		julietPanel.setLayout(null);
+		julietPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		julietPanel.setBackground(SystemColor.controlHighlight);
+		julietPanel.setBounds(300, 250, 150, 210);
+		pdfPanel.add(julietPanel);
+		
+		JLabel julietIcon = new JLabel("New label");
+		julietIcon.setBounds(0, 30, 150, 150);
+		julietPanel.add(julietIcon);
+		julietIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+
+		julietIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				julietPanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				julietPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Juliet", fc.getSelectedFile().getName()); //cambio foto
+					//visualizzo nuova immagine
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					julietIcon.setIcon(new ImageIcon(img.getScaledInstance(julietIcon.getHeight() , 
+							julietIcon.getHeight(), Image.SCALE_SMOOTH)));	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		});
+		
+		JLabel lblNewLabel_1_4 = new JLabel("Juliet");
+		lblNewLabel_1_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4.setBounds(0, 0, 150, 30);
+		julietPanel.add(lblNewLabel_1_4);
+		
+		Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Juliet.jpg");
+		julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
+				julietIcon.getHeight(), Image.SCALE_SMOOTH)));
+			
+		JButton julietButtonReset = new JButton("Reset Image");
+		julietButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		julietButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		julietButtonReset.setBackground(SystemColor.controlHighlight);
+		julietButtonReset.setBounds(0, 180, 150, 30);
+		julietPanel.add(julietButtonReset);
+		julietButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Juliet");
+				Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Juliet"));
+				julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
+						julietIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		
+		
+		
+
+		//-------------------------------------------------------------------------------------------------
+		//ladymacbeth
+		JPanel ladymacbethPanel = new JPanel();
+		ladymacbethPanel.setLayout(null);
+		ladymacbethPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		ladymacbethPanel.setBackground(SystemColor.controlHighlight);
+		ladymacbethPanel.setBounds(500, 250, 150, 210);
+		pdfPanel.add(ladymacbethPanel);
+		
+		JLabel ladymacbethIcon = new JLabel("New label");
+		ladymacbethIcon.setBounds(0, 30, 150, 150);
+		ladymacbethPanel.add(ladymacbethIcon);
+		
+		ladymacbethIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				ladymacbethPanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				ladymacbethPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Ladymacbeth", fc.getSelectedFile().getName()); //cambio foto
+					//visualizzo nuova immagine
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					ladymacbethIcon.setIcon(new ImageIcon(img.getScaledInstance(ladymacbethIcon.getHeight() , 
+							ladymacbethIcon.getHeight(), Image.SCALE_SMOOTH)));	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		});
+		
+		Image imgLadymacbeth = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Ladymacbeth.jpg");
+		ladymacbethIcon.setIcon(new ImageIcon(imgLadymacbeth.getScaledInstance(ladymacbethIcon.getHeight() , 
+				ladymacbethIcon.getHeight(), Image.SCALE_SMOOTH)));
+		ladymacbethIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+		
+		JLabel lblNewLabel_1_4_1 = new JLabel("Ladymacbeth");
+		lblNewLabel_1_4_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_1.setFont(new Font("Lucida Handwriting", Font.PLAIN, 18));
+		lblNewLabel_1_4_1.setBounds(0, 0, 150, 30);
+		ladymacbethPanel.add(lblNewLabel_1_4_1);
+		
+		JButton ladymacbethButtonReset = new JButton("Reset Image");
+		ladymacbethButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		ladymacbethButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		ladymacbethButtonReset.setBackground(SystemColor.controlHighlight);
+		ladymacbethButtonReset.setBounds(0, 180, 150, 30);
+		ladymacbethPanel.add(ladymacbethButtonReset);
+		ladymacbethButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Ladymacbeth");
+				Image imgLadymacbeth = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Ladymacbeth"));
+				ladymacbethIcon.setIcon(new ImageIcon(imgLadymacbeth.getScaledInstance(ladymacbethIcon.getHeight() , 
+						ladymacbethIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//mercutio
+		JPanel mercutioPanel = new JPanel();
+		mercutioPanel.setLayout(null);
+		mercutioPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		mercutioPanel.setBackground(SystemColor.controlHighlight);
+		mercutioPanel.setBounds(700, 250, 150, 210);
+		pdfPanel.add(mercutioPanel);
+		
+		JLabel mercutioIcon = new JLabel("New label");
+		mercutioIcon.setBounds(0, 30, 150, 150);
+		mercutioPanel.add(mercutioIcon);
+		
+		mercutioIcon.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseEntered(MouseEvent e) {
+				mercutioPanel.setBackground(SystemColor.controlShadow);
+				JLabel text = new JLabel("Click to change the Image");
+                popup = PopupFactory.getSharedInstance().getPopup(e.getComponent(), text, e.getXOnScreen(), e.getYOnScreen());
+                popup.show();            
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				mercutioPanel.setBackground(SystemColor.controlHighlight);
+				popup.hide();
+			}
+			@Override
+			public void mouseClicked(MouseEvent e) {					
+				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+				FileSystemView fsv = new SingleRootFileSystemView( fl );
+				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
+
+				final JFileChooser fc = new JFileChooser(fsv);
+				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
+				fc.setFileFilter(filter); //applico filtro
+				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
+
+				try {
+					System.out.println(fc.getSelectedFile().getName());	
+					CharacterDescriptor.modifyPhotoPath("Mercutio", fc.getSelectedFile().getName()); //cambio foto
+					//visualizzo nuova immagine
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					mercutioIcon.setIcon(new ImageIcon(img.getScaledInstance(mercutioIcon.getHeight() , 
+							mercutioIcon.getHeight(), Image.SCALE_SMOOTH)));	
+				} catch (Exception e2) {
+					// TODO: handle exception
+				}
+			}
+		});
+		
+		Image imgMercutio = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Mercutio.jpg");
+		mercutioIcon.setIcon(new ImageIcon(imgMercutio.getScaledInstance(mercutioIcon.getHeight() , 
+				mercutioIcon.getHeight(), Image.SCALE_SMOOTH)));
+		mercutioIcon.setBorder(BorderFactory.createLineBorder(Color.black));
+		
+		
+		JLabel lblNewLabel_1_4_2 = new JLabel("Mercutio");
+		lblNewLabel_1_4_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_2.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4_2.setBounds(0, 0, 150, 30);
+		mercutioPanel.add(lblNewLabel_1_4_2);
+		
+		JButton mercutioButtonReset = new JButton("Reset Image");
+		mercutioButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		mercutioButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		mercutioButtonReset.setBackground(SystemColor.controlHighlight);
+		mercutioButtonReset.setBounds(0, 180, 150, 30);
+		mercutioPanel.add(mercutioButtonReset);
+		mercutioButtonReset.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				CharacterDescriptor.resetPhotoPath("Mercutio");
+				Image imgMercutio = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Mercutio"));
+				mercutioIcon.setIcon(new ImageIcon(imgMercutio.getScaledInstance(mercutioIcon.getHeight() , 
+						mercutioIcon.getHeight(), Image.SCALE_SMOOTH)));
+			}
+		});
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//ophelia
+		JPanel opheliaPanel = new JPanel();
+		opheliaPanel.setLayout(null);
+		opheliaPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		opheliaPanel.setBackground(SystemColor.controlHighlight);
+		opheliaPanel.setBounds(900, 250, 150, 210);
+		pdfPanel.add(opheliaPanel);
+		
+		JLabel opheliaIcon = new JLabel("New label");
+		opheliaIcon.setBounds(0, 30, 150, 150);
+		opheliaPanel.add(opheliaIcon);
+		
+		JLabel lblNewLabel_1_4_3 = new JLabel("Ophelia");
+		lblNewLabel_1_4_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_3.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4_3.setBounds(0, 0, 150, 30);
+		opheliaPanel.add(lblNewLabel_1_4_3);
+		
+		JButton opheliaButtonReset = new JButton("Reset Image");
+		opheliaButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		opheliaButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		opheliaButtonReset.setBackground(SystemColor.controlHighlight);
+		opheliaButtonReset.setBounds(0, 180, 150, 30);
+		opheliaPanel.add(opheliaButtonReset);
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//polonio
+		JPanel polonioPanel = new JPanel();
+		polonioPanel.setLayout(null);
+		polonioPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		polonioPanel.setBackground(SystemColor.controlHighlight);
+		polonioPanel.setBounds(1100, 250, 150, 210);
+		pdfPanel.add(polonioPanel);
+		
+		JLabel poloniotIcon = new JLabel("New label");
+		poloniotIcon.setBounds(0, 30, 150, 150);
+		polonioPanel.add(poloniotIcon);
+		
+		JLabel lblNewLabel_1_4_4 = new JLabel("Polonio");
+		lblNewLabel_1_4_4.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_4.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4_4.setBounds(0, 0, 150, 30);
+		polonioPanel.add(lblNewLabel_1_4_4);
+		
+		JButton polonioButtonReset = new JButton("Reset Image");
+		polonioButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		polonioButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		polonioButtonReset.setBackground(SystemColor.controlHighlight);
+		polonioButtonReset.setBounds(0, 180, 150, 30);
+		polonioPanel.add(polonioButtonReset);
+		
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//prospero
+		JPanel prosperoPanel = new JPanel();
+		prosperoPanel.setLayout(null);
+		prosperoPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		prosperoPanel.setBackground(SystemColor.controlHighlight);
+		prosperoPanel.setBounds(700, 10, 150, 210);
+		pdfPanel.add(prosperoPanel);
+		
+		JLabel prosperoIcon = new JLabel("New label");
+		prosperoIcon.setBounds(0, 30, 150, 150);
+		prosperoPanel.add(prosperoIcon);
+		
+		JLabel lblNewLabel_1_4_5 = new JLabel("Prospero");
+		lblNewLabel_1_4_5.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_5.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4_5.setBounds(0, 0, 150, 30);
+		prosperoPanel.add(lblNewLabel_1_4_5);
+		
+		JButton prosperoButtonReset = new JButton("Reset Image");
+		prosperoButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		prosperoButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		prosperoButtonReset.setBackground(SystemColor.controlHighlight);
+		prosperoButtonReset.setBounds(0, 180, 150, 30);
+		prosperoPanel.add(prosperoButtonReset);
+		
+		
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//romeo
+		JPanel romeoPanel = new JPanel();
+		romeoPanel.setLayout(null);
+		romeoPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		romeoPanel.setBackground(SystemColor.controlHighlight);
+		romeoPanel.setBounds(900, 10, 150, 210);
+		pdfPanel.add(romeoPanel);
+		
+		JLabel romeoIcon = new JLabel("New label");
+		romeoIcon.setBounds(0, 30, 150, 150);
+		romeoPanel.add(romeoIcon);
+		
+		JLabel lblNewLabel_1_4_6 = new JLabel("Romeo");
+		lblNewLabel_1_4_6.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_6.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4_6.setBounds(0, 0, 150, 30);
+		romeoPanel.add(lblNewLabel_1_4_6);
+		
+		JButton romeoButtonReset = new JButton("Reset Image");
+		romeoButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		romeoButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		romeoButtonReset.setBackground(SystemColor.controlHighlight);
+		romeoButtonReset.setBounds(0, 180, 150, 30);
+		romeoPanel.add(romeoButtonReset);
+		
+		
+		
+		
+		
+		//-------------------------------------------------------------------------------------------------
+		//shylock
+		JPanel shylockPanel = new JPanel();
+		shylockPanel.setLayout(null);
+		shylockPanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		shylockPanel.setBackground(SystemColor.controlHighlight);
+		shylockPanel.setBounds(1100, 10, 150, 210);
+		pdfPanel.add(shylockPanel);
+		
+		JLabel shylockIcon = new JLabel("New label");
+		shylockIcon.setBounds(0, 30, 150, 150);
+		shylockPanel.add(shylockIcon);
+		
+		JLabel lblNewLabel_1_4_7 = new JLabel("Shylock");
+		lblNewLabel_1_4_7.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_4_7.setFont(new Font("Lucida Handwriting", Font.PLAIN, 20));
+		lblNewLabel_1_4_7.setBounds(0, 0, 150, 30);
+		shylockPanel.add(lblNewLabel_1_4_7);
+		
+		JButton shylockButtonReset = new JButton("Reset Image");
+		shylockButtonReset.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		shylockButtonReset.setBorder(BorderFactory.createLineBorder(Color.black));
+		shylockButtonReset.setBackground(SystemColor.controlHighlight);
+		shylockButtonReset.setBounds(0, 180, 150, 30);
+		shylockPanel.add(shylockButtonReset);
 	}
 
-	void loadBaseImage() {
-//		characterListGUI.put();
-	}
+
 }
 
 

@@ -16,6 +16,7 @@ private static Hashtable<String,String> photos;
 	}
 	
 	public static void createBasePhotoPath() {
+		photos = new Hashtable<String,String>();
 		photos.put("Banquo", "base_Banquo.jpg");
 		photos.put("Gertrude", "base_Gertrude.jpg");
 		photos.put("Ghost", "base_Ghost.jpg");
