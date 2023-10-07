@@ -17,6 +17,7 @@ Durante l'orale
 	- finito il progetto, prima di presentarlo, da mandare via mail per eventuali correzioni
 	- pensata per chi volesse estendere/modificare il prodotto in futuro
 	- filosofia generale di sviluppo
+	- tecnologie usate (antlr v3 per grammatica, java come linguaggio di supporto)
 	- organizzazione file
 	- diagrammi UML (di deploy, di classe, delle dipendenze, ..)
 	- grammatica non decorata (solo parte sintattica)
