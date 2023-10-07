@@ -112,8 +112,7 @@ exeuntRule
     	LB EXEUNT (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB
     	{h.checkExeunt($ch1, $and, $ch2);}
     	;
-
-
+	
 stageEventRule
     	:
     	ch=CHARACTER CL
@@ -150,7 +149,7 @@ assignmentComparisonRule [Token ch, Token wh]
 	AND 
 	A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)) 
 	el=(EP| DOT)
-	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype, $wh, $adj,$el);}
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype, $wh, $adj, $el);}
 	;
 
 // assign a value with an equation
@@ -158,7 +157,7 @@ assignmentOperationRule [Token ch, Token wh]
 	:
 	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
 	AND A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) el=(EP| DOT)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype,$wh,$el);}
+	{h.checkAssignmentOperation($ch, $noun, $operationtype,  $wh,$el);}
 	;
 
 // counts the number of adjectives in order to calculate the assignment value
@@ -187,7 +186,7 @@ conditionalRule
 	gt3rs=(RETURNTO | PROCEEDTO) 
 	gt4=SCENEC rn=ID DOT
 	
-	{h.checkConditional($ch1, $ev, $ch2, $gt,$gt2,$gt3rs,$gt4, $rn);}
+	{h.checkConditional($ch1, $ev, $ch2, $gt, $gt2, $gt3rs, $gt4, $rn);}
 	;
 	
 // counts the number of the second list of adjectives in order to calculate the assignment value
