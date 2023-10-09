@@ -7,7 +7,7 @@ Con questo progetto abbiamo voluto realizzare un compilatore per il linguaggio d
 L'idea alla base consiste nell'agevolare il primo approccio alla programmazione per alunni che solitamente studiano argomenti letterari o simili, per loro natura abbastanza lontani dall'informatica. Un caso d'uso potrebbe essere l'utilizzo del nostro software per l'insegnamento a studenti di una scuola di teatro. Questi hanno quindi familiarità con elementi come la divisione in atti e scene di un'opera, e con il susseguirsi di battute degli attori in scena. Sfruttando questo parallelismo unico esistente con il lingauggio Shakespeare, il nostro prodotto si presta bene a favorire il primo contatto tra due ambiti che solitamente sono considerati agli antipodi.
 
 ## Tecnologie utilizzate
-Abbiamo deciso di implementare la grammatica del linguaggio Shakespeare tramite ANTLRv3 e di gestire la parte implementativa attraverso Java. Utilizzando Eclipse come software di sviluppo abbiamo potuto sfruttare (tool pdf) per generare il file pdf di output partendo da un html. Per la parte grafica del software invece ci siamo appoggiati a (tool grafico).
+Abbiamo deciso di implementare la grammatica del linguaggio Shakespeare tramite ANTLRv3 e di gestire la parte implementativa attraverso Java. Utilizzando Eclipse come ambiente di sviluppo abbiamo potuto sfruttare pacchetti per generare il file pdf di output partendo da un html stilizzato ad-hoc. Per la parte grafica del software invece ci siamo appoggiati a Swing.
 
 ## Organizzazione file
 ### Directory principale
@@ -25,7 +25,6 @@ Sono presenti la cartella del progetto eclipse "Workspace_Shakespeare", il file 
 	- "input.file", ovvero il file di testo da compilare con il programma scritto in linguaggio Shakespeare
 	- altro..
 - "antlr-3.4-complete.jar", cioè la libreria di ANTLRv3
-- altro..
 
 ## Controlli semantici principali
 In questa sezione facciamo una panoramica della gestione della parte semantica del lingauggio Shakespeare, rendendo più chiaro come e quali regole abbiamo implementato nel Parser.
@@ -43,7 +42,7 @@ Ad ogni entrata di scena di uno o più personaggi si verifica la fattibilità de
 ### stageEventRule
 Ogni evento scenico è caratterizzato da un personaggio che parla ad un altro personaggio in scena, se presente. Viene dunque svolto il controllo sulla sua presenza in scena, oltre alla valutazione su quale altro personaggio condivida il palcoscenico con lui. 
 All'interno di questa regola semantica avvengono tutte le operazioni principali del programma:
-	- rimpimento e svuotamento dello stack associato ad ogni personaggio
+	- riempimento e svuotamento dello stack associato ad ogni personaggio
 	- input e output di valori interi e ASCII
 	- assegnamento di valori
 
