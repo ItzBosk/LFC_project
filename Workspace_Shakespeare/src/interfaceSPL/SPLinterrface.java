@@ -378,11 +378,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -469,11 +470,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -554,11 +556,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -641,11 +644,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -725,11 +729,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -808,11 +813,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -892,11 +898,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -977,11 +984,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -1060,11 +1068,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -1145,11 +1154,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -1230,11 +1240,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
@@ -1313,11 +1324,12 @@ public class SPLinterrface extends JFrame {
 			}
 			@Override
 			public void mouseClicked(MouseEvent e) {					
-				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
-				FileSystemView fsv = new SingleRootFileSystemView( fl );
+//				File fl = new File("./resources/images"); //non posso muovermi da directory attuale
+//				FileSystemView fsv = new SingleRootFileSystemView( fl );
 				UIManager.put("FileChooser.readOnly", Boolean.TRUE); //unica azione che posso fare e' selezionare foto
 
-				final JFileChooser fc = new JFileChooser(fsv);
+				final JFileChooser fc = new JFileChooser();
+				fc.setCurrentDirectory(new File("./resources/images"));
 				FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg","jpg"); //seleziono solo file jpg
 				fc.setFileFilter(filter); //applico filtro
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
