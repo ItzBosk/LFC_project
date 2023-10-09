@@ -30,6 +30,8 @@ import com.openhtmltopdf.extend.UserAgentCallback;
 import com.openhtmltopdf.layout.LayoutContext;
 import com.openhtmltopdf.render.BlockBox;
 
+import compilerPackage.util.CharacterDescriptor;
+
 public class HtmlToPDF {
 	
 	public static void main(String[] args)  {
@@ -59,6 +61,7 @@ public class HtmlToPDF {
 	public static class HTML{
 		private static String htmlFile="";
 		private static boolean firstPersonae = true;
+		private static boolean firstAct = true;
 		private static boolean stageEventLeft = true;
 		
 		public static void initHTML() {
@@ -142,7 +145,16 @@ public class HtmlToPDF {
 				+ "			} "
 				+ "			.text{ "
 				+ "			padding:20px; width: 300px;"
-				+ "			} "
+				+ "			} div.item{"
+				+ "    vertical-align: top;"
+				+ "    display: inline-block;"
+				+ "    text-align: center;"
+				+ "    width: 190px;"
+				+ "	   font-size:30px;"
+				+ "} "
+				+ ".caption"
+				+ "    display: block;"
+				+ "	   }"			
 				+ "        </style> "
 				+ "    </head> "
 				+ "    <body>";
@@ -151,13 +163,12 @@ public class HtmlToPDF {
 		public static void addPersonae(String personae) {
 			if(firstPersonae) {
 				htmlFile += "<div class=\"charList\">"
-						+ "		<h2>Character list:</h2>";
+						+ "		<h2 style=\"font-size:40px;\">Character list:</h2>";
 				firstPersonae = false;
 			}
-			else
-				htmlFile = htmlFile.substring(0, htmlFile.length()-6);
-			htmlFile += "<img class=\"image\"  src=\"resources/images/text_"+personae+".jpg\" /></img>	</div>";
-			
+			htmlFile += "<div class=\"item\">"
+					+ "    <img class=\"image\"  src=\"resources/images/custom_"+personae+".jpg\" /></img>"
+					+ "    <span class=\"caption\">"+personae+"</span></div>";
 		}
 		
 		public static void addTitle(String title) {
@@ -175,13 +186,13 @@ public class HtmlToPDF {
 		public static void addStageEvent(String personae, String event) {
 			if(stageEventLeft) {
 				htmlFile += "<div class=\"stageEvent no-page-break left\">\r\n"
-						+ "			<img class=\"image fleft\" src=\"resources/images/base_"+personae+".jpg\" /> </img>\r\n"
+						+ "			<img class=\"image fleft\" src=\"resources/images/custom_"+personae+".jpg\" /></img>"
 						+ "			<div class=\"text fleft\" > ";
 			}
 			else
 			{
 				htmlFile += "<div class=\"stageEvent no-page-break right\">\r\n"
-						+ "			<img class=\"image fright\" src=\"resources/images/base_"+personae+".jpg\" /> </img>\r\n"
+						+ "			<img class=\"image fright\" src=\"resources/images/custom_"+personae+".jpg\" /></img>"
 						+ "			<div class=\"text fright\" > ";
 			}
 			stageEventLeft = !stageEventLeft;
@@ -192,6 +203,10 @@ public class HtmlToPDF {
 		}
 		
 		public static void addAct(String act, String comment) {
+			if(firstAct) {
+				htmlFile += "</div>";
+				firstAct = false;
+			}
 			htmlFile += "<div class=\"act\">ACT "+act+"</div><div class=\"center\"><h1>"+comment+"</h1></div>";
 		}
 		

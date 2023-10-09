@@ -91,7 +91,7 @@ public class SPLinterrface extends JFrame {
 					
 					 String file = new String(Files.readAllBytes(Paths.get("./resources/input.file")), StandardCharsets.UTF_8); //carico file
 					 codeTextArea.setText(file);
-					 CharacterDescriptor.createBasePhotoPath(); //inizializzo foto
+					 CharacterDescriptor.setBasePhotoPath(); //inizializzo foto
 					 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -388,8 +388,8 @@ public class SPLinterrface extends JFrame {
 				fc.showDialog(SPLinterrface.this, "Select Image"); //apri dialog
 
 				try {
-					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Hamlet", fc.getSelectedFile().getName()); //cambio foto
+					System.out.println(fc.getSelectedFile().getAbsolutePath());	
+					CharacterDescriptor.setPersonaePhotoPath("Hamlet", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 
 					//visualizzo nuova immagine
 					Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
@@ -420,8 +420,12 @@ public class SPLinterrface extends JFrame {
 		hamletButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Hamlet");
-				Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Hamlet"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Hamlet");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Hamlet.jpg");
 				hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
 						hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -476,14 +480,13 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Banquo", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Banquo", fc.getSelectedFile().getName()); //cambio foto
 
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					banquoIcon.setIcon(new ImageIcon(img.getScaledInstance(banquoIcon.getHeight() , 
 							banquoIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
-					// TODO: handle exception
 				}
 												
 			}
@@ -503,8 +506,12 @@ public class SPLinterrface extends JFrame {
 		banquoButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Banquo");
-				Image imgBanquo = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Banquo"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Banquo");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgBanquo = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Banquo.jpg");
 				banquoIcon.setIcon(new ImageIcon(imgBanquo.getScaledInstance(banquoIcon.getHeight() , 
 						banquoIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -558,7 +565,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Gertrude", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Gertrude", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					gertrudeIcon.setIcon(new ImageIcon(img.getScaledInstance(gertrudeIcon.getHeight() , 
@@ -590,8 +597,12 @@ public class SPLinterrface extends JFrame {
 		gertrudeButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Gertrude");
-				Image imgGertrude = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Gertrude"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Gertrude");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgGertrude = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Gertrude.jpg");
 				gertrudeIcon.setIcon(new ImageIcon(imgGertrude.getScaledInstance(gertrudeIcon.getHeight() , 
 						gertrudeIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -641,7 +652,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Ghost", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Ghost", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					ghostIcon.setIcon(new ImageIcon(img.getScaledInstance(ghostIcon.getHeight() , 
@@ -672,8 +683,12 @@ public class SPLinterrface extends JFrame {
 		ghostButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Ghost");
-				Image imgGhost = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Ghost"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Ghost");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgGhost = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Ghost.jpg");
 				ghostIcon.setIcon(new ImageIcon(imgGhost.getScaledInstance(ghostIcon.getHeight() , 
 						ghostIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -721,7 +736,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Juliet", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Juliet", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					julietIcon.setIcon(new ImageIcon(img.getScaledInstance(julietIcon.getHeight() , 
@@ -751,8 +766,12 @@ public class SPLinterrface extends JFrame {
 		julietButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Juliet");
-				Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Juliet"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Juliet");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgJuliet = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Juliet.jpg");
 				julietIcon.setIcon(new ImageIcon(imgJuliet.getScaledInstance(julietIcon.getHeight() , 
 						julietIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -800,7 +819,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Ladymacbeth", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Ladymacbeth", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					ladymacbethIcon.setIcon(new ImageIcon(img.getScaledInstance(ladymacbethIcon.getHeight() , 
@@ -831,8 +850,12 @@ public class SPLinterrface extends JFrame {
 		ladymacbethButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Ladymacbeth");
-				Image imgLadymacbeth = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Ladymacbeth"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Ladymacbeth");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgLadymacbeth = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Ladymacbeth.jpg");
 				ladymacbethIcon.setIcon(new ImageIcon(imgLadymacbeth.getScaledInstance(ladymacbethIcon.getHeight() , 
 						ladymacbethIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -880,7 +903,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Mercutio", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Mercutio", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					mercutioIcon.setIcon(new ImageIcon(img.getScaledInstance(mercutioIcon.getHeight() , 
@@ -912,8 +935,12 @@ public class SPLinterrface extends JFrame {
 		mercutioButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Mercutio");
-				Image imgMercutio = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Mercutio"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Mercutio");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgMercutio = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Mercutio.jpg");
 				mercutioIcon.setIcon(new ImageIcon(imgMercutio.getScaledInstance(mercutioIcon.getHeight() , 
 						mercutioIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -961,7 +988,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Ophelia", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Ophelia", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					opheliaIcon.setIcon(new ImageIcon(img.getScaledInstance(opheliaIcon.getHeight() , 
@@ -992,8 +1019,12 @@ public class SPLinterrface extends JFrame {
 		opheliaButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Ophelia");
-				Image imgOphelia = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Ophelia"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Ophelia");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgOphelia = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Ophelia.jpg");
 				opheliaIcon.setIcon(new ImageIcon(imgOphelia.getScaledInstance(opheliaIcon.getHeight() , 
 						opheliaIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -1040,7 +1071,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Polonio", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Polonio", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					poloniotIcon.setIcon(new ImageIcon(img.getScaledInstance(poloniotIcon.getHeight() , 
@@ -1072,8 +1103,12 @@ public class SPLinterrface extends JFrame {
 		polonioButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Polonio");
-				Image imgPolonio = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Polonio"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Polonio");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgPolonio = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Polonio.jpg");
 				poloniotIcon.setIcon(new ImageIcon(imgPolonio.getScaledInstance(poloniotIcon.getHeight() , 
 						poloniotIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -1121,7 +1156,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Prospero", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Prospero", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					prosperoIcon.setIcon(new ImageIcon(img.getScaledInstance(prosperoIcon.getHeight() , 
@@ -1153,8 +1188,12 @@ public class SPLinterrface extends JFrame {
 		prosperoButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Prospero");
-				Image imgProspero = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Prospero"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Prospero");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgProspero = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Prospero");
 				prosperoIcon.setIcon(new ImageIcon(imgProspero.getScaledInstance(prosperoIcon.getHeight() , 
 						prosperoIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -1202,7 +1241,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Romeo", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Romeo", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					romeoIcon.setIcon(new ImageIcon(img.getScaledInstance(romeoIcon.getHeight() , 
@@ -1234,8 +1273,12 @@ public class SPLinterrface extends JFrame {
 		romeoButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Romeo");
-				Image imgRomeo = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Romeo"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Romeo");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgRomeo = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Romeo.jpg");
 				romeoIcon.setIcon(new ImageIcon(imgRomeo.getScaledInstance(romeoIcon.getHeight() , 
 						romeoIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -1281,7 +1324,7 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.modifyPhotoPath("Shylock", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Shylock", fc.getSelectedFile().getName()); //cambio foto
 					//visualizzo nuova immagine
 					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
 					shylockIcon.setIcon(new ImageIcon(img.getScaledInstance(shylockIcon.getHeight() , 
@@ -1314,8 +1357,12 @@ public class SPLinterrface extends JFrame {
 		shylockButtonReset.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetPhotoPath("Shylock");
-				Image imgShylock = Toolkit.getDefaultToolkit().getImage("./resources/images/" + CharacterDescriptor.getPhotoPath("Shylock"));
+				try {
+					CharacterDescriptor.resetPersonaePhotoPath("Shylock");
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				Image imgShylock = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Shylock.jpg");
 				shylockIcon.setIcon(new ImageIcon(imgShylock.getScaledInstance(shylockIcon.getHeight() , 
 						shylockIcon.getHeight(), Image.SCALE_SMOOTH)));
 			}
@@ -1331,7 +1378,11 @@ public class SPLinterrface extends JFrame {
 		resetAllButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				CharacterDescriptor.resetAllPhotoPath();
+				try {
+					CharacterDescriptor.setBasePhotoPath();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
 				
 				Image imgShylock = Toolkit.getDefaultToolkit().getImage("./resources/images/base_Shylock.jpg");
 				shylockIcon.setIcon(new ImageIcon(imgShylock.getScaledInstance(shylockIcon.getHeight() , 

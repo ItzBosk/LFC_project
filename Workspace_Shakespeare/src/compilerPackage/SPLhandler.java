@@ -82,7 +82,6 @@ public class SPLhandler {
 		checkError = false;
 		it = stageCharacterList.entrySet().iterator();
 		execOutput = "";
-		CharacterDescriptor.createBasePhotoPath();
 	}
 
 	// lista degli errori printata dal Parser
