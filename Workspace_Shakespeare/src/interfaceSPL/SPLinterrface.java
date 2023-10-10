@@ -88,10 +88,16 @@ public class SPLinterrface extends JFrame {
 					parser = new SPLparser();
 					System.out.println("parser caricato: " + parser.getClass().toString());
 					frame.setVisible(true);
-					
+					 CharacterDescriptor.setBasePhotoPath(); //inizializzo foto
+
 					 String file = new String(Files.readAllBytes(Paths.get("./resources/input.file")), StandardCharsets.UTF_8); //carico file
 					 codeTextArea.setText(file);
-					 CharacterDescriptor.setBasePhotoPath(); //inizializzo foto
+					
+//					 FileReader reader = new FileReader( "./resources/input.file" );
+//                    BufferedReader br = new BufferedReader(reader);
+//                    codeTextArea.read( br, null );
+//                    br.close();
+//                    codeTextArea.requestFocus();
 					 
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -252,9 +258,10 @@ public class SPLinterrface extends JFrame {
 		filePanel.add(compileButton);
 		
 		
-		JTextLineNumber tln = new JTextLineNumber(codeTextArea);
+		TextLineNumber tln = new TextLineNumber(codeTextArea);
 		scrollPane_input.setRowHeaderView( tln );
-		tln.setLayout(null);
+		tln.setLayout(null);	
+		
 		
 		JLabel lblNewLabel = new JLabel("Input File");
 		lblNewLabel.setOpaque(true);
@@ -323,6 +330,8 @@ public class SPLinterrface extends JFrame {
 			      myWriter.write(codeTextArea.getText());
 			      myWriter.close();
 			      System.out.println("Successfully wrote to the file.");
+			      setUserInput(txtpnOutput_input_user.getText()); //set user input per READASCII e READVALUE
+			      
 			    } catch (IOException ee) {
 			      System.out.println("An error occurred.");
 			      ee.printStackTrace();
@@ -1492,8 +1501,16 @@ public class SPLinterrface extends JFrame {
 		resetAllButton.setBounds(688, 566, 180, 35);
 		pdfPanel.add(resetAllButton);
 	}
+	
+	private static String userInput;
+	private static int userInputCount;
+	void setUserInput(String input) {
+		userInput = input;
+	}
+	public static String getUserInput() {
+		return userInput;
+	}
 }
-
 
 
 

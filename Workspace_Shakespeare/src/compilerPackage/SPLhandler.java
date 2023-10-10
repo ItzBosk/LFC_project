@@ -19,6 +19,7 @@ import antlr.Parser;
 import compilerPackage.util.CharacterDescriptor;
 import compilerPackage.util.RomanNumber;
 import compilerPackage.util.Util;
+import interfaceSPL.SPLinterrface;
 import outputPackage.HtmlToPDF;
 
 public class SPLhandler {
@@ -56,6 +57,8 @@ public class SPLhandler {
 	public static int NO_MULTIPLE_ASCII_INPUT = 28;
 	public static int INVALID_ASCII_INPUT = 29;
 
+	static int userInputRequest; //to handle user input
+	static int checkReadInputRequest; //input index in checkRead
 	TokenStream input; 			// scanner of the input file
 	List<String> errorList; 	// errors log
 
@@ -72,6 +75,8 @@ public class SPLhandler {
 	String adjString2 = "";
 
 	public SPLhandler(TokenStream input) {
+		userInputRequest=0;
+		checkReadInputRequest=0;
 		this.input = input;
 		errorList = new ArrayList<String>();
 		stageCharacterList = new Hashtable<String, CharacterDescriptor>(101);
@@ -869,6 +874,8 @@ public class SPLhandler {
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 	}
 
+	
+	
 	public void checkRead(Token ch, Token phrase, Token ws) {
 		checkError = false;
 		if (!stageCharacterList.containsKey(ch.getText()))
@@ -881,12 +888,23 @@ public class SPLhandler {
 
 		if (!checkError) {
 			String secondCh = secondStageCharacter(ch);
-			Scanner userInputScanner = new Scanner(System.in);
+//			Scanner userInputScanner = new Scanner(System.in);
+//			Scanner userInputScanner = new Scanner(SPLinterrface.getUserInput()); //legge l'input utente da GUI
+			
+			String userInputScanner = SPLinterrface.getUserInput();
+			String[] userInputSplit = userInputScanner.split(",");
+			userInputRequest = userInputSplit.length; //so quanti input l'utente ha messo
+			checkReadInputRequest+=1; //ogni chiamata alla funzione incremento il contatore
+			//ho creato queste 2 variabili per gestire errori dovuti a:
+			//	-0 input immessi
+			//	-input immessi < input necessari
+			//  -input necessari < input immessi
+			
 			HtmlToPDF.HTML.addStageEvent(ch.getText(), phrase.getText() + ws.getText());
 			if (phrase.getType() == ShakespeareLexer.READVALUE) {
 				// read int value
 				System.err.println("Enter an integer value for " + secondCh + ": ");
-				String input = userInputScanner.next();
+				String input = userInputSplit[checkReadInputRequest-1];
 				try {
 					int intInput = Integer.parseInt(input);
 					stageCharacterList.get(secondCh).assignValue(intInput);
@@ -897,7 +915,8 @@ public class SPLhandler {
 			} else {
 				// read ASCII value
 				System.err.println("Enter an ASCII character for " + secondCh + ": ");
-				String input = userInputScanner.next();
+//				String input = userInputScanner.next();
+				String input = userInputSplit[checkReadInputRequest-1];
 				try {
 					if (input.length() > 1) {
 						dramaErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);
