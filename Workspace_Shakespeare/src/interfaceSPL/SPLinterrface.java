@@ -231,7 +231,6 @@ public class SPLinterrface extends JFrame {
 //		//codice effettivo di FILE
 		codeTextArea = new JTextPane();
 		codeTextArea.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		codeTextArea.setText("input file");
 		codeTextArea.setBounds(39, 22, 515, 534);
 		codeTextArea.setBackground(new Color(0xFFFEEF));
 
@@ -258,25 +257,53 @@ public class SPLinterrface extends JFrame {
 		tln.setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Input File");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel.setBounds(310, 18, 97, 20);
+		lblNewLabel.setOpaque(true);
+		lblNewLabel.setBorder(BorderFactory.createLineBorder(Color.black));
+		lblNewLabel.setBackground(SystemColor.controlHighlight);
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel.setBounds(0, 8, 720, 36);
 		filePanel.add(lblNewLabel);
 		
 		JLabel lblNewLabel_3 = new JLabel("Console Output ");
-		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 16));
-		lblNewLabel_3.setBounds(1000, 18, 120, 20);
+		lblNewLabel_3.setOpaque(true);
+		lblNewLabel_3.setBackground(SystemColor.controlHighlight);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_3.setBorder(BorderFactory.createLineBorder(Color.black));
+		lblNewLabel_3.setBounds(746, 178, 634, 36);
 		filePanel.add(lblNewLabel_3);
 		
 		JScrollPane scrollPane_console = new JScrollPane();
-		scrollPane_console.setBounds(746, 43, 634, 557);
+		scrollPane_console.setBounds(746, 213, 634, 396);
 		filePanel.add(scrollPane_console);
 		
 		JTextPane txtpnOutputConsole = new JTextPane();
 		txtpnOutputConsole.setEditable(false);
 		scrollPane_console.setViewportView(txtpnOutputConsole);
-		txtpnOutputConsole.setText("Console Output ");
 		txtpnOutputConsole.setFont(new Font("Consolas", Font.PLAIN, 14));
 		txtpnOutputConsole.setBackground(new Color(0xFFFEEF));
+		
+		
+		
+		JScrollPane scrollPane_input_user = new JScrollPane();
+		scrollPane_input_user.setBounds(746, 43, 634, 109);
+		filePanel.add(scrollPane_input_user);
+		
+		JTextPane txtpnOutput_input_user = new JTextPane();
+		txtpnOutput_input_user.setToolTipText("Enter program input here...");
+		txtpnOutput_input_user.setFont(new Font("Consolas", Font.PLAIN, 14));
+		txtpnOutput_input_user.setBackground(new Color(255, 254, 239));
+		scrollPane_input_user.setViewportView(txtpnOutput_input_user);
+		
+		JLabel lblNewLabel_3_1 = new JLabel("User Input");
+		lblNewLabel_3_1.setOpaque(true);
+		lblNewLabel_3_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3_1.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblNewLabel_3_1.setBorder(BorderFactory.createLineBorder(Color.black));
+		lblNewLabel_3_1.setBackground(SystemColor.controlHighlight);
+		lblNewLabel_3_1.setBounds(746, 8, 634, 36);
+		filePanel.add(lblNewLabel_3_1);
 		
 		JPanel divisotryPanel = new JPanel();
 		divisotryPanel.setForeground(new Color(204, 153, 0));
