@@ -57,15 +57,17 @@ public class SPLhandler {
 	public static int NO_MULTIPLE_ASCII_INPUT = 28;
 	public static int INVALID_ASCII_INPUT = 29;
 
-	static int userInputRequest; //to handle user input
-	static int checkReadInputRequest; //input index in checkRead
-	TokenStream input; 			// scanner of the input file
-	List<String> errorList; 	// errors log
-
+	public static String userInput;
+	public static String[] userInputSplitted;
+	public static int effectiveInput; // user input
+	public static int neededInput; // required input by the program
+	TokenStream input; // scanner of the input file
+	
+	List<String> errorList; // errors log
 	Hashtable<String, CharacterDescriptor> stageCharacterList;
 	Iterator<Map.Entry<String, CharacterDescriptor>> it; // for multiple Exeunt
-	int actNumber;	 // current act
-	int sceneNumber; 	// current scene
+	int actNumber; // current act
+	int sceneNumber; // current scene
 	int adjectiveCounter; // counter for adjective is assigment
 	int adjectiveCounter2; // counter for adjective is assigmentOperation
 	boolean checkError; // checks for occures errros in every checkMethod
@@ -75,8 +77,17 @@ public class SPLhandler {
 	String adjString2 = "";
 
 	public SPLhandler(TokenStream input) {
-		userInputRequest=0;
-		checkReadInputRequest=0;
+		// input managing
+		neededInput = 0;
+		userInput = SPLinterrface.getUserInput().replaceAll("\\s", "");	// remove white spaces
+		if (userInput.length() == 0)
+			effectiveInput = 0;
+
+		else {
+			userInputSplitted = userInput.split(",");
+			effectiveInput = userInputSplitted.length;
+		}
+		
 		this.input = input;
 		errorList = new ArrayList<String>();
 		stageCharacterList = new Hashtable<String, CharacterDescriptor>(101);
@@ -361,10 +372,10 @@ public class SPLhandler {
 	public void checkEnter(Token ch1, Token and, Token ch2) {
 		checkError = false;
 		if (ch1 != null) {
-			if (and != null && ch2 != null) {	// multiple entrance
+			if (and != null && ch2 != null) { // multiple entrance
 				checkEntrance(ch1);
 				checkEntrance(ch2);
-			} else {	// single entrance
+			} else { // single entrance
 				if (and == null && ch2 == null)
 					checkEntrance(ch1);
 			}
@@ -874,8 +885,6 @@ public class SPLhandler {
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 	}
 
-	
-	
 	public void checkRead(Token ch, Token phrase, Token ws) {
 		checkError = false;
 		if (!stageCharacterList.containsKey(ch.getText()))
@@ -888,23 +897,17 @@ public class SPLhandler {
 
 		if (!checkError) {
 			String secondCh = secondStageCharacter(ch);
-//			Scanner userInputScanner = new Scanner(System.in);
-//			Scanner userInputScanner = new Scanner(SPLinterrface.getUserInput()); //legge l'input utente da GUI
-			
-			String userInputScanner = SPLinterrface.getUserInput();
-			String[] userInputSplit = userInputScanner.split(",");
-			userInputRequest = userInputSplit.length; //so quanti input l'utente ha messo
-			checkReadInputRequest+=1; //ogni chiamata alla funzione incremento il contatore
-			//ho creato queste 2 variabili per gestire errori dovuti a:
-			//	-0 input immessi
-			//	-input immessi < input necessari
-			//  -input necessari < input immessi
-			
+
+			neededInput += 1; // ogni chiamata alla funzione incremento il contatore
+
+			// handling number of input elements
+			if (neededInput > effectiveInput) // needed input > effective input
+				return;
+
 			HtmlToPDF.HTML.addStageEvent(ch.getText(), phrase.getText() + ws.getText());
 			if (phrase.getType() == ShakespeareLexer.READVALUE) {
 				// read int value
-				System.err.println("Enter an integer value for " + secondCh + ": ");
-				String input = userInputSplit[checkReadInputRequest-1];
+				String input = userInputSplitted[neededInput - 1];
 				try {
 					int intInput = Integer.parseInt(input);
 					stageCharacterList.get(secondCh).assignValue(intInput);
@@ -914,9 +917,7 @@ public class SPLhandler {
 				}
 			} else {
 				// read ASCII value
-				System.err.println("Enter an ASCII character for " + secondCh + ": ");
-//				String input = userInputScanner.next();
-				String input = userInputSplit[checkReadInputRequest-1];
+				String input = userInputSplitted[neededInput - 1];
 				try {
 					if (input.length() > 1) {
 						dramaErrorHandler(NO_MULTIPLE_ASCII_INPUT, ch);

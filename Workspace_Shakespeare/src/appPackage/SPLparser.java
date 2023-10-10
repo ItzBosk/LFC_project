@@ -48,7 +48,8 @@ public class SPLparser {
 			// Instantiate the lexer by passing it the document to analyze
 			ShakespeareLexer lexer = new ShakespeareLexer(new ANTLRReaderStream(new FileReader(fileIn)));
 
-			// Create a stream (channel) of tokens for communication between lexer and parser
+			// Create a stream (channel) of tokens for communication between lexer and
+			// parser
 			tokens = new CommonTokenStream(lexer);
 
 			// Instantiate the parser
@@ -59,16 +60,23 @@ public class SPLparser {
 
 			// check results
 			SPLhandler h = parser.getHandler();
-			if (h.getErrorList().size() == 0) {
+			if (h.getErrorList().size() == 0 && SPLhandler.effectiveInput == SPLhandler.neededInput) {
 				h.finalPrint();
 				System.out.println();
 				System.out.println();
 				System.out.println("============================================================================");
 				System.out.println("================= Semantic analysis completed successfully =================");
 				System.out.println("============================================================================");
-			} else
+			} else {
+				// handling errors in number of input elements
+				if (SPLhandler.neededInput != SPLhandler.effectiveInput) {
+					System.err.println("Input Error: The Shakespeare program requires " + SPLhandler.neededInput
+							+ " input elements, but the provided input has " + SPLhandler.effectiveInput);
+				}
+
 				for (int i = 0; i < h.getErrorList().size(); i++)
 					System.err.println("Error " + (i + 1) + ":\t" + h.getErrorList().get(i) + "");
+			}
 
 		} catch (Exception e) {
 			System.out.println("============================================================================");
