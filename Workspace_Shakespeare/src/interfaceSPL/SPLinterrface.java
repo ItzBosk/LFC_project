@@ -429,7 +429,7 @@ public class SPLinterrface extends JFrame {
 					CharacterDescriptor.setPersonaePhotoPath("Hamlet", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 
 					//visualizzo nuova immagine
-					Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image imgHamlet = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Hamlet.jpg");
 					hamletIcon.setIcon(new ImageIcon(imgHamlet.getScaledInstance(hamletIcon.getHeight() , 
 							hamletIcon.getHeight(), Image.SCALE_SMOOTH)));
 				} catch (Exception e2) {
@@ -518,10 +518,10 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Banquo", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Banquo", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Banquo.jpg");
 					banquoIcon.setIcon(new ImageIcon(img.getScaledInstance(banquoIcon.getHeight() , 
 							banquoIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -604,9 +604,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Gertrude", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Gertrude", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_GErtrude.jpg");
 					gertrudeIcon.setIcon(new ImageIcon(img.getScaledInstance(gertrudeIcon.getHeight() , 
 							gertrudeIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -692,9 +692,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Ghost", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Ghost", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Ghost.jpg");
 					ghostIcon.setIcon(new ImageIcon(img.getScaledInstance(ghostIcon.getHeight() , 
 							ghostIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -777,9 +777,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Juliet", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Juliet", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Juliet.jpg");
 					julietIcon.setIcon(new ImageIcon(img.getScaledInstance(julietIcon.getHeight() , 
 							julietIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -861,9 +861,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Ladymacbeth", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Ladymacbeth", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Ladymacbeth.jpg");
 					ladymacbethIcon.setIcon(new ImageIcon(img.getScaledInstance(ladymacbethIcon.getHeight() , 
 							ladymacbethIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -946,9 +946,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Mercutio", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Mercutio", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Mercutio.jpg");
 					mercutioIcon.setIcon(new ImageIcon(img.getScaledInstance(mercutioIcon.getHeight() , 
 							mercutioIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -1032,9 +1032,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Ophelia", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Ophelia", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Ophelia.jpg");
 					opheliaIcon.setIcon(new ImageIcon(img.getScaledInstance(opheliaIcon.getHeight() , 
 							opheliaIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -1116,9 +1116,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Polonio", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Polonio", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Polonio.jpg");
 					poloniotIcon.setIcon(new ImageIcon(img.getScaledInstance(poloniotIcon.getHeight() , 
 							poloniotIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -1202,9 +1202,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Prospero", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Prospero", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Prospero");
 					prosperoIcon.setIcon(new ImageIcon(img.getScaledInstance(prosperoIcon.getHeight() , 
 							prosperoIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -1288,9 +1288,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Romeo", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Romeo", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Romeo.jpg");
 					romeoIcon.setIcon(new ImageIcon(img.getScaledInstance(romeoIcon.getHeight() , 
 							romeoIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
@@ -1372,9 +1372,9 @@ public class SPLinterrface extends JFrame {
 
 				try {
 					System.out.println(fc.getSelectedFile().getName());	
-					CharacterDescriptor.setPersonaePhotoPath("Shylock", fc.getSelectedFile().getName()); //cambio foto
+					CharacterDescriptor.setPersonaePhotoPath("Shylock", fc.getSelectedFile().getAbsolutePath()); //cambio foto
 					//visualizzo nuova immagine
-					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/"+fc.getSelectedFile().getName());
+					Image img = Toolkit.getDefaultToolkit().getImage("./resources/images/custom_Shylock.jpg");
 					shylockIcon.setIcon(new ImageIcon(img.getScaledInstance(shylockIcon.getHeight() , 
 							shylockIcon.getHeight(), Image.SCALE_SMOOTH)));	
 				} catch (Exception e2) {
