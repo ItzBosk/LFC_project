@@ -47,7 +47,7 @@ public class HtmlToPDF {
 			SharedContext sharedContext = renderer.getSharedContext();
 			sharedContext.setPrint(true);
 			sharedContext.setInteractive(false);
-			renderer.getFontResolver().addFont("Seagramtfb.ttf", BaseFont.IDENTITY_H, true);
+			renderer.getFontResolver().addFont("./resources/Seagramtfb.ttf", BaseFont.IDENTITY_H, true);
 			renderer.setDocumentFromString(document.html());
 			renderer.layout();
 			renderer.createPDF(outputStream);
