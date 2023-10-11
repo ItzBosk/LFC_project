@@ -222,6 +222,8 @@ public class SPLhandler {
 				System.out.println(Util.middleSpacer(title, 72));
 				System.out.println("============================================================================\n");
 				HtmlToPDF.HTML.addTitle(title);
+				HtmlToPDF.HTML.reset();
+				title = "";
 			}
 		} catch (NullPointerException ex) {
 			System.err.println(ex.toString());

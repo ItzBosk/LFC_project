@@ -121,7 +121,8 @@ public class HtmlToPDF {
 				+ "         background-position:center;"	
 				+ "    		background-size: contain;\r\n"
 				+ "   		text-align: center;\r\n"
-				+ "    		page-break-before: always;\r\n"
+				+ "    		page-break-before: always;"
+				+ "			margin-top:20px;"
 				+ "    		height: 100px;"
 				+ "			}"
 				+ "         .sceneText{padding-top: 35px;}"
@@ -158,6 +159,12 @@ public class HtmlToPDF {
 				+ "        </style> "
 				+ "    </head> "
 				+ "    <body>";
+		}
+		
+		public static void reset(){
+			firstPersonae = true;
+			firstAct = true;
+			stageEventLeft = true;
 		}
 		
 		public static void addPersonae(String personae) {
@@ -217,9 +224,6 @@ public class HtmlToPDF {
 		
 		public static String getFile() {
 			htmlFile += "</body></html>";
-			System.out.println();
-			System.out.println(htmlFile);
-			System.out.println();
 			return htmlFile;
 		}
 	}
