@@ -671,7 +671,7 @@ public class SPLhandler {
 		System.out.println("	         |NAME             |VALUE  |ON STAGE |");
 		System.out.println("	         -------------------------------------");
 		for (String character : stageCharacterList.keySet()) {
-			var str = "	         |" + Util.evenSpacer(character, 17);
+			String str = "	         |" + Util.evenSpacer(character, 17);
 			if (stageCharacterList.get(character).getValue() > 9999999)
 				str += "|" + Util.evenSpacer("xxxxx..", 7); // Viene filtrata solo la stampa e non il valore vero
 			else
