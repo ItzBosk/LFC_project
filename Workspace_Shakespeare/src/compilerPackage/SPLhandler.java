@@ -80,7 +80,7 @@ public class SPLhandler {
 		// input managing
 		neededInput = 0;
 		userInput = SPLinterrface.getUserInput().replaceAll("\\s", "");	// remove white spaces
-		if (userInput.length() == 0)
+		if (userInput.length() == 0)	// avoid problems with split function
 			effectiveInput = 0;
 
 		else {
@@ -100,12 +100,12 @@ public class SPLhandler {
 		execOutput = "";
 	}
 
-	// lista degli errori printata dal Parser
+	// error list printed by the Parser
 	public List<String> getErrorList() {
 		return errorList;
 	}
 
-	// gestione errori sintattici e lessicali (trasfrmati in sintattici)
+	// management of syntactic and lexical errors (transformed into syntactic)
 	public void handleError(Token tk, String hdr, String msg) {
 		String errMsg;
 		if (tk == null)
@@ -474,7 +474,7 @@ public class SPLhandler {
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
 		if (!checkError && noun != null) {
-			System.out.println("---------------------------   STAGE EVENT 1'  ------------------------------");
+			System.out.println("---------------------------   STAGE EVENT   ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
 			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), " " + adjString + noun.getText() + el.getText());
@@ -502,7 +502,6 @@ public class SPLhandler {
 			} else
 				charact1 = -1 * (int) Math.pow(2, adjectiveCounter);
 			adjectiveCounter = 0; // after every assignment return 0
-			System.err.println("frase2 charact1: " + charact1);
 
 			int charact2 = 0;
 			if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
@@ -510,26 +509,22 @@ public class SPLhandler {
 			} else
 				charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
 			adjectiveCounter2 = 0; // after every assignment return 0
-			System.err.println("frase2 charact2: " + charact2);
 
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 				stageCharacterList.get(updateCh).assignValue(charact1 + charact2);
-				System.err.println("### result frase2: " + stageCharacterList.get(updateCh).getValue());
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 				stageCharacterList.get(updateCh).assignValue(charact1 - charact2);
-				System.err.println("### result frase2: " + stageCharacterList.get(updateCh).getValue());
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 				stageCharacterList.get(updateCh).assignValue(charact1 * charact2);
-				System.err.println("### result frase2: " + stageCharacterList.get(updateCh).getValue());
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
 		if (!checkError && noun1 != null && noun2 != null) {
-			System.out.println("---------------------------   STAGE EVENT 2'  ------------------------------");
+			System.out.println("---------------------------   STAGE EVENT  ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun1.getText());
 			System.out.println("   - Noun: \t\t" + noun2.getText());
@@ -583,7 +578,7 @@ public class SPLhandler {
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
 		if (checkError == false && noun != null) {
-			System.out.println("---------------------------   STAGE EVENT 3'  ------------------------------");
+			System.out.println("---------------------------   STAGE EVENT   ------------------------------");
 			System.out.println("   - Actor: \t\t" + ch.getText());
 			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
 			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), adjString + noun.getText() + el.getText());
