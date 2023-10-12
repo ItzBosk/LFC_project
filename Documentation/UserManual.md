@@ -53,3 +53,30 @@ That's it! You've successfully installed Java on your computer. You can now use 
 install.....
 
 ## Using SPL Software
+### How SPL works
+Creating Shakespeare Programming Language (SPL) code can be a fun, creative way to write programs. Imagine you're telling a story with two characters, and they need to talk to each other, and they also move around. Here's how you can do it:
+
+1. **Characters**: Pick two characters. These can be any names you like, such as "Romeo" and "Juliet." Each character will represent a stack (like a pile of books).
+
+2. **Settings**: You need to set the stage. Give the characters some places to move to, like "Verona" and "Balcony."
+
+3. **Initialization**: Start with a scene-setting line, like "Verona. A room."
+
+4. **Enter and Exit**: You can make your characters enter and exit with lines like "Romeo, enter" and "Juliet, exit." When they enter, it's like they are starting to do something, and when they exit, they are done.
+
+5. **Actions**: Use the characters' names to push and pop values onto their stacks. For example, if Romeo is supposed to say something, you might use "Romeo: Listen to me!" This tells Romeo to say something.
+
+6. **Interactions**: If you want Romeo and Juliet to talk to each other, you can have them "Listen to" each other's words. For example, "Romeo: Listen to Juliet."
+
+7. **Conditionals**: You can create conditions with phrases like "If Romeo is the same as Juliet," and then you specify what to do if they are the same or different.
+
+8. **End**: Finish your code with a line like "Juliet, exit." This means Juliet is done.
+
+9. **End Scene**: Finally, end the scene with a line like "End the scene."
+
+Remember, in the Shakespeare Programming Language, you're not writing typical code like in other programming languages. Instead, you're creating a story where the characters and their actions represent the code's logic. It's a fun way to write code, almost like writing a play or a script!
+### Program interface
+### Code compilation
+### PDF generation
+#### Characters photos
+#### PDF final export
