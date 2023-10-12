@@ -75,8 +75,56 @@ Creating Shakespeare Programming Language (SPL) code can be a fun, creative way 
 9. **End Scene**: Finally, end the scene with a line like "End the scene."
 
 Remember, in the Shakespeare Programming Language, you're not writing typical code like in other programming languages. Instead, you're creating a story where the characters and their actions represent the code's logic. It's a fun way to write code, almost like writing a play or a script!
+
+#### Script example
+You can write something like this in order to obtain "UniBG Rules!" as output:
+
+**DA CORREGGERE**
+```
+The Adventure of UniBG Rules.
+
+Juliet, a bright student with a sunny disposition.
+Romeo, a passionate scholar with fiery determination.
+
+[Setting the stage]
+[University of Bergamo, a place of higher learning.]
+
+Juliet: Listen to me!
+Romeo: You are the sum of yourself.
+
+[Juliet's declaration]
+Juliet: Open your mind!
+Romeo: You are the sum of yourself.
+
+[The wisdom of Romeo]
+Romeo: You are the square of yourself.
+Juliet: Remember yourself.
+
+[The grand revelation]
+Romeo: You are the sum of yourself.
+Juliet: You are the difference between yourself and yourself!
+
+[Juliet's joy]
+Juliet: Speak your mind!
+Romeo: Open your heart.
+
+[The final decree]
+Juliet: Listen to me!
+Romeo: You are the sum of yourself.
+
+[Exiting]
+Juliet: Remember me.
+
+[Ending the play]
+```
+
 ### Program interface
+Aaaaaaa
 ### Code compilation
+Aaaaaaa
 ### PDF generation
-#### Characters photos
+Aaaaaaa
+#### Characters pictures
+Aaaaaaa
 #### PDF final export
+Aaaaaaa
