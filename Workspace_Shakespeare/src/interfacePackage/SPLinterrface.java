@@ -1,4 +1,4 @@
-package interfaceSPL;
+package interfacePackage;
 
 
 import java.io.*;
@@ -21,11 +21,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.lowagie.text.pdf.PdfLayer;
 
-import appPackage.SPLparser;
-import compilerPackage.ShakespeareLexer;
-import compilerPackage.ShakespeareParser;
-import compilerPackage.util.CharacterDescriptor;
+import grammarPackage.ShakespeareLexer;
+import grammarPackage.ShakespeareParser;
 import outputPackage.HtmlToPDF;
+import scanPackage.SPLparser;
+import utilityPackage.CharacterDescriptor;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JToolBar;
@@ -65,7 +65,6 @@ import javax.swing.JButton;
 import javax.swing.filechooser.FileSystemView;
 
 import org.antlr.runtime.Lexer;
-import compilerPackage.util.CharacterDescriptor;
 
 public class SPLinterrface extends JFrame {
 	

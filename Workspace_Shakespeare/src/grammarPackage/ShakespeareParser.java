@@ -1,6 +1,6 @@
-// $ANTLR 3.5.1 D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g 2023-10-05 12:31:37
+// $ANTLR 3.5.1 C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g 2023-10-12 19:45:18
 
-    package compilerPackage;
+    package grammarPackage;
 
 
 import org.antlr.runtime.*;
@@ -98,7 +98,7 @@ public class ShakespeareParser extends Parser {
 	}
 
 	@Override public String[] getTokenNames() { return ShakespeareParser.tokenNames; }
-	@Override public String getGrammarFileName() { return "D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g"; }
+	@Override public String getGrammarFileName() { return "C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g"; }
 
 
 	    SPLhandler h;	// Handler declaration
@@ -127,12 +127,12 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "parseSPL"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:44:1: parseSPL : titleRule ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:44:1: parseSPL : titleRule ;
 	public final void parseSPL() throws RecognitionException {
 		initParser();
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:46:2: ( titleRule )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:47:6: titleRule
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:46:2: ( titleRule )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:47:6: titleRule
 			{
 			pushFollow(FOLLOW_titleRule_in_parseSPL63);
 			titleRule();
@@ -154,15 +154,15 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "titleRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:51:1: titleRule : ( titlecharRule )* d= DOT bodyRule ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:51:1: titleRule : ( titlecharRule )* d= DOT bodyRule ;
 	public final void titleRule() throws RecognitionException {
 		Token d=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:52:2: ( ( titlecharRule )* d= DOT bodyRule )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:53:6: ( titlecharRule )* d= DOT bodyRule
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:52:2: ( ( titlecharRule )* d= DOT bodyRule )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:53:6: ( titlecharRule )* d= DOT bodyRule
 			{
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:53:6: ( titlecharRule )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:53:6: ( titlecharRule )*
 			loop1:
 			while (true) {
 				int alt1=2;
@@ -173,7 +173,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:53:6: titlecharRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:53:6: titlecharRule
 					{
 					pushFollow(FOLLOW_titlecharRule_in_titleRule84);
 					titlecharRule();
@@ -209,13 +209,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "titlecharRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:58:1: titlecharRule : f= ID ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:58:1: titlecharRule : f= ID ;
 	public final void titlecharRule() throws RecognitionException {
 		Token f=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:59:2: (f= ID )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:60:2: f= ID
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:59:2: (f= ID )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:60:2: f= ID
 			{
 			f=(Token)match(input,ID,FOLLOW_ID_in_titlecharRule127); 
 			h.buildTitle(f);
@@ -235,13 +235,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "bodyRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:64:1: bodyRule : ( dramatisPersonaeRule )+ ( actRule ( sceneRule )+ )+ ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:64:1: bodyRule : ( dramatisPersonaeRule )+ ( actRule ( sceneRule )+ )+ ;
 	public final void bodyRule() throws RecognitionException {
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:65:2: ( ( dramatisPersonaeRule )+ ( actRule ( sceneRule )+ )+ )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:6: ( dramatisPersonaeRule )+ ( actRule ( sceneRule )+ )+
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:65:2: ( ( dramatisPersonaeRule )+ ( actRule ( sceneRule )+ )+ )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:66:6: ( dramatisPersonaeRule )+ ( actRule ( sceneRule )+ )+
 			{
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:6: ( dramatisPersonaeRule )+
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:66:6: ( dramatisPersonaeRule )+
 			int cnt2=0;
 			loop2:
 			while (true) {
@@ -253,7 +253,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt2) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:66:6: dramatisPersonaeRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:66:6: dramatisPersonaeRule
 					{
 					pushFollow(FOLLOW_dramatisPersonaeRule_in_bodyRule154);
 					dramatisPersonaeRule();
@@ -270,7 +270,7 @@ public class ShakespeareParser extends Parser {
 				cnt2++;
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:6: ( actRule ( sceneRule )+ )+
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:67:6: ( actRule ( sceneRule )+ )+
 			int cnt4=0;
 			loop4:
 			while (true) {
@@ -282,13 +282,13 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt4) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:7: actRule ( sceneRule )+
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:67:7: actRule ( sceneRule )+
 					{
 					pushFollow(FOLLOW_actRule_in_bodyRule163);
 					actRule();
 					state._fsp--;
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:15: ( sceneRule )+
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:67:15: ( sceneRule )+
 					int cnt3=0;
 					loop3:
 					while (true) {
@@ -300,7 +300,7 @@ public class ShakespeareParser extends Parser {
 
 						switch (alt3) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:67:15: sceneRule
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:67:15: sceneRule
 							{
 							pushFollow(FOLLOW_sceneRule_in_bodyRule165);
 							sceneRule();
@@ -344,14 +344,14 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "dramatisPersonaeRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:71:1: dramatisPersonaeRule : ch= CHARACTER co= COMMENT ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:71:1: dramatisPersonaeRule : ch= CHARACTER co= COMMENT ;
 	public final void dramatisPersonaeRule() throws RecognitionException {
 		Token ch=null;
 		Token co=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:72:6: (ch= CHARACTER co= COMMENT )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:73:6: ch= CHARACTER co= COMMENT
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:72:6: (ch= CHARACTER co= COMMENT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:73:6: ch= CHARACTER co= COMMENT
 			{
 			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_dramatisPersonaeRule195); 
 			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_dramatisPersonaeRule199); 
@@ -372,14 +372,14 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "actRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:78:1: actRule : ACT rn= ID co= COMMENT ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:78:1: actRule : ACT rn= ID co= COMMENT ;
 	public final void actRule() throws RecognitionException {
 		Token rn=null;
 		Token co=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:79:6: ( ACT rn= ID co= COMMENT )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:80:6: ACT rn= ID co= COMMENT
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:79:6: ( ACT rn= ID co= COMMENT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:80:6: ACT rn= ID co= COMMENT
 			{
 			match(input,ACT,FOLLOW_ACT_in_actRule231); 
 			rn=(Token)match(input,ID,FOLLOW_ID_in_actRule235); 
@@ -401,20 +401,20 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "sceneRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:85:1: sceneRule : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEventRule )* ( conditionalRule )? ( exitRule | exeuntRule )? ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:85:1: sceneRule : SCENE rn= ID co= COMMENT ( enterRule )? ( stageEventRule )* ( conditionalRule )? ( exitRule | exeuntRule )? ;
 	public final void sceneRule() throws RecognitionException {
 		Token rn=null;
 		Token co=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:86:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEventRule )* ( conditionalRule )? ( exitRule | exeuntRule )? )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:87:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEventRule )* ( conditionalRule )? ( exitRule | exeuntRule )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:86:2: ( SCENE rn= ID co= COMMENT ( enterRule )? ( stageEventRule )* ( conditionalRule )? ( exitRule | exeuntRule )? )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:87:6: SCENE rn= ID co= COMMENT ( enterRule )? ( stageEventRule )* ( conditionalRule )? ( exitRule | exeuntRule )?
 			{
 			match(input,SCENE,FOLLOW_SCENE_in_sceneRule278); 
 			rn=(Token)match(input,ID,FOLLOW_ID_in_sceneRule282); 
 			co=(Token)match(input,COMMENT,FOLLOW_COMMENT_in_sceneRule286); 
 			h.checkScene(rn, co);
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:6: ( enterRule )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:89:6: ( enterRule )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==LB) ) {
@@ -425,7 +425,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt5) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:89:6: enterRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:89:6: enterRule
 					{
 					pushFollow(FOLLOW_enterRule_in_sceneRule305);
 					enterRule();
@@ -436,7 +436,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:90:6: ( stageEventRule )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:90:6: ( stageEventRule )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -455,7 +455,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt6) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:90:6: stageEventRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:90:6: stageEventRule
 					{
 					pushFollow(FOLLOW_stageEventRule_in_sceneRule313);
 					stageEventRule();
@@ -469,7 +469,7 @@ public class ShakespeareParser extends Parser {
 				}
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:6: ( conditionalRule )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:91:6: ( conditionalRule )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==CHARACTER) ) {
@@ -477,7 +477,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt7) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:91:6: conditionalRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:91:6: conditionalRule
 					{
 					pushFollow(FOLLOW_conditionalRule_in_sceneRule321);
 					conditionalRule();
@@ -488,7 +488,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:6: ( exitRule | exeuntRule )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:92:6: ( exitRule | exeuntRule )?
 			int alt8=3;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0==LB) ) {
@@ -502,7 +502,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt8) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:7: exitRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:92:7: exitRule
 					{
 					pushFollow(FOLLOW_exitRule_in_sceneRule330);
 					exitRule();
@@ -511,7 +511,7 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:92:18: exeuntRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:92:18: exeuntRule
 					{
 					pushFollow(FOLLOW_exeuntRule_in_sceneRule334);
 					exeuntRule();
@@ -538,19 +538,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "enterRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:96:1: enterRule : LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:96:1: enterRule : LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ;
 	public final void enterRule() throws RecognitionException {
 		Token ch1=null;
 		Token and=null;
 		Token ch2=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:97:2: ( LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:5: LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:97:2: ( LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:98:5: LB ENTER (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB
 			{
 			match(input,LB,FOLLOW_LB_in_enterRule356); 
 			match(input,ENTER,FOLLOW_ENTER_in_enterRule358); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:14: (ch1= CHARACTER )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:98:14: (ch1= CHARACTER )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==CHARACTER) ) {
@@ -558,7 +558,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:15: ch1= CHARACTER
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:98:15: ch1= CHARACTER
 					{
 					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule363); 
 					}
@@ -566,7 +566,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:31: (and= AND ch2= CHARACTER )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:98:31: (and= AND ch2= CHARACTER )?
 			int alt10=2;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==AND) ) {
@@ -574,7 +574,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt10) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:98:32: and= AND ch2= CHARACTER
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:98:32: and= AND ch2= CHARACTER
 					{
 					and=(Token)match(input,AND,FOLLOW_AND_in_enterRule370); 
 					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_enterRule374); 
@@ -601,13 +601,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exitRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:103:1: exitRule : LB EXIT ch= CHARACTER RB ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:103:1: exitRule : LB EXIT ch= CHARACTER RB ;
 	public final void exitRule() throws RecognitionException {
 		Token ch=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:104:2: ( LB EXIT ch= CHARACTER RB )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:105:6: LB EXIT ch= CHARACTER RB
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:104:2: ( LB EXIT ch= CHARACTER RB )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:105:6: LB EXIT ch= CHARACTER RB
 			{
 			match(input,LB,FOLLOW_LB_in_exitRule405); 
 			match(input,EXIT,FOLLOW_EXIT_in_exitRule407); 
@@ -630,19 +630,19 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "exeuntRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:110:1: exeuntRule : LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:110:1: exeuntRule : LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB ;
 	public final void exeuntRule() throws RecognitionException {
 		Token ch1=null;
 		Token and=null;
 		Token ch2=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:111:6: ( LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:6: LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:111:6: ( LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:112:6: LB EXEUNT (ch1= CHARACTER )? (and= AND ch2= CHARACTER )? RB
 			{
 			match(input,LB,FOLLOW_LB_in_exeuntRule449); 
 			match(input,EXEUNT,FOLLOW_EXEUNT_in_exeuntRule451); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:16: (ch1= CHARACTER )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:112:16: (ch1= CHARACTER )?
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0==CHARACTER) ) {
@@ -650,7 +650,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:17: ch1= CHARACTER
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:112:17: ch1= CHARACTER
 					{
 					ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule456); 
 					}
@@ -658,7 +658,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:33: (and= AND ch2= CHARACTER )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:112:33: (and= AND ch2= CHARACTER )?
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0==AND) ) {
@@ -666,7 +666,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt12) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:112:34: and= AND ch2= CHARACTER
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:112:34: and= AND ch2= CHARACTER
 					{
 					and=(Token)match(input,AND,FOLLOW_AND_in_exeuntRule463); 
 					ch2=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_exeuntRule467); 
@@ -693,18 +693,18 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "stageEventRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:117:1: stageEventRule : ch= CHARACTER CL ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )* ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:116:1: stageEventRule : ch= CHARACTER CL ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )* ;
 	public final void stageEventRule() throws RecognitionException {
 		Token ch=null;
 		Token wh=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:118:6: (ch= CHARACTER CL ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )* )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:119:6: ch= CHARACTER CL ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:117:6: (ch= CHARACTER CL ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )* )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:118:6: ch= CHARACTER CL ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )*
 			{
 			ch=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_stageEventRule505); 
 			match(input,CL,FOLLOW_CL_in_stageEventRule507); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:120:6: ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:119:6: ( rememberRule[ch] | recallRule[ch] | printRule[ch] | readRule[ch] |wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] ) )*
 			loop16:
 			while (true) {
 				int alt16=6;
@@ -740,7 +740,7 @@ public class ShakespeareParser extends Parser {
 				}
 				switch (alt16) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:121:6: rememberRule[ch]
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:120:6: rememberRule[ch]
 					{
 					pushFollow(FOLLOW_rememberRule_in_stageEventRule521);
 					rememberRule(ch);
@@ -749,7 +749,7 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:122:8: recallRule[ch]
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:121:8: recallRule[ch]
 					{
 					pushFollow(FOLLOW_recallRule_in_stageEventRule533);
 					recallRule(ch);
@@ -758,7 +758,7 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:123:8: printRule[ch]
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:122:8: printRule[ch]
 					{
 					pushFollow(FOLLOW_printRule_in_stageEventRule545);
 					printRule(ch);
@@ -767,7 +767,7 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 4 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:124:8: readRule[ch]
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:123:8: readRule[ch]
 					{
 					pushFollow(FOLLOW_readRule_in_stageEventRule556);
 					readRule(ch);
@@ -776,9 +776,9 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 5 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:8: wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] )
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:124:8: wh= ( YOU ( ARE )? | THOUART ) ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] )
 					{
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:11: ( YOU ( ARE )? | THOUART )
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:124:11: ( YOU ( ARE )? | THOUART )
 					int alt14=2;
 					int LA14_0 = input.LA(1);
 					if ( (LA14_0==YOU) ) {
@@ -796,10 +796,10 @@ public class ShakespeareParser extends Parser {
 
 					switch (alt14) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:12: YOU ( ARE )?
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:124:12: YOU ( ARE )?
 							{
 							wh=(Token)match(input,YOU,FOLLOW_YOU_in_stageEventRule571); 
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:16: ( ARE )?
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:124:16: ( ARE )?
 							int alt13=2;
 							int LA13_0 = input.LA(1);
 							if ( (LA13_0==ARE) ) {
@@ -807,7 +807,7 @@ public class ShakespeareParser extends Parser {
 							}
 							switch (alt13) {
 								case 1 :
-									// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:16: ARE
+									// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:124:16: ARE
 									{
 									wh=(Token)match(input,ARE,FOLLOW_ARE_in_stageEventRule573); 
 									}
@@ -818,7 +818,7 @@ public class ShakespeareParser extends Parser {
 							}
 							break;
 						case 2 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:125:23: THOUART
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:124:23: THOUART
 							{
 							wh=(Token)match(input,THOUART,FOLLOW_THOUART_in_stageEventRule578); 
 							}
@@ -826,7 +826,7 @@ public class ShakespeareParser extends Parser {
 
 					}
 
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:126:7: ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] )
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:125:7: ( assignmentStatementRule[ch,wh] | assignmentComparisonRule[ch,wh] | assignmentOperationRule[ch,wh] )
 					int alt15=3;
 					switch ( input.LA(1) ) {
 					case A:
@@ -859,7 +859,7 @@ public class ShakespeareParser extends Parser {
 					}
 					switch (alt15) {
 						case 1 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:127:7: assignmentStatementRule[ch,wh]
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:126:7: assignmentStatementRule[ch,wh]
 							{
 							pushFollow(FOLLOW_assignmentStatementRule_in_stageEventRule596);
 							assignmentStatementRule(ch, wh);
@@ -868,7 +868,7 @@ public class ShakespeareParser extends Parser {
 							}
 							break;
 						case 2 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:128:9: assignmentComparisonRule[ch,wh]
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:127:9: assignmentComparisonRule[ch,wh]
 							{
 							pushFollow(FOLLOW_assignmentComparisonRule_in_stageEventRule608);
 							assignmentComparisonRule(ch, wh);
@@ -877,7 +877,7 @@ public class ShakespeareParser extends Parser {
 							}
 							break;
 						case 3 :
-							// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:129:9: assignmentOperationRule[ch,wh]
+							// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:128:9: assignmentOperationRule[ch,wh]
 							{
 							pushFollow(FOLLOW_assignmentOperationRule_in_stageEventRule620);
 							assignmentOperationRule(ch, wh);
@@ -912,16 +912,16 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "assignmentStatementRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:135:1: assignmentStatementRule[Token ch, Token wh] : ( A )? ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:134:1: assignmentStatementRule[Token ch, Token wh] : ( A )? ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) ;
 	public final void assignmentStatementRule(Token ch, Token wh) throws RecognitionException {
 		Token noun=null;
 		Token el=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:136:2: ( ( A )? ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:2: ( A )? ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:135:2: ( ( A )? ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:136:2: ( A )? ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT )
 			{
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:2: ( A )?
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:136:2: ( A )?
 			int alt17=2;
 			int LA17_0 = input.LA(1);
 			if ( (LA17_0==A) ) {
@@ -929,7 +929,7 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt17) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:2: A
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:136:2: A
 					{
 					match(input,A,FOLLOW_A_in_assignmentStatementRule655); 
 					}
@@ -937,7 +937,7 @@ public class ShakespeareParser extends Parser {
 
 			}
 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:5: ( adjectiveRule )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:136:5: ( adjectiveRule )*
 			loop18:
 			while (true) {
 				int alt18=2;
@@ -948,7 +948,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt18) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:137:6: adjectiveRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:136:6: adjectiveRule
 					{
 					pushFollow(FOLLOW_adjectiveRule_in_assignmentStatementRule659);
 					adjectiveRule();
@@ -997,7 +997,7 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "assignmentComparisonRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:143:1: assignmentComparisonRule[Token ch, Token wh] : ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) el= ( EP | DOT ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:142:1: assignmentComparisonRule[Token ch, Token wh] : ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) el= ( EP | DOT ) ;
 	public final void assignmentComparisonRule(Token ch, Token wh) throws RecognitionException {
 		Token adj=null;
 		Token operationtype=null;
@@ -1006,11 +1006,11 @@ public class ShakespeareParser extends Parser {
 		Token el=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:144:2: ( ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) el= ( EP | DOT ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:2: ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) el= ( EP | DOT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:143:2: ( ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) el= ( EP | DOT ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:144:2: ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) ) el= ( EP | DOT )
 			{
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:2: ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:145:3: AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:144:2: ( AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:144:3: AS adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS operationtype= ( SUMOF | DIFFBET | PRODOF ) A ( adjectiveRule )* noun1= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) AND A ( adjectiveSecondRule )* noun2= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN )
 			{
 			match(input,AS,FOLLOW_AS_in_assignmentComparisonRule705); 
 			adj=input.LT(1);
@@ -1033,7 +1033,7 @@ public class ShakespeareParser extends Parser {
 				throw mse;
 			}
 			match(input,A,FOLLOW_A_in_assignmentComparisonRule743); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:4: ( adjectiveRule )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:148:4: ( adjectiveRule )*
 			loop19:
 			while (true) {
 				int alt19=2;
@@ -1044,7 +1044,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt19) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:149:4: adjectiveRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:148:4: adjectiveRule
 					{
 					pushFollow(FOLLOW_adjectiveRule_in_assignmentComparisonRule745);
 					adjectiveRule();
@@ -1069,7 +1069,7 @@ public class ShakespeareParser extends Parser {
 			}
 			match(input,AND,FOLLOW_AND_in_assignmentComparisonRule763); 
 			match(input,A,FOLLOW_A_in_assignmentComparisonRule767); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:151:4: ( adjectiveSecondRule )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:150:4: ( adjectiveSecondRule )*
 			loop20:
 			while (true) {
 				int alt20=2;
@@ -1080,7 +1080,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt20) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:151:4: adjectiveSecondRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:150:4: adjectiveSecondRule
 					{
 					pushFollow(FOLLOW_adjectiveSecondRule_in_assignmentComparisonRule769);
 					adjectiveSecondRule();
@@ -1114,7 +1114,7 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			h.checkAssignmentComparison(ch, noun1, noun2, operationtype, wh, adj,el);
+			h.checkAssignmentComparison(ch, noun1, noun2, operationtype, wh, adj, el);
 			}
 
 		}
@@ -1131,15 +1131,15 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "assignmentOperationRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:157:1: assignmentOperationRule[Token ch, Token wh] : operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:156:1: assignmentOperationRule[Token ch, Token wh] : operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) ;
 	public final void assignmentOperationRule(Token ch, Token wh) throws RecognitionException {
 		Token operationtype=null;
 		Token noun=null;
 		Token el=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:158:2: (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:159:2: operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:157:2: (operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:158:2: operationtype= ( SUMOF | DIFFBET | PRODOF ) THYSELF AND A ( adjectiveRule )* noun= ( POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN ) el= ( EP | DOT )
 			{
 			operationtype=input.LT(1);
 			if ( input.LA(1)==DIFFBET||input.LA(1)==PRODOF||input.LA(1)==SUMOF ) {
@@ -1153,7 +1153,7 @@ public class ShakespeareParser extends Parser {
 			match(input,THYSELF,FOLLOW_THYSELF_in_assignmentOperationRule828); 
 			match(input,AND,FOLLOW_AND_in_assignmentOperationRule832); 
 			match(input,A,FOLLOW_A_in_assignmentOperationRule834); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:160:8: ( adjectiveRule )*
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:159:8: ( adjectiveRule )*
 			loop21:
 			while (true) {
 				int alt21=2;
@@ -1164,7 +1164,7 @@ public class ShakespeareParser extends Parser {
 
 				switch (alt21) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:160:8: adjectiveRule
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:159:8: adjectiveRule
 					{
 					pushFollow(FOLLOW_adjectiveRule_in_assignmentOperationRule836);
 					adjectiveRule();
@@ -1196,7 +1196,7 @@ public class ShakespeareParser extends Parser {
 				MismatchedSetException mse = new MismatchedSetException(null,input);
 				throw mse;
 			}
-			h.checkAssignmentOperation(ch, noun, operationtype,wh,el);
+			h.checkAssignmentOperation(ch, noun, operationtype,  wh,el);
 			}
 
 		}
@@ -1213,13 +1213,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "adjectiveRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:165:1: adjectiveRule : adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:164:1: adjectiveRule : adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
 	public final void adjectiveRule() throws RecognitionException {
 		Token adj=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:166:2: (adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:167:2: adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:165:2: (adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:166:2: adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
 			{
 			adj=input.LT(1);
 			if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
@@ -1248,7 +1248,7 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "conditionalRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:173:1: conditionalRule : ch1= CHARACTER CL AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL gt= ( IFSO | IFNOT ) gt2= ( LETUS | WESHALL | WEMUST ) gt3rs= ( RETURNTO | PROCEEDTO ) gt4= SCENEC rn= ID DOT ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:172:1: conditionalRule : ch1= CHARACTER CL AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL gt= ( IFSO | IFNOT ) gt2= ( LETUS | WESHALL | WEMUST ) gt3rs= ( RETURNTO | PROCEEDTO ) gt4= SCENEC rn= ID DOT ;
 	public final void conditionalRule() throws RecognitionException {
 		Token ch1=null;
 		Token ev=null;
@@ -1260,13 +1260,13 @@ public class ShakespeareParser extends Parser {
 		Token rn=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:174:2: (ch1= CHARACTER CL AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL gt= ( IFSO | IFNOT ) gt2= ( LETUS | WESHALL | WEMUST ) gt3rs= ( RETURNTO | PROCEEDTO ) gt4= SCENEC rn= ID DOT )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:175:2: ch1= CHARACTER CL AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL gt= ( IFSO | IFNOT ) gt2= ( LETUS | WESHALL | WEMUST ) gt3rs= ( RETURNTO | PROCEEDTO ) gt4= SCENEC rn= ID DOT
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:173:2: (ch1= CHARACTER CL AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL gt= ( IFSO | IFNOT ) gt2= ( LETUS | WESHALL | WEMUST ) gt3rs= ( RETURNTO | PROCEEDTO ) gt4= SCENEC rn= ID DOT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:174:2: ch1= CHARACTER CL AMI ev= ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE ) THAN YOUC QM ch2= CHARACTER CL gt= ( IFSO | IFNOT ) gt2= ( LETUS | WESHALL | WEMUST ) gt3rs= ( RETURNTO | PROCEEDTO ) gt4= SCENEC rn= ID DOT
 			{
 			ch1=(Token)match(input,CHARACTER,FOLLOW_CHARACTER_in_conditionalRule906); 
 			match(input,CL,FOLLOW_CL_in_conditionalRule908); 
 			match(input,AMI,FOLLOW_AMI_in_conditionalRule911); 
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:177:5: ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:176:5: ( BETTER | ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS ) | WORSE )
 			int alt22=3;
 			switch ( input.LA(1) ) {
 			case BETTER:
@@ -1291,16 +1291,16 @@ public class ShakespeareParser extends Parser {
 			}
 			switch (alt22) {
 				case 1 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:178:3: BETTER
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:177:3: BETTER
 					{
 					ev=(Token)match(input,BETTER,FOLLOW_BETTER_in_conditionalRule921); 
 					}
 					break;
 				case 2 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:179:5: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS )
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:178:5: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS )
 					{
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:179:5: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS )
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:179:6: AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:178:5: ( AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS )
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:178:6: AS ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) AS
 					{
 					ev=(Token)match(input,AS,FOLLOW_AS_in_conditionalRule929); 
 					ev=input.LT(1);
@@ -1318,7 +1318,7 @@ public class ShakespeareParser extends Parser {
 					}
 					break;
 				case 3 :
-					// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:180:5: WORSE
+					// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:179:5: WORSE
 					{
 					ev=(Token)match(input,WORSE,FOLLOW_WORSE_in_conditionalRule951); 
 					}
@@ -1361,7 +1361,7 @@ public class ShakespeareParser extends Parser {
 			gt4=(Token)match(input,SCENEC,FOLLOW_SCENEC_in_conditionalRule1016); 
 			rn=(Token)match(input,ID,FOLLOW_ID_in_conditionalRule1020); 
 			match(input,DOT,FOLLOW_DOT_in_conditionalRule1022); 
-			h.checkConditional(ch1, ev, ch2, gt,gt2,gt3rs,gt4, rn);
+			h.checkConditional(ch1, ev, ch2, gt, gt2, gt3rs, gt4, rn);
 			}
 
 		}
@@ -1378,13 +1378,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "adjectiveSecondRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:194:1: adjectiveSecondRule : adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:193:1: adjectiveSecondRule : adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) ;
 	public final void adjectiveSecondRule() throws RecognitionException {
 		Token adj=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:195:2: (adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:196:2: adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:194:2: (adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:195:2: adj= ( POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE )
 			{
 			adj=input.LT(1);
 			if ( input.LA(1)==NEGATIVEADJECTIVE||input.LA(1)==NEUTRALADJECTIVE||input.LA(1)==POSITIVEADJECTIVE ) {
@@ -1413,13 +1413,13 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "rememberRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:202:1: rememberRule[Token ch] : REMEMBER who= ( ME | YOURSELF ) DOT ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:201:1: rememberRule[Token ch] : REMEMBER who= ( ME | YOURSELF ) DOT ;
 	public final void rememberRule(Token ch) throws RecognitionException {
 		Token who=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:203:2: ( REMEMBER who= ( ME | YOURSELF ) DOT )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:204:2: REMEMBER who= ( ME | YOURSELF ) DOT
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:202:2: ( REMEMBER who= ( ME | YOURSELF ) DOT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:203:2: REMEMBER who= ( ME | YOURSELF ) DOT
 			{
 			match(input,REMEMBER,FOLLOW_REMEMBER_in_rememberRule1071); 
 			who=input.LT(1);
@@ -1449,11 +1449,11 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "recallRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:209:1: recallRule[Token ch] : RECALL DOT ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:208:1: recallRule[Token ch] : RECALL DOT ;
 	public final void recallRule(Token ch) throws RecognitionException {
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:210:2: ( RECALL DOT )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:211:2: RECALL DOT
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:209:2: ( RECALL DOT )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:210:2: RECALL DOT
 			{
 			match(input,RECALL,FOLLOW_RECALL_in_recallRule1101); 
 			match(input,DOT,FOLLOW_DOT_in_recallRule1103); 
@@ -1474,14 +1474,14 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "printRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:216:1: printRule[Token ch] : phrase= ( PRINTVALUE | PRINTASCII ) wh= ( DOT | EP ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:215:1: printRule[Token ch] : phrase= ( PRINTVALUE | PRINTASCII ) wh= ( DOT | EP ) ;
 	public final void printRule(Token ch) throws RecognitionException {
 		Token phrase=null;
 		Token wh=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:217:2: (phrase= ( PRINTVALUE | PRINTASCII ) wh= ( DOT | EP ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:218:2: phrase= ( PRINTVALUE | PRINTASCII ) wh= ( DOT | EP )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:216:2: (phrase= ( PRINTVALUE | PRINTASCII ) wh= ( DOT | EP ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:217:2: phrase= ( PRINTVALUE | PRINTASCII ) wh= ( DOT | EP )
 			{
 			phrase=input.LT(1);
 			if ( (input.LA(1) >= PRINTASCII && input.LA(1) <= PRINTVALUE) ) {
@@ -1518,14 +1518,14 @@ public class ShakespeareParser extends Parser {
 
 
 	// $ANTLR start "readRule"
-	// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:224:1: readRule[Token ch] : phrase= ( READVALUE | READASCII ) wh= ( DOT | EP ) ;
+	// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:223:1: readRule[Token ch] : phrase= ( READVALUE | READASCII ) wh= ( DOT | EP ) ;
 	public final void readRule(Token ch) throws RecognitionException {
 		Token phrase=null;
 		Token wh=null;
 
 		try {
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:225:2: (phrase= ( READVALUE | READASCII ) wh= ( DOT | EP ) )
-			// D:\\università\\4° anno - 1° periodo\\(PA)   PROGRAMMAZIONE AVANZATA   38090-mod2\\esempi programmazione\\git\\LFC_project\\Workspace_Shakespeare\\src\\compilerPackage\\Shakespeare.g:226:2: phrase= ( READVALUE | READASCII ) wh= ( DOT | EP )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:224:2: (phrase= ( READVALUE | READASCII ) wh= ( DOT | EP ) )
+			// C:\\Users\\pippo\\Desktop\\LFC_project\\Workspace_Shakespeare\\src\\grammarPackage\\Shakespeare.g:225:2: phrase= ( READVALUE | READASCII ) wh= ( DOT | EP )
 			{
 			phrase=input.LT(1);
 			if ( (input.LA(1) >= READASCII && input.LA(1) <= READVALUE) ) {

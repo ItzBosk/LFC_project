@@ -30,7 +30,7 @@ import com.openhtmltopdf.extend.UserAgentCallback;
 import com.openhtmltopdf.layout.LayoutContext;
 import com.openhtmltopdf.render.BlockBox;
 
-import compilerPackage.util.CharacterDescriptor;
+import utilityPackage.CharacterDescriptor;
 
 public class HtmlToPDF {
 	

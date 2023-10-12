@@ -1,4 +1,4 @@
-package appPackage;
+package scanPackage;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
@@ -10,10 +10,10 @@ import java.io.PrintStream;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 
-import compilerPackage.SPLhandler;
-import compilerPackage.ShakespeareLexer;
-import compilerPackage.ShakespeareParser;
-import interfaceSPL.SPLinterrface;
+import grammarPackage.SPLhandler;
+import grammarPackage.ShakespeareLexer;
+import grammarPackage.ShakespeareParser;
+import interfacePackage.SPLinterrface;
 import outputPackage.HtmlToPDF;
 
 public class SPLparser {

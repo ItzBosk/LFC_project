@@ -5,11 +5,11 @@ options {
 }
 
 @header {
-    package compilerPackage;
+    package grammarPackage;
 }
 
 @lexer::header {
-    package compilerPackage;
+    package grammarPackage;
 }
 
 @members {

@@ -1,4 +1,4 @@
-package interfaceSPL;
+package interfacePackage;
 
 import javax.swing.*;
 import javax.swing.text.Element;

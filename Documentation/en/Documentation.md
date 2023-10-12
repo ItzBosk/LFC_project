@@ -1,30 +1,33 @@
 
 # Documentation of the Shakespeare project
 
-## Filosofia di sviluppo
-Con questo progetto abbiamo voluto realizzare un compilatore per il linguaggio di programmazione Shakespeare. L'obiettivo è generare uno script di ciò che avviene nel file di input, generando in output anche un file pdf suddiviso per atti e scene.
+## Development philosophy
+With this project we wanted to create a compiler for the Shakespeare programming language. The goal is to generate a script of what happens in the input file, also generating a PDF file divided into acts and scenes.
 
-L'idea alla base consiste nell'agevolare il primo approccio alla programmazione per alunni che solitamente studiano argomenti letterari o simili, per loro natura abbastanza lontani dall'informatica. Un caso d'uso potrebbe essere l'utilizzo del nostro software per l'insegnamento a studenti di una scuola di teatro. Questi hanno quindi familiarità con elementi come la divisione in atti e scene di un'opera, e con il susseguirsi di battute degli attori in scena. Sfruttando questo parallelismo unico esistente con il lingauggio Shakespeare, il nostro prodotto si presta bene a favorire il primo contatto tra due ambiti che solitamente sono considerati agli antipodi.
+The underlying idea is to facilitate the first approach to programming for students who usually study literary or similar topics, which by their nature are quite distant from computer science. A use case could be using our software to teach students at a theater school. They are therefore familiar with elements such as the division of an opera into acts and scenes, and with the succession of actors' lines on stage. By taking advantage of this unique parallel that exists with the Shakespeare language, our product lends itself well to promoting the first contact between two ambitions that are usually considered poles apart.
 
-## Tecnologie utilizzate
-Abbiamo deciso di implementare la grammatica del linguaggio Shakespeare tramite ANTLRv3 e di gestire la parte implementativa attraverso Java. Utilizzando Eclipse come ambiente di sviluppo abbiamo potuto sfruttare pacchetti per generare il file pdf di output partendo da un html stilizzato ad-hoc. Per la parte grafica del software invece ci siamo appoggiati a Swing.
+## Used technologies
+We decided to implement the Shakespeare language grammar via ANTLRv3 and manage the implementation part via Java. Using Eclipse as a development environment we were able to take advantage of packages to generate the output PDF file starting from an ad-hoc stylized HTML. For the graphic part of the software we instead relied on Swing.
 
-## Organizzazione file
-### Directory principale
-Sono presenti la cartella del progetto eclipse "Workspace_Shakespeare", il file che riassume gli elementi del linuaggio Shakespeare "SPL.txt" descritti più approfonditamente dal college New Mexico Tech nel file "Shakespeare programming language.pdf". 
+## File organization
+### Main directory
+Sono presenti la cartella del progetto eclipse "Workspace_Shakespeare", il file che riassume gli elementi del linuaggio Shakespeare "SPL.txt", descritti più approfonditamente dal college New Mexico Tech nel file "Shakespeare programming language.pdf". In "Documentation" si trovano "Documentation.md" e il manuale utente "UserManual.md".  
 
 ### Workspace_Shakespeare
 - In "src" troviamo:
-	- "appPackage" con all'interno i file di Parser e Scanner del linguaggio;
-	- "compilerPackage" contiene invece i file generati da ANTLR, compreso quindi il file della grammatica denominato "Shakespeare.g", oltre che l'Handler degli errori;
-	- "compilerPackage.util" comprende dei file di supporto come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi di scena, "RomanNumber.java" per la manipolazione dei numeri romani, e infine "Util.java" usato per migliorare la leggibilità dello script stampato in console;
-	- "interfaceSPL" comprende tutti i file relativi alla parte grafica dell'applicativo;
+	- "scanPackage" con all'interno i file di Parser e Scanner del linguaggio;
+	- "grammarPackage" contiene invece i file generati da ANTLR, compreso quindi il file della grammatica denominato "Shakespeare.g", oltre che l'Handler degli errori;
+	- "utilityPackage" comprende dei file di supporto come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi di scena, "RomanNumber.java" per la manipolazione dei numeri romani, e infine "Util.java" usato per migliorare la leggibilità dello script stampato in console;
+	- "interfacePackage" comprende tutti i file relativi alla parte grafica dell'applicativo;
 	- "outputPackage" contiene i file relativi al file pdf di output
 - In "resources" sono presenti:
 	- "images" con tutte le immagini dei personaggi e il resto degli elementi grafici contentuti nel pdf che verrà generato
 	- "input.file", ovvero il file di testo da compilare con il programma scritto in linguaggio Shakespeare
-	- altro..
-- "antlr-3.4-complete.jar", cioè la libreria di ANTLRv3
+	- varie icone utili per l'interfaccia grafica
+- "antlr-3.4-complete.jar", cioè la libreria di ANTLRv3.
+
+### Documentation
+
 
 ## Controlli semantici principali
 In questa sezione facciamo una panoramica della gestione della parte semantica del lingauggio Shakespeare, rendendo più chiaro come e quali regole abbiamo implementato nel Parser.

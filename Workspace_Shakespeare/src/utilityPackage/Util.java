@@ -1,4 +1,4 @@
-package compilerPackage.util;
+package utilityPackage;
 
 public class Util {
 	public static String evenSpacer(String text, int totalSpace) {

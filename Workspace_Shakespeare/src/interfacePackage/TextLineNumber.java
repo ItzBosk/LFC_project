@@ -1,4 +1,4 @@
-package interfaceSPL;
+package interfacePackage;
 
 import java.awt.*;
 import java.awt.event.*;

@@ -1,4 +1,4 @@
-package interfaceSPL;
+package interfacePackage;
 
 import java.io.*;
 import javax.swing.filechooser.*;

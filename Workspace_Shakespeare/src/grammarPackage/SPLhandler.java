@@ -1,4 +1,4 @@
-package compilerPackage;
+package grammarPackage;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
@@ -16,11 +16,11 @@ import org.antlr.runtime.Token;
 import org.antlr.runtime.TokenStream;
 
 import antlr.Parser;
-import compilerPackage.util.CharacterDescriptor;
-import compilerPackage.util.RomanNumber;
-import compilerPackage.util.Util;
-import interfaceSPL.SPLinterrface;
+import interfacePackage.SPLinterrface;
 import outputPackage.HtmlToPDF;
+import utilityPackage.CharacterDescriptor;
+import utilityPackage.RomanNumber;
+import utilityPackage.Util;
 
 public class SPLhandler {
 
@@ -285,7 +285,8 @@ public class SPLhandler {
 		if (!checkError) {
 			actNumber++;
 			sceneNumber = 0;
-			System.out.println("Goto List");
+			if (goTo.logList.size() != 0)
+				System.out.println("Goto List");
 			goTo.print();
 			goTo.clearLog();
 			System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
@@ -469,7 +470,7 @@ public class SPLhandler {
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
 			adjectiveCounter = 0;
-			System.err.println("### result frase1: " + stageCharacterList.get(updateCh).getValue());
+//			System.err.println("### result frase1: " + stageCharacterList.get(updateCh).getValue());
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
@@ -558,20 +559,20 @@ public class SPLhandler {
 				charact4 = -1 * (int) Math.pow(2, adjectiveCounter);
 			adjectiveCounter = 0; // after every assignment return 0
 
-			System.err.println("frase3 charact4: " + charact4);
-			System.err.println("frase3 thyself: " + thyself);
+//			System.err.println("frase3 charact4: " + charact4);
+//			System.err.println("frase3 thyself: " + thyself);
 
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 				stageCharacterList.get(updateCh).assignValue(thyself + charact4);
-				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
+//				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 				stageCharacterList.get(updateCh).assignValue(thyself - charact4);
-				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
+//				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 				stageCharacterList.get(updateCh).assignValue(thyself * charact4);
-				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
+//				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
 				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
 		} else
@@ -895,7 +896,7 @@ public class SPLhandler {
 		if (!checkError) {
 			String secondCh = secondStageCharacter(ch);
 
-			neededInput += 1; // ogni chiamata alla funzione incremento il contatore
+			neededInput += 1; // increase at every function call to check the number of input needed
 
 			// handling number of input elements
 			if (neededInput > effectiveInput) // needed input > effective input

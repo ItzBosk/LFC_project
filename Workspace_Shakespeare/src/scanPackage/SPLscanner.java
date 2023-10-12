@@ -1,13 +1,14 @@
-package appPackage;
+package scanPackage;
 
 import java.io.FileReader;
 import java.io.IOException;
 
-import compilerPackage.ShakespeareLexer;
-import interfaceSPL.SPLinterrface;
+import interfacePackage.SPLinterrface;
 
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.Token;
+
+import grammarPackage.ShakespeareLexer;
 
 public class SPLscanner {
 
