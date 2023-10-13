@@ -1,4 +1,5 @@
 # SPL Software User Manual
+
 ## Introduction
 Thank you for choosing the SPL Software, a powerful and innovative tool designed to bring the timeless beauty of Shakespearean language to the digital age of programming and informatics. The SPL (Shakespeare Programming Language) Software is not just a simple interpreter; it's a comprehensive platform that empowers you to create, edit, compile, and interact with poems in the poetic style of the Bard himself, William Shakespeare.
 
