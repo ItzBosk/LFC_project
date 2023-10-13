@@ -23,28 +23,28 @@ Il software incorpora un'interfaccia utente creata utilizzando Swing, un toolkit
 ## Organizzazione dei file
 Questa struttura di file organizzata garantisce che i diversi componenti del progetto software siano nettamente separati, semplificando la gestione e il mantenimento della base di codice. Facilita inoltre l'incorporazione di elementi grafici e di risorse nel software, risultando in un'applicazione più user-friendly e visivamente accattivante.
 
-1. **Workspace_Shakespeare (cartella principale del progetto)**
+1. **Workspace_Shakespeare (cartella principale del progetto)**:
 Questa è la cartella principale del progetto Eclipse. È organizzato in diverse sottodirectory, ciascuna con uno scopo specifico:
 
-- **src (codice sorgente)**
+- **src (codice sorgente)**:
     Questa directory ospita il codice sorgente del progetto.
    
-    a. **scanPackage**
+    a. **scanPackage**:
        All'interno di "scanPackage" troverai i file del parser e dello scanner della lingua. Questi componenti essenziali sono responsabili dell'analisi e della scansione del codice Shakespeare.
    
-    b. **grammarPackage**
+    b. **grammarPackage**:
        "grammarPackage" contiene i file generati da ANTLR, incluso il file di grammatica denominato "Shakespeare.g." Questo file di grammatica definisce la sintassi e la struttura del linguaggio di programmazione Shakespeare. Inoltre, ospita il gestore degli errori, che gestisce e segnala gli errori durante la compilazione del codice.
 
-    c. **Pacchetto utilità**
+    c. **Pacchetto utilità**:
        L'"utilityPackage" comprende vari file di supporto, come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi all'interno delle scene, "RomanNumber.java" per la manipolazione dei numeri romani e "Util.java". Il file "Util.java" aiuta a migliorare la leggibilità dello script visualizzato nella console.
 
-    d. **interfacePackage**
+    d. **interfacePackage**:
        Tutti i file relativi all'aspetto grafico dell'applicazione sono archiviati nel "interfacePackage". Ciò include componenti dell'interfaccia utente ed elementi grafici che migliorano l'esperienza dell'utente.
 
-    e. **outputPackage**
+    e. **outputPackage**:
        Il "outputPackage" è dedicato ai file associati alla generazione del documento PDF di output. Contiene il codice e le risorse responsabili della creazione del documento PDF dal codice Shakespeare elaborato.
 
-- **resources**
+- **resources**:
 La directory "risorse" contiene varie risorse che supportano la funzionalità e l'aspetto del software:
    
     a. **images**:
@@ -53,34 +53,34 @@ La directory "risorse" contiene varie risorse che supportano la funzionalità e 
     b. **input.file**:
        "input.file" è il file di testo scritto nel linguaggio di programmazione Shakespeare che il software compilerà ed elaborerà. È il file del codice sorgente che deve essere eseguito dal programma.
 
-    c. **icons**
+    c. **icons**:
        Questa directory contiene una raccolta di icone utilizzate nell'interfaccia utente grafica (GUI) per fornire segnali visivi e rappresentazioni per varie funzioni o caratteristiche all'interno dell'applicazione.
 
-    d. **antlr-3.4-complete.jar**
+    d. **antlr-3.4-complete.jar**:
        Il file "antlr-3.4-complete.jar" rappresenta la libreria ANTLRv3, una dipendenza cruciale per il parsing del linguaggio e l'analisi del codice. Questa libreria è essenziale per generare parser e lexer dalla grammatica definita e viene utilizzata nel progetto.
 
-2. **SPL.txt**
+2. **SPL.txt**:
 Questo file contiene una descrizione di alto livello degli elementi e delle caratteristiche del linguaggio di programmazione shakespeariano. Fornisce una panoramica della sintassi e delle funzionalità del linguaggio.
 
-3. **Linguaggio di programmazione Shakespeare.pdf**
+3. **Linguaggio di programmazione Shakespeare.pdf**:
 Questo documento PDF funge da risorsa completa per comprendere il linguaggio di programmazione Shakespeare in modo più dettagliato. Probabilmente include spiegazioni più dettagliate, esempi e forse anche programmi di esempio.
 
-4. **Documentazione (cartella)**
+4. **Documentazione (cartella)**:
 Questa cartella contiene documentazione aggiuntiva relativa al progetto.
 	- **en (sottocartella)**:
-		- **Documentation.md**
+		- **Documentation.md**:
      	Documentazione scritta in inglese. Permette di avere una visione d'insieme del progetto, dalle motivazioni della sua realizzazione, attraverso le tecnologie utilizzate ed infine ai controlli semantici implementati.
 		- **UserManual.md**:
 		Manuale utente scritto in inglese. Fornisce istruzioni e indicazioni su come utilizzare il software, le sue funzionalità e qualsiasi altra informazione pertinente.
-	- **it (sottocartella)**
-		- **Documentazione.md**
+	- **it (sottocartella)**:
+		- **Documentazione.md**:
      	Equivalente in italiano.
 		- **ManualeUtente.md**:
 		Equivalente in italiano.
-	- **Shakespeare grammar (sottocartella)**
-		- **SyntacticShakespeare.g**
+	- **Shakespeare grammar (sottocartella)**:
+		- **SyntacticShakespeare.g**:
 		Grammatica non decorata (solo parte sintattica).
-		- **Shakespeare.g**
+		- **Shakespeare.g**:
 		Grammatica completa.
 
 ## Principali controlli semantici
