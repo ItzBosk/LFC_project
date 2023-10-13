@@ -7,66 +7,135 @@ With this project we wanted to create a compiler for the Shakespeare programming
 The underlying idea is to facilitate the first approach to programming for students who usually study literary or similar topics, which by their nature are quite distant from computer science. A use case could be using our software to teach students at a theater school. They are therefore familiar with elements such as the division of an opera into acts and scenes, and with the succession of actors' lines on stage. By taking advantage of this unique parallel that exists with the Shakespeare language, our product lends itself well to promoting the first contact between two ambitions that are usually considered poles apart.
 
 ## Used technologies
-We decided to implement the Shakespeare language grammar via ANTLRv3 and manage the implementation part via Java. Using Eclipse as a development environment we were able to take advantage of packages to generate the output PDF file starting from an ad-hoc stylized HTML. For the graphic part of the software we instead relied on Swing.
+Creating software to learn the Shakespeare programming language involves a combination of technologies and tools to ensure proper grammar checks and a user-friendly interface. Here's an overview of the technologies and tools used for this purpose:
+
+1. **ANTLRv3**: 
+ANTLR (ANother Tool for Language Recognition) is a powerful language processing tool that allows you to define a formal grammar for your programming language. In this case, ANTLRv3 is used to implement the language grammar checks for the Shakespeare programming language. ANTLR can generate parsers and lexers, making it easier to work with and validate the written code. 
+
+2. **Java**: 
+Java is a versatile, cross-platform programming language that is well-suited for handling the logic and functionality required to work with Shakespeare code. We used it to manage and control the ANTLR-generated code and to handle various aspects of the software. 
+
+3. **Eclipse IDE**: 
+We have chosen Eclipse as the development environment for this project. Eclipse provides a robust set of tools for Java development, including code editing, debugging, and project management. It also supports the integration of external tools and libraries, making it a suitable choice for working with ANTLR-generated code and the Java components of the software.
+
+4. **Swing-Based User Interface**: 
+The software incorporates a user interface built using Swing, a Java-based toolkit for creating graphical user interfaces (GUIs). Swing allows for the creation of windows, dialogs, buttons, and other GUI elements, providing an interactive and user-friendly environment for learners to experiment with Shakespeare code.
 
 ## File organization
-### Main directory
-Sono presenti la cartella del progetto eclipse "Workspace_Shakespeare", il file che riassume gli elementi del linuaggio Shakespeare "SPL.txt", descritti più approfonditamente dal college New Mexico Tech nel file "Shakespeare programming language.pdf". In "Documentation" si trovano "Documentation.md" e il manuale utente "UserManual.md".  
+This organized file structure ensures that different components of the software project are neatly separated, making it easier to manage and maintain the codebase. It also facilitates the incorporation of graphical and resource elements into the software, resulting in a more user-friendly and visually appealing application.
 
-### Workspace_Shakespeare
-- In "src" troviamo:
-	- "scanPackage" con all'interno i file di Parser e Scanner del linguaggio;
-	- "grammarPackage" contiene invece i file generati da ANTLR, compreso quindi il file della grammatica denominato "Shakespeare.g", oltre che l'Handler degli errori;
-	- "utilityPackage" comprende dei file di supporto come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi di scena, "RomanNumber.java" per la manipolazione dei numeri romani, e infine "Util.java" usato per migliorare la leggibilità dello script stampato in console;
-	- "interfacePackage" comprende tutti i file relativi alla parte grafica dell'applicativo;
-	- "outputPackage" contiene i file relativi al file pdf di output
-- In "resources" sono presenti:
-	- "images" con tutte le immagini dei personaggi e il resto degli elementi grafici contentuti nel pdf che verrà generato
-	- "input.file", ovvero il file di testo da compilare con il programma scritto in linguaggio Shakespeare
-	- varie icone utili per l'interfaccia grafica
-- "antlr-3.4-complete.jar", cioè la libreria di ANTLRv3.
+1. **Workspace_Shakespeare (Main Project Folder)**
+This is the root folder of the Eclipse project. It is organized into several subdirectories, each serving a specific purpose:
 
-### Documentation
+- **src (Source Code)**
+   This directory houses the source code of the project.
+   
+   a. **scanPackage**
+      Within "scanPackage," you will find the language Parser and Scanner files. These essential components are responsible for parsing and scanning Shakespeare code.
+   
+   b. **grammarPackage**
+      "grammarPackage" contains the files generated by ANTLR, including the grammar file named "Shakespeare.g." This grammar file defines the syntax and structure of the Shakespeare programming language. Additionally, it houses the Error Handler, which handles and reports errors during code compilation.
 
+   c. **utilityPackage**
+      The "utilityPackage" comprises various support files, such as "CharacterDescriptor.java" for managing objects related to characters within the scenes, "RomanNumber.java" for manipulating Roman numerals, and "Util.java." The "Util.java" file aids in enhancing the readability of the script displayed in the console.
 
-## Controlli semantici principali
-In questa sezione facciamo una panoramica della gestione della parte semantica del lingauggio Shakespeare, rendendo più chiaro come e quali regole abbiamo implementato nel Parser.
+   d. **interfacePackage**
+      All files related to the graphical aspect of the application are stored in the "interfacePackage." This includes user interface components and graphical elements that enhance the user experience.
 
-### titleRule, bodyRule e dramatisPersonaeRule
-Una volta riconosciuto obbligatoriamente il titolo del programma Shakespeare si passa al corpo del programma, identificando la dichiarazione dei personaggi che potranno entrare in scena, richiedendo un commento per ognuno di essi. Ogni personaggio deve essere dichiarato una sola volta e il suo nome deve essere tra quelli supportati dal linguaggio. 
-Ci si aspetta poi l'inizio dell'opera, con un susseguirsi di molteplici atti e scene.
+   e. **outputPackage**
+      The "outputPackage" is dedicated to files associated with generating the output PDF document. It contains code and resources responsible for creating the PDF document from the processed Shakespeare code.
 
-### actRule e sceneRule
-Ad ogni cambiamento di atto e scena si verifica la presenza di un numero romano che ne identifica la posizione temporale nell'opera, e di un commento. Verrà quindi controllato che non ci siano buchi temporali, cioè alterazioni della naturale successione numerica, segnalando altrimenti con un messaggio di errore.
+- **resources**
+The "resources" directory contains various resources that support the functionality and appearance of the software:
+   
+   a. **images**:
+      The "images" subdirectory stores images of characters and other graphical elements that will be included in the PDF generated by the application. These images add visual context to the resulting document.
 
-### enterRule, exitRule ed exeuntRule
-Ad ogni entrata di scena di uno o più personaggi si verifica la fattibilità dell'operazione richiesta. Si controlla che siano presenti in scena al massimo due personaggi allo stesso tempo, che non possano entrare/uscire personaggi non dichiarati e/o già presenti/usciti di scena.
+   b. **input.file**:
+      "input.file" is the text file written in the Shakespeare programming language that the software will compile and process. It is the source code file to be executed by the program.
 
-### stageEventRule
-Ogni evento scenico è caratterizzato da un personaggio che parla ad un altro personaggio in scena, se presente. Viene dunque svolto il controllo sulla sua presenza in scena, oltre alla valutazione su quale altro personaggio condivida il palcoscenico con lui. 
-All'interno di questa regola semantica avvengono tutte le operazioni principali del programma:
-	- riempimento e svuotamento dello stack associato ad ogni personaggio
-	- input e output di valori interi e ASCII
-	- assegnamento di valori
+   c. **icons**
+      This directory holds a collection of icons that are utilized in the graphical user interface (GUI) to provide visual cues and representations for various functions or features within the application.
 
-### conditionalRule
-Dato che esprime un goto serve verificare che la scena a cui viene richiesto il salto sia esistente all'interno dell'atto corrente. Fondamentale poi aver tenuto traccia delle operazioni svolte durante tale scena, di modo da poterle eseguire di nuovo, implementando così dei cicli nello script.	
+   d. **antlr-3.4-complete.jar**
+      The "antlr-3.4-complete.jar" file represents the ANTLRv3 library, a crucial dependency for language parsing and code analysis. This library is essential for generating parsers and lexers from the defined grammar and is used in the project.
 
-### rememberRule e recallRule
-Tramite queste due regole avvengono rispettivamente il push e il pop nello stack del personaggio a cui si rivolge il parlante. Occorre quindi verificare che lo stack non sia vuoto al momento della richiesta di far assumere ad un personaggio il valore in cima al rispettivo stack.
+2. **SPL.txt**
+This file contains a high-level description of the elements and features of the Shakespearean programming language. It provides an overview of the language's syntax and capabilities.
 
-### printRule e readRule
-- Nel primo caso stiamo stampando a console il valore di un personaggio. Ciò può avvenire in due modi:
-	- richiedendo la stampa del valore a lui associato, quindi occorre verificare che sia entrato in scena almeno una volta di modo da poter esser stato quantomeno inizializzato a zero;
-	- richiedendo invece la stampa del simbolo ASCII corrispondente al suo valore. In questo caso serve prima controllare che tale valore sia compreso in un intervallo prestabilito, di modo da poter stampare un simbolo valido.
-- Con la seconda regola si legge un input dell'utente, che può essere numerico (intero) oppure un simbolo ASCII:
-	- nel caso della lettura di un valore numerico si verifica che sia della tipologia Integer; 
-	- se invece si vuole leggere un simbolo si procede con il controllo come nel caso dell'input.
+3. **Shakespeare programming language.pdf**
+This PDF document serves as a comprehensive resource for understanding the Shakespeare programming language in greater detail. It likely includes more detailed explanations, examples, and possibly even sample programs.
 
-### assignmentStatementRule, assignmentComparisonRule e assignmentOperationRule
-Tramite queste tre regole avvengono gli assegnamenti di valore dei personaggi. Rispecchiano le tre tipologie esistenti nel linguaggio Shakespeare, ovvero l'assegnamento diretto, per comparazione o attraverso il risultato di un'equazione. Occorre verificare che sia rispettata la forma prevista per ogni tipologia, verificando che ogni assegnamento sia legittimo, cioè eseguito da un personaggio dichiatato e in scena, su un altro personaggio con le stesse caratteristiche.
+4. **Documentation (Folder)**
+This folder contains additional documentation related to the project.
+	- **en (Subfolder)**:
+		- **Documentation.md**
+    	Documentation written in English. It allows you to have an overview of the project, from the reasons for its creation, through the technologies used and finally to the semantic controls implemented.
+		- **UserManual.md**:
+		User manual written in English. It provides instructions and guidance on how to use the software, its features, and any other relevant information.
+	- **it (Subfolder)**
+		- **Documentazione.md**
+    	Equivalent in Italian.
+		- **ManualeUtente.md**:
+		Equivalent in Italian.
+	- **Shakespeare grammar (Subfolder)**
+		- **SyntacticShakespeare.g**
+		Undecorated grammar (syntactic part only).
+		- **Shakespeare.g**
+		Complete grammar.
 
-### adjectiveRule e adjectiveSecondRule
-Si occupano di facilitare il conteggio degli aggettivi attribuiti ad un personaggio, di modo così da ricavare il valore esatto della potenza di due da assegnare ai personaggi
+## Main semantic checks
+The semantic controls implemented in the software to manage the Shakespeare programming language are designed to ensure that the code adheres to the language's unique grammar and rules. Here's a comprehensive breakdown of the core semantic checks within the software:
+
+**titleRule, bodyRule, and dramatisPersonaeRule**:
+
+- These rules enforce the proper structure of a Shakespeare program. 
+- The title of the program must be recognized, and characters are declared in the "dramatis personae" section.
+- Each character declaration is checked to ensure uniqueness and compliance with the language's supported character names.
+- The program expects the beginning of the play, which comprises multiple acts and scenes.
+
+**actRule and sceneRule**:
+
+- These rules verify that acts and scenes are structured correctly with Roman numerals and comments.
+- They ensure there are no gaps or alterations in the numerical sequence of acts and scenes.
+
+**enterRule, exitRule, and exeuntRule**:
+
+- These rules validate the feasibility of character entrance, exit, or exit of multiple characters on stage.
+- Constraints include a maximum of two characters on stage simultaneously and restrictions on entering/exiting characters.
+  
+**stageEventRule**:
+
+- This rule is central to the program, encompassing several operations.
+- It manages character stacks, including pushing and popping values.
+- It handles input and output of integer and ASCII values.
+- Ensures the presence of characters on stage.
+- Evaluates interactions between characters during stage events.
+
+**conditionalRule**:
+
+- Validates "goto" operations by verifying the existence of the target scene within the current act.
+- Keeps track of operations within a scene to support script loops.
+
+**rememberRule and recallRule**:
+
+- These rules involve stack operations, where values are pushed and popped from a character's stack.
+- Ensures that a character's stack is not empty when requesting value retrieval.
+
+**printRule and readRule**:
+
+- In the case of printing, it ensures that the character's value has been initialized by entering the scene.
+- Validates the range of ASCII values before printing a symbol.
+- For reading, it verifies the type of input (numeric or ASCII) and applies the appropriate control checks.
+
+**assignmentStatementRule, assignmentComparisonRule, and assignmentOperationRule**:
+
+- These rules manage character value assignments using three different typologies: direct assignment, assignment through comparison, and assignment through the result of an equation.
+- They ensure that assignment follows the correct format and that only declared characters on stage perform the assignments.
+
+**adjectiveRule and adjectiveSecondRule**:
+
+- These rules count the number of adjectives attributed to a character.
+- They facilitate the calculation of the power of two to be assigned to the characters based on the number of adjectives.
 
 
