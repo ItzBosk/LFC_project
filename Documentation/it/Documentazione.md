@@ -26,38 +26,38 @@ Questa struttura di file organizzata garantisce che i diversi componenti del pro
 1. **Workspace_Shakespeare (cartella principale del progetto)**:
 Questa è la cartella principale del progetto Eclipse. È organizzato in diverse sottodirectory, ciascuna con uno scopo specifico:
 
-- **src (codice sorgente)**:
-    Questa directory ospita il codice sorgente del progetto.
+  - **src (codice sorgente)**:
+  Questa directory ospita il codice sorgente del progetto.
    
-    a. **scanPackage**:
-       All'interno di "scanPackage" troverai i file del parser e dello scanner della lingua. Questi componenti essenziali sono responsabili dell'analisi e della scansione del codice Shakespeare.
+    - **scanPackage**:
+      All'interno di "scanPackage" troverai i file del parser e dello scanner della lingua. Questi componenti essenziali sono responsabili dell'analisi e della scansione del codice Shakespeare.
    
-    b. **grammarPackage**:
-       "grammarPackage" contiene i file generati da ANTLR, incluso il file di grammatica denominato "Shakespeare.g." Questo file di grammatica definisce la sintassi e la struttura del linguaggio di programmazione Shakespeare. Inoltre, ospita il gestore degli errori, che gestisce e segnala gli errori durante la compilazione del codice.
+    - **grammarPackage**:
+      "grammarPackage" contiene i file generati da ANTLR, incluso il file di grammatica denominato "Shakespeare.g." Questo file di grammatica definisce la sintassi e la struttura del linguaggio di programmazione Shakespeare. Inoltre, ospita il gestore degli errori, che gestisce e segnala gli errori durante la compilazione del codice.
 
-    c. **Pacchetto utilità**:
-       L'"utilityPackage" comprende vari file di supporto, come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi all'interno delle scene, "RomanNumber.java" per la manipolazione dei numeri romani e "Util.java". Il file "Util.java" aiuta a migliorare la leggibilità dello script visualizzato nella console.
+    - **Pacchetto utilità**:
+      L'"utilityPackage" comprende vari file di supporto, come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi all'interno delle scene, "RomanNumber.java" per la manipolazione dei numeri romani e "Util.java". Il file "Util.java" aiuta a migliorare la leggibilità dello script visualizzato nella console.
 
-    d. **interfacePackage**:
-       Tutti i file relativi all'aspetto grafico dell'applicazione sono archiviati nel "interfacePackage". Ciò include componenti dell'interfaccia utente ed elementi grafici che migliorano l'esperienza dell'utente.
+    - **interfacePackage**:
+      Tutti i file relativi all'aspetto grafico dell'applicazione sono archiviati nel "interfacePackage". Ciò include componenti dell'interfaccia utente ed elementi grafici che migliorano l'esperienza dell'utente.
 
-    e. **outputPackage**:
-       Il "outputPackage" è dedicato ai file associati alla generazione del documento PDF di output. Contiene il codice e le risorse responsabili della creazione del documento PDF dal codice Shakespeare elaborato.
+    - **outputPackage**:
+      Il "outputPackage" è dedicato ai file associati alla generazione del documento PDF di output. Contiene il codice e le risorse responsabili della creazione del documento PDF dal codice Shakespeare elaborato.
 
-- **resources**:
-La directory "risorse" contiene varie risorse che supportano la funzionalità e l'aspetto del software:
+  - **resources**:
+  La directory "risorse" contiene varie risorse che supportano la funzionalità e l'aspetto del software:
    
-    a. **images**:
-       La sottodirectory "immagini" memorizza immagini di personaggi e altri elementi grafici che verranno inclusi nel PDF generato dall'applicazione. Queste immagini aggiungono contesto visivo al documento risultante.
+    - **images**:
+      La sottodirectory "immagini" memorizza immagini di personaggi e altri elementi grafici che verranno inclusi nel PDF generato dall'applicazione. Queste immagini aggiungono contesto visivo al documento risultante.
 
-    b. **input.file**:
-       "input.file" è il file di testo scritto nel linguaggio di programmazione Shakespeare che il software compilerà ed elaborerà. È il file del codice sorgente che deve essere eseguito dal programma.
+    - **input.file**:
+      "input.file" è il file di testo scritto nel linguaggio di programmazione Shakespeare che il software compilerà ed elaborerà. È il file del codice sorgente che deve essere eseguito dal programma.
 
-    c. **icons**:
-       Questa directory contiene una raccolta di icone utilizzate nell'interfaccia utente grafica (GUI) per fornire segnali visivi e rappresentazioni per varie funzioni o caratteristiche all'interno dell'applicazione.
+    - **icons**:
+      Questa directory contiene una raccolta di icone utilizzate nell'interfaccia utente grafica (GUI) per fornire segnali visivi e rappresentazioni per varie funzioni o caratteristiche all'interno dell'applicazione.
 
-    d. **antlr-3.4-complete.jar**:
-       Il file "antlr-3.4-complete.jar" rappresenta la libreria ANTLRv3, una dipendenza cruciale per il parsing del linguaggio e l'analisi del codice. Questa libreria è essenziale per generare parser e lexer dalla grammatica definita e viene utilizzata nel progetto.
+    - **antlr-3.4-complete.jar**:
+      Il file "antlr-3.4-complete.jar" rappresenta la libreria ANTLRv3, una dipendenza cruciale per il parsing del linguaggio e l'analisi del codice. Questa libreria è essenziale per generare parser e lexer dalla grammatica definita e viene utilizzata nel progetto.
 
 2. **SPL.txt**:
 Questo file contiene una descrizione di alto livello degli elementi e delle caratteristiche del linguaggio di programmazione shakespeariano. Fornisce una panoramica della sintassi e delle funzionalità del linguaggio.
