@@ -255,7 +255,7 @@ public class SPLhandler {
 		if (!checkError) {
 			System.out.println("--------------------------------- NEW ACTOR --------------------------------");
 			System.out.println("   - Name: \t\t" + ch.getText());
-			System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 3) + "\n");
+			System.out.println("   - Description: \t" + co.getText().substring(2, co.getText().length() - 2) + "\n");
 			printCharacters();
 			System.out.println("\n----------------------------------------------------------------------------\n");
 			HtmlToPDF.HTML.addPersonae(ch.getText());
