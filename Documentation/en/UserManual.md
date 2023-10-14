@@ -48,7 +48,7 @@ Ensure your computer is connected to the internet, and you have administrative p
 3. Follow the on-screen instructions to install Java. Typically, you can use the default settings unless you have a specific reason to customize them.
 4. The installer will complete the installation process, and you'll see a confirmation when it's done.
 
-That's it! You've successfully installed Java on your computer. You can now use Java to run Java applications like our SPL Software
+That's it! You've successfully installed Java on your computer. You can now use Java to run Java applications like our SPL Software.
 
 ### Installing SPL Software
 If you are running **Windows** you can run the "*SPL Installer.msi*" file from the root directory of our project on github, follow along the simple instructions that are displayed within the installation software and then run the freshed installed SPL Software from the link on your desktop.
@@ -60,7 +60,7 @@ Creating Shakespeare Programming Language (SPL) code can be a fun, creative way 
 
 1. **Title**: Self explanatory
 2. **Dramatis Personae**: Pick two characters. These can be any names you like from the following list, such as "Romeo" and "Juliet".
- {AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA}
+   {'Romeo', 'Juliet', 'Hamlet', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}
 Each character will represent a stack (like a pile of books) and a current value. They're the actual "variable" of the Shakespeare language.
 3. **Acts and Scenes**: It's the logical subdivision of events in a SPL enviroment, an act may contain different scenes. A scene must be declared inside an Act. The numeration is sequential and uses Roman Numbers. There must be at least ACT I and SCENE I
 4. **Entering and Exiting**: On the stage there must be a max two character, so the entering and exiting is used to set which one are active in that particular Scene.
@@ -135,43 +135,44 @@ Each variable is a stack. A variable will have an integer pushed onto its stack 
 #### Script example
 You can write something like this in order to obtain "UniBG Rules!" as output:
 
-**DA CORREGGERE AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA**
 ```
 The Adventure of UniBG Rules.
 
 Juliet, a bright student with a sunny disposition.
 Romeo, a passionate scholar with fiery determination.
 
-[Setting the stage]
-[University of Bergamo, a place of higher learning.]
+Act I: Juliets's bravery.
+Scene I: Romeo listen.
+
+[Enter Romeo and Juliet]
 
 Juliet: Listen to me!
 Romeo: You are the sum of yourself.
 
-[Juliet's declaration]
+
 Juliet: Open your mind!
 Romeo: You are the sum of yourself.
 
-[The wisdom of Romeo]
+
 Romeo: You are the square of yourself.
 Juliet: Remember yourself.
 
-[The grand revelation]
+
 Romeo: You are the sum of yourself.
 Juliet: You are the difference between yourself and yourself!
 
-[Juliet's joy]
+
 Juliet: Speak your mind!
 Romeo: Open your heart.
 
-[The final decree]
+
 Juliet: Listen to me!
 Romeo: You are the sum of yourself.
 
-[Exiting]
+
 Juliet: Remember me.
 
-[Ending the play]
+[Exeunt]
 ```
 ### Code compilation
 In order to compile your freshly written script you can press the Compile button on the bottom of the first page, and see the verbose output of the compilation in the box on the right.
