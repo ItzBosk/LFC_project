@@ -58,12 +58,12 @@ Se utilizzi **Linux** segui le stesse istruzioni di MacOS (ymmv ma se usi Linux 
 
 ### Capire come funziona SPL (nozioni di base)
 Creare codice Shakespeare Programming Language (SPL) può essere un modo divertente e creativo per scrivere programmi. Immagina di raccontare una storia con due personaggi, che hanno bisogno di parlare tra loro e di muoversi. Ecco come puoi farlo:
-1. **Titolo**: autoesplicativo
+1. **Title**: autoesplicativo
 2. **Dramatis Personae**: scegli due personaggi. Questi possono essere i nomi che preferisci dal seguente elenco, come "Romeo" e "Giulietta".
     {'Romeo', 'Giulietta', 'Amleto', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}
 Ogni personaggio rappresenterà una pila (come una pila di libri) e un valore corrente. Sono la vera "variabile" della lingua di Shakespeare.
-3. **Atti e Scene**: È la suddivisione logica degli eventi in un ambiente SPL, un atto può contenere diverse scene. Una scena deve essere dichiarata all'interno di un atto. La numerazione è sequenziale e utilizza numeri romani. Devono esserci almeno l'ATTO I e la SCENA I
-4. **Entrata e uscita**: Sul palco devono esserci al massimo due personaggi, quindi l'entrata e l'uscita vengono utilizzate per impostare quale è attivo in quella particolare scena.
+3. **Acts e Scenes**: È la suddivisione logica degli eventi in un ambiente SPL, un atto può contenere diverse scene. Una scena deve essere dichiarata all'interno di un atto. La numerazione è sequenziale e utilizza numeri romani. Devono esserci almeno l'ATTO I e la SCENA I
+4. **Entering and Exiting**: Sul palco devono esserci al massimo due personaggi, quindi l'entrata e l'uscita vengono utilizzate per impostare quale è attivo in quella particolare scena.
 5. **Linee e Assegnazioni**: Parleremo approfonditamente di questo argomento più avanti, ma per ora possiamo considerarlo la parte vera e propria dell'SPL perché è con Linee e Assegnazioni che si costruisce la logica del programma, si creano i numeri e le i caratteri gestiscono i valori.
 6. **Input e Output**: Esistono diversi modi per vedere e impostare i valori in SPL e puoi entrambi interagire con i numeri interi o il loro corrispondente nel valore Char, consentendoti di visualizzare numeri, lettere, simboli o combinarli se vuoi.
 7. **Dichiarazione condizionale**: puoi specificare alcuni controlli sul valore corrente di una variabile e passare a una determinata posizione del codice per implementare una struttura complessa.
@@ -95,7 +95,7 @@ Come già detto prima, una sceneggiatura di Shakespeare è suddivisa in Atti che
 Act I: Hamlet's insults and flattery.
 Scene I: The insulting of Romeo.
 ```
-4. **Inserisci, esci ed esci**:
+4. **Enter, exit e exeunt**:
 Le singole righe di codice generalmente assumono la forma di un brano di dialogo pronunciato da un personaggio a un altro; questo è il modo in cui il valore di una variabile (il carattere a cui si parla) viene assegnato, modificato o emesso. Un personaggio può essere indirizzato solo come "tu" o "tu". Pertanto, in genere devono esserci esattamente due personaggi "sul palco" ogni volta che vengono pronunciate le battute: uno per parlare e l'altro con cui parlare. Per chiamare una variabile sullo stage viene utilizzato il comando Invio con un elenco di uno o più caratteri. Il comando Esci dice esattamente a uno dei personaggi elencati di lasciare il palco. Exeunt invita più di un personaggio ad andarsene, o nel caso in cui nessun personaggio sia elencato tutti i personaggi lasceranno il palco. Viene utilizzato il seguente formato:
 ```
 [Enter Juliet]
@@ -128,7 +128,7 @@ Juliet:
 Hamlet:
  If so, let us proceed to scene II.
 ```
-8. **Spingere e far scoppiare pile**:
+8. **Push e pop delle pile**:
 Ogni variabile è uno stack. Una variabile avrà un numero intero inserito nello stack se una riga dice al carattere di "ricordare" un valore appropriato, come "Ricordati di me" o "Ricordati di te stesso". Il valore più in alto nello stack viene estratto (cioè la variabile assume questo valore) se al personaggio viene detto di "ricordare" qualcosa; tutto il testo dopo questa parola viene trattato come un commento.
 
 
@@ -181,6 +181,6 @@ Per quanto riguarda la creazione del PDF devi compilare il tuo sorgente (Script)
 #### Immagini dei personaggi
 In questa sezione puoi selezionare e modificare ogni immagine per ogni personaggio supportato dalla nostra implementazione SPL e, se lo desideri, puoi ripristinare le impostazioni predefinite con l'apposito pulsante sull'interfaccia.
 #### Esportazione finale in PDF
-Quando sei pronto, assicurati che il tuo script sia stato compilato correttamente e poi puoi procedere con la generazione e l'esportazione del PDF completamente decorato. Questo processo richiede solitamente un po' di tempo perché il file generato è complesso e deve essere stampato e non utilizzato sul computer. Se la generazione e l'esportazione vanno a buon fine, alla fine il tuo browser PDF preferito si aprirà mostrandoti il risultato della generazione, e ora potrai ammirare la tua creazione appena sfornata. Godere!
+Quando sei pronto, assicurati che il tuo script sia stato compilato correttamente e poi puoi procedere con la generazione e l'esportazione del PDF completamente decorato. Questo processo richiede solitamente un po' di tempo perché il file generato è complesso e deve essere stampato e non utilizzato sul computer. Se la generazione e l'esportazione vanno a buon fine, alla fine il tuo browser PDF preferito si aprirà mostrandoti il risultato della generazione, e ora potrai ammirare la tua creazione appena sfornata. Divertiti!
 ## Disinstalla
 Il processo di disinstallazione del software è necessario solo per la versione Windows, e basta controllare l'elenco dei programmi all'interno del Pannello di controllo di Windows stesso, sarai in grado di selezionare "*Shakespeare Programming Language Software*" e disinstallarlo direttamente dal elenco.
