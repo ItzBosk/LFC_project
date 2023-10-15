@@ -141,23 +141,29 @@ assignmentStatementRule [Token ch, Token wh]
 // assign a value with a comparison	
 assignmentComparisonRule [Token ch, Token wh]
 	:
-	(AS 
+	(
+	AS 
 	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	AS 
-	operationtype=(SUMOF | DIFFBET | PRODOF)
-	A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	AND 
-	A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)) 
+	operationtype=(SUMOF | DIFFBET | PRODOF | QUOTOF)
+	(A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
+	
+	AND
+	((A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
+	| thy=THYSELF)
+	)
 	el=(EP| DOT)
-	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype, $wh, $adj, $el);}
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $thy, $operationtype, $wh, $adj, $el);}
 	;
 
 // assign a value with an equation
 assignmentOperationRule [Token ch, Token wh]
 	:
 	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
-	AND A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) el=(EP| DOT)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype,  $wh,$el);}
+	AND 
+	A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	el=(EP| DOT)
+	{h.checkAssignmentOperation($ch, $noun, $operationtype, $wh, $el);}
 	;
 
 // counts the number of adjectives in order to calculate the assignment value
@@ -214,7 +220,7 @@ recallRule [Token ch]
 // print the value of a character (value or ASCII)
 printRule [Token ch]
 	:
-	phrase=(PRINTVALUE | PRINTASCII)
+	phrase=(PRINTVALUE | PRINTASCII | PRINTASCII2)
 	wh=(DOT | EP)
 	{h.checkPrint($ch, $phrase, $wh);}
 	;
@@ -445,15 +451,16 @@ AND         	:	'and';
 
 
 // assignment
-YOU         	:   'You';
-ARE     	:   'are';
-THOUART    	:   'Thou art';
-AS      	:   'as';
-SUMOF       	:   'the sum of';
-DIFFBET        	:   'the difference between';
-PRODOF 		:   'the product of';
-A		:   'a';
-THYSELF		:   'thyself';
+YOU         	:	'You';
+ARE     	:   	'are';
+THOUART    	:   	'Thou art';
+AS      	:   	'as';
+SUMOF       	:   	'the sum of';
+DIFFBET        	:   	'the difference between';
+PRODOF 		:   	'the product of';
+QUOTOF		:	'the quotient of';
+A		: 	'a';
+THYSELF		:   	'thyself';
 
 // conditional statement
 AMI		:	'Am I';
@@ -473,6 +480,7 @@ PROCEEDTO	:	'proceed to';
 // input/output
 PRINTVALUE     	:       'Open your heart';  
 PRINTASCII     	:       'Speak your mind';
+PRINTASCII2     :    	'Speak thy mind';
 READVALUE      	:       'Listen to your heart';
 READASCII      	:       'Open your mind';
 

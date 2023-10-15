@@ -62,7 +62,7 @@ public class SPLhandler {
 	public static int effectiveInput; // user input
 	public static int neededInput; // required input by the program
 	TokenStream input; // scanner of the input file
-	
+
 	List<String> errorList; // errors log
 	Hashtable<String, CharacterDescriptor> stageCharacterList;
 	Iterator<Map.Entry<String, CharacterDescriptor>> it; // for multiple Exeunt
@@ -79,15 +79,15 @@ public class SPLhandler {
 	public SPLhandler(TokenStream input) {
 		// input managing
 		neededInput = 0;
-		userInput = SPLinterrface.getUserInput().replaceAll("\\s", "");	// remove white spaces
-		if (userInput.length() == 0)	// avoid problems with split function
+		userInput = SPLinterrface.getUserInput().replaceAll("\\s", ""); // remove white spaces
+		if (userInput.length() == 0) // avoid problems with split function
 			effectiveInput = 0;
 
 		else {
 			userInputSplitted = userInput.split(",");
 			effectiveInput = userInputSplitted.length;
 		}
-		
+
 		this.input = input;
 		errorList = new ArrayList<String>();
 		stageCharacterList = new Hashtable<String, CharacterDescriptor>(101);
@@ -485,8 +485,8 @@ public class SPLhandler {
 	}
 
 	// stageEvent 2
-	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token operationtype, Token wh, Token adj,
-			Token el) {
+	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token thy, Token operationtype, Token wh,
+			Token adj, Token el) {
 		checkError = false;
 		if (!stageCharacterList.containsKey(ch.getText()))
 			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
@@ -505,22 +505,31 @@ public class SPLhandler {
 			adjectiveCounter = 0; // after every assignment return 0
 
 			int charact2 = 0;
-			if (noun2.getType() == ShakespeareLexer.POSITIVENOUN || noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
-				charact2 = (int) Math.pow(2, adjectiveCounter2);
-			} else
-				charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
-			adjectiveCounter2 = 0; // after every assignment return 0
-
+			if (thy == null) {
+				if (noun2.getType() == ShakespeareLexer.POSITIVENOUN
+						|| noun2.getType() == ShakespeareLexer.NEUTRALNOUN) {
+					charact2 = (int) Math.pow(2, adjectiveCounter2);
+				} else
+					charact2 = -1 * (int) Math.pow(2, adjectiveCounter2);
+				adjectiveCounter2 = 0; // after every assignment return 0
+			} else {
+				int thyself = stageCharacterList.get(updateCh).getValue();
+				charact2 = stageCharacterList.get(updateCh).getValue();
+			}
+			
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 				stageCharacterList.get(updateCh).assignValue(charact1 + charact2);
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 				stageCharacterList.get(updateCh).assignValue(charact1 - charact2);
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 				stageCharacterList.get(updateCh).assignValue(charact1 * charact2);
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
+			else if (operationtype.getType() == ShakespeareLexer.QUOTOF) {
+				stageCharacterList.get(updateCh).assignValue(charact1 / charact2);
+			}
+			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+			
+
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
@@ -564,17 +573,16 @@ public class SPLhandler {
 
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
 				stageCharacterList.get(updateCh).assignValue(thyself + charact4);
-//				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
 				stageCharacterList.get(updateCh).assignValue(thyself - charact4);
-//				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
 				stageCharacterList.get(updateCh).assignValue(thyself * charact4);
-//				System.err.println("### result frase3: " + stageCharacterList.get(updateCh).getValue());
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			}
+			else if (operationtype.getType() == ShakespeareLexer.QUOTOF) {
+				stageCharacterList.get(updateCh).assignValue(thyself / charact4);
+			}
+			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+			
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
 
