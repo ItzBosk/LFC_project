@@ -514,7 +514,7 @@ public class SPLhandler {
 				adjectiveCounter2 = 0; // after every assignment return 0
 			} else {
 				int thyself = stageCharacterList.get(updateCh).getValue();
-				charact2 = stageCharacterList.get(updateCh).getValue();
+				charact2 = thyself;
 			}
 			
 			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
