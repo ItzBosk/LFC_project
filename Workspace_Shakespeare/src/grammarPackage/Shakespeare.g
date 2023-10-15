@@ -121,49 +121,70 @@ stageEventRule
     	| recallRule [ch] 
     	| printRule[ch] 
     	| readRule [ch] 
-    	| wh=(YOU ARE? | THOUART) 
+    	| wh=(YOU ARE? | THOUART) neg=(NOT)? 
     		(
-    		assignmentStatementRule [ch,wh]
-    		| assignmentComparisonRule [ch,wh]
-    		| assignmentOperationRule [ch,wh]
+    		assignmentStatementRule [ch,wh,neg]
+    		| assignmentComparisonRule [ch,wh,neg]
+    		| assignmentOperationRule [ch,wh,neg]
     		) 
     	)*
 	;
 
+
 // assign a value with a statement
-assignmentStatementRule [Token ch, Token wh]
+//you are a big cow.
+assignmentStatementRule [Token ch, Token wh, Token neg]
 	:	
 	A? (adjectiveRule)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
 	el=(EP | DOT)
-	{h.checkAssignmentStatement($ch, $noun, $wh, $el);}
+	{h.checkAssignmentStatement($ch, $noun, $wh, $el, $neg);}
 	;
 
+
 // assign a value with a comparison	
-assignmentComparisonRule [Token ch, Token wh]
+//You are as cowardly as the sum of a rose and a big rose. 	
+//You are as cowardly as the sum of a rose and yourself/thyself/me.
+//You are as cowardly as the sum of yourself/thyself/me and a rose.
+//You are as cowardly as the sum of yourself/thyself/me and yourself/thyself/me.
+assignmentComparisonRule [Token ch, Token wh, Token neg]
 	:
 	(
 	AS 
 	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	AS 
 	operationtype=(SUMOF | DIFFBET | PRODOF | QUOTOF)
-	(A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
-	
-	AND
-	((A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN))
-	| thy=THYSELF)
+	(A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	|
+	sub1=(THYSELF | YOURSELF | ME)
 	)
+	AND
+	(A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	| sub2=(THYSELF | YOURSELF | ME)
+	))
 	el=(EP| DOT)
-	{h.checkAssignmentComparison($ch, $noun1, $noun2, $thy, $operationtype, $wh, $adj, $el);}
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $sub1, $sub2, $operationtype, $wh, $adj, $el, $neg);}
 	;
 
+
 // assign a value with an equation
-assignmentOperationRule [Token ch, Token wh]
+//you are the difference between yourself and a big big rose
+//you are the difference between a big rose and yourself.
+//you are the difference between a big rose and a big rose.
+//you are the difference between thyself and yourself. =0
+//you are the difference between thyself and me.
+assignmentOperationRule [Token ch, Token wh, Token neg]
 	:
-	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
-	AND 
+	operationtype=(SUMOF | DIFFBET | PRODOF| QUOTOF) 
+	(sub1=(THYSELF | YOURSELF)
+	|
 	A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	)
+	AND(
+	A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	|
+	sub2=(THYSELF | YOURSELF | ME))
 	el=(EP| DOT)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype, $wh, $el);}
+	{h.checkAssignmentOperation($ch, $noun, $operationtype, $wh, $el, $sub1, $sub2, $neg);}
 	;
 
 // counts the number of adjectives in order to calculate the assignment value
@@ -262,7 +283,7 @@ POSITIVENOUN
     |   'happiness'
     |   'joy'
     |   'plum'
-    |   'summer’s day'
+    |   'summer\'s day'
     |   'hero'
     |   'rose'
     |   'kingdom'
@@ -461,6 +482,7 @@ PRODOF 		:   	'the product of';
 QUOTOF		:	'the quotient of';
 A		: 	'a';
 THYSELF		:   	'thyself';
+NOT		:	'not';
 
 // conditional statement
 AMI		:	'Am I';
