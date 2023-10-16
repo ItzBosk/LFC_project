@@ -134,7 +134,7 @@ stageEventRule
 // assign a value with a statement
 //you are a big cow.
 assignmentStatementRule [Token ch, Token wh, Token neg]
-	:	
+	:
 	A? (adjectiveRule)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
 	el=(EP | DOT)
 	{h.checkAssignmentStatement($ch, $noun, $wh, $el, $neg);}
@@ -160,7 +160,8 @@ assignmentComparisonRule [Token ch, Token wh, Token neg]
 	AND
 	(A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
 	| sub2=(THYSELF | YOURSELF | ME)
-	))
+	)
+	)
 	el=(EP| DOT)
 	{h.checkAssignmentComparison($ch, $noun1, $noun2, $sub1, $sub2, $operationtype, $wh, $adj, $el, $neg);}
 	;
@@ -175,16 +176,16 @@ assignmentComparisonRule [Token ch, Token wh, Token neg]
 assignmentOperationRule [Token ch, Token wh, Token neg]
 	:
 	operationtype=(SUMOF | DIFFBET | PRODOF| QUOTOF) 
-	(sub1=(THYSELF | YOURSELF)
+	(sub1=(THYSELF | YOURSELF | ME)
 	|
-	A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
 	)
 	AND(
-	A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	A adjectiveRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
 	|
 	sub2=(THYSELF | YOURSELF | ME))
 	el=(EP| DOT)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype, $wh, $el, $sub1, $sub2, $neg);}
+	{h.checkAssignmentOperation($ch, $noun1, $noun2, $sub1, $sub2, $operationtype, $wh, $el, $neg);}
 	;
 
 // counts the number of adjectives in order to calculate the assignment value
