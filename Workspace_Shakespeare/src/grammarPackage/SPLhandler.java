@@ -967,7 +967,8 @@ public class SPLhandler {
 		}
 
 		public void Jump(int scene) {
-			System.err.println("Salto a scena " + scene);
+			System.out.println("---------------------------   JUMP TO SCENE "+scene+" -----------------------------");
+
 			//print();
 			for (loggedAction singleLog : logList) {
 				if (singleLog.scene >= scene) {
