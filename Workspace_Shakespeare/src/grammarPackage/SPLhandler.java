@@ -493,6 +493,8 @@ public class SPLhandler {
 	public void checkAssignmentComparison(Token ch, Token noun1, Token noun2, Token sub1, Token sub2,
 			Token operationtype, Token wh, Token adj, Token el, Token neg) {
 		checkError = false;
+		String op1Personae = "";
+		String op2Personae = "";
 		if (!stageCharacterList.containsKey(ch.getText()))
 			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
 		else {
@@ -512,8 +514,10 @@ public class SPLhandler {
 			} else if (noun1 == null && sub1 != null) {
 				if (sub1.getType() == ShakespeareLexer.THYSELF || sub1.getType() == ShakespeareLexer.YOURSELF) {
 					op1 = stageCharacterList.get(updateCh).getValue();
+					op1Personae = updateCh;
 				} else {
 					op1 = stageCharacterList.get(ch.getText()).getValue(); // ME
+					op1Personae = ch.getText();
 				}
 			}
 
@@ -528,26 +532,54 @@ public class SPLhandler {
 			} else if (noun2 == null && sub2 != null) {
 				if (sub2.getType() == ShakespeareLexer.THYSELF || sub2.getType() == ShakespeareLexer.YOURSELF) {
 					op2 = stageCharacterList.get(updateCh).getValue();
+					op2Personae = updateCh;
 				} else {
 					op2 = stageCharacterList.get(ch.getText()).getValue(); // ME
+					op2Personae = ch.getText();
+				}
+
+			} else
+				System.err.println("op2 non valido");
+
+			int optType = 0;
+			switch (operationtype.getType()) {
+			case ShakespeareLexer.SUMOF:
+				stageCharacterList.get(updateCh).assignValue(op1 + op2);
+				optType = 0;
+				break;
+			case ShakespeareLexer.DIFFBET:
+				stageCharacterList.get(updateCh).assignValue(op1 - op2);
+				optType = 1;
+				break;
+			case ShakespeareLexer.PRODOF:
+				stageCharacterList.get(updateCh).assignValue(op1 * op2);
+				optType = 2;
+				break;
+			case ShakespeareLexer.QUOTOF:
+				stageCharacterList.get(updateCh).assignValue(op1 / op2);
+				optType = 3;
+				break;
+			}
+
+			if(op1Personae=="")
+			{
+				if(op2Personae=="") {
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+				}else
+				{// numero / persona
+					goTo.newLog(sceneNumber, updateCh, 5,String.valueOf(op1),op2Personae,optType,1);
+				}
+			}
+			else {
+				if(op2Personae=="") {
+					// persona / numero
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,String.valueOf(op2),optType,2);
+				}else
+				{// persona / persona
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,op2Personae,optType,3);
 				}
 			}
 
-			int newValue = 0;
-			if (operationtype.getType() == ShakespeareLexer.SUMOF)
-				newValue = op1 + op2;
-			else if (operationtype.getType() == ShakespeareLexer.DIFFBET)
-				newValue = op1 - op2;
-			else if (operationtype.getType() == ShakespeareLexer.PRODOF)
-				newValue = op1 * op2;
-			else if (operationtype.getType() == ShakespeareLexer.QUOTOF)
-				newValue = op1 / op2;
-
-			if (neg == null)
-				stageCharacterList.get(updateCh).assignValue(newValue);
-			else
-				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
-			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 
 			if (!checkError) {
 				System.out.println("---------------------------   STAGE EVENT  ------------------------------");
@@ -594,6 +626,8 @@ public class SPLhandler {
 	public void checkAssignmentOperation(Token ch, Token noun1, Token noun2, Token sub1, Token sub2,
 			Token operationtype, Token wh, Token el, Token neg) {
 		checkError = false;
+		String op1Personae = "";
+		String op2Personae = "";
 		if (!stageCharacterList.containsKey(ch.getText()))
 			dramaErrorHandler(UNDECLARED_CHARACTER, ch);
 		else {
@@ -608,13 +642,16 @@ public class SPLhandler {
 				if (noun1.getType() == ShakespeareLexer.POSITIVENOUN
 						|| noun1.getType() == ShakespeareLexer.NEUTRALNOUN) {
 					op1 = (int) Math.pow(2, adjectiveCounter);
+					
 				} else
 					op1 = -1 * (int) Math.pow(2, adjectiveCounter);
 			} else if (noun1 == null && sub1 != null) {
 				if (sub1.getType() == ShakespeareLexer.THYSELF || sub1.getType() == ShakespeareLexer.YOURSELF) {
 					op1 = stageCharacterList.get(updateCh).getValue();
+					op1Personae = updateCh;
 				} else {
 					op1 = stageCharacterList.get(ch.getText()).getValue(); // ME
+					op1Personae = ch.getText();
 				}
 			}
 
@@ -628,26 +665,55 @@ public class SPLhandler {
 			} else if (noun2 == null && sub2 != null) {
 				if (sub2.getType() == ShakespeareLexer.THYSELF || sub2.getType() == ShakespeareLexer.YOURSELF) {
 					op2 = stageCharacterList.get(updateCh).getValue();
+					op2Personae = updateCh;
 				} else {
 					op2 = stageCharacterList.get(ch.getText()).getValue(); // ME
+					op2Personae = ch.getText();
 				}
+
+			} else
+				System.err.println("op2 non valido");
+
+			int optType = 0;
+			switch (operationtype.getType()) {
+			case ShakespeareLexer.SUMOF:
+				stageCharacterList.get(updateCh).assignValue(op1 + op2);
+				optType = 0;
+				break;
+			case ShakespeareLexer.DIFFBET:
+				stageCharacterList.get(updateCh).assignValue(op1 - op2);
+				optType = 1;
+				break;
+			case ShakespeareLexer.PRODOF:
+				stageCharacterList.get(updateCh).assignValue(op1 * op2);
+				optType = 2;
+				break;
+			case ShakespeareLexer.QUOTOF:
+				stageCharacterList.get(updateCh).assignValue(op1 / op2);
+				optType = 3;
+				break;
 			}
 
-			int newValue = 0;
-			if (operationtype.getType() == ShakespeareLexer.SUMOF)
-				newValue = op1 + op2;
-			else if (operationtype.getType() == ShakespeareLexer.DIFFBET)
-				newValue = op1 - op2;
-			else if (operationtype.getType() == ShakespeareLexer.PRODOF)
-				newValue = op1 * op2;
-			else if (operationtype.getType() == ShakespeareLexer.QUOTOF)
-				newValue = op1 / op2;
+			if(op1Personae=="")
+			{
+				if(op2Personae=="") {
+					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+				}else
+				{// numero / persona
+					goTo.newLog(sceneNumber, updateCh, 5,String.valueOf(op1),op2Personae,optType,1);
+				}
+			}
+			else {
+				if(op2Personae=="") {
+					// persona / numero
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,String.valueOf(op2),optType,2);
+				}else
+				{// persona / persona
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,op2Personae,optType,3);
+				}
+			}
+			
 
-			if (neg == null)
-				stageCharacterList.get(updateCh).assignValue(newValue);
-			else
-				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
-			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 
 			if (!checkError) {
 				System.out.println("---------------------------   STAGE EVENT  ------------------------------");
@@ -689,6 +755,7 @@ public class SPLhandler {
 	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt, Token gt2, Token gt3rs, Token gt4,
 			Token rn) {
 		checkError = false;
+		int opType = 0;
 		if (!stageCharacterList.containsKey(ch1.getText()))
 			dramaErrorHandler(UNDECLARED_CHARACTER, ch1);
 		else {
@@ -707,22 +774,26 @@ public class SPLhandler {
 			switch (ev.getType()) {
 			case ShakespeareLexer.BETTER:
 				if (stageCharacterList.get(ch1.getText()).getValue() > stageCharacterList.get(ch2.getText()).getValue())
+				{
 					comparison = true;
+					}
 				break;
 			case ShakespeareLexer.WORSE:
 				if (stageCharacterList.get(ch1.getText()).getValue() < stageCharacterList.get(ch2.getText()).getValue())
-					comparison = true;
+					{comparison = true;
+					opType = 1;
+					}
 				break;
 			default:
 				if (stageCharacterList.get(ch1.getText()).getValue() == stageCharacterList.get(ch2.getText())
-						.getValue())
-					comparison = true;
+						.getValue()) {
+					comparison = true;		
+					opType = 2;
+				}
 				break;
 			}
 
 			if (gt != null) {
-				System.out.println(gt.getType());
-				if (comparison) {
 					if (gt.getType() == ShakespeareLexer.IFSO) {
 						if (!RomanNumber.isRoman(rn.getText()))
 							dramaErrorHandler(INVALID_ROMAN_NUMBER, rn);
@@ -730,10 +801,10 @@ public class SPLhandler {
 							HtmlToPDF.HTML.addStageEvent(ch1.getText(), "Am i " + ev.getText() + " than you?");
 							HtmlToPDF.HTML.addStageEvent(ch2.getText(), gt.getText() + " " + gt2.getText() + " "
 									+ gt3rs.getText() + " " + gt4.getText() + " " + rn.getText() + ".");
-							goTo.Jump(RomanNumber.decode(rn.getText()));
+							goTo.newLog(sceneNumber,ch1.getText(),ch2.getText(),opType,RomanNumber.decode(rn.getText()));
+							if (comparison) {goTo.Jump(RomanNumber.decode(rn.getText()));}
 						}
 					}
-				} else {
 					if (gt.getType() == ShakespeareLexer.IFNOT) {
 						if (!RomanNumber.isRoman(rn.getText()))
 							dramaErrorHandler(INVALID_ROMAN_NUMBER, rn);
@@ -741,9 +812,10 @@ public class SPLhandler {
 							HtmlToPDF.HTML.addStageEvent(ch1.getText(), "Am i " + ev.getText() + " than you?");
 							HtmlToPDF.HTML.addStageEvent(ch2.getText(), gt.getText() + " " + gt2.getText() + " "
 									+ gt3rs.getText() + " " + gt4.getText() + " " + rn.getText() + ".");
-							goTo.Jump(RomanNumber.decode(rn.getText()));
+							goTo.newLog(sceneNumber,ch1.getText(),ch2.getText(),opType,RomanNumber.decode(rn.getText()));
+							if (!comparison) {goTo.Jump(RomanNumber.decode(rn.getText()));}
 						}
-					}
+					
 				}
 			} else
 				dramaErrorHandler(MISSING_IF_STATEMENT, gt);
@@ -825,12 +897,17 @@ public class SPLhandler {
 		String character;
 		Object assignedValue;
 		int actionType; // switch to understand the action type saved in the log
-
+		String op1,op2;
+		int optType; // 1+, 2-, 3*, 4/
+		int personType; // 1 number-person ,2 person-number , 3 person-person
+		int targetScene;
 		///////
 		// 1 -> setting the value of a stage character
 		// 2 -> prints the value of a stage character
 		// 3 -> remember, push
 		// 4 -> recall, pop
+		// 5 -> confronti
+		// 6 -> goto
 		///////
 
 		public loggedAction(int scene, String character, int actionType, Object assignedValue) {
@@ -845,6 +922,25 @@ public class SPLhandler {
 			this.character = character;
 			this.actionType = actionType;
 		}
+		
+		public loggedAction(int scene, String character, int actionType,String aop1,String aop2,int optType,int personType) {
+			this.scene = scene;
+			this.character = character;
+			this.actionType = actionType;
+			this.op1 = aop1;
+			this.op2 = aop2;
+			this.optType = optType;
+			this.personType = personType;
+		}
+		
+		public loggedAction(int Scene, String ch1, String ch2, int type, int target) {
+			this.scene = Scene;
+			this.op1 = ch1;
+			this.op2 = ch2;
+			this.optType = type;
+			this.actionType = 6;
+			this.targetScene = target;
+		}
 	}
 
 	private class gotoHandler {
@@ -857,6 +953,14 @@ public class SPLhandler {
 		public void newLog(int Scene, String Character, int ActionType) {
 			logList.add(new loggedAction(Scene, Character, ActionType));
 		}
+		
+		public void newLog(int Scene, String Character, int ActionType,String op1, String op2, int optType, int personType) {
+			logList.add(new loggedAction(Scene, Character, ActionType,op1,op2,optType,personType));
+		}
+		
+		public void newLog(int Scene, String ch1, String ch2, int type, int target) {
+			logList.add(new loggedAction(Scene,ch1,ch2,type,target));
+		}
 
 		public void clearLog() {
 			logList.clear();
@@ -864,6 +968,7 @@ public class SPLhandler {
 
 		public void Jump(int scene) {
 			System.err.println("Salto a scena " + scene);
+			//print();
 			for (loggedAction singleLog : logList) {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
@@ -872,7 +977,8 @@ public class SPLhandler {
 								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
-						execOutput += (String) singleLog.assignedValue;
+						//execOutput += (String) singleLog.assignedValue;
+						execOutput += stageCharacterList.get(singleLog.character).getValue();
 						break;
 					case 3:
 						stageCharacterList.get(singleLog.character).push((int) singleLog.assignedValue);
@@ -880,16 +986,131 @@ public class SPLhandler {
 					case 4:
 						stageCharacterList.get(singleLog.character).pop();
 						break;
+					case 5:
+						switch(singleLog.optType) {
+							case 0:
+								switch(singleLog.personType) {
+								case 1:// 1 number-person 
+									stageCharacterList.get(singleLog.character)
+									.assignValue(Integer.valueOf(singleLog.op1)
+											+
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+								case 2:// 2 person-number
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											+
+											Integer.valueOf(singleLog.op2));
+									break;
+								case 3:// 3 person-person
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											+
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+									
+								}
+
+								break;
+							case 1:
+								switch(singleLog.personType) {
+								case 1:// 1 number-person 
+									stageCharacterList.get(singleLog.character)
+									.assignValue(Integer.valueOf(singleLog.op1)
+											-
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+								case 2:// 2 person-number
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											-
+											Integer.valueOf(singleLog.op2));
+									break;
+								case 3:// 3 person-person
+
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											-
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+									
+								}
+								break;
+							case 2:
+								switch(singleLog.personType) {
+								case 1:// 1 number-person 
+									stageCharacterList.get(singleLog.character)
+									.assignValue(Integer.valueOf(singleLog.op1)
+											*
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+								case 2:// 2 person-number
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											*
+											Integer.valueOf(singleLog.op2));
+									break;
+								case 3:// 3 person-person
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											*
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+									
+								}
+								break;
+							case 3:
+								switch(singleLog.personType) {
+								case 1:// 1 number-person 
+									stageCharacterList.get(singleLog.character)
+									.assignValue(Integer.valueOf(singleLog.op1)
+											/
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+								case 2:// 2 person-number
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											/
+											Integer.valueOf(singleLog.op2));
+									break;
+								case 3:// 3 person-person
+									stageCharacterList.get(singleLog.character)
+									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
+											/
+											stageCharacterList.get(singleLog.op2).getValue());
+									break;
+									
+								}
+								break;
+								}
+						
+						break;
+					case 6:
+						switch(singleLog.optType) {
+						case 0: // >
+							if(stageCharacterList.get(singleLog.op1).getValue() > stageCharacterList.get(singleLog.op2).getValue())
+								Jump(singleLog.targetScene);
+							break;
+						case 1: // <
+							if(stageCharacterList.get(singleLog.op1).getValue() < stageCharacterList.get(singleLog.op2).getValue())
+								Jump(singleLog.targetScene);
+							break;
+						case 2: // =
+							if(stageCharacterList.get(singleLog.op1).getValue() == stageCharacterList.get(singleLog.op2).getValue())
+								Jump(singleLog.targetScene);
+							break;
+						}
+						break;
 					}
-					System.err.println("eseguo azione per " + singleLog.character);
+					//System.err.println("eseguo azione "+singleLog.actionType+" per " + singleLog.character);
 				}
 			}
 		}
 
 		public void print() {
 			for (loggedAction singleLog : logList) {
-				System.out.println("Scene: " + singleLog.scene + ", Character: " + singleLog.character + "\t, Action: "
-						+ singleLog.actionType + ", Value: " + singleLog.assignedValue);
+				System.out.println("Scene: " + singleLog.scene + ", Character: " + singleLog.character + ", Action: "
+						+ singleLog.actionType + ", Value: " + singleLog.assignedValue + ", op1 e op2: "+singleLog.op1+" "+singleLog.op2);
 			}
 		}
 	}
