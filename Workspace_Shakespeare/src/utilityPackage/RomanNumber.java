@@ -42,5 +42,4 @@ public class RomanNumber {
 		result += decodeSingle(romanNumber.charAt(romanNumber.length() - 1));
 		return result;
 	}
-
 }

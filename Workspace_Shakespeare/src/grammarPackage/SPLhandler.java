@@ -460,27 +460,33 @@ public class SPLhandler {
 
 		if (onStageCheck()) {
 			String updateCh = secondStageCharacter(ch);
+			int newValue = 0;
 			if (noun.getType() == ShakespeareLexer.POSITIVENOUN || noun.getType() == ShakespeareLexer.NEUTRALNOUN) {
+				newValue = (int) Math.pow(2, adjectiveCounter);
 				stageCharacterList.get(updateCh).assignValue((int) Math.pow(2, adjectiveCounter));
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
-			} else {
+			} else
+				newValue = (-1 * (int) Math.pow(2, adjectiveCounter));
 
-				stageCharacterList.get(updateCh).assignValue(-1 * (int) Math.pow(2, adjectiveCounter));
-				goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+			if (neg == null)
+				stageCharacterList.get(updateCh).assignValue(newValue);
+			else
+				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
+
+			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+			if (!checkError && noun != null) {
+				System.out.println("---------------------------   STAGE EVENT   ------------------------------");
+				System.out.println("   - Actor: \t\t" + updateCh);
+				System.out.println("   - Noun: \t\t" + noun.getText());
+				System.out.println("   - Num of adjectives: \t\t" + adjectiveCounter);
+				System.out.println("   - Value: \t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
+				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
+						" " + adjString + " " + noun.getText() + el.getText());
+				adjString = "";
 			}
+			printCharacters();
 			adjectiveCounter = 0;
-//			System.err.println("### result frase1: " + stageCharacterList.get(updateCh).getValue());
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
-
-		if (!checkError && noun != null) {
-			System.out.println("---------------------------   STAGE EVENT   ------------------------------");
-			System.out.println("   - Actor: \t\t" + ch.getText());
-			System.out.println("   - Noun: \t\t" + noun.getText() + "\n");
-			HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), " " + adjString + noun.getText() + el.getText());
-			adjString = "";
-		}
-		printCharacters();
 	}
 
 	// stageEvent 2
@@ -503,15 +509,13 @@ public class SPLhandler {
 					op1 = (int) Math.pow(2, adjectiveCounter);
 				} else
 					op1 = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0; // after every assignment return 0
 			} else if (noun1 == null && sub1 != null) {
 				if (sub1.getType() == ShakespeareLexer.THYSELF || sub1.getType() == ShakespeareLexer.YOURSELF) {
 					op1 = stageCharacterList.get(updateCh).getValue();
 				} else {
 					op1 = stageCharacterList.get(ch.getText()).getValue(); // ME
 				}
-			} else
-				System.err.println("op1 non vallido");
+			}
 
 			int op2 = 0; // second operand
 			if (noun2 != null && sub2 == null) {
@@ -520,63 +524,70 @@ public class SPLhandler {
 					op2 = (int) Math.pow(2, adjectiveCounter2);
 				} else
 					op2 = -1 * (int) Math.pow(2, adjectiveCounter2);
-				adjectiveCounter2 = 0; // after every assignment return 0
+
 			} else if (noun2 == null && sub2 != null) {
 				if (sub2.getType() == ShakespeareLexer.THYSELF || sub2.getType() == ShakespeareLexer.YOURSELF) {
 					op2 = stageCharacterList.get(updateCh).getValue();
 				} else {
 					op2 = stageCharacterList.get(ch.getText()).getValue(); // ME
 				}
-			} else
-				System.err.println("op2 non valido");
-
-			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
-				stageCharacterList.get(updateCh).assignValue(op1 + op2);
-			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
-				stageCharacterList.get(updateCh).assignValue(op1 - op2);
-			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
-				stageCharacterList.get(updateCh).assignValue(op1 * op2);
-			} else if (operationtype.getType() == ShakespeareLexer.QUOTOF) {
-				stageCharacterList.get(updateCh).assignValue(op1 / op2);
 			}
+
+			int newValue = 0;
+			if (operationtype.getType() == ShakespeareLexer.SUMOF)
+				newValue = op1 + op2;
+			else if (operationtype.getType() == ShakespeareLexer.DIFFBET)
+				newValue = op1 - op2;
+			else if (operationtype.getType() == ShakespeareLexer.PRODOF)
+				newValue = op1 * op2;
+			else if (operationtype.getType() == ShakespeareLexer.QUOTOF)
+				newValue = op1 / op2;
+
+			if (neg == null)
+				stageCharacterList.get(updateCh).assignValue(newValue);
+			else
+				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
 			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
+
+			if (!checkError) {
+				System.out.println("---------------------------   STAGE EVENT  ------------------------------");
+				System.out.println("   - Actor: \t\t" + updateCh);
+				if (noun1 != null) {
+					System.out.println("   - First operand: \t\t" + noun1.getText());
+					System.out.println("   - Num of adjectives for first opearnd: \t\t" + adjectiveCounter);
+				} else
+					System.out.println("   - First operand: \t\t" + sub1.getText());
+				if (noun2 != null) {
+					System.out.println("   - Second operand: \t\t" + noun2.getText());
+					System.out.println("   - Num of adjectives for second opearnd: \t\t" + adjectiveCounter2);
+				} else
+					System.out.println("   - Second operand: \t\t" + sub2.getText());
+				System.out.println("   - Value: \t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
+
+				if (noun1 != null && noun2 != null) // noun1 and noun2
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
+							" as " + adj.getText() + " as " + operationtype.getText() + " a " + adjString
+									+ noun1.getText() + " and a " + adjString2 + " " + noun2.getText() + el.getText());
+				else if (sub1 != null && noun2 != null) // me and noun2
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
+							" as " + adj.getText() + " as " + operationtype.getText() + " " + sub1.getText() + " and a "
+									+ adjString2 + " " + noun2.getText() + el.getText());
+				else if (sub1 != null && sub2 != null) // me and me
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), " as " + adj.getText() + " as "
+							+ operationtype.getText() + " " + sub1.getText() + " and " + sub2.getText() + el.getText());
+				else if (noun1 != null && sub2 != null) // noun1 and me
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
+							" as " + adj.getText() + " as " + operationtype.getText() + " a " + adjString + " "
+									+ noun1.getText() + " and " + sub2.getText() + el.getText());
+				adjString = "";
+				adjString2 = "";
+			}
+			printCharacters();
+			adjectiveCounter = 0; // after every assignment return 0
+			adjectiveCounter2 = 0; // after every assignment return 0
 
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
-
-		if (!checkError) {
-			System.out.println("---------------------------   STAGE EVENT  ------------------------------");
-			System.out.println("   - Actor: \t\t" + ch.getText());
-			if (noun1 != null)
-				System.out.println("   - Noun: \t\t" + noun1.getText());
-			else
-				System.out.println("   - Noun: \t\t" + sub1.getText());
-			if (noun2 != null)
-				System.out.println("   - Noun: \t\t" + noun2.getText());
-			else
-				System.out.println("   - Noun: \t\t" + sub2.getText());
-			System.out.println("   - Value: \t\t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
-
-			if (noun1 != null && noun2 != null) // noun1 and noun2
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
-						" as " + adj.getText() + " as " + operationtype.getText() + " a " + adjString
-								+ noun1.getText() + " and a " + adjString2 + noun2.getText() + el.getText());
-			else if (sub1 != null && noun2 != null) // me and noun2
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
-						" as " + adj.getText() + " as " + operationtype.getText() + sub1.getText() + " and a "
-								+ adjString2 + noun2.getText() + el.getText());
-			else if (sub1 != null && sub2 != null) // me and me
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), " as " + adj.getText() + " as "
-						+ operationtype.getText() + sub1.getText() + " and" + sub2.getText() + el.getText());
-			else if (noun1 != null && sub2 != null) // noun1 and me
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
-						" as " + adj.getText() + " as " + operationtype.getText() + " a " + adjString
-								+ noun1.getText() + " and" + sub2.getText() + el.getText());
-
-			adjString = "";
-			adjString2 = "";
-		}
-		printCharacters();
 	}
 
 	// stageEvent 3
@@ -599,15 +610,13 @@ public class SPLhandler {
 					op1 = (int) Math.pow(2, adjectiveCounter);
 				} else
 					op1 = -1 * (int) Math.pow(2, adjectiveCounter);
-				adjectiveCounter = 0; // after every assignment return 0
 			} else if (noun1 == null && sub1 != null) {
 				if (sub1.getType() == ShakespeareLexer.THYSELF || sub1.getType() == ShakespeareLexer.YOURSELF) {
 					op1 = stageCharacterList.get(updateCh).getValue();
 				} else {
 					op1 = stageCharacterList.get(ch.getText()).getValue(); // ME
 				}
-			} else
-				System.err.println("op1 non vallido");
+			}
 
 			int op2 = 0; // second operand
 			if (noun2 != null && sub2 == null) {
@@ -616,60 +625,65 @@ public class SPLhandler {
 					op2 = (int) Math.pow(2, adjectiveCounter2);
 				} else
 					op2 = -1 * (int) Math.pow(2, adjectiveCounter2);
-				adjectiveCounter2 = 0; // after every assignment return 0
 			} else if (noun2 == null && sub2 != null) {
 				if (sub2.getType() == ShakespeareLexer.THYSELF || sub2.getType() == ShakespeareLexer.YOURSELF) {
 					op2 = stageCharacterList.get(updateCh).getValue();
 				} else {
 					op2 = stageCharacterList.get(ch.getText()).getValue(); // ME
 				}
-			} else
-				System.err.println("op2 non valido");
-
-			if (operationtype.getType() == ShakespeareLexer.SUMOF) {
-				stageCharacterList.get(updateCh).assignValue(op1 + op2);
-			} else if (operationtype.getType() == ShakespeareLexer.DIFFBET) {
-				stageCharacterList.get(updateCh).assignValue(op1 - op2);
-			} else if (operationtype.getType() == ShakespeareLexer.PRODOF) {
-				stageCharacterList.get(updateCh).assignValue(op1 * op2);
-			} else if (operationtype.getType() == ShakespeareLexer.QUOTOF) {
-				stageCharacterList.get(updateCh).assignValue(op1 / op2);
 			}
+
+			int newValue = 0;
+			if (operationtype.getType() == ShakespeareLexer.SUMOF)
+				newValue = op1 + op2;
+			else if (operationtype.getType() == ShakespeareLexer.DIFFBET)
+				newValue = op1 - op2;
+			else if (operationtype.getType() == ShakespeareLexer.PRODOF)
+				newValue = op1 * op2;
+			else if (operationtype.getType() == ShakespeareLexer.QUOTOF)
+				newValue = op1 / op2;
+
+			if (neg == null)
+				stageCharacterList.get(updateCh).assignValue(newValue);
+			else
+				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
 			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 
+			if (!checkError) {
+				System.out.println("---------------------------   STAGE EVENT  ------------------------------");
+				System.out.println("   - Actor: \t\t" + updateCh);
+				if (noun1 != null) {
+					System.out.println("   - First operand: \t\t" + noun1.getText());
+					System.out.println("   - Num of adjectives for first opearnd: \t\t" + adjectiveCounter);
+				} else
+					System.out.println("   - First operand: \t\t" + sub1.getText());
+				if (noun2 != null) {
+					System.out.println("   - Second operand: \t\t" + noun2.getText());
+					System.out.println("   - Num of adjectives for second opearnd: \t\t" + adjectiveCounter2);
+				} else
+					System.out.println("   - Second operand: \t\t" + sub2.getText());
+				System.out.println("   - Value: \t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
+
+				if (noun1 != null && noun2 != null) // noun1 and noun2
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + " a " + adjString
+							+ " " + noun1.getText() + " and a " + adjString2 + " " + noun2.getText() + el.getText());
+				else if (sub1 != null && noun2 != null) // me and noun2
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + " "
+							+ sub1.getText() + " and a " + adjString2 + " " + noun2.getText() + el.getText());
+				else if (sub1 != null && sub2 != null) // me and me
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
+							operationtype.getText() + " " + sub1.getText() + " and " + sub2.getText() + el.getText());
+				else if (noun1 != null && sub2 != null) // noun1 and me
+					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + " a " + adjString
+							+ " " + noun1.getText() + " and " + sub2.getText() + el.getText());
+				adjString = "";
+				adjString2 = "";
+			}
+			printCharacters();
+			adjectiveCounter = 0; // after every assignment return 0
+			adjectiveCounter2 = 0; // after every assignment return 0
 		} else
 			dramaErrorHandler(ONLY_ONE_CHARACTER_ON_STAGE, ch);
-
-		if (!checkError) {
-			System.out.println("---------------------------   STAGE EVENT  ------------------------------");
-			System.out.println("   - Actor: \t\t" + ch.getText());
-			if (noun1 != null)
-				System.out.println("   - Noun: \t\t" + noun1.getText());
-			else
-				System.out.println("   - Noun: \t\t" + sub1.getText());
-			if (noun2 != null)
-				System.out.println("   - Noun: \t\t" + noun2.getText());
-			else
-				System.out.println("   - Noun: \t\t" + sub2.getText());
-			System.out.println("   - Value: \t\t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
-
-			if (noun1 != null && noun2 != null) // noun1 and noun2
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + " a " + adjString
-						+ noun1.getText() + " and a " + adjString2 + noun2.getText() + el.getText());
-			else if (sub1 != null && noun2 != null) // me and noun2
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + sub1.getText()
-						+ " and a " + adjString2 + noun2.getText() + el.getText());
-			else if (sub1 != null && sub2 != null) // me and me
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
-						operationtype.getText() + sub1.getText() + " and" + sub2.getText() + el.getText());
-			else if (noun1 != null && sub2 != null) // noun1 and me
-				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + " a " + adjString
-						+ noun1.getText() + " and" + sub2.getText() + el.getText());
-
-			adjString = "";
-			adjString2 = "";
-		}
-		printCharacters();
 	}
 
 	public void checkConditional(Token ch1, Token ev, Token ch2, Token gt, Token gt2, Token gt3rs, Token gt4,
