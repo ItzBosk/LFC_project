@@ -181,7 +181,7 @@ assignmentOperationRule [Token ch, Token wh, Token neg]
 	A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
 	)
 	AND(
-	A adjectiveRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
 	|
 	sub2=(THYSELF | YOURSELF | ME))
 	el=(EP| DOT)

@@ -409,7 +409,7 @@ public class SPLhandler {
 
 		if (print && !checkError) {
 			System.out.println("---------------------------- " + Util.middleSpacer("Exiting " + ch.getText(), 17)
-					+ " ------------------------------");
+					+ " -----------------------------");
 			printCharacters();
 		}
 
@@ -426,7 +426,7 @@ public class SPLhandler {
 			for (String str : stageCharacterList.keySet()) {
 				stageCharacterList.get(str).onStage = false;
 				System.out.println("--------------------------- " + Util.middleSpacer("Exiting " + str, 17)
-						+ " ------------------------------");
+						+ " -----------------------------");
 			}
 			printCharacters();
 		}
@@ -437,9 +437,9 @@ public class SPLhandler {
 				checkExit(ch2, false);
 				if (!checkError) {
 					System.out.println("--------------------------- "
-							+ Util.middleSpacer("Exiting " + ch1.getText(), 17) + " -----------------------------");
+							+ Util.middleSpacer("Exiting " + ch1.getText(), 17) + " ----------------------------");
 					System.out.println("--------------------------- "
-							+ Util.middleSpacer("Exiting " + ch2.getText(), 17) + " -----------------------------");
+							+ Util.middleSpacer("Exiting " + ch2.getText(), 17) + " ----------------------------");
 					System.out.print("\n");
 					printCharacters();
 				}
@@ -475,10 +475,10 @@ public class SPLhandler {
 			goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 			if (!checkError && noun != null) {
 				System.out.println("---------------------------   STAGE EVENT   ------------------------------");
-				System.out.println("   - Actor: \t\t" + updateCh);
-				System.out.println("   - Noun: \t\t" + noun.getText());
+				System.out.println("   - Actor: \t\t\t\t\t" + updateCh);
+				System.out.println("   - Noun: \t\t\t" + noun.getText());
 				System.out.println("   - Num of adjectives: \t\t" + adjectiveCounter);
-				System.out.println("   - Value: \t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
+				System.out.println("   - New value: \t\t\t\\t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
 				HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
 						" " + adjString + " " + noun.getText() + el.getText());
 				adjString = "";
@@ -551,18 +551,18 @@ public class SPLhandler {
 
 			if (!checkError) {
 				System.out.println("---------------------------   STAGE EVENT  ------------------------------");
-				System.out.println("   - Actor: \t\t" + updateCh);
+				System.out.println("   - Actor: \t\t\t\t\t" + updateCh);
 				if (noun1 != null) {
-					System.out.println("   - First operand: \t\t" + noun1.getText());
-					System.out.println("   - Num of adjectives for first opearnd: \t\t" + adjectiveCounter);
+					System.out.println("   - First operand: \t\t\t\t" + noun1.getText());
+					System.out.println("   - Num of adjectives for first operand: \t\t" + adjectiveCounter);
 				} else
-					System.out.println("   - First operand: \t\t" + sub1.getText());
+					System.out.println("   - First operand: \t\t\t\t" + sub1.getText());
 				if (noun2 != null) {
-					System.out.println("   - Second operand: \t\t" + noun2.getText());
-					System.out.println("   - Num of adjectives for second opearnd: \t\t" + adjectiveCounter2);
+					System.out.println("   - Second operand: \t\t\t\t" + noun2.getText());
+					System.out.println("   - Num of adjectives for second operand: \t\t" + adjectiveCounter2);
 				} else
-					System.out.println("   - Second operand: \t\t" + sub2.getText());
-				System.out.println("   - Value: \t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
+					System.out.println("   - Second operand: \t\t\t\t" + sub2.getText());
+				System.out.println("   - New value: \t\t\t\t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
 
 				if (noun1 != null && noun2 != null) // noun1 and noun2
 					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(),
@@ -651,18 +651,18 @@ public class SPLhandler {
 
 			if (!checkError) {
 				System.out.println("---------------------------   STAGE EVENT  ------------------------------");
-				System.out.println("   - Actor: \t\t" + updateCh);
+				System.out.println("   - Actor: \t\t\t\t\t" + updateCh);
 				if (noun1 != null) {
-					System.out.println("   - First operand: \t\t" + noun1.getText());
-					System.out.println("   - Num of adjectives for first opearnd: \t\t" + adjectiveCounter);
+					System.out.println("   - First operand: \t\t\t\t" + noun1.getText());
+					System.out.println("   - Num of adjectives for first operand: \t\t" + adjectiveCounter);
 				} else
-					System.out.println("   - First operand: \t\t" + sub1.getText());
+					System.out.println("   - First operand: \t\t\t\t" + sub1.getText());
 				if (noun2 != null) {
-					System.out.println("   - Second operand: \t\t" + noun2.getText());
-					System.out.println("   - Num of adjectives for second opearnd: \t\t" + adjectiveCounter2);
+					System.out.println("   - Second operand: \t\t\t\t" + noun2.getText());
+					System.out.println("   - Num of adjectives for second operand: \t\t" + adjectiveCounter2);
 				} else
-					System.out.println("   - Second operand: \t\t" + sub2.getText());
-				System.out.println("   - Value: \t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
+					System.out.println("   - Second operand: \t\t\t\t" + sub2.getText());
+				System.out.println("   - New value: \t\t\t\t\t" + stageCharacterList.get(updateCh).getValue() + "\n");
 
 				if (noun1 != null && noun2 != null) // noun1 and noun2
 					HtmlToPDF.HTML.addStageEvent(ch.getText(), wh.getText(), operationtype.getText() + " a " + adjString
@@ -918,7 +918,7 @@ public class SPLhandler {
 
 		if (!checkError) {
 			System.out.println("---------------------------   REMEMBER ACTION  -----------------------------");
-			System.out.println("   - Actor: \t\t" + secondStageCharacter(ch));
+			System.out.println("   - Actor: \t\t\t\t\t" + secondStageCharacter(ch));
 			if (who.getType() == ShakespeareLexer.ME)
 				System.out.println("   - Pushed value: \t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
 			else
@@ -946,7 +946,7 @@ public class SPLhandler {
 
 		if (!checkError) {
 			System.out.println("----------------------------   RECALL ACTION  ------------------------------");
-			System.out.println("   - Actor: \t\t" + secondStageCharacter(ch));
+			System.out.println("   - Actor: \t\t\t\t\t" + secondStageCharacter(ch));
 			System.out.println("   - Popped value: \t" + stageCharacterList.get(ch.getText()).getValue() + "\n");
 			goTo.newLog(sceneNumber, secondStageCharacter(ch), 4);
 			HtmlToPDF.HTML.addStageEvent(ch.getText(), "Recall.");
