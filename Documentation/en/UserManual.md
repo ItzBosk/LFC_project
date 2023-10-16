@@ -59,15 +59,39 @@ If you are running **Linux** follow along the same instructions as per MacOS (ym
 Creating Shakespeare Programming Language (SPL) code can be a fun, creative way to write programs. Imagine you're telling a story with two characters, and they need to talk to each other, and they also move around. Here's how you can do it:
 
 1. **Title**: Self explanatory
-2. **Dramatis Personae**: Pick two characters. These can be any names you like from the following list, such as "Romeo" and "Juliet".
-   {'Romeo', 'Juliet', 'Hamlet', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}
+2. **Dramatis Personae**: Pick two characters. These can be any names you like from the following list, such as "Romeo" and "Juliet".  
+   {'Romeo', 'Juliet', 'Hamlet', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}  
 Each character will represent a stack (like a pile of books) and a current value. They're the actual "variable" of the Shakespeare language.
 3. **Acts and Scenes**: It's the logical subdivision of events in a SPL enviroment, an act may contain different scenes. A scene must be declared inside an Act. The numeration is sequential and uses Roman Numbers. There must be at least ACT I and SCENE I
 4. **Entering and Exiting**: On the stage there must be a max two character, so the entering and exiting is used to set which one are active in that particular Scene.
 5. **Lines and Assignment**: We will discuss this topic deeply later, but for now we can consider this the real part of the SPL because is with Lines and Assignment that the program logic is built, the numbers are created and the characters handles values.
-6. **Input and Output**: There are different ways to see and set values in SPL, and you can both interact with Integers or their corrispective in Char value, allowing you to display both numbers, letters, symbols, or combine them if you want.
-7. **Conditional Statement**: You can specify some checkings about the current value of a variable and jump to certain location of the code in order to implement a complex structure.
-8. **Push and Pop**: Each personae is also a stack. So it's allowed to be pushed a new value onto the stack of the character itself and if needed also to pop the topmost value of his memory.
+You can choose from the following list all the items that you want to use to build your Script:
+
+NOUNS:   
+
+-POSITIVE NOUN (+1) =  
+{'Heaven', 'King', 'Lord', 'angel', 'flower', 'happiness', 'joy', 'plum', 'summer’s day', 'hero', 'rose', 'kingdom', 'pony'}
+   
+-NEUTRAL NOUN (+1) =   
+{'animal', 'aunt', 'brother', 'cat', 'chihuahua', 'cousin', 'cow', 'daughter', 'door', 'face', 'father', 'fellow', 'granddaughter', 'grandfather', 'grandmother', 'grandson', 'hair', 'hamster', 'horse', 'lamp', 'lantern', 'mistletoe', 'moon', 'morning', 'mother', 'nephew', 'niece', 'nose', 'purse', 'road', 'roman', 'sister', 'sky', 'son', 'squirrel', 'stonewall', 'thing', 'town', 'tree', 'uncle','wind'}
+    
+-NEGATIVE NOUN (-1) =  
+ {Hell', 'Microsoft', 'bastard', 'beggar', 'blister', 'codpiece', 'coward', 'curse', 'death', 'devil', 'draught', 'famine', 'flirt-gill', 'goat', 'hate', 'hog', 'hound', 'leech', 'lie', 'pig', 'plague', 'starvation', 'toad', 'war', 'wolf'}
+
+ADJECTIVES
+
+-POSITIVE ADJECTIVE =   
+{'amazing', 'beautiful', 'blossoming', 'bold', 'brave', 'charming', 'clearest', 'cunning', 'cute', 'delicious', 'embroidered', 'fair', 'fine', 'gentle', 'golden', 'good', 'handsome', 'happy', 'healthy', 'honest', 'lovely', 'loving', 'mighty', 'noble', 'peaceful', 'pretty', 'prompt', 'proud', 'reddest', 'rich', 'smooth', 'sunny', 'sweet', 'sweetest', 'trustworthy', 'warm'}
+
+-NEUTRAL ADJECTIVE =   
+{'big', 'black', 'blue', 'bluest', 'bottomless', 'furry', 'green', 'hard', 'huge', 'large', 'little', 'normal', 'old', 'purple', 'red', 'rural', 'small', 'tiny', 'white', 'yellow'}
+
+-NEGATIVE ADJECTIVE =  
+{'bad', 'cowardly', 'cursed', 'damned', 'dirty', 'disgusting', 'distasteful', 'dusty', 'evil', 'fat', 'fat-kidneyed', 'fatherless', 'foul', 'hairy', 'half-witted', 'horrible', 'horrid', 'infected', 'lying', 'miserable', 'misused', 'oozing', 'rotten', 'smelly', 'snotty', 'sorry', 'stinking', 'stuffed', 'stupid', 'vile', 'villainous', 'worried'}
+
+7. **Input and Output**: There are different ways to see and set values in SPL, and you can both interact with Integers or their corrispective in Char value, allowing you to display both numbers, letters, symbols, or combine them if you want.
+8. **Conditional Statement**: You can specify some checkings about the current value of a variable and jump to certain location of the code in order to implement a complex structure.
+9. **Push and Pop**: Each personae is also a stack. So it's allowed to be pushed a new value onto the stack of the character itself and if needed also to pop the topmost value of his memory.
 
 Remember, in the Shakespeare Programming Language, you're not writing typical code like in other programming languages. Instead, you're creating a story where the characters and their actions represent the code's logic. It's a fun way to write code, almost like writing a play or a script!
 
