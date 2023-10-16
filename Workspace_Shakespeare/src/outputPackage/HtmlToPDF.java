@@ -173,7 +173,7 @@ public class HtmlToPDF {
 						+ "		<h2 style=\"font-size:40px;\">Character list:</h2>";
 				firstPersonae = false;
 			}
-			htmlFile += "<div class=\"item\">"
+			htmlFile += "<div class=\"item\" style=\"width:180px;height:150px;\">"
 					+ "    <img class=\"image\"  src=\"resources/images/custom_"+personae+".jpg\" /></img>"
 					+ "    <span class=\"caption\">"+personae+"</span></div>";
 		}
