@@ -59,15 +59,39 @@ Se utilizzi **Linux** segui le stesse istruzioni di MacOS (ymmv ma se usi Linux 
 ### Capire come funziona SPL (nozioni di base)
 Creare codice Shakespeare Programming Language (SPL) può essere un modo divertente e creativo per scrivere programmi. Immagina di raccontare una storia con due personaggi, che hanno bisogno di parlare tra loro e di muoversi. Ecco come puoi farlo:
 1. **Title**: autoesplicativo
-2. **Dramatis Personae**: scegli due personaggi. Questi possono essere i nomi che preferisci dal seguente elenco, come "Romeo" e "Giulietta".
-    {'Romeo', 'Giulietta', 'Amleto', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}
+2. **Dramatis Personae**: scegli due personaggi. Questi possono essere i nomi che preferisci dal seguente elenco, come "Romeo" e "Giulietta".  
+    {'Romeo', 'Giulietta', 'Amleto', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}  
 Ogni personaggio rappresenterà una pila (come una pila di libri) e un valore corrente. Sono la vera "variabile" della lingua di Shakespeare.
 3. **Acts e Scenes**: È la suddivisione logica degli eventi in un ambiente SPL, un atto può contenere diverse scene. Una scena deve essere dichiarata all'interno di un atto. La numerazione è sequenziale e utilizza numeri romani. Devono esserci almeno l'ATTO I e la SCENA I
 4. **Entering and Exiting**: Sul palco devono esserci al massimo due personaggi, quindi l'entrata e l'uscita vengono utilizzate per impostare quale è attivo in quella particolare scena.
-5. **Linee e Assegnazioni**: Parleremo approfonditamente di questo argomento più avanti, ma per ora possiamo considerarlo la parte vera e propria dell'SPL perché è con Linee e Assegnazioni che si costruisce la logica del programma, si creano i numeri e le i caratteri gestiscono i valori.
-6. **Input e Output**: Esistono diversi modi per vedere e impostare i valori in SPL e puoi entrambi interagire con i numeri interi o il loro corrispondente nel valore Char, consentendoti di visualizzare numeri, lettere, simboli o combinarli se vuoi.
-7. **Dichiarazione condizionale**: puoi specificare alcuni controlli sul valore corrente di una variabile e passare a una determinata posizione del codice per implementare una struttura complessa.
-8. **Push and Pop**: ogni persona è anche una pila. Quindi è consentito inserire un nuovo valore nella pila del personaggio stesso e, se necessario, anche inserire il valore più in alto nella sua memoria.
+5. **Linee e Assegnazioni**: Parleremo approfonditamente di questo argomento più avanti, ma per ora possiamo considerarlo la parte vera e propria dell'SPL perché è con Linee e Assegnazioni che si costruisce la logica del programma, si creano i numeri e le i caratteri gestiscono i valori.  
+Puoi scegliere dalla lista seguente tutti gli elementi che vuoi per creare le tue frasi e il tuo copione:
+
+NOMI:
+   
+-NOME POSITIVO (+1) =  
+{'Heaven', 'King', 'Lord', 'angel', 'flower', 'happiness', 'joy', 'plum', 'summer’s day', 'hero', 'rose', 'kingdom', 'pony'}
+   
+-NOME NEUTRO (+1) =   
+{'animal', 'aunt', 'brother', 'cat', 'chihuahua', 'cousin', 'cow', 'daughter', 'door', 'face', 'father', 'fellow', 'granddaughter', 'grandfather', 'grandmother', 'grandson', 'hair', 'hamster', 'horse', 'lamp', 'lantern', 'mistletoe', 'moon', 'morning', 'mother', 'nephew', 'niece', 'nose', 'purse', 'road', 'roman', 'sister', 'sky', 'son', 'squirrel', 'stonewall', 'thing', 'town', 'tree', 'uncle','wind'}
+    
+-NOME NEGATIVO (-1) =  
+ {Hell', 'Microsoft', 'bastard', 'beggar', 'blister', 'codpiece', 'coward', 'curse', 'death', 'devil', 'draught', 'famine', 'flirt-gill', 'goat', 'hate', 'hog', 'hound', 'leech', 'lie', 'pig', 'plague', 'starvation', 'toad', 'war', 'wolf'}
+
+AGGETTIVI
+
+-AGGETTIVO POSITIVO =   
+{'amazing', 'beautiful', 'blossoming', 'bold', 'brave', 'charming', 'clearest', 'cunning', 'cute', 'delicious', 'embroidered', 'fair', 'fine', 'gentle', 'golden', 'good', 'handsome', 'happy', 'healthy', 'honest', 'lovely', 'loving', 'mighty', 'noble', 'peaceful', 'pretty', 'prompt', 'proud', 'reddest', 'rich', 'smooth', 'sunny', 'sweet', 'sweetest', 'trustworthy', 'warm'}
+
+-AGGETTIVO NEUTRO =   
+{'big', 'black', 'blue', 'bluest', 'bottomless', 'furry', 'green', 'hard', 'huge', 'large', 'little', 'normal', 'old', 'purple', 'red', 'rural', 'small', 'tiny', 'white', 'yellow'}
+
+-AGGETTIVO NEGATIVO =  
+{'bad', 'cowardly', 'cursed', 'damned', 'dirty', 'disgusting', 'distasteful', 'dusty', 'evil', 'fat', 'fat-kidneyed', 'fatherless', 'foul', 'hairy', 'half-witted', 'horrible', 'horrid', 'infected', 'lying', 'miserable', 'misused', 'oozing', 'rotten', 'smelly', 'snotty', 'sorry', 'stinking', 'stuffed', 'stupid', 'vile', 'villainous', 'worried'}
+
+7. **Input e Output**: Esistono diversi modi per vedere e impostare i valori in SPL e puoi entrambi interagire con i numeri interi o il loro corrispondente nel valore Char, consentendoti di visualizzare numeri, lettere, simboli o combinarli se vuoi.
+8. **Dichiarazione condizionale**: puoi specificare alcuni controlli sul valore corrente di una variabile e passare a una determinata posizione del codice per implementare una struttura complessa.
+9. **Push and Pop**: ogni persona è anche una pila. Quindi è consentito inserire un nuovo valore nella pila del personaggio stesso e, se necessario, anche inserire il valore più in alto nella sua memoria.
 
 Ricorda, nel linguaggio di programmazione Shakespeare, non stai scrivendo il codice tipico come in altri linguaggi di programmazione. Stai invece creando una storia in cui i personaggi e le loro azioni rappresentano la logica del codice. È un modo divertente di scrivere codice, quasi come scrivere un'opera teatrale o una sceneggiatura!
 
