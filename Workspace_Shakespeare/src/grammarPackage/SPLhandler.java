@@ -287,7 +287,7 @@ public class SPLhandler {
 			sceneNumber = 0;
 			if (goTo.logList.size() != 0)
 				System.out.println("Goto List");
-			goTo.print();
+//			goTo.print();
 			goTo.clearLog();
 			System.out.println("===============================    ACT " + Util.evenSpacer(actNumber, 3)
 					+ "   ===============================");
