@@ -365,7 +365,7 @@ public class SPLinterrface extends JFrame {
 	    //   'Shylock'
 	    //   'Prospero'
 		
-		JButton downloadPdfButton = new JButton("Download PDF");
+		JButton downloadPdfButton = new JButton("Export PDF");
 		downloadPdfButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		downloadPdfButton.setBounds(486, 566, 180, 35);
 		downloadPdfButton.setBackground(SystemColor.controlHighlight);
