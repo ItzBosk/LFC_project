@@ -911,6 +911,7 @@ public class SPLhandler {
 		int optType; // 1+, 2-, 3*, 4/
 		int personType; // 1 number-person ,2 person-number , 3 person-person
 		int targetScene;
+		boolean printNumber; //if the 2 type of logged action is about printing numbers or chars
 		///////
 		// 1 -> setting the value of a stage character
 		// 2 -> prints the value of a stage character
@@ -925,6 +926,14 @@ public class SPLhandler {
 			this.character = character;
 			this.assignedValue = assignedValue;
 			this.actionType = actionType;
+		}
+		
+		public loggedAction(int scene, String character, int actionType, Object assignedValue, Boolean printNumber) {
+			this.scene = scene;
+			this.character = character;
+			this.assignedValue = assignedValue;
+			this.actionType = actionType;
+			this.printNumber = printNumber;
 		}
 
 		public loggedAction(int scene, String character, int actionType) {
@@ -959,6 +968,10 @@ public class SPLhandler {
 		public void newLog(int Scene, String CharacterName, int ActionType, Object AssignedValue) {
 			logList.add(new loggedAction(Scene, CharacterName, ActionType, AssignedValue));
 		}
+		
+		public void newLog(int Scene, String CharacterName, int ActionType, Object AssignedValue,Boolean printNumber) {
+			logList.add(new loggedAction(Scene, CharacterName, ActionType, AssignedValue,printNumber));
+		}
 
 		public void newLog(int Scene, String Character, int ActionType) {
 			logList.add(new loggedAction(Scene, Character, ActionType));
@@ -988,8 +1001,10 @@ public class SPLhandler {
 								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
-						//execOutput += (String) singleLog.assignedValue;
-						execOutput += stageCharacterList.get(singleLog.character).getValue();
+						if(singleLog.printNumber)
+							execOutput += stageCharacterList.get(singleLog.character).getValue();
+						else
+							execOutput += (char) stageCharacterList.get(singleLog.character).getValue();
 						break;
 					case 3:
 						stageCharacterList.get(singleLog.character).push((int) singleLog.assignedValue);
@@ -1113,7 +1128,6 @@ public class SPLhandler {
 						}
 						break;
 					}
-					//System.err.println("eseguo azione "+singleLog.actionType+" per " + singleLog.character);
 				}
 			}
 		}
@@ -1197,13 +1211,13 @@ public class SPLhandler {
 			HtmlToPDF.HTML.addStageEvent(ch.getText(), phrase.getText() + ws.getText());
 			if (phrase.getType() == ShakespeareLexer.PRINTVALUE) {
 				execOutput += stageCharacterList.get(secondCh).getValue();
-				goTo.newLog(sceneNumber, secondCh, 2, String.valueOf(stageCharacterList.get(secondCh).getValue()));
+				goTo.newLog(sceneNumber, secondCh, 2, String.valueOf(stageCharacterList.get(secondCh).getValue()),true);
 			} else {
 				// only some values are considered valid and printed
 				if (stageCharacterList.get(secondCh).getValue() >= 32
 						&& stageCharacterList.get(secondCh).getValue() <= 126) {
 					char asciiValue = (char) stageCharacterList.get(secondCh).getValue(); // ASCII conversion
-					goTo.newLog(sceneNumber, secondCh, 2, String.valueOf(asciiValue));
+					goTo.newLog(sceneNumber, secondCh, 2, String.valueOf(asciiValue),false);
 					execOutput += asciiValue;
 				} else
 					dramaErrorHandler(INVALID_ASCII_OUTPUT, ch);
