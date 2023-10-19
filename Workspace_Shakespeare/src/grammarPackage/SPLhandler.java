@@ -56,6 +56,7 @@ public class SPLhandler {
 	public static int UNDECLARED_CHARACTER = 27;
 	public static int NO_MULTIPLE_ASCII_INPUT = 28;
 	public static int INVALID_ASCII_INPUT = 29;
+	public static int NO_EOF = 30;
 
 	public static String userInput;
 	public static String[] userInputSplitted;
@@ -116,9 +117,16 @@ public class SPLhandler {
 
 		if (tk.getType() == ShakespeareLexer.ERROR_TK)
 			errMsg = "Lexical Error " + LEXICAL_ERROR;
-		else
+		else {
 			errMsg = "Syntax Error " + SYNTAX_ERROR;
-
+			if (tk.getType() == ShakespeareLexer.EOF) {
+				errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: " + " on token '"
+						+ input.LT(-1).getText() + "' : You cannot end a program like this. You should instead continue the current scene or start another act/scene";
+				errorList.add(errMsg);
+				return;
+			}
+				
+		}
 		errMsg += " at [" + tk.getLine() + ", " + (tk.getCharPositionInLine() + 1) + "]: " + " on token '"
 				+ tk.getText() + "'";
 		errorList.add(errMsg); // error message
@@ -206,6 +214,8 @@ public class SPLhandler {
 		else if (code == NO_MULTIPLE_ASCII_INPUT)
 			errMsg += "The inserted ASCII character for " + secondStageCharacter(tk)
 					+ " is not valid, only single character input is allowed";
+		else if (code == NO_EOF)
+			errMsg += "You cannot end a program like this " + tk.getText();
 
 		errorList.add(errMsg);
 	}
@@ -1254,4 +1264,15 @@ public class SPLhandler {
 			}
 		}
 	}
+	
+	// check end of file
+//	public void checkEOF(Token eof) {
+////		if (eof != null)
+////			dramaErrorHandler(NO_EOF, eof);
+//		
+//		if (eof.getType() == ShakespeareLexer.EOF)
+//			dramaErrorHandler(NO_EOF, eof);
+//		
+//	}
+	
 }

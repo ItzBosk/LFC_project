@@ -64,7 +64,10 @@ titlecharRule
 bodyRule    
 	:   
     	dramatisPersonaeRule+
-    	(actRule sceneRule+)+
+    	(actRule sceneRule+ (exitRule | exeuntRule)?)+
+    	EOF
+    	//eof=EOF
+    	//{h.checkEOF($eof);}
     	;
 
 // stage character declaration
@@ -89,7 +92,7 @@ sceneRule
     	enterRule?
     	stageEventRule*
     	conditionalRule?
-    	(exitRule | exeuntRule)?
+    	
     	;
 
 // entrance of one or two stage characters
