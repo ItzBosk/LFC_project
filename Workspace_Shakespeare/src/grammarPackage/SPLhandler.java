@@ -552,41 +552,51 @@ public class SPLhandler {
 				System.err.println("op2 non valido");
 
 			int optType = 0;
+			int newValue = 0;
 			switch (operationtype.getType()) {
 			case ShakespeareLexer.SUMOF:
-				stageCharacterList.get(updateCh).assignValue(op1 + op2);
+				newValue= (op1 + op2);
 				optType = 0;
 				break;
 			case ShakespeareLexer.DIFFBET:
-				stageCharacterList.get(updateCh).assignValue(op1 - op2);
+				newValue= (op1 - op2);
 				optType = 1;
 				break;
 			case ShakespeareLexer.PRODOF:
-				stageCharacterList.get(updateCh).assignValue(op1 * op2);
+				newValue= (op1 * op2);
 				optType = 2;
 				break;
 			case ShakespeareLexer.QUOTOF:
-				stageCharacterList.get(updateCh).assignValue(op1 / op2);
+				newValue= (op1 / op2);
 				optType = 3;
 				break;
 			}
-
+			
+			Boolean isNegative = false;
+			if (neg != null)
+				isNegative = true;
+			
+			if (!isNegative)
+				stageCharacterList.get(updateCh).assignValue(newValue);
+			else
+				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
+			
 			if(op1Personae=="")
 			{
 				if(op2Personae=="") {
 					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 				}else
 				{// numero / persona
-					goTo.newLog(sceneNumber, updateCh, 5,String.valueOf(op1),op2Personae,optType,1);
+					goTo.newLog(sceneNumber, updateCh, 5,String.valueOf(op1),op2Personae,optType,1,isNegative);
 				}
 			}
 			else {
 				if(op2Personae=="") {
 					// persona / numero
-					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,String.valueOf(op2),optType,2);
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,String.valueOf(op2),optType,2,isNegative);
 				}else
 				{// persona / persona
-					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,op2Personae,optType,3);
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,op2Personae,optType,3,isNegative);
 				}
 			}
 
@@ -685,41 +695,51 @@ public class SPLhandler {
 				System.err.println("op2 non valido");
 
 			int optType = 0;
+			int newValue = 0;
 			switch (operationtype.getType()) {
 			case ShakespeareLexer.SUMOF:
-				stageCharacterList.get(updateCh).assignValue(op1 + op2);
+				newValue= (op1 + op2);
 				optType = 0;
 				break;
 			case ShakespeareLexer.DIFFBET:
-				stageCharacterList.get(updateCh).assignValue(op1 - op2);
+				newValue= (op1 - op2);
 				optType = 1;
 				break;
 			case ShakespeareLexer.PRODOF:
-				stageCharacterList.get(updateCh).assignValue(op1 * op2);
+				newValue= (op1 * op2);
 				optType = 2;
 				break;
 			case ShakespeareLexer.QUOTOF:
-				stageCharacterList.get(updateCh).assignValue(op1 / op2);
+				newValue= (op1 / op2);
 				optType = 3;
 				break;
 			}
-
+			
+			Boolean isNegative = false;
+			if (neg != null)
+				isNegative = true;
+			
+			if (!isNegative)
+				stageCharacterList.get(updateCh).assignValue(newValue);
+			else
+				stageCharacterList.get(updateCh).assignValue(-newValue); // negation
+			
 			if(op1Personae=="")
 			{
 				if(op2Personae=="") {
 					goTo.newLog(sceneNumber, updateCh, 1, String.valueOf(stageCharacterList.get(updateCh).getValue()));
 				}else
 				{// numero / persona
-					goTo.newLog(sceneNumber, updateCh, 5,String.valueOf(op1),op2Personae,optType,1);
+					goTo.newLog(sceneNumber, updateCh, 5,String.valueOf(op1),op2Personae,optType,1,isNegative);
 				}
 			}
 			else {
 				if(op2Personae=="") {
 					// persona / numero
-					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,String.valueOf(op2),optType,2);
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,String.valueOf(op2),optType,2,isNegative);
 				}else
 				{// persona / persona
-					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,op2Personae,optType,3);
+					goTo.newLog(sceneNumber, updateCh, 5,op1Personae,op2Personae,optType,3,isNegative);
 				}
 			}
 			
@@ -912,6 +932,7 @@ public class SPLhandler {
 		int personType; // 1 number-person ,2 person-number , 3 person-person
 		int targetScene;
 		boolean printNumber; //if the 2 type of logged action is about printing numbers or chars
+		boolean isNegative;
 		///////
 		// 1 -> setting the value of a stage character
 		// 2 -> prints the value of a stage character
@@ -942,7 +963,7 @@ public class SPLhandler {
 			this.actionType = actionType;
 		}
 		
-		public loggedAction(int scene, String character, int actionType,String aop1,String aop2,int optType,int personType) {
+		public loggedAction(int scene, String character, int actionType,String aop1,String aop2,int optType,int personType,boolean isNegative) {
 			this.scene = scene;
 			this.character = character;
 			this.actionType = actionType;
@@ -950,6 +971,7 @@ public class SPLhandler {
 			this.op2 = aop2;
 			this.optType = optType;
 			this.personType = personType;
+			this.isNegative = isNegative;
 		}
 		
 		public loggedAction(int Scene, String ch1, String ch2, int type, int target) {
@@ -977,8 +999,8 @@ public class SPLhandler {
 			logList.add(new loggedAction(Scene, Character, ActionType));
 		}
 		
-		public void newLog(int Scene, String Character, int ActionType,String op1, String op2, int optType, int personType) {
-			logList.add(new loggedAction(Scene, Character, ActionType,op1,op2,optType,personType));
+		public void newLog(int Scene, String Character, int ActionType,String op1, String op2, int optType, int personType, Boolean isNegative) {
+			logList.add(new loggedAction(Scene, Character, ActionType,op1,op2,optType,personType,isNegative));
 		}
 		
 		public void newLog(int Scene, String ch1, String ch2, int type, int target) {
@@ -996,9 +1018,9 @@ public class SPLhandler {
 			for (loggedAction singleLog : logList) {
 				if (singleLog.scene >= scene) {
 					switch (singleLog.actionType) {
-					case 1:
-						stageCharacterList.get(singleLog.character)
-								.assignValue(Integer.valueOf((String) singleLog.assignedValue));
+					case 1:		
+							stageCharacterList.get(singleLog.character)
+							.assignValue(Integer.valueOf((String) singleLog.assignedValue));
 						break;
 					case 2:
 						if(singleLog.printNumber)
@@ -1017,22 +1039,41 @@ public class SPLhandler {
 							case 0:
 								switch(singleLog.personType) {
 								case 1:// 1 number-person 
-									stageCharacterList.get(singleLog.character)
+									if(!singleLog.isNegative)
+										stageCharacterList.get(singleLog.character)
 									.assignValue(Integer.valueOf(singleLog.op1)
 											+
 											stageCharacterList.get(singleLog.op2).getValue());
+									else
+										stageCharacterList.get(singleLog.character)
+										.assignValue(-(Integer.valueOf(singleLog.op1)
+												+
+												stageCharacterList.get(singleLog.op2).getValue()));
 									break;
 								case 2:// 2 person-number
+									if(!singleLog.isNegative)
 									stageCharacterList.get(singleLog.character)
 									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
 											+
 											Integer.valueOf(singleLog.op2));
+									else
+
+										stageCharacterList.get(singleLog.character)
+										.assignValue(-(stageCharacterList.get(singleLog.op1).getValue()
+												+
+												Integer.valueOf(singleLog.op2)));
 									break;
 								case 3:// 3 person-person
+									if(singleLog.isNegative)
 									stageCharacterList.get(singleLog.character)
 									.assignValue(stageCharacterList.get(singleLog.op1).getValue()
 											+
 											stageCharacterList.get(singleLog.op2).getValue());
+									else
+										stageCharacterList.get(singleLog.character)
+										.assignValue(-(stageCharacterList.get(singleLog.op1).getValue()
+												+
+												stageCharacterList.get(singleLog.op2).getValue()));
 									break;
 									
 								}
