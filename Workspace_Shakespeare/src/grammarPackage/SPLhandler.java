@@ -1319,15 +1319,4 @@ public class SPLhandler {
 			}
 		}
 	}
-	
-	// check end of file
-//	public void checkEOF(Token eof) {
-////		if (eof != null)
-////			dramaErrorHandler(NO_EOF, eof);
-//		
-//		if (eof.getType() == ShakespeareLexer.EOF)
-//			dramaErrorHandler(NO_EOF, eof);
-//		
-//	}
-	
 }
