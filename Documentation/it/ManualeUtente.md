@@ -59,8 +59,8 @@ Se utilizzi **Linux** segui le stesse istruzioni di MacOS (ymmv ma se usi Linux 
 ### Capire come funziona SPL (nozioni di base)
 Creare codice Shakespeare Programming Language (SPL) può essere un modo divertente e creativo per scrivere programmi. Immagina di raccontare una storia con due personaggi, che hanno bisogno di parlare tra loro e di muoversi. Ecco come puoi farlo:
 1. **Title**: autoesplicativo
-2. **Dramatis Personae**: scegli due personaggi. Questi possono essere i nomi che preferisci dal seguente elenco, come "Romeo" e "Giulietta".  
-    {'Romeo', 'Giulietta', 'Amleto', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'}  
+2. **Dramatis Personae**: scegli due personaggi. Questi possono essere i nomi che preferisci dal seguente elenco, come "Romeo" e "Juliet".
+{'Romeo', 'Juliet', 'Hamlet', 'Ghost', 'LadyMacbeth', 'Ophelia', 'Mercutio', 'Banquo', 'Gertrude', 'Polonio', 'Shylock', 'Prospero'} 
 Ogni personaggio rappresenterà una pila (come una pila di libri) e un valore corrente. Sono la vera "variabile" della lingua di Shakespeare.
 3. **Acts e Scenes**: È la suddivisione logica degli eventi in un ambiente SPL, un atto può contenere diverse scene. Una scena deve essere dichiarata all'interno di un atto. La numerazione è sequenziale e utilizza numeri romani. Devono esserci almeno l'ATTO I e la SCENA I
 4. **Entering and Exiting**: Sul palco devono esserci al massimo due personaggi, quindi l'entrata e l'uscita vengono utilizzate per impostare quale è attivo in quella particolare scena.
@@ -120,7 +120,7 @@ Act I: Hamlet's insults and flattery.
 Scene I: The insulting of Romeo.
 ```
 4. **Enter, exit e exeunt**:
-Le singole righe di codice generalmente assumono la forma di un brano di dialogo pronunciato da un personaggio a un altro; questo è il modo in cui il valore di una variabile (il carattere a cui si parla) viene assegnato, modificato o emesso. Un personaggio può essere indirizzato solo come "tu" o "tu". Pertanto, in genere devono esserci esattamente due personaggi "sul palco" ogni volta che vengono pronunciate le battute: uno per parlare e l'altro con cui parlare. Per chiamare una variabile sullo stage viene utilizzato il comando Invio con un elenco di uno o più caratteri. Il comando Esci dice esattamente a uno dei personaggi elencati di lasciare il palco. Exeunt invita più di un personaggio ad andarsene, o nel caso in cui nessun personaggio sia elencato tutti i personaggi lasceranno il palco. Viene utilizzato il seguente formato:
+Le singole righe di codice generalmente assumono la forma di un brano di dialogo pronunciato da un personaggio a un altro; questo è il modo in cui il valore di una variabile (il carattere a cui si parla) viene assegnato, modificato o emesso. Un personaggio può essere indirizzato solo come "you" o "thou". Pertanto, in genere devono esserci esattamente due personaggi "sul palco" ogni volta che vengono pronunciate le battute: uno per parlare e l'altro con cui parlare. Per chiamare una variabile sullo stage viene utilizzato il comando Invio con un elenco di uno o più caratteri. Il comando Esci dice esattamente a uno dei personaggi elencati di lasciare il palco. Exeunt invita più di un personaggio ad andarsene, o nel caso in cui nessun personaggio sia elencato tutti i personaggi lasceranno il palco. Viene utilizzato il seguente formato:
 ```
 [Enter Juliet]
 [Enter Romeo and Juliet]
@@ -129,8 +129,8 @@ Le singole righe di codice generalmente assumono la forma di un brano di dialogo
 [Exeunt]
 ```
 5. **Linee, costanti e assegnazione di valori**:
-Le linee sono rappresentate come dialoghi pronunciati da un personaggio e consistono in almeno una frase. Ogni frase può assegnare un nuovo valore a una variabile, indirizzare una variabile a produrre il suo valore o indirizzarla a ricevere un input. Le linee possono anche manipolare stack o agire come istruzioni if/then o goto. Una riga inizia con il nome di un personaggio e i due punti. Poiché questo personaggio è l'oratore, l'altro personaggio sul palco è la variabile a cui ci si rivolge come "tu" o "tu".
-Le costanti sono rappresentate da combinazioni di nomi e aggettivi; la lingua riconosce un elenco finito di ciascuno, ed entrambi gli elenchi sono separati in quelli con tono positivo, negativo o neutro. I nomi positivi e neutri hanno un valore pari a 1, mentre i nomi negativi hanno un valore pari a -1. Qualsiasi aggettivo moltiplica un sostantivo per 2 e gli aggettivi possono essere composti. I pronomi possessivi vengono ignorati dal parser, mentre le parole relative all'aritmetica di base vengono riconosciute come operazioni, come "somma", "quoziente" e "cubo". Una frase che assegna un valore a un carattere inizia con "Tu" o "Tu", può facoltativamente continuare con "sono come [qualsiasi aggettivo] come", e quindi fornisce la formula matematica in sostantivi, aggettivi, variabili e operazioni per il nuovo valore. Come possibilita aggiuntiva e' possibile usare il costrutto "not" per negare il risultato di un calcolo prima di assegnarlo.
+Le linee sono rappresentate come dialoghi pronunciati da un personaggio e consistono in almeno una frase. Ogni frase può assegnare un nuovo valore a una variabile, indirizzare una variabile a produrre il suo valore o indirizzarla a ricevere un input. Le linee possono anche manipolare stack o agire come istruzioni if/then o goto. Una riga inizia con il nome di un personaggio e i due punti. Poiché questo personaggio è l'oratore, l'altro personaggio sul palco è la variabile a cui ci si rivolge come "you" o "thou".
+Le costanti sono rappresentate da combinazioni di nomi e aggettivi; la lingua riconosce un elenco finito di ciascuno, ed entrambi gli elenchi sono separati in quelli con tono positivo, negativo o neutro. I nomi positivi e neutri hanno un valore pari a 1, mentre i nomi negativi hanno un valore pari a -1. Qualsiasi aggettivo moltiplica un sostantivo per 2 e gli aggettivi possono essere composti. I pronomi possessivi vengono ignorati dal parser, mentre le parole relative all'aritmetica di base vengono riconosciute come operazioni, come "sum", "quotient" e "product". Una frase che assegna un valore a un carattere inizia con "You" o "Thou", può facoltativamente continuare con "are as [qualsiasi aggettivo] as", e quindi fornisce la formula matematica in sostantivi, aggettivi, variabili e operazioni per il nuovo valore. Come possibilita aggiuntiva e' possibile usare il costrutto "not" per negare il risultato di un calcolo prima di assegnarlo.
 Seguono esempi di tali linee:
 ```
 Hamlet:
@@ -139,13 +139,13 @@ Hamlet:
 Juliet:
  You are not as good as a big big King!
 ```
-Le formule matematiche possono anche utilizzare i nomi di altri personaggi (anche se quei personaggi non sono sul palco) per utilizzare il valore corrente di quel personaggio in un calcolo, o "te stesso" o "te stesso" per il personaggio a cui si parla.
+Le formule matematiche possono anche utilizzare i nomi di altri personaggi (anche se quei personaggi non sono sul palco) per utilizzare il valore corrente di quel personaggio in un calcolo, o "yourself" o "thyselft" per il personaggio a cui si parla.
 
 6. **Ingresso e uscita**:
-Le righe possono anche richiedere una variabile per fornire output o ricevere input. "Apri il tuo cuore" restituisce il valore numerico della variabile, mentre "Parla la tua mente" restituisce il carattere ASCII corrispondente. "Ascolta il tuo cuore" o "Apri la tua mente" fanno sì che la variabile riceva input dall'utente; il primo per un numero e il secondo per un carattere.
+Le righe possono anche richiedere una variabile per fornire output o ricevere input. "Open your heart" restituisce il valore numerico della variabile, mentre "Speak your mind" restituisce il carattere ASCII corrispondente. "Listen to your heart" o "Open your mind" fanno sì che la variabile riceva input dall'utente; il primo per un numero e il secondo per un carattere.
 
 7. **Dichiarazioni condizionali e goto**:
-Un'affermazione if/then è formulata come una domanda posta da un personaggio. Le parole "come [qualsiasi aggettivo] come" rappresentano un test di uguaglianza, mentre "migliore" e "peggiore" corrispondono rispettivamente a maggiore di e minore di. Una riga successiva, che inizia con "se sì" o "se no", determina cosa accade in risposta alla verità o falsità della condizione originaria. Un'istruzione goto inizia con "Lasciaci", "Dobbiamo" o "Dobbiamo", continua "torna a" o "procedi a", e poi fornisce un atto o una scena. Una scena verrà analizzata come quella scena nell'atto corrente; un'istruzione goto non può richiamare una scena in un atto diverso. Un'istruzione condizionale per chiamare goto sarebbe simile a questa:
+Un'affermazione if/then è formulata come una domanda posta da un personaggio. Le parole "as [qualsiasi aggettivo] as" rappresentano un test di uguaglianza, mentre "better" e "worse" corrispondono rispettivamente a maggiore di e minore di. Una riga successiva, che inizia con "if so" o "if not", determina cosa accade in risposta alla verità o falsità della condizione originaria. Un'istruzione goto inizia con "Let us", "We shall" o "We must", continua "return to" o "proceed to", e poi fornisce un atto o una scena. Una scena verrà analizzata come quella scena nell'atto corrente; un'istruzione goto non può richiamare una scena in un atto diverso. Un'istruzione condizionale per chiamare goto sarebbe simile a questa:
 ```
 Juliet:
  Am I better than you?
@@ -154,7 +154,7 @@ Hamlet:
  If so, let us proceed to scene II.
 ```
 8. **Push e pop delle pile**:
-Ogni variabile è uno stack. Una variabile avrà un numero intero inserito nello stack se una riga dice al carattere di "ricordare" un valore appropriato, come "Ricordati di me" o "Ricordati di te stesso". Il valore più in alto nello stack viene estratto (cioè la variabile assume questo valore) se al personaggio viene detto di "ricordare" qualcosa; tutto il testo dopo questa parola viene trattato come un commento.
+Ogni variabile è uno stack. Una variabile avrà un numero intero inserito nello stack se una riga dice al carattere di "ricordare" un valore appropriato, come "Remember me" o "Remember yourself". Il valore più in alto nello stack viene estratto (cioè la variabile assume questo valore) se al personaggio viene detto di "recall" qualcosa; tutto il testo dopo questa parola viene trattato come un commento.
 
 
 #### Esempio di script
