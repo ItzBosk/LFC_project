@@ -138,4 +138,10 @@ The semantic controls implemented in the software to manage the Shakespeare prog
 - These rules count the number of adjectives attributed to a character.
 - They facilitate the calculation of the power of two to be assigned to the characters based on the number of adjectives.
 
+# Possible future developments
+In subsequent releases of the SPL software the following features could be added:
 
+- full error recognition support for Roman numbers:
+At the moment the program recognizes correctly written Roman numbers, but is able to distinguish only some of the syntactic errors that may affect them. A complete check with error reporting could then be implemented.
+- support for "twice", "square" and "cube" operations.
+Some versions of the Shakespeare programming language involve the use of these constructs. They respectively allow you to double the result of an operation, square it and cube it.

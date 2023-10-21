@@ -115,7 +115,8 @@ exeuntRule
     	LB EXEUNT (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB
     	{h.checkExeunt($ch1, $and, $ch2);}
     	;
-	
+
+// all possible events that can happen on stage
 stageEventRule
     	:
     	ch=CHARACTER CL
@@ -132,7 +133,6 @@ stageEventRule
     		) 
     	)*
 	;
-
 
 // assign a value with a statement
 //you are a big cow.
@@ -168,7 +168,6 @@ assignmentComparisonRule [Token ch, Token wh, Token neg]
 	el=(EP| DOT)
 	{h.checkAssignmentComparison($ch, $noun1, $noun2, $sub1, $sub2, $operationtype, $wh, $adj, $el, $neg);}
 	;
-
 
 // assign a value with an equation
 //you are the difference between yourself and a big big rose

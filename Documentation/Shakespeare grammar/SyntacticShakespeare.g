@@ -24,7 +24,7 @@ POSITIVENOUN
     |   'happiness'
     |   'joy'
     |   'plum'
-    |   'summer’s day'
+    |   'summer\'s day'
     |   'hero'
     |   'rose'
     |   'kingdom'
@@ -213,15 +213,17 @@ AND         	:	'and';
 
 
 // assignment
-YOU         	:   'You';
-ARE     	:   'are';
-THOUART    	:   'Thou art';
-AS      	:   'as';
-SUMOF       	:   'the sum of';
-DIFFBET        	:   'the difference between';
-PRODOF 		:   'the product of';
-A		:   'a';
-THYSELF		:   'thyself';
+YOU         	:	'You';
+ARE     	:   	'are';
+THOUART    	:   	'Thou art';
+AS      	:   	'as';
+SUMOF       	:   	'the sum of';
+DIFFBET        	:   	'the difference between';
+PRODOF 		:   	'the product of';
+QUOTOF		:	'the quotient of';
+A		: 	'a';
+THYSELF		:   	'thyself';
+NOT		:	'not';
 
 // conditional statement
 AMI		:	'Am I';
@@ -241,6 +243,7 @@ PROCEEDTO	:	'proceed to';
 // input/output
 PRINTVALUE     	:       'Open your heart';  
 PRINTASCII     	:       'Speak your mind';
+PRINTASCII2     :    	'Speak thy mind';
 READVALUE      	:       'Listen to your heart';
 READASCII      	:       'Open your mind';
 

@@ -64,7 +64,10 @@ titlecharRule
 bodyRule    
 	:   
     	dramatisPersonaeRule+
-    	(actRule sceneRule+)+
+    	(actRule sceneRule+ (exitRule | exeuntRule)?)+
+    	EOF
+    	//eof=EOF
+    	//{h.checkEOF($eof);}
     	;
 
 // stage character declaration
@@ -89,7 +92,7 @@ sceneRule
     	enterRule?
     	stageEventRule*
     	conditionalRule?
-    	(exitRule | exeuntRule)?
+    	
     	;
 
 // entrance of one or two stage characters
@@ -112,7 +115,8 @@ exeuntRule
     	LB EXEUNT (ch1=CHARACTER)? (and=AND ch2=CHARACTER)? RB
     	{h.checkExeunt($ch1, $and, $ch2);}
     	;
-	
+
+// all possible events that can happen on stage
 stageEventRule
     	:
     	ch=CHARACTER CL
@@ -121,43 +125,69 @@ stageEventRule
     	| recallRule [ch] 
     	| printRule[ch] 
     	| readRule [ch] 
-    	| wh=(YOU ARE? | THOUART) 
+    	| wh=(YOU ARE? | THOUART) neg=(NOT)? 
     		(
-    		assignmentStatementRule [ch,wh]
-    		| assignmentComparisonRule [ch,wh]
-    		| assignmentOperationRule [ch,wh]
+    		assignmentStatementRule [ch,wh,neg]
+    		| assignmentComparisonRule [ch,wh,neg]
+    		| assignmentOperationRule [ch,wh,neg]
     		) 
     	)*
 	;
 
 // assign a value with a statement
-assignmentStatementRule [Token ch, Token wh]
-	:	
+//you are a big cow.
+assignmentStatementRule [Token ch, Token wh, Token neg]
+	:
 	A? (adjectiveRule)* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
 	el=(EP | DOT)
-	{h.checkAssignmentStatement($ch, $noun, $wh, $el);}
+	{h.checkAssignmentStatement($ch, $noun, $wh, $el, $neg);}
 	;
 
+
 // assign a value with a comparison	
-assignmentComparisonRule [Token ch, Token wh]
+//You are as cowardly as the sum of a rose and a big rose. 	
+//You are as cowardly as the sum of a rose and yourself/thyself/me.
+//You are as cowardly as the sum of yourself/thyself/me and a rose.
+//You are as cowardly as the sum of yourself/thyself/me and yourself/thyself/me.
+assignmentComparisonRule [Token ch, Token wh, Token neg]
 	:
-	(AS 
+	(
+	AS 
 	adj=(POSITIVEADJECTIVE | NEUTRALADJECTIVE | NEGATIVEADJECTIVE)
 	AS 
-	operationtype=(SUMOF | DIFFBET | PRODOF)
-	A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
-	AND 
-	A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)) 
+	operationtype=(SUMOF | DIFFBET | PRODOF | QUOTOF)
+	(A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	|
+	sub1=(THYSELF | YOURSELF | ME)
+	)
+	AND
+	(A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN)
+	| sub2=(THYSELF | YOURSELF | ME)
+	)
+	)
 	el=(EP| DOT)
-	{h.checkAssignmentComparison($ch, $noun1, $noun2, $operationtype, $wh, $adj, $el);}
+	{h.checkAssignmentComparison($ch, $noun1, $noun2, $sub1, $sub2, $operationtype, $wh, $adj, $el, $neg);}
 	;
 
 // assign a value with an equation
-assignmentOperationRule [Token ch, Token wh]
+//you are the difference between yourself and a big big rose
+//you are the difference between a big rose and yourself.
+//you are the difference between a big rose and a big rose.
+//you are the difference between thyself and yourself. =0
+//you are the difference between thyself and me.
+assignmentOperationRule [Token ch, Token wh, Token neg]
 	:
-	operationtype=(SUMOF | DIFFBET | PRODOF) THYSELF 
-	AND A adjectiveRule* noun=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) el=(EP| DOT)
-	{h.checkAssignmentOperation($ch, $noun, $operationtype,  $wh,$el);}
+	operationtype=(SUMOF | DIFFBET | PRODOF| QUOTOF) 
+	(sub1=(THYSELF | YOURSELF | ME)
+	|
+	A adjectiveRule* noun1=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	)
+	AND(
+	A adjectiveSecondRule* noun2=(POSITIVENOUN | NEUTRALNOUN | NEGATIVENOUN) 
+	|
+	sub2=(THYSELF | YOURSELF | ME))
+	el=(EP| DOT)
+	{h.checkAssignmentOperation($ch, $noun1, $noun2, $sub1, $sub2, $operationtype, $wh, $el, $neg);}
 	;
 
 // counts the number of adjectives in order to calculate the assignment value
@@ -214,7 +244,7 @@ recallRule [Token ch]
 // print the value of a character (value or ASCII)
 printRule [Token ch]
 	:
-	phrase=(PRINTVALUE | PRINTASCII)
+	phrase=(PRINTVALUE | PRINTASCII | PRINTASCII2)
 	wh=(DOT | EP)
 	{h.checkPrint($ch, $phrase, $wh);}
 	;
@@ -256,7 +286,7 @@ POSITIVENOUN
     |   'happiness'
     |   'joy'
     |   'plum'
-    |   'summer’s day'
+    |   'summer\'s day'
     |   'hero'
     |   'rose'
     |   'kingdom'
@@ -445,15 +475,17 @@ AND         	:	'and';
 
 
 // assignment
-YOU         	:   'You';
-ARE     	:   'are';
-THOUART    	:   'Thou art';
-AS      	:   'as';
-SUMOF       	:   'the sum of';
-DIFFBET        	:   'the difference between';
-PRODOF 		:   'the product of';
-A		:   'a';
-THYSELF		:   'thyself';
+YOU         	:	'You';
+ARE     	:   	'are';
+THOUART    	:   	'Thou art';
+AS      	:   	'as';
+SUMOF       	:   	'the sum of';
+DIFFBET        	:   	'the difference between';
+PRODOF 		:   	'the product of';
+QUOTOF		:	'the quotient of';
+A		: 	'a';
+THYSELF		:   	'thyself';
+NOT		:	'not';
 
 // conditional statement
 AMI		:	'Am I';
@@ -473,6 +505,7 @@ PROCEEDTO	:	'proceed to';
 // input/output
 PRINTVALUE     	:       'Open your heart';  
 PRINTASCII     	:       'Speak your mind';
+PRINTASCII2     :    	'Speak thy mind';
 READVALUE      	:       'Listen to your heart';
 READASCII      	:       'Open your mind';
 
