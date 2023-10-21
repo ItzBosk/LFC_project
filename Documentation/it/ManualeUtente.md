@@ -130,13 +130,14 @@ Le singole righe di codice generalmente assumono la forma di un brano di dialogo
 ```
 5. **Linee, costanti e assegnazione di valori**:
 Le linee sono rappresentate come dialoghi pronunciati da un personaggio e consistono in almeno una frase. Ogni frase può assegnare un nuovo valore a una variabile, indirizzare una variabile a produrre il suo valore o indirizzarla a ricevere un input. Le linee possono anche manipolare stack o agire come istruzioni if/then o goto. Una riga inizia con il nome di un personaggio e i due punti. Poiché questo personaggio è l'oratore, l'altro personaggio sul palco è la variabile a cui ci si rivolge come "tu" o "tu".
-Le costanti sono rappresentate da combinazioni di nomi e aggettivi; la lingua riconosce un elenco finito di ciascuno, ed entrambi gli elenchi sono separati in quelli con tono positivo, negativo o neutro, come percepito da Åslund e Hasselström. I nomi positivi e neutri hanno un valore pari a 1, mentre i nomi negativi hanno un valore pari a -1. Qualsiasi aggettivo moltiplica un sostantivo per 2 e gli aggettivi possono essere composti. I pronomi possessivi vengono ignorati dal parser, mentre le parole relative all'aritmetica di base vengono riconosciute come operazioni, come "somma", "quoziente" e "cubo". Una frase che assegna un valore a un carattere inizia con "Tu" o "Tu", può facoltativamente continuare con "sono come [qualsiasi aggettivo] come", e quindi fornisce la formula matematica in sostantivi, aggettivi, variabili e operazioni per il nuovo valore. Seguono esempi di tali linee:
+Le costanti sono rappresentate da combinazioni di nomi e aggettivi; la lingua riconosce un elenco finito di ciascuno, ed entrambi gli elenchi sono separati in quelli con tono positivo, negativo o neutro. I nomi positivi e neutri hanno un valore pari a 1, mentre i nomi negativi hanno un valore pari a -1. Qualsiasi aggettivo moltiplica un sostantivo per 2 e gli aggettivi possono essere composti. I pronomi possessivi vengono ignorati dal parser, mentre le parole relative all'aritmetica di base vengono riconosciute come operazioni, come "somma", "quoziente" e "cubo". Una frase che assegna un valore a un carattere inizia con "Tu" o "Tu", può facoltativamente continuare con "sono come [qualsiasi aggettivo] come", e quindi fornisce la formula matematica in sostantivi, aggettivi, variabili e operazioni per il nuovo valore. Come possibilita aggiuntiva e' possibile usare il costrutto "not" per negare il risultato di un calcolo prima di assegnarlo.
+Seguono esempi di tali linee:
 ```
 Hamlet:
  You lying stupid fatherless big smelly half-witted coward!
 
 Juliet:
- You are as villainous as the square root of Romeo!
+ You are not as good as a big big King!
 ```
 Le formule matematiche possono anche utilizzare i nomi di altri personaggi (anche se quei personaggi non sono sul palco) per utilizzare il valore corrente di quel personaggio in un calcolo, o "te stesso" o "te stesso" per il personaggio a cui si parla.
 
@@ -157,44 +158,104 @@ Ogni variabile è uno stack. Una variabile avrà un numero intero inserito nello
 
 
 #### Esempio di script
-Puoi scrivere qualcosa del genere per ottenere "UniBG Rules!" come output:
+Puoi scrivere qualcosa del genere per ottenere "Hello World!" come output:
 
 ```
-The Adventure of UniBG Rules.
+The Infamous Hello World Program.
 
-Juliet, a bright student with a sunny disposition.
-Romeo, a passionate scholar with fiery determination.
-
-Act I: Juliets's bravery.
-Scene I: Romeo listen.
-
-[Enter Romeo and Juliet]
-
-Juliet: Listen to me!
-Romeo: You are the sum of yourself.
+Romeo, a young man with a remarkable patience.
+Juliet, a likewise young woman of remarkable grace.
+Ophelia, a remarkable woman much in dispute with Hamlet.
+Hamlet, the flatterer of Andersen Insulting A/S.
 
 
-Juliet: Open your mind!
-Romeo: You are the sum of yourself.
+			Act I: Hamlet's insults and flattery.
 
+			Scene I: The insulting of Romeo.
 
-Romeo: You are the square of yourself.
-Juliet: Remember yourself.
+[Enter Hamlet and Romeo]
 
+Hamlet:
+You are the sum of a big lovely cute charming brave bold hero and a amazing cute good King!
+Speak thy mind.
 
-Romeo: You are the sum of yourself.
-Juliet: You are the difference between yourself and yourself!
+Romeo:
+You are as good as the sum of a happy hamster and a horse.
+Thou art as beautiful as the sum of yourself and a rich smooth noble squirrel.
+You are as bold as the sum of thyself and a golden gentle handsome fair thing.
+You are as fair as the difference between a purple small tiny rural old furry hard tree and yourself.
+Speak your mind.
 
+Hamlet:
+You are as good as the sum of a smooth warm tiny white lantern and a big big moon.
+You are as good as the difference between a rural big black trustworthy warm mighty hard lantern and yourself.
+Speak your mind.
+Speak thy mind!
 
-Juliet: Speak your mind!
-Romeo: Open your heart.
+Romeo:
+Thou art the sum of a pretty clearest blossoming noble door and a face.
+You are as honest as the difference between a big sweet warm furry rich gentle fair town and thyself.
+Speak your mind.
 
+[Exit Romeo]
 
-Juliet: Listen to me!
-Romeo: You are the sum of yourself.
+			Act II: New World.
 
+			Scene I: Space.
 
-Juliet: Remember me.
+[Enter Juliet]
+Juliet:
+You are a green old tiny furry proud hero.
+Speak your mind!
+
+Hamlet:
+You are as damned as the sum of a big rich sweet hard King and a trustworthy noble warm angel.
+Thou art the difference between thyself and a flower.
+
+Juliet:
+Thou art as furry as the sum of a big purple furry warm pony and a rose.
+You are as warm as the difference between a big white hard rich sweet lovely happy Lord and yourself.
+
+Hamlet:
+Thou art as evil as the sum of a big large warm lovely golden good happiness and thyself.
+Speak thy mind!
+
+Juliet:
+Speak your mind.
+
+Hamlet:
+You are as peaceful as the difference between a amazing handsome cute charming sister and a big King.
+
+Juliet:
+You are the sum of a big warm sunny smooth town and a golden sweet joy.
+
+Hamlet:
+You are as smooth as the difference between a amazing blossoming large hard fine good black kingdom and yourself.
+
+Juliet:
+You are as dirty as the difference between a beautiful big noble mighty peaceful pretty rich Lord and thyself.
+
+Hamlet:
+Speak thy mind!
+
+Juliet:
+Speak your mind.
+
+Hamlet:
+You are as dusty as the difference between a cute loving trustworthy beautiful white angel and a pretty rich King.
+Thou art as miserable as the difference between a noble smooth amazing charming bold blossoming big rose and yourself.
+Speak thy mind!
+
+[Exit Hamlet]
+
+			Act III: New era.
+			Scene I: Time.
+
+[Enter Ophelia]
+
+Ophelia:
+You are as good as the sum of a honest smooth sunny sweet pretty hero and a King.
+Speak your mind.
 
 [Exeunt]
 ```
