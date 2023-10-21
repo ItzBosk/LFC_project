@@ -137,7 +137,7 @@ I controlli semantici implementati nel software per gestire il linguaggio di pro
 - Queste regole contano il numero di aggettivi attribuiti a un personaggio.
 - Facilitano il calcolo della potenza di due da assegnare ai caratteri in base al numero di aggettivi.
 
-# Possibili sviluppi futuri
+## Possibili sviluppi futuri
 Nelle successive release del software SPL si potrebbe aggiungere le seguenti funzionalità:
 
 - supporto completo al riconoscimento degli errori per i numeri romani:

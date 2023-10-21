@@ -138,7 +138,7 @@ The semantic controls implemented in the software to manage the Shakespeare prog
 - These rules count the number of adjectives attributed to a character.
 - They facilitate the calculation of the power of two to be assigned to the characters based on the number of adjectives.
 
-# Possible future developments
+## Possible future developments
 In subsequent releases of the SPL software the following features could be added:
 
 - full error recognition support for Roman numbers:
