@@ -65,7 +65,7 @@ Questo file contiene una descrizione di alto livello degli elementi e delle cara
 3. **Shakespeare programming language.pdf**:
 Questo documento PDF funge da risorsa completa per comprendere il linguaggio di programmazione Shakespeare in modo più dettagliato. Probabilmente include spiegazioni più dettagliate, esempi e forse anche programmi di esempio.
 
-4. **Documentazione (cartella)**:
+4. **Documentation (cartella)**:
 Questa cartella contiene documentazione aggiuntiva relativa al progetto.
 	- **en (sottocartella)**:
 		- **Documentation.md**:
@@ -82,6 +82,19 @@ Questa cartella contiene documentazione aggiuntiva relativa al progetto.
 		Grammatica non decorata (solo parte sintattica).
 		- **Shakespeare.g**:
 		Grammatica completa.
+
+5. **Examples (cartella)**:
+Questa cartella contiene alcuni esempi di codice SPL:
+  - **1to10.txt**:
+  Scrive i numeri da 1 a 10 in ordine e separati da una virgola.
+  - **Addition.txt**:
+  Sommatoria fra due numeri interi dati in input dall'utente.
+  - **GoToJump (8,3).txt**:
+  Dimostrazione di utilizzo del meccanismo di goto, implementato a partire da due numeri di input (8 e 3).
+  - **HelloWorld.txt**:
+  Stampa "Hello World!" in output.
+  - **testGotoNegato.txt**:
+  Utilizzo del goto utilizzando anche il costrutto di negazione. 
 
 ## Principali controlli semantici
 I controlli semantici implementati nel software per gestire il linguaggio di programmazione Shakespeare sono progettati per garantire che il codice aderisca alla grammatica e alle regole uniche del linguaggio. Ecco una ripartizione completa dei principali controlli semantici all'interno del software:

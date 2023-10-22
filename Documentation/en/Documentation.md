@@ -84,6 +84,19 @@ This folder contains additional documentation related to the project.
 		- **Shakespeare.g**:
 		Complete grammar.
 
+5. **Examples (folder)**:
+This folder contains some SPL code examples:
+  - **1to10.txt**:
+  Writes the numbers 1 to 10 in order and separated by a comma.
+  - **Addition.txt**:
+  Sum between two integers provided as input by the user.
+  - **GoToJump (8,3).txt**:
+  Demonstration of use of the goto mechanism, implemented starting from two input numbers (8 and 3).
+  - **HelloWorld.txt**:
+  Print "Hello world!" output.
+  - **testGotoNegato.txt**:
+  Using goto while also using the negation construct.
+
 ## Main semantic checks:
 The semantic controls implemented in the software to manage the Shakespeare programming language are designed to ensure that the code adheres to the language's unique grammar and rules. Here's a comprehensive breakdown of the core semantic checks within the software:
 
