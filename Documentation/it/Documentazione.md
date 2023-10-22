@@ -62,7 +62,7 @@ Questa è la cartella principale del progetto Eclipse. È organizzato in diverse
 2. **SPL.txt**:
 Questo file contiene una descrizione di alto livello degli elementi e delle caratteristiche del linguaggio di programmazione shakespeariano. Fornisce una panoramica della sintassi e delle funzionalità del linguaggio.
 
-3. **Linguaggio di programmazione Shakespeare.pdf**:
+3. **Shakespeare programming language.pdf**:
 Questo documento PDF funge da risorsa completa per comprendere il linguaggio di programmazione Shakespeare in modo più dettagliato. Probabilmente include spiegazioni più dettagliate, esempi e forse anche programmi di esempio.
 
 4. **Documentazione (cartella)**:
