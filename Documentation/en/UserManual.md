@@ -13,6 +13,7 @@ Let's delve into the art of poetry and the science behind the computer programmi
 
 ## Prerequisites
 This software only requires Java, which is a versatile, object-oriented programming language, renowned for portability, used for web, desktop, and mobile applications.
+The minimum required version of Java is 1.8.
 
 ### Installation of Java
 *If you already have Java JRE ( or OpenJDK alternative ) installed and working in your machine you can skip this installation process*
@@ -97,6 +98,8 @@ Remember, in the Shakespeare Programming Language, you're not writing typical co
 
 ## SPL Software
 We can divide the SPL Software utilization into two different phases, the writing of the Script with it's compilation and logic, and the PDF generation which can be used by real actors on stage for practice.
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/phome.jpg" style="height:500px"> </img>
 ### Script writing
 In the left field of the first page there is a space which you have to use to write the script down. A basic Script will be loaded on the first start in order to help you understanding how it works.
 #### Script logic
@@ -260,11 +263,19 @@ Speak your mind.
 ```
 ### Code compilation
 In order to compile your freshly written script you can press the Compile button on the bottom of the first page, and see the verbose output of the compilation in the box on the right.
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/pinput.jpg" style="height:500px"> </img>
 ### PDF generation
 Regarding the PDF creation you have to compile your source (Script) and then generate the PDF if you want. In this software you can also customize the images for all the actors to better suit your on stage needs, maybe sustituting the default pictures with some actual pictures of real actors.
 #### Characters pictures
 In this section you can select and change every image for every character that our SPL implementation supports, and if you want you can reset back to default with the specific button on the interface.
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/ppdf.jpg" style="height:500px"> </img>
 #### PDF final export
 When you are ready, make sure that your Script has compiled correctly and then you can proceed to generate and export the fully decorated PDF. This process usually takes a little bit of time because the generated file is complex and it purpouse is to be printed and not used on the Computer. If the generation and the export goes well at the end your preferred PDF browser will open showing you the result of the generation, and now you can admire your freshly baked creation. Enjoy!
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/pdf1.jpg" style="height:500px"> </img>
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/pdf2.jpg" style="height:500px"> </img>
 ## Uninstall
 The process of uninstalling the software is needed only for the Windows version, and just check your program list inside the Control Panel of Windows itself, you'll be able to select the "*Shakespeare Programming Language Software*" and uninstall it directly from the list.
