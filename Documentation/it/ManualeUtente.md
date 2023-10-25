@@ -97,6 +97,8 @@ Ricorda, nel linguaggio di programmazione Shakespeare, non stai scrivendo il cod
 
 ##Software SPL
 Possiamo dividere l'utilizzo del software SPL in due fasi diverse, la scrittura della sceneggiatura con la sua compilazione e logica, e la generazione del PDF che può essere utilizzato da attori reali sul palco per esercitarsi.
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/phome.jpg" style="height:500px"> </img>
 ### Sceneggiatura
 Nel campo sinistro della prima pagina c'è uno spazio che devi usare per scrivere lo script. Al primo avvio verrà caricato uno Script di base per aiutarti a capire come funziona.
 #### Logica dello script
@@ -261,11 +263,19 @@ Speak your mind.
 ```
 ### Compilazione del codice
 Per compilare il tuo script appena scritto puoi premere il pulsante Compila nella parte inferiore della prima pagina e vedere l'output dettagliato della compilazione nella casella a destra.
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/pinput.jpg" style="height:500px"> </img>
 ### Generazione PDF
 Per quanto riguarda la creazione del PDF devi compilare il tuo sorgente (Script) e quindi generare il PDF se lo desideri. In questo software puoi anche personalizzare le immagini di tutti gli attori per adattarle meglio alle tue esigenze sul palco, magari sostituendo le immagini predefinite con alcune immagini reali di attori reali.
 #### Immagini dei personaggi
 In questa sezione puoi selezionare e modificare ogni immagine per ogni personaggio supportato dalla nostra implementazione SPL e, se lo desideri, puoi ripristinare le impostazioni predefinite con l'apposito pulsante sull'interfaccia.
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/ppdf.jpg" style="height:500px"> </img>
 #### Esportazione finale in PDF
 Quando sei pronto, assicurati che il tuo script sia stato compilato correttamente e poi puoi procedere con la generazione e l'esportazione del PDF completamente decorato. Questo processo richiede solitamente un po' di tempo perché il file generato è complesso e deve essere stampato e non utilizzato sul computer. Se la generazione e l'esportazione vanno a buon fine, alla fine il tuo browser PDF preferito si aprirà mostrandoti il risultato della generazione, e ora potrai ammirare la tua creazione appena sfornata. Divertiti!
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/pdf1.jpg" style="height:500px"> </img>
+<br>
+<img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/pdf2.jpg" style="height:500px"> </img>
 ## Disinstalla
 Il processo di disinstallazione del software è necessario solo per la versione Windows, e basta controllare l'elenco dei programmi all'interno del Pannello di controllo di Windows stesso, sarai in grado di selezionare "*Shakespeare Programming Language Software*" e disinstallarlo direttamente dal elenco.

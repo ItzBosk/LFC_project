@@ -23,77 +23,77 @@ Il software incorpora un'interfaccia utente creata utilizzando Swing, un toolkit
 ## Organizzazione dei file
 Questa struttura di file organizzata garantisce che i diversi componenti del progetto software siano nettamente separati, semplificando la gestione e il mantenimento della base di codice. Facilita inoltre l'incorporazione di elementi grafici e di risorse nel software, risultando in un'applicazione più user-friendly e visivamente accattivante.
 
-1. **Workspace_Shakespeare (cartella principale del progetto)**:
+1. [**Workspace_Shakespeare**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare):
 Questa è la cartella principale del progetto Eclipse. È organizzato in diverse sottodirectory, ciascuna con uno scopo specifico:
 
-  - **src (codice sorgente)**:
+  - [**src**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src):
   Questa directory ospita il codice sorgente del progetto.
+<br><img src="https://github.com/ItzBosk/LFC_project/tree/main/Documentation/Pictures/umlPackage.jpg" style="height:300px"> </img>
    
-    - **scanPackage**:
+    - [**scanPackage**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src/scanPackage):
       All'interno di "scanPackage" troverai i file del parser e dello scanner della lingua. Questi componenti essenziali sono responsabili dell'analisi e della scansione del codice Shakespeare.
    
-    - **grammarPackage**:
+    - [**grammarPackage**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src/grammarPackage):
       "grammarPackage" contiene i file generati da ANTLR, incluso il file di grammatica denominato "Shakespeare.g." Questo file di grammatica definisce la sintassi e la struttura del linguaggio di programmazione Shakespeare. Inoltre, ospita il gestore degli errori, che gestisce e segnala gli errori durante la compilazione del codice.
 
-    - **Pacchetto utilità**:
+    - [**utilityPackage**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src/utilityPackage):
       L'"utilityPackage" comprende vari file di supporto, come "CharacterDescriptor.java" per la gestione degli oggetti relativi ai personaggi all'interno delle scene, "RomanNumber.java" per la manipolazione dei numeri romani e "Util.java". Il file "Util.java" aiuta a migliorare la leggibilità dello script visualizzato nella console.
 
-    - **interfacePackage**:
+    - [**interfacePackage**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src/interfacePackage):
       Tutti i file relativi all'aspetto grafico dell'applicazione sono archiviati nel "interfacePackage". Ciò include componenti dell'interfaccia utente ed elementi grafici che migliorano l'esperienza dell'utente.
 
-    - **outputPackage**:
+    - [**outputPackage**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src/outputPackage):
       Il "outputPackage" è dedicato ai file associati alla generazione del documento PDF di output. Contiene il codice e le risorse responsabili della creazione del documento PDF dal codice Shakespeare elaborato.
 
-  - **resources**:
+  - [**resources**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/resources):
   La directory "risorse" contiene varie risorse che supportano la funzionalità e l'aspetto del software:
    
-    - **images**:
+    - [**images**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/resources/images):
       La sottodirectory "immagini" memorizza immagini di personaggi e altri elementi grafici che verranno inclusi nel PDF generato dall'applicazione. Queste immagini aggiungono contesto visivo al documento risultante.
 
-    - **input.file**:
+    - [**input.file**](https://github.com/ItzBosk/LFC_project/blob/main/Workspace_Shakespeare/resources/input.file):
       "input.file" è il file di testo scritto nel linguaggio di programmazione Shakespeare che il software compilerà ed elaborerà. È il file del codice sorgente che deve essere eseguito dal programma.
 
-    - **icons**:
-      Questa directory contiene una raccolta di icone utilizzate nell'interfaccia utente grafica (GUI) per fornire segnali visivi e rappresentazioni per varie funzioni o caratteristiche all'interno dell'applicazione.
-
-    - **antlr-3.4-complete.jar**:
+- [**antlr-3.4-complete.jar**](https://github.com/ItzBosk/LFC_project/blob/main/Workspace_Shakespeare/antlr-3.4-complete.jar):
       Il file "antlr-3.4-complete.jar" rappresenta la libreria ANTLRv3, una dipendenza cruciale per il parsing del linguaggio e l'analisi del codice. Questa libreria è essenziale per generare parser e lexer dalla grammatica definita e viene utilizzata nel progetto.
 
-2. **SPL.txt**:
+2. [**SPL.txt**](https://github.com/ItzBosk/LFC_project/blob/main/SPL.txt):
 Questo file contiene una descrizione di alto livello degli elementi e delle caratteristiche del linguaggio di programmazione shakespeariano. Fornisce una panoramica della sintassi e delle funzionalità del linguaggio.
 
-3. **Shakespeare programming language.pdf**:
+3. [**Shakespeare programming language.pdf**](https://github.com/ItzBosk/LFC_project/blob/main/Shakespeare%20programming%20language.pdf):
 Questo documento PDF funge da risorsa completa per comprendere il linguaggio di programmazione Shakespeare in modo più dettagliato. Probabilmente include spiegazioni più dettagliate, esempi e forse anche programmi di esempio.
 
-4. **Documentation (cartella)**:
+4. [**Documentation**](https://github.com/ItzBosk/LFC_project/tree/main/Documentation):
 Questa cartella contiene documentazione aggiuntiva relativa al progetto.
-	- **en (sottocartella)**:
-		- **Documentation.md**:
+	- [**en**](https://github.com/ItzBosk/LFC_project/tree/main/Documentation/en):
+		- [**Documentation.md**](https://github.com/ItzBosk/LFC_project/blob/main/Documentation/en/Documentation.md):
      	Documentazione scritta in inglese. Permette di avere una visione d'insieme del progetto, dalle motivazioni della sua realizzazione, attraverso le tecnologie utilizzate ed infine ai controlli semantici implementati.
-		- **UserManual.md**:
+		- [**UserManual.md**](https://github.com/ItzBosk/LFC_project/blob/main/Documentation/en/UserManual.md):
 		Manuale utente scritto in inglese. Fornisce istruzioni e indicazioni su come utilizzare il software, le sue funzionalità e qualsiasi altra informazione pertinente.
-	- **it (sottocartella)**:
-		- **Documentazione.md**:
+	- [**it**](https://github.com/ItzBosk/LFC_project/tree/main/Documentation/it):
+		- [**Documentazione.md**](https://github.com/ItzBosk/LFC_project/blob/main/Documentation/it/Documentazione.md):
      	Equivalente in italiano.
-		- **ManualeUtente.md**:
+		- [**ManualeUtente.md**](https://github.com/ItzBosk/LFC_project/blob/main/Documentation/it/ManualeUtente.md):
 		Equivalente in italiano.
-	- **Shakespeare grammar (sottocartella)**:
-		- **SyntacticShakespeare.g**:
+	- [**Shakespeare grammar**](https://github.com/ItzBosk/LFC_project/tree/main/Documentation/Shakespeare%20grammar):
+		- [**SyntacticShakespeare.g**](https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Shakespeare%20grammar/SyntacticShakespeare.g):
 		Grammatica non decorata (solo parte sintattica).
-		- **Shakespeare.g**:
+		- [**Shakespeare.g**](https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Shakespeare%20grammar/Shakespeare.g):
 		Grammatica completa.
+	- [**Pictures**](https://github.com/ItzBosk/LFC_project/tree/main/Documentation/Pictures):
+		Screenshot di supporto per il manuale utente.
 
-5. **Examples (cartella)**:
+5. [**Examples**](https://github.com/ItzBosk/LFC_project/tree/main/Examples):
 Questa cartella contiene alcuni esempi di codice SPL:
-  - **1to10.txt**:
+  - [**1to10.txt**](https://github.com/ItzBosk/LFC_project/blob/main/Examples/1to10.txt):
   Scrive i numeri da 1 a 10 in ordine e separati da una virgola.
-  - **Addition.txt**:
+  - [**Addition.txt**](https://github.com/ItzBosk/LFC_project/blob/main/Examples/Addition.txt):
   Sommatoria fra due numeri interi dati in input dall'utente.
-  - **GoToJump (8,3).txt**:
+  - [**GoToJump (8,3).txt**](https://github.com/ItzBosk/LFC_project/blob/main/Examples/GoToJump%20(8%2C3).txt):
   Dimostrazione di utilizzo del meccanismo di goto, implementato a partire da due numeri di input (8 e 3).
-  - **HelloWorld.txt**:
+  - [**HelloWorld.txt**](https://github.com/ItzBosk/LFC_project/blob/main/Examples/HelloWorld.txt):
   Stampa "Hello World!" in output.
-  - **testGotoNegato.txt**:
+  - [**testGotoNegato.txt**](https://github.com/ItzBosk/LFC_project/blob/main/Examples/testGotoNegato.txt):
   Utilizzo del goto utilizzando anche il costrutto di negazione. 
 
 ## Principali controlli semantici
