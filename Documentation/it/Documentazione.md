@@ -28,7 +28,7 @@ Questa è la cartella principale del progetto Eclipse. È organizzato in diverse
 
   - [**src**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src):
   Questa directory ospita il codice sorgente del progetto.
-<br><img src="https://github.com/ItzBosk/LFC_project/tree/main/Documentation/Pictures/umlPackage.jpg" style="height:300px"> </img>
+ <br><img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/umlPackage.jpg" style="height:500px"> </img>
    
     - [**scanPackage**](https://github.com/ItzBosk/LFC_project/tree/main/Workspace_Shakespeare/src/scanPackage):
       All'interno di "scanPackage" troverai i file del parser e dello scanner della lingua. Questi componenti essenziali sono responsabili dell'analisi e della scansione del codice Shakespeare.
