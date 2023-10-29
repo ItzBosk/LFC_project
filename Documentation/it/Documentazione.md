@@ -154,6 +154,6 @@ I controlli semantici implementati nel software per gestire il linguaggio di pro
 Nelle successive release del software SPL si potrebbe aggiungere le seguenti funzionalità:
 
 - supporto completo al riconoscimento degli errori per i numeri romani:
-Al momento il programma riconosce i numeri romani scritti correttamente, ma è in grado di distinguere solo alcuni degli errori sintattici che li pososno interessare. Si potrebbe quindi implementare un controllo completo con segnalazione dell'errore.
+Al momento il programma riconosce i numeri romani scritti correttamente, ma è in grado di distinguere solo alcuni degli errori sintattici che li possono interessare. Si potrebbe quindi implementare un controllo completo con segnalazione dell'errore.
 - supporto  alle operazioni "twice", "square" e "cube".
 Alcune versioni del linguaggio Shakespeare prevedono utilizzo di questi costrutti. Rispettivamente permettono di raddoppiare il risultato di un operazione, elevare al quadrato e al cubo.
