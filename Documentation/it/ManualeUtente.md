@@ -52,8 +52,8 @@ Assicurati che il tuo computer sia connesso a Internet e di disporre dei privile
 Questo è tutto! Hai installato con successo Java sul tuo computer. Ora puoi utilizzare Java per eseguire applicazioni Java come il nostro software SPL.
 
 ### Installazione del software SPL
-Se utilizzi **Windows** puoi eseguire il file "*SPL Installer.msi*" dalla directory principale del nostro progetto su github, seguire le semplici istruzioni visualizzate all'interno del software di installazione e quindi eseguire la nuova installazione SPL Software dal collegamento sul desktop.
-Se utilizzi **MacOS** devi estrarre i file da "*SPL Packaged.zip*" nella tua posizione preferita e avviare l'eseguibile "*SPL.jar*" all'interno della cartella estratta.
+Se utilizzi **Windows** puoi eseguire il file ["*SPL Installer.msi*"](https://github.com/ItzBosk/LFC_project/blob/main/Workspace_Shakespeare/SPL%20Installer.msi) dalla directory principale del nostro progetto su github, seguire le semplici istruzioni visualizzate all'interno del software di installazione e quindi eseguire la nuova installazione SPL Software dal collegamento sul desktop.
+Se utilizzi **MacOS** devi estrarre i file da ["*SPL Complete.zip*"](https://github.com/ItzBosk/LFC_project/blob/main/Workspace_Shakespeare/SPL_Complete.zip) nella tua posizione preferita e avviare l'eseguibile "*SPL.jar*" all'interno della cartella estratta.
 Se utilizzi **Linux** segui le stesse istruzioni di MacOS (ymmv ma se usi Linux quotidianamente puoi arrivarci da solo)
 
 ### Capire come funziona SPL (nozioni di base)
