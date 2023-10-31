@@ -95,7 +95,7 @@ AGGETTIVI
 
 Ricorda, nel linguaggio di programmazione Shakespeare, non stai scrivendo il codice tipico come in altri linguaggi di programmazione. Stai invece creando una storia in cui i personaggi e le loro azioni rappresentano la logica del codice. È un modo divertente di scrivere codice, quasi come scrivere un'opera teatrale o una sceneggiatura!
 
-##Software SPL
+## Software SPL
 Possiamo dividere l'utilizzo del software SPL in due fasi diverse, la scrittura della sceneggiatura con la sua compilazione e logica, e la generazione del PDF che può essere utilizzato da attori reali sul palco per esercitarsi.
 <br>
 <img src="https://github.com/ItzBosk/LFC_project/blob/main/Documentation/Pictures/phome.jpg" style="height:500px"> </img>
